@@ -22,7 +22,7 @@
 	<itunes:title>Testing the Waters</itunes:title>
     <link>http://www.theinterstategamers.review</link>
     <guid>http://www.theinterstategamers.review</guid>
-    <description>Peter and Kevin start bold and fresh in their new video game podcast.</description>
+    <itunes:description>Peter and Kevin start bold and fresh in their new video game podcast.</itunes:description>
 	<itunes:summary>Peter and Kevin start bold and fresh in their new video game podcast.</itunes:summary>
     <itunes:duration>1:16</itunes:duration>
 	<itunes:season>1</itunes:season>
