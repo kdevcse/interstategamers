@@ -4,7 +4,7 @@
 <channel>
   <atom:link href="http://www.theinterstategamers.review/Episodes/episodes.xml" rel="self" type="application/rss+xml" />
   <title>The Interstate Gamers</title>
-  <language>English</language>
+  <language>en-us</language>
   <itunes:category text="Arts & Entertainment">
   <itunes:category text="Games" />
   </itunes:category>
