@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+  <atom:link href="http://www.kslugs.me/Podcast/feed.xml" rel="self" type="application/rss+xml" />
+  <title>The Interstate Gamers</title>
+  <link>http://www.kslugs.me/Podcast</link>
+  <description>The podcast where your hosts, Deal_4_Real and Slugs, rate and discuss your favorite video games by category all while enjoying a nice cold beverage of choice.</description>
+  <image>
+    <url>http://www.kslugs.me/Images/Slug.png</url>
+    <title>The Interstate Gamers</title>
+    <link>http://www.kslugs.me/Podcast</link>
+  </image>
+  <item>
+    <title>The First of Many</title>
+    <link>http://www.kslugs.me</link>
+    <guid>http://www.kslugs.me</guid>
+    <description>Cast 1</description>
+    <enclosure url="http://kslugs.me/Podcast/RIP.mp3" length="137915" type="audio/mpeg" />
+  </item>
+</channel>
+
+</rss>
