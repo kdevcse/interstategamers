@@ -20,8 +20,10 @@
     <title>Episode 0</title>
     <link>http://www.theinterstategamers.review</link>
     <guid>http://www.theinterstategamers.review</guid>
-    <description>Cast 1</description>
+    <description>Peter and Kevin start bold and fresh in their new video game podcast.</description>
+	<itunes:summary>Peter and Kevin start bold and fresh in their new video game podcast.</itunes:summary>
     <itunes:duration>1:16</itunes:duration>
+	<itunes:season>1</itunes:season>
     <pubDate>Wed, 13 December 2017 19:00:00 CST</pubDate>
     <enclosure url="http://www.theinterstategamers.review/Episodes/EP.mp3" length="3057371" type="audio/mpeg" />
   </item>
