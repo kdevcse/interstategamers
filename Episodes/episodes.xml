@@ -4,6 +4,7 @@
 <channel>
   <atom:link href="http://www.theinterstategamers.review/Episodes/episodes.xml" rel="self" type="application/rss+xml" />
   <title>The Interstate Gamers</title>
+  <copyright>Kevin Lewis &amp; Peter Williams</copyright>
   <language>en-us</language>
   <itunes:category text="Games &amp; Hobbies">
   <itunes:category text="Video Games"/>
@@ -17,7 +18,7 @@
     <link>http://www.theinterstategamers.review</link>
   </image>
   <item>
-    <title>Testing the Waters</title>
+    <title>Episode 0</title>
     <link>http://www.theinterstategamers.review</link>
     <guid>http://www.theinterstategamers.review</guid>
     <description>Peter and Kevin start bold and fresh in their new video game podcast.</description>
