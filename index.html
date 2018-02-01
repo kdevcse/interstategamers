@@ -9,33 +9,6 @@
 	<link rel="stylesheet" href="CSS/mainStyle.css">
 </head>
 <body>
-<div class="container-fluid">
-	<div class="menu" onclick="menuAnim(this)">
-		<div class="bar1"></div>
-		<div class="bar2"></div>
-		<div class="bar3"></div>
-	</div>
-</div>
-<div class="container">
-	<center>
-	</center>
-</div>
-<script>
-function menuAnim(x) {
-    x.classList.toggle("change");
-}
-</script>
-<script>
-var navbar = document.getElementById("nav");
-var sticky = navbar.offsetTop;
 
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
 </body>
 </html>
