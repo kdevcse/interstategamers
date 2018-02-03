@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/DTDs/Podcast-1.0.dtd">
-
-<channel>
-  <atom:link href="http://www.theinterstategamers.review/Episodes/episodes.xml" rel="self" type="application/rss+xml" />
-  <title>The Interstate Gamers</title>
-  <copyright>Kevin Lewis &amp; Peter Williams</copyright>
-  <language>en-us</language>
-  <itunes:category text="Games &amp; Hobbies">
-  <itunes:category text="Video Games"/>
-  </itunes:category>
-  <itunes:explicit>yes</itunes:explicit>
-  <link>http://www.theinterstategamers.review</link>
-  <description>The podcast where your hosts, Deal_4_Real and Slugs, rate and discuss your favorite video games by category all while enjoying a nice cold beverage of choice.</description>
-  <image>
-    <url>http://www.theinterstategamers.review/Images/IGPrelim.png</url>
-    <title>The Interstate Gamers</title>
-    <link>http://www.theinterstategamers.review</link>
-  </image>
-  <item>
-    <title>Testing the Waters</title>
-	<itunes:title>Testing the Waters</itunes:title>
-    <link>http://www.theinterstategamers.review</link>
-    <guid>http://www.theinterstategamers.review</guid>
-    <itunes:description>Peter and Kevin start bold and fresh in their new video game podcast.</itunes:description>
-	<itunes:subtitle>Peter and Kevin start bold and fresh in their new video game podcast.</itunes:subtitle>
-    <itunes:duration>1:16</itunes:duration>
-	<itunes:season>1</itunes:season>
-    <pubDate>Wed, 13 December 2017 19:00:00 CST</pubDate>
-    <enclosure url="http://www.theinterstategamers.review/Episodes/EP.mp3" length="3057371" type="audio/mpeg" />
-  </item>
-</channel>
-
-</rss>
+<podcast>
+	<episode>
+		<title>Mario Kart 64</title>
+		<ig_score>84</ig_score>
+	</episode>
+	<episode>
+		<title>Star Fox 64</title>
+		<ig_score>94</ig_score>
+	</episode>
+	<episode>
+		<title>Roller Coaster Tycoon</title>
+		<ig_score>91</ig_score>
+	</episode>
+</podcast>
