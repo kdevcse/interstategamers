@@ -4,7 +4,7 @@
 		<title>Mario Kart 64</title>
 		<ig_score>84</ig_score>
 		<img>
-			<title>MK64</title>
+			<pic_title>MK64</pic_title>
 			<src>/Images/MK64.png</src>
 		</img>
 	</episode>
@@ -12,7 +12,7 @@
 		<title>Star Fox 64</title>
 		<ig_score>94</ig_score>
 		<img>
-			<title>SF64</title>
+			<pic_title>SF64</pic_title>
 			<src>/Images/SF64.png</src>
 		</img>
 	</episode>
@@ -20,7 +20,7 @@
 		<title>Roller Coaster Tycoon</title>
 		<ig_score>91</ig_score>
 		<img>
-			<title>RCT</title>
+			<pic_title>RCT</pic_title>
 			<src>/Images/RCT.jpg</src>
 		</img>
 	</episode>
