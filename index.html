@@ -38,7 +38,8 @@
 				var igNode = document.createElement("p");
 				var txtNode = x[i].childNodes[0];
 				var igTxtNode = ig[i].childNodes[0];
-				igNode.appendChild("IG Score:" + igTxtNode);
+				igNode.appendChild(igTxtNode);
+				igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
 				node.appendChild(txtNode);
 				ep.appendChild(node);
 				ep.appendChild(igNode);
