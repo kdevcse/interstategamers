@@ -11,8 +11,6 @@ body {
 	background-color: rgba(45,50,175,0.9);
 	border-radius: 6px;
 	color: white;
-}
-.center-block > .ep-list {
 	margin-left: auto;
 	margin-right: auto;
 }
