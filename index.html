@@ -31,7 +31,7 @@
 			
 			function getRatings(xml) {
 			    var xmlDoc = xml.responseXML;
-			    var txt = "";
+			    var txtNode = "";
 			    var x = xmlDoc.getElementsByTagName("title");
 			    for (var i = 0; i < x.length; i++) { 
 				var node = document.createElement("p");
