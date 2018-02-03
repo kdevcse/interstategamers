@@ -32,16 +32,22 @@
 			    var xmlDoc = xml.responseXML;
 			    var x = xmlDoc.getElementsByTagName("title");
 			    var ig = xmlDoc.getElementsByTagName("ig_score");
+			    var imgSrc = xmlDoc.getElementsByTagName("src");
 			    for (var i = 0; i < x.length; i++) {
 				var ep = document.createElement("div");
 				var node = document.createElement("h2");
 				var igNode = document.createElement("h3");
+				var imgNode = document.createElement("img");
 				var txtNode = x[i].childNodes[0];
 				var igTxtNode = ig[i].childNodes[0];
+				var imgSrcTxt = imgSrc[i].childNodes[0].textContent;
+				    
+				imgNode.setAttribute("src",imgSrcText);
 				igNode.appendChild(igTxtNode);
 				igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
 				node.appendChild(txtNode);
 				ep.appendChild(node);
+				ep.appendChild(imgNode);
 				ep.appendChild(igNode);
 				document.getElementById("AllEps").appendChild(ep);
 			    }
