@@ -11,6 +11,9 @@ body {
 	background-color: rgba(45,50,175,0.9);
 	color: white;
 }
+h2 {
+	font-weight: bold;
+}
 @media only screen and (max-width: 3000px){
 	.img-title {
 		padding: 40px 0;
