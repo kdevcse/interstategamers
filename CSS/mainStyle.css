@@ -7,7 +7,7 @@ body {
 	margin-right: auto;
 	width: 93%;
 }
-.Episode, .p {
+.center-block > div > p {
 	background-color: rgba(45,50,175,0.9);
 }
 @media only screen and (max-width: 3000px){
