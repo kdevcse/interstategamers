@@ -20,9 +20,15 @@ h2 {
 	.img-title {
 		padding: 40px 0;
 	}
+	.center-block > .ep-list > div {
+		width: 740px;
+	}
 }
 @media only screen and (max-width: 480px){
 	.img-title {
 		padding: 20px 0;
+	}
+	.center-block > .ep-list > div {
+		width: 400px;
 	}
 }
