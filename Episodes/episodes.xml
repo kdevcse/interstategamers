@@ -3,13 +3,25 @@
 	<episode>
 		<title>Mario Kart 64</title>
 		<ig_score>84</ig_score>
+		<img>
+			<title>MK64</title>
+			<src>"/Images/MK64.png"</src>
+		</img>
 	</episode>
 	<episode>
 		<title>Star Fox 64</title>
 		<ig_score>94</ig_score>
+		<img>
+			<title>SF64</title>
+			<src>"/Images/SF64.png"</src>
+		</img>
 	</episode>
 	<episode>
 		<title>Roller Coaster Tycoon</title>
 		<ig_score>91</ig_score>
+		<img>
+			<title>RCT</title>
+			<src>"/Images/RCT.jpg"</src>
+		</img>
 	</episode>
 </podcast>
