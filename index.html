@@ -31,13 +31,17 @@
 			
 			function getRatings(xml) {
 			    var xmlDoc = xml.responseXML;
-			    var txtNode = "";
 			    var x = xmlDoc.getElementsByTagName("title");
+			    var ig = xmlDoc.getElementsByTagName("ig_score");
 			    for (var i = 0; i < x.length; i++) { 
 				var node = document.createElement("h1");
-				txtNode = x[i].childNodes[0];
+				var igNode = document.createElement("h2");
+				var txtNode = x[i].childNodes[0];
+				var igTxtNode = ig[i].childNodes[0];
+				igNode.appendChild(igTxtNode);
 				node.appendChild(txtNode);
 				document.getElementById("Episode").appendChild(node);
+				document.getElementById("Episode").appendChild(igNode);
 			    }
 			}
 		</script>
