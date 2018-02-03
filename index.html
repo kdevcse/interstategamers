@@ -14,5 +14,32 @@
 			<center><img src="/Images/HorLogo.png" class="img-responsive" alt="Responsive image"></img></center>
 		</div>
 	</div>
-</body>
+	<div class="center-block">
+		<p id="Episode"></p>
+		<p id="Rating"></p>
+		
+		<script>
+			var xhttp;
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+    				if (this.readyState == 4 && this.status == 200) {
+        				getRatings(this);
+   				}
+			};
+			xhttp.open("GET", "/Episodes/episodes.xml", true);
+			xhttp.send();
+			
+			function getRatings(xml) {
+			    var x, i, txt, xmlDoc; 
+			    xmlDoc = xml.responseXML;
+			    txt = "";
+			    x = xmlDoc.getElementsByTagName("title");
+			    for (i = 0; i < x.length; i++) { 
+				txt += x[i].childNodes[0].nodeValue + "<br>";
+			    }
+			    document.getElementById("Episode").innerHTML = txt;
+			}
+		</script>
+	</div>
+</body>	
 </html>
