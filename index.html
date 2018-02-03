@@ -43,6 +43,8 @@
 				var imgSrcTxt = imgSrc[i].childNodes[0].textContent;
 				    
 				imgNode.setAttribute("src",imgSrcTxt);
+				imgNode.setAttribute("class","img-responsive""img-responsive");
+				imgNode.setAttribute("alt","Responsive image");
 				igNode.appendChild(igTxtNode);
 				igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
 				node.appendChild(txtNode);
