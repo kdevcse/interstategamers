@@ -30,14 +30,15 @@
 			xhttp.send();
 			
 			function getRatings(xml) {
-			    var x, i, txt, xmlDoc; 
-			    xmlDoc = xml.responseXML;
-			    txt = "";
-			    x = xmlDoc.getElementsByTagName("title");
-			    for (i = 0; i < x.length; i++) { 
-				txt += x[i].childNodes[0].nodeValue + "<br>";
+			    var xmlDoc = xml.responseXML;
+			    var txt = "";
+			    var x = xmlDoc.getElementsByTagName("title");
+			    for (var i = 0; i < x.length; i++) { 
+				var node = document.createElement("p");
+				txt = x[i].childNodes[0].nodeValue;
+				node.appendChild(txt);
+				document.getElementById("Episode").appendChild(node);
 			    }
-			    document.getElementById("Episode").innerHTML = txt;
 			}
 		</script>
 	</div>
