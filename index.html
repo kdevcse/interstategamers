@@ -15,8 +15,7 @@
 		</div>
 	</div>
 	<div class="center-block">
-		<div id="Episode"></div>
-		<div id="Rating"></div>
+		<div class="ep-list" id="AllEps"></div>
 		
 		<script>
 			var xhttp;
@@ -33,15 +32,17 @@
 			    var xmlDoc = xml.responseXML;
 			    var x = xmlDoc.getElementsByTagName("title");
 			    var ig = xmlDoc.getElementsByTagName("ig_score");
-			    for (var i = 0; i < x.length; i++) { 
+			    for (var i = 0; i < x.length; i++) {
+				var ep = document.createElement("div");
 				var node = document.createElement("h1");
 				var igNode = document.createElement("h2");
 				var txtNode = x[i].childNodes[0];
 				var igTxtNode = ig[i].childNodes[0];
 				igNode.appendChild(igTxtNode);
 				node.appendChild(txtNode);
-				document.getElementById("Episode").appendChild(node);
-				document.getElementById("Episode").appendChild(igNode);
+				ep.appendChild(node);
+				ep.appendChild(igNode);
+				document.getElementById("AllEps").appendChild(ep);
 			    }
 			}
 		</script>
