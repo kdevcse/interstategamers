@@ -7,7 +7,7 @@ body {
 	margin-right: auto;
 	width: 93%;
 }
-.Episode.p {
+.Episode, .p {
 	background-color: blue;
 }
 @media only screen and (max-width: 3000px){
