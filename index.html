@@ -31,7 +31,7 @@
 			function getRatings(xml) {
 			    var xmlDoc = xml.responseXML;
 			    var x = xmlDoc.getElementsByTagName("title");
-			    var ig = xmlDoc.getElementsByTagName("ig_score");
+			    var ig = xmlDoc.getElementsByTagName("IGscore");
 			    var imgSrc = xmlDoc.getElementsByTagName("src");
 			    for (var i = 0; i < x.length; i++) {
 				var ep = document.createElement("div");
