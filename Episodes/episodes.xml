@@ -6,6 +6,7 @@
 		<img>
 			<picTitle>MK64</picTitle>
 			<src>/Images/MK64.png</src>
+			<href>http://www.theinterstategamers.review/d17c5991</href>
 		</img>
 	</episode>
 	<episode>
@@ -14,6 +15,7 @@
 		<img>
 			<picTitle>SF64</picTitle>
 			<src>/Images/SF64.png</src>
+			<href>http://www.theinterstategamers.review/2a899d86</href>
 		</img>
 	</episode>
 	<episode>
@@ -22,6 +24,7 @@
 		<img>
 			<picTitle>RCT</picTitle>
 			<src>/Images/RCT.jpg</src>
+			<href></href>
 		</img>
 	</episode>
 </podcast>
