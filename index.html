@@ -55,7 +55,7 @@
 				    
 				rating.setAttribute("class","wpac-rating");
 				var  ratingID = "product_id_" + i.toString();
-				rating.setAttribute("id",ratingID);
+				rating.setAttribute("data-wpac-chan",ratingID);
 				    
 				igNode.appendChild(igTxtNode);
 				igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
