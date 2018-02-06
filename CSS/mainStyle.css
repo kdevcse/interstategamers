@@ -35,7 +35,7 @@ h3 {
 	.center-block > .ep-list > div {
 		width: 740px;
 	}
-	.wp-rating-stars {
+	.wpac-rating {
 		display: inherit;
 		text-align:center;
 	}
@@ -47,7 +47,7 @@ h3 {
 	.center-block > .ep-list > div {
 		width: 100%;
 	}
-	.wp-rating-stars {
+	.wpac-rating {
 		display: inherit;
 		text-align:center;
 	}
