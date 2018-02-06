@@ -35,6 +35,10 @@ h3 {
 	.center-block > .ep-list > div {
 		width: 740px;
 	}
+	.center-block > .ep-list > div > a > img{
+		width: 350px;
+		height: 243px;
+	}
 	.wpac-rating {
 		display: inherit;
 		text-align:center;
@@ -46,6 +50,10 @@ h3 {
 	}
 	.center-block > .ep-list > div {
 		width: 100%;
+	}
+	.center-block > .ep-list > div > a > img{
+		width: 300px;
+		height: 208px;
 	}
 	.wpac-rating {
 		display: inherit;
