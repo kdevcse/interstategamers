@@ -36,8 +36,8 @@ h3 {
 		width: 740px;
 	}
 	.wp-rating-stars {
-		margin-left: auto;
-		margin-right: auto;
+		display: inherit;
+		text-align:center;
 	}
 }
 @media only screen and (max-width: 480px){
@@ -48,7 +48,7 @@ h3 {
 		width: 100%;
 	}
 	.wp-rating-stars {
-		margin-left: auto;
-		margin-right: auto;
+		display: inherit;
+		text-align:center;
 	}
 }
