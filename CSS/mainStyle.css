@@ -35,6 +35,10 @@ h3 {
 	.center-block > .ep-list > div {
 		width: 740px;
 	}
+	.wpac-rating {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 @media only screen and (max-width: 480px){
 	.img-title {
