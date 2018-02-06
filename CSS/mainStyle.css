@@ -47,4 +47,8 @@ h3 {
 	.center-block > .ep-list > div {
 		width: 100%;
 	}
+	.wpac-rating {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
