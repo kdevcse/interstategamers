@@ -35,7 +35,7 @@ h3 {
 	.center-block > .ep-list > div {
 		width: 740px;
 	}
-	.wpac-rating {
+	.wp-rating-stars {
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -47,7 +47,7 @@ h3 {
 	.center-block > .ep-list > div {
 		width: 100%;
 	}
-	.wpac-rating {
+	.wp-rating-stars {
 		margin-left: auto;
 		margin-right: auto;
 	}
