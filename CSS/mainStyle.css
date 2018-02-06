@@ -28,6 +28,10 @@ h2 {
 h3 {
 	text-align: center;
 }
+footer {
+	background-color: rgba(0,0,0,0.75);
+	text-align: center;
+}
 @media only screen and (max-width: 3000px){
 	.img-title {
 		padding: 40px 0;
@@ -42,6 +46,10 @@ h3 {
 	.wpac-rating {
 		display: inherit;
 		text-align:center;
+	}
+	footer {
+		margin-top: 60px;
+		padding: 50px 0 40px 0;
 	}
 }
 @media only screen and (max-width: 480px){
@@ -58,5 +66,9 @@ h3 {
 	.wpac-rating {
 		display: inherit;
 		text-align:center;
+	}
+	footer {
+		margin-top: 30px;
+		padding: 25px 0 20px 0;
 	}
 }
