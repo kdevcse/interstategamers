@@ -31,8 +31,8 @@
 		<title>Kirby and the Amazing Mirror</title>
 		<IGscore>91</IGscore>
 		<img>
-			<picTitle>RCT</picTitle>
-			<src>/Images/RCT.jpg</src>
+			<picTitle>KAM</picTitle>
+			<src>/Images/Kam.jpg</src>
 			<href>http://www.theinterstategamers.review/kam</href>
 		</img>
 	</episode>
@@ -40,8 +40,8 @@
 		<title>Metroid: Zero Mission</title>
 		<IGscore>91</IGscore>
 		<img>
-			<picTitle>RCT</picTitle>
-			<src>/Images/RCT.jpg</src>
+			<picTitle>MZM</picTitle>
+			<src>/Images/mzm.jpg</src>
 			<href>http://www.theinterstategamers.review/mzm</href>
 		</img>
 	</episode>
@@ -49,8 +49,8 @@
 		<title>Super Mario World</title>
 		<IGscore>91</IGscore>
 		<img>
-			<picTitle>RCT</picTitle>
-			<src>/Images/RCT.jpg</src>
+			<picTitle>SMW</picTitle>
+			<src>/Images/smw.jpg</src>
 			<href>http://www.theinterstategamers.review/smw</href>
 		</img>
 	</episode>
@@ -58,8 +58,8 @@
 		<title>Pokemon Stadium</title>
 		<IGscore>91</IGscore>
 		<img>
-			<picTitle>RCT</picTitle>
-			<src>/Images/RCT.jpg</src>
+			<picTitle>PS</picTitle>
+			<src>/Images/ps64.jpg</src>
 			<href>http://www.theinterstategamers.review/ps</href>
 		</img>
 	</episode>
@@ -67,8 +67,8 @@
 		<title>Tony Hawk's Pro Skater</title>
 		<IGscore>91</IGscore>
 		<img>
-			<picTitle>RCT</picTitle>
-			<src>/Images/RCT.jpg</src>
+			<picTitle>THPS</picTitle>
+			<src>/Images/thps.jpg</src>
 			<href>http://www.theinterstategamers.review/thps</href>
 		</img>
 	</episode>
@@ -76,8 +76,8 @@
 		<title>Banjo Kazooie</title>
 		<IGscore>91</IGscore>
 		<img>
-			<picTitle>RCT</picTitle>
-			<src>/Images/RCT.jpg</src>
+			<picTitle>BK</picTitle>
+			<src>/Images/bk.jpg</src>
 			<href>http://www.theinterstategamers.review/bk</href>
 		</img>
 	</episode>
@@ -85,8 +85,8 @@
 		<title>Stardew Valley</title>
 		<IGscore>91</IGscore>
 		<img>
-			<picTitle>RCT</picTitle>
-			<src>/Images/RCT.jpg</src>
+			<picTitle>Stardew Valley</picTitle>
+			<src>/Images/Stardew.jpg</src>
 			<href>http://www.theinterstategamers.review/stardew</href>
 		</img>
 	</episode>
@@ -94,8 +94,8 @@
 		<title>The Legend of Zelda: A Link To The Past</title>
 		<IGscore>91</IGscore>
 		<img>
-			<picTitle>RCT</picTitle>
-			<src>/Images/RCT.jpg</src>
+			<picTitle>Lttp</picTitle>
+			<src>/Images/Lttp.jpg</src>
 			<href>http://www.theinterstategamers.review/alttp</href>
 		</img>
 	</episode>
