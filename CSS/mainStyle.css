@@ -42,7 +42,7 @@ footer {
 	}
 	.center-block > .ep-list > div > a > img{
 		width: 350px;
-		height: 243px;
+		height: auto;
 	}
 	.wpac-rating {
 		display: inherit;
