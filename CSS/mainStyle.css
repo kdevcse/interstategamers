@@ -33,7 +33,13 @@ footer {
 	background-color: rgba(0,0,0,0.75);
 	text-align: center;
 }
-@media only screen and (max-width: 3000px){
+@media only screen and (max-width: 3000px){	
+	.center-block {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 93%;
+	}
 	.img-title {
 		padding: 40px 0;
 	}
@@ -54,6 +60,12 @@ footer {
 	}
 }
 @media only screen and (max-width: 480px){
+	.center-block {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 93%;
+	}
 	.img-title {
 		padding: 20px 0;
 	}
