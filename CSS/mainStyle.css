@@ -1,12 +1,6 @@
 body {
 	background-color: white;
 }
-.center-block{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 45%;
-}
 .center-block > .ep-list > div{
 	background-color: rgba(45,50,175,0.9);
 	border-radius: 6px;
@@ -38,7 +32,7 @@ footer {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-		width: 45%;
+		width: 65%;
 	}
 	.img-title {
 		padding: 40px 0;
