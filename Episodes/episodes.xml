@@ -2,7 +2,7 @@
 <podcast>
 	<episode>
 		<title>Mario Kart 64</title>
-		<IGscore>84</IGscore>
+		<IGscore>83.5</IGscore>
 		<img>
 			<picTitle>MK64</picTitle>
 			<src>/Images/MK64.png</src>
@@ -11,7 +11,7 @@
 	</episode>
 	<episode>
 		<title>Star Fox 64</title>
-		<IGscore>94</IGscore>
+		<IGscore>92.8</IGscore>
 		<img>
 			<picTitle>SF64</picTitle>
 			<src>/Images/SF64.png</src>
@@ -20,7 +20,7 @@
 	</episode>
 	<episode>
 		<title>Roller Coaster Tycoon</title>
-		<IGscore>91</IGscore>
+		<IGscore>90.5</IGscore>
 		<img>
 			<picTitle>RCT</picTitle>
 			<src>/Images/RCT.jpg</src>
@@ -29,7 +29,7 @@
 	</episode>
 	<episode>
 		<title>Kirby and the Amazing Mirror</title>
-		<IGscore>91</IGscore>
+		<IGscore>87.9</IGscore>
 		<img>
 			<picTitle>KAM</picTitle>
 			<src>/Images/Kam.jpg</src>
@@ -38,7 +38,7 @@
 	</episode>
 	<episode>
 		<title>Metroid: Zero Mission</title>
-		<IGscore>91</IGscore>
+		<IGscore>90.6</IGscore>
 		<img>
 			<picTitle>MZM</picTitle>
 			<src>/Images/mzm.jpg</src>
@@ -47,7 +47,7 @@
 	</episode>
 	<episode>
 		<title>Super Mario World</title>
-		<IGscore>91</IGscore>
+		<IGscore>96.3</IGscore>
 		<img>
 			<picTitle>SMW</picTitle>
 			<src>/Images/smw.jpg</src>
@@ -56,7 +56,7 @@
 	</episode>
 	<episode>
 		<title>Pokemon Stadium</title>
-		<IGscore>91</IGscore>
+		<IGscore>83.5</IGscore>
 		<img>
 			<picTitle>PS</picTitle>
 			<src>/Images/ps64.jpg</src>
@@ -65,7 +65,7 @@
 	</episode>
 	<episode>
 		<title>Tony Hawk's Pro Skater</title>
-		<IGscore>91</IGscore>
+		<IGscore>82.6</IGscore>
 		<img>
 			<picTitle>THPS</picTitle>
 			<src>/Images/thps.jpg</src>
@@ -74,7 +74,7 @@
 	</episode>
 	<episode>
 		<title>Banjo Kazooie</title>
-		<IGscore>91</IGscore>
+		<IGscore>92.5</IGscore>
 		<img>
 			<picTitle>BK</picTitle>
 			<src>/Images/bk.jpg</src>
@@ -83,7 +83,7 @@
 	</episode>
 	<episode>
 		<title>Stardew Valley</title>
-		<IGscore>91</IGscore>
+		<IGscore>90.7</IGscore>
 		<img>
 			<picTitle>Stardew Valley</picTitle>
 			<src>/Images/Stardew.jpg</src>
@@ -92,7 +92,7 @@
 	</episode>
 	<episode>
 		<title>The Legend of Zelda: A Link To The Past</title>
-		<IGscore>91</IGscore>
+		<IGscore>92.2</IGscore>
 		<img>
 			<picTitle>Lttp</picTitle>
 			<src>/Images/Lttp.jpg</src>
