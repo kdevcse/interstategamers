@@ -27,4 +27,76 @@
 			<href>http://www.theinterstategamers.review/rct</href>
 		</img>
 	</episode>
+	<episode>
+		<title>Kirby and the Amazing Mirror</title>
+		<IGscore>91</IGscore>
+		<img>
+			<picTitle>RCT</picTitle>
+			<src>/Images/RCT.jpg</src>
+			<href>http://www.theinterstategamers.review/kam</href>
+		</img>
+	</episode>
+	<episode>
+		<title>Metroid: Zero Mission</title>
+		<IGscore>91</IGscore>
+		<img>
+			<picTitle>RCT</picTitle>
+			<src>/Images/RCT.jpg</src>
+			<href>http://www.theinterstategamers.review/mzm</href>
+		</img>
+	</episode>
+	<episode>
+		<title>Super Mario World</title>
+		<IGscore>91</IGscore>
+		<img>
+			<picTitle>RCT</picTitle>
+			<src>/Images/RCT.jpg</src>
+			<href>http://www.theinterstategamers.review/smw</href>
+		</img>
+	</episode>
+	<episode>
+		<title>Pokemon Stadium</title>
+		<IGscore>91</IGscore>
+		<img>
+			<picTitle>RCT</picTitle>
+			<src>/Images/RCT.jpg</src>
+			<href>http://www.theinterstategamers.review/ps</href>
+		</img>
+	</episode>
+	<episode>
+		<title>Tony Hawk's Pro Skater</title>
+		<IGscore>91</IGscore>
+		<img>
+			<picTitle>RCT</picTitle>
+			<src>/Images/RCT.jpg</src>
+			<href>http://www.theinterstategamers.review/thps</href>
+		</img>
+	</episode>
+	<episode>
+		<title>Banjo Kazooie</title>
+		<IGscore>91</IGscore>
+		<img>
+			<picTitle>RCT</picTitle>
+			<src>/Images/RCT.jpg</src>
+			<href>http://www.theinterstategamers.review/bk</href>
+		</img>
+	</episode>
+	<episode>
+		<title>Stardew Valley</title>
+		<IGscore>91</IGscore>
+		<img>
+			<picTitle>RCT</picTitle>
+			<src>/Images/RCT.jpg</src>
+			<href>http://www.theinterstategamers.review/stardew</href>
+		</img>
+	</episode>
+	<episode>
+		<title>The Legend of Zelda: A Link To The Past</title>
+		<IGscore>91</IGscore>
+		<img>
+			<picTitle>RCT</picTitle>
+			<src>/Images/RCT.jpg</src>
+			<href>http://www.theinterstategamers.review/alttp</href>
+		</img>
+	</episode>
 </podcast>
