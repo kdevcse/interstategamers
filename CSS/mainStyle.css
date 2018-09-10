@@ -1,6 +1,11 @@
 body {
 	background-color: white;
 }
+.center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 .center-block > .ep-list > div{
 	background-color: rgba(45,50,175,0.9);
 	border-radius: 6px;
@@ -10,7 +15,7 @@ body {
 	margin-right: auto;
 }
 .center-block > .ep-list > div > a > img{
-	width: 60%;
+	width: 85%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
@@ -23,15 +28,16 @@ h2 {
 h3 {
 	text-align: center;
 }
+.wpac-rating {
+	display: inherit;
+	text-align:center;
+}
 footer {
 	background-color: rgba(0,0,0,0.75);
 	text-align: center;
 }
 @media only screen and (max-width: 3000px){	
 	.center-block {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
 		width: 75%;
 	}
 	.img-title {
@@ -40,14 +46,6 @@ footer {
 	.center-block > .ep-list > div {
 		width: 50%;
 	}
-	.center-block > .ep-list > div > a > img{
-		width: 85%;
-		height: auto;
-	}
-	.wpac-rating {
-		display: inherit;
-		text-align:center;
-	}
 	footer {
 		margin-top: 60px;
 		padding: 50px 0 40px 0;
@@ -55,9 +53,6 @@ footer {
 }
 @media only screen and (max-width: 480px){
 	.center-block {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
 		width: 93%;
 	}
 	.img-title {
@@ -65,14 +60,6 @@ footer {
 	}
 	.center-block > .ep-list > div {
 		width: 100%;
-	}
-	.center-block > .ep-list > div > a > img{
-		width: 85%;
-		height: auto;
-	}
-	.wpac-rating {
-		display: inherit;
-		text-align:center;
 	}
 	footer {
 		margin-top: 30px;
