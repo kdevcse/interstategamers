@@ -15,7 +15,7 @@ body {
 .dropdown-menu{
 	text-align: center;
 	width: 100%;
-	min-width: 0px;
+	min-width: 100%;
 }
 .center-block {
 	display: block;
@@ -72,7 +72,10 @@ footer {
 		padding: 50px 0 40px 0;
 	}
 }
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 480px){	
+	.dropdown{
+		width: 30%;
+	}
 	.center-block {
 		width: 93%;
 	}
