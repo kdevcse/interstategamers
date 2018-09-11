@@ -56,7 +56,9 @@
 					var txtNode = x[i].childNodes[0];
 					var igTxtNode = ig[i].childNodes[0];
 					var imgSrcTxt = imgSrc[i].childNodes[0].textContent;
-
+					
+					ep.setAttribute("class","ep");
+					
 					imgNode.setAttribute("src",imgSrcTxt);
 					imgNode.setAttribute("class","img-responsive");
 					imgNode.setAttribute("alt","Responsive image");
