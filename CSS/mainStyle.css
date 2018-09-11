@@ -2,7 +2,7 @@ body {
 	background-color: white;
 }
 
-.open>.dropdown-toggle.btn-primary{
+.btn btn-primary dropdown-toggle{
 	background-color: #2d32af;
 	border-color: #2d32af;
 }
