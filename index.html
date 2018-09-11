@@ -42,7 +42,7 @@
 				var arr = [];
 				
 				for(var i = 0; i < ele.length; i++){
-					arr.push({i,ele[i].childNodes[0]});
+					arr.push({index: i, score: ele[i].childNodes[0]});
 				}
 				
 				return arr.sort();
