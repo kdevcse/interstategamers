@@ -37,45 +37,50 @@
 			xhttp.open("GET", "/Episodes/episodes.xml", true);
 			xhttp.send();
 			
+			function sortBy(xmlDoc,category){
+				var ele = xmlDoc.getElementsByTagName(category);
+			}
+			
 			function getRatings(xml) {
-			    var xmlDoc = xml.responseXML;
-			    var x = xmlDoc.getElementsByTagName("title");
-			    var ig = xmlDoc.getElementsByTagName("IGscore");
-			    var imgSrc = xmlDoc.getElementsByTagName("src");
-			    var href = xmlDoc.getElementsByTagName("href");
-			    for (var i = 0; i < x.length; i++) {
-				var ep = document.createElement("div");
-				var node = document.createElement("h2");
-				var igNode = document.createElement("h3");
-				var imgNode = document.createElement("img");
-				var aNode = document.createElement("a");
-				var rating = document.createElement("div");
-				    
-				var linkNode = href[i].childNodes[0].textContent;
-				var txtNode = x[i].childNodes[0];
-				var igTxtNode = ig[i].childNodes[0];
-				var imgSrcTxt = imgSrc[i].childNodes[0].textContent;
-				    
-				imgNode.setAttribute("src",imgSrcTxt);
-				imgNode.setAttribute("class","img-responsive");
-				imgNode.setAttribute("alt","Responsive image");
-				    
-				aNode.setAttribute("href",linkNode);
-				    
-				rating.setAttribute("class","wpac-rating");
-				var  ratingID = "product_id_" + i.toString();
-				rating.setAttribute("data-wpac-chan",ratingID);
-				    
-				igNode.appendChild(igTxtNode);
-				igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
-				node.appendChild(txtNode);
-				aNode.appendChild(imgNode);
-				ep.appendChild(node);
-				ep.appendChild(aNode);
-				ep.appendChild(igNode);
-				ep.appendChild(rating)
-				document.getElementById("AllEps").appendChild(ep);
-			    }
+				var xmlDoc = xml.responseXML;
+				var x = xmlDoc.getElementsByTagName("title");
+				var ig = xmlDoc.getElementsByTagName("IGscore");
+				var imgSrc = xmlDoc.getElementsByTagName("src");
+				var href = xmlDoc.getElementsByTagName("href");
+				
+				for (var i = 0; i < x.length; i++) {
+					var ep = document.createElement("div");
+					var node = document.createElement("h2");
+					var igNode = document.createElement("h3");
+					var imgNode = document.createElement("img");
+					var aNode = document.createElement("a");
+					var rating = document.createElement("div");
+
+					var linkNode = href[i].childNodes[0].textContent;
+					var txtNode = x[i].childNodes[0];
+					var igTxtNode = ig[i].childNodes[0];
+					var imgSrcTxt = imgSrc[i].childNodes[0].textContent;
+
+					imgNode.setAttribute("src",imgSrcTxt);
+					imgNode.setAttribute("class","img-responsive");
+					imgNode.setAttribute("alt","Responsive image");
+
+					aNode.setAttribute("href",linkNode);
+
+					rating.setAttribute("class","wpac-rating");
+					var  ratingID = "product_id_" + i.toString();
+					rating.setAttribute("data-wpac-chan",ratingID);
+
+					igNode.appendChild(igTxtNode);
+					igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
+					node.appendChild(txtNode);
+					aNode.appendChild(imgNode);
+					ep.appendChild(node);
+					ep.appendChild(aNode);
+					ep.appendChild(igNode);
+					ep.appendChild(rating)
+					document.getElementById("AllEps").appendChild(ep);
+			    	}
 			}
 		</script>
 	</div>
