@@ -2,10 +2,9 @@ body {
 	background-color: white;
 }
 
-.dropdown-toggle{
+.open>.dropdown-toggle.btn-primary{
 	background-color: #2d32af;
 	border-color: #2d32af;
-	width: 100%;
 }
 .btn-primary{
 	background-color: #2d32af;
