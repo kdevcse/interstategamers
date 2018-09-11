@@ -27,6 +27,9 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+.center-block > .ep-list {
+	padding-bottom: 10px;
+}
 .center-block > .ep-list > div{
 	background-color: rgba(45,50,175,0.9);
 	border-radius: 6px;
