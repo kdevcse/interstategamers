@@ -1,9 +1,10 @@
 body {
 	background-color: white;
 }
-.btn-primary{
+.btn > .btn-primary{
 	background-color: #2d32af;
 	border-color: #2d32af;
+	width: 100%;
 }
 .dropdown {
 	width: 30%;
