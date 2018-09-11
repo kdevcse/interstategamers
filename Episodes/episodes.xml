@@ -3,6 +3,9 @@
 	<episode>
 		<title>Mario Kart 64</title>
 		<IGscore>83.5</IGscore>
+		<gameplay>81.5</gameplay>
+		<aesthetics>88.5</aesthetics>
+		<content>80.5</content>
 		<img>
 			<picTitle>MK64</picTitle>
 			<src>/Images/MK64.png</src>
@@ -12,6 +15,9 @@
 	<episode>
 		<title>Star Fox 64</title>
 		<IGscore>92.8</IGscore>
+		<gameplay>97.5</gameplay>
+		<aesthetics>96.5</aesthetics>
+		<content>84.5</content>
 		<img>
 			<picTitle>SF64</picTitle>
 			<src>/Images/SF64.png</src>
@@ -21,6 +27,9 @@
 	<episode>
 		<title>Roller Coaster Tycoon</title>
 		<IGscore>90.5</IGscore>
+		<gameplay>96</gameplay>
+		<aesthetics>88</aesthetics>
+		<content>87.5</content>
 		<img>
 			<picTitle>RCT</picTitle>
 			<src>/Images/RCT.jpg</src>
@@ -30,6 +39,9 @@
 	<episode>
 		<title>Kirby and the Amazing Mirror</title>
 		<IGscore>87.9</IGscore>
+		<gameplay>86.5</gameplay>
+		<aesthetics>85.25</aesthetics>
+		<content>92</content>
 		<img>
 			<picTitle>KAM</picTitle>
 			<src>/Images/Kam.jpg</src>
@@ -39,6 +51,9 @@
 	<episode>
 		<title>Metroid: Zero Mission</title>
 		<IGscore>90.6</IGscore>
+		<gameplay>94.5</gameplay>
+		<aesthetics>94.5</aesthetics>
+		<content>80</content>
 		<img>
 			<picTitle>MZM</picTitle>
 			<src>/Images/mzm.jpg</src>
@@ -48,6 +63,9 @@
 	<episode>
 		<title>Super Mario World</title>
 		<IGscore>96.3</IGscore>
+		<gameplay>95</gameplay>
+		<aesthetics>98</aesthetics>
+		<content>96</content>
 		<img>
 			<picTitle>SMW</picTitle>
 			<src>/Images/smw.jpg</src>
@@ -57,6 +75,9 @@
 	<episode>
 		<title>Pokemon Stadium</title>
 		<IGscore>83.5</IGscore>
+		<gameplay>85</gameplay>
+		<aesthetics>85</aesthetics>
+		<content>80.5</content>
 		<img>
 			<picTitle>PS</picTitle>
 			<src>/Images/ps64.jpg</src>
@@ -66,6 +87,9 @@
 	<episode>
 		<title>Tony Hawk's Pro Skater</title>
 		<IGscore>82.6</IGscore>
+		<gameplay>87.5</gameplay>
+		<aesthetics>79.25</aesthetics>
+		<content></content>
 		<img>
 			<picTitle>THPS</picTitle>
 			<src>/Images/thps.jpg</src>
@@ -75,6 +99,9 @@
 	<episode>
 		<title>Banjo Kazooie</title>
 		<IGscore>92.5</IGscore>
+		<gameplay>89.5</gameplay>
+		<aesthetics>95</aesthetics>
+		<content></content>
 		<img>
 			<picTitle>BK</picTitle>
 			<src>/Images/bk.jpg</src>
@@ -84,6 +111,9 @@
 	<episode>
 		<title>Stardew Valley</title>
 		<IGscore>90.7</IGscore>
+		<gameplay>89.5</gameplay>
+		<aesthetics>87</aesthetics>
+		<content>95.5</content>
 		<img>
 			<picTitle>Stardew Valley</picTitle>
 			<src>/Images/Stardew.jpg</src>
@@ -93,6 +123,9 @@
 	<episode>
 		<title>The Legend of Zelda: A Link To The Past</title>
 		<IGscore>92.2</IGscore>
+		<gameplay>89</gameplay>
+		<aesthetics>91.5</aesthetics>
+		<content>96</content>
 		<img>
 			<picTitle>Lttp</picTitle>
 			<src>/Images/Lttp.jpg</src>
