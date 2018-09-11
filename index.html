@@ -45,7 +45,7 @@
 					arr.push({index: i, score: ele[i].childNodes[0].textContent});
 				}
 				
-				return arr.sort(function(a, b){return b - a});
+				return arr.sort(function(a, b){return b.score - a.score});
 			}
 			
 			function getRatings(xml) {
