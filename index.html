@@ -42,10 +42,10 @@
 				var arr = [];
 				
 				for(var i = 0; i < ele.length; i++){
-					arr.push({index: i, score: ele[i].childNodes[0]});
+					arr.push({index: i, score: ele[i].childNodes[0].textContent});
 				}
 				
-				return arr.sort();
+				return arr.sort(function(a, b){return b - a});
 			}
 			
 			function getRatings(xml) {
