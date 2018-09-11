@@ -1,7 +1,10 @@
 body {
 	background-color: white;
 }
-
+.btn-primary{
+	background-color: #2d32af;
+	border-color: #e11932;
+}
 .dropdown {
 	display: block;
 	margin-left: auto;
