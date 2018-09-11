@@ -64,17 +64,23 @@
 					var imgNode = document.createElement("img");
 					var aNode = document.createElement("a");
 					var rating = document.createElement("div");
+					
 					var linkNode = href[igSort[i].index].childNodes[0].textContent;
 					var txtNode = x[igSort[i].index].childNodes[0];
 					var igTxtNode = ig[igSort[i].index].childNodes[0];
 					var imgSrcTxt = imgSrc[igSort[i].index].childNodes[0].textContent;
+										
+					ep.setAttribute("class","ep");
+					
 					imgNode.setAttribute("src",imgSrcTxt);
 					imgNode.setAttribute("class","img-responsive");
 					imgNode.setAttribute("alt","Responsive image");
+					
 					aNode.setAttribute("href",linkNode);
 					rating.setAttribute("class","wpac-rating");
 					var  ratingID = "product_id_" + igSort[i].index.toString();
 					rating.setAttribute("data-wpac-chan",ratingID);
+					
 					igNode.appendChild(igTxtNode);
 					igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
 					node.appendChild(txtNode);
