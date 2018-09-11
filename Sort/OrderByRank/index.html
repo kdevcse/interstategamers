@@ -73,7 +73,7 @@
 					imgNode.setAttribute("alt","Responsive image");
 					aNode.setAttribute("href",linkNode);
 					rating.setAttribute("class","wpac-rating");
-					var  ratingID = "product_id_" + i.toString();
+					var  ratingID = "product_id_" + igSort[i].index.toString();
 					rating.setAttribute("data-wpac-chan",ratingID);
 					igNode.appendChild(igTxtNode);
 					igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
