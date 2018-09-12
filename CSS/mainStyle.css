@@ -38,7 +38,7 @@ body {
 	margin-right: auto;
 }
 .center-block > .ep-list > div > a > img{
-	width: 85%;
+	width: 60%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
@@ -77,15 +77,20 @@ footer {
 	background-color: rgba(0,0,0,0.75);
 	text-align: center;
 }
-@media only screen and (max-width: 3000px){	
+@media only screen and (max-width: 3000px){
 	.center-block {
 		width: 75%;
+	}
+	.center-block > .ep-list > div > a > img{
+		width: 60%;
 	}
 	.img-title {
 		padding: 40px 0;
 	}
 	.center-block > .ep-list > div {
-		width: 50%;
+		width: 60%;
+		max-width: 634.5px;
+		min-width: 232.5px;
 	}
 	footer {
 		margin-top: 60px;
@@ -98,6 +103,9 @@ footer {
 	}
 	.center-block {
 		width: 93%;
+	}
+	.center-block > .ep-list > div > a > img{
+		width: 85%;
 	}
 	.img-title {
 		padding: 20px 0;
