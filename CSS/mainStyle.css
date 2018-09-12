@@ -45,9 +45,9 @@ body {
 	text-align: center;
 }
 .prof-ratings > .inline-ratings {
-	
+	padding-top: 10px;
 }
-.prof-ratings > .inline-ratings > .img-responsive {
+.prof-ratings > .inline-ratings >  {
 	display: inline-block;
 	max-width: 10%;
 }
