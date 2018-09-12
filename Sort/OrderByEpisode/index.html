@@ -37,46 +37,87 @@
 			xhttp.open("GET", "/../../Episodes/episodes.xml", true);
 			xhttp.send();
 			
-			function getRatings(xml) {
-				var xmlDoc = xml.responseXML;
+			function getRatings(xml) {var xmlDoc = xml.responseXML;
 				var x = xmlDoc.getElementsByTagName("title");
-				var ig = xmlDoc.getElementsByTagName("IGscore");
 				var imgSrc = xmlDoc.getElementsByTagName("src");
 				var href = xmlDoc.getElementsByTagName("href");
+				var igRank = xmlDoc.getElementsByTagName("IGscore");
+				var ignRank = xmlDoc.getElementsByTagName("ign");
+				var metaRank = xmlDoc.getElementsByTagName("metac");
 				
 				for (var i = 0; i < x.length; i++) {
 					var ep = document.createElement("div");
-					var node = document.createElement("h2");
-					var igNode = document.createElement("h3");
+					var title = document.createElement("h2");
 					var imgNode = document.createElement("img");
 					var aNode = document.createElement("a");
+					var profRatings = document.createElement("center");
+					var igLogo = document.createElement("img");
+					var igRankTxt = document.createElement("p");
+					var ignLogo = document.createElement("img");
+					var ignRankTxt = document.createElement("p");
+					var metaLogo = document.createElement("img");
+					var metaRankTxt = document.createElement("p");
 					var rating = document.createElement("div");
 					
-					var linkNode = href[i].childNodes[0].textContent;
-					var txtNode = x[i].childNodes[0];
-					var igTxtNode = ig[i].childNodes[0];
-					var imgSrcTxt = imgSrc[i].childNodes[0].textContent;
+					var igRankNode = igRank[i].childNodes[0];
+					var ignRankNode = ignRank[i].childNodes[0];
+					var metaRankNode = metaRank[i].childNodes[0];
+					
+					var rankImgStyle = "display: inline-block; max-width: 14%; padding-right: 5px;";
+					var rankPStyle = "display: inline-block; font-size: 23px; padding-right: 12px;";
 					
 					ep.setAttribute("class","ep");
 					
-					imgNode.setAttribute("src",imgSrcTxt);
+					imgNode.setAttribute("src",imgSrc[i].childNodes[0].textContent);
 					imgNode.setAttribute("class","img-responsive");
 					imgNode.setAttribute("alt","Responsive image");
 					
-					aNode.setAttribute("href",linkNode);
-					rating.setAttribute("class","wpac-rating");
-					var  ratingID = "product_id_" + i.toString();
-					rating.setAttribute("data-wpac-chan",ratingID);
+					aNode.setAttribute("href",href[i].childNodes[0].textContent);
 					
-					igNode.appendChild(igTxtNode);
-					igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
-					node.appendChild(txtNode);
+					profRatings.setAttribute("class","inline-ratings");
+					profRatings.setAttribute("style","padding-top: 10px;");
+					
+					igLogo.setAttribute("src","/Images/IGLogo.png");
+					igLogo.setAttribute("class","img-responsive");
+					igLogo.setAttribute("alt","Responsive image");
+					igLogo.setAttribute("style",rankImgStyle);
+					
+					ignLogo.setAttribute("src","/Images/IgnLogo.png");
+					ignLogo.setAttribute("class","img-responsive");
+					ignLogo.setAttribute("alt","Responsive image");
+					ignLogo.setAttribute("style","display: inline-block; max-width: 16%; padding-right: 5px;");
+					
+					metaLogo.setAttribute("src","/Images/MetaLogo.png");
+					metaLogo.setAttribute("class","img-responsive");
+					metaLogo.setAttribute("alt","Responsive image");
+					metaLogo.setAttribute("style",rankImgStyle);
+										
+					igRankTxt.setAttribute("style",rankPStyle);
+					ignRankTxt.setAttribute("style",rankPStyle);
+					metaRankTxt.setAttribute("style",rankPStyle);
+					rating.setAttribute("class","wpac-rating");
+					rating.setAttribute("data-wpac-chan","product_id_" + i.toString());
+					
+					title.appendChild(x[i].childNodes[0]);
+					
 					aNode.appendChild(imgNode);
-					ep.appendChild(node);
+					
+					profRatings.appendChild(igLogo);
+					igRankTxt.textContent = igRankNode.textContent;
+					profRatings.appendChild(igRankTxt);
+					profRatings.appendChild(ignLogo);
+					ignRankTxt.textContent = ignRankNode.textContent;
+					profRatings.appendChild(ignRankTxt);
+					profRatings.appendChild(metaLogo);
+					metaRankTxt.textContent = metaRankNode.textContent;
+					profRatings.appendChild(metaRankTxt);
+					
+					ep.appendChild(title);
 					ep.appendChild(aNode);
-					ep.appendChild(igNode);
-					ep.appendChild(rating)
-					document.getElementById("AllEps").appendChild(ep);
+					ep.appendChild(profRatings);
+					ep.appendChild(rating);
+					
+					document.getElementById("AllEps").appendChild(ep);			    	
 			    	}
 			}
 		</script>
