@@ -1,12 +1,11 @@
 body {
 	background-color: white;
 }
-
-.btn btn-primary dropdown-toggle{
+.btn btn-primary dropdown-toggle {
 	background-color: rgba(45,50,175,0.9);
 	border-color: rgba(45,50,175,0.9);
 }
-.btn-primary{
+.btn-primary {
 	background-color: rgba(45,50,175,0.9);
 	border-color: rgba(45,50,175,0.9);
 	width: 100%;
@@ -44,6 +43,9 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+}
+.inline-ratings {
+	display: inline-block;
 }
 h2 {
 	text-align: center;
