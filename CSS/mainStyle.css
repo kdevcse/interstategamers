@@ -44,8 +44,9 @@ body {
 	margin-right: auto;
 	text-align: center;
 }
-.inline-ratings {
+.prof-ratings > .inline-ratings {
 	display: inline-block;
+	max-width: 10%;
 }
 h2 {
 	text-align: center;
