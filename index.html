@@ -132,6 +132,10 @@
 					
 					aNode.appendChild(imgNode);
 					
+					gameplayCenter.appendChild(gameplayCanvas);
+					aestheticsCenter.appendChild(aestheticsCanvas);
+					contentCenter.appendChild(contentCanvas);
+					
 					proRatings.appendChild(igLogo);
 					igRankTxt.textContent = igRankNode.textContent;
 					proRatings.appendChild(igRankTxt);
@@ -144,9 +148,9 @@
 					
 					ep.appendChild(title);
 					ep.appendChild(aNode);
-					ep.appendChild(gameplayCanvas);
-					ep.appendChild(aestheticsCanvas);
-					ep.appendChild(contentCanvas);
+					ep.appendChild(gameplayCenter);
+					ep.appendChild(aestheticsCenter);
+					ep.appendChild(contentCenter);
 					ep.appendChild(proRatings);
 					ep.appendChild(rating);
 					
