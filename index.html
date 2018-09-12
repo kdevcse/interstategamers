@@ -55,10 +55,13 @@
 					var imgNode = document.createElement("img");
 					var aNode = document.createElement("a");
 					var gameplayCenter = document.createElement("center");
+					var gameplayTxt = document.createElement("p");
 					var gameplayCanvas = document.createElement("canvas");
 					var aestheticsCenter = document.createElement("center");
+					var aestheticsTxt = document.createElement("p");
 					var aestheticsCanvas = document.createElement("canvas");
 					var contentCenter = document.createElement("center");
+					var contentTxt = document.createElement("p");
 					var contentCanvas = document.createElement("canvas");
 					var proRatings = document.createElement("center");
 					var igLogo = document.createElement("img");
@@ -87,20 +90,20 @@
 					
 					gameplayCenter.setAttribute("style","padding-top: 10px;");
 					
-					gameplayCanvas.setAttribute("width","90%");
-					gameplayCanvas.setAttribute("height","15%");
+					gameplayCanvas.setAttribute("width","190%");
+					gameplayCanvas.setAttribute("height","20%");
 					gameplayCanvas.setAttribute("style",barStyle);
 					
 					aestheticsCenter.setAttribute("style","padding-top: 10px;");
 					
-					aestheticsCanvas.setAttribute("width","90%");
-					aestheticsCanvas.setAttribute("height","15%");
+					aestheticsCanvas.setAttribute("width","190%");
+					aestheticsCanvas.setAttribute("height","20%");
 					aestheticsCanvas.setAttribute("style",barStyle);
 					
 					contentCenter.setAttribute("style","padding-top: 10px;");
 					
-					contentCanvas.setAttribute("width","90%");
-					contentCanvas.setAttribute("height","15%");
+					contentCanvas.setAttribute("width","190%");
+					contentCanvas.setAttribute("height","20%");
 					contentCanvas.setAttribute("style",barStyle);
 					
 					proRatings.setAttribute("class","inline-ratings");
@@ -132,8 +135,15 @@
 					
 					aNode.appendChild(imgNode);
 					
+					gameplayTxt.textContent = "Gameplay";
+					aestheticsTxt.textContent = "Aesthetics";
+					contentTxt.textContent = "Content";
+					
+					gameplayCenter.appendChild(gameplayTxt);
 					gameplayCenter.appendChild(gameplayCanvas);
+					aestheticsCenter.appendChild(aestheticsTxt);
 					aestheticsCenter.appendChild(aestheticsCanvas);
+					contentCenter.appendChild(contentTxt);
 					contentCenter.appendChild(contentCanvas);
 					
 					proRatings.appendChild(igLogo);
