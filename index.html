@@ -52,7 +52,7 @@
 					var imgNode = document.createElement("img");
 					var aNode = document.createElement("a");
 					var igNode = document.createElement("h3");
-					var profRatings = document.createElement("div");
+					var profRatings = document.createElement("center");
 					var igLogo = document.createElement("img");
 					var igRankTxt = document.createElement("p");
 					var ignLogo = document.createElement("img");
@@ -77,6 +77,7 @@
 					aNode.setAttribute("href",href[i].childNodes[0].textContent);
 					
 					profRatings.setAttribute("class","inline-ratings");
+					profRatings.setAttribute("style","padding-top: 10px;");
 					
 					igLogo.setAttribute("src","/Images/IGLogo.png");
 					igLogo.setAttribute("class","img-responsive");
