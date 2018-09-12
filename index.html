@@ -40,43 +40,77 @@
 			function getRatings(xml) {
 				var xmlDoc = xml.responseXML;
 				var x = xmlDoc.getElementsByTagName("title");
-				var ig = xmlDoc.getElementsByTagName("IGscore");
 				var imgSrc = xmlDoc.getElementsByTagName("src");
 				var href = xmlDoc.getElementsByTagName("href");
+				var igRank = xmlDoc.getElementsByTagName("IGscore");
+				var ignRank = xmlDoc.getElementsByTagName("ign");
+				var metaRank = xmlDoc.getElementsByTagName("metac");
 				
 				for (var i = 0; i < x.length; i++) {
 					var ep = document.createElement("div");
-					var node = document.createElement("h2");
-					var igNode = document.createElement("h3");
+					var title = document.createElement("h2");
 					var imgNode = document.createElement("img");
 					var aNode = document.createElement("a");
+					var igNode = document.createElement("h3");
+					var profRatings = document.createElement("div");
+					var igLogo = document.createElement("img");
+					var igRankTxt = document.createElement("p");
+					var ignLogo = document.createElement("img");
+					var ignRankTxt = document.createElement("p");
+					var metaLogo = document.createElement("img");
+					var metaRankTxt = document.createElement("p");
 					var rating = document.createElement("div");
-
-					var linkNode = href[i].childNodes[0].textContent;
-					var txtNode = x[i].childNodes[0];
-					var igTxtNode = ig[i].childNodes[0];
-					var imgSrcTxt = imgSrc[i].childNodes[0].textContent;
+					
+					var igRankNode = igRank[i].childNodes[0];
 					
 					ep.setAttribute("class","ep");
 					
-					imgNode.setAttribute("src",imgSrcTxt);
+					imgNode.setAttribute("src",imgSrc[i].childNodes[0].textContent);
 					imgNode.setAttribute("class","img-responsive");
 					imgNode.setAttribute("alt","Responsive image");
-
-					aNode.setAttribute("href",linkNode);
+					
+					aNode.setAttribute("href",href[i].childNodes[0].textContent);
+					
+					profRatings.setAttribute("class","inline-ratings");
+					
+					igLogo.setAttribute("src","/Images/IGLogo.png");
+					igLogo.setAttribute("class","img-responsive");
+					igLogo.setAttribute("alt","Responsive image");
+					
+					ignLogo.setAttribute("src","/Images/IgnLogo.png");
+					ignLogo.setAttribute("class","img-responsive");
+					ignLogo.setAttribute("alt","Responsive image");
+					
+					metaLogo.setAttribute("src","/Images/MetaLogo.png");
+					metaLogo.setAttribute("class","img-responsive");
+					metaLogo.setAttribute("alt","Responsive image");
 
 					rating.setAttribute("class","wpac-rating");
-					var  ratingID = "product_id_" + i.toString();
-					rating.setAttribute("data-wpac-chan",ratingID);
-
-					igNode.appendChild(igTxtNode);
-					igNode.childNodes[0].textContent = "IG Score: " + igTxtNode.textContent;
-					node.appendChild(txtNode);
+					rating.setAttribute("data-wpac-chan","product_id_" + i.toString());
+					
+					title.appendChild(x[i].childNodes[0]);
+					
 					aNode.appendChild(imgNode);
-					ep.appendChild(node);
+					
+					profRatings.appendChild(igLogo);
+					igRankTxt.innerHtml = igRankNode.textContent;
+					profRatings.appendChild(igRankTxt);
+					profRatings.appendChild(ignLogo);
+					ignRankTxt.innerHtml = ignRank.childNodes[0].textContent;
+					profRatings.appendChild(ignRankTxt);
+					profRatings.appendChild(metaLogo);
+					metaRankTxt.innerHtml = metaRank.childNodes[0].textContent;
+					profRatings.appendChild(metaRankTxt);
+
+					igNode.appendChild(igRankNode);
+					igNode.childNodes[0].textContent = igRankNode.textContent;
+					
+					ep.appendChild(title);
 					ep.appendChild(aNode);
+					ep.appendChild(profRatings);
 					ep.appendChild(igNode);
-					ep.appendChild(rating)
+					ep.appendChild(rating);
+					
 					document.getElementById("AllEps").appendChild(ep);
 			    	}
 			}
