@@ -45,12 +45,18 @@
 				var igRank = xmlDoc.getElementsByTagName("IGscore");
 				var ignRank = xmlDoc.getElementsByTagName("ign");
 				var metaRank = xmlDoc.getElementsByTagName("metac");
+				var gameplay = xmlDoc.getElementsByTagName("gameplay");
+				var aesthetics = xmlDoc.getElementsByTagName("aesthetics");
+				var content = xmlDoc.getElementsByTagName("content");
 				
 				for (var i = 0; i < x.length; i++) {
 					var ep = document.createElement("div");
 					var title = document.createElement("h2");
 					var imgNode = document.createElement("img");
 					var aNode = document.createElement("a");
+					var gameplayCanvas = document.createElement("canvas");
+					var aestheticsCanvas = document.createElement("canvas");
+					var contentCanvas = document.createElement("canvas");
 					var profRatings = document.createElement("center");
 					var igLogo = document.createElement("img");
 					var igRankTxt = document.createElement("p");
@@ -66,6 +72,7 @@
 					
 					var rankImgStyle = "display: inline-block; max-width: 14%; padding-right: 5px;";
 					var rankPStyle = "display: inline-block; font-size: 23px; padding-right: 12px;";
+					var barStyle = "padding-top: 10px; padding-bottom: 10px; border:1px solid #000000;";
 					
 					ep.setAttribute("class","ep");
 					
@@ -74,6 +81,10 @@
 					imgNode.setAttribute("alt","Responsive image");
 					
 					aNode.setAttribute("href",href[i].childNodes[0].textContent);
+					
+					gameplayCanvas.setAttribute("width","75%");
+					gameplayCanvas.setAttribute("height","10%");
+					gameplayCanvas.setAttribute("style",barStyle);
 					
 					profRatings.setAttribute("class","inline-ratings");
 					profRatings.setAttribute("style","padding-top: 10px;");
@@ -116,6 +127,9 @@
 					
 					ep.appendChild(title);
 					ep.appendChild(aNode);
+					ep.appendChild(gameplayCanvas);
+					ep.appendChild(aestheticsCanvas);
+					ep.appendChild(contentCanvas);
 					ep.appendChild(profRatings);
 					ep.appendChild(rating);
 					
