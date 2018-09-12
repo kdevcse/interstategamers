@@ -55,19 +55,17 @@ body {
 	display: inline-block;
 }
 .meter {
-	width:200px;
-	height:50px;
 	border:1px solid white;
 	border-radius: 2px;
 	position:relative;
 }
-.meter:after {
+.meter::after {
 	content:'\A';
 	position:absolute;
 	background:green;
 	top:0; bottom:0;
 	left:0;
-	width: attr(anim-width) %;
+	width: attr(anim-width)%;
 	-webkit-animation: filler 1s ease-in-out;
 	-moz-animation: filler 1s ease-in-out;
 	animation: filler 1s ease-in-out;
