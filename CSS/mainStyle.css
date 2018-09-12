@@ -59,7 +59,7 @@ body {
 	border-radius: 2px;
 	position:relative;
 }
-.meter::after {
+.meter:after {
 	content:'\A';
 	position:absolute;
 	background:green;
