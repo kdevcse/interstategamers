@@ -47,7 +47,7 @@ body {
 .prof-ratings > .inline-ratings {
 	
 }
-.prof-ratings > .inline-ratings > img {
+.prof-ratings > .inline-ratings > .img-responsive {
 	display: inline-block;
 	max-width: 10%;
 }
