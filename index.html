@@ -62,6 +62,8 @@
 					var rating = document.createElement("div");
 					
 					var igRankNode = igRank[i].childNodes[0];
+					var ignRankNode = ignRank[i].childNodes[0];
+					var metaRankNode = metaRank[i].childNodes[0];
 					
 					ep.setAttribute("class","ep");
 					
@@ -96,10 +98,10 @@
 					igRankTxt.innerHtml = igRankNode.textContent;
 					profRatings.appendChild(igRankTxt);
 					profRatings.appendChild(ignLogo);
-					ignRankTxt.innerHtml = "Not working";
+					ignRankTxt.innerHtml = ignRankNode.textContent;
 					profRatings.appendChild(ignRankTxt);
 					profRatings.appendChild(metaLogo);
-					metaRankTxt.innerHtml = metaRank.childNodes[0].textContent;
+					metaRankTxt.innerHtml = metaRankNode.textContent;
 					profRatings.appendChild(metaRankTxt);
 
 					igNode.appendChild(igRankNode);
