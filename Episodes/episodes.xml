@@ -6,6 +6,8 @@
 		<gameplay>81.5</gameplay>
 		<aesthetics>88.5</aesthetics>
 		<content>80.5</content>
+		<metac>83</metac>
+		<ign>81</ign>
 		<img>
 			<picTitle>MK64</picTitle>
 			<src>/Images/MK64.png</src>
@@ -18,6 +20,8 @@
 		<gameplay>97.5</gameplay>
 		<aesthetics>96.5</aesthetics>
 		<content>84.5</content>
+		<metac>88</metac>
+		<ign>87</ign>
 		<img>
 			<picTitle>SF64</picTitle>
 			<src>/Images/SF64.png</src>
@@ -30,6 +34,8 @@
 		<gameplay>96</gameplay>
 		<aesthetics>88</aesthetics>
 		<content>87.5</content>
+		<metac>90</metac>
+		<ign>85</ign>
 		<img>
 			<picTitle>RCT</picTitle>
 			<src>/Images/RCT.jpg</src>
@@ -42,6 +48,8 @@
 		<gameplay>86.5</gameplay>
 		<aesthetics>85.25</aesthetics>
 		<content>92</content>
+		<metac>80</metac>
+		<ign>80</ign>
 		<img>
 			<picTitle>KAM</picTitle>
 			<src>/Images/Kam.jpg</src>
@@ -51,9 +59,11 @@
 	<episode>
 		<title>Metroid: Zero Mission</title>
 		<IGscore>90.6</IGscore>
-		<gameplay>94.5</gameplay>
-		<aesthetics>94.5</aesthetics>
-		<content>80</content>
+		<gameplay>93.67</gameplay>
+		<aesthetics>95.17</aesthetics>
+		<content>81.67</content>
+		<metac>89</metac>
+		<ign>90</ign>
 		<img>
 			<picTitle>MZM</picTitle>
 			<src>/Images/mzm.jpg</src>
@@ -66,6 +76,8 @@
 		<gameplay>95</gameplay>
 		<aesthetics>98</aesthetics>
 		<content>96</content>
+		<metac>NA</metac>
+		<ign>8.5</ign>
 		<img>
 			<picTitle>SMW</picTitle>
 			<src>/Images/smw.jpg</src>
@@ -78,6 +90,8 @@
 		<gameplay>85</gameplay>
 		<aesthetics>85</aesthetics>
 		<content>80.5</content>
+		<metac>NA</metac>
+		<ign>82</ign>
 		<img>
 			<picTitle>PS</picTitle>
 			<src>/Images/ps64.jpg</src>
@@ -89,7 +103,9 @@
 		<IGscore>82.6</IGscore>
 		<gameplay>87.5</gameplay>
 		<aesthetics>79.25</aesthetics>
-		<content></content>
+		<content>81</content>
+		<metac>NA</metac>
+		<ign>NA</ign>
 		<img>
 			<picTitle>THPS</picTitle>
 			<src>/Images/thps.jpg</src>
@@ -101,7 +117,9 @@
 		<IGscore>92.5</IGscore>
 		<gameplay>89.5</gameplay>
 		<aesthetics>95</aesthetics>
-		<content></content>
+		<content>93</content>
+		<metac>92</metac>
+		<ign>96</ign>
 		<img>
 			<picTitle>BK</picTitle>
 			<src>/Images/bk.jpg</src>
@@ -114,6 +132,8 @@
 		<gameplay>89.5</gameplay>
 		<aesthetics>87</aesthetics>
 		<content>95.5</content>
+		<metac>89</metac>
+		<ign>95</ign>
 		<img>
 			<picTitle>Stardew Valley</picTitle>
 			<src>/Images/Stardew.jpg</src>
@@ -126,6 +146,8 @@
 		<gameplay>89</gameplay>
 		<aesthetics>91.5</aesthetics>
 		<content>96</content>
+		<metac>95</metac>
+		<ign>95</ign>
 		<img>
 			<picTitle>Lttp</picTitle>
 			<src>/Images/Lttp.jpg</src>
