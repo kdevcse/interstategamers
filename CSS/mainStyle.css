@@ -55,8 +55,10 @@ body {
 	display: inline-block;
 }
 .progress {
-	height: 20%;
+	height: 10px;
 	width: 70%;
+	margin-bottom: 0px;
+	border-radius: 2px;
 }
 h2 {
 	text-align: center;
