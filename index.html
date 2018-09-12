@@ -55,14 +55,17 @@
 					var imgNode = document.createElement("img");
 					var aNode = document.createElement("a");
 					var gameplayCenter = document.createElement("center");
+					var gameplayProgress = document.createElement("div");
 					var gameplayTxt = document.createElement("p");
-					var gameplayCanvas = document.createElement("canvas");
+					var gameplayCanvas = document.createElement("div");
 					var aestheticsCenter = document.createElement("center");
+					var aestheticsProgress = document.createElement("div");
 					var aestheticsTxt = document.createElement("p");
-					var aestheticsCanvas = document.createElement("canvas");
+					var aestheticsCanvas = document.createElement("div");
 					var contentCenter = document.createElement("center");
+					var contentProgress = document.createElement("div");
 					var contentTxt = document.createElement("p");
-					var contentCanvas = document.createElement("canvas");
+					var contentCanvas = document.createElement("div");
 					var proRatings = document.createElement("center");
 					var igLogo = document.createElement("img");
 					var igRankTxt = document.createElement("p");
@@ -78,7 +81,7 @@
 					
 					var rankImgStyle = "display: inline-block; max-width: 14%; padding-right: 5px;";
 					var rankPStyle = "display: inline-block; font-size: 23px; padding-right: 12px;";
-					var barStyle = "border:1px solid #ffffff; border-radius:2px; width:70%";
+					var barStyle = "width:70%";
 					
 					ep.setAttribute("class","ep");
 					
@@ -91,29 +94,38 @@
 					gameplayCenter.setAttribute("style","padding-top: 15px;");
 					
 					gameplayTxt.setAttribute("style","margin: 0 0 0;");
-					
-					gameplayCanvas.setAttribute("height","20%");
-					gameplayCanvas.setAttribute("class","meter");	
+					gameplayProgress.setAttribute("class","progress-class");
+					gameplayProgress.setAttribute("height","20%");
+					gameplayProgress.setAttribute("width","70%");
+					gameplayCanvas.setAttribute("class","progress-bar progress-bar-success");	
 					gameplayCanvas.setAttribute("style",barStyle);				
-					gameplayCanvas.setAttribute("anim_width",gameplay[i].childNodes[0].textContent);
+					gameplayCanvas.setAttribute("aria-valuenow",gameplay[i].childNodes[0].textContent);
+					gameplayCanvas.setAttribute("aria-valuemin","0");
+					gameplayCanvas.setAttribute("aria-valuemax","100");
 					
 					aestheticsCenter.setAttribute("style","padding-top: 0px;");
 					
 					aestheticsTxt.setAttribute("style","margin: 0 0 0;");
-					
-					aestheticsCanvas.setAttribute("height","20%");
-					aestheticsCanvas.setAttribute("class","meter");
+					aestheticsProgress.setAttribute("class","progress-class");
+					aestheticsProgress.setAttribute("height","20%");
+					aestheticsProgress.setAttribute("width","70%");
+					aestheticsCanvas.setAttribute("class","progress-bar progress-bar-success");
 					aestheticsCanvas.setAttribute("style",barStyle);
-					aestheticsCanvas.setAttribute("anim_width",gameplay[i].childNodes[0].textContent);
+					aestheticsCanvas.setAttribute("aria-valuenow",aesthetics[i].childNodes[0].textContent);
+					aestheticsCanvas.setAttribute("aria-valuemin","0");
+					aestheticsCanvas.setAttribute("aria-valuemax","100");
 					
 					contentCenter.setAttribute("style","padding-top: 0px;");
 					
 					contentTxt.setAttribute("style","margin: 0 0 0;");
-					
-					contentCanvas.setAttribute("height","20%");
-					contentCanvas.setAttribute("class","meter");
+					contentProgress.setAttribute("class","progress-class");
+					contentProgress.setAttribute("height","20%");
+					contentProgress.setAttribute("width","70%");
+					contentCanvas.setAttribute("class","progress-bar progress-bar-success");
 					contentCanvas.setAttribute("style",barStyle);
-					contentCanvas.setAttribute("anim_width",gameplay[i].childNodes[0].textContent);
+					contentCanvas.setAttribute("aria-valuenow",content[i].childNodes[0].textContent);
+					contentCanvas.setAttribute("aria-valuemin","0");
+					contentCanvas.setAttribute("aria-valuemax","100");
 					
 					proRatings.setAttribute("class","inline-ratings");
 					proRatings.setAttribute("style","padding-top: 15px;");
@@ -148,12 +160,16 @@
 					aestheticsTxt.textContent = "Aesthetics";
 					contentTxt.textContent = "Content";
 					
+					gameplayProgress.appendChild(gameplayCanvas);
+					aestheticsProgress.appendChild(aestheticsCanvas);
+					contentProgress.appendChild(contentCanvas);
+					
 					gameplayCenter.appendChild(gameplayTxt);
-					gameplayCenter.appendChild(gameplayCanvas);
+					gameplayCenter.appendChild(gameplayProgress);
 					aestheticsCenter.appendChild(aestheticsTxt);
-					aestheticsCenter.appendChild(aestheticsCanvas);
+					aestheticsCenter.appendChild(aestheticsProgress);
 					contentCenter.appendChild(contentTxt);
-					contentCenter.appendChild(contentCanvas);
+					contentCenter.appendChild(contentProgress);
 					
 					proRatings.appendChild(igLogo);
 					igRankTxt.textContent = igRankNode.textContent;
