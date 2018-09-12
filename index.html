@@ -65,6 +65,9 @@
 					var ignRankNode = ignRank[i].childNodes[0];
 					var metaRankNode = metaRank[i].childNodes[0];
 					
+					var rankImgStyle = "display: inline-block; max-width: 10%; padding-right: 5px;";
+					var rankPStyle = "display: inline-block; font-size: 20px";
+					
 					ep.setAttribute("class","ep");
 					
 					imgNode.setAttribute("src",imgSrc[i].childNodes[0].textContent);
@@ -78,14 +81,21 @@
 					igLogo.setAttribute("src","/Images/IGLogo.png");
 					igLogo.setAttribute("class","img-responsive");
 					igLogo.setAttribute("alt","Responsive image");
+					igLogo.setAttribute("style",rankImgStyle);
 					
 					ignLogo.setAttribute("src","/Images/IgnLogo.png");
 					ignLogo.setAttribute("class","img-responsive");
 					ignLogo.setAttribute("alt","Responsive image");
+					ignLogo.setAttribute("style",rankImgStyle);
 					
 					metaLogo.setAttribute("src","/Images/MetaLogo.png");
 					metaLogo.setAttribute("class","img-responsive");
 					metaLogo.setAttribute("alt","Responsive image");
+					metaLogo.setAttribute("style",rankImgStyle);
+										
+					igRankTxt.setAttribute("style",rankPStyle);
+					ignRankTxt.setAttribute("style",rankPStyle);
+					metaRankTxt.setAttribute("style",rankPStyle);
 
 					rating.setAttribute("class","wpac-rating");
 					rating.setAttribute("data-wpac-chan","product_id_" + i.toString());
