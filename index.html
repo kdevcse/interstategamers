@@ -51,7 +51,6 @@
 					var title = document.createElement("h2");
 					var imgNode = document.createElement("img");
 					var aNode = document.createElement("a");
-					var igNode = document.createElement("h3");
 					var profRatings = document.createElement("center");
 					var igLogo = document.createElement("img");
 					var igRankTxt = document.createElement("p");
@@ -114,14 +113,10 @@
 					profRatings.appendChild(metaLogo);
 					metaRankTxt.textContent = metaRankNode.textContent;
 					profRatings.appendChild(metaRankTxt);
-
-					igNode.appendChild(igRankNode);
-					igNode.childNodes[0].textContent = igRankNode.textContent;
 					
 					ep.appendChild(title);
 					ep.appendChild(aNode);
 					ep.appendChild(profRatings);
-					ep.appendChild(igNode);
 					ep.appendChild(rating);
 					
 					document.getElementById("AllEps").appendChild(ep);
