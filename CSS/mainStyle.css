@@ -57,7 +57,7 @@ body {
 .progress {
 	height: 17px;
 	width: 65%;
-	margin-bottom: 0px;
+	margin-bottom: 5px;
 	border-radius: 4px;
 }
 .progress-bar {
