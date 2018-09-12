@@ -45,8 +45,14 @@ body {
 	text-align: center;
 }
 .prof-ratings > .inline-ratings {
+	
+}
+.prof-ratings > .inline-ratings > img {
 	display: inline-block;
 	max-width: 10%;
+}
+.prof-ratings > .inline-ratings > p {
+	display: inline-block;
 }
 h2 {
 	text-align: center;
