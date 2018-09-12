@@ -65,7 +65,7 @@ body {
 	background:green;
 	top:0; bottom:0;
 	left:0;
-	width: attr(anim-width)%;
+	width: 50%;
 	-webkit-animation: filler 1s ease-in-out;
 	-moz-animation: filler 1s ease-in-out;
 	animation: filler 1s ease-in-out;
