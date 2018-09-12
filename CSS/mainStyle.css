@@ -55,10 +55,10 @@ body {
 	display: inline-block;
 }
 .progress {
-	height: 10px;
-	width: 70%;
+	height: 17px;
+	width: 65%;
 	margin-bottom: 0px;
-	border-radius: 2px;
+	border-radius: 4px;
 }
 .progress-bar {
   text-align: left;
@@ -83,6 +83,9 @@ footer {
 	text-align: center;
 }
 @media only screen and (max-width: 3000px){
+	.progress {
+		width: 65%;
+	}
 	.center-block {
 		width: 75%;
 	}
@@ -102,7 +105,10 @@ footer {
 		padding: 50px 0 40px 0;
 	}
 }
-@media only screen and (max-width: 480px){	
+@media only screen and (max-width: 480px){
+	.progress {
+		width: 70%;
+	}
 	.dropdown{
 		width: 30%;
 	}
