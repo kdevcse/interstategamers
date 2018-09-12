@@ -56,13 +56,13 @@
 					var aNode = document.createElement("a");
 					var gameplayCenter = document.createElement("center");
 					var gameplayTxt = document.createElement("p");
-					var gameplayCanvas = document.createElement("canvas");
+					var gameplayCanvas = document.createElement("div");
 					var aestheticsCenter = document.createElement("center");
 					var aestheticsTxt = document.createElement("p");
-					var aestheticsCanvas = document.createElement("canvas");
+					var aestheticsCanvas = document.createElement("div");
 					var contentCenter = document.createElement("center");
 					var contentTxt = document.createElement("p");
-					var contentCanvas = document.createElement("canvas");
+					var contentCanvas = document.createElement("div");
 					var proRatings = document.createElement("center");
 					var igLogo = document.createElement("img");
 					var igRankTxt = document.createElement("p");
@@ -93,21 +93,27 @@
 					gameplayTxt.setAttribute("style","margin: 0 0 0;");
 					
 					gameplayCanvas.setAttribute("height","20%");
-					gameplayCanvas.setAttribute("style",barStyle);
+					gameplayCanvas.setAttribute("class","meter");	
+					gameplayCanvas.setAttribute("style",barStyle);				
+					gameplayCanvas.setAttribute("anim_width",gameplay[i].childNodes[0].textContent);
 					
 					aestheticsCenter.setAttribute("style","padding-top: 0px;");
 					
 					aestheticsTxt.setAttribute("style","margin: 0 0 0;");
 					
 					aestheticsCanvas.setAttribute("height","20%");
+					aestheticsCanvas.setAttribute("class","meter");
 					aestheticsCanvas.setAttribute("style",barStyle);
+					aestheticsCanvas.setAttribute("anim_width",gameplay[i].childNodes[0].textContent);
 					
 					contentCenter.setAttribute("style","padding-top: 0px;");
 					
 					contentTxt.setAttribute("style","margin: 0 0 0;");
 					
 					contentCanvas.setAttribute("height","20%");
+					contentCanvas.setAttribute("class","meter");
 					contentCanvas.setAttribute("style",barStyle);
+					contentCanvas.setAttribute("anim_width",gameplay[i].childNodes[0].textContent);
 					
 					proRatings.setAttribute("class","inline-ratings");
 					proRatings.setAttribute("style","padding-top: 15px;");
