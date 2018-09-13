@@ -63,6 +63,7 @@ body {
 }
 .progress-bar {
   	transition-duration: 3s;
+	color: darkslategray;
 }
 .progress-bar-alert {
   	background-color: yellowgreen;
