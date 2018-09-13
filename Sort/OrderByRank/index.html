@@ -74,12 +74,15 @@
 				var gameplay = xmlDoc.getElementsByTagName("gameplay");
 				var aesthetics = xmlDoc.getElementsByTagName("aesthetics");
 				var content = xmlDoc.getElementsByTagName("content");
+				var seasons = xmlDoc.getElementsByTagName("episode");
+				var episodes = xmlDoc.getElementsByTagName("episode");
 				
 				var igSort = sortBy(xmlDoc,"IGscore");
 				
 				for (var i = 0; i < igSort.length; i++) {
 					var ep = document.createElement("div");
 					var title = document.createElement("h2");
+					var subtitle = document.createElement("h3");
 					var imgNode = document.createElement("img");
 					var aNode = document.createElement("a");
 					var gameplayCenter = document.createElement("center");
@@ -111,6 +114,8 @@
 					var gameplayScore = gameplay[igSort[i].index].childNodes[0].textContent;
 					var aestheticsScore = aesthetics[igSort[i].index].childNodes[0].textContent;
 					var contentScore = content[igSort[i].index].childNodes[0].textContent;
+					var epNum = episodes[igSort[i].index].getAttribute('episode');
+					var seasonNum = seasons[igSort[i].index].getAttribute('season');
 				
 					var gpBarType = getBarType(gameplayScore);
 					var asBarType = getBarType(aestheticsScore);
@@ -181,6 +186,8 @@
 					
 					title.appendChild(x[igSort[i].index].childNodes[0]);
 					
+					subtitle.textContent = "Season:" + seasonNum + " Episode:" + epNum;
+					
 					aNode.appendChild(imgNode);
 					
 					gameplayTxt.textContent = "Gameplay";
@@ -209,6 +216,7 @@
 					proRatings.appendChild(metaRankTxt);
 					
 					ep.appendChild(title);
+					ep.appendChild(subtitle);
 					ep.appendChild(aNode);
 					ep.appendChild(gameplayCenter);
 					ep.appendChild(aestheticsCenter);
