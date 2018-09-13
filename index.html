@@ -40,11 +40,11 @@
 			function getBarType(val){
 				var barVal = parseFloat(val);
 				
-				if (barVal > 79 && barVal < 90 )
+				if (barVal > 79.99 && barVal < 90 )
 					return "alert";
-				else if (barVal > 69 && barVal < 80)
+				else if (barVal > 69.99 && barVal < 80)
 					return "info";
-				else if (barVal > 59 && barVal < 70)
+				else if (barVal > 59.99 && barVal < 70)
 					return "warning";
 				else if (barVal < 60)
 					return "danger";
