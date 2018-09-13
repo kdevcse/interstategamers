@@ -73,6 +73,7 @@ p {
 	-webkit-animation-duration: 3s;
 	animation-name: filler;
 	animation-duration: 3s;
+	animation-delay: 2s;
 }
 @-webkit-keyframes filler {
     from {width: 0;}
