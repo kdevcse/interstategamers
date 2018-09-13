@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <podcast>
-	<episode>
+	<episode season='1' episode='1'>
 		<title>Mario Kart 64</title>
+		<console>N64</console>
 		<IGscore>83.5</IGscore>
 		<gameplay>81.5</gameplay>
 		<aesthetics>88.5</aesthetics>
@@ -14,8 +15,9 @@
 			<href>http://www.theinterstategamers.review/mk64</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='1' episode='2'>
 		<title>Star Fox 64</title>
+		<console>N64</console>
 		<IGscore>92.8</IGscore>
 		<gameplay>97.5</gameplay>
 		<aesthetics>96.5</aesthetics>
@@ -28,8 +30,9 @@
 			<href>http://www.theinterstategamers.review/sf64</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='1' episode='3'>
 		<title>Roller Coaster Tycoon</title>
+		<console>PC</console>
 		<IGscore>90.5</IGscore>
 		<gameplay>96</gameplay>
 		<aesthetics>88</aesthetics>
@@ -42,8 +45,9 @@
 			<href>http://www.theinterstategamers.review/rct</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='1' episode='4'>
 		<title>Kirby and the Amazing Mirror</title>
+		<console>GBA</console>
 		<IGscore>87.9</IGscore>
 		<gameplay>86.5</gameplay>
 		<aesthetics>85.25</aesthetics>
@@ -56,8 +60,9 @@
 			<href>http://www.theinterstategamers.review/kam</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='1' episode='5'>
 		<title>Metroid: Zero Mission</title>
+		<console>GBA</console>
 		<IGscore>90.6</IGscore>
 		<gameplay>93.67</gameplay>
 		<aesthetics>95.17</aesthetics>
@@ -70,8 +75,9 @@
 			<href>http://www.theinterstategamers.review/mzm</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='1' episode='6'>
 		<title>Super Mario World</title>
+		<console>SNES</console>
 		<IGscore>96.3</IGscore>
 		<gameplay>95</gameplay>
 		<aesthetics>98</aesthetics>
@@ -84,8 +90,9 @@
 			<href>http://www.theinterstategamers.review/smw</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='1' episode='7'>
 		<title>Pokemon Stadium</title>
+		<console>N64</console>
 		<IGscore>83.5</IGscore>
 		<gameplay>85</gameplay>
 		<aesthetics>85</aesthetics>
@@ -98,8 +105,9 @@
 			<href>http://www.theinterstategamers.review/ps</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='1' episode='8'>
 		<title>Tony Hawk's Pro Skater</title>
+		<console>N64</console>
 		<IGscore>82.6</IGscore>
 		<gameplay>87.5</gameplay>
 		<aesthetics>79.25</aesthetics>
@@ -112,8 +120,9 @@
 			<href>http://www.theinterstategamers.review/thps</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='1' episode='9'>
 		<title>Banjo Kazooie</title>
+		<console>N64</console>
 		<IGscore>92.5</IGscore>
 		<gameplay>89.5</gameplay>
 		<aesthetics>95</aesthetics>
@@ -126,8 +135,9 @@
 			<href>http://www.theinterstategamers.review/bk</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='1' episode='10'>
 		<title>Stardew Valley</title>
+		<console>ANY</console>
 		<IGscore>90.7</IGscore>
 		<gameplay>89.5</gameplay>
 		<aesthetics>87</aesthetics>
@@ -140,8 +150,9 @@
 			<href>http://www.theinterstategamers.review/stardew</href>
 		</img>
 	</episode>
-	<episode>
+	<episode season='2' episode='1'>
 		<title>The Legend of Zelda: A Link To The Past</title>
+		<console>SNES</console>
 		<IGscore>92.2</IGscore>
 		<gameplay>89</gameplay>
 		<aesthetics>91.5</aesthetics>
