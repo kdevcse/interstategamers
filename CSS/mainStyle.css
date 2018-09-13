@@ -3,7 +3,7 @@ body {
 }
 p {
 	font-family: monospace;
-	font-size: 15px;
+	font-size: 115%;
 }
 .btn btn-primary dropdown-toggle {
 	background-color: rgba(45,50,175,0.9);
