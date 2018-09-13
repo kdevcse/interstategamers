@@ -6,6 +6,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.progress .progress-bar').css("width", function() {
+                    	return $(this).attr("aria-valuenow") + "%";
+	})});
+</script>
 <head>
 	<link rel="stylesheet" href="CSS/mainStyle.css">
 </head>
@@ -206,12 +212,6 @@
 					document.getElementById("AllEps").appendChild(ep);
 			    	}
 			}
-		</script>
-		<script>
-			$(document).ready(function() {
-      				$('.progress .progress-bar').css("width", function() {
-                    			return $(this).attr("aria-valuenow") + "%";
-				})});
 		</script>
 	</div>
 	
