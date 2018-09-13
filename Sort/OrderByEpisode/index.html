@@ -36,8 +36,22 @@
 			};
 			xhttp.open("GET", "/../../Episodes/episodes.xml", true);
 			xhttp.send();
+			function getBarType(val){
+				var barVal = parseFloat(val);
+				
+				if (barVal > 79.99 && barVal < 90 )
+					return "alert";
+				else if (barVal > 69.99 && barVal < 80)
+					return "info";
+				else if (barVal > 59.99 && barVal < 70)
+					return "warning";
+				else if (barVal < 60)
+					return "danger";
+				else
+					return "success";
+			}
 			
-			function getRatings(xml) {var xmlDoc = xml.responseXML;
+			function getRatings(xml) {
 				var xmlDoc = xml.responseXML;
 				var x = xmlDoc.getElementsByTagName("title");
 				var imgSrc = xmlDoc.getElementsByTagName("src");
@@ -84,6 +98,10 @@
 					var aestheticsScore = aesthetics[i].childNodes[0].textContent;
 					var contentScore = content[i].childNodes[0].textContent;
 					
+					var gpBarType = getBarType(gameplayScore);
+					var asBarType = getBarType(aestheticsScore);
+					var conBarType = getBarType(contentScore);
+					
 					ep.setAttribute("class","ep");
 					
 					imgNode.setAttribute("src",imgSrc[i].childNodes[0].textContent);
@@ -96,31 +114,34 @@
 					
 					gameplayTxt.setAttribute("style","margin: 0 0 0;");
 					gameplayProgress.setAttribute("class","progress skill-bar");
-					gameplayCanvas.setAttribute("class","progress-bar progress-bar-success");	
+					gameplayCanvas.setAttribute("class","progress-bar progress-bar-" + gpBarType);	
 					gameplayCanvas.setAttribute("style","width: " + gameplayScore + "%;");				
 					gameplayCanvas.setAttribute("aria-valuenow",gameplayScore);
 					gameplayCanvas.setAttribute("aria-valuemin","0");
 					gameplayCanvas.setAttribute("aria-valuemax","100");
+					gameplayCanvas.textContent = gameplayScore;
 					
 					aestheticsCenter.setAttribute("style","padding-top: 0px;");
 					
 					aestheticsTxt.setAttribute("style","margin: 0 0 0;");
 					aestheticsProgress.setAttribute("class","progress skill-bar");
-					aestheticsCanvas.setAttribute("class","progress-bar progress-bar-success");
+					aestheticsCanvas.setAttribute("class","progress-bar progress-bar-" + asBarType);
 					aestheticsCanvas.setAttribute("style","width: " + aestheticsScore + "%;");
 					aestheticsCanvas.setAttribute("aria-valuenow",aestheticsScore);
 					aestheticsCanvas.setAttribute("aria-valuemin","0");
 					aestheticsCanvas.setAttribute("aria-valuemax","100");
+					aestheticsCanvas.textContent = aestheticsScore;
 					
 					contentCenter.setAttribute("style","padding-top: 0px;");
 					
 					contentTxt.setAttribute("style","margin: 0 0 0;");
 					contentProgress.setAttribute("class","progress skill-bar");
-					contentCanvas.setAttribute("class","progress-bar progress-bar-success");
+					contentCanvas.setAttribute("class","progress-bar progress-bar-" + conBarType);
 					contentCanvas.setAttribute("style","width: " + contentScore + "%;");
 					contentCanvas.setAttribute("aria-valuenow",contentScore);
 					contentCanvas.setAttribute("aria-valuemin","0");
 					contentCanvas.setAttribute("aria-valuemax","100");
+					contentCanvas.textContent = contentScore;
 					
 					proRatings.setAttribute("class","inline-ratings");
 					proRatings.setAttribute("style","padding-top: 15px;");
