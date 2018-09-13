@@ -37,6 +37,21 @@
 			xhttp.open("GET", "/Episodes/episodes.xml", true);
 			xhttp.send();
 			
+			function getBarType(val){
+				var barVal = parseFloat(val);
+				
+				if (barVal > 79 && barVal < 90 )
+					return "alert";
+				else if (barVal > 69 && barVal < 80)
+					return "info";
+				else if (barVal > 59 && barVal < 70)
+					return "warning";
+				else if (barVal < 60)
+					return "danger";
+				else
+					return "success";
+			}
+			
 			function getRatings(xml) {
 				var xmlDoc = xml.responseXML;
 				var x = xmlDoc.getElementsByTagName("title");
@@ -84,6 +99,10 @@
 					var aestheticsScore = aesthetics[i].childNodes[0].textContent;
 					var contentScore = content[i].childNodes[0].textContent;
 					
+					var gpBarType = getBarType(gameplayScore);
+					var asBarType = getBarType(aestheticsScore);
+					var conBarType = getBarType(contentScore);
+					
 					ep.setAttribute("class","ep");
 					
 					imgNode.setAttribute("src",imgSrc[i].childNodes[0].textContent);
@@ -96,7 +115,7 @@
 					
 					gameplayTxt.setAttribute("style","margin: 0 0 0;");
 					gameplayProgress.setAttribute("class","progress skill-bar");
-					gameplayCanvas.setAttribute("class","progress-bar progress-bar-success");	
+					gameplayCanvas.setAttribute("class","progress-bar progress-bar-" + gpBarType);	
 					gameplayCanvas.setAttribute("style","width: " + gameplayScore + "%;");				
 					gameplayCanvas.setAttribute("aria-valuenow",gameplayScore);
 					gameplayCanvas.setAttribute("aria-valuemin","0");
@@ -107,7 +126,7 @@
 					
 					aestheticsTxt.setAttribute("style","margin: 0 0 0;");
 					aestheticsProgress.setAttribute("class","progress skill-bar");
-					aestheticsCanvas.setAttribute("class","progress-bar progress-bar-success");
+					aestheticsCanvas.setAttribute("class","progress-bar progress-bar-" + asBarType);
 					aestheticsCanvas.setAttribute("style","width: " + aestheticsScore + "%;");
 					aestheticsCanvas.setAttribute("aria-valuenow",aestheticsScore);
 					aestheticsCanvas.setAttribute("aria-valuemin","0");
@@ -118,7 +137,7 @@
 					
 					contentTxt.setAttribute("style","margin: 0 0 0;");
 					contentProgress.setAttribute("class","progress skill-bar");
-					contentCanvas.setAttribute("class","progress-bar progress-bar-success");
+					contentCanvas.setAttribute("class","progress-bar progress-bar-" + conBarType);
 					contentCanvas.setAttribute("style","width: " + contentScore + "%;");
 					contentCanvas.setAttribute("aria-valuenow",contentScore);
 					contentCanvas.setAttribute("aria-valuemin","0");
