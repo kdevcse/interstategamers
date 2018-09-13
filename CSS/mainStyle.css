@@ -62,7 +62,13 @@ body {
 	border-radius: 6px;
 }
 .progress-bar {
-  transition-duration: 3s;
+  	transition-duration: 3s;
+}
+.progress-bar-alert {
+  	background-color: yellowgreen;
+}
+.progress-bar-info {
+  	background-color: gold;
 }
 h2 {
 	text-align: center;
