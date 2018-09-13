@@ -3,7 +3,7 @@ body {
 }
 p {
 	font-family: monospace;
-	font-size: 14px;
+	font-size: 15px;
 }
 .btn btn-primary dropdown-toggle {
 	background-color: rgba(45,50,175,0.9);
@@ -78,7 +78,7 @@ p {
 h2 {
 	text-align: center;
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 30px;
 	margin-bottom: 15px;
 	padding-top: 15px;
 	margin-left: auto;
