@@ -58,6 +58,9 @@ p {
 }
 .prof-ratings > .inline-ratings > p {
 	display: inline-block;
+	margin: 0 0 0px;
+	font-size: 175%;
+	vertical-align: middle;
 }
 .progress {
 	height: 17px;
