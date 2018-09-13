@@ -68,8 +68,19 @@ p {
 	border-radius: 6px;
 }
 .progress-bar {
-  	transition-duration: 3s;
 	color: darkslategray;
+	-webkit-animation-name: filler;
+	-webkit-animation-duration: 3s;
+	animation-name: filler;
+	animation-duration: 3s;
+}
+@-webkit-keyframes filler {
+    from {width: 0;}
+    to {width: attr("aria-valuenow") + "%";}
+}
+@keyframes filler {
+    from {width: 0;}
+    to {width: attr("aria-valuenow") + "%";}
 }
 .progress-bar-alert {
   	background-color: yellowgreen;
