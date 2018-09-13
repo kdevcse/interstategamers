@@ -119,13 +119,13 @@ footer {
 }
 @media only screen and (max-width: 480px){
 	.progress {
-		width: 70%;
+		width: 85%;
 	}
 	.dropdown{
 		width: 30%;
 	}
 	.center-block {
-		width: 93%;
+		width: 85%;
 	}
 	.center-block > .ep-list > div > a > img{
 		width: 85%;
