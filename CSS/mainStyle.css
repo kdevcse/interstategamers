@@ -73,7 +73,7 @@ p {
 	-webkit-animation-duration: 3s;
 	animation-name: filler;
 	animation-duration: 3s;
-	animation-delay: 2s;
+	//animation-delay: 2s;
 	font-size: 90%;
 }
 @-webkit-keyframes filler {
