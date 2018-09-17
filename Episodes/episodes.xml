@@ -165,4 +165,19 @@
 			<href>http://www.theinterstategamers.review/alttp</href>
 		</img>
 	</episode>
+	<episode season='2' episode='2'>
+		<title>Rocket League</title>
+		<console>ANY</console>
+		<IGscore>86.8</IGscore>
+		<gameplay>86.5</gameplay>
+		<aesthetics>86.25</aesthetics>
+		<content>87.5</content>
+		<metac>87</metac>
+		<ign>93</ign>
+		<img>
+			<picTitle>RL</picTitle>
+			<src>/Images/RL.jpg</src>
+			<href>http://www.theinterstategamers.review/rl</href>
+		</img>
+	</episode>
 </podcast>
