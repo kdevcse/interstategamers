@@ -75,6 +75,7 @@
 				
 				for (var i = 0; i < x.length; i++) {
 					var ep = document.createElement("div");
+					var titleNum = document.createElement("h2");
 					var title = document.createElement("h2");
 					var subtitle = document.createElement("h3");
 					var imgNode = document.createElement("img");
@@ -179,7 +180,7 @@
 					metaRankTxt.setAttribute("style",rankPStyle);
 					
 					title.appendChild(x[i].childNodes[0]);
-					title.textContent = "#" + (i + 1) + " " + title.textContent;
+					titleNum.textContent = "#" + (i + 1);
 					
 					subtitle.textContent = "Season:" + seasonNum + " Episode:" + epNum;
 					
@@ -210,6 +211,7 @@
 					metaRankTxt.textContent = metaRankNode.textContent;
 					proRatings.appendChild(metaRankTxt);
 					
+					ep.appendChild(titleNum);
 					ep.appendChild(title);
 					ep.appendChild(subtitle);
 					ep.appendChild(aNode);
