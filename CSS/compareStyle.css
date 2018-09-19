@@ -1,1 +1,165 @@
-
+body {
+	background-color: white;
+}
+p {
+	//font-family: monospace;
+	font-size: 115%;
+}
+.btn btn-primary dropdown-toggle {
+	background-color: rgba(45,50,175,0.9);
+	border-color: rgba(45,50,175,0.9);
+}
+.btn-primary {
+	background-color: rgba(45,50,175,0.9);
+	border-color: rgba(45,50,175,0.9);
+	width: 100%;
+}
+.dropdown {
+	width: 15%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.dropdown-menu{
+	text-align: center;
+	width: 100%;
+	min-width: 100%;
+}
+.center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.ep {
+	padding-bottom: 10px;
+}
+.center-block > .ep-list > div{
+	background-color: rgba(45,50,175,0.9);
+	border-radius: 6px;
+	box-shadow: 0 3px 3px 0 rgba(0,0,0,0.3);
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+.center-block > .ep-list > div > a > img{
+	width: 60%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border-radius: 6px;
+}
+.prof-ratings > .inline-ratings {
+	padding-top: 10px;
+}
+.prof-ratings > .inline-ratings >  {
+	display: inline-block;
+	max-width: 10%;
+}
+.prof-ratings > .inline-ratings > p {
+	display: inline-block;
+	margin: 0 0 0px;
+	font-size: 175%;
+	vertical-align: middle;
+}
+.progress {
+	width: 65%;
+	margin-bottom: 10px;
+	border-radius: 6px;
+}
+.progress-bar {
+	color: darkslategray;
+	-webkit-animation-name: filler;
+	-webkit-animation-duration: 3s;
+	animation-name: filler;
+	animation-duration: 3s;
+	//animation-delay: 2s;
+	font-size: 90%;
+}
+@-webkit-keyframes filler {
+    from {width: 0;}
+    to {width: attr("aria-valuenow") + "%";}
+}
+@keyframes filler {
+    from {width: 0;}
+    to {width: attr("aria-valuenow") + "%";}
+}
+.progress-bar-alert {
+  	background-color: yellowgreen;
+}
+.progress-bar-info {
+  	background-color: gold;
+}
+h2 {
+	text-align: center;
+	font-weight: bold;
+	font-size: 220%;
+	margin-bottom: 5px;
+	padding-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 90%;
+	//font-family: monospace;
+}
+h3 {
+	margin-bottom: 10px;
+	margin-top: 0px;
+	color: lightgray;
+	font-size: 90%;
+	text-align: center;
+}
+.wpac-rating {
+	display: inherit;
+	text-align:center;
+}
+footer {
+	background-color: rgba(0,0,0,0.75);
+	text-align: center;
+}
+@media only screen and (max-width: 3000px){
+	.progress {
+		width: 65%;
+	}
+	.center-block {
+		width: 75%;
+	}
+	.center-block > .ep-list > div > a > img{
+		width: 65%;
+	}
+	.img-title {
+		padding: 40px 0;
+	}
+	.center-block > .ep-list > div {
+		width: 60%;
+		max-width: 634.5px;
+		min-width: 232.5px;
+	}
+	footer {
+		margin-top: 60px;
+		padding: 50px 0 40px 0;
+	}
+}
+@media only screen and (max-width: 480px){
+	.progress {
+		width: 85%;
+	}
+	.dropdown{
+		width: 30%;
+	}
+	.center-block {
+		width: 90%;
+	}
+	.center-block > .ep-list > div > a > img{
+		width: 85%;
+	}
+	.img-title {
+		padding: 20px 0;
+	}
+	.center-block > .ep-list > div {
+		width: 100%;
+	}
+	footer {
+		margin-top: 30px;
+		padding: 25px 0 20px 0;
+	}
+}
