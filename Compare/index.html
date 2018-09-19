@@ -1,1 +1,52 @@
-sup
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.progress .progress-bar').css("width", function() {
+                    	return $(this).attr("aria-valuenow") + "%";
+	})});
+</script>
+<head>
+	<link rel="stylesheet" href="compareStyle.css">
+</head>
+<body>
+	<div class="center-block">
+		<div class="img-title">
+			<center><img src="/Images/HorLogo.png" class="img-responsive" alt="Responsive image"></img></center>
+		</div>
+	</div>
+	<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Order By
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li><a href="Sort/OrderByEpisode/">Episode</a></li>
+			<li><a href="Sort/OrderByRank/">Ranking</a></li>
+		</ul>
+		</div>
+	<div class="center-block">
+		<div class="ep-list" id="AllEps"></div>
+		
+		<script>
+			var xhttp;
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+    				if (this.readyState == 4 && this.status == 200) {
+        				getRatings(this);
+   				}
+			};
+			xhttp.open("GET", "/Episodes/episodes.xml", true);
+			xhttp.send();
+		</script>
+	</div>
+	
+	<footer>
+	</footer>
+</body>	
+</html>
