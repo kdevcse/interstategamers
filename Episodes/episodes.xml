@@ -180,4 +180,19 @@
 			<href>http://www.theinterstategamers.review/rl</href>
 		</img>
 	</episode>
+	<episode season='2' episode='3'>
+		<title>Donkey Kong Country</title>
+		<console>ANY</console>
+		<IGscore>83.3</IGscore>
+		<gameplay>83.5</gameplay>
+		<aesthetics>86.25</aesthetics>
+		<content>80.5</content>
+		<metac>78</metac>
+		<ign>85</ign>
+		<img>
+			<picTitle>DKC</picTitle>
+			<src>/Images/DKC.png</src>
+			<href>http://www.theinterstategamers.review/dkc</href>
+		</img>
+	</episode>
 </podcast>
