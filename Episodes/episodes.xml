@@ -3,9 +3,9 @@
 	<episode season='1' episode='1'>
 		<title>Mario Kart 64</title>
 		<console>N64</console>
-		<IGscore>83.5</IGscore>
-		<gameplay>81.5</gameplay>
-		<aesthetics>88.5</aesthetics>
+		<IGscore>83.3</IGscore>
+		<gameplay>84</gameplay>
+		<aesthetics>85.25</aesthetics>
 		<content>80.5</content>
 		<metac>83</metac>
 		<ign>81</ign>
@@ -18,10 +18,10 @@
 	<episode season='1' episode='2'>
 		<title>Star Fox 64</title>
 		<console>N64</console>
-		<IGscore>92.8</IGscore>
-		<gameplay>97.5</gameplay>
-		<aesthetics>96.5</aesthetics>
-		<content>84.5</content>
+		<IGscore>91.6</IGscore>
+		<gameplay>95</gameplay>
+		<aesthetics>92.75</aesthetics>
+		<content>87</content>
 		<metac>88</metac>
 		<ign>87</ign>
 		<img>
@@ -33,10 +33,10 @@
 	<episode season='1' episode='3'>
 		<title>Roller Coaster Tycoon</title>
 		<console>PC</console>
-		<IGscore>90.5</IGscore>
-		<gameplay>96</gameplay>
-		<aesthetics>88</aesthetics>
-		<content>87.5</content>
+		<IGscore>89.9</IGscore>
+		<gameplay>93.5</gameplay>
+		<aesthetics>86.25</aesthetics>
+		<content>90</content>
 		<metac>90</metac>
 		<ign>85</ign>
 		<img>
@@ -48,10 +48,10 @@
 	<episode season='1' episode='4'>
 		<title>Kirby and the Amazing Mirror</title>
 		<console>GBA</console>
-		<IGscore>87.9</IGscore>
-		<gameplay>86.5</gameplay>
-		<aesthetics>85.25</aesthetics>
-		<content>92</content>
+		<IGscore>88.3</IGscore>
+		<gameplay>87.5</gameplay>
+		<aesthetics>87.75</aesthetics>
+		<content>89.5</content>
 		<metac>80</metac>
 		<ign>80</ign>
 		<img>
@@ -63,10 +63,10 @@
 	<episode season='1' episode='5'>
 		<title>Metroid: Zero Mission</title>
 		<console>GBA</console>
-		<IGscore>90.6</IGscore>
-		<gameplay>93.67</gameplay>
-		<aesthetics>95.17</aesthetics>
-		<content>81.67</content>
+		<IGscore>90.1</IGscore>
+		<gameplay>92</gameplay>
+		<aesthetics>90.75</aesthetics>
+		<content>84</content>
 		<metac>89</metac>
 		<ign>90</ign>
 		<img>
@@ -78,10 +78,10 @@
 	<episode season='1' episode='6'>
 		<title>Super Mario World</title>
 		<console>SNES</console>
-		<IGscore>96.3</IGscore>
-		<gameplay>95</gameplay>
-		<aesthetics>98</aesthetics>
-		<content>96</content>
+		<IGscore>92.6</IGscore>
+		<gameplay>92.5</gameplay>
+		<aesthetics>91.75</aesthetics>
+		<content>93.5</content>
 		<metac>NA</metac>
 		<ign>85</ign>
 		<img>
@@ -93,9 +93,9 @@
 	<episode season='1' episode='7'>
 		<title>Pokemon Stadium</title>
 		<console>N64</console>
-		<IGscore>83.5</IGscore>
-		<gameplay>85</gameplay>
-		<aesthetics>85</aesthetics>
+		<IGscore>83.1</IGscore>
+		<gameplay>82.5</gameplay>
+		<aesthetics>86.25</aesthetics>
 		<content>80.5</content>
 		<metac>NA</metac>
 		<ign>82</ign>
@@ -108,9 +108,9 @@
 	<episode season='1' episode='8'>
 		<title>Tony Hawk's Pro Skater</title>
 		<console>N64</console>
-		<IGscore>82.6</IGscore>
+		<IGscore>82.3</IGscore>
 		<gameplay>87.5</gameplay>
-		<aesthetics>79.25</aesthetics>
+		<aesthetics>78.25</aesthetics>
 		<content>81</content>
 		<metac>NA</metac>
 		<ign>NA</ign>
@@ -123,9 +123,9 @@
 	<episode season='1' episode='9'>
 		<title>Banjo Kazooie</title>
 		<console>N64</console>
-		<IGscore>92.5</IGscore>
-		<gameplay>89.5</gameplay>
-		<aesthetics>95</aesthetics>
+		<IGscore>91.8</IGscore>
+		<gameplay>88.5</gameplay>
+		<aesthetics>94</aesthetics>
 		<content>93</content>
 		<metac>92</metac>
 		<ign>96</ign>
@@ -138,9 +138,9 @@
 	<episode season='1' episode='10'>
 		<title>Stardew Valley</title>
 		<console>ANY</console>
-		<IGscore>90.7</IGscore>
+		<IGscore>91.1</IGscore>
 		<gameplay>89.5</gameplay>
-		<aesthetics>87</aesthetics>
+		<aesthetics>88.25</aesthetics>
 		<content>95.5</content>
 		<metac>89</metac>
 		<ign>95</ign>
@@ -153,9 +153,9 @@
 	<episode season='2' episode='1'>
 		<title>The Legend of Zelda: A Link To The Past</title>
 		<console>SNES</console>
-		<IGscore>92.2</IGscore>
+		<IGscore>92.6</IGscore>
 		<gameplay>89</gameplay>
-		<aesthetics>91.5</aesthetics>
+		<aesthetics>92.75</aesthetics>
 		<content>96</content>
 		<metac>95</metac>
 		<ign>95</ign>
