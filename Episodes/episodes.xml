@@ -182,7 +182,7 @@
 	</episode>
 	<episode season='2' episode='3'>
 		<title>Donkey Kong Country</title>
-		<console>ANY</console>
+		<console>SNES</console>
 		<IGscore>83.3</IGscore>
 		<gameplay>83.5</gameplay>
 		<aesthetics>86.25</aesthetics>
@@ -193,6 +193,21 @@
 			<picTitle>DKC</picTitle>
 			<src>/Images/DKC.png</src>
 			<href>http://www.theinterstategamers.review/dkc</href>
+		</img>
+	</episode>
+	<episode season='2' episode='4'>
+		<title>Chopper Attack</title>
+		<console>N64</console>
+		<IGscore>65.8</IGscore>
+		<gameplay>67.5</gameplay>
+		<aesthetics>67.5</aesthetics>
+		<content>62.5</content>
+		<metac>NA</metac>
+		<ign>56</ign>
+		<img>
+			<picTitle>ChooperAtk</picTitle>
+			<src>/Images/ChopperAtk.jpg</src>
+			<href>http://www.theinterstategamers.review/chopper</href>
 		</img>
 	</episode>
 </podcast>
