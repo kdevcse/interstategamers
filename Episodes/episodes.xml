@@ -225,4 +225,19 @@
 			<href>http://www.theinterstategamers.review/lm</href>
 		</img>
 	</episode>
+	<episode season='2' episode='6'>
+		<title>Mega Man X</title>
+		<console>SNES</console>
+		<IGscore>84.5</IGscore>
+		<gameplay>79</gameplay>
+		<aesthetics>88.25</aesthetics>
+		<content>82.5</content>
+		<metac>NA</metac>
+		<ign>90</ign>
+		<img>
+			<picTitle>MegamanX</picTitle>
+			<src>/Images/MMX.jpg</src>
+			<href>http://www.theinterstategamers.review/mmx</href>
+		</img>
+	</episode>
 </podcast>
