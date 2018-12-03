@@ -240,4 +240,19 @@
 			<href>http://www.theinterstategamers.review/mmx</href>
 		</img>
 	</episode>
+	<episode season='2' episode='7'>
+		<title>Super Monkey Ball 2</title>
+		<console>SNES</console>
+		<IGscore>80.8</IGscore>
+		<gameplay>80.5</gameplay>
+		<aesthetics>74.25</aesthetics>
+		<content>87.5</content>
+		<metac>87</metac>
+		<ign>90</ign>
+		<img>
+			<picTitle>SMB2</picTitle>
+			<src>/Images/SMB2.png</src>
+			<href>http://www.theinterstategamers.review/smb2</href>
+		</img>
+	</episode>
 </podcast>
