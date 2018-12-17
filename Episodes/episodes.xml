@@ -255,4 +255,19 @@
 			<href>http://www.theinterstategamers.review/smb2</href>
 		</img>
 	</episode>
+	<episode season='2' episode='8'>
+		<title>Pokemon FireRed/LeafGreen</title>
+		<console>GBA</console>
+		<IGscore>89.2</IGscore>
+		<gameplay>90</gameplay>
+		<aesthetics>87.5</aesthetics>
+		<content>90</content>
+		<metac>81</metac>
+		<ign>90</ign>
+		<img>
+			<picTitle>SMB2</picTitle>
+			<src>/Images/firered-leafgreen.jpg</src>
+			<href>http://www.theinterstategamers.review/frlg</href>
+		</img>
+	</episode>
 </podcast>
