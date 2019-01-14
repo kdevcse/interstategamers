@@ -270,4 +270,19 @@
 			<href>http://www.theinterstategamers.review/frlg</href>
 		</img>
 	</episode>
+	<episode season='2' episode='9'>
+		<title>Cave Story+</title>
+		<console>ANY</console>
+		<IGscore>90.7</IGscore>
+		<gameplay>91</gameplay>
+		<aesthetics>87.67</aesthetics>
+		<content>93.3</content>
+		<metac>88</metac>
+		<ign>85</ign>
+		<img>
+			<picTitle>SMB2</picTitle>
+			<src>/Images/cave-story-main.jpg</src>
+			<href>http://www.theinterstategamers.review/cs</href>
+		</img>
+	</episode>
 </podcast>
