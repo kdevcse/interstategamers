@@ -285,4 +285,34 @@
 			<href>http://www.theinterstategamers.review/cs</href>
 		</img>
 	</episode>
+	<episode season='2' episode='10'>
+		<title>Metroid Prime</title>
+		<console>GameCube</console>
+		<IGscore>92.3</IGscore>
+		<gameplay>86.5</gameplay>
+		<aesthetics>91.25</aesthetics>
+		<content>93.5</content>
+		<metac>97</metac>
+		<ign>98</ign>
+		<img>
+			<picTitle>MP</picTitle>
+			<src>/Images/metroid-prime.jpg</src>
+			<href>http://www.theinterstategamers.review/mp</href>
+		</img>
+	</episode>
+	<episode season='2' episode='11'>
+		<title>The Legend of Zelda: Majora's Mask</title>
+		<console>N64</console>
+		<IGscore>93.7</IGscore>
+		<gameplay>92.33</gameplay>
+		<aesthetics>93.5</aesthetics>
+		<content>97.33</content>
+		<metac>95</metac>
+		<ign>99</ign>
+		<img>
+			<picTitle>LozMM</picTitle>
+			<src>/Images/LoZMM.jpg</src>
+			<href>http://www.theinterstategamers.review/mm</href>
+		</img>
+	</episode>
 </podcast>
