@@ -1,0 +1,87 @@
+/* CSS Document */
+/* Notes: Blue:2d32af Red:e11932 */
+body {
+	font-family: Interstate;
+}
+footer {
+	/*background-color: rgba(0,0,0,0.75);*/
+	text-align: center;
+}
+.nav-bar {
+	display: block;
+	height: 50px;
+	width: 100%;
+	position: -webkit-sticky; /* Safari */
+    position: sticky;
+	background-color: #2d32af;
+}
+.site-logo {
+	display: inline;
+	width: auto;
+	height: 90%;
+	vertical-align: middle;
+}
+.nav-list {
+	display: inline;
+	overflow: hidden;
+    font-size: 35px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+}
+.nav-list > a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	margin-left: 3.5%;
+	margin-right: 3.5%;
+	vertical-align: middle;
+}
+.nav-list > a:hover {
+	color: #e11932;
+}
+#episodes {
+}
+.episode {
+	width: 60%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+	background-color: #2d32af;
+	border-radius: 5px;
+}
+.player {
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-top: 10px;
+	/*background: url("../Images/loading.gif") center center no-repeat;*/
+}
+.episode-title {
+	color: white;
+	margin-left: 20px;
+	padding-top: 20px;
+}
+.ep-description {
+	color: whitesmoke;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+#getMore{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	width: 100px;
+	height: 30px;
+}
+footer {
+	margin-top: 60px;
+	padding: 50px 0 40px 0;
+}
+@media only screen and (max-width: 480px){
+	footer {
+		margin-top: 30px;
+		padding: 25px 0 20px 0;
+	}
+}

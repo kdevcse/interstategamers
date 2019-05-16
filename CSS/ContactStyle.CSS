@@ -1,0 +1,66 @@
+/* CSS Document */
+/* Notes: Blue:2d32af Red:e11932 */
+body {
+	font-family: Interstate;
+}
+.site-logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 45%;
+	margin-bottom: 40px;
+	padding-top: 40px;
+}
+.nav-bar {
+	margin-left: auto;
+	margin-right: auto;
+    border-top-color: #2d32af;
+    border-top-style: solid;
+	width: 65%;
+	margin-bottom: 82px;
+}
+.nav-list {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+    overflow: hidden;
+    font-size: 35px;
+	text-align: center;
+}
+.nav-list > a {
+	text-decoration: none;
+	color: #2d32af;
+	font-family: Interstate;
+	font-weight: bold;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.nav-list > a:hover {
+	text-decoration: underline;
+    text-decoration-color: #e11932;
+}
+.episodes {
+}
+.episode {
+	width: 60%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+	background-color: #2d32af;
+	border-radius: 5px;
+}
+.player {
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-top: 10px;
+}
+.episode-title {
+	color: white;
+	margin-left: 20px;
+	padding-top: 20px;
+}
+.ep-description {
+	color: whitesmoke;
+	margin-left: 20px;
+}
