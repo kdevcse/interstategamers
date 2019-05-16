@@ -60,7 +60,7 @@ function CreateEpisode(data,id){
 	player.setAttribute("frameborder", "0");
 	player.setAttribute("height", "200px");
 	player.setAttribute("scrolling", "no");
-	var playerSrc = data["sharing_url"].replace("simplecast.com","embed.simplecast.com").replace("/s","") + "?color=ffffff";
+	var playerSrc = data["sharing_url"].replace("simplecast.com","embed.simplecast.com").replace("/s","") + "?dark=true";
 	player.setAttribute("src", playerSrc);
 	player.setAttribute("width", "100%");
 	player.setAttribute("seamless", "seamless");
