@@ -1,0 +1,64 @@
+main {
+    background-color: #2d32af;
+    clear: both;
+    overflow: auto;
+    padding: 25px 5%;
+}
+.ig-main-left{
+    margin-top: 100px;
+    float: left;
+    clear: left;
+    width: 50%;
+}
+.ig-main-left-text-container{
+    color: white;
+}
+.ig-main-left-text-container > h1{
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+.ig-main-left-text-container > p{
+    margin: 0;
+    font-size: 1.3rem;
+}
+.ig-main-right{
+    float: right;
+    clear: right;
+}
+.ig-main-right-logo{
+    height: 400px;
+    width: auto;
+}
+.ig-content{
+    clear: both;
+    overflow: auto;
+    padding: 25px 5%;
+}
+.episodes{
+    float: left;
+    clear: left;
+	width: 10%;
+}
+.episode {
+	height: auto;
+    padding-bottom: 10px;
+}
+.player {
+	padding-top: 10px;
+	/*background: url("../Images/loading.gif") center center no-repeat;*/
+}
+.episode-title {
+	color: red;
+	padding-top: 20px;
+}
+.ep-description {
+	color: #2d32af;
+}
+#getMore{
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	width: 100px;
+	height: 30px;
+}

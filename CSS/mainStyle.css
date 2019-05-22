@@ -1,5 +1,8 @@
 /* CSS Document */
 /* Notes: Blue:2d32af Red:e11932 */
+* {
+	box-sizing: border-box;
+  }  
 body {
 	font-family: Interstate;
 	margin: 0;
@@ -9,25 +12,24 @@ footer {
 	text-align: center;
 }
 .nav-bar {
-    list-style-type: none;
-    margin-left: auto;
-    margin-right: auto;
+	list-style-type: none;
+	padding-left: 4%;
     background-color: #2d32af;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 2px -2px gray;
-    position: sticky;
+	position: sticky;
+	border-bottom: white solid 1px
 }
 #site-logo{
+	display: none;
 	padding: 8px;
 	margin-left: 20px;
-	height: 40px;
+	height: auto;
+	width: 10px;
 }
 .nav-list {
 	display: inline-flex;
-	margin-left: auto;
-	margin-right: auto;
     font-size: 35px;
 	text-align: center;
+	height: 40px;
 }
 .nav-list > a {
 	text-decoration: none;
@@ -43,39 +45,6 @@ footer {
 }
 .nav-list > a:hover {
 	text-decoration: white underline solid
-}
-.episode {
-	width: 60%;
-	height: auto;
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 10px;
-	background-color: #2d32af;
-	border-radius: 5px;
-}
-.player {
-	margin-left: 20px;
-	margin-right: 20px;
-	padding-top: 10px;
-	/*background: url("../Images/loading.gif") center center no-repeat;*/
-}
-.episode-title {
-	color: white;
-	margin-left: 20px;
-	padding-top: 20px;
-}
-.ep-description {
-	color: whitesmoke;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-#getMore{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
-	width: 100px;
-	height: 30px;
 }
 footer {
 	margin-top: 60px;
