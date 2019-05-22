@@ -4,13 +4,14 @@
 	<meta charset="utf-8">
 	<title>IGSite</title>
 	<link rel="stylesheet" href="CSS/mainStyle.css">
+	<link rel="stylesheet" href="CSS/homeStyle.css">
   	<link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
 	<script src="Episodes.js" type="text/javascript"></script>
-	<div class="nav-bar">
+	<nav class="nav-bar">
 		<div class="nav-list">
 			<img id="site-logo" src="Images/IG_shirtdesign_badge_white.png">
 		  	<a href="#">Home</a>
@@ -18,8 +19,21 @@
 			<a href="Store/index.html">Store</a>
 			<a href="Contact/index.html">Contact</a>
 		</div>
-	</div>
-	<div id="episodes"></div>
-	<button id="getMore" onClick="">Get More</button>
+	</nav>
+	<main class="ig-main">
+		<section class="ig-main-left">
+			<div class="ig-main-left-text-container">
+				<h1>The Interstate Gamers</h1>
+				<p>The podcast where your hosts, deal_4_real and KSlugs, rate and discuss your favorite video games by category from two different states, Colorado and Texas.</p>
+			</div>
+		</section>
+		<aside class="ig-main-right">
+			<img class="ig-main-right-logo" src="Images/Main.png"><img>
+		</aside>
+	</main>
+	<section class="ig-content">
+		<div id="episodes">
+		<button id="getMore" onClick="">Get More</button>
+	</section>
 </body>
 </html>
