@@ -8,9 +8,8 @@ function fetchData(){
 		var data = JSON.parse(this.responseText);
 		SortEpisodesByDate(data)
 		for(var i = 0; i < data.length; i++)
-			CreateEpisode(data[i],i);
-		AddEpsToSite()
-		console.log(data)
+			CreateEpisode(data[i],i,true,data[0]["season"]["number"]);
+		//console.log(data)
 	  }
 	};
 	xmlhttp.open("GET", "Database/data.json", true);
@@ -33,8 +32,8 @@ function AddEpsToSite(){
 	}
 }
 
-function CreateEpisode(data,id){
-	if (data["status"] != "published")
+function CreateEpisode(data,id,show,latest_season){
+	if (data["status"] != "published" || data["season"]["number"] != latest_season)
 		return;
 	
 	var episodes = document.getElementById("episodes");
@@ -67,5 +66,8 @@ function CreateEpisode(data,id){
 	ep.appendChild(epDes);
 	ep.appendChild(epPlayer);
 	epPlayer.appendChild(player);
-	ep.style.display = "none";
+	if(show)
+		ep.style.display = "block";
+	else
+		ep.style.display = "none";
 }
