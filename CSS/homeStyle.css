@@ -81,7 +81,15 @@ width: 10px;
 }
 #ig-main-left-trailer{
     	width: 25vw;
-    	margin-top: 2.25vh;
+    	margin-top: 4.5vh;
+	color: #2d32af;
+	font-size: 1.7vw;
+	padding: .75vw .75vw .75vw 3vw;
+	border-radius: 6px;
+	background-color: white;
+}
+#ig-main-left-trailer > svg{
+	margin-right: 1vw;
 }
 #ig-icons {
 	margin-top: 1vh;
