@@ -68,7 +68,6 @@ main {
 #episodes::-webkit-scrollbar {
 width: 10px;
 }
-
 /* Track */
 #episodes::-webkit-scrollbar-track {
 	background: #f1f1f1;
@@ -79,4 +78,17 @@ width: 10px;
 #episodes::-webkit-scrollbar-thumb {
 	background: red;
 	border-radius: 30px;
+}
+#ig-main-left-trailer{
+	background-color: white;
+    	border-radius: 30px;
+    	padding: 5px;
+    	height: 5vh;
+    	width: 35vw;
+    	margin-top: 2.25vh;
+}
+#ig-main-left-trailer > svg{
+	margin-top: 1.8vh;
+	margin-left: 1.5vw;
+	color: red;
 }
