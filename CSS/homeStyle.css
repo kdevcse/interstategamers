@@ -2,7 +2,7 @@ main {
     background-color: #2d32af;
     clear: both;
     overflow: auto;
-    padding: 25px 5%;
+    padding: 20px 5%;
 }
 .ig-main-left{
     margin-top: 9%;
@@ -83,7 +83,13 @@ width: 10px;
     	width: 25vw;
     	margin-top: 2.25vh;
 }
+#ig-icons {
+	margin-top: 1vh;
+	text-align: center;
+}
 #ig-icons > svg{
 	color: white;
 	font-size: 2.5vw;
+	margin-right: 4.75%;
+	overflow: auto;
 }
