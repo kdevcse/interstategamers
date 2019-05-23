@@ -9,8 +9,10 @@ function fetchData(){
 		SortEpisodesByDate(data)
 		var seasonNum = 1;
 		for(var i = 0; i < data.length; i++){
-			let newSzn = data[i]["season"]["number"] > seasonNum
+			let newSzn = data[i]["season"]["number"] > seasonNum;
 			CreateEpisode(data[i],i,newSzn);
+			if (newSzn)
+				seasonNum = data[i]["season"]["number"];
 		}
 		//console.log(data) //debug
 	  }
