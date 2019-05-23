@@ -7,7 +7,7 @@ function fetchData(){
 	  if (this.readyState == 4 && this.status == 200) {
 		var data = JSON.parse(this.responseText);
 		SortEpisodesByDate(data)
-		var seasonNum = 3;
+		var seasonNum = data[0]["season"]["number"] + 1;
 		for(var i = 0; i < data.length; i++){
 			if (data[i]["season"]["number"] < seasonNum){
 				seasonNum = data[i]["season"]["number"];
