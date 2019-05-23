@@ -37,7 +37,10 @@ main {
 #episodes{
     float: left;
     clear: left;
-	width: 50%;
+    width: 50%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 2%;
 }
 .episode {
 	height: auto;
@@ -46,9 +49,6 @@ main {
 .player {
 	margin-top: 10px;
 	/*background: url("../Images/loading.gif") center center no-repeat;*/
-}
-button > .play-pause > svg {
-    fill: #2d32af;
 }
 .season-title{
     color: red;
@@ -61,4 +61,19 @@ button > .play-pause > svg {
 }
 .ep-description {
 	color: #2d32af;
+}
+
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: red; 
 }
