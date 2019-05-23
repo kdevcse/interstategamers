@@ -37,12 +37,11 @@ main {
 #episodes{
     float: left;
     clear: left;
-	width: 10%;
+	width: 50%;
 }
 .episode {
 	height: auto;
-    margin-bottom: 10px;
-    margin-top: 40px;
+    margin-bottom: 60px;
 }
 .player {
 	margin-top: 10px;
@@ -50,9 +49,12 @@ main {
 }
 #season-title{
     color: red;
+    width: 50%;
+    text-decoration: solid red underline
 }
 .episode-title {
-	color: #2d32af;
+    color: #2d32af;
+    font-size: 1.3rem
 }
 .ep-description {
 	color: #2d32af;

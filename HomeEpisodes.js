@@ -36,7 +36,7 @@ function CreateEpisode(data,id,show,latest_season){
 	ep.setAttribute("class", "episode");
 	ep.setAttribute("id", `ep${id}`);
 		
-	var epTitle = document.createElement("h1");
+	var epTitle = document.createElement("h2");
 	epTitle.setAttribute("class", "episode-title");
 	epTitle.textContent = data["title"];
 		
