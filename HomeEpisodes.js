@@ -9,7 +9,7 @@ function fetchData(){
 		SortEpisodesByDate(data)
 		for(var i = 0; i < data.length; i++)
 			CreateEpisode(data[i],i);
-		AddEpToSite()
+		AddEpsToSite()
 		console.log(data)
 	  }
 	};
