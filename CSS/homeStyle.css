@@ -34,7 +34,7 @@ main {
     overflow: auto;
     padding: 25px 5%;
 }
-.episodes{
+#episodes{
     float: left;
     clear: left;
 	width: 10%;
@@ -48,7 +48,7 @@ main {
 	margin-top: 10px;
 	/*background: url("../Images/loading.gif") center center no-repeat;*/
 }
-.season-title{
+#season-title{
     color: red;
 }
 .episode-title {

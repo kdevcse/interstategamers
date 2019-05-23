@@ -7,13 +7,20 @@ function fetchData(){
 	  if (this.readyState == 4 && this.status == 200) {
 		var data = JSON.parse(this.responseText);
 		SortEpisodesByDate(data)
+		var seasonNum = data[0]["season"]["number"];
+		setSeason(seasonNum)
 		for(var i = 0; i < data.length; i++)
-			CreateEpisode(data[i],i,true,data[0]["season"]["number"]);
+			CreateEpisode(data[i],i,true,seasonNum);
 		//console.log(data) //debug
 	  }
 	};
 	xmlhttp.open("GET", "Database/data.json", true);
 	xmlhttp.send();
+}
+
+function setSeason(number){
+	const season = document.getElementById("season-title");
+	season.innerHTML = "Season " + number;
 }
 
 function SortEpisodesByDate(episodes) {
