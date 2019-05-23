@@ -5,7 +5,7 @@ main {
     padding: 25px 5%;
 }
 .ig-main-left{
-    margin-top: 11%;
+    margin-top: 9%;
     float: left;
     clear: left;
     width: 50%;
@@ -14,13 +14,13 @@ main {
     color: white;
 }
 .ig-main-left-text-container > h1{
-	font-size: 3vw;
+	font-size: 2.9vw;
 	margin-bottom: 5px;
 	margin-top: 0;
 }
 .ig-main-left-text-container > p{
     margin: 0;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
 }
 .ig-main-right{
     float: right;
@@ -28,7 +28,7 @@ main {
 }
 .ig-main-right-logo{
     height: auto;
-    width: 27vw;
+    width: 26.5vw;
 }
 .ig-content{
     clear: both;
