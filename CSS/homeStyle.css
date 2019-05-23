@@ -26,7 +26,7 @@ main {
     clear: right;
 }
 .ig-main-right-logo{
-    height: 400px;
+    height: 35vh;
     width: auto;
 }
 .ig-content{
@@ -41,11 +41,11 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
     padding-right: 2%;
-    height: 500px;
+    height: 49vh;
 }
 .episode {
 	height: auto;
-    margin-bottom: 60px;
+	margin-bottom: 60px;
 }
 .player {
 	margin-top: 10px;
@@ -70,10 +70,12 @@ width: 10px;
 
 /* Track */
 #episodes::-webkit-scrollbar-track {
-background: #f1f1f1; 
+	background: #f1f1f1;
+	border-radius: 30px;
 }
 
 /* Handle */
 #episodes::-webkit-scrollbar-thumb {
-background: red; 
+	background: red;
+	border-radius: 30px;
 }
