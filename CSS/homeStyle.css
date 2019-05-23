@@ -83,3 +83,6 @@ width: 10px;
     	width: 25vw;
     	margin-top: 2.25vh;
 }
+#ig-icons > svg{
+	color: white;
+}
