@@ -54,10 +54,10 @@ function CreateEpisode(data,id){
 	epPlayer.setAttribute("class", "player");
 		
 	var player = document.createElement("iframe");
-	player.setAttribute("frameborder", "0");
+	player.setAttribute("frameborder", "no");
 	player.setAttribute("height", "200px");
 	player.setAttribute("scrolling", "no");
-	var playerSrc = data["sharing_url"].replace("simplecast.com","embed.simplecast.com").replace("/s","") + "?dark=true";
+	var playerSrc = `https://player.simplecast.com/${data["id"]}?dark=false`
 	player.setAttribute("src", playerSrc);
 	player.setAttribute("width", "100%");
 	player.setAttribute("seamless", "seamless");
