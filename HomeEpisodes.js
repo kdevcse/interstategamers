@@ -67,5 +67,5 @@ function CreateEpisode(data,id){
 	ep.appendChild(epDes);
 	ep.appendChild(epPlayer);
 	epPlayer.appendChild(player);
-	$(`#ep${id}`).hide();
+	ep.style.display = "none";
 }
