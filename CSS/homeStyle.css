@@ -37,7 +37,7 @@ main {
 #episodes{
     float: left;
     clear: left;
-	width: 100%;
+	width: 50%;
 }
 .episode {
 	height: auto;
@@ -52,7 +52,7 @@ button > .play-pause > svg {
 }
 .season-title{
     color: red;
-    width: 50%;
+    width: 100%;
     border-bottom: solid red
 }
 .episode-title {
