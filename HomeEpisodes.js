@@ -34,7 +34,7 @@ function AddEpsToSite(){
 }
 
 function CreateEpisode(data,id){
-	if (!data["published"])
+	if (data["status"] != "published")
 		return;
 	
 	var episodes = document.getElementById("episodes");
