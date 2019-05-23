@@ -41,6 +41,7 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
     padding-right: 2%;
+    height: 500px;
 }
 .episode {
 	height: auto;
@@ -62,18 +63,17 @@ main {
 .ep-description {
 	color: #2d32af;
 }
-
 /* width */
-::-webkit-scrollbar {
+#episodes ::-webkit-scrollbar {
 width: 10px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+#episodes ::-webkit-scrollbar-track {
 background: #f1f1f1; 
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+#episodes ::-webkit-scrollbar-thumb {
 background: red; 
 }
