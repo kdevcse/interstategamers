@@ -47,10 +47,13 @@ main {
 	margin-top: 10px;
 	/*background: url("../Images/loading.gif") center center no-repeat;*/
 }
+button > .play-pause > svg {
+    fill: #2d32af;
+}
 #season-title{
     color: red;
     width: 50%;
-    text-decoration: solid red underline
+    border-bottom: solid red
 }
 .episode-title {
     color: #2d32af;

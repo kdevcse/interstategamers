@@ -49,7 +49,7 @@ function CreateEpisode(data,id,show,latest_season){
 		
 	var player = document.createElement("iframe");
 	player.setAttribute("frameborder", "no");
-	player.setAttribute("height", "200px");
+	player.setAttribute("height", "52px");
 	player.setAttribute("scrolling", "no");
 	var playerSrc = `https://player.simplecast.com/${data["id"]}?dark=false`
 	player.setAttribute("src", playerSrc);
