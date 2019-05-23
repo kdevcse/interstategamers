@@ -80,20 +80,6 @@ width: 10px;
 	border-radius: 30px;
 }
 #ig-main-left-trailer{
-	background-color: white;
-    	border-radius: 3vh;
-	padding: .5vh .5vw;
-    	height: 5vh;
     	width: 25vw;
     	margin-top: 2.25vh;
-}
-#ig-main-left-trailer > svg{
-	margin-top: 1vh;
-	margin-left: 1.5vw;
-	color: red;
-}
-#ig-main-left-trailer > span{
-	margin-left: 2vw;
-	color: #2d32af;
-	overflow: hidden;
 }
