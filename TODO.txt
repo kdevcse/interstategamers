@@ -1,8 +1,0 @@
-Home Page:
-	- on click of the episode title in the home page, go to details about the episode including rankings.
-	- Can find title perhaps through the use of XML?
-	- Need to style "Get More" button and add shadows 
-Ratings:
-	- What's the best and most fun ways to display data?
-	- Perhaps produce a quick view of episode ratings
-	
