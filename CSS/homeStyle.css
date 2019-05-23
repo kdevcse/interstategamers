@@ -41,24 +41,19 @@ main {
 }
 .episode {
 	height: auto;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 40px;
 }
 .player {
-	padding-top: 10px;
+	margin-top: 10px;
 	/*background: url("../Images/loading.gif") center center no-repeat;*/
 }
+.season-title{
+    color: red;
+}
 .episode-title {
-	color: red;
-	padding-top: 20px;
+	color: #2d32af;
 }
 .ep-description {
 	color: #2d32af;
-}
-#getMore{
-	display: none;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
-	width: 100px;
-	height: 30px;
 }

@@ -9,7 +9,7 @@ function fetchData(){
 		SortEpisodesByDate(data)
 		for(var i = 0; i < data.length; i++)
 			CreateEpisode(data[i],i,true,data[0]["season"]["number"]);
-		//console.log(data)
+		//console.log(data) //debug
 	  }
 	};
 	xmlhttp.open("GET", "Database/data.json", true);
@@ -18,18 +18,6 @@ function fetchData(){
 
 function SortEpisodesByDate(episodes) {
 	return episodes.sort(function(a,b){return new Date(b["published_at"]) - new Date(a["published_at"])});
-}
-
-function AddEpsToSite(){
-	var count = epCount;
-	for(var i = count; i < count + 5; i++){
-		if (i > episodes.length - 1){
-			document.getElementById(`getMore`).style.display = "none";
-			return;
-		}
-		document.getElementById(`ep${id}`).style.display = "block";
-		epCount++;
-	}
 }
 
 function CreateEpisode(data,id,show,latest_season){
