@@ -7,10 +7,8 @@ function fetchData(){
 	  if (this.readyState == 4 && this.status == 200) {
 		var data = JSON.parse(this.responseText);
 		SortEpisodesByDate(data)
-		var seasonNum = data[0]["season"]["number"];
-		setSeason(seasonNum)
 		for(var i = 0; i < data.length; i++)
-			CreateEpisode(data[i],i,true,seasonNum);
+			CreateEpisode(data[i],i,true);
 		//console.log(data) //debug
 	  }
 	};
@@ -18,20 +16,23 @@ function fetchData(){
 	xmlhttp.send();
 }
 
-function setSeason(number){
-	const season = document.getElementById("season-title");
-	season.innerHTML = "Season " + number;
-}
-
 function SortEpisodesByDate(episodes) {
 	return episodes.sort(function(a,b){return new Date(b["published_at"]) - new Date(a["published_at"])});
 }
 
-function CreateEpisode(data,id,show,latest_season){
-	if (data["status"] != "published" || data["season"]["number"] != latest_season)
+function CreateEpisode(data,id,show){
+	if (data["status"] != "published")
 		return;
 	
 	var episodes = document.getElementById("episodes");
+
+	if(data["number"] == 1){
+		var season = document.createElement("h1");
+		season.setAttribute("class","season-title");
+		season.innerHTML = "Season " + data["season"]["number"];
+		episodes.appendChild(season);
+	}
+	
 	var ep = document.createElement("div");
 	ep.setAttribute("class", "episode");
 	ep.setAttribute("id", `ep${id}`);

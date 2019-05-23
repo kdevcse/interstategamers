@@ -50,7 +50,7 @@ main {
 button > .play-pause > svg {
     fill: #2d32af;
 }
-#season-title{
+.season-title{
     color: red;
     width: 50%;
     border-bottom: solid red
