@@ -7,8 +7,11 @@ function fetchData(){
 	  if (this.readyState == 4 && this.status == 200) {
 		var data = JSON.parse(this.responseText);
 		SortEpisodesByDate(data)
-		for(var i = 0; i < data.length; i++)
-			CreateEpisode(data[i],i,true);
+		var seasonNum = 1;
+		for(var i = 0; i < data.length; i++){
+			if (data[i]["season"]["number"] > seasonNum)
+				CreateEpisode(data[i],i,true);
+		}
 		//console.log(data) //debug
 	  }
 	};
@@ -20,13 +23,13 @@ function SortEpisodesByDate(episodes) {
 	return episodes.sort(function(a,b){return new Date(b["published_at"]) - new Date(a["published_at"])});
 }
 
-function CreateEpisode(data,id,show){
+function CreateEpisode(data,id,newSeason){
 	if (data["status"] != "published")
 		return;
 	
 	var episodes = document.getElementById("episodes");
 
-	if(data["number"] == 1){
+	if(newSeason){
 		var season = document.createElement("h1");
 		season.setAttribute("class","season-title");
 		season.innerHTML = "Season " + data["season"]["number"];
@@ -62,8 +65,5 @@ function CreateEpisode(data,id,show){
 	ep.appendChild(epDes);
 	ep.appendChild(epPlayer);
 	epPlayer.appendChild(player);
-	if(show)
-		ep.style.display = "block";
-	else
-		ep.style.display = "none";
+	ep.style.display = "block";
 }

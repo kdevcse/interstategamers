@@ -37,7 +37,7 @@ main {
 #episodes{
     float: left;
     clear: left;
-	width: 50%;
+	width: 100%;
 }
 .episode {
 	height: auto;
