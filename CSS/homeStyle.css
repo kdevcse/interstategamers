@@ -2,10 +2,10 @@ main {
     background-color: #2d32af;
     clear: both;
     overflow: auto;
-    padding: 25px 5%;
+    padding: 20px 5%;
 }
 .ig-main-left{
-    margin-top: 9%;
+    margin-top: 6%;
     float: left;
     clear: left;
     width: 50%;
@@ -44,9 +44,13 @@ main {
     padding-right: 2%;
     height: 49vh;
 }
-.episode {
+.episode, .episode-first {
 	height: auto;
-	margin-bottom: 60px;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+}
+.episode {
+    border-top: blue solid 1px;
 }
 .player {
 	margin-top: 10px;
@@ -55,18 +59,21 @@ main {
 .season-title{
     color: red;
     width: 100%;
-    border-bottom: solid red
+    border-bottom: solid red;
+    margin-bottom: 0;
 }
 .episode-title {
     color: #2d32af;
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    margin-bottom: 0;
 }
 .ep-description {
-	color: #2d32af;
+    color: #2d32af;
+    margin-top: 5px;
 }
 /* width */
 #episodes::-webkit-scrollbar {
-width: 10px;
+    width: 10px;
 }
 /* Track */
 #episodes::-webkit-scrollbar-track {
@@ -80,6 +87,37 @@ width: 10px;
 	border-radius: 30px;
 }
 #ig-main-left-trailer{
-    	width: 25vw;
-    	margin-top: 2.25vh;
+    width: 25vw;
+    margin-top: 2vw;
+	color: #2d32af;
+	font-size: 1.7vw;
+	padding: .75vw .75vw .75vw 3vw;
+	border-radius: 6px;
+    background-color: white;
+    transition: opacity .2s ease-in;
+}
+#ig-main-left-trailer:hover{
+    cursor: pointer;
+    text-decoration: underline;
+} 
+#ig-icons > a > svg:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+#ig-main-left-trailer > svg{
+	margin-right: 1vw;
+	font-size: 2.2vw;
+	color: red;
+}
+#ig-icons {
+	margin-top: 2vh;
+	text-align: center;
+}
+#ig-icons > a > svg{
+	color: white;
+	font-size: 2.5vw;
+	margin-right: 2.375%;
+	margin-left: 2.375%;
+	overflow: auto;
+    transition: opacity .2s ease-in;
 }

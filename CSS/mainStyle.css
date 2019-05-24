@@ -13,8 +13,10 @@ footer {
 }
 .nav-bar {
 	list-style-type: none;
-	padding-left: 4%;
-    background-color: #2d32af;
+	padding-top: 1.75vw;
+	padding-bottom: 1.75vw;
+	padding-left: 5%;
+  background-color: #2d32af;
 	position: sticky;
 	border-bottom: white solid 1px
 }
@@ -27,21 +29,18 @@ footer {
 }
 .nav-list {
 	display: inline-flex;
-    font-size: 35px;
+  font-size: 35px;
 	text-align: center;
-	height: 40px;
 }
 .nav-list > a {
 	text-decoration: none;
 	color: white;
 	font-family: Interstate;
 	font-weight: bold;
-	font-size: 20px;
-	margin-left: 6%;
-	margin-top: 3%;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	font-size: 1.6vw;
+	margin-right: 15%;
 	vertical-align: middle;
+	transition: text-decoration .2s ease-in;
 }
 .nav-list > a:hover {
 	text-decoration: white underline solid
