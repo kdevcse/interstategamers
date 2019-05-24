@@ -42,7 +42,11 @@ function CreateEpisode(data,id,newSeason){
 	}
 	
 	var ep = document.createElement("div");
-	ep.setAttribute("class", "episode");
+	if(newSeason)
+		ep.setAttribute("class", "episode-first");
+	else
+		ep.setAttribute("class", "episode");
+	
 	ep.setAttribute("id", `ep${id}`);
 		
 	var epTitle = document.createElement("h2");

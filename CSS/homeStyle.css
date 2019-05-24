@@ -44,10 +44,12 @@ main {
     padding-right: 2%;
     height: 49vh;
 }
-.episode {
+.episode, .episode-first {
 	height: auto;
     padding-top: 1vh;
     padding-bottom: 2vh;
+}
+.episode {
     border-bottom: blue solid 1px;
 }
 .player {
