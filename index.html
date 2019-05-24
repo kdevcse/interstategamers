@@ -26,23 +26,33 @@
 				<h1>The Interstate Gamers</h1>
 				<p>The podcast where your hosts, deal_4_real and KSlugs, rate and discuss your favorite video games by category from two different states, Colorado and Texas.</p>
 			</div>
-			<div id="ig-main-left-trailer">
-				<audio id="ig-trailer" title="Listen to the trailer">
+			<div id="ig-main-left-trailer" onclick="onPlay()">
+				<audio id="ig-trailer" title="Listen to the trailer" onended="stopAudio()">
 					<source src="Audio/IgPromo.wav" type="audio/wav">
 					<source src="Audio/IgPromo.mp3" type="audio/mpeg">
 				</audio>
-				<i class="fas fa-play-circle" onclick=""></i>
+				<i id="ig-trailer-playButton" class="fas fa-play-circle"></i>
 				<span>Listen to the trailer</span>
 			</div>
 		</section>
 		<aside class="ig-main-right">
 			<img class="ig-main-right-logo" src="Images/Main.png"><img>
 			<div id="ig-icons">
-				<i class="fab fa-facebook-square fa-2x"></i>
-				<i class="fab fa-twitter fa-2x"></i>
-				<i class="fab fa-instagram fa-2x"></i>
-				<i class="fab fa-patreon fa-2x"></i>
-				<i class="fas fa-rss fa-2x"></i>
+				<a href="https://www.facebook.com/TheInterstateGamers/", title="Facebook">
+					<i class="fab fa-facebook-square fa-2x"></i>
+				</a>
+				<a href="https://twitter.com/theIG_cast", title="Twitter">
+					<i class="fab fa-twitter fa-2x"></i>
+				</a>
+				<a href="https://instagram.com/theigcast", title="Instagram">
+					<i class="fab fa-instagram fa-2x"></i>
+				</a>
+				<a href="https://www.patreon.com/TheIGCast", title="Patreon">
+					<i class="fab fa-patreon fa-2x"></i>
+				</a>
+				<a href="https://feeds.simplecast.com/naeWXDEF", title="RSS">
+					<i class="fas fa-rss fa-2x"></i>
+				</a>
 			</div>
 		</aside>
 	</main>

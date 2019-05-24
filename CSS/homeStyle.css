@@ -66,7 +66,7 @@ main {
 }
 /* width */
 #episodes::-webkit-scrollbar {
-width: 10px;
+    width: 10px;
 }
 /* Track */
 #episodes::-webkit-scrollbar-track {
@@ -80,13 +80,22 @@ width: 10px;
 	border-radius: 30px;
 }
 #ig-main-left-trailer{
-    	width: 25vw;
-    	margin-top: 4.5vh;
+    width: 25vw;
+    margin-top: 4.5vh;
 	color: #2d32af;
 	font-size: 1.7vw;
 	padding: .75vw .75vw .75vw 3vw;
 	border-radius: 6px;
-	background-color: white;
+    background-color: white;
+    transition: opacity .2s ease-in;
+}
+#ig-main-left-trailer:hover{
+    cursor: pointer;
+    text-decoration: underline;
+} 
+#ig-icons > a > svg:hover{
+    cursor: pointer;
+    opacity: 0.8;
 }
 #ig-main-left-trailer > svg{
 	margin-right: 1vw;
@@ -97,10 +106,11 @@ width: 10px;
 	margin-top: 1vh;
 	text-align: center;
 }
-#ig-icons > svg{
+#ig-icons > a > svg{
 	color: white;
 	font-size: 2.5vw;
 	margin-right: 2.375%;
 	margin-left: 2.375%;
 	overflow: auto;
+    transition: opacity .2s ease-in;
 }

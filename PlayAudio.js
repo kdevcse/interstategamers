@@ -1,7 +1,17 @@
 function onPlay(){
-    var audio = document.getElementById("ig-trailer");
-    if(audio.paused)
+    const audio = document.getElementById("ig-trailer");
+    var button = document.getElementById("ig-trailer-playButton");
+    if(audio.paused){
         audio.play();
-    else
+        button.setAttribute("class","fas fa-pause-circle");
+    }
+    else{
         audio.pause();
+        button.setAttribute("class","fas fa-play-circle");
+    }
+}
+
+function stopAudio(){
+    const button = document.getElementById("ig-trailer-playButton");
+    button.setAttribute("class","fas fa-play-circle");
 }
