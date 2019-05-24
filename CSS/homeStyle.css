@@ -5,7 +5,7 @@ main {
     padding: 20px 5%;
 }
 .ig-main-left{
-    margin-top: 9%;
+    margin-top: 6%;
     float: left;
     clear: left;
     width: 50%;
@@ -81,7 +81,7 @@ main {
 }
 #ig-main-left-trailer{
     width: 25vw;
-    margin-top: 4.5vh;
+    margin-top: 2vw;
 	color: #2d32af;
 	font-size: 1.7vw;
 	padding: .75vw .75vw .75vw 3vw;
