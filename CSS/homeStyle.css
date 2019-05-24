@@ -46,7 +46,9 @@ main {
 }
 .episode {
 	height: auto;
-	margin-bottom: 6vh;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+    border-bottom: blue solid 1px;
 }
 .player {
 	margin-top: 10px;
@@ -56,7 +58,7 @@ main {
     color: red;
     width: 100%;
     border-bottom: solid red;
-    margin-bottom: 3vh;
+    margin-bottom: 0;
 }
 .episode-title {
     color: #2d32af;
