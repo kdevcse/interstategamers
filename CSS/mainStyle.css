@@ -13,8 +13,8 @@ footer {
 }
 .nav-bar {
 	list-style-type: none;
-	padding-top: 3vh;
-	padding-bottom: 3vh;
+	padding-top: 1.75vw;
+	padding-bottom: 1.75vw;
 	padding-left: 5%;
   background-color: #2d32af;
 	position: sticky;
