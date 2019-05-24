@@ -50,7 +50,7 @@ main {
     padding-bottom: 2vh;
 }
 .episode {
-    border-bottom: blue solid 1px;
+    border-top: blue solid 1px;
 }
 .player {
 	margin-top: 10px;
