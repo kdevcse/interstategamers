@@ -46,7 +46,7 @@ main {
 }
 .episode {
 	height: auto;
-	margin-bottom: 60px;
+	margin-bottom: 6vh;
 }
 .player {
 	margin-top: 10px;
@@ -55,14 +55,17 @@ main {
 .season-title{
     color: red;
     width: 100%;
-    border-bottom: solid red
+    border-bottom: solid red;
+    margin-bottom: 3vh;
 }
 .episode-title {
     color: #2d32af;
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    margin-bottom: 0;
 }
 .ep-description {
-	color: #2d32af;
+    color: #2d32af;
+    margin-top: 5px;
 }
 /* width */
 #episodes::-webkit-scrollbar {
@@ -103,7 +106,7 @@ main {
 	color: red;
 }
 #ig-icons {
-	margin-top: 1vh;
+	margin-top: 2vh;
 	text-align: center;
 }
 #ig-icons > a > svg{

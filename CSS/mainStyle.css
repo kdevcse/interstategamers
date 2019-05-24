@@ -37,9 +37,10 @@ footer {
 	color: white;
 	font-family: Interstate;
 	font-weight: bold;
-	font-size: 1.4vw;
-	margin-right: 6%;
+	font-size: 1.6vw;
+	margin-right: 15%;
 	vertical-align: middle;
+	transition: text-decoration .2s ease-in;
 }
 .nav-list > a:hover {
 	text-decoration: white underline solid
