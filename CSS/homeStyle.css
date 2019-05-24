@@ -91,8 +91,9 @@ main {
     margin-top: 2vw;
 	color: #2d32af;
 	font-size: 1.7vw;
-	padding: .75vw .75vw .75vw 3vw;
+	padding: .75vw .75vw .75vw 2.75vw;
 	border-radius: 6px;
+	display: inline-flex;
     background-color: white;
     transition: opacity .2s ease-in;
 }
