@@ -32,8 +32,8 @@ main {
 }
 .ig-content{
     clear: both;
-    overflow: auto;
     padding: 25px 5%;
+    height: 100vh;
 }
 #episodes{
     float: left;
@@ -42,7 +42,7 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
     padding-right: 2%;
-    height: 49vh;
+    height: 100%;
 }
 .episode, .episode-first {
 	height: auto;
@@ -121,6 +121,26 @@ main {
 	margin-left: 2.375%;
 	overflow: auto;
     transition: opacity .2s ease-in;
+}
+#ig-content-rank{
+    margin-left: 55%;
+    height: 100%;
+	color: #2d32af;
+}
+#ig-content-rank-game-overall{
+    color: red;
+}
+.progress-background{
+    background-color: #f1f1f1;
+    width: 100%;
+}
+.progress-foreground{
+    height: 3.5vh;
+    background-color: #2d32af;
+}
+.progress-foreground-overall{
+    height: 3.5vh;
+    background-color: red;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

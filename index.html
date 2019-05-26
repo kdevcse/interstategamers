@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>The Interstate Gamers</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="CSS/mainStyle.css">
 	<link rel="stylesheet" href="CSS/homeStyle.css">
 	<link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
@@ -14,7 +15,7 @@
 	<script src="PlayAudio.js" type="text/javascript"></script>
 	<nav class="nav-bar">
 		<div class="nav-list">
-		  	<a href="#">Home</a>
+		  	<a href="#">Episodes</a>
 		  	<a href="Ratings/index.html">Ratings</a>
 			<a href="Store/index.html">Store</a>
 			<a href="Contact/index.html">Contact</a>
@@ -57,7 +58,27 @@
 		</aside>
 	</main>
 	<section class="ig-content">
-		<div id="episodes">
+		<div id="episodes"></div>
+		<aside id="ig-content-rank">
+			<h2 id="ig-content-rank-game-title">3-2: Title</h2>
+			<h1 id="ig-content-rank-game-rank">Rank 2/25</h1>
+			<h1 id="ig-content-rank-game-overall">Overall score 95/100</h1>
+			<div class="progress-background">
+				<div style="width: 95%;" class="progress-foreground-overall" id="ig-content-rank-progress-overall"></div>
+			</div>
+			<h1 id="ig-content-rank-game-gameplay">Gameplay 95/100</h1>
+			<div class="progress-background">
+				<div style="width: 95%;" class="progress-foreground" id="ig-content-rank-progress-gameplay"></div>
+			</div>
+			<h1 id="ig-content-rank-game-aesthetics">Aesthetics 95/100</h1>
+			<div class="progress-background">
+				<div style="width: 95%;" class="progress-foreground" id="ig-content-rank-progress-aesthetics"></div>
+			</div>
+			<h1 id="ig-content-rank-game-content">Content 95/100</h1>
+			<div class="progress-background">
+				<div style="width: 95%;" class="progress-foreground" id="ig-content-rank-progress-content"></div>
+			</div>
+		</aside>
 	</section>
 </body>
 </html>
