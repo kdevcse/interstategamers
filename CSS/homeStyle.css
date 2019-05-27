@@ -52,6 +52,9 @@ main {
 .episode {
     border-top: blue solid 1px;
 }
+.episode:hover,.episode-first:hover{
+	background: #f1f1f1;
+}
 .player {
 	margin-top: 10px;
 	/*background: url("../Images/loading.gif") center center no-repeat;*/
@@ -126,6 +129,9 @@ main {
     margin-left: 55%;
     height: 100%;
 	color: #2d32af;
+}
+#ig-content-rank > h1{
+    margin-bottom: 3px;
 }
 #ig-content-rank-game-overall{
     color: red;
