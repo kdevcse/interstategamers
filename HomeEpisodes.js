@@ -48,6 +48,7 @@ function CreateEpisode(data,id,newSeason){
 		ep.setAttribute("class", "episode");
 	
 	ep.setAttribute("id", `ep${id}`);
+	ep.setAttribute("onmouseover",`showRating(${id})`);
 		
 	var epTitle = document.createElement("h2");
 	epTitle.setAttribute("class", "episode-title");
@@ -75,4 +76,44 @@ function CreateEpisode(data,id,newSeason){
 	ep.appendChild(epPlayer);
 	epPlayer.appendChild(player);
 	ep.style.display = "block";
+}
+
+function showRating(gameId){
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+		var data = JSON.parse(this.responseText);
+		SortEpisodesByDate(data);
+		setRatingValues(data[gameId]);
+		};
+	}
+	xmlhttp.open("GET", "Database/data.json", true);
+	xmlhttp.send();
+}
+function setRatingValues(game) {
+	if(!game["Ranking Info"])
+		return;
+
+	var title = document.getElementById("ig-content-rank-game-title");
+	title.innerHTML = game["title"];
+	
+	var overall = document.getElementById("ig-content-rank-game-overall");
+	overall.innerHTML = `Overall ${game["Ranking Info"]["IG Score"]}/100`
+	overallPercent = document.getElementById("ig-content-rank-progress-overall");
+	overallPercent.style.width = `${game["Ranking Info"]["IG Score"]}%`;
+
+	var gameplay = document.getElementById("ig-content-rank-game-gameplay");
+	gameplay.innerHTML = `Gameplay ${game["Ranking Info"]["Gameplay"]}/100`
+	gameplayPercent = document.getElementById("ig-content-rank-progress-gameplay");
+	gameplayPercent.style.width = `${game["Ranking Info"]["Gameplay"]}%`;
+
+	var aesthetics = document.getElementById("ig-content-rank-game-aesthetics");
+	aesthetics.innerHTML = `Aesthetics ${game["Ranking Info"]["Aesthetics"]}/100`
+	aestheticsPercent = document.getElementById("ig-content-rank-progress-aesthetics");
+	aestheticsPercent.style.width = `${game["Ranking Info"]["Aesthetics"]}%`;
+
+	var content = document.getElementById("ig-content-rank-game-content");
+	content.innerHTML = `Content ${game["Ranking Info"]["Content"]}/100`
+	contentPercent = document.getElementById("ig-content-rank-progress-content");
+	contentPercent.style.width = `${game["Ranking Info"]["Content"]}%`;
 }

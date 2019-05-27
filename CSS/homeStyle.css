@@ -133,13 +133,14 @@ main {
 .progress-background{
     background-color: #f1f1f1;
     width: 100%;
+    border-radius: 4px;
 }
 .progress-foreground{
     height: 3.5vh;
     background-color: #2d32af;
+    border-radius: 4px;
 }
-.progress-foreground-overall{
-    height: 3.5vh;
+#ig-content-rank-progress-overall{
     background-color: red;
 }
 /* Extra small devices (phones, 600px and down) */
