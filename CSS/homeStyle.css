@@ -32,8 +32,8 @@ main {
 }
 .ig-content{
     clear: both;
-    overflow: auto;
     padding: 25px 5%;
+    height: 100vh;
 }
 #episodes{
     float: left;
@@ -42,7 +42,7 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
     padding-right: 2%;
-    height: 49vh;
+    height: 100%;
 }
 .episode, .episode-first {
 	height: auto;
@@ -51,6 +51,9 @@ main {
 }
 .episode {
     border-top: blue solid 1px;
+}
+.episode:hover,.episode-first:hover{
+	background: #f1f1f1;
 }
 .player {
 	margin-top: 10px;
@@ -91,8 +94,9 @@ main {
     margin-top: 2vw;
 	color: #2d32af;
 	font-size: 1.7vw;
-	padding: .75vw .75vw .75vw 3vw;
+	padding: .75vw .75vw .75vw 2.75vw;
 	border-radius: 6px;
+	display: inline-flex;
     background-color: white;
     transition: opacity .2s ease-in;
 }
@@ -120,4 +124,47 @@ main {
 	margin-left: 2.375%;
 	overflow: auto;
     transition: opacity .2s ease-in;
+}
+#ig-content-rank{
+    margin-left: 55%;
+    height: 100%;
+	color: #2d32af;
+}
+#ig-content-rank > h1{
+    margin-bottom: 3px;
+}
+#ig-content-rank-game-overall{
+    color: red;
+}
+.progress-background{
+    background-color: #f1f1f1;
+    width: 100%;
+    border-radius: 4px;
+}
+.progress-foreground{
+    height: 3.5vh;
+    background-color: #2d32af;
+    border-radius: 4px;
+}
+#ig-content-rank-progress-overall{
+    background-color: red;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

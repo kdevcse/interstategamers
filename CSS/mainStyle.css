@@ -2,9 +2,9 @@
 /* Notes: Blue:2d32af Red:e11932 */
 * {
 	box-sizing: border-box;
-  }  
-body {
 	font-family: Interstate;
+}  
+body {
 	margin: 0;
 }
 footer {

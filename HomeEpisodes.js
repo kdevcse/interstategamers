@@ -1,5 +1,9 @@
 var episodes = [];
 var epCount = 0;
+var overallInt;
+var gameplayInt;
+var aestheticsInt;
+var contentInt;
 
 function fetchData(){
 	var xmlhttp = new XMLHttpRequest();
@@ -48,9 +52,18 @@ function CreateEpisode(data,id,newSeason){
 		ep.setAttribute("class", "episode");
 	
 	ep.setAttribute("id", `ep${id}`);
+	ep.setAttribute("onmouseover",`setRatingValues(${id})`);
+
+	if (data["Ranking Info"]){
+		ep.setAttribute("data-overall",data["Ranking Info"]["IG Score"]);
+		ep.setAttribute("data-gameplay",data["Ranking Info"]["Gameplay"]);
+		ep.setAttribute("data-aesthetics",data["Ranking Info"]["Aesthetics"]);
+		ep.setAttribute("data-content",data["Ranking Info"]["Content"]);
+	}
 		
 	var epTitle = document.createElement("h2");
 	epTitle.setAttribute("class", "episode-title");
+	epTitle.setAttribute("id",`ep${id}-title`);
 	epTitle.textContent = data["title"];
 		
 	var epDes = document.createElement("p");
@@ -75,4 +88,64 @@ function CreateEpisode(data,id,newSeason){
 	ep.appendChild(epPlayer);
 	epPlayer.appendChild(player);
 	ep.style.display = "block";
+}
+
+function setRatingValues(id) {
+	var ep = document.getElementById(`ep${id}`);
+	if(!ep.hasAttribute("data-overall"))
+		return;
+
+	clearInterval(overallInt);
+	clearInterval(gameplayInt);
+	clearInterval(aestheticsInt);
+	clearInterval(contentInt);
+
+	var title = document.getElementById("ig-content-rank-game-title");
+	title.innerHTML = document.getElementById(`ep${id}-title`).textContent;
+	
+	var overall = document.getElementById("ig-content-rank-game-overall");
+	var overallVal = Number(ep.getAttribute("data-overall")).toFixed(2);
+	overall.innerHTML = `Overall ${overallVal}/100`;
+	overallPercent = document.getElementById("ig-content-rank-progress-overall");
+
+	var gameplay = document.getElementById("ig-content-rank-game-gameplay");
+	var gameplayVal = Number(ep.getAttribute("data-gameplay")).toFixed(2);
+	gameplay.innerHTML = `Gameplay ${gameplayVal}/100`;
+	gameplayPercent = document.getElementById("ig-content-rank-progress-gameplay");
+
+	var aesthetics = document.getElementById("ig-content-rank-game-aesthetics");
+	var aestheticsVal = Number(ep.getAttribute("data-aesthetics")).toFixed(2);
+	aesthetics.innerHTML = `Aesthetics ${aestheticsVal}/100`;
+	aestheticsPercent = document.getElementById("ig-content-rank-progress-aesthetics");
+
+	var content = document.getElementById("ig-content-rank-game-content");
+	var contentVal = Number(ep.getAttribute("data-content")).toFixed(2);
+	content.innerHTML = `Content ${contentVal}/100`;
+	contentPercent = document.getElementById("ig-content-rank-progress-content");
+
+	overallInt = transition(overallPercent,overallVal);
+	gameplayInt = transition(gameplayPercent,gameplayVal);
+	aestheticsInt = transition(aestheticsPercent,aestheticsVal);
+	contentInt = transition(contentPercent,contentVal);
+
+}
+
+function transition(ele,val){
+	var contentSlide = setInterval(frame,10);
+	val = Math.round(val);
+	return contentSlide;
+
+	function frame(){
+		var width = Number(ele.style.width.substring(0, ele.style.width.length - 1));
+		if(	width == val){
+			clearInterval(contentSlide);
+		} else {
+			if (width > val){
+				ele.style.width = `${width-1}%`;
+			}
+			else if (width < val) {
+				ele.style.width = `${width+1}%`;
+			}
+		}
+	}
 }
