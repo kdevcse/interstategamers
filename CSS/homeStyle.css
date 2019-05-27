@@ -128,7 +128,8 @@ main {
 #ig-content-rank{
     margin-left: 55%;
     height: 100%;
-	color: #2d32af;
+    color: #2d32af;
+    display: none;
 }
 #ig-content-rank > h1{
     margin-bottom: 3px;

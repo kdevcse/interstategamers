@@ -1,5 +1,6 @@
 var episodes = [];
 var epCount = 0;
+var rankCount = 0;
 var overallInt;
 var gameplayInt;
 var aestheticsInt;
@@ -13,6 +14,9 @@ function fetchData(){
 		SortEpisodesByDate(data)
 		var seasonNum = data[0]["season"]["number"] + 1;
 		for(var i = 0; i < data.length; i++){
+			if(data[i]["Rank"]){
+				rankCount++;
+			}
 			if (data[i]["season"]["number"] < seasonNum){
 				seasonNum = data[i]["season"]["number"];
 				CreateEpisode(data[i],i,true);
@@ -55,6 +59,7 @@ function CreateEpisode(data,id,newSeason){
 	ep.setAttribute("onmouseover",`setRatingValues(${id})`);
 
 	if (data["Ranking Info"]){
+		ep.setAttribute("data-rank",data["Rank"]);
 		ep.setAttribute("data-overall",data["Ranking Info"]["IG Score"]);
 		ep.setAttribute("data-gameplay",data["Ranking Info"]["Gameplay"]);
 		ep.setAttribute("data-aesthetics",data["Ranking Info"]["Aesthetics"]);
@@ -102,6 +107,9 @@ function setRatingValues(id) {
 
 	var title = document.getElementById("ig-content-rank-game-title");
 	title.innerHTML = document.getElementById(`ep${id}-title`).textContent;
+
+	var rank = document.getElementById("ig-content-rank-game-rank");
+	rank.innerHTML = `Rank ${ep.getAttribute("data-rank")}/${rankCount}`;
 	
 	var overall = document.getElementById("ig-content-rank-game-overall");
 	var overallVal = Number(ep.getAttribute("data-overall")).toFixed(2);
@@ -123,6 +131,8 @@ function setRatingValues(id) {
 	content.innerHTML = `Content ${contentVal}/100`;
 	contentPercent = document.getElementById("ig-content-rank-progress-content");
 
+	document.getElementById("ig-content-rank").style.display = "Block";
+
 	overallInt = transition(overallPercent,overallVal);
 	gameplayInt = transition(gameplayPercent,gameplayVal);
 	aestheticsInt = transition(aestheticsPercent,aestheticsVal);
@@ -131,7 +141,7 @@ function setRatingValues(id) {
 }
 
 function transition(ele,val){
-	var contentSlide = setInterval(frame,10);
+	var contentSlide = setInterval(frame,16.7);
 	val = Math.round(val);
 	return contentSlide;
 
