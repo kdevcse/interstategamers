@@ -53,11 +53,8 @@ main {
 	background: #f1f1f1;
 }
 .player {
-    margin-top: 3.5vh;
-    margin-left: 2.5%;
     float: left;
     clear: left;
-    font-size: 2.5vw;
 }
 .player > svg:hover{
     cursor: pointer;
@@ -165,6 +162,8 @@ main {
 		margin-left: 12vw;
 	}
 	.player {
+    		margin-top: 5vh;
+    		margin-left: 2%;
 		font-size: 7vw;
 	}
 } 
@@ -180,6 +179,8 @@ main {
 		margin-left: 5vw;
 	}
 	.player {
+    		margin-top: 3.5vh;
+    		margin-left: 2.5%;
 		font-size: 2.5vw;
 	}
 }
