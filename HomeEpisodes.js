@@ -70,6 +70,13 @@ function CreateEpisode(data,id,newSeason){
 
 	var playButton = document.createElement("i");
 	playButton.setAttribute("class","fas fa-play-circle");
+	playButton.setAttribute("onclick",`playEpisode(this,${id})`);
+
+	var audio = document.createElement("audio");
+	audio.setAttribute("id",`ep${id}-audio`);
+	audio.setAttribute("src",data["enclosure_url"]);
+	audio.setAttribute("onended","stopEpisode(this)");
+	epPlayer.appendChild(audio);
 
 	var epInfo = document.createElement("aside");
 	epInfo.setAttribute("class","ep-info");

@@ -13,6 +13,8 @@
 	<script src="PlayAudio.js" type="text/javascript"></script>
 </head>
 <body onload="fetchData()">
+	<audio id="ig-audio" title="Listen to the trailer" src="Audio/IgPromo.mp3" onended="stopTrailer()">
+	</audio>
 	<nav class="nav-bar">
 		<div class="nav-list">
 		  	<a href="#">Episodes</a>
@@ -27,11 +29,7 @@
 				<h1>The Interstate Gamers</h1>
 				<p>The podcast where your hosts, deal_4_real and KSlugs, rate and discuss your favorite video games by category from two different states, Colorado and Texas.</p>
 			</div>
-			<div id="ig-main-left-trailer" onclick="onPlay()">
-				<audio id="ig-trailer" title="Listen to the trailer" onended="stopAudio()">
-					<source src="Audio/IgPromo.wav" type="audio/wav">
-					<source src="Audio/IgPromo.mp3" type="audio/mpeg">
-				</audio>
+			<div id="ig-main-left-trailer" onclick="playTrailer()">
 				<i id="ig-trailer-playButton" class="fas fa-play-circle"></i>
 				<span>Listen to the trailer</span>
 			</div>
