@@ -6,6 +6,13 @@ var gameplayInt;
 var aestheticsInt;
 var contentInt;
 
+function resize(){
+	if(window.innerWidth <= 600){
+		document.getElementById("ig-content-rank").style.display = "none";
+		return;
+	}
+}
+
 function fetchData(){
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
@@ -109,6 +116,11 @@ function CreateEpisode(data,id,newSeason){
 }
 
 function setRatingValues(id) {
+	if(window.innerWidth <= 600){
+		document.getElementById("ig-content-rank").style.display = "none";
+		return;
+	}
+
 	var ep = document.getElementById(`ep${id}`);
 	if(!ep.hasAttribute("data-overall"))
 		return;
