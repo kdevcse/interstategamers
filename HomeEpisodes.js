@@ -25,7 +25,6 @@ function fetchData(){
 				CreateEpisode(data[i],i,false);
 			}
 		}
-		//console.log(data) //debug
 	  }
 	};
 	xmlhttp.open("GET", "Database/data.json", true);
@@ -65,33 +64,47 @@ function CreateEpisode(data,id,newSeason){
 		ep.setAttribute("data-aesthetics",data["Ranking Info"]["Aesthetics"]);
 		ep.setAttribute("data-content",data["Ranking Info"]["Content"]);
 	}
+
+	var epPlayer = document.createElement("section");
+	epPlayer.setAttribute("class", "player");
+
+	var playButton = document.createElement("i");
+	playButton.setAttribute("class","fas fa-play-circle");
+	playButton.setAttribute("onclick",`playEpisode(this,${id})`);
+
+	var audio = document.createElement("audio");
+	audio.setAttribute("id",`ep${id}-audio`);
+	audio.setAttribute("src",data["enclosure_url"]);
+	audio.setAttribute("onended","stopEpisode(this)");
+	epPlayer.appendChild(audio);
+
+	var epInfo = document.createElement("aside");
+	epInfo.setAttribute("class","ep-info");
 		
 	var epTitle = document.createElement("h2");
 	epTitle.setAttribute("class", "episode-title");
 	epTitle.setAttribute("id",`ep${id}-title`);
 	epTitle.textContent = data["title"];
+	epInfo.appendChild(epTitle);
 		
 	var epDes = document.createElement("p");
 	epDes.setAttribute("class", "ep-description");
 	epDes.textContent = data["description"];
+	epInfo.appendChild(epDes);
 		
-	var epPlayer = document.createElement("div");
-	epPlayer.setAttribute("class", "player");
-		
-	var player = document.createElement("iframe");
-	player.setAttribute("frameborder", "no");
-	player.setAttribute("height", "52px");
-	player.setAttribute("scrolling", "no");
-	var playerSrc = `https://player.simplecast.com/${data["id"]}?dark=false`
-	player.setAttribute("src", playerSrc);
-	player.setAttribute("width", "100%");
-	player.setAttribute("seamless", "seamless");
+	//var player = document.createElement("iframe");
+	//player.setAttribute("frameborder", "no");
+	//player.setAttribute("height", "52px");
+	//player.setAttribute("scrolling", "no");
+	//var playerSrc = `https://player.simplecast.com/${data["id"]}?dark=false`
+	//player.setAttribute("src", playerSrc);
+	//player.setAttribute("width", "100%");
+	//player.setAttribute("seamless", "seamless");
 		
 	episodes.appendChild(ep);
-	ep.appendChild(epTitle);
-	ep.appendChild(epDes);
+	epPlayer.appendChild(playButton);
 	ep.appendChild(epPlayer);
-	epPlayer.appendChild(player);
+	ep.appendChild(epInfo);
 	ep.style.display = "block";
 }
 
