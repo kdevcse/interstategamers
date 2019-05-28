@@ -119,6 +119,9 @@ main {
 	#ig-content-rank {
 		display: none;
 	}
+    main {
+        text-align: center;
+    }
 	.ep-info{
 		margin-left: 12vw;
 	}
@@ -190,9 +193,6 @@ main {
         float: left;
         clear: left;
         width: 50%;
-    }
-    main {
-        text-align: center;
     }
     .ig-main-right-logo{
         height: auto;
