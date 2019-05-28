@@ -58,7 +58,6 @@ main {
     float: left;
     clear: left;
     font-size: 2.5vw;
-	/*background: url("../Images/loading.gif") center center no-repeat;*/
 }
 .player > svg:hover{
     cursor: pointer;
@@ -78,9 +77,6 @@ main {
     color: #2d32af;
     margin-top: 5px;
     margin-bottom: 5px;
-}
-.ep-info{
-    margin-left: 5vw;
 }
 /* width */
 #episodes::-webkit-scrollbar {
@@ -165,6 +161,12 @@ main {
 	#ig-content-rank {
 		display: none;
 	}
+	.ep-info{
+		margin-left: 12vw;
+	}
+	.player {
+		font-size: 7vw;
+	}
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -173,6 +175,12 @@ main {
     		width: 50%;
     		overflow-y: scroll;
     		overflow-x: hidden;
+	}
+	.ep-info{
+		margin-left: 5vw;
+	}
+	.player {
+		font-size: 2.5vw;
 	}
 }
 
