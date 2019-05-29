@@ -7,3 +7,4 @@ This repo posts notifications to discord for any changes
 - [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
 - [WatchTower Radar](https://radar.watchtower.ai) (Scans repo for credentials and secrets)
 - [CodeFactor](https://www.codefactor.io) (Performs code analysis)
+- [BugBucket](https://bugbucket.io/issues/klewiscse/interstategamers) (Allows for public issues on this private repo)
