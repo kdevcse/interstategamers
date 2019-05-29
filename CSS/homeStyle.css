@@ -4,31 +4,8 @@ main {
     overflow: auto;
     padding: 20px 5%;
 }
-.ig-main-left{
-    margin-top: 6%;
-    float: left;
-    clear: left;
-    width: 50%;
-}
 .ig-main-left-text-container{
     color: white;
-}
-.ig-main-left-text-container > h1{
-	font-size: 2.9vw;
-	margin-bottom: 5px;
-	margin-top: 0;
-}
-.ig-main-left-text-container > p{
-    margin: 0;
-    font-size: 1.4vw;
-}
-.ig-main-right{
-    float: right;
-    clear: right;
-}
-.ig-main-right-logo{
-    height: auto;
-    width: 26.5vw;
 }
 .ig-content{
     clear: both;
@@ -38,9 +15,6 @@ main {
 #episodes{
     float: left;
     clear: left;
-    width: 50%;
-    overflow-y: scroll;
-    overflow-x: hidden;
     padding-right: 2%;
     height: 100%;
 }
@@ -56,12 +30,8 @@ main {
 	background: #f1f1f1;
 }
 .player {
-    margin-top: 3.5vh;
-    margin-left: 2.5%;
     float: left;
     clear: left;
-    font-size: 2.5vw;
-	/*background: url("../Images/loading.gif") center center no-repeat;*/
 }
 .player > svg:hover{
     cursor: pointer;
@@ -82,9 +52,6 @@ main {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.ep-info{
-    margin-left: 5vw;
-}
 /* width */
 #episodes::-webkit-scrollbar {
     width: 10px;
@@ -99,17 +66,6 @@ main {
 	background: red;
 	border-radius: 30px;
 }
-#ig-main-left-trailer{
-    width: 25vw;
-    margin-top: 2vw;
-	color: #2d32af;
-	font-size: 1.7vw;
-	padding: .75vw .75vw .75vw 2.75vw;
-	border-radius: 6px;
-	display: inline-flex;
-    background-color: white;
-    transition: opacity .2s ease-in;
-}
 #ig-main-left-trailer:hover{
     cursor: pointer;
     text-decoration: underline;
@@ -117,11 +73,6 @@ main {
 #ig-icons > a > svg:hover{
     cursor: pointer;
     opacity: 0.8;
-}
-#ig-main-left-trailer > svg{
-	margin-right: 1vw;
-	font-size: 2.2vw;
-	color: red;
 }
 #ig-icons {
 	margin-top: 2vh;
@@ -161,12 +112,118 @@ main {
     background-color: red;
 }
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {	
+	#episodes {
+		width: 100%;
+	}
+	#ig-content-rank {
+		display: none;
+	}
+    main {
+        text-align: center;
+    }
+	.ep-info{
+		margin-left: 12vw;
+	}
+	.player {
+    	margin-top: 5vh;
+    	margin-left: 2%;
+		font-size: 7vw;
+    }
+    .ig-main-left{
+        margin-top: 1.5%;
+        width: 100%;
+    }
+    .ig-main-right-logo{
+        height: auto;
+        width: 100%;
+        padding: 0% 10% 0% 10%;
+    }
+    #ig-icons{
+        display: none;
+    }
+    .ig-main-left-text-container > h1{
+        display: none;
+    }
+    .ig-main-left-text-container > p{
+        margin: 0;
+        font-size: 3vw;
+        padding: 0% 10% 0% 10%;
+    }
+    #ig-main-left-trailer{
+        width: 25%;
+        margin: 0% 35% 0% 35%;
+        margin-top: 1vh;
+        color: #2d32af;
+        font-size: 1.7vw;
+        padding: 1.75vw 1.75vw 1.75vw 3.75vw;
+        border-radius: 6px;
+        display: inline-flex;
+        background-color: white;
+        transition: opacity .2s ease-in;
+    }
+    #ig-main-left-trailer > svg{
+        margin-right: 1vw;
+        font-size: 2.2vw;
+        color: red;
+    }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-} 
+	#episodes {
+    	width: 50%;
+    	overflow-y: scroll;
+    	overflow-x: hidden;
+	}
+	.ep-info{
+		margin-left: 5vw;
+	}
+	.player {
+    	margin-top: 3.5vh;
+    	margin-left: 2.5%;
+		font-size: 2.5vw;
+    }
+    .ig-main-right{
+        float: right;
+        clear: right;
+    }
+    .ig-main-left{
+        margin-top: 6%;
+        float: left;
+        clear: left;
+        width: 50%;
+    }
+    .ig-main-right-logo{
+        height: auto;
+        width: 26.5vw;
+    }
+    .ig-main-left-text-container > h1{
+        font-size: 2.9vw;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+    .ig-main-left-text-container > p{
+        margin: 0;
+        font-size: 1.4vw;
+    }
+    #ig-main-left-trailer{
+        width: 25vw;
+        margin-top: 2vw;
+        color: #2d32af;
+        font-size: 1.7vw;
+        padding: .75vw .75vw .75vw 2.75vw;
+        border-radius: 6px;
+        display: inline-flex;
+        background-color: white;
+        transition: opacity .2s ease-in;
+    }
+    #ig-main-left-trailer > svg{
+        margin-right: 1vw;
+        font-size: 2.2vw;
+        color: red;
+    }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
