@@ -4,6 +4,6 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 This repo posts notifications to discord for any changes
 
 # Supporting Software
-- Netlify (Website Host. Deploys on GitHub changes.)
-- WatchTower Radar (Scans repo for credentials and secrets)
-- CodeFactor (Performs code analysis)
+- [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
+- [WatchTower Radar](https://radar.watchtower.ai) (Scans repo for credentials and secrets)
+- [CodeFactor](https://www.codefactor.io) (Performs code analysis)
