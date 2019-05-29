@@ -8,6 +8,8 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 - Completely Automated
 - Fresh and customizable design
 - More interactive
+# Automated Website Deployment Process
+![](/Images/Automared Website Deployment Process)
 
 # Supporting Software
 - [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
