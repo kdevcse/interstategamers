@@ -137,7 +137,6 @@ main {
     .ig-main-right-logo{
         height: auto;
         width: 100%;
-        padding: 0% 10% 0% 10%;
     }
     #ig-icons{
         display: none;
@@ -147,8 +146,7 @@ main {
     }
     .ig-main-left-text-container > p{
         margin: 0;
-        font-size: 3vw;
-        padding: 0% 10% 0% 10%;
+        padding: 0% 3% 0% 3%;
     }
     #ig-main-left-trailer{
         width: 25%;
@@ -197,6 +195,7 @@ main {
     .ig-main-right-logo{
         height: auto;
         width: 26.5vw;
+	    border-radius: 1vw;
     }
     .ig-main-left-text-container > h1{
         font-size: 2.9vw;
@@ -205,6 +204,7 @@ main {
     }
     .ig-main-left-text-container > p{
         margin: 0;
+	    margin-top: 1.5vh;
         font-size: 1.4vw;
     }
     #ig-main-left-trailer{
