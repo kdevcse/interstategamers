@@ -146,7 +146,8 @@ main {
     }
     .ig-main-left-text-container > p{
         margin: 0;
-        padding: 0% 3% 0% 3%;
+        padding-left: 3%;
+        padding-right: 3%;
     }
     #ig-main-left-trailer{
         width: 90%;
