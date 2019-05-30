@@ -1,11 +1,10 @@
-var episodes = [];
-var epCount = 0;
 var rankCount = 0;
 var overallInt;
 var gameplayInt;
 var aestheticsInt;
 var contentInt;
 
+/* exported resize*/
 function resize(){
 	if(window.innerWidth <= 600){
 		document.getElementById("ig-content-rank").style.display = "none";
@@ -13,12 +12,13 @@ function resize(){
 	}
 }
 
+/* exported fetchData */
 function fetchData(){
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 		var data = JSON.parse(this.responseText);
-		SortEpisodesByDate(data)
+		sortEpisodesByDate(data)
 		var seasonNum = data[0]["season"]["number"] + 1;
 		for(var i = 0; i < data.length; i++){
 			if(data[i]["Rank"]){
@@ -26,10 +26,10 @@ function fetchData(){
 			}
 			if (data[i]["season"]["number"] < seasonNum){
 				seasonNum = data[i]["season"]["number"];
-				CreateEpisode(data[i],i,true);
+				createEpisode(data[i],i,true);
 			}
 			else {
-				CreateEpisode(data[i],i,false);
+				createEpisode(data[i],i,false);
 			}
 		}
 	  }
@@ -38,11 +38,11 @@ function fetchData(){
 	xmlhttp.send();
 }
 
-function SortEpisodesByDate(episodes) {
+function sortEpisodesByDate(episodes) {
 	return episodes.sort(function(a,b){return new Date(b["published_at"]) - new Date(a["published_at"])});
 }
 
-function CreateEpisode(data,id,newSeason){
+function createEpisode(data,id,newSeason){
 	if (data["status"] != "published")
 		return;
 	
@@ -99,15 +99,6 @@ function CreateEpisode(data,id,newSeason){
 	epDes.textContent = data["description"];
 	epInfo.appendChild(epDes);
 		
-	//var player = document.createElement("iframe");
-	//player.setAttribute("frameborder", "no");
-	//player.setAttribute("height", "52px");
-	//player.setAttribute("scrolling", "no");
-	//var playerSrc = `https://player.simplecast.com/${data["id"]}?dark=false`
-	//player.setAttribute("src", playerSrc);
-	//player.setAttribute("width", "100%");
-	//player.setAttribute("seamless", "seamless");
-		
 	episodes.appendChild(ep);
 	epPlayer.appendChild(playButton);
 	ep.appendChild(epPlayer);
@@ -115,6 +106,7 @@ function CreateEpisode(data,id,newSeason){
 	ep.style.display = "block";
 }
 
+/* exported setRatingValues */
 function setRatingValues(id) {
 	if(window.innerWidth <= 600){
 		document.getElementById("ig-content-rank").style.display = "none";
