@@ -16,7 +16,7 @@ footer {
 	padding-top: 1.75vw;
 	padding-bottom: 1.75vw;
 	padding-left: 5%;
-  background-color: #2d32af;
+  	background-color: #2d32af;
 	position: sticky;
 	border-bottom: white solid 1px
 }
@@ -29,7 +29,7 @@ footer {
 }
 .nav-list {
 	display: inline-flex;
-  font-size: 35px;
+  	font-size: 35px;
 	text-align: center;
 }
 .nav-list > a {
@@ -56,6 +56,58 @@ footer {
 		padding: 25px 0 20px 0;
 	}
 	.nav-bar{
+		display: none;
+	}
+	#mobile-nav-bar{
+		display: inherit;
+		overflow: hidden;
+		background-color: #2d32af;
+	}
+	#mobile-nav-list{
+		display: none;
+		margin-bottom: 5%;
+	}
+	#mobile-nav-list > a{
+		width: 90%;
+		color: white;
+		padding: 14px 16px;
+		text-decoration: none;
+		text-align: center;
+		font-size: 17px;
+		display: block;
+		border-top: white solid 1px;
+		margin-left: 5%;
+	}
+	#mobile-nav-icon {
+		color: white;
+		display: inline-block;
+		font-size: 9vw;
+		width: 100%;
+		height: auto;
+	}
+	#mobile-nav-icon > svg{
+		float: right;
+		clear: right;
+		margin: 2% 5%;
+	}
+  	#mobile-nav-list a:hover {
+		background-color: white;
+		color: #2d32af;
+  	}
+  	.active {
+		background-color: #4CAF50;
+		color: white;
+  	}
+}
+@media only screen and (min-width: 600px){
+	footer {
+		margin-top: 30px;
+		padding: 25px 0 20px 0;
+	}
+	.nav-bar{
+		display: inherit;
+	}
+	#mobile-nav-bar{
 		display: none;
 	}
 }

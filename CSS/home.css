@@ -2,14 +2,14 @@ main {
     background-color: #2d32af;
     clear: both;
     overflow: auto;
-    padding: 20px 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 .ig-main-left-text-container{
     color: white;
 }
 .ig-content{
     clear: both;
-    padding: 25px 5%;
     height: 100vh;
 }
 #episodes{
@@ -112,7 +112,11 @@ main {
     background-color: red;
 }
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {	
+@media only screen and (max-width: 600px) {
+    main{
+        padding-bottom: 7%;
+        padding-top: 2%;
+    }
 	#episodes {
 		width: 100%;
 	}
@@ -130,13 +134,18 @@ main {
     	margin-left: 2%;
 		font-size: 7vw;
     }
+    .ig-content{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
     .ig-main-left{
         margin-top: 1.5%;
         width: 100%;
     }
     .ig-main-right-logo{
         height: auto;
-        width: 100%;
+        width: 65%;
+        border-radius: 1vw;
     }
     #ig-icons{
         display: none;
@@ -146,28 +155,36 @@ main {
     }
     .ig-main-left-text-container > p{
         margin: 0;
+        margin-top: 7%;
         padding-left: 3%;
         padding-right: 3%;
     }
     #ig-main-left-trailer{
-        width: 65%;
+        width: 45%;
         margin-top: 4vh;
         color: #2d32af;
-        font-size: 4.5vw;
-        padding: 4vw;
-        border-radius: 6px;
+        font-size: 3.25vw;
+        padding: 2vw;
+        border-radius: 1vw;
         display: inline-flex;
         background-color: white;
     }
+    #ig-main-left-trailer > span {
+        margin-top: 2%;
+    }
     #ig-main-left-trailer > svg{
-        margin-right: 5%;
-        font-size: 5.5vw;
+        margin-right: 4%;
+        font-size: 5vw;
         color: red;
     }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    main{
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
 	#episodes {
     	width: 50%;
     	overflow-y: scroll;
@@ -180,6 +197,9 @@ main {
     	margin-top: 3.5vh;
     	margin-left: 2.5%;
 		font-size: 2.5vw;
+    }
+    .ig-content{
+        padding: 25px 5%;
     }
     .ig-main-right{
         float: right;
