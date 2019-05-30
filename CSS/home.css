@@ -115,7 +115,7 @@ main {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     main{
-        padding-bottom: 3vh;
+        padding-bottom: 5%;
     }
 	#episodes {
 		width: 100%;
@@ -156,18 +156,21 @@ main {
         padding-right: 3%;
     }
     #ig-main-left-trailer{
-        width: 65%;
+        width: 45%;
         margin-top: 4vh;
         color: #2d32af;
-        font-size: 4.5vw;
-        padding: 4vw;
+        font-size: 3.25vw;
+        padding: 2vw;
         border-radius: 1vw;
         display: inline-flex;
         background-color: white;
     }
+    #ig-main-left-trailer > span {
+        margin-top: 2%;
+    }
     #ig-main-left-trailer > svg{
-        margin-right: 5%;
-        font-size: 5.5vw;
+        margin-right: 4%;
+        font-size: 5vw;
         color: red;
     }
 } 
