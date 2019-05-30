@@ -2,7 +2,8 @@ main {
     background-color: #2d32af;
     clear: both;
     overflow: auto;
-    padding: 20px 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 .ig-main-left-text-container{
     color: white;
@@ -112,7 +113,10 @@ main {
     background-color: red;
 }
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {	
+@media only screen and (max-width: 600px) {
+    main{
+        padding-bottom: 3vh;
+    }
 	#episodes {
 		width: 100%;
 	}
@@ -168,6 +172,10 @@ main {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    main{
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
 	#episodes {
     	width: 50%;
     	overflow-y: scroll;
