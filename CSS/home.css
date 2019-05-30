@@ -140,7 +140,8 @@ main {
     }
     .ig-main-right-logo{
         height: auto;
-        width: 100%;
+        width: 65%;
+        border-radius: 1vw;
     }
     #ig-icons{
         display: none;
@@ -150,6 +151,7 @@ main {
     }
     .ig-main-left-text-container > p{
         margin: 0;
+        margin-top: 5%;
         padding-left: 3%;
         padding-right: 3%;
     }
@@ -159,7 +161,7 @@ main {
         color: #2d32af;
         font-size: 4.5vw;
         padding: 4vw;
-        border-radius: 6px;
+        border-radius: 1vw;
         display: inline-flex;
         background-color: white;
     }

@@ -65,6 +65,7 @@ footer {
 	}
 	#mobile-nav-list{
 		display: none;
+		margin-bottom: 5%;
 	}
 	#mobile-nav-list > a{
 		width: 90%;
