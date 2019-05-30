@@ -150,18 +150,18 @@ main {
         padding-right: 3%;
     }
     #ig-main-left-trailer{
-        width: 90%;
+        width: 65%;
         margin-top: 4vh;
         color: #2d32af;
-        font-size: 7vw;
+        font-size: 5vw;
         padding: 4vw;
         border-radius: 6px;
         display: inline-flex;
         background-color: white;
     }
     #ig-main-left-trailer > svg{
-        margin-right: 2vw;
-        font-size: 7.5vw;
+        margin-right: 1.2vw;
+        font-size: 6vw;
         color: red;
     }
 } 
