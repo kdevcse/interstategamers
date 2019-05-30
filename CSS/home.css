@@ -153,15 +153,15 @@ main {
         width: 65%;
         margin-top: 4vh;
         color: #2d32af;
-        font-size: 5vw;
+        font-size: 4.5vw;
         padding: 4vw;
         border-radius: 6px;
         display: inline-flex;
         background-color: white;
     }
     #ig-main-left-trailer > svg{
-        margin-right: 1.2vw;
-        font-size: 6vw;
+        margin-right: 5%;
+        font-size: 5.5vw;
         color: red;
     }
 } 
