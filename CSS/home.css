@@ -10,7 +10,6 @@ main {
 }
 .ig-content{
     clear: both;
-    padding: 25px 5%;
     height: 100vh;
 }
 #episodes{
@@ -115,7 +114,8 @@ main {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     main{
-        padding-bottom: 5%;
+        padding-bottom: 7%;
+        padding-top: 2%;
     }
 	#episodes {
 		width: 100%;
@@ -134,6 +134,10 @@ main {
     	margin-left: 2%;
 		font-size: 7vw;
     }
+    .ig-content{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
     .ig-main-left{
         margin-top: 1.5%;
         width: 100%;
@@ -151,7 +155,7 @@ main {
     }
     .ig-main-left-text-container > p{
         margin: 0;
-        margin-top: 5%;
+        margin-top: 7%;
         padding-left: 3%;
         padding-right: 3%;
     }
@@ -193,6 +197,9 @@ main {
     	margin-top: 3.5vh;
     	margin-left: 2.5%;
 		font-size: 2.5vw;
+    }
+    .ig-content{
+        padding: 25px 5%;
     }
     .ig-main-right{
         float: right;
