@@ -15,3 +15,5 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 - [CodeFactor](https://www.codefactor.io) (Performs code analysis)
 - [BugBucket](https://bugbucket.io/issues/klewiscse/interstategamers) (Allows for public issues on this private repo)
 - [Discord](https://discordapp.com/) (Post notifications on the development process)
+- [AirTable](https://airtable.com/)
+- [SimpleCast](https://simplecast.com)
