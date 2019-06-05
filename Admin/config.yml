@@ -15,10 +15,10 @@ collections:
         name: "episode_data"
         file: "Database/data.json"
         fields:
-          - label: "Data"
-            name: data
+          - label: "Episodes"
+            name: episode
             widget: list
             fields:
-              - {label: title, name: title, widget: string}
+              - {label: title, name: "title", widget: string}
 
 
