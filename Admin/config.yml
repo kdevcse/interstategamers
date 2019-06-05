@@ -1,0 +1,10 @@
+backend:
+  name: git-gateway
+  branch: Version2
+publish mode: editorial_workflow
+media_folder: "Audio"
+collections:
+  - name: "Episode"
+    label: "Episode"
+    folder: ""
+    create: false
