@@ -9,20 +9,14 @@ collections:
     create: false
     delete: false
     extension: json
+    format: json
     editor:
      preview: false
     files:
       - label: "Episode Data"
-        name: "episode_data"
+        name: "title"
         file: "Database/data.json"
-        fields:
-          - label: "Episodes"
-            name: episodes
-            widget: list
-            fields:
-              - label: Episode
-                name: "title"
-                default: "Not Found"
+          
 
 
 
