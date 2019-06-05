@@ -4,15 +4,17 @@ backend:
 publish mode: editorial_workflow
 media_folder: "Audio"
 collections:
-  - name: "Episode"
-    label: "Episode"
+  - name: "Database"
+    label: "Database Files"
     create: false
-    extension: json
+    delete: false  
+    editor:
+     preview: false
     files:
       - label: "Episodes"
         name: "Episodes Name"
         file: "Database/data.json"
         fields:
-          - {label: Name, name: episode, widget: string}
+          - {label: Name, name: title, widget: string}
 
 
