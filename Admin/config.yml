@@ -20,8 +20,8 @@ collections:
             widget: list
             fields:
               - label: Episode
-              name: "title"
-              default: "Not Found"
+                name: "title"
+                default: "Not Found"
 
 
 
