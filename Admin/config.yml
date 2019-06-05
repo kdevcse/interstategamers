@@ -8,7 +8,7 @@ collections:
     label: "Episode"
     create: false
     extension: json
-    files: "Database"
+    files:
       - label: "Episodes"
         name: "Episodes Name"
         file: "Database/data.json"
