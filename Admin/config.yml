@@ -16,9 +16,9 @@ collections:
         file: "Database/data.json"
         fields:
           - label: "Episodes"
-            name: episode
+            name: episodes
             widget: list
             fields:
-              - {label: title, name: "title", widget: string}
+              - [{label: Episode, name: "title", default: "Not Found"}]
 
 
