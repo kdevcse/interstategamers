@@ -16,6 +16,11 @@ collections:
       - label: "Episode Data"
         name: "title"
         file: "Database/data.json"
+        fields:
+          name: title
+          label: Title
+          widget: string
+
           
 
 
