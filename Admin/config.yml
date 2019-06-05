@@ -2,15 +2,17 @@ backend:
   name: git-gateway
   branch: Version2
 publish mode: editorial_workflow
-media_folder: "Audio"
+media_library: "Audio"
 collections:
   - name: "Episode"
     label: "Episode"
-    folder: "Database"
     create: false
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+    extension: json
+    files: "Database"
+      - label: "Episodes"
+        name: "Episodes Name"
+        file: "Database/data.json"
+        fields:
+          - {label: Name, name: episode, widget: string}
+
 
