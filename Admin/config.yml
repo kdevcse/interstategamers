@@ -3,8 +3,6 @@ backend:
   branch: Version2
 publish mode: editorial_workflow
 media_folder: "Audio"
-    create: false
-    delete: false 
 collections:
   - name: "Database"
     label: "Database Files"
