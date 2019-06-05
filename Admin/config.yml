@@ -17,9 +17,7 @@ collections:
         name: "title"
         file: "Database/data.json"
         fields:
-          name: title
-          label: Title
-          widget: string
+          - {label: Title, name: title, widget: string}
 
           
 
