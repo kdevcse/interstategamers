@@ -6,13 +6,13 @@ media_folder: "Audio"
 collections:
   - name: "Database"
     label: "Database Files"
-    create: false
+    create: true
     delete: false  
     editor:
      preview: false
     files:
-      - label: "Episodes"
-        name: "Episodes Name"
+      - label: "Episode Data"
+        name: "episode_data"
         file: "Database/data.json"
         fields:
           - {label: title, name: title, widget: string}
