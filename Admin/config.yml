@@ -19,6 +19,9 @@ collections:
             name: episodes
             widget: list
             fields:
-              - [{label: Episode, name: "title", default: "Not Found"}]
+              - label: Episode
+              name: "title"
+              default: "Not Found"
+
 
 
