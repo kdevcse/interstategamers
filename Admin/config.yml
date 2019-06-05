@@ -8,6 +8,7 @@ collections:
     label: "Database Files"
     create: false
     delete: false
+    extension: json
     editor:
      preview: false
     files:
