@@ -1,31 +1,26 @@
-footer {
-	/*background-color: rgba(0,0,0,0.75);*/
+#rankings-table{
+	width: 80%;
 	text-align: center;
-}
-.rating-ring{
-	height: 120px;
-	width: 120px;
-	display: block;
-}
-.game {
-	width: 60%;
-	height: auto;
+	margin-top: 5%;
 	margin-left: auto;
 	margin-right: auto;
-	padding-bottom: 10px;
+	border-collapse: collapse;
+	border: #2d32af 2px solid;
+	table-layout: fixed;
+}
+.rankings-table-header{
 	background-color: #2d32af;
-	border-radius: 5px;
-}
-.gImg{
-	display: inline;
-}
-.game-title {
 	color: white;
-	margin-left: 20px;
-	padding-top: 20px;
+	font-weight: bold;
+	font-size: 1.4vw;
 }
-.game-description {
-	color: whitesmoke;
-	margin-left: 20px;
-	margin-right: 20px;
+.rankings-table-header > th {
+	padding: 10px;
+}
+.rankings-table-row{
+	padding: 10px;
+}
+.rankings-table-row > td{
+	padding: 10px;
+	font-size: 1.1vw;
 }
