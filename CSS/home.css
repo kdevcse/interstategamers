@@ -78,6 +78,9 @@ main {
 	margin-top: 2vh;
 	text-align: center;
 }
+#ig-icons > a{
+    text-decoration: none;
+}
 #ig-icons > a > svg{
 	color: white;
 	font-size: 2.5vw;
