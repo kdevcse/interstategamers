@@ -19,7 +19,7 @@ function sortEpisodesByRank(episodes) {
             episodes.splice(i,1);
         }
     }
-    episodes.sort(function(a,b){return Number(a["Rank"]) < Number(b["Rank"])});
+    episodes.sort(function(a,b){return Number(b["Rank"]) - Number(a["Rank"])});
     episodes.reverse();
     return episodes;
 }
