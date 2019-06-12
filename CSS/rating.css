@@ -32,6 +32,9 @@
 	padding: 10px;
 	font-size: 1.1vw;
 }
+.rankings-table-row.selected{
+	background-color: #f1f1f1;
+}
 td.sorted {
 	color: red;
 }

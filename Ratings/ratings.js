@@ -36,6 +36,14 @@ function removeSortedAttribute(){
     }
 }
 
+function removeSelectedAttribute(){
+    var sorts = document.getElementsByClassName("selected");
+    for(j = 0; j < sorts.length; j++){
+        var name = sorts[j].getAttribute("class");
+        sorts[j].setAttribute("class",name.replace(" ","").replace("selected",""));
+    }
+}
+
 function sortTableByCategory(ele,category, ascending) {
     removeSortedAttribute();
     ele.setAttribute("class","sorted");
@@ -108,6 +116,7 @@ function tableInsert(game){
 
     var newRow = document.createElement("tr");
     newRow.setAttribute("class","rankings-table-row");
+    newRow.setAttribute("onclick","selectGame(this)");
 
     var rank = game["Rank"];
     var title = game["Ranking Info"]["Game"];
@@ -142,4 +151,9 @@ function tableInsert(game){
     newRow.appendChild(aestheticsE);
     newRow.appendChild(contentE);
     table.appendChild(newRow);
+}
+
+function selectGame(ele){
+    removeSelectedAttribute();
+    ele.setAttribute("class","rankings-table-row selected");
 }
