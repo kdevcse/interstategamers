@@ -33,12 +33,12 @@
 	<main>
 		<table id="rankings-table">
 			<tr class="rankings-table-header">
-				<th>Rank</th>
-				<th>Title</th>
-				<th>IG Score</th>
-				<th>Gameplay</th>
-				<th>Aesthetics</th>
-				<th>Content</th>
+				<th class="sorted" onclick="sortTableByCategory(this,'rank',true)">Rank</th>
+				<th onclick="sortTableByTitle(this,true)">Title</th>
+				<th onclick="sortTableByCategory(this,'overall',false)">IG Score</th>
+				<th onclick="sortTableByCategory(this,'gameplay',false)">Gameplay</th>
+				<th onclick="sortTableByCategory(this,'aesthetics',false)">Aesthetics</th>
+				<th onclick="sortTableByCategory(this,'content',false)">Content</th>
 			</tr>
 		</table>
 	</main>

@@ -17,10 +17,27 @@
 .rankings-table-header > th {
 	padding: 10px;
 }
+.rankings-table-header > th:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
 .rankings-table-row{
 	padding: 10px;
+}
+.rankings-table-row:hover{
+	background-color: #f1f1f1;
+	cursor: pointer;
 }
 .rankings-table-row > td{
 	padding: 10px;
 	font-size: 1.1vw;
+}
+.rankings-table-row.selected{
+	background-color: #f1f1f1;
+}
+td.sorted {
+	color: red;
+}
+th.sorted {
+	text-decoration: underline;
 }

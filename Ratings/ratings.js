@@ -24,6 +24,88 @@ function sortEpisodesByRank(episodes) {
     return episodes;
 }
 
+function removeSortedAttribute(){
+    table = document.getElementById("rankings-table");
+    rows = table.rows;
+    for (i = 0; i < (rows.length); i++) {
+        var sorts = rows[i].getElementsByClassName("sorted");
+        for(j = 0; j < sorts.length; j++){
+            var name = sorts[j].getAttribute("class");
+            sorts[j].setAttribute("class",name.replace(" ","").replace("sorted",""));
+        }
+    }
+}
+
+function removeSelectedAttribute(){
+    var sorts = document.getElementsByClassName("selected");
+    for(j = 0; j < sorts.length; j++){
+        var name = sorts[j].getAttribute("class");
+        sorts[j].setAttribute("class",name.replace(" ","").replace("selected",""));
+    }
+}
+
+function sortTableByCategory(ele,category, ascending) {
+    removeSortedAttribute();
+    ele.setAttribute("class","sorted");
+    var table, rows, switching, i, x, y, shouldSwitch;
+    table = document.getElementById("rankings-table");
+    switching = true;
+    while (switching) {
+      switching = false;
+      rows = table.rows;
+      for (i = 1; i < (rows.length - 1); i++) {
+        shouldSwitch = false;
+        x = rows[i].getElementsByClassName(`rankings-table-${category}`)[0];
+        x.setAttribute("class",`rankings-table-${category} sorted`);
+        y = rows[i + 1].getElementsByClassName(`rankings-table-${category}`)[0];
+        y.setAttribute("class",`rankings-table-${category} sorted`);
+        if (ascending && Number(x.innerHTML) > Number(y.innerHTML)) {
+          shouldSwitch = true;
+          break;
+        }
+        else if (!ascending && Number(x.innerHTML) < Number(y.innerHTML)){
+          shouldSwitch = true;
+          break;
+        }
+      }
+      if (shouldSwitch) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+      }
+    }
+}
+
+function sortTableByTitle(ele,ascending){
+    removeSortedAttribute();
+    ele.setAttribute("class","sorted");
+    var table, rows, switching, i, x, y, shouldSwitch;
+    table = document.getElementById("rankings-table");
+    switching = true;
+    while (switching) {
+      switching = false;
+      rows = table.rows;
+      for (i = 1; i < (rows.length - 1); i++) {
+        shouldSwitch = false;
+        x = rows[i].getElementsByClassName(`rankings-table-title`)[0];
+        x.setAttribute("class",`rankings-table-title sorted`);
+        y = rows[i + 1].getElementsByClassName(`rankings-table-title`)[0];
+        y.setAttribute("class",`rankings-table-title sorted`);
+        if (ascending && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+        else if (!ascending && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
+          shouldSwitch = true;
+          break;
+        }
+      }
+      if (shouldSwitch) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+      }
+    }
+}
+
 function tableInsert(game){
 
     if(!game["Ranking Info"]){
@@ -34,6 +116,7 @@ function tableInsert(game){
 
     var newRow = document.createElement("tr");
     newRow.setAttribute("class","rankings-table-row");
+    newRow.setAttribute("onclick","selectGame(this)");
 
     var rank = game["Rank"];
     var title = game["Ranking Info"]["Game"];
@@ -43,16 +126,22 @@ function tableInsert(game){
     var content = game["Ranking Info"]["Content"].toFixed(2);
 
     var rankE = document.createElement("td");
+    rankE.setAttribute("class","rankings-table-rank sorted");
     rankE.innerHTML = rank;
     var titleE = document.createElement("td");
+    titleE.setAttribute("class","rankings-table-title");
     titleE.innerHTML = title;
     var overallE = document.createElement("td");
+    overallE.setAttribute("class","rankings-table-overall");
     overallE.innerHTML = overall;
     var gameplayE = document.createElement("td");
+    gameplayE.setAttribute("class","rankings-table-gameplay");
     gameplayE.innerHTML = gameplay;
     var aestheticsE = document.createElement("td");
+    aestheticsE.setAttribute("class","rankings-table-aesthetics");
     aestheticsE.innerHTML = aesthetics;
     var contentE = document.createElement("td");
+    contentE.setAttribute("class","rankings-table-content");
     contentE.innerHTML = content;
     
     newRow.appendChild(rankE);
@@ -62,4 +151,9 @@ function tableInsert(game){
     newRow.appendChild(aestheticsE);
     newRow.appendChild(contentE);
     table.appendChild(newRow);
+}
+
+function selectGame(ele){
+    removeSelectedAttribute();
+    ele.setAttribute("class","rankings-table-row selected");
 }
