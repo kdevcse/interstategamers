@@ -1,3 +1,17 @@
+display{
+	width: 80%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+#rankings-display-right{
+	margin-top: 2.5vw;
+}
+#rankings-display-img{
+	height: 10vw;
+	width: auto;
+	display: none;
+}
 #rankings-table{
 	width: 80%;
 	text-align: center;
