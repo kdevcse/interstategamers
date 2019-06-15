@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="https://use.typekit.net/ggx4hrs.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="ratings.js" type="text/javascript"></script>
+	<script src="ratings-charts.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body onload="loadData()">
 	<nav id="mobile-nav-bar">
@@ -30,16 +32,30 @@
 			<a class="nav-tab" href="../Contact/index.html">Contact</a>
 		</div>
 	</nav>
-	<display>
-		<aside id="rankings-display-right">
-			<img id="rankings-display-img"><img>
-		</aside>
-		<section id="rankings-display-left">
-			<div class="rankings-display-stats">
-				<h1>The Interstate Gamers</h1>
-			</div>
+	<article>
+		<section id="rankings-display-info">
+			<img src="../Images/IGLogo.png" id="rankings-display-img"></img>
+			<h1 id="breakdownTxt">Click a game to see the breakdown</h1>
 		</section>
-	</display>
+		<section id="rankings-display-stats">
+			<div id="peteChart">
+				<h1>Peter's Scores</h1>
+				<div class="p-rank" id="peteGameplay"></div>
+				<div class="p-rank" id="peteVisuals"></div>
+				<div class="p-rank" id="peteAudio"></div>
+				<div class="p-rank" id="peteContent"></div>
+				<div class="p-rank" id="peteOverall"></div>
+			</div>
+			<aside id="kevChart">
+				<h1>Kevin's Scores</h1>
+				<div class="k-rank" id="kevGameplay"></div>
+				<div class="k-rank" id="kevVisuals"></div>
+				<div class="k-rank" id="kevAudio"></div>
+				<div class="k-rank" id="kevContent"></div>
+				<div class="k-rank" id="kevOverall"></div>
+			</aside>
+		</section>
+	</article>
 	<main>
 		<table id="rankings-table">
 			<tr class="rankings-table-header">

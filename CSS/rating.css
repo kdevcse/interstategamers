@@ -1,21 +1,23 @@
-display{
+article{
 	width: 80%;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	display: block;
 }
-#rankings-display-right{
+#rankings-display-info{
 	margin-top: 2.5vw;
+	margin-bottom: 1.5vw;
+	height: 25vw;
 }
 #rankings-display-img{
-	height: 20vw;
 	width: auto;
-	display: none;
+	height: 80%;
 }
 #rankings-table{
 	width: 80%;
 	text-align: center;
-	margin-top: 2%;
+	margin-top: 24%;
 	margin-left: auto;
 	margin-right: auto;
 	border-collapse: collapse;
@@ -54,4 +56,25 @@ td.sorted {
 }
 th.sorted {
 	text-decoration: underline;
+}
+#peteChart, #kevChart {
+	width: 45%;
+	margin-bottom: 10px;
+}
+#kevChart{
+	margin-left: 5%;
+	float: right;
+	clear: right;
+}
+#peteChart{
+	margin-right: 5%;
+	float: left;
+	clear: left;
+}
+.p-rank, .k-rank {
+	overflow: hidden;
+	width: 100%;
+	height: 40px;
+	border: #2d32af solid 2px;
+	margin-bottom: 10px;
 }
