@@ -13,32 +13,30 @@ footer {
 }
 .nav-bar {
 	list-style-type: none;
-	padding-top: 1.75vw;
-	padding-bottom: 1.75vw;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
 	padding-left: 5%;
   	background-color: #2d32af;
 	position: sticky;
-	border-bottom: white solid 1px
+	border-bottom: white solid 1px;
+	overflow: hidden;
 }
-#site-logo{
-	display: none;
-	padding: 8px;
-	margin-left: 20px;
-	height: auto;
-	width: 10px;
+.nav-tab-logo{
+	height: 4vw;
 }
 .nav-list {
 	display: inline-flex;
   	font-size: 35px;
 	text-align: center;
 }
-.nav-list > a {
+.nav-tab {
 	text-decoration: none;
 	color: white;
 	font-family: Interstate;
 	font-weight: bold;
 	font-size: 1.6vw;
 	margin-right: 15%;
+	margin-top: 5%;
 	vertical-align: middle;
 	transition: text-decoration .2s ease-in;
 }
