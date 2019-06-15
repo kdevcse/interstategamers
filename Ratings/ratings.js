@@ -126,18 +126,18 @@ function tableInsert(game){
   newRow.setAttribute("game",title);
   newRow.setAttribute("game-img","../Images/IGLogo.png");
 
-  let pGameplay = game["Ranking Info"]["P. Gameplay"];
-  let pVisuals = game["Ranking Info"]["P. Visuals"];
-  let pAudio = game["Ranking Info"]["P. Audio"];
-  let pContent = game["Ranking Info"]["P. Content"];
-  let pOverall = game["Ranking Info"]["Peter's Rating"];
+  let pGameplay = game["Ranking Info"]["P. Gameplay"].toFixed(2);
+  let pVisuals = game["Ranking Info"]["P. Visuals"].toFixed(2);
+  let pAudio = game["Ranking Info"]["P. Audio"].toFixed(2);
+  let pContent = game["Ranking Info"]["P. Content"].toFixed(2);
+  let pOverall = game["Ranking Info"]["Peter's Rating"].toFixed(2);
   newRow.setAttribute("p-scores",`${pGameplay}:${pVisuals}:${pAudio}:${pContent}:${pOverall}`);
   
-  let kGameplay = game["Ranking Info"]["K. Gameplay"];
-  let kVisuals = game["Ranking Info"]["K. Visuals"];
-  let kAudio = game["Ranking Info"]["K. Audio"];
-  let kContent = game["Ranking Info"]["K. Content"];
-  let kOverall = game["Ranking Info"]["Kevin's Rating"];
+  let kGameplay = game["Ranking Info"]["K. Gameplay"].toFixed(2);
+  let kVisuals = game["Ranking Info"]["K. Visuals"].toFixed(2);
+  let kAudio = game["Ranking Info"]["K. Audio"].toFixed(2);
+  let kContent = game["Ranking Info"]["K. Content"].toFixed(2);
+  let kOverall = game["Ranking Info"]["Kevin's Rating"].toFixed(2);
   newRow.setAttribute("k-scores",`${kGameplay}:${kVisuals}:${kAudio}:${kContent}:${kOverall}`);
   
   let gameTitle = "../Images/" + title.replace(/\ /g,'_').replace(/\W/g, '').toLowerCase();
@@ -170,6 +170,12 @@ function tableInsert(game){
   let contentE = document.createElement("td");
   contentE.setAttribute("class","rankings-table-content");
   contentE.innerHTML = content;
+  let pScore = document.createElement("td");
+  pScore.setAttribute("class","rankings-table-p-overall");
+  pScore.innerHTML = pOverall;
+  let kScore = document.createElement("td");
+  kScore.setAttribute("class","rankings-table-k-overall");
+  kScore.innerHTML = kOverall;
   
   newRow.appendChild(rankE);
   newRow.appendChild(titleE);
@@ -177,6 +183,8 @@ function tableInsert(game){
   newRow.appendChild(gameplayE);
   newRow.appendChild(aestheticsE);
   newRow.appendChild(contentE);
+  newRow.appendChild(pScore);
+  newRow.appendChild(kScore);
   table.appendChild(newRow);
 }
 
@@ -190,8 +198,8 @@ function selectGame(ele){
   let gameImg = document.getElementById("rankings-display-img");
   gameImg.setAttribute("src",path);
 
-  getChart("peteChart",pData[0],pData[1],pData[2],pData[3],pData[4]);
-  getChart("kevChart",kData[0],kData[1],kData[2],kData[3],kData[4]);
+  setPeteChart(pData[0],pData[1],pData[2],pData[3],pData[4]);
+  setKevChart(kData[0],kData[1],kData[2],kData[3],kData[4]);
 
   document.getElementById("breakdownTxt").style.display = "none";
   gameImg.style.height = "100%";
