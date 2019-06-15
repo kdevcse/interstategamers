@@ -158,8 +158,9 @@ function selectGame(ele){
   ele.setAttribute("class","rankings-table-row selected");
 
   var gameImg = document.getElementById("rankings-display-img");
-  var gameTitle = ele.getAttribute("game");
-  var imgPath = `../Images/${gameTitle.replace(/\ /g,'_').replace(/\W/g, '').toLowerCase()}`;
+  var gameTitle = ele.getAttribute("game").replace(/\ /g,'_').replace(/\W/g, '').toLowerCase();
+  console.log(gameTitle);
+  var imgPath = `../Images/${gameTitle}`;
 
   imgExists(imgPath + ".png", function(exists){
     if (exists){

@@ -8,14 +8,14 @@ display{
 	margin-top: 2.5vw;
 }
 #rankings-display-img{
-	height: 10vw;
+	height: 20vw;
 	width: auto;
 	display: none;
 }
 #rankings-table{
 	width: 80%;
 	text-align: center;
-	margin-top: 5%;
+	margin-top: 2%;
 	margin-left: auto;
 	margin-right: auto;
 	border-collapse: collapse;
