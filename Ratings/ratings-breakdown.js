@@ -1,82 +1,72 @@
-var pOverallInt;
-var pGameplayInt;
-var pVisualsInt;
-var pAudioInt;
-var pContentInt;
-var kOverallInt;
-var kGameplayInt;
-var kVisualsInt;
-var kAudioInt;
-var kContentInt;
-
 function setPeteChart(gameplay,visuals,audio,content,overall){
-	clearInterval(pOverallInt);
-    clearInterval(pGameplayInt);
-    clearInterval(pVisualsInt);
-    clearInterval(pAudioInt);
-	clearInterval(pContentInt);
 	
-	overallPercent = document.getElementById("pete-overall-progress");
-	gameplayPercent = document.getElementById("pete-gameplay-progress");
-	visualsPercent = document.getElementById("pete-visuals-progress");
-	audioPercent = document.getElementById("pete-audio-progress");
-	contentPercent = document.getElementById("pete-content-progress");
-
-	document.getElementById("p-stat-overall").innerHTML = `Overall: ${overall}/100`;
-	document.getElementById("p-stat-gameplay").innerHTML = `Gameplay: ${gameplay}/100`;
-	document.getElementById("p-stat-visuals").innerHTML = `Visuals: ${visuals}/100`;
-	document.getElementById("p-stat-audio").innerHTML = `Audio: ${audio}/100`;
-	document.getElementById("p-stat-content").innerHTML = `Content: ${content}/100`;
-
-	pOverallInt = transition(overallPercent,overall);
-	pGameplayInt = transition(gameplayPercent,gameplay);
-	pVisualsInt = transition(visualsPercent,visuals);
-	pAudioInt = transition(audioPercent,audio);
-	pContentInt = transition(contentPercent,content);
 }
 
 function setKevChart(gameplay,visuals,audio,content,overall){
-	clearInterval(kOverallInt);
-    clearInterval(kGameplayInt);
-    clearInterval(kVisualsInt);
-    clearInterval(kAudioInt);
-	clearInterval(kContentInt);
 	
-	overallPercent = document.getElementById("kev-overall-progress");
-	gameplayPercent = document.getElementById("kev-gameplay-progress");
-	visualsPercent = document.getElementById("kev-visuals-progress");
-	audioPercent = document.getElementById("kev-audio-progress");
-	contentPercent = document.getElementById("kev-content-progress");
-
-	document.getElementById("k-stat-overall").innerHTML = `Overall: ${overall}/100`;
-	document.getElementById("k-stat-gameplay").innerHTML = `Gameplay: ${gameplay}/100`;
-	document.getElementById("k-stat-visuals").innerHTML = `Visuals: ${visuals}/100`;
-	document.getElementById("k-stat-audio").innerHTML = `Audio: ${audio}/100`;
-	document.getElementById("k-stat-content").innerHTML = `Content: ${content}/100`;
-
-	kOverallInt = transition(overallPercent,overall);
-	kGameplayInt = transition(gameplayPercent,gameplay);
-	kVisualsInt = transition(visualsPercent,visuals);
-	kAudioInt = transition(audioPercent,audio);
-	kContentInt = transition(contentPercent,content);
 }
 
-function transition(ele,val){
-	var contentSlide = setInterval(frame,16.7);
-	val = Math.round(val);
-	return contentSlide;
+function expand(ele){
+	let table = document.getElementById("rankings-table");
+	let nodes = table.getElementsByClassName("rankings-table-row");
 
-	function frame(){
-		var width = Number(ele.style.width.substring(0, ele.style.width.length - 1));
-		if(	width == val){
-			clearInterval(contentSlide);
-		} else {
-			if (width > val){
-				ele.style.width = `${width-1}%`;
+	for(let i = 0; i < nodes.length; i++){
+		let pBreakdown = nodes[i].nextSibling.getElementsByClassName("peteChart")[0];
+		let pRanks = nodes[i].nextSibling.getElementsByClassName("p-rank");
+		let kBreakdown = nodes[i].nextSibling.getElementsByClassName("kevChart")[0];
+		let kRanks = nodes[i].nextSibling.getElementsByClassName("k-rank");
+
+		if (nodes[i] === ele && nodes[i].className != "rankings-table-row selected"){
+			//Mark the two rows as selected
+			nodes[i].className = "rankings-table-row selected";
+			nodes[i].nextSibling.className = "rankings-table-row-info expanded"
+
+			//Set individual charts to expand
+			pBreakdown.className = "peteChart expanded-breakdown";
+			kBreakdown.className = "kevChart expanded-breakdown";
+
+			//Set ranking categories to expand
+			for(let j = 0; j < pRanks.length; j++){
+				if (pRanks[j].className.includes("overall")){
+					pRanks[j].className = "p-rank expanded-rank overall";
+					continue;
+				}
+				pRanks[j].className = "p-rank expanded-rank";
 			}
-			else if (width < val) {
-				ele.style.width = `${width+1}%`;
+			
+			for(let j = 0; j < kRanks.length; j++){
+				if (kRanks[j].className.includes("overall")){
+					kRanks[j].className = "k-rank expanded-rank overall";
+					continue;
+				}
+				kRanks[j].className = "k-rank expanded-rank";
 			}
+			continue;
+		}
+		
+		//Mark the two rows as unselected
+		nodes[i].className = "rankings-table-row";
+		nodes[i].nextSibling.className = "rankings-table-row-info"
+
+		//Minimize individual charts
+		pBreakdown.className = "peteChart";
+		kBreakdown.className = "kevChart";
+
+		//Minimize ranking categories
+		for(let j = 0; j < pRanks.length; j++){
+			if (pRanks[j].className.includes("overall")){
+				pRanks[j].className = "p-rank overall";
+				continue;
+			}
+			pRanks[j].className = "p-rank";
+		}
+
+		for(let j = 0; j < kRanks.length; j++){
+			if (kRanks[j].className.includes("overall")){
+				kRanks[j].className = "k-rank overall";
+				continue;
+			}
+			kRanks[j].className = "k-rank";
 		}
 	}
 }
