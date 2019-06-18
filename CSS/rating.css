@@ -8,17 +8,8 @@ article{
 main{
 	margin-top: 2vw;
 }
-#rankings-display-info{
-	margin-top: 2.5vw;
-	margin-bottom: 1.5vw;
-	height: 25vw;
-}
 #rankings-display-stats{
 	height: 30vw;
-}
-#rankings-display-img{
-	width: auto;
-	height: 80%;
 }
 #rankings-table{
 	width: 90%;
@@ -36,25 +27,37 @@ main{
 	font-size: 1.4vw;
 }
 .rankings-table-header > th {
-	padding: 10px;
+	padding: 1.25vw;
 }
 .rankings-table-header > th:hover{
 	cursor: pointer;
 	text-decoration: underline;
 }
 .rankings-table-row{
-	padding: 10px;
+	padding: 1.25vw;
 }
 .rankings-table-row:hover{
 	background-color: #f1f1f1;
 	cursor: pointer;
 }
 .rankings-table-row > td{
-	padding: 10px;
+	padding: 1.25vw;
 	font-size: 1.1vw;
 }
 .rankings-table-row.selected{
 	background-color: #f1f1f1;
+}
+.rankings-table-row-info{
+	display: table-row;
+	overflow: hidden;
+	height: 0;
+	transition: height 0.2s ease-out;
+	font-size: 0;
+}
+.expanded{
+	display: table-row;
+	height: 20vw;
+	font-size: 1.1vw;
 }
 td.sorted {
 	color: red;
@@ -62,16 +65,16 @@ td.sorted {
 th.sorted {
 	text-decoration: underline;
 }
-#peteChart, #kevChart {
+.peteChart, .kevChart {
 	width: 45%;
 	margin-bottom: 10px;
 }
-#kevChart{
+.kevChart{
 	margin-left: 5%;
 	float: right;
 	clear: right;
 }
-#peteChart{
+.peteChart{
 	margin-right: 5%;
 	float: left;
 	clear: left;

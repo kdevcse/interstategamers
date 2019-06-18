@@ -1,20 +1,4 @@
-var pOverallInt;
-var pGameplayInt;
-var pVisualsInt;
-var pAudioInt;
-var pContentInt;
-var kOverallInt;
-var kGameplayInt;
-var kVisualsInt;
-var kAudioInt;
-var kContentInt;
-
 function setPeteChart(gameplay,visuals,audio,content,overall){
-	clearInterval(pOverallInt);
-    clearInterval(pGameplayInt);
-    clearInterval(pVisualsInt);
-    clearInterval(pAudioInt);
-	clearInterval(pContentInt);
 	
 	overallPercent = document.getElementById("pete-overall-progress");
 	gameplayPercent = document.getElementById("pete-gameplay-progress");
@@ -28,20 +12,15 @@ function setPeteChart(gameplay,visuals,audio,content,overall){
 	document.getElementById("p-stat-audio").innerHTML = `Audio: ${audio}/100`;
 	document.getElementById("p-stat-content").innerHTML = `Content: ${content}/100`;
 
-	pOverallInt = transition(overallPercent,overall);
-	pGameplayInt = transition(gameplayPercent,gameplay);
-	pVisualsInt = transition(visualsPercent,visuals);
-	pAudioInt = transition(audioPercent,audio);
-	pContentInt = transition(contentPercent,content);
+	overallPercent.style.width = `${overall}%`;
+	gameplayPercent.style.width = `${gameplay}%`;
+	visualsPercent.style.width = `${visuals}%`;
+	audioPercent.style.width = `${audio}%`;
+	contentPercent.style.width = `${content}%`;
 }
 
 function setKevChart(gameplay,visuals,audio,content,overall){
-	clearInterval(kOverallInt);
-    clearInterval(kGameplayInt);
-    clearInterval(kVisualsInt);
-    clearInterval(kAudioInt);
-	clearInterval(kContentInt);
-	
+
 	overallPercent = document.getElementById("kev-overall-progress");
 	gameplayPercent = document.getElementById("kev-gameplay-progress");
 	visualsPercent = document.getElementById("kev-visuals-progress");
@@ -54,29 +33,25 @@ function setKevChart(gameplay,visuals,audio,content,overall){
 	document.getElementById("k-stat-audio").innerHTML = `Audio: ${audio}/100`;
 	document.getElementById("k-stat-content").innerHTML = `Content: ${content}/100`;
 
-	kOverallInt = transition(overallPercent,overall);
-	kGameplayInt = transition(gameplayPercent,gameplay);
-	kVisualsInt = transition(visualsPercent,visuals);
-	kAudioInt = transition(audioPercent,audio);
-	kContentInt = transition(contentPercent,content);
+	overallPercent.style.width = `${overall}%`;
+	gameplayPercent.style.width = `${gameplay}%`;
+	visualsPercent.style.width = `${visuals}%`;
+	audioPercent.style.width = `${audio}%`;
+	contentPercent.style.width = `${content}%`;
 }
 
-function transition(ele,val){
-	var contentSlide = setInterval(frame,16.7);
-	val = Math.round(val);
-	return contentSlide;
+function expand(ele){
+	let table = document.getElementById("rankings-table");
+	let nodes = table.getElementsByClassName("rankings-table-row");
 
-	function frame(){
-		var width = Number(ele.style.width.substring(0, ele.style.width.length - 1));
-		if(	width == val){
-			clearInterval(contentSlide);
-		} else {
-			if (width > val){
-				ele.style.width = `${width-1}%`;
-			}
-			else if (width < val) {
-				ele.style.width = `${width+1}%`;
-			}
+	for(let i = 0; i < nodes.length; i++){
+		if (nodes[i] === ele && nodes[i].className != "rankings-table-row selected"){
+			nodes[i].className = "rankings-table-row selected";
+			nodes[i].nextSibling.className = "rankings-table-row-info expanded"
+			continue;
 		}
+		
+		nodes[i].className = "rankings-table-row";
+		nodes[i].nextSibling.className = "rankings-table-row-info"
 	}
 }

@@ -36,72 +36,74 @@ function removeSortedAttribute(){
   }
 }
 
-function removeSelectedAttribute(){
-  let sorts = document.getElementsByClassName("selected");
-  for(j = 0; j < sorts.length; j++){
-    let name = sorts[j].getAttribute("class");
-    sorts[j].setAttribute("class",name.replace(" ","").replace("selected",""));
-  }
-}
-
-function sortTableByCategory(ele,category, ascending) {
+function sortTableByCategory(ele,category, ascending){
+  //Set row to sorted class identifier
   removeSortedAttribute();
   ele.setAttribute("class","sorted");
-  let table, rows, switching, i, x, y, shouldSwitch;
-  table = document.getElementById("rankings-table");
-  switching = true;
-  while (switching) {
-    switching = false;
-    rows = table.rows;
-    for (i = 1; i < (rows.length - 1); i++) {
-      shouldSwitch = false;
+
+  let canSwitch = true;
+  let table = document.getElementById("rankings-table");
+  let rows = table.rows;
+
+  //Swap sort algorithm
+  while(canSwitch){
+    canSwitch = false;
+    for(let i = 1; i < rows.length; i++){
+      if(rows[i].className.includes("rankings-table-row-info") || !rows[i+2])
+        continue;
+        
       x = rows[i].getElementsByClassName(`rankings-table-${category}`)[0];
       x.setAttribute("class",`rankings-table-${category} sorted`);
-      y = rows[i + 1].getElementsByClassName(`rankings-table-${category}`)[0];
+      y = rows[i + 2].getElementsByClassName(`rankings-table-${category}`)[0];
       y.setAttribute("class",`rankings-table-${category} sorted`);
       if (ascending && Number(x.innerHTML) > Number(y.innerHTML)) {
-        shouldSwitch = true;
+        canSwitch = true;
+        table.insertBefore(rows[i+2],rows[i]);
+        table.insertBefore(rows[i+3],rows[i+1]);
         break;
       }
       else if (!ascending && Number(x.innerHTML) < Number(y.innerHTML)){
-        shouldSwitch = true;
+        canSwitch = true;
+        table.insertBefore(rows[i+2],rows[i]);
+        table.insertBefore(rows[i+3],rows[i+1]);
         break;
       }
-    }
-    if (shouldSwitch) {
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
     }
   }
 }
 
-function sortTableByTitle(ele,ascending){
+function sortTableByTitle(ele, ascending){
+  //Set row to sorted class identifier
   removeSortedAttribute();
   ele.setAttribute("class","sorted");
-  let table, rows, switching, i, x, y, shouldSwitch;
-  table = document.getElementById("rankings-table");
-  switching = true;
-  while (switching) {
-    switching = false;
-    rows = table.rows;
-    for (i = 1; i < (rows.length - 1); i++) {
-      shouldSwitch = false;
+
+  let canSwitch = true;
+  let table = document.getElementById("rankings-table");
+  let rows = table.rows;
+
+  //Swap sort algorithm
+  while(canSwitch){
+    canSwitch = false;
+    for(let i = 1; i < rows.length; i++){
+      if(rows[i].className.includes("rankings-table-row-info") || !rows[i+2])
+        continue;
+        
       x = rows[i].getElementsByClassName(`rankings-table-title`)[0];
       x.setAttribute("class",`rankings-table-title sorted`);
-      y = rows[i + 1].getElementsByClassName(`rankings-table-title`)[0];
+      y = rows[i + 2].getElementsByClassName(`rankings-table-title`)[0];
       y.setAttribute("class",`rankings-table-title sorted`);
       if (ascending && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-        shouldSwitch = true;
+        canSwitch = true;
+        table.insertBefore(rows[i+2],rows[i]);
+        table.insertBefore(rows[i+3],rows[i+1]);
         break;
       }
       else if (!ascending && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
-        shouldSwitch = true;
+        canSwitch = true;
+        table.insertBefore(rows[i+2],rows[i]);
+        table.insertBefore(rows[i+3],rows[i+1]);
         break;
       }
-    }
-    if (shouldSwitch) {
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
     }
   }
 }
@@ -122,9 +124,8 @@ function tableInsert(game){
 
   let newRow = document.createElement("tr");
   newRow.setAttribute("class","rankings-table-row");
-  newRow.setAttribute("onclick","selectGame(this)");
   newRow.setAttribute("game",title);
-  newRow.setAttribute("game-img","../Images/IGLogo.png");
+  newRow.addEventListener("click",function(){selectGame(this)});
 
   let pGameplay = game["Ranking Info"]["P. Gameplay"].toFixed(2);
   let pVisuals = game["Ranking Info"]["P. Visuals"].toFixed(2);
@@ -139,18 +140,6 @@ function tableInsert(game){
   let kContent = game["Ranking Info"]["K. Content"].toFixed(2);
   let kOverall = game["Ranking Info"]["Kevin's Rating"].toFixed(2);
   newRow.setAttribute("k-scores",`${kGameplay}:${kVisuals}:${kAudio}:${kContent}:${kOverall}`);
-  
-  let gameTitle = "../Images/" + title.replace(/\ /g,'_').replace(/\W/g, '').toLowerCase();
-  imgExists(gameTitle + ".png", function(exists){
-    if (exists){
-      newRow.setAttribute("game-img",`${gameTitle}.png`);
-    }
-  });
-  imgExists(gameTitle + ".jpg", function(exists){
-    if (exists){
-      newRow.setAttribute("game-img",`${gameTitle}.jpg`);
-    }
-  });
 
   let rankE = document.createElement("td");
   rankE.setAttribute("class","rankings-table-rank sorted");
@@ -186,32 +175,38 @@ function tableInsert(game){
   newRow.appendChild(pScore);
   newRow.appendChild(kScore);
   table.appendChild(newRow);
+
+  newRowInfo = document.createElement("tr");
+  newRowInfo.setAttribute("class","rankings-table-row-info");
+
+  infoData = document.createElement("td");
+  infoData.setAttribute("class","rankings-table-info");
+  infoData.setAttribute("colspan","8");
+  addInfo(infoData,title);
+
+  newRowInfo.appendChild(infoData);
+  table.appendChild(newRowInfo);
+}
+
+function addInfo(infoData,title){
+  pChartEle = document.createElement("div");
+  pChartEle.className = "peteChart";
+
+  let header = document.createElement("h2")
+  header.innerHTML = "Peter's Scores";
+  let t = document.createElement("p")
+  t.innerHTML = title;
+
+  pChartEle.appendChild(header);
+  pChartEle.appendChild(t);
+  infoData.appendChild(pChartEle);
 }
 
 function selectGame(ele){
-  removeSelectedAttribute();
-  ele.setAttribute("class","rankings-table-row selected");
-  let path = ele.getAttribute("game-img");
+  expand(ele);
   let pData = ele.getAttribute("p-scores").split(":");
   let kData = ele.getAttribute("k-scores").split(":");
 
-  let gameImg = document.getElementById("rankings-display-img");
-  gameImg.setAttribute("src",path);
-
-  setPeteChart(pData[0],pData[1],pData[2],pData[3],pData[4]);
-  setKevChart(kData[0],kData[1],kData[2],kData[3],kData[4]);
-
-  document.getElementById("breakdownTxt").style.display = "none";
-  gameImg.style.height = "100%";
-}
-
-function imgExists(path, callBack){
-    let imageData = new Image();
-    imageData.onload = function() {
-      callBack(true);
-    };
-    imageData.onerror = function() {
-      callBack(false);
-    };
-    imageData.src = path;
+  //setPeteChart(pData[0],pData[1],pData[2],pData[3],pData[4]);
+  //setKevChart(kData[0],kData[1],kData[2],kData[3],kData[4]);
 }
