@@ -6,7 +6,8 @@ article{
 	display: block;
 }
 main{
-	margin-top: 2vw;
+	margin-top: 5vw;
+	margin-bottom: 5vw;
 }
 #rankings-display-stats{
 	height: 30vw;
@@ -27,21 +28,21 @@ main{
 	font-size: 1.4vw;
 }
 .rankings-table-header > th {
-	padding: 1.25vw;
+	padding: 1vw 0.2vw;
 }
 .rankings-table-header > th:hover{
 	cursor: pointer;
 	text-decoration: underline;
 }
 .rankings-table-row{
-	padding: 1.25vw;
+	padding: 1vw 0.2vw;
 }
 .rankings-table-row:hover{
 	background-color: #f1f1f1;
 	cursor: pointer;
 }
 .rankings-table-row > td{
-	padding: 1.25vw;
+	padding: 1vw 0.2vw;
 	font-size: 1.1vw;
 }
 .rankings-table-row.selected{
@@ -51,7 +52,8 @@ main{
 	display: table-row;
 	overflow: hidden;
 	height: 0;
-	transition: height 0.2s ease-out;
+	transition: height 0.3s ease-in-out;
+	transition: font-size 0.3s ease-in-out;
 	font-size: 0;
 }
 .expanded{
@@ -66,16 +68,25 @@ th.sorted {
 	text-decoration: underline;
 }
 .peteChart, .kevChart {
-	width: 45%;
-	margin-bottom: 10px;
+	width: 40%;
+	margin-left: 5%;
+	margin-bottom: 0;
+	margin-top: 0;
+	overflow: hidden;
+	height: 0;
+	transition: height 0.2s ease-out;
+}
+.expanded-breakdown{
+	height: 10%;
+	margin-bottom: 1%;
+	margin-top: 1%;
 }
 .kevChart{
-	margin-left: 5%;
+	margin-right: 5%;
 	float: right;
 	clear: right;
 }
 .peteChart{
-	margin-right: 5%;
 	float: left;
 	clear: left;
 }
@@ -87,9 +98,13 @@ th.sorted {
 .p-rank, .k-rank {
 	overflow: hidden;
 	width: 100%;
-	height: 40px;
+	height: 0;
 	border: #2d32af solid 2px;
 	margin-bottom: 10px;
+	transition: height 0.2s ease-out;
+}
+.expanded-rank {
+	height: 2.5vw;
 }
 .p-progress, .k-progress{
 	height: 100%;
@@ -97,9 +112,9 @@ th.sorted {
 	background-color: #2d32af;
 	overflow: hidden;
 }
-#kev-overall, #pete-overall{
+.overall{
 	border: red solid 2px;
 }
-#kev-overall-progress, #pete-overall-progress{
+.overall-progress{
 	background-color: red;
 }

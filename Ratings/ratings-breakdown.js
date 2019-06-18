@@ -1,43 +1,9 @@
 function setPeteChart(gameplay,visuals,audio,content,overall){
 	
-	overallPercent = document.getElementById("pete-overall-progress");
-	gameplayPercent = document.getElementById("pete-gameplay-progress");
-	visualsPercent = document.getElementById("pete-visuals-progress");
-	audioPercent = document.getElementById("pete-audio-progress");
-	contentPercent = document.getElementById("pete-content-progress");
-
-	document.getElementById("p-stat-overall").innerHTML = `Overall: ${overall}/100`;
-	document.getElementById("p-stat-gameplay").innerHTML = `Gameplay: ${gameplay}/100`;
-	document.getElementById("p-stat-visuals").innerHTML = `Visuals: ${visuals}/100`;
-	document.getElementById("p-stat-audio").innerHTML = `Audio: ${audio}/100`;
-	document.getElementById("p-stat-content").innerHTML = `Content: ${content}/100`;
-
-	overallPercent.style.width = `${overall}%`;
-	gameplayPercent.style.width = `${gameplay}%`;
-	visualsPercent.style.width = `${visuals}%`;
-	audioPercent.style.width = `${audio}%`;
-	contentPercent.style.width = `${content}%`;
 }
 
 function setKevChart(gameplay,visuals,audio,content,overall){
-
-	overallPercent = document.getElementById("kev-overall-progress");
-	gameplayPercent = document.getElementById("kev-gameplay-progress");
-	visualsPercent = document.getElementById("kev-visuals-progress");
-	audioPercent = document.getElementById("kev-audio-progress");
-	contentPercent = document.getElementById("kev-content-progress");
-
-	document.getElementById("k-stat-overall").innerHTML = `Overall: ${overall}/100`;
-	document.getElementById("k-stat-gameplay").innerHTML = `Gameplay: ${gameplay}/100`;
-	document.getElementById("k-stat-visuals").innerHTML = `Visuals: ${visuals}/100`;
-	document.getElementById("k-stat-audio").innerHTML = `Audio: ${audio}/100`;
-	document.getElementById("k-stat-content").innerHTML = `Content: ${content}/100`;
-
-	overallPercent.style.width = `${overall}%`;
-	gameplayPercent.style.width = `${gameplay}%`;
-	visualsPercent.style.width = `${visuals}%`;
-	audioPercent.style.width = `${audio}%`;
-	contentPercent.style.width = `${content}%`;
+	
 }
 
 function expand(ele){
@@ -45,13 +11,62 @@ function expand(ele){
 	let nodes = table.getElementsByClassName("rankings-table-row");
 
 	for(let i = 0; i < nodes.length; i++){
+		let pBreakdown = nodes[i].nextSibling.getElementsByClassName("peteChart")[0];
+		let pRanks = nodes[i].nextSibling.getElementsByClassName("p-rank");
+		let kBreakdown = nodes[i].nextSibling.getElementsByClassName("kevChart")[0];
+		let kRanks = nodes[i].nextSibling.getElementsByClassName("k-rank");
+
 		if (nodes[i] === ele && nodes[i].className != "rankings-table-row selected"){
+			//Mark the two rows as selected
 			nodes[i].className = "rankings-table-row selected";
 			nodes[i].nextSibling.className = "rankings-table-row-info expanded"
+
+			//Set individual charts to expand
+			pBreakdown.className = "peteChart expanded-breakdown";
+			kBreakdown.className = "kevChart expanded-breakdown";
+
+			//Set ranking categories to expand
+			for(let j = 0; j < pRanks.length; j++){
+				if (pRanks[j].className.includes("overall")){
+					pRanks[j].className = "p-rank expanded-rank overall";
+					continue;
+				}
+				pRanks[j].className = "p-rank expanded-rank";
+			}
+			
+			for(let j = 0; j < kRanks.length; j++){
+				if (kRanks[j].className.includes("overall")){
+					kRanks[j].className = "k-rank expanded-rank overall";
+					continue;
+				}
+				kRanks[j].className = "k-rank expanded-rank";
+			}
 			continue;
 		}
 		
+		//Mark the two rows as unselected
 		nodes[i].className = "rankings-table-row";
 		nodes[i].nextSibling.className = "rankings-table-row-info"
+
+		//Minimize individual charts
+		pBreakdown.className = "peteChart";
+		kBreakdown.className = "kevChart";
+
+		//Minimize ranking categories
+		for(let j = 0; j < pRanks.length; j++){
+			if (pRanks[j].className.includes("overall")){
+				pRanks[j].className = "p-rank overall";
+				continue;
+			}
+			pRanks[j].className = "p-rank";
+		}
+
+		for(let j = 0; j < kRanks.length; j++){
+			if (kRanks[j].className.includes("overall")){
+				kRanks[j].className = "k-rank overall";
+				continue;
+			}
+			kRanks[j].className = "k-rank";
+		}
 	}
 }
