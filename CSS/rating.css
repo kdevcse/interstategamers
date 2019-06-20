@@ -62,7 +62,7 @@ main{
 .expanded{
 	display: table-row;
 	height: 20vw;
-	font-size: 1.1vw;
+	font-size: 0.9vw;
 }
 td.sorted {
 	color: red;
@@ -71,8 +71,8 @@ th.sorted {
 	text-decoration: underline;
 }
 .peteChart, .kevChart {
-	width: 40%;
-	margin-left: 5%;
+	width: 35%;
+	margin-left: 10%;
 	margin-bottom: 0;
 	margin-top: 0;
 	overflow: hidden;
@@ -81,11 +81,10 @@ th.sorted {
 }
 .expanded-breakdown{
 	height: 10%;
-	margin-bottom: 1%;
-	margin-top: 1%;
+	margin-bottom: 2%;
 }
 .kevChart{
-	margin-right: 5%;
+	margin-right: 10%;
 	float: right;
 	clear: right;
 }
@@ -107,7 +106,7 @@ th.sorted {
 	transition: height 0.2s ease-in-out;
 }
 .expanded-rank {
-	height: 2.5vw;
+	height: 1.75vw;
 }
 .p-progress, .k-progress{
 	height: 100%;
