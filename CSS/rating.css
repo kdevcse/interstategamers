@@ -28,7 +28,10 @@ main{
 	font-size: 1.4vw;
 }
 .rankings-table-header > th {
-	padding: 1vw 0.2vw;
+	padding: 1.1vw 0.2vw;
+	background-color: #2d32af;
+	position: sticky;
+	top: -1px;
 }
 .rankings-table-header > th:hover{
 	cursor: pointer;
