@@ -1,18 +1,2 @@
 /* CSS Document */
 /* Notes: Blue:2d32af Red:e11932 */
-.store-item {
-	width: 60%;
-	height: auto;
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 10px;
-	border-radius: 5px;
-}
-.store-item > a > img {
-	height: auto;
-	margin-left: auto;
-	margin-right: auto;
-}
-.hb-logo:hover {
-	src: url("../Images/PartnerStamp.png")
-}
