@@ -83,6 +83,7 @@ function createEpisode(data,id,newSeason){
 	audio.setAttribute("id",`ep${id}-audio`);
 	audio.setAttribute("src",data["enclosure_url"]);
 	audio.setAttribute("onended","stopEpisode(this)");
+	audio.setAttribute("preload","none");
 	epPlayer.appendChild(audio);
 
 	var epInfo = document.createElement("aside");
