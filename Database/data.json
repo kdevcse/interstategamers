@@ -10,7 +10,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e8ed045d-938b-4104-b8a2-8d98e015680e/1536958547artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-01-01T00:00:00-08:00",
+        "published_at": "2018-01-01T00:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -67,7 +67,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/613d292f-46c9-4eb5-8a10-650e578eef98/1536009148artwork.jpg",
         "is_hidden": false,
         "number": 1,
-        "published_at": "2018-01-07T10:24:00-08:00",
+        "published_at": "2018-01-07T10:24:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -124,7 +124,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/6030baf2-0516-408e-bc7a-0b51fc7ceae8/1536009166artwork.jpg",
         "is_hidden": false,
         "number": 2,
-        "published_at": "2018-01-21T23:35:00-08:00",
+        "published_at": "2018-01-21T23:35:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -181,7 +181,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/62bf6dd6-59e8-4a02-a6d4-8ad45166625d/1536009212artwork.jpg",
         "is_hidden": false,
         "number": 3,
-        "published_at": "2018-02-05T05:00:00-08:00",
+        "published_at": "2018-02-05T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -238,7 +238,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e88faa84-867c-4b28-9ed8-ee7ae87a8ece/1536009231artwork.jpg",
         "is_hidden": false,
         "number": 4,
-        "published_at": "2018-02-26T05:00:00-08:00",
+        "published_at": "2018-02-26T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -296,7 +296,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/bbbd00eb-7c01-4918-99a9-584ff73ae56f/1536009249artwork.jpg",
         "is_hidden": false,
         "number": 5,
-        "published_at": "2018-03-12T05:00:00-07:00",
+        "published_at": "2018-03-12T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -353,7 +353,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/c77ee3eb-02c1-4649-a65d-57cd6d434a93/1536009266artwork.jpg",
         "is_hidden": false,
         "number": 6,
-        "published_at": "2018-03-28T20:33:00-07:00",
+        "published_at": "2018-03-28T20:33:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -377,7 +377,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8190703e-4a42-4eb6-aaef-db745c5cd214/1536009225artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-04-01T17:00:00-07:00",
+        "published_at": "2018-04-01T17:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -434,7 +434,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8eff73c4-276d-4187-a721-a3521d6b755b/1536009303artwork.jpg",
         "is_hidden": false,
         "number": 7,
-        "published_at": "2018-04-09T17:00:00-07:00",
+        "published_at": "2018-04-09T17:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -491,7 +491,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e0b216f8-58ba-4a8d-9db0-3ff41e4897e1/1536009318artwork.jpg",
         "is_hidden": false,
         "number": 8,
-        "published_at": "2018-04-23T05:00:00-07:00",
+        "published_at": "2018-04-23T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -548,7 +548,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a29ef33c-7a07-4bd2-b6a4-37284e48a01b/1536009278artwork.jpg",
         "is_hidden": false,
         "number": 9,
-        "published_at": "2018-05-07T05:00:00-07:00",
+        "published_at": "2018-05-07T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -605,7 +605,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/ed5bba2e-6e23-4f37-a46e-cb9572a0a7c1/1536009296artwork.jpg",
         "is_hidden": false,
         "number": 10,
-        "published_at": "2018-05-21T05:00:00-07:00",
+        "published_at": "2018-05-21T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -629,7 +629,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/50f69360-2339-4593-b6a8-3d366ca5daea/1536009369artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-06-26T05:00:00-07:00",
+        "published_at": "2018-06-26T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -640,7 +640,7 @@
         "title": "E3 2018",
         "token": "f38fb03e",
         "type": "bonus",
-        "updated_at": "2019-05-12T21:31:20.44212-07:00"
+        "updated_at": "2019-05-12T21:31:20.442120-07:00"
     },
     {
         "Rank": 2,
@@ -686,7 +686,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d01d38da-0669-4eaf-b89a-916b2a898619/1536010154artwork.jpg",
         "is_hidden": false,
         "number": 1,
-        "published_at": "2018-09-04T05:00:00-07:00",
+        "published_at": "2018-09-04T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -743,7 +743,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/5914151f-c9a2-4ebb-80b9-ef506e458bbe/1537149869artwork.jpg",
         "is_hidden": false,
         "number": 2,
-        "published_at": "2018-09-17T05:00:00-07:00",
+        "published_at": "2018-09-17T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -800,7 +800,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/9d29afbe-c607-4946-a0af-26ba0487238d/1538355728artwork.jpg",
         "is_hidden": false,
         "number": 3,
-        "published_at": "2018-10-01T05:00:00-07:00",
+        "published_at": "2018-10-01T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -824,7 +824,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/56318819-37a7-44a0-b38f-bdbafcd7d3d5/1538950695artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-10-08T05:00:00-07:00",
+        "published_at": "2018-10-08T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -881,7 +881,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/368326cb-f122-4feb-9245-1d032d344304/1539568426artwork.jpg",
         "is_hidden": false,
         "number": 4,
-        "published_at": "2018-10-15T05:00:00-07:00",
+        "published_at": "2018-10-15T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -938,7 +938,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/def34029-bd61-41f6-8b9a-3d5e074b9e17/1540785198artwork.jpg",
         "is_hidden": false,
         "number": 5,
-        "published_at": "2018-10-29T05:00:00-07:00",
+        "published_at": "2018-10-29T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -949,7 +949,7 @@
         "title": "2-5: Luigi's Mansion",
         "token": "778a930e",
         "type": "full",
-        "updated_at": "2019-05-12T21:30:20.2831-07:00"
+        "updated_at": "2019-05-12T21:30:20.283100-07:00"
     },
     {
         "Rank": 18,
@@ -996,7 +996,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d3680d21-6a46-40d2-b426-748bda83fbee/1542001914artwork.jpg",
         "is_hidden": false,
         "number": 6,
-        "published_at": "2018-11-12T05:00:00-08:00",
+        "published_at": "2018-11-12T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1020,7 +1020,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/770b4b69-a030-4cef-8b90-df6c2cf92d5c/1543250275artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-11-26T08:33:00-08:00",
+        "published_at": "2018-11-26T08:33:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1077,7 +1077,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/40a2d915-c74f-4554-9052-132213cc0918/1543726282artwork.jpg",
         "is_hidden": false,
         "number": 7,
-        "published_at": "2018-12-03T05:00:00-08:00",
+        "published_at": "2018-12-03T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1134,7 +1134,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/4216e2c2-b8d2-44ce-9e94-806aa840a75e/1545026500artwork.jpg",
         "is_hidden": false,
         "number": 8,
-        "published_at": "2018-12-17T05:00:00-08:00",
+        "published_at": "2018-12-17T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1192,7 +1192,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0e2d88e6-0297-4913-9725-2b2cad4c07f3/1547436833artwork.jpg",
         "is_hidden": false,
         "number": 9,
-        "published_at": "2019-01-14T05:00:00-08:00",
+        "published_at": "2019-01-14T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1250,7 +1250,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/20c96613-4f8b-42c9-8f4b-c8c8bdff76ef/1548634781artwork.jpg",
         "is_hidden": false,
         "number": 10,
-        "published_at": "2019-01-28T05:00:00-08:00",
+        "published_at": "2019-01-28T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1308,7 +1308,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a63ab80a-3ace-474e-b03a-66c152dc13dc/1549785655artwork.jpg",
         "is_hidden": false,
         "number": 11,
-        "published_at": "2019-02-11T05:00:00-08:00",
+        "published_at": "2019-02-11T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1332,7 +1332,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0b786374-6c63-4920-b1a2-d9f9b24c91e8/1551661979artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2019-03-04T05:00:00-08:00",
+        "published_at": "2019-03-04T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1356,7 +1356,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/314386d3-3a52-4173-9aef-97b3952d8a6d/1554177738artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2019-04-02T05:00:00-07:00",
+        "published_at": "2019-04-02T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1413,7 +1413,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/b76ccac1-37e8-4c41-9e87-b28b96de2624/1556498655artwork.jpg",
         "is_hidden": false,
         "number": 1,
-        "published_at": "2019-04-29T05:00:00-07:00",
+        "published_at": "2019-04-29T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
@@ -1470,7 +1470,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/30bb4332-fe92-47e1-9ff3-a25ee098c47a/1557705732artwork.jpg",
         "is_hidden": false,
         "number": 2,
-        "published_at": "2019-05-13T05:00:04.16617-07:00",
+        "published_at": "2019-05-13T05:00:04.166170-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
