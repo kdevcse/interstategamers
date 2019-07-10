@@ -26,9 +26,6 @@ main {
 .episode {
     border-top: blue solid 1px;
 }
-.episode:hover,.episode-first:hover{
-	background: #f1f1f1;
-}
 .player {
     float: left;
     clear: left;
@@ -194,6 +191,9 @@ main {
     	overflow-y: scroll;
     	overflow-x: hidden;
 	}
+    .episode:hover,.episode-first:hover{
+        background: #f1f1f1;
+    }
 	.ep-info{
 		margin-left: 5vw;
 	}

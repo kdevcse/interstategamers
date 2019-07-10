@@ -75,14 +75,14 @@ footer {
 		border-top: white solid 1px;
 		margin-left: 5%;
 	}
-	#mobile-nav-icon {
+	#mobile-nav-button {
 		color: white;
 		display: inline-block;
 		font-size: 9vw;
 		width: 100%;
 		height: auto;
 	}
-	#mobile-nav-icon > svg{
+	#mobile-nav-button > svg{
 		float: right;
 		clear: right;
 		margin: 2% 5%;
