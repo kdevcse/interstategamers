@@ -18,16 +18,12 @@ article{
 	font-weight: bold;
 }
 .rankings-table-header > th {
-	padding: 1.1vw 0.2vw;
 	background-color: #2d32af;
 	position: -webkit-sticky; /* Safari */
 	position: sticky;
 	top: -1px;
 }
 .rankings-table-row{
-	padding: 1vw 0.2vw;
-}
-.rankings-table-row > td{
 	padding: 1vw 0.2vw;
 }
 .rankings-table-row.selected{
@@ -113,6 +109,10 @@ th.sorted {
 	}
 	.rankings-table-row > td{
 		font-size: 75%;
+		padding: 1.1vw 7.35vw;
+	}
+	.rankings-table-header > th {
+		padding: 1.1vw 5vw;
 	}
 }
 @media only screen and (min-width: 600px){
@@ -139,8 +139,12 @@ th.sorted {
 	}
 	.rankings-table-row > td{
 		font-size: 1.1vw;
+		padding: 1.1vw 0.2vw;
 	}
 	.rankings-table-header{
 		font-size: 1.1vw;
+	}
+	.rankings-table-header > th {
+		padding: 1.1vw 0.2vw;
 	}
 }
