@@ -15,7 +15,7 @@ article{
 .rankings-table-header{
 	background-color: #2d32af;
 	color: white;
-	font-weight: bold;
+	font-weight: normal;
 }
 .rankings-table-header > th {
 	background-color: #2d32af;
@@ -46,7 +46,7 @@ td.sorted {
 	color: red;
 }
 th.sorted {
-	text-decoration: underline;
+	font-weight: bolder;
 }
 .peteChart, .kevChart {
 	width: 35%;
@@ -105,14 +105,14 @@ th.sorted {
 		overflow-x: auto;
 	}
 	.rankings-table-header{
-		font-size: 75%;
+		font-size: 95%;
 	}
 	.rankings-table-row > td{
-		font-size: 75%;
-		padding: 1.1vw 7.35vw;
+		font-size: 73%;
+		padding: 3.5% 7.5vw 0.1% 7.5vw;
 	}
 	.rankings-table-header > th {
-		padding: 1.1vw 5vw;
+		padding: 1.1vw 3vw;
 	}
 }
 @media only screen and (min-width: 600px){
