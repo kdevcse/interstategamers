@@ -1,31 +1,21 @@
 article{
-	width: 90%;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
 }
-main{
-	margin-top: 5vw;
-	margin-bottom: 5vw;
-}
 #rankings-display-stats{
 	height: 30vw;
 }
 #rankings-table{
-	width: 90%;
 	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
 	border-collapse: collapse;
-	border: #2d32af 2px solid;
 	table-layout: fixed;
 }
 .rankings-table-header{
 	background-color: #2d32af;
 	color: white;
 	font-weight: bold;
-	font-size: 1.4vw;
 }
 .rankings-table-header > th {
 	padding: 1.1vw 0.2vw;
@@ -34,20 +24,11 @@ main{
 	position: sticky;
 	top: -1px;
 }
-.rankings-table-header > th:hover{
-	cursor: pointer;
-	text-decoration: underline;
-}
 .rankings-table-row{
 	padding: 1vw 0.2vw;
 }
-.rankings-table-row:hover{
-	background-color: #f1f1f1;
-	cursor: pointer;
-}
 .rankings-table-row > td{
 	padding: 1vw 0.2vw;
-	font-size: 1.1vw;
 }
 .rankings-table-row.selected{
 	background-color: #f1f1f1;
@@ -120,4 +101,46 @@ th.sorted {
 }
 .overall-progress{
 	background-color: red;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px){
+	main{
+		margin-bottom: 5vw;
+		overflow-x: auto;
+	}
+	.rankings-table-header{
+		font-size: 75%;
+	}
+	.rankings-table-row > td{
+		font-size: 75%;
+	}
+}
+@media only screen and (min-width: 600px){
+	article{
+		width: 90%;
+	}
+	#rankings-table{
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		border: #2d32af 2px solid;
+	}
+	main{
+		margin-top: 5vw;
+		margin-bottom: 5vw;
+	}
+	.rankings-table-header > th:hover{
+		cursor: pointer;
+		text-decoration: underline;
+	}
+	.rankings-table-row:hover{
+		background-color: #f1f1f1;
+		cursor: pointer;
+	}
+	.rankings-table-row > td{
+		font-size: 1.1vw;
+	}
+	.rankings-table-header{
+		font-size: 1.1vw;
+	}
 }
