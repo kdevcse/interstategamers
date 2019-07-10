@@ -44,7 +44,7 @@ function sortTableByCategory(ele,category, ascending){
   ele.setAttribute("class","sorted");
 
   let canSwitch = true;
-  let table = document.getElementById("rankings-table");
+  let table = document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
 
   //Swap sort algorithm
@@ -80,7 +80,7 @@ function sortTableByTitle(ele, ascending){
   ele.setAttribute("class","sorted");
 
   let canSwitch = true;
-  let table = document.getElementById("rankings-table");
+  let table = document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
 
   //Swap sort algorithm
