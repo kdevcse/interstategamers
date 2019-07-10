@@ -26,9 +26,6 @@ article{
 .rankings-table-row{
 	padding: 1vw 0.2vw;
 }
-.rankings-table-row.selected{
-	background-color: #f1f1f1;
-}
 .rankings-table-row-info{
 	display: table-row;
 	overflow: hidden;
@@ -146,5 +143,8 @@ th.sorted {
 		display: table-row;
 		height: 20vw;
 		font-size: 0.9vw;
+	}
+	.rankings-table-row.selected{
+		background-color: #f1f1f1;
 	}
 }
