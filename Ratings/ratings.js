@@ -32,8 +32,7 @@ function removeSortedAttribute(){
   for (i = 0; i < (rows.length); i++) {
     let sorts = rows[i].getElementsByClassName("sorted");
     for(j = 0; j < sorts.length; j++){
-        let name = sorts[j].getAttribute("class");
-        sorts[j].setAttribute("class",name.replace(" ","").replace("sorted",""));
+	sorts[j].classList.remove("sorted");
     }
   }
 }
@@ -41,7 +40,7 @@ function removeSortedAttribute(){
 function sortTableByCategory(ele,category, ascending){
   //Set row to sorted class identifier
   removeSortedAttribute();
-  ele.setAttribute("class","sorted");
+  ele.classList.add("sorted");
 
   let canSwitch = true;
   let table = document.getElementById("rankings-table").childNodes[1];
@@ -77,7 +76,7 @@ function sortTableByCategory(ele,category, ascending){
 function sortTableByTitle(ele, ascending){
   //Set row to sorted class identifier
   removeSortedAttribute();
-  ele.setAttribute("class","sorted");
+  ele.classList.add("sorted");
 
   let canSwitch = true;
   let table = document.getElementById("rankings-table").childNodes[1];
