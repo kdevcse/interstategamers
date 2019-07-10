@@ -130,7 +130,7 @@ function tableInsert(game){
 
 
   //Initialize the new row
-  let newRow = document.createElement("tr");
+  let newRow = table.insertRow(-1);
   newRow.setAttribute("class","rankings-table-row");
   newRow.setAttribute("game",title);
   newRow.addEventListener("click",function(){expand(this)});
@@ -170,10 +170,10 @@ function tableInsert(game){
   newRow.appendChild(contentE);
   newRow.appendChild(pScore);
   newRow.appendChild(kScore);
-  table.insertRow(newRow);
+  //table.appendChild(newRow);
 
   //Initialize game breakdown row
-  newRowInfo = document.createElement("tr");
+  newRowInfo = table.insertRow(-1);
   newRowInfo.setAttribute("class","rankings-table-row-info");
 
   //Create table data element for game breakdown
@@ -184,7 +184,7 @@ function tableInsert(game){
 
   //Append game breakdown to table
   newRowInfo.appendChild(infoData);
-  table.insertRow(newRowInfo);
+  //table.appendChild(newRowInfo);
 }
 
 function addInfo(infoData,game){
