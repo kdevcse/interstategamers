@@ -170,7 +170,7 @@ function tableInsert(game){
   newRow.appendChild(contentE);
   newRow.appendChild(pScore);
   newRow.appendChild(kScore);
-  table.appendChild(newRow);
+  table.insertRow(newRow);
 
   //Initialize game breakdown row
   newRowInfo = document.createElement("tr");
@@ -184,7 +184,7 @@ function tableInsert(game){
 
   //Append game breakdown to table
   newRowInfo.appendChild(infoData);
-  table.appendChild(newRowInfo);
+  table.insertRow(newRowInfo);
 }
 
 function addInfo(infoData,game){
