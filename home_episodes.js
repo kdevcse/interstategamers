@@ -83,6 +83,7 @@ function createEpisode(data,id,newSeason){
 	audio.setAttribute("id",`ep${id}-audio`);
 	audio.setAttribute("src",data["enclosure_url"]);
 	audio.setAttribute("onended","stopEpisode(this)");
+	audio.setAttribute("preload","none");
 	epPlayer.appendChild(audio);
 
 	var epInfo = document.createElement("aside");
@@ -174,14 +175,5 @@ function transition(ele,val){
 				ele.style.width = `${width+1}%`;
 			}
 		}
-	}
-}
-
-function menuDropdown(){
-	var nav = document.getElementById("mobile-nav-list");
-	if (nav.style.display === "block") {
-	  nav.style.display = "none";
-	} else {
-	  nav.style.display = "block";
 	}
 }

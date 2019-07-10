@@ -30,6 +30,7 @@ main{
 .rankings-table-header > th {
 	padding: 1.1vw 0.2vw;
 	background-color: #2d32af;
+	position: -webkit-sticky; /* Safari */
 	position: sticky;
 	top: -1px;
 }

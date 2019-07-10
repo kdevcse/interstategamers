@@ -48,10 +48,6 @@ footer {
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px){
-	footer {
-		margin-top: 30px;
-		padding: 25px 0 20px 0;
-	}
 	.nav-bar{
 		display: none;
 	}
@@ -75,14 +71,14 @@ footer {
 		border-top: white solid 1px;
 		margin-left: 5%;
 	}
-	#mobile-nav-icon {
+	#mobile-nav-button {
 		color: white;
 		display: inline-block;
 		font-size: 9vw;
 		width: 100%;
 		height: auto;
 	}
-	#mobile-nav-icon > svg{
+	#mobile-nav-button > svg{
 		float: right;
 		clear: right;
 		margin: 2% 5%;

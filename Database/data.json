@@ -10,7 +10,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e8ed045d-938b-4104-b8a2-8d98e015680e/1536958547artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-01-01T08:00:00.000000",
+        "published_at": "2018-01-01T00:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -21,10 +21,10 @@
         "title": "We Are The Interstate Gamers \u2013 Promo",
         "token": "de3f727a",
         "type": "trailer",
-        "updated_at": "2019-05-13T04:30:39.424937"
+        "updated_at": "2019-05-12T21:30:39.424937-07:00"
     },
     {
-        "Rank": 19,
+        "Rank": 20,
         "Ranking Info": {
             "Aesthetics": 85.25,
             "Audio": 88.5,
@@ -67,7 +67,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/613d292f-46c9-4eb5-8a10-650e578eef98/1536009148artwork.jpg",
         "is_hidden": false,
         "number": 1,
-        "published_at": "2018-01-07T18:24:00.000000",
+        "published_at": "2018-01-07T10:24:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -78,7 +78,7 @@
         "title": "1-1: Mario Kart 64",
         "token": "d17c5991",
         "type": "full",
-        "updated_at": "2019-05-13T04:31:23.875636"
+        "updated_at": "2019-05-12T21:31:23.875636-07:00"
     },
     {
         "Rank": 7,
@@ -124,7 +124,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/6030baf2-0516-408e-bc7a-0b51fc7ceae8/1536009166artwork.jpg",
         "is_hidden": false,
         "number": 2,
-        "published_at": "2018-01-22T07:35:00.000000",
+        "published_at": "2018-01-21T23:35:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -135,10 +135,10 @@
         "title": "1-2: Star Fox 64",
         "token": "127f8309",
         "type": "full",
-        "updated_at": "2019-05-13T04:31:13.049868"
+        "updated_at": "2019-05-12T21:31:13.049868-07:00"
     },
     {
-        "Rank": 11,
+        "Rank": 12,
         "Ranking Info": {
             "Aesthetics": 86.25,
             "Audio": 82.5,
@@ -181,7 +181,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/62bf6dd6-59e8-4a02-a6d4-8ad45166625d/1536009212artwork.jpg",
         "is_hidden": false,
         "number": 3,
-        "published_at": "2018-02-05T13:00:00.000000",
+        "published_at": "2018-02-05T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -192,10 +192,10 @@
         "title": "1-3: RollerCoaster Tycoon",
         "token": "070743b0",
         "type": "full",
-        "updated_at": "2019-05-13T04:31:25.238138"
+        "updated_at": "2019-05-12T21:31:25.238138-07:00"
     },
     {
-        "Rank": 14,
+        "Rank": 15,
         "Ranking Info": {
             "Aesthetics": 87.75,
             "Audio": 86.5,
@@ -238,7 +238,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e88faa84-867c-4b28-9ed8-ee7ae87a8ece/1536009231artwork.jpg",
         "is_hidden": false,
         "number": 4,
-        "published_at": "2018-02-26T13:00:00.000000",
+        "published_at": "2018-02-26T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -249,10 +249,10 @@
         "title": "1-4: Kirby and the Amazing Mirror",
         "token": "3ddee2bc",
         "type": "full",
-        "updated_at": "2019-05-13T04:31:19.718493"
+        "updated_at": "2019-05-12T21:31:19.718493-07:00"
     },
     {
-        "Rank": 12,
+        "Rank": 13,
         "Ranking Info": {
             "Aesthetics": 92.66666666666667,
             "Audio": 92,
@@ -296,7 +296,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/bbbd00eb-7c01-4918-99a9-584ff73ae56f/1536009249artwork.jpg",
         "is_hidden": false,
         "number": 5,
-        "published_at": "2018-03-12T12:00:00.000000",
+        "published_at": "2018-03-12T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -307,7 +307,7 @@
         "title": "1-5: Metroid Zero Mission",
         "token": "c645febf",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:52.072266"
+        "updated_at": "2019-05-12T21:30:52.072266-07:00"
     },
     {
         "Rank": 2,
@@ -353,7 +353,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/c77ee3eb-02c1-4649-a65d-57cd6d434a93/1536009266artwork.jpg",
         "is_hidden": false,
         "number": 6,
-        "published_at": "2018-03-29T03:33:00.000000",
+        "published_at": "2018-03-28T20:33:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -364,7 +364,7 @@
         "title": "1-6: Super Mario World",
         "token": "53bcc623",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:57.410055"
+        "updated_at": "2019-05-12T21:30:57.410055-07:00"
     },
     {
         "analytics": null,
@@ -377,7 +377,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8190703e-4a42-4eb6-aaef-db745c5cd214/1536009225artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-04-02T00:00:00.000000",
+        "published_at": "2018-04-01T17:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -388,10 +388,10 @@
         "title": "Introducing the Interstate Insiders Program!",
         "token": "9fa77d48",
         "type": "bonus",
-        "updated_at": "2019-05-13T04:30:40.120304"
+        "updated_at": "2019-05-12T21:30:40.120304-07:00"
     },
     {
-        "Rank": 21,
+        "Rank": 22,
         "Ranking Info": {
             "Aesthetics": 86.25,
             "Audio": 82.5,
@@ -434,7 +434,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8eff73c4-276d-4187-a721-a3521d6b755b/1536009303artwork.jpg",
         "is_hidden": false,
         "number": 7,
-        "published_at": "2018-04-10T00:00:00.000000",
+        "published_at": "2018-04-09T17:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -445,10 +445,10 @@
         "title": "1-7: Pok\u00e9mon Stadium",
         "token": "70e2583e",
         "type": "full",
-        "updated_at": "2019-05-13T04:31:09.784334"
+        "updated_at": "2019-05-12T21:31:09.784334-07:00"
     },
     {
-        "Rank": 22,
+        "Rank": 23,
         "Ranking Info": {
             "Aesthetics": 78.25,
             "Audio": 81.5,
@@ -491,7 +491,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e0b216f8-58ba-4a8d-9db0-3ff41e4897e1/1536009318artwork.jpg",
         "is_hidden": false,
         "number": 8,
-        "published_at": "2018-04-23T12:00:00.000000",
+        "published_at": "2018-04-23T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -502,7 +502,7 @@
         "title": "1-8: Tony Hawk's Pro Skater",
         "token": "f30b0576",
         "type": "full",
-        "updated_at": "2019-05-13T04:31:00.951567"
+        "updated_at": "2019-05-12T21:31:00.951567-07:00"
     },
     {
         "Rank": 6,
@@ -548,7 +548,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a29ef33c-7a07-4bd2-b6a4-37284e48a01b/1536009278artwork.jpg",
         "is_hidden": false,
         "number": 9,
-        "published_at": "2018-05-07T12:00:00.000000",
+        "published_at": "2018-05-07T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -559,7 +559,7 @@
         "title": "1-9: Banjo-Kazooie",
         "token": "f82efb44",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:44.173227"
+        "updated_at": "2019-05-12T21:30:44.173227-07:00"
     },
     {
         "Rank": 8,
@@ -605,7 +605,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/ed5bba2e-6e23-4f37-a46e-cb9572a0a7c1/1536009296artwork.jpg",
         "is_hidden": false,
         "number": 10,
-        "published_at": "2018-05-21T12:00:00.000000",
+        "published_at": "2018-05-21T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -616,7 +616,7 @@
         "title": "1-10: Stardew Valley",
         "token": "9d66b570",
         "type": "full",
-        "updated_at": "2019-05-13T04:31:31.505665"
+        "updated_at": "2019-05-12T21:31:31.505665-07:00"
     },
     {
         "analytics": null,
@@ -629,7 +629,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/50f69360-2339-4593-b6a8-3d366ca5daea/1536009369artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-06-26T12:00:00.000000",
+        "published_at": "2018-06-26T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
@@ -640,7 +640,7 @@
         "title": "E3 2018",
         "token": "f38fb03e",
         "type": "bonus",
-        "updated_at": "2019-05-13T04:31:20.442120"
+        "updated_at": "2019-05-12T21:31:20.442120-07:00"
     },
     {
         "Rank": 2,
@@ -686,7 +686,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d01d38da-0669-4eaf-b89a-916b2a898619/1536010154artwork.jpg",
         "is_hidden": false,
         "number": 1,
-        "published_at": "2018-09-04T12:00:00.000000",
+        "published_at": "2018-09-04T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -697,10 +697,10 @@
         "title": "2-1: The Legend of Zelda: A Link to the Past",
         "token": "720fe565",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:09.765083"
+        "updated_at": "2019-05-12T21:30:09.765083-07:00"
     },
     {
-        "Rank": 15,
+        "Rank": 16,
         "Ranking Info": {
             "Aesthetics": 86.25,
             "Audio": 80,
@@ -743,7 +743,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/5914151f-c9a2-4ebb-80b9-ef506e458bbe/1537149869artwork.jpg",
         "is_hidden": false,
         "number": 2,
-        "published_at": "2018-09-17T12:00:00.000000",
+        "published_at": "2018-09-17T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -754,10 +754,10 @@
         "title": "2-2: Rocket League",
         "token": "40a84fb7",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:13.942204"
+        "updated_at": "2019-05-12T21:30:13.942204-07:00"
     },
     {
-        "Rank": 19,
+        "Rank": 20,
         "Ranking Info": {
             "Aesthetics": 86.25,
             "Audio": 91.5,
@@ -800,7 +800,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/9d29afbe-c607-4946-a0af-26ba0487238d/1538355728artwork.jpg",
         "is_hidden": false,
         "number": 3,
-        "published_at": "2018-10-01T12:00:00.000000",
+        "published_at": "2018-10-01T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -811,7 +811,7 @@
         "title": "2-3: Donkey Kong Country",
         "token": "0beace37",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:27.107922"
+        "updated_at": "2019-05-12T21:30:27.107922-07:00"
     },
     {
         "analytics": null,
@@ -824,7 +824,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/56318819-37a7-44a0-b38f-bdbafcd7d3d5/1538950695artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-10-08T12:00:00.000000",
+        "published_at": "2018-10-08T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -835,10 +835,10 @@
         "title": "Rating Revisions",
         "token": "3cc4a70f",
         "type": "bonus",
-        "updated_at": "2019-05-13T04:30:21.442284"
+        "updated_at": "2019-05-12T21:30:21.442284-07:00"
     },
     {
-        "Rank": 25,
+        "Rank": 26,
         "Ranking Info": {
             "Aesthetics": 67.5,
             "Audio": 77.5,
@@ -881,7 +881,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/368326cb-f122-4feb-9245-1d032d344304/1539568426artwork.jpg",
         "is_hidden": false,
         "number": 4,
-        "published_at": "2018-10-15T12:00:00.000000",
+        "published_at": "2018-10-15T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -892,10 +892,10 @@
         "title": "2-4: Chopper Attack",
         "token": "ee7263fd",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:01.789489"
+        "updated_at": "2019-05-12T21:30:01.789489-07:00"
     },
     {
-        "Rank": 24,
+        "Rank": 25,
         "Ranking Info": {
             "Aesthetics": 88,
             "Audio": 91,
@@ -938,7 +938,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/def34029-bd61-41f6-8b9a-3d5e074b9e17/1540785198artwork.jpg",
         "is_hidden": false,
         "number": 5,
-        "published_at": "2018-10-29T12:00:00.000000",
+        "published_at": "2018-10-29T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -949,10 +949,10 @@
         "title": "2-5: Luigi's Mansion",
         "token": "778a930e",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:20.283100"
+        "updated_at": "2019-05-12T21:30:20.283100-07:00"
     },
     {
-        "Rank": 17,
+        "Rank": 18,
         "Ranking Info": {
             "Aesthetics": 88.5,
             "Audio": 86.33333333333333,
@@ -996,7 +996,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d3680d21-6a46-40d2-b426-748bda83fbee/1542001914artwork.jpg",
         "is_hidden": false,
         "number": 6,
-        "published_at": "2018-11-12T13:00:00.000000",
+        "published_at": "2018-11-12T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1007,7 +1007,7 @@
         "title": "2-6: Mega Man X",
         "token": "6ef6b5fe",
         "type": "full",
-        "updated_at": "2019-05-13T04:29:59.577984"
+        "updated_at": "2019-05-12T21:29:59.577984-07:00"
     },
     {
         "analytics": null,
@@ -1020,7 +1020,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/770b4b69-a030-4cef-8b90-df6c2cf92d5c/1543250275artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2018-11-26T16:33:00.000000",
+        "published_at": "2018-11-26T08:33:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1031,10 +1031,10 @@
         "title": "Side Quest with the Secret Levels Podcast",
         "token": "865c54d6",
         "type": "bonus",
-        "updated_at": "2019-05-13T04:30:33.566818"
+        "updated_at": "2019-05-12T21:30:33.566818-07:00"
     },
     {
-        "Rank": 23,
+        "Rank": 24,
         "Ranking Info": {
             "Aesthetics": 74.25,
             "Audio": 70,
@@ -1077,7 +1077,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/40a2d915-c74f-4554-9052-132213cc0918/1543726282artwork.jpg",
         "is_hidden": false,
         "number": 7,
-        "published_at": "2018-12-03T13:00:00.000000",
+        "published_at": "2018-12-03T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1088,10 +1088,10 @@
         "title": "2-7: Super Monkey Ball 2",
         "token": "64cf28a7",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:22.977759"
+        "updated_at": "2019-05-12T21:30:22.977759-07:00"
     },
     {
-        "Rank": 13,
+        "Rank": 14,
         "Ranking Info": {
             "Aesthetics": 87.5,
             "Audio": 87.5,
@@ -1134,7 +1134,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/4216e2c2-b8d2-44ce-9e94-806aa840a75e/1545026500artwork.jpg",
         "is_hidden": false,
         "number": 8,
-        "published_at": "2018-12-17T13:00:00.000000",
+        "published_at": "2018-12-17T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1145,7 +1145,7 @@
         "title": "2-8:  Pok\u00e9mon FireRed / LeafGreen",
         "token": "792e2a6c",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:31.066926"
+        "updated_at": "2019-05-12T21:30:31.066926-07:00"
     },
     {
         "Rank": 10,
@@ -1192,7 +1192,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0e2d88e6-0297-4913-9725-2b2cad4c07f3/1547436833artwork.jpg",
         "is_hidden": false,
         "number": 9,
-        "published_at": "2019-01-14T13:00:00.000000",
+        "published_at": "2019-01-14T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1203,7 +1203,7 @@
         "title": "2-9: Cave Story+",
         "token": "e7a86041",
         "type": "full",
-        "updated_at": "2019-05-13T04:29:47.408352"
+        "updated_at": "2019-05-12T21:29:47.408352-07:00"
     },
     {
         "Rank": 4,
@@ -1250,7 +1250,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/20c96613-4f8b-42c9-8f4b-c8c8bdff76ef/1548634781artwork.jpg",
         "is_hidden": false,
         "number": 10,
-        "published_at": "2019-01-28T13:00:00.000000",
+        "published_at": "2019-01-28T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1261,7 +1261,7 @@
         "title": "2-10: Metroid Prime",
         "token": "712b4a9a",
         "type": "full",
-        "updated_at": "2019-05-13T04:29:55.000089"
+        "updated_at": "2019-05-12T21:29:55.000089-07:00"
     },
     {
         "Rank": 1,
@@ -1308,7 +1308,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a63ab80a-3ace-474e-b03a-66c152dc13dc/1549785655artwork.jpg",
         "is_hidden": false,
         "number": 11,
-        "published_at": "2019-02-11T13:00:00.000000",
+        "published_at": "2019-02-11T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1319,7 +1319,7 @@
         "title": "2-11: The Legend of Zelda: Majora's Mask",
         "token": "97f3ab44",
         "type": "full",
-        "updated_at": "2019-05-13T04:29:42.503256"
+        "updated_at": "2019-05-12T21:29:42.503256-07:00"
     },
     {
         "analytics": null,
@@ -1332,7 +1332,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0b786374-6c63-4920-b1a2-d9f9b24c91e8/1551661979artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2019-03-04T13:00:00.000000",
+        "published_at": "2019-03-04T05:00:00.000000-08:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1343,7 +1343,7 @@
         "title": "Patron Appreciaton: Simon Webb",
         "token": "2e87a5b7",
         "type": "bonus",
-        "updated_at": "2019-05-13T04:29:41.397907"
+        "updated_at": "2019-05-12T21:29:41.397907-07:00"
     },
     {
         "analytics": null,
@@ -1356,7 +1356,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/314386d3-3a52-4173-9aef-97b3952d8a6d/1554177738artwork.jpg",
         "is_hidden": false,
         "number": 0,
-        "published_at": "2019-04-02T12:00:00.000000",
+        "published_at": "2019-04-02T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/bd14c190-4dc1-41e9-86e1-c4fd334ea805",
@@ -1367,7 +1367,7 @@
         "title": "Listener Q&A",
         "token": "2cfbe1b0",
         "type": "bonus",
-        "updated_at": "2019-05-13T04:29:51.467756"
+        "updated_at": "2019-05-12T21:29:51.467756-07:00"
     },
     {
         "Rank": 9,
@@ -1413,7 +1413,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/b76ccac1-37e8-4c41-9e87-b28b96de2624/1556498655artwork.jpg",
         "is_hidden": false,
         "number": 1,
-        "published_at": "2019-04-29T12:00:00.000000",
+        "published_at": "2019-04-29T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
@@ -1424,7 +1424,7 @@
         "title": "3-1: Super Mario Galaxy 2",
         "token": "8235483b",
         "type": "full",
-        "updated_at": "2019-05-13T04:30:39.607425"
+        "updated_at": "2019-05-12T21:30:39.607425-07:00"
     },
     {
         "Rank": 5,
@@ -1470,7 +1470,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/30bb4332-fe92-47e1-9ff3-a25ee098c47a/1557705732artwork.jpg",
         "is_hidden": false,
         "number": 2,
-        "published_at": "2019-05-13T12:00:04.166170",
+        "published_at": "2019-05-13T05:00:04.166170-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
@@ -1481,10 +1481,10 @@
         "title": "3-2: Celeste",
         "token": "055c1bad",
         "type": "full",
-        "updated_at": "2019-05-13T12:00:04.166206"
+        "updated_at": "2019-05-13T05:00:04.166206-07:00"
     },
     {
-        "Rank": 18,
+        "Rank": 19,
         "Ranking Info": {
             "Aesthetics": 92.75,
             "Audio": 93,
@@ -1527,7 +1527,7 @@
         "image_url": null,
         "is_hidden": false,
         "number": 3,
-        "published_at": "2019-05-27T11:00:26.132869",
+        "published_at": "2019-05-27T04:00:26.132869-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
@@ -1538,10 +1538,10 @@
         "title": "3-3: Kirby's Adventure",
         "token": "KPqiJ7LY",
         "type": "full",
-        "updated_at": "2019-06-11T04:58:30.336266"
+        "updated_at": "2019-06-10T21:58:30.336266-07:00"
     },
     {
-        "Rank": 16,
+        "Rank": 17,
         "Ranking Info": {
             "Aesthetics": 82.83333333333333,
             "Audio": 79,
@@ -1585,7 +1585,7 @@
         "image_url": null,
         "is_hidden": false,
         "number": 4,
-        "published_at": "2019-06-11T11:00:21.900748",
+        "published_at": "2019-06-11T04:00:21.900748-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
@@ -1596,6 +1596,63 @@
         "title": "3-4: Fortnite Battle Royale",
         "token": "jnvlpWES",
         "type": "full",
-        "updated_at": "2019-06-12T01:09:37.967614"
+        "updated_at": "2019-06-11T18:09:37.967614-07:00"
+    },
+    {
+        "Rank": 11,
+        "Ranking Info": {
+            "Aesthetics": 83.75,
+            "Audio": 85,
+            "Content": 95,
+            "Episode": "3-5",
+            "Episode Number": 33,
+            "G. Aesthetics": 0,
+            "G. Audio": 0,
+            "G. Content": 0,
+            "G. Gameplay": 0,
+            "G. Visuals": 0,
+            "Game": "Age of Empires II",
+            "Gameplay": 92,
+            "Guest Rating": 0,
+            "IG Score": 90.25,
+            "IGN": 0,
+            "K. Aesthetics": 82.5,
+            "K. Audio": 85,
+            "K. Content": 95,
+            "K. Gameplay": 94,
+            "K. Visuals": 80,
+            "Kevin's Rating": 90.5,
+            "Metacritic": 0,
+            "P. Aesthetics": 85,
+            "P. Audio": 85,
+            "P. Content": 95,
+            "P. Gameplay": 90,
+            "P. Visuals": 85,
+            "Peter's Rating": 90,
+            "Platform": "PC",
+            "Visuals": 82.5
+        },
+        "analytics": null,
+        "description": "The boys decide that it's time (really) for some real-time strategy via the classic PC title Age of Empires II.",
+        "enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/2d4cd585-af56-4459-8e63-92371c870d7d/interstate_gamers_s03e05_age_of_empires_ii_tc.mp3",
+        "guid": "34c1c739-e9bf-4526-adc8-be9abea8944b",
+        "href": "https://api.simplecast.com/episodes/2d4cd585-af56-4459-8e63-92371c870d7d?preview=true",
+        "id": "2d4cd585-af56-4459-8e63-92371c870d7d",
+        "image_path": null,
+        "image_url": null,
+        "is_hidden": false,
+        "number": 5,
+        "published_at": "2019-06-24T04:00:06.216388-07:00",
+        "scheduled_for": null,
+        "season": {
+            "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
+            "number": 3
+        },
+        "slug": "aoe2",
+        "status": "published",
+        "title": "3-5: Age of Empires II",
+        "token": "rDhuiYMF",
+        "type": "full",
+        "updated_at": "2019-06-24T04:00:06.216435-07:00"
     }
 ]

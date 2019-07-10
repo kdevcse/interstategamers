@@ -11,6 +11,7 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>	
 	<script src="home_episodes.js" type="text/javascript"></script>
 	<script src="play_audio.js" type="text/javascript"></script>
+	<script src="global.js" type="text/javascript"></script>
 	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body onload="fetchData()" onresize="resize()">
@@ -29,14 +30,15 @@
 	<audio id="ig-audio" title="Listen to the trailer" src="Audio/IgPromo.mp3" onended="stopTrailer()">
 	</audio>
 	<nav id="mobile-nav-bar">
-		<a href="javascript:void(0);" id="mobile-nav-icon" onclick="menuDropdown()">
-			<i class="fa fa-bars"></i>
+		<a href="javascript:void(0);" id="mobile-nav-button" onclick="menuDropdown()">
+			<i id="mobile-nav-icon" class="fa fa-bars"></i>
 		</a>
 		<div id="mobile-nav-list">
 			<a href="#">Episodes</a>
 			<a href="Ratings/index.html">Ratings</a>
 			<a href="Store/index.html">Store</a>
-			<a href="Contact/index.html">Contact</a>
+			<a href="Projects/index.html">Projects</a>
+			<a href="Info/index.html">Info</a>
 	  </div>
 	</nav>
 	<nav class="nav-bar">
@@ -44,7 +46,8 @@
 			<a style="margin-right: 15%" href="#"><img class="nav-tab-logo" src="Images/IgLogo.png"></img></a>
 		  	<a class="nav-tab" href="Ratings/index.html">Ratings</a>
 			<a class="nav-tab" href="Store/index.html">Store</a>
-			<a class="nav-tab" href="Contact/index.html">Contact</a>
+			<a class="nav-tab" href="Projects/index.html">Projects</a>
+			<a class="nav-tab" href="Info/index.html">Info</a>
 		</div>
 	</nav>
 	<main class="ig-main">
