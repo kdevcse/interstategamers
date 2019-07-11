@@ -1,6 +1,5 @@
 article{
     padding: 3% 5% 5% 5%;
-    height: 55vw;
 }
 h1 {
     color: #2d32af;
@@ -18,4 +17,14 @@ h1 {
 }
 .contact-list-item:hover{
     color: red;
+}
+@media only screen and (max-width: 600px){ 
+    #boyz-img{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 600px){
+    #boyz-img{
+        width: 30%;
+    }
 }
