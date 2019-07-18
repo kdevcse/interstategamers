@@ -6,8 +6,12 @@ article{
     border-bottom: red solid 2px;
     color: red;
 }
-.extras-cat > h2{
+.extras-cat > h3{
     color: #2d32af;
+    margin-bottom: 1%;
+}
+.extras-cat > p{
+    margin-top: 0;
 }
 .twitch-link{
     text-decoration: none;
