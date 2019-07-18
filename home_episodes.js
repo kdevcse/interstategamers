@@ -109,7 +109,7 @@ function createEpisode(data,id,newSeason){
 
 /* exported setRatingValues */
 function setRatingValues(id) {
-	if(window.innerWidth <= 992){
+	if(window.innerWidth <= 768){
 		document.getElementById("ig-content-rank").style.display = "none";
 		return;
 	}
