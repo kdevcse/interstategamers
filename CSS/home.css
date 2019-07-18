@@ -131,10 +131,10 @@ main {
 		margin-left: 12vw;
 	}
 	.player {
-    	margin-top: 5vh;
-    	margin-left: 2%;
-		font-size: 7vw;
-    }
+    		margin-top: 2.5%;
+    		margin-left: 2%;
+		font-size: 5vw;
+    	}
     .ig-content{
         padding-left: 5%;
         padding-right: 5%;
@@ -198,7 +198,7 @@ main {
 		margin-left: 5vw;
 	}
 	.player {
-    	margin-top: 3.5vh;
+    	margin-top: 2.5%;
     	margin-left: 2.5%;
 		font-size: 2.5vw;
     }
