@@ -16,11 +16,11 @@
 </head>
 <body onload="loadData()">
 	<nav id="mobile-nav-bar">
-		<a href="javascript:void(0);" id="mobile-nav-button" onclick="menuDropdown()">
-			<i id="mobile-nav-icon" class="fa fa-bars"></i>
+		<a id="mobile-nav-logo-containter" href="../index.html"><img id="mobile-nav-logo" src="../Images/IgLogo.png"></img></a>
+		<a href="javascript:void(0);" id="mobile-nav-button">
+			<i id="mobile-nav-icon" class="fa fa-bars" onclick="menuDropdown()"></i>
 		</a>
 		<div id="mobile-nav-list">
-			<a href="../index.html">Episodes</a>
 			<a href="#">Ratings</a>
 			<a href="../Store/index.html">Store</a>
 			<a href="../Projects/index.html">Projects</a>
@@ -39,14 +39,14 @@
 	<main>
 		<table id="rankings-table">
 			<tr class="rankings-table-header">
-				<th class="sorted" onclick="sortTableByCategory(this,'rank',true)">Rank</th>
-				<th onclick="sortTableByTitle(this,true)">Title</th>
-				<th onclick="sortTableByCategory(this,'overall',false)">IG Score</th>
-				<th onclick="sortTableByCategory(this,'gameplay',false)">Gameplay</th>
-				<th onclick="sortTableByCategory(this,'aesthetics',false)">Aesthetics</th>
-				<th onclick="sortTableByCategory(this,'content',false)">Content</th>
-				<th onclick="sortTableByCategory(this,'p-overall',false)">P. Overall</th>
-				<th onclick="sortTableByCategory(this,'k-overall',false)">K. Overall</th>
+				<th class="rankings-header sorted" onclick="sortTableByCategory(this,'rank',true)">Rank</th>
+				<th class="rankings-header" onclick="sortTableByTitle(this,true)">Title</th>
+				<th class="rankings-header" onclick="sortTableByCategory(this,'overall',false)">IG Score</th>
+				<th class="rankings-header" onclick="sortTableByCategory(this,'gameplay',false)">Gameplay</th>
+				<th class="rankings-header" onclick="sortTableByCategory(this,'aesthetics',false)">Aesthetics</th>
+				<th class="rankings-header" onclick="sortTableByCategory(this,'content',false)">Content</th>
+				<th class="rankings-header" onclick="sortTableByCategory(this,'p-overall',false)">P. Overall</th>
+				<th class="rankings-header" onclick="sortTableByCategory(this,'k-overall',false)">K. Overall</th>
 			</tr>
 		</table>
 	</main>

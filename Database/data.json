@@ -838,7 +838,7 @@
         "updated_at": "2019-05-12T21:30:21.442284-07:00"
     },
     {
-        "Rank": 26,
+        "Rank": 27,
         "Ranking Info": {
             "Aesthetics": 67.5,
             "Audio": 77.5,
@@ -1654,5 +1654,62 @@
         "token": "rDhuiYMF",
         "type": "full",
         "updated_at": "2019-06-24T04:00:06.216435-07:00"
+    },
+    {
+        "Rank": 26,
+        "Ranking Info": {
+            "Aesthetics": 77.5,
+            "Audio": 79.5,
+            "Content": 71,
+            "Episode": "3-6",
+            "Episode Number": 34,
+            "G. Aesthetics": 0,
+            "G. Audio": 0,
+            "G. Content": 0,
+            "G. Gameplay": 0,
+            "G. Visuals": 0,
+            "Game": "Yooka Laylee",
+            "Gameplay": 69.5,
+            "Guest Rating": 0,
+            "IG Score": 72.66666666666667,
+            "IGN": 0,
+            "K. Aesthetics": 82.5,
+            "K. Audio": 84,
+            "K. Content": 77,
+            "K. Gameplay": 69,
+            "K. Visuals": 81,
+            "Kevin's Rating": 76.16666666666667,
+            "Metacritic": 0,
+            "P. Aesthetics": 72.5,
+            "P. Audio": 75,
+            "P. Content": 65,
+            "P. Gameplay": 70,
+            "P. Visuals": 70,
+            "Peter's Rating": 69.16666666666667,
+            "Platform": "All",
+            "Visuals": 75.5
+        },
+        "analytics": null,
+        "description": "Did the team at Playtonic Games successfully revive the magic of Banjo-Kazooie with their 2017 game Yooka-Laylee? The boys find out in true buddy-duo fashion.",
+        "enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/072ff1e4-05fb-4aa8-8d2f-997870a705b6/interstate_gamers_s03e06_yooka_laylee_tc.mp3",
+        "guid": "05e736f4-779b-4a3b-8cf3-397970128c33",
+        "href": "https://api.simplecast.com/episodes/072ff1e4-05fb-4aa8-8d2f-997870a705b6?preview=true",
+        "id": "072ff1e4-05fb-4aa8-8d2f-997870a705b6",
+        "image_path": null,
+        "image_url": null,
+        "is_hidden": false,
+        "number": 6,
+        "published_at": "2019-07-15T04:00:01.217360-07:00",
+        "scheduled_for": null,
+        "season": {
+            "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
+            "number": 3
+        },
+        "slug": "yk",
+        "status": "published",
+        "title": "3-6: Yooka-Laylee",
+        "token": "t1ITenxj",
+        "type": "full",
+        "updated_at": "2019-07-15T04:00:01.217405-07:00"
     }
 ]

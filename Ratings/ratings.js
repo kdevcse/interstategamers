@@ -32,8 +32,7 @@ function removeSortedAttribute(){
   for (i = 0; i < (rows.length); i++) {
     let sorts = rows[i].getElementsByClassName("sorted");
     for(j = 0; j < sorts.length; j++){
-        let name = sorts[j].getAttribute("class");
-        sorts[j].setAttribute("class",name.replace(" ","").replace("sorted",""));
+	sorts[j].classList.remove("sorted");
     }
   }
 }
@@ -41,10 +40,10 @@ function removeSortedAttribute(){
 function sortTableByCategory(ele,category, ascending){
   //Set row to sorted class identifier
   removeSortedAttribute();
-  ele.setAttribute("class","sorted");
+  ele.classList.add("sorted");
 
   let canSwitch = true;
-  let table = document.getElementById("rankings-table");
+  let table = document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
 
   //Swap sort algorithm
@@ -77,10 +76,10 @@ function sortTableByCategory(ele,category, ascending){
 function sortTableByTitle(ele, ascending){
   //Set row to sorted class identifier
   removeSortedAttribute();
-  ele.setAttribute("class","sorted");
+  ele.classList.add("sorted");
 
   let canSwitch = true;
-  let table = document.getElementById("rankings-table");
+  let table = document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
 
   //Swap sort algorithm
@@ -130,7 +129,7 @@ function tableInsert(game){
 
 
   //Initialize the new row
-  let newRow = document.createElement("tr");
+  let newRow = table.insertRow(-1);
   newRow.setAttribute("class","rankings-table-row");
   newRow.setAttribute("game",title);
   newRow.addEventListener("click",function(){expand(this)});
@@ -170,10 +169,10 @@ function tableInsert(game){
   newRow.appendChild(contentE);
   newRow.appendChild(pScore);
   newRow.appendChild(kScore);
-  table.appendChild(newRow);
+  //table.appendChild(newRow);
 
   //Initialize game breakdown row
-  newRowInfo = document.createElement("tr");
+  newRowInfo = table.insertRow(-1);
   newRowInfo.setAttribute("class","rankings-table-row-info");
 
   //Create table data element for game breakdown
@@ -184,7 +183,7 @@ function tableInsert(game){
 
   //Append game breakdown to table
   newRowInfo.appendChild(infoData);
-  table.appendChild(newRowInfo);
+  //table.appendChild(newRowInfo);
 }
 
 function addInfo(infoData,game){

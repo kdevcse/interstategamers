@@ -1,5 +1,5 @@
 # The Interstate Gamers Website  
-This repo contains the underlying code for The Interstate Gamers Podcast website. It is currently a work in progress.
+This repo contains the underlying code for The Interstate Gamers Podcast website. It is currently a work in progress (WIP).
 
 # New Features
 - Consolidated Website (No more games.theigcast.com)
