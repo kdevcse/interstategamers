@@ -24,7 +24,39 @@ h1 {
     }
 }
 @media only screen and (min-width: 600px){
+    #boyz{
+        display: inline-block;
+    }
+    #boyz-img{
+        width: 40%;
+        float: left;
+    }
+    #boyz-description{
+        float: right;
+        width: 50%;
+        margin-right: 6%;
+    }
+    #boyz-description > p{
+        margin-top: 0;
+        margin-bottom: 2%;
+        font-size: 1.65vw;
+    }
+    .contact-list-item, .contact-list-no-link {
+        font-size: 125%;
+    }
+    h1{
+        font-size: 150%; 
+    }
+}
+@media only screen and (min-width: 992px){
     #boyz-img{
         width: 30%;
+    }
+    #boyz-description{
+        width: 55%;
+        margin-right: 10%;
+    }
+    #boyz-description > p{
+        font-size: 1.35vw;
     }
 }

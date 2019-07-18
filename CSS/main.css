@@ -40,7 +40,7 @@ body {
 	text-decoration: white underline solid
 }
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 992px){
 	.nav-bar{
 		display: none;
 	}
@@ -89,7 +89,7 @@ body {
 		color: white;
   	}
 }
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 992px){
 	.nav-bar{
 		display: inherit;
 	}
