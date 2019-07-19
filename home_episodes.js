@@ -104,7 +104,6 @@ function createEpisode(data,id,newSeason){
 	epPlayer.appendChild(playButton);
 	ep.appendChild(epPlayer);
 	ep.appendChild(epInfo);
-	ep.style.display = "block";
 }
 
 /* exported setRatingValues */
