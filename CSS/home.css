@@ -25,6 +25,7 @@ main {
 }
 .episode {
     border-top: blue solid 1px;
+	margin-bottom: -1%;
 }
 .player {
     float: left;
