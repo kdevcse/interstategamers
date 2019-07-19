@@ -19,7 +19,7 @@ main {
     height: 100%;
 }
 .episode, .episode-first {
-	height: auto;
+    display: inline-block;
     padding-top: 1vh;
     padding-bottom: 2vh;
 }
@@ -28,10 +28,13 @@ main {
 }
 .player {
     float: left;
-    clear: left;
 }
 .player > svg:hover{
     cursor: pointer;
+}
+.ep-info{
+	float: right;
+	width: 85%;
 }
 .season-title{
     color: red;
@@ -134,9 +137,6 @@ main {
     main {
         text-align: center;
     }
-	.ep-info{
-		margin-left: 15%;
-	}
 	.player {
     		margin-top: 5%;
     		margin-left: 1%;
@@ -201,9 +201,6 @@ main {
     .episode:hover,.episode-first:hover{
         background: #f1f1f1;
     }
-	.ep-info{
-		margin-left: 5vw;
-	}
 	.player {
     	margin-top: 2.5%;
     	margin-left: 2.5%;
