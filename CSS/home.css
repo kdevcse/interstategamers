@@ -20,15 +20,17 @@ main {
 }
 .episode, .episode-first {
     display: inline-block;
-    padding-top: 1vh;
+    padding-top: 2vh;
     padding-bottom: 2vh;
 	margin-bottom: -1%;
+	overflow: hidden;
 }
 .episode {
     border-top: blue solid 1px;
 }
 .player {
     float: left;
+	width: 12.5%;
 }
 .player > svg:hover{
     cursor: pointer;
