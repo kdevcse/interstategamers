@@ -76,7 +76,7 @@ function createEpisode(data,id,newSeason){
 	epPlayer.setAttribute("class", "player");
 
 	var playButton = document.createElement("i");
-	playButton.setAttribute("class","fas fa-play-circle");
+	playButton.setAttribute("class","fas fa-play-circle fa-lg");
 	playButton.setAttribute("onclick",`playEpisode(this,${id})`);
 
 	var audio = document.createElement("audio");
@@ -108,7 +108,7 @@ function createEpisode(data,id,newSeason){
 
 /* exported setRatingValues */
 function setRatingValues(id) {
-	if(window.innerWidth <= 768){
+	if(window.innerWidth <= 992){
 		document.getElementById("ig-content-rank").style.display = "none";
 		return;
 	}

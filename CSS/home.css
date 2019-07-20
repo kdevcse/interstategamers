@@ -119,13 +119,6 @@ main {
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-
-@media only screen and (max-width: 768px) {
     main{
         padding-bottom: 7%;
         padding-top: 2%;
@@ -141,10 +134,12 @@ main {
         text-align: center;
     }
 	.player {
-    		margin-top: 5%;
-    		margin-left: 1%;
+    	margin-top: 6.5%;
+    	margin-left: 1%;
+    }
+    .player > svg {
 		font-size: 8vw;
-    	}
+    }
     .ig-content{
         padding-left: 5%;
         padding-right: 5%;
@@ -190,24 +185,24 @@ main {
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
     main{
         padding-bottom: 20px;
         padding-top: 20px;
     }
 	#episodes {
-    	width: 50%;
-    	overflow-y: scroll;
-    	overflow-x: hidden;
+        width: 100%;
 	}
-    .episode:hover,.episode-first:hover{
-        background: #f1f1f1;
-    }
+	#ig-content-rank {
+		display: none;
+	}
 	.player {
     	margin-top: 2.5%;
     	margin-left: 2.5%;
-		font-size: 2.5vw;
+    }
+    .player > svg {
+		font-size: 5vw;
     }
     .ig-content{
         padding: 25px 5%;
@@ -226,6 +221,67 @@ main {
         height: auto;
         width: 26.5vw;
     }
+    #ig-icons > a > svg{
+        font-size: 3vw;
+    }
+    .ig-main-left-text-container > h1{
+        font-size: 3.5vw;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+    .ig-main-left-text-container > p{
+        margin: 0;
+	    margin-top: 1.5vh;
+        font-size: 2vw;
+    }
+    #ig-main-left-trailer{
+        width: 100%;
+        margin-top: 2vw;
+        color: #2d32af;
+        font-size: 3vw;
+        padding: .75vw .75vw .75vw 2.75vw;
+        border-radius: 6px;
+        display: inline-flex;
+        background-color: white;
+        transition: opacity .2s ease-in;
+    }
+    #ig-main-left-trailer > svg{
+        margin-right: 1vw;
+        font-size: 3.75vw;
+        color: red;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .player > svg {
+		font-size: 5vw;
+    }
+    #ig-icons > a > svg{
+        font-size: 2.5vw;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.player {
+    	margin-top: 3%;
+    	margin-left: 2.5%;
+    }
+    .player > svg {
+		font-size: 2.5vw;
+    }
+	#episodes {
+    	width: 50%;
+    	overflow-y: scroll;
+        overflow-x: hidden;
+	}
+    .episode:hover,.episode-first:hover{
+        background: #f1f1f1;
+    }
+	#ig-content-rank {
+		display: none;
+	}
     .ig-main-left-text-container > h1{
         font-size: 2.9vw;
         margin-bottom: 5px;
@@ -233,7 +289,7 @@ main {
     }
     .ig-main-left-text-container > p{
         margin: 0;
-	margin-top: 1.5vh;
+	    margin-top: 1.5vh;
         font-size: 1.4vw;
     }
     #ig-main-left-trailer{
@@ -252,10 +308,6 @@ main {
         font-size: 2.2vw;
         color: red;
     }
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
