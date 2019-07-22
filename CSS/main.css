@@ -59,15 +59,15 @@ body {
 		display: none;
 	}
 	#mobile-nav-list > a{
-		width: 90%;
 		color: white;
 		padding: 14px 16px;
 		text-decoration: none;
 		text-align: center;
-		font-size: 17px;
+		font-size: 14px;
 		display: block;
 		border-top: white solid 1px;
 		margin-left: 18.75px;
+		margin-right: 18.75px;
 	}
 	#mobile-nav-button {
 		color: white;
