@@ -45,8 +45,7 @@ body {
 		display: none;
 	}
 	#mobile-nav-main-container{
-		display: flow-root;
-		align-items: center;
+		display: flex;
 	}
 	#mobile-nav-logo-container{
 		float: left;
@@ -79,6 +78,7 @@ body {
 	#mobile-nav-button {
 		color: white;
 		float: right;
+		margin-left: auto;
 	}
   	#mobile-nav-list a:hover {
 		background-color: white;
