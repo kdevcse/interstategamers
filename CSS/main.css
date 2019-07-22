@@ -45,9 +45,9 @@ body {
 		float: left;
 		clear: right;
 	}
-	#mobile-nav-logo{
-		width: 9vw;
-		margin: 2% 5%;
+	#mobile-nav-logo, #mobile-nav-button{
+		width: 32px;
+		margin: 7.5px 18.75px;
 	}
 	#mobile-nav-bar{
 		display: inherit;
@@ -67,15 +67,11 @@ body {
 		font-size: 17px;
 		display: block;
 		border-top: white solid 1px;
-		margin-left: 5%;
+		margin-left: 18.75px;
 	}
 	#mobile-nav-button {
 		color: white;
-		font-size: 9vw;
-		height: auto;
 		float: right;
-		clear: right;
-		margin: 2% 5%;
 	}
   	#mobile-nav-list a:hover {
 		background-color: white;
