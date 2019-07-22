@@ -18,6 +18,9 @@ body {
 .nav-tab-logo{
 	height: 50px;
 }
+#mobile-nav-logo{
+	width: 38px;
+}
 .nav-list {
 	display: flex;
 	align-items: center;
@@ -43,12 +46,10 @@ body {
 	}
 	#mobile-nav-logo-container{
 		float: left;
-		clear: right;
 	}
-	#mobile-nav-logo, #mobile-nav-button{
-		width: 38px;
+	#mobile-nav-logo-container, #mobile-nav-button{
 		font-size: 38px;
-		margin: 7.5px 18.75px;
+		padding: 7.5px 5%;
 	}
 	#mobile-nav-bar{
 		display: inherit;
@@ -67,8 +68,8 @@ body {
 		font-size: 15px;
 		display: block;
 		border-top: white solid 1px;
-		margin-left: 18.75px;
-		margin-right: 18.75px;
+		margin-left: 5%;
+		margin-right: 5%;
 	}
 	#mobile-nav-button {
 		color: white;
