@@ -9,30 +9,28 @@ body {
 }
 .nav-bar {
 	list-style-type: none;
-	padding-top: 1vw;
-	padding-bottom: 1vw;
-	padding-left: 5%;
+	height: 70px;
   	background-color: #2d32af;
 	position: sticky;
 	border-bottom: white solid 1px;
 	overflow: hidden;
 }
 .nav-tab-logo{
-	height: 4vw;
+	height: 50px;
 }
 .nav-list {
-	display: inline-flex;
-  	font-size: 35px;
-	text-align: center;
+	display: flex;
+	align-items: center;
+	margin-left: 5%;
 }
 .nav-tab {
 	text-decoration: none;
 	color: white;
 	font-family: Interstate;
 	font-weight: bold;
-	font-size: 1.6vw;
-	margin-right: 15%;
-	margin-top: 5%;
+	font-size: 25px;
+	margin-right: 64px;
+	margin-top: 8px;
 	vertical-align: middle;
 	transition: text-decoration .2s ease-in;
 }
