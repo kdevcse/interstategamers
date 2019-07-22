@@ -57,6 +57,7 @@ body {
 	}
 	#mobile-nav-list{
 		display: none;
+		padding-bottom: 7px;
 	}
 	#mobile-nav-list > a{
 		color: white;
