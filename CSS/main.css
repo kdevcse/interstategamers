@@ -46,8 +46,8 @@ body {
 		clear: right;
 	}
 	#mobile-nav-logo, #mobile-nav-button{
-		width: 32px;
-		font-size: 32px;
+		width: 38px;
+		font-size: 38px;
 		margin: 7.5px 18.75px;
 	}
 	#mobile-nav-bar{
@@ -64,7 +64,7 @@ body {
 		padding: 14px 16px;
 		text-decoration: none;
 		text-align: center;
-		font-size: 14px;
+		font-size: 15px;
 		display: block;
 		border-top: white solid 1px;
 		margin-left: 18.75px;
