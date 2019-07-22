@@ -44,6 +44,9 @@ body {
 	.nav-bar{
 		display: none;
 	}
+	#mobile-nav-main-container{
+		display: inline-block;
+	}
 	#mobile-nav-logo-container{
 		float: left;
 	}
