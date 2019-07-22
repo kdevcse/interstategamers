@@ -45,7 +45,8 @@ body {
 		display: none;
 	}
 	#mobile-nav-main-container{
-		display: inline-block;
+		display: flex;
+		align-items: center;
 	}
 	#mobile-nav-logo-container{
 		float: left;
@@ -53,6 +54,7 @@ body {
 	#mobile-nav-logo-container, #mobile-nav-button{
 		font-size: 38px;
 		padding: 7.5px 5%;
+		margin-top: 7.5px;
 	}
 	#mobile-nav-bar{
 		display: inherit;
