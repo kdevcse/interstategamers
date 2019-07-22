@@ -47,6 +47,7 @@ body {
 	}
 	#mobile-nav-logo, #mobile-nav-button{
 		width: 32px;
+		font-size: 32px;
 		margin: 7.5px 18.75px;
 	}
 	#mobile-nav-bar{
@@ -56,7 +57,6 @@ body {
 	}
 	#mobile-nav-list{
 		display: none;
-		margin-bottom: 5%;
 	}
 	#mobile-nav-list > a{
 		width: 90%;
