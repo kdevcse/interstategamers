@@ -76,7 +76,7 @@ function createEpisode(data,id,newSeason){
 	epPlayer.setAttribute("class", "player");
 
 	var playButton = document.createElement("i");
-	playButton.setAttribute("class","fas fa-play-circle");
+	playButton.setAttribute("class","fas fa-play-circle fa-lg");
 	playButton.setAttribute("onclick",`playEpisode(this,${id})`);
 
 	var audio = document.createElement("audio");
@@ -104,7 +104,6 @@ function createEpisode(data,id,newSeason){
 	epPlayer.appendChild(playButton);
 	ep.appendChild(epPlayer);
 	ep.appendChild(epInfo);
-	ep.style.display = "block";
 }
 
 /* exported setRatingValues */

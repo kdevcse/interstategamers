@@ -9,48 +9,51 @@ body {
 }
 .nav-bar {
 	list-style-type: none;
-	padding-top: 1vw;
-	padding-bottom: 1vw;
-	padding-left: 5%;
+	height: 70px;
   	background-color: #2d32af;
 	position: sticky;
 	border-bottom: white solid 1px;
 	overflow: hidden;
 }
 .nav-tab-logo{
-	height: 4vw;
+	height: 50px;
+}
+#mobile-nav-logo{
+	width: 38px;
 }
 .nav-list {
-	display: inline-flex;
-  	font-size: 35px;
-	text-align: center;
+	display: flex;
+	align-items: center;
+	margin-left: 5%;
 }
 .nav-tab {
 	text-decoration: none;
 	color: white;
 	font-family: Interstate;
 	font-weight: bold;
-	font-size: 1.6vw;
-	margin-right: 15%;
-	margin-top: 5%;
+	font-size: 25px;
+	margin-right: 64px;
+	margin-top: 8px;
 	vertical-align: middle;
 	transition: text-decoration .2s ease-in;
 }
 .nav-list > a:hover {
 	text-decoration: white underline solid
 }
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 992px){
+@media only screen and (max-width: 768px){
 	.nav-bar{
 		display: none;
 	}
+	#mobile-nav-main-container{
+		display: flex;
+	}
 	#mobile-nav-logo-container{
 		float: left;
-		clear: right;
 	}
-	#mobile-nav-logo{
-		width: 9vw;
-		margin: 2% 5%;
+	#mobile-nav-logo-container, #mobile-nav-button{
+		font-size: 38px;
+		padding: 7.5px 5%;
+		margin-top: 7.5px;
 	}
 	#mobile-nav-bar{
 		display: inherit;
@@ -59,26 +62,23 @@ body {
 	}
 	#mobile-nav-list{
 		display: none;
-		margin-bottom: 5%;
+		padding-bottom: 7px;
 	}
 	#mobile-nav-list > a{
-		width: 90%;
 		color: white;
 		padding: 14px 16px;
 		text-decoration: none;
 		text-align: center;
-		font-size: 17px;
+		font-size: 15px;
 		display: block;
 		border-top: white solid 1px;
 		margin-left: 5%;
+		margin-right: 5%;
 	}
 	#mobile-nav-button {
 		color: white;
-		font-size: 9vw;
-		height: auto;
 		float: right;
-		clear: right;
-		margin: 2% 5%;
+		margin-left: auto;
 	}
   	#mobile-nav-list a:hover {
 		background-color: white;
@@ -89,7 +89,7 @@ body {
 		color: white;
   	}
 }
-@media only screen and (min-width: 992px){
+@media only screen and (min-width: 768px){
 	.nav-bar{
 		display: inherit;
 	}

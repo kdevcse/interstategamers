@@ -1,0 +1,54 @@
+article{
+    padding: 2% 5% 5% 5%;
+}
+.extras-header{
+    border-bottom: red solid 2px;
+    color: red;
+}
+.extras-cat > h3{
+    color: #2d32af;
+    margin-bottom: 1%;
+}
+.extras-cat > p{
+    margin-top: 0;
+}
+.twitch-link{
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+}
+.fa-play{
+    display: none;
+    color: black;
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    left: 50%;
+}
+.info-links{
+    color: #2d32af;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.info-links:hover{
+    text-decoration: underline;
+}
+@media only screen and (max-width: 768px){
+    .twitch-img{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 768px){
+    .twitch-img{
+        width: 20%;
+    }
+}
+@media only screen and (min-width: 992px){
+    .twitch-img:hover{
+        cursor: pointer;
+        opacity: 0.5;
+    }
+    .fa-play.hovered{
+        display: inline;
+    }
+}
