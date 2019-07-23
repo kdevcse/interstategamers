@@ -1470,7 +1470,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/30bb4332-fe92-47e1-9ff3-a25ee098c47a/1557705732artwork.jpg",
         "is_hidden": false,
         "number": 2,
-        "published_at": "2019-05-13T05:00:04.166170-07:00",
+        "published_at": "2019-05-13T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
