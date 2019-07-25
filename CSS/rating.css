@@ -75,15 +75,16 @@ th.sorted {
 	}
 	.peteChart, .kevChart {
 		overflow: hidden;
-		width: 25%;
-		margin-left: 2.5%;
-		margin-right: 2.5%;
+		width: 450px;
+		margin-left: 47px;
+		margin-right: 47px;
 		margin-bottom: 0;
 		margin-top: 0;
 		height: 0;
 		transition: height 0.2s ease-in-out;
 	}
 	.peteChart > h3, .kevChart > h3{
+		margin-top: 5px;
 		margin-bottom: 5px;
 	}
 	.expanded-breakdown{
@@ -91,7 +92,7 @@ th.sorted {
 		margin-bottom: 5px;
 	}
 	.kevChart{
-		margin-right: 2.5%;
+		margin-right: 47px;
 	}
 	.peteChart{
 		margin-left: 6%;
@@ -101,6 +102,7 @@ th.sorted {
 		text-align: left;
 		margin-bottom: 1px;
 		font-weight: bold;
+		font-size: 15px;
 	}
 	.p-rank, .k-rank {
 		overflow: hidden;
