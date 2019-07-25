@@ -212,7 +212,7 @@ function addInfo(infoData,game){
   pChartEle = document.createElement("div");
   pChartEle.className = "peteChart";
 
-  let pHeader = document.createElement("h2")
+  let pHeader = document.createElement("h3")
   pHeader.innerHTML = "Peter's Scores";
 
   pChartEle.appendChild(pHeader);
@@ -304,7 +304,7 @@ function addInfo(infoData,game){
   kChartEle = document.createElement("div");
   kChartEle.className = "kevChart";
 
-  let kHeader = document.createElement("h2")
+  let kHeader = document.createElement("h3")
   kHeader.innerHTML = "Kevin's Scores";
 
   kChartEle.appendChild(kHeader);

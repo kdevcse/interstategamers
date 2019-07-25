@@ -3,7 +3,7 @@
 * {
 	box-sizing: border-box;
 	font-family: Interstate;
-}  
+}
 body {
 	margin: 0;
 }
@@ -11,7 +11,6 @@ body {
 	list-style-type: none;
 	height: 70px;
   	background-color: #2d32af;
-	position: sticky;
 	border-bottom: white solid 1px;
 	overflow: hidden;
 }
@@ -40,7 +39,7 @@ body {
 .nav-list > a:hover {
 	text-decoration: white underline solid
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 770px){
 	.nav-bar{
 		display: none;
 	}
@@ -89,7 +88,7 @@ body {
 		color: white;
   	}
 }
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 770px){
 	.nav-bar{
 		display: inherit;
 	}
