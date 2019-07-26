@@ -43,6 +43,9 @@ th.sorted {
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
+        html, body {
+                overflow-y: hidden;
+        }
 	main{
 		overflow-x: auto;
 		/* -webkit-overflow-scrolling: touch; */
