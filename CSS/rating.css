@@ -53,12 +53,14 @@ th.sorted {
 		height: 90vh;
 		border-top: white solid 1px;
 	}
+        #rankings-table {
+        }
 	.rankings-table-row > td{
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
 	.rankings-table-row > td, .rankings-table-header > th{
-		width: 120px;
+		width: 260px;
 	}
 }
 /* Larger devices than phones */
