@@ -23,7 +23,7 @@ body {
 .nav-list {
 	display: flex;
 	align-items: center;
-	margin-left: 5%;
+	margin-left: 95px;
 }
 .nav-tab {
 	text-decoration: none;
