@@ -6,7 +6,7 @@ html,body{
 	text-align: center;
 	border-collapse: collapse;
 	table-layout: fixed;
-	width: 100%;
+	width: auto;
 }
 .rankings-table-header{
 	background-color: #2d32af;
