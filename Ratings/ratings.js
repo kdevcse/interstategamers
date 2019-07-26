@@ -391,7 +391,12 @@ function addInfo(infoData,game){
   kChartEle.appendChild(kStatContent);
   kChartEle.appendChild(kRankContent);
 
+  //Create div container
+  var chartContainer = document.createElement("div");
+  chartContainer.className = "charts";
+  
   //Append Kev and Pete breakdown
-  infoData.appendChild(pChartEle);
-  infoData.appendChild(kChartEle);
+  chartContainer.appendChild(pChartEle);
+  chartContainer.appendChild(kChartEle);
+  infoData.appendChild(chartContainer);
 }
