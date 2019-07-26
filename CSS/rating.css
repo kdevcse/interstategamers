@@ -80,7 +80,7 @@ th.sorted {
 		user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 	}
 	.rankings-table-row > td, .rankings-table-header > th{
-		width: 200px;
+		width: 260px;
 	}
 	.rankings-table-row:hover{
 		background-color: #f1f1f1;
