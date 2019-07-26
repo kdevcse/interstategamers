@@ -45,8 +45,8 @@ th.sorted {
 @media only screen and (max-width: 770px){
 	main{
 		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-		scroll-behavior: smooth;
+		/* -webkit-overflow-scrolling: touch; */
+		/* scroll-behavior: smooth; */
 		height: 90vh;
 		border-top: white solid 1px;
 	}
