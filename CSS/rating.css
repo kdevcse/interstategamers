@@ -93,27 +93,29 @@ th.sorted {
 	}
 	.peteChart, .kevChart {
 		overflow: hidden;
-		width: 300px;
+		width: 250px;
+		text-align: center;
 	}
 	.peteChart > h3, .kevChart > h3{
-		margin-top: 5px;
-		margin-bottom: 5px;
-		font-size: 16px;
+		margin-top: 0;
+		margin-bottom: 10px;
+		font-size: 14px;
 	}
 	.expanded-breakdown{
 		display: inline-grid;
-		grid-template-columns: 350px 350px auto;
+		grid-template-columns: 275px 275px auto;
 		margin-bottom: 10px;
 	}
 	.charts{
 		float: left;
 		margin-left: 6%;
+		margin-top: 3px;
 	}
 	.stat-category{
 		text-align: left;
 		margin-top: 0px;
-		margin-bottom: 1px;
-		font-size: 15px;
+		margin-bottom: 5px;
+		font-size: 12px;
 	}
 	.p-rank, .k-rank {
 		height: 20px;
