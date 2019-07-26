@@ -17,7 +17,7 @@ html,body{
 	background-color: #2d32af;
 	position: -webkit-sticky; /* Safari */
 	position: sticky;
-	top: -1px;
+	top: 0;
 }
 .rankings-table-row{
 	padding: 5px 0px;
@@ -46,13 +46,12 @@ th.sorted {
 	main{
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
-	}
-	#rankings-table{
+		height: 90vh;
 		border-top: white solid 1px;
 	}
 	.rankings-table-row > td{
-		padding-top: 2%;
-		padding-bottom: 2%;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 	.rankings-table-row > td, .rankings-table-header > th{
 		width: 120px;
