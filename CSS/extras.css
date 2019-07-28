@@ -54,12 +54,12 @@ article{
 }
 @media only screen and (max-width: 768px){
     #extras-twitch{
-        grid-template-columns: 125px 125px 125px;
-        grid-template-rows: 125px;
+        grid-template-columns: 105px 105px 105px;
+        grid-template-rows: 105px;
     }
     .twitch-img{
-        height: 100px;
-        width: 100px;
+        height: 90px;
+        width: 90px;
     }
     .logo-promo{
         margin-left: 2.5%;
