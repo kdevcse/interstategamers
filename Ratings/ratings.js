@@ -120,6 +120,7 @@ function tableInsert(game){
   //Get data for the new row
   let rank = game["Rank"];
   let title = game["Ranking Info"]["Game"];
+  let year = game["Ranking Info"]["Year"];
   let overall = game["Ranking Info"]["IG Score"].toFixed(2);
   let gameplay = game["Ranking Info"]["Gameplay"].toFixed(2);
   let aesthetics = game["Ranking Info"]["Aesthetics"].toFixed(2);
@@ -141,6 +142,10 @@ function tableInsert(game){
   let titleE = document.createElement("td");
   titleE.setAttribute("class","rankings-table-title");
   titleE.innerHTML = title;
+  titleE.title = title;
+  let yearE = document.createElement("td");
+  yearE.setAttribute("class","rankings-table-year");
+  yearE.innerHTML = year;
   let overallE = document.createElement("td");
   overallE.setAttribute("class","rankings-table-overall");
   overallE.innerHTML = overall;
@@ -163,6 +168,7 @@ function tableInsert(game){
   //Append table data and row for the game
   newRow.appendChild(rankE);
   newRow.appendChild(titleE);
+  newRow.appendChild(yearE);
   newRow.appendChild(overallE);
   newRow.appendChild(gameplayE);
   newRow.appendChild(aestheticsE);
@@ -178,7 +184,7 @@ function tableInsert(game){
   //Create table data element for game breakdown
   infoData = document.createElement("td");
   infoData.setAttribute("class","rankings-table-info");
-  infoData.setAttribute("colspan","8");
+  infoData.setAttribute("colspan","9");
   addInfo(infoData,game);
 
   //Append game breakdown to table
@@ -187,14 +193,7 @@ function tableInsert(game){
 }
 
 function addInfo(infoData,game){
-  let statClass = "stat-category";
-  let pRankClass = "p-rank";
-  let kRankClass = "k-rank";
-  let pProgressClass = "p-progress";
-  let kProgressClass = "k-progress";
-  let overallClass = "overall";
-  let overallProgressClass = "overall-progress";
-
+  
   //Gather imperative data
   let pGameplay = game["Ranking Info"]["P. Gameplay"].toFixed(2);
   let pVisuals = game["Ranking Info"]["P. Visuals"].toFixed(2);
@@ -208,188 +207,8 @@ function addInfo(infoData,game){
   let kContent = game["Ranking Info"]["K. Content"].toFixed(2);
   let kOverall = game["Ranking Info"]["Kevin's Rating"].toFixed(2);
 
-  //Create pete elements
-  pChartEle = document.createElement("div");
-  pChartEle.className = "peteChart";
-
-  let pHeader = document.createElement("h3")
-  pHeader.innerHTML = "Peter's Scores";
-
-  pChartEle.appendChild(pHeader);
-
-  //Overall
-  pStatOverall = document.createElement("p");
-  pStatOverall.className = statClass;
-  pStatOverall.innerHTML = `Overall: ${pOverall}/100`; 
-
-  pRankOverall = document.createElement("div");
-  pRankOverall.className = pRankClass + ` ${overallClass}`;
-  
-  pProgressOverall = document.createElement("div");
-  pProgressOverall.className = pProgressClass + ` ${overallProgressClass}`;
-  pProgressOverall.style.width = pOverall + "%";
-
-  pRankOverall.appendChild(pProgressOverall);
-
-  //Gameplay
-  pStatGameplay = document.createElement("p");
-  pStatGameplay.className = statClass;
-  pStatGameplay.innerHTML = `Gameplay: ${pGameplay}/100`; 
-
-  pRankGameplay = document.createElement("div");
-  pRankGameplay.className = pRankClass;
-  
-  pProgressGameplay = document.createElement("div");
-  pProgressGameplay.className = pProgressClass;
-  pProgressGameplay.style.width = pGameplay + "%";
-
-  pRankGameplay.appendChild(pProgressGameplay);
-
-  //Visuals
-  pStatVisuals = document.createElement("p");
-  pStatVisuals.className = statClass;
-  pStatVisuals.innerHTML = `Visuals: ${pVisuals}/100`; 
-
-  pRankVisuals = document.createElement("div");
-  pRankVisuals.className = pRankClass;
-  
-  pProgressVisuals = document.createElement("div");
-  pProgressVisuals.className = pProgressClass;
-  pProgressVisuals.style.width = pVisuals + "%";
-
-  pRankVisuals.appendChild(pProgressVisuals);
-
-  //Audio
-  pStatAudio = document.createElement("p");
-  pStatAudio.className = statClass;
-  pStatAudio.innerHTML = `Audio: ${pAudio}/100`; 
-
-  pRankAudio = document.createElement("div");
-  pRankAudio.className = pRankClass;
-  
-  pProgressAudio = document.createElement("div");
-  pProgressAudio.className = pProgressClass;
-  pProgressAudio.style.width = pAudio + "%";
-
-  pRankAudio.appendChild(pProgressAudio);
-
-  //Content
-  pStatContent = document.createElement("p");
-  pStatContent.className = statClass;
-  pStatContent.innerHTML = `Content: ${pContent}/100`; 
-
-  pRankContent = document.createElement("div");
-  pRankContent.className = pRankClass;
-  
-  pProgressContent = document.createElement("div");
-  pProgressContent.className = pProgressClass;
-  pProgressContent.style.width = pContent + "%";
-
-  pRankContent.appendChild(pProgressContent);
-
-  //Append elements
-  pChartEle.appendChild(pStatOverall);
-  pChartEle.appendChild(pRankOverall);
-  pChartEle.appendChild(pStatGameplay);
-  pChartEle.appendChild(pRankGameplay);
-  pChartEle.appendChild(pStatVisuals);
-  pChartEle.appendChild(pRankVisuals);
-  pChartEle.appendChild(pStatAudio);
-  pChartEle.appendChild(pRankAudio);
-  pChartEle.appendChild(pStatContent);
-  pChartEle.appendChild(pRankContent);
-
-  
-  //Create kev elements
-  kChartEle = document.createElement("div");
-  kChartEle.className = "kevChart";
-
-  let kHeader = document.createElement("h3")
-  kHeader.innerHTML = "Kevin's Scores";
-
-  kChartEle.appendChild(kHeader);
-
-  //Overall
-  kStatOverall = document.createElement("p");
-  kStatOverall.className = statClass;
-  kStatOverall.innerHTML = `Overall: ${kOverall}/100`; 
-
-  kRankOverall = document.createElement("div");
-  kRankOverall.className = kRankClass + ` ${overallClass}`;
-  
-  kProgressOverall = document.createElement("div");
-  kProgressOverall.className = kProgressClass + ` ${overallProgressClass}`;
-  kProgressOverall.style.width = kOverall + "%";
-
-  kRankOverall.appendChild(kProgressOverall);
-
-  //Gameplay
-  kStatGameplay = document.createElement("p");
-  kStatGameplay.className = statClass;
-  kStatGameplay.innerHTML = `Gameplay: ${kGameplay}/100`; 
-
-  kRankGameplay = document.createElement("div");
-  kRankGameplay.className = kRankClass;
-  
-  kProgressGameplay = document.createElement("div");
-  kProgressGameplay.className = kProgressClass;
-  kProgressGameplay.style.width = kGameplay + "%";
-
-  kRankGameplay.appendChild(kProgressGameplay);
-
-  //Visuals
-  kStatVisuals = document.createElement("p");
-  kStatVisuals.className = statClass;
-  kStatVisuals.innerHTML = `Visuals: ${kVisuals}/100`; 
-
-  kRankVisuals = document.createElement("div");
-  kRankVisuals.className = kRankClass;
-  
-  kProgressVisuals = document.createElement("div");
-  kProgressVisuals.className = kProgressClass;
-  kProgressVisuals.style.width = kVisuals + "%";
-
-  kRankVisuals.appendChild(kProgressVisuals);
-
-  //Audio
-  kStatAudio = document.createElement("p");
-  kStatAudio.className = statClass;
-  kStatAudio.innerHTML = `Audio: ${kAudio}/100`; 
-
-  kRankAudio = document.createElement("div");
-  kRankAudio.className = kRankClass;
-  
-  kProgressAudio = document.createElement("div");
-  kProgressAudio.className = kProgressClass;
-  kProgressAudio.style.width = kAudio + "%";
-
-  kRankAudio.appendChild(kProgressAudio);
-
-  //Content
-  kStatContent = document.createElement("p");
-  kStatContent.className = statClass;
-  kStatContent.innerHTML = `Content: ${kContent}/100`; 
-
-  kRankContent = document.createElement("div");
-  kRankContent.className = kRankClass;
-  
-  kProgressContent = document.createElement("div");
-  kProgressContent.className = kProgressClass;
-  kProgressContent.style.width = kContent + "%";
-
-  kRankContent.appendChild(kProgressContent);
-
-  //Append elements
-  kChartEle.appendChild(kStatOverall);
-  kChartEle.appendChild(kRankOverall);
-  kChartEle.appendChild(kStatGameplay);
-  kChartEle.appendChild(kRankGameplay);
-  kChartEle.appendChild(kStatVisuals);
-  kChartEle.appendChild(kRankVisuals);
-  kChartEle.appendChild(kStatAudio);
-  kChartEle.appendChild(kRankAudio);
-  kChartEle.appendChild(kStatContent);
-  kChartEle.appendChild(kRankContent);
+  pChartEle = createRankingsChart("Peter's Scores",pGameplay,pVisuals,pAudio,pContent,pOverall);
+  kChartEle = createRankingsChart("Kevin's Scores",kGameplay,kVisuals,kAudio,kContent,kOverall);
 
   //Create div container
   var chartContainer = document.createElement("div");
@@ -398,5 +217,18 @@ function addInfo(infoData,game){
   //Append Kev and Pete breakdown
   chartContainer.appendChild(pChartEle);
   chartContainer.appendChild(kChartEle);
+
+  //Add guest if needed
+  if (game["Ranking Info"]["Guest"]){
+    let guest = game["Ranking Info"]["Guest"];
+    let gGameplay = game["Ranking Info"]["G. Gameplay"].toFixed(2);
+    let gVisuals = game["Ranking Info"]["G. Visuals"].toFixed(2);
+    let gAudio = game["Ranking Info"]["G. Audio"].toFixed(2);
+    let gContent = game["Ranking Info"]["G. Content"].toFixed(2);
+    let gOverall = game["Ranking Info"]["Guest Rating"].toFixed(2);
+    gChartEle = createRankingsChart(`${guest}'s Scores`,gGameplay,gVisuals,gAudio,gContent,gOverall);
+    chartContainer.appendChild(gChartEle);
+  }
+
   infoData.appendChild(chartContainer);
 }

@@ -5,7 +5,6 @@ html,body{
 	text-align: center;
 	border-collapse: collapse;
 	table-layout: fixed;
-	width: 100%;
 }
 .rankings-table-header{
 	background-color: #2d32af;
@@ -42,15 +41,18 @@ th.sorted {
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
-        html, body {
-                overflow-y: hidden;
-        }
+	html, body {
+			overflow-y: hidden;
+	}
 	main{
 		overflow-x: auto;
 		/* -webkit-overflow-scrolling: touch; */
 		/* scroll-behavior: smooth; */
 		height: 90vh;
 		border-top: white solid 1px;
+	}
+	#rankings-table{
+		width: 100%;
 	}
 	.rankings-table-row > td{
 		padding-top: 20px;
@@ -86,7 +88,8 @@ th.sorted {
 		user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 	}
 	.rankings-table-row > td, .rankings-table-header > th{
-		width: 225px;
+		min-width: 102px;
+		width: 11%;
 	}
 	.rankings-table-row:hover{
 		background-color: #f1f1f1;
@@ -97,7 +100,7 @@ th.sorted {
 		overflow: hidden;
 		white-space: nowrap;
 	}
-	.peteChart, .kevChart {
+	.chart {
 		overflow: hidden;
 		width: 250px;
 		text-align: center;
@@ -109,7 +112,7 @@ th.sorted {
 	}
 	.expanded-breakdown{
 		display: inline-grid;
-		grid-template-columns: 275px 275px auto;
+		grid-template-columns: 300px 300px 300px auto;
 		margin-bottom: 10px;
 	}
 	.charts{
@@ -123,7 +126,7 @@ th.sorted {
 		margin-bottom: 5px;
 		font-size: 12px;
 	}
-	.p-rank, .k-rank {
+	.rank {
 		height: 20px;
 		width: 100%;
 		margin-bottom: 10px;
@@ -131,7 +134,7 @@ th.sorted {
 		border: #2d32af solid 2px;
 		border-radius: 3px;
 	}
-	.p-progress, .k-progress{
+	.progress{
 		width: 0%;
 		height: 100%;
 		background-color: #2d32af;
