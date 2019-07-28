@@ -54,8 +54,8 @@ article{
 }
 @media only screen and (max-width: 768px){
     #extras-twitch{
-        grid-template-columns: 105px 105px 105px;
-        grid-template-rows: 105px;
+        grid-template-columns: 115px 115px 115px;
+        grid-template-rows: 115px;
     }
     .twitch-img{
         height: 90px;
