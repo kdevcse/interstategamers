@@ -1,9 +1,12 @@
 article{
-    padding: 25px 5% 75px 5%;
+    padding: 15px 5% 75px 5%;
 }
 .extras-header{
     border-bottom: red solid 2px;
     color: red;
+}
+.extras-cat{
+    margin-bottom: 7px;
 }
 #extras-twitch{
     display: grid;
