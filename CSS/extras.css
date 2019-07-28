@@ -1,29 +1,43 @@
 article{
-    padding: 2% 5% 5% 5%;
+    padding: 25px 5% 75px 5%;
 }
 .extras-header{
     border-bottom: red solid 2px;
     color: red;
 }
-.extras-cat > h3{
-    color: #2d32af;
-    margin-bottom: 1%;
+#extras-twitch{
+    display: grid;
+    grid-auto-rows: 175px;
+    margin-top: 30px;
 }
-.extras-cat > p{
+.twitch-img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.logo-promo{
+    display: grid;
+    grid-template-columns: 100px auto;
+}
+.friend-info > h3{
+    color: #2d32af;
+    margin-bottom: 9px;
+    font-size: 19px;
+}
+.friend-info > p{
     margin-top: 0;
+    max-width: 850px;
+}
+.friend-img{
+    margin-top: 20px;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
 }
 .twitch-link{
     text-decoration: none;
     text-align: center;
     position: relative;
-}
-.fa-play{
-    display: none;
-    color: black;
-    position: absolute;
-    z-index: 999;
-    bottom: 0;
-    left: 50%;
 }
 .info-links{
     color: #2d32af;
@@ -33,17 +47,37 @@ article{
 .info-links:hover{
     text-decoration: underline;
 }
+.live-text{
+    color: red;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
 @media only screen and (max-width: 768px){
+    #extras-twitch{
+        grid-template-columns: 125px 125px 125px;
+        grid-template-rows: 125px;
+    }
     .twitch-img{
-        width: 100%;
+        height: 100px;
+        width: 100px;
+    }
+    .logo-promo{
+        margin-left: 2.5%;
+        grid-template-columns: 100px auto;
     }
 }
 @media only screen and (min-width: 768px){
-    .twitch-img{
-        width: 20%;
+    #extras-twitch{
+        grid-template-columns: 200px 200px 200px;
+    }
+    .logo-promo{
+        margin-left: 2.5%;
     }
 }
 @media only screen and (min-width: 992px){
+    #extras-twitch{
+        grid-template-columns: 200px 200px 200px 200px;
+    }
     .twitch-img:hover{
         cursor: pointer;
         opacity: 0.5;
