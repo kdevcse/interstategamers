@@ -73,7 +73,7 @@ function sortTableByCategory(ele,category, ascending){
   }
 }
 
-function sortTableByTitle(ele, ascending){
+function sortTableByName(ele, ascending, type){
   //Set row to sorted class identifier
   removeSortedAttribute();
   ele.classList.add("sorted");
@@ -89,10 +89,10 @@ function sortTableByTitle(ele, ascending){
       if(rows[i].className.includes("rankings-table-row-info") || !rows[i+2])
         continue;
         
-      x = rows[i].getElementsByClassName(`rankings-table-title`)[0];
-      x.setAttribute("class",`rankings-table-title sorted`);
-      y = rows[i + 2].getElementsByClassName(`rankings-table-title`)[0];
-      y.setAttribute("class",`rankings-table-title sorted`);
+      x = rows[i].getElementsByClassName(`rankings-table-${type}`)[0];
+      x.setAttribute("class",`rankings-table-${type} sorted`);
+      y = rows[i + 2].getElementsByClassName(`rankings-table-${type}`)[0];
+      y.setAttribute("class",`rankings-table-${type} sorted`);
       if (ascending && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
         canSwitch = true;
         table.insertBefore(rows[i+2],rows[i]);
@@ -121,6 +121,7 @@ function tableInsert(game){
   let rank = game["Rank"];
   let title = game["Ranking Info"]["Game"];
   let year = game["Ranking Info"]["Year"];
+  let platform = game["Ranking Info"]["Platform"];
   let overall = game["Ranking Info"]["IG Score"].toFixed(2);
   let gameplay = game["Ranking Info"]["Gameplay"].toFixed(2);
   let aesthetics = game["Ranking Info"]["Aesthetics"].toFixed(2);
@@ -146,6 +147,10 @@ function tableInsert(game){
   let yearE = document.createElement("td");
   yearE.setAttribute("class","rankings-table-year");
   yearE.innerHTML = year;
+  let platformE = document.createElement("td");
+  platformE.setAttribute("class","rankings-table-platform");
+  platformE.innerHTML = platform;
+  platformE.title = platform;
   let overallE = document.createElement("td");
   overallE.setAttribute("class","rankings-table-overall");
   overallE.innerHTML = overall;
@@ -169,6 +174,7 @@ function tableInsert(game){
   newRow.appendChild(rankE);
   newRow.appendChild(titleE);
   newRow.appendChild(yearE);
+  newRow.appendChild(platformE);
   newRow.appendChild(overallE);
   newRow.appendChild(gameplayE);
   newRow.appendChild(aestheticsE);
@@ -184,7 +190,7 @@ function tableInsert(game){
   //Create table data element for game breakdown
   infoData = document.createElement("td");
   infoData.setAttribute("class","rankings-table-info");
-  infoData.setAttribute("colspan","9");
+  infoData.setAttribute("colspan","10");
   addInfo(infoData,game);
 
   //Append game breakdown to table

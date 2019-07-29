@@ -59,7 +59,7 @@ th.sorted {
 		padding-bottom: 20px;
 	}
 	.rankings-table-row > td, .rankings-table-header > th{
-		width: 120px;
+		width: 125px;
 	}
 }
 /* Larger devices than phones */
@@ -89,7 +89,7 @@ th.sorted {
 	}
 	.rankings-table-row > td, .rankings-table-header > th{
 		min-width: 102px;
-		width: 11%;
+		width: 10%;
 	}
 	.rankings-table-row:hover{
 		background-color: #f1f1f1;
