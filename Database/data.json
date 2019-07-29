@@ -741,7 +741,7 @@
             "P. Gameplay": 90,
             "P. Visuals": 95,
             "Peter's Rating": 87.5,
-            "Platform": "Xbox One",
+            "Platform": "All",
             "Visuals": 92.5,
             "Year": 2015
         },
@@ -939,7 +939,7 @@
             "P. Gameplay": 75,
             "P. Visuals": 85,
             "Peter's Rating": 78.33333333333333,
-            "Platform": "GameCube",
+            "Platform": "GC",
             "Visuals": 85,
             "Year": 2001
         },
@@ -1080,7 +1080,7 @@
             "P. Gameplay": 80,
             "P. Visuals": 80,
             "Peter's Rating": 83.33333333333333,
-            "Platform": "GameCube",
+            "Platform": "GC",
             "Visuals": 78.5,
             "Year": 2002
         },
@@ -1256,7 +1256,7 @@
             "P. Gameplay": 80,
             "P. Visuals": 90,
             "Peter's Rating": 89.16666666666667,
-            "Platform": "GameCube",
+            "Platform": "GC",
             "Visuals": 92,
             "Year": 2002
         },
