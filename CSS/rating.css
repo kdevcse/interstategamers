@@ -1,6 +1,15 @@
-html,body{
-	overflow: hidden;
+/* ::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
 }
+::-webkit-scrollbar-track {
+	background: white;
+	width: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: red;
+	border-radius: 10px;
+} */
 #rankings-table{
 	text-align: center;
 	border-collapse: collapse;
@@ -64,16 +73,14 @@ th.sorted {
 }
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
-	main{
-		height: 92.75vh;
-		overflow-x: auto;
+	#rankings-table{
+		position: relative;
 	}
-	#rankings-table::-webkit-scrollbar {
-		width: 0px;
-		background: transparent;
+	.rankings-table-header{
+		padding-top: 8px;
 	}
-	#rankings-table::-webkit-scrollbar-thumb {
-		background: #FF0000;
+	.rankings-table-header > th{
+		top: 70px;
 	}
 	.rankings-table-header > th:hover{
 		cursor: pointer;
