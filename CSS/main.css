@@ -6,16 +6,16 @@
 }
 body {
 	margin: 0;
+	margin-top: 70px;
 }
-#nav-bar {
+nav {
 	position: fixed;
-	top: 0%;
+	top: 0;
 	width: 100%;
 	height: 70px;
 	z-index: 1;
 	list-style-type: none;
   	background-color: #2d32af;
-	border-bottom: white solid 1px;
 	overflow: hidden;
 }
 .nav-tab-logo{
@@ -60,12 +60,14 @@ body {
 	}
 	#mobile-nav-bar{
 		display: inherit;
-		overflow: hidden;
 		background-color: #2d32af;
 	}
 	#mobile-nav-list{
 		display: none;
+		position: fixed;
+		width: 100%;
 		padding-bottom: 7px;
+		background-color: #2d32af;
 	}
 	#mobile-nav-list > a{
 		color: white;
@@ -93,11 +95,9 @@ body {
   	}
 }
 @media only screen and (min-width: 770px){
-	body{
-		margin-top: 70px;
-	}
 	#nav-bar{
 		display: inherit;
+		border-bottom: white solid 1px;
 	}
 	#mobile-nav-bar, #mobile-nav-logo-container,#mobile-nav-logo{
 		display: none;
