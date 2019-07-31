@@ -46,14 +46,17 @@ function sortTableByCategory(ele,category){
   let table = document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
   let ascending = ele.getAttribute("ascending") === null;
+  let sortIcon = ele.getElementsByTagName("svg")[0];
 
   if (ascending){
     ele.setAttribute("ascending","");
-    ele.getElementsByTagName("svg")[0].className = "fas fa-sort-up fa-lg";
+    sortIcon.classList.remove("fa-sort-down");
+    sortIcon.classList.add("fa-sort-up");
   }
   else {
     ele.removeAttribute("ascending");
-    ele.getElementsByTagName("svg")[0].className = "fas fa-sort-down fa-lg";
+    sortIcon.classList.remove("fa-sort-up");
+    sortIcon.classList.add("fa-sort-down");
   }
 
   //Swap sort algorithm
@@ -92,11 +95,18 @@ function sortTableByName(ele, type){
   let table = document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
   let ascending = ele.getAttribute("ascending") === null;
+  let sortIcon = ele.getElementsByTagName("svg")[0];
 
-  if (ascending)
+  if (ascending){
     ele.setAttribute("ascending","");
-  else
+    sortIcon.classList.remove("fa-sort-down");
+    sortIcon.classList.add("fa-sort-up");
+  }
+  else {
     ele.removeAttribute("ascending");
+    sortIcon.classList.remove("fa-sort-up");
+    sortIcon.classList.add("fa-sort-down");
+  }
 
   //Swap sort algorithm
   while(canSwitch){
