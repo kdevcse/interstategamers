@@ -32,12 +32,12 @@ function removeSortedAttribute(){
   for (i = 0; i < (rows.length); i++) {
     let sorts = rows[i].getElementsByClassName("sorted");
     for(j = 0; j < sorts.length; j++){
-	sorts[j].classList.remove("sorted");
+      sorts[j].classList.remove("sorted");
     }
   }
 }
 
-function sortTableByCategory(ele,category, ascending){
+function sortTableByCategory(ele,category){
   //Set row to sorted class identifier
   removeSortedAttribute();
   ele.classList.add("sorted");
@@ -45,6 +45,16 @@ function sortTableByCategory(ele,category, ascending){
   let canSwitch = true;
   let table = document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
+  let ascending = ele.getAttribute("ascending") === null;
+
+  if (ascending){
+    ele.setAttribute("ascending","");
+    ele.getElementsByTagName("svg")[0].className = "fas fa-sort-up fa-lg";
+  }
+  else {
+    ele.removeAttribute("ascending");
+    ele.getElementsByTagName("svg")[0].className = "fas fa-sort-down fa-lg";
+  }
 
   //Swap sort algorithm
   while(canSwitch){
@@ -73,7 +83,7 @@ function sortTableByCategory(ele,category, ascending){
   }
 }
 
-function sortTableByName(ele, ascending, type){
+function sortTableByName(ele, type){
   //Set row to sorted class identifier
   removeSortedAttribute();
   ele.classList.add("sorted");
@@ -81,6 +91,12 @@ function sortTableByName(ele, ascending, type){
   let canSwitch = true;
   let table = document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
+  let ascending = ele.getAttribute("ascending") === null;
+
+  if (ascending)
+    ele.setAttribute("ascending","");
+  else
+    ele.removeAttribute("ascending");
 
   //Swap sort algorithm
   while(canSwitch){
