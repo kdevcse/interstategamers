@@ -80,7 +80,7 @@ th.sorted {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
 	body{
-		-webkit-overflow-scrolling: touch;
+		-webkit-overflow-scrolling: auto;
 	}
 	.rankings-table-row > td{
 		padding-top: 20px;
@@ -88,7 +88,7 @@ th.sorted {
 	}
 	.rankings-table-row > td, .rankings-table-header > th{
 		font-size: 14px;
-		min-width: 102px;
+		min-width: 93px;
 	}
 }
 /* Larger devices than phones */
