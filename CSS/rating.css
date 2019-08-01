@@ -84,7 +84,7 @@ th.sorted {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
 	body{
-		-webkit-overflow-scrolling: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 	.rankings-table-row > td{
 		padding-top: 20px;
