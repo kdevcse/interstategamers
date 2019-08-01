@@ -48,15 +48,44 @@ th.sorted {
 .sorted > .header-text > svg{
 	visibility: visible;
 }
+#rankings-table{
+	position: relative;
+}
+.rankings-table-header > th{
+	top: 70px;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+.rankings-table-row > td {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+.rankings-table-row > td, .rankings-table-header > th{
+	min-width: 185px;
+	width: 15%;
+}
+.rankings-table-row > td {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
-	html, body {
+	/*html, body {
 			overflow-y: hidden;
 	}
 	main{
 		overflow-x: auto;
 		/* -webkit-overflow-scrolling: touch; */
-		scroll-behavior: smooth;
+		/*scroll-behavior: smooth;
 		height: 90vh;
 	}
 	#rankings-table{
@@ -68,40 +97,26 @@ th.sorted {
 	}
 	.rankings-table-row > td, .rankings-table-header > th{
 		width: 125px;
+	}*/
+	.rankings-table-row > td, .rankings-table-header > th{
+		font-size: 14px;
+		min-width: 102px;
 	}
 }
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
-	#rankings-table{
-		position: relative;
-	}
-	.rankings-table-header > th{
-		top: 70px;
-	}
 	.rankings-table-header > th:hover{
 		cursor: pointer;
 		text-decoration: underline;
 	}
-	.rankings-table-row > td {
-		-webkit-touch-callout: none; /* iOS Safari */
-		-webkit-user-select: none; /* Safari */
-		-khtml-user-select: none; /* Konqueror HTML */
-		-moz-user-select: none; /* Firefox */
-		-ms-user-select: none; /* Internet Explorer/Edge */
-		user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-	}
-	.rankings-table-row > td, .rankings-table-header > th{
-		min-width: 185px;
-		width: 15%;
+	.rankings-table-row.selected{
+		background-color: #f0f0f5;
+		border-top: #2d32af solid 1px;
+		color: #2d32af;
 	}
 	.rankings-table-row:hover{
 		background-color: #f1f1f1;
 		cursor: pointer;
-	}
-	.rankings-table-row > td {
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
 	}
 	.chart {
 		overflow: hidden;
@@ -152,10 +167,5 @@ th.sorted {
 		display: table-row;
 		background-color: #f0f0f5;
 		border-bottom: #2d32af solid 1px;
-	}
-	.rankings-table-row.selected{
-		background-color: #f0f0f5;
-		border-top: #2d32af solid 1px;
-		color: #2d32af;
 	}
 }
