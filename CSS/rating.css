@@ -79,25 +79,13 @@ th.sorted {
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
-	/*html, body {
-			overflow-y: hidden;
-	}
-	main{
-		overflow-x: auto;
-		/* -webkit-overflow-scrolling: touch; */
-		/*scroll-behavior: smooth;
-		height: 90vh;
-	}
-	#rankings-table{
-		width: 100%;
+	body{
+		-webkit-overflow-scrolling: touch;
 	}
 	.rankings-table-row > td{
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
-	.rankings-table-row > td, .rankings-table-header > th{
-		width: 125px;
-	}*/
 	.rankings-table-row > td, .rankings-table-header > th{
 		font-size: 14px;
 		min-width: 102px;
