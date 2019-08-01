@@ -60,6 +60,10 @@ th.sorted {
 	-ms-user-select: none; /* Internet Explorer/Edge */
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
+.rankings-table-header > th:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
 .rankings-table-row > td {
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
@@ -93,10 +97,6 @@ th.sorted {
 }
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
-	.rankings-table-header > th:hover{
-		cursor: pointer;
-		text-decoration: underline;
-	}
 	.rankings-table-row.selected{
 		background-color: #f0f0f5;
 		border-top: #2d32af solid 1px;
