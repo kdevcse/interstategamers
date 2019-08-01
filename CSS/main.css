@@ -27,7 +27,7 @@ nav {
 .nav-list {
 	display: flex;
 	align-items: center;
-	margin-left: 95px;
+	margin-left: 62px;
 }
 .nav-tab {
 	text-decoration: none;
@@ -35,7 +35,7 @@ nav {
 	font-family: Interstate;
 	font-weight: bold;
 	font-size: 25px;
-	margin-right: 64px;
+	margin-right: 62px;
 	margin-top: 8px;
 	vertical-align: middle;
 	transition: text-decoration .2s ease-in;
