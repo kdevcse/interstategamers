@@ -61,7 +61,7 @@ main {
 .episode, .episode-first {
     display: grid;
     align-items: center;
-    grid-template-columns: 55px auto;
+    grid-template-columns: 50px auto;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
