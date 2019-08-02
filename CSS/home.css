@@ -71,7 +71,7 @@ main {
     border-top: blue solid 1px;
 }
 .player > svg {
-    font-size: 35px;
+    font-size: 32px;
 }
 .player > svg:hover{
     cursor: pointer;
@@ -188,7 +188,7 @@ main {
 		display: none;
 	}
     .player > svg {
-		font-size: 35px;
+		font-size: 32px;
     }
     .ig-content{
         padding: 50px 5%;
