@@ -29,7 +29,7 @@
 			<a href="../Info/index.html">Info</a>
 	  </div>
 	</nav>
-	<nav class="nav-bar">
+	<nav id="nav-bar">
 		<div class="nav-list">
 			<a class="nav-tab" href="../index.html"><img class="nav-tab-logo" src="../Images/IgLogo.png"></img></a>
 			<a class="nav-tab" style="text-decoration: underline" href="#">Ratings</a>
@@ -41,14 +41,36 @@
 	<main>
 		<table id="rankings-table">
 			<tr class="rankings-table-header">
-				<th class="rankings-header sorted" onclick="sortTableByCategory(this,'rank',true)">Rank</th>
-				<th class="rankings-header" onclick="sortTableByTitle(this,true)">Title</th>
-				<th class="rankings-header" onclick="sortTableByCategory(this,'overall',false)">IG Score</th>
-				<th class="rankings-header" onclick="sortTableByCategory(this,'gameplay',false)">Gameplay</th>
-				<th class="rankings-header" onclick="sortTableByCategory(this,'aesthetics',false)">Aesthetics</th>
-				<th class="rankings-header" onclick="sortTableByCategory(this,'content',false)">Content</th>
-				<th class="rankings-header" onclick="sortTableByCategory(this,'p-overall',false)">P. Overall</th>
-				<th class="rankings-header" onclick="sortTableByCategory(this,'k-overall',false)">K. Overall</th>
+				<th id="header-rank" class="rankings-header sorted" onclick="sortTableByCategory(this,'rank')" ascending>
+					<div class="header-text">Rank <i class="fas fa-sort-up fa-lg sort-icon"></i></div>
+				</th>
+				<th id="header-title" class="rankings-header descender" onclick="sortTableByName(this,'title')" ascending>
+					<div class="header-text">Title <i class="fas fa-sort-down fa-lg sort-icon"></i></div>
+				</th>
+				<th id="header-year" class="rankings-header descender" onclick="sortTableByCategory(this,'year')" ascending>
+					<div class="header-text">Year <i class="fas fa-sort-down fa-lg sort-icon"></i></div>
+				</th>
+				<th id="header-platform" class="rankings-header descender" onclick="sortTableByName(this,'platform')" ascending>
+					<div class="header-text">Platform <i class="fas fa-sort-down fa-lg sort-icon"></i></div>
+				</th>
+				<th id="header-overall" class="rankings-header descender" onclick="sortTableByCategory(this,'overall')" ascending>
+					<div class="header-text">IG Score <i class="fas fa-sort-up fa-lg sort-icon"></i></div>
+				</th>
+				<th id="header-gameplay" class="rankings-header descender" onclick="sortTableByCategory(this,'gameplay')" ascending>
+					<div class="header-text">Gameplay <i class="fas fa-sort-up fa-lg sort-icon"></i></div>
+				</th>
+				<th id="header-aesthetics" class="rankings-header descender" onclick="sortTableByCategory(this,'aesthetics')" ascending>
+					<div class="header-text">Aesthetics <i class="fas fa-sort-up fa-lg sort-icon"></i></div>
+				</th>
+				<th id="header-content" class="rankings-header descender" onclick="sortTableByCategory(this,'content')" ascending>
+					<div class="header-text">Content <i class="fas fa-sort-up fa-lg sort-icon"></i></div>
+				</th>
+				<th id="header-p-overall" class="rankings-header descender" onclick="sortTableByCategory(this,'p-overall')" ascending>
+					<div class="header-text">P. Overall <i class="fas fa-sort-up fa-lg sort-icon"></i></div>
+				</th>
+				<th id="header-k-overall" class="rankings-header descender" onclick="sortTableByCategory(this,'k-overall')" ascending>
+					<div class="header-text">K. Overall <i class="fas fa-sort-up fa-lg sort-icon"></i></div>
+				</th>
 			</tr>
 		</table>
 	</main>

@@ -43,7 +43,7 @@
 			<a href="Info/index.html">Info</a>
 	  </div>
 	</nav>
-	<nav class="nav-bar">
+	<nav id="nav-bar">
 		<div class="nav-list">
 			<a class="nav-tab" href="#"><img class="nav-tab-logo" src="Images/IgLogo.png"></img></a>
 		  	<a class="nav-tab" href="Ratings/index.html">Ratings</a>
@@ -53,6 +53,16 @@
 		</div>
 	</nav>
 	<main class="ig-main">
+		<section class="ig-main-left">
+			<div class="ig-main-left-text-container">
+				<h1>The Interstate Gamers</h1>
+				<p>The podcast where your hosts, deal_4_real and KSlugs, rate and discuss your favorite video games by category from two different states, Colorado and Texas.</p>
+			</div>
+			<div id="ig-main-left-trailer" onclick="playTrailer()">
+				<i id="ig-trailer-playButton" class="fas fa-play-circle"></i>
+				<span>Listen to the trailer</span>
+			</div>
+		</section>
 		<aside class="ig-main-right">
 			<img class="ig-main-right-logo" src="Images/Main.png"><img>
 			<div id="ig-icons">
@@ -73,16 +83,6 @@
 				</a>
 			</div>
 		</aside>
-		<section class="ig-main-left">
-			<div class="ig-main-left-text-container">
-				<h1>The Interstate Gamers</h1>
-				<p>The podcast where your hosts, deal_4_real and KSlugs, rate and discuss your favorite video games by category from two different states, Colorado and Texas.</p>
-			</div>
-			<div id="ig-main-left-trailer" onclick="playTrailer()">
-				<i id="ig-trailer-playButton" class="fas fa-play-circle"></i>
-				<span>Listen to the trailer</span>
-			</div>
-		</section>
 	</main>
 	<section class="ig-content">
 		<div id="episodes"></div>

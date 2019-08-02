@@ -12,7 +12,7 @@
 	<script src="../global.js" type="text/javascript"></script>
 	<script src="extras.js" type="text/javascript"></script>
 </head>
-<body onload="populateTwitchLinks()">
+<body>
 	<nav id="mobile-nav-bar">
 		<div id="mobile-nav-main-container">
 			<a id="mobile-nav-logo-container" href="../index.html"><img id="mobile-nav-logo" src="../Images/IgLogo.png"></img></a>
@@ -27,7 +27,7 @@
 			<a href="../Info/index.html">Info</a>
 	  </div>
 	</nav>
-	<nav class="nav-bar">
+	<nav id="nav-bar">
 		<div class="nav-list">
 			<a class="nav-tab" href="../index.html"><img class="nav-tab-logo" src="../Images/IgLogo.png"></img></a>
 			<a class="nav-tab" href="../Ratings/index.html">Ratings</a>
@@ -37,49 +37,66 @@
 		</div>
 	</nav>
 	<article>
+		<h1 class="extras-header"><span><i class="fab fa-twitch"></i></span> Twitch</h1>
 		<div class="extras-cat" id="extras-twitch">
-			<h1 class="extras-header">Twitch</h1>
 			<a class="twitch-link" target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/deal_4_real">
-				<img class="twitch-img" src="../Images/Main.png">
-					<i class="fas fa-play"></i>
-				</img>
+				<img class="twitch-img" src="../Images/d4r.png"></img>
+				<p class="live-text">Live!</p>
+			</a>
+			<a class="twitch-link" target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/kslugs">
+				<img class="twitch-img" src="../Images/kslugs.png"></img>
+			</a>
+			<a class="twitch-link" target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/zlinkgaming">
+				<img class="twitch-img" src="../Images/ZLG.png"></img>
 			</a>
 		</div>
-		<div class="extras-cat" id="extras-friends">
-			<h1 class="extras-header">Friends</h1>
-			<h3>Zlink</h3>
-			<p>
-				Our good buddy ZLink specializes in Let’s Plays of Nintendo titles old and new. 
-				His relaxing commentary is sure to keep you good company and help you unwind. 
-				<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCdAwCnEt2WcaOy_KcT3sGiA">Click here to visit ZLink Gaming on YouTube</a>, 
-				but don’t sleep on his Twitch channel if you want to catch a stream with the IG boys.
-			</p>
-			<h3>Ground Up Productions</h3>
-			<p>
-				Aaron Miller would like nothing more than for you to produce the best-sounding, best-looking content possible – because you deserve it. 
-				On his new channel Ground Up Productions, Aaron provides mic reviews, video tips, and more useful info for the budget-conscious content creator. 
-				<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UC8KDr1L4eimv-csT_IClYdA">Click here to visit his channel on YouTube</a>, and with his guidance, you’ll have great aessstheticsss in no time.
-			</p>
+		<h1 class="extras-header"><span><i class="fas fa-music"></i></span> Music</h1>
+		<div class="extras-cat logo-promo" id="extras-music">
+			<img class="friend-img" src="../Images/PRW.png"></img>
+			<div class="friend-info">
+				<h3>PeteRW</h3>
+				<p>
+					Peter makes tunes under the alias Pete RW, self-proclaimed as “a producer who balances spacious atmosphere with driving rhythms.” 
+					In non-pretentious English, he makes some chill stuff and also some bangers. 
+					<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/artist/6aBKiDvFoc5LBDUMtCZgvy">Click here to see his Spotify profile</a>, 
+					but keep in mind he’s got even more goodness on his 
+					<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/peterwtunes">SoundCloud page</a>.
+				</p>
+			</div>
 		</div>
-		<div class="extras-cat" id="extras-music">
-			<h1 class="extras-header">Music</h1>
-			<h3>PeteRW</h3>
-			<p>
-				Peter makes tunes under the alias Pete RW, self-proclaimed as “a producer who balances spacious atmosphere with driving rhythms.” 
-				In non-pretentious English, he makes some chill stuff and also some bangers. 
-				<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/artist/6aBKiDvFoc5LBDUMtCZgvy">Click here to see his Spotify profile</a>, 
-				but keep in mind he’s got even more goodness on his 
-				<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/peterwtunes">SoundCloud page</a>.
-			</p>
+		<h1 class="extras-header"><span><i class="fas fa-code"></i></span> Code</h1>
+		<div class="extras-cat logo-promo" id="extras-code">
+			<img class="friend-img" src="../Images/slugzbot.png"></img>
+			<div class="friend-info">
+				<h3>KSlugs</h3>
+				<p>
+					Kevin’s got some coding chops – if you don’t believe me, just look at the website you’re on right now. 
+					Oh shit, did I just blow your mind? If you want to be impressed further, 
+					<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://klewiscse.github.io/klewiscse-website/">click here to check out his portfolio</a>.
+				</p>
+			</div>
 		</div>
-		<div class="extras-cat" id="extras-code">
-			<h1 class="extras-header">Code</h1>
-			<h3>KSlugs</h3>
-			<p>
-				Kevin’s got some coding chops – if you don’t believe me, just look at the website you’re on right now. 
-				Oh shit, did I just blow your mind? If you want to be impressed further, 
-				<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://klewiscse.github.io/klewiscse-website/">click here to check out his portfolio</a>.
-			</p>
+		<h1 class="extras-header"><span><i class="fas fa-users"></i></span> Friends</h1>
+		<div class="extras-cat logo-promo" id="extras-friends">
+			<img class="friend-img" src="../Images/ZLG.png"></img>
+			<div class="friend-info">
+				<h3>ZLink</h3>
+				<p>
+					Our good buddy ZLink specializes in Let’s Plays of Nintendo titles old and new. 
+					His relaxing commentary is sure to keep you good company and help you unwind. 
+					<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCdAwCnEt2WcaOy_KcT3sGiA">Click here to visit ZLink Gaming on YouTube</a>, 
+					but don’t sleep on his Twitch channel if you want to catch a stream with the IG boys.
+				</p>
+			</div>
+			<img class="friend-img" src="../Images/aaron.jpg"></img>
+			<div class="friend-info">
+				<h3>Ground Up Productions</h3>
+				<p>
+					Aaron Miller would like nothing more than for you to produce the best-sounding, best-looking content possible – because you deserve it. 
+					On his new channel Ground Up Productions, Aaron provides mic reviews, video tips, and more useful info for the budget-conscious content creator. 
+					<a class="info-links" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UC8KDr1L4eimv-csT_IClYdA">Click here to visit his channel on YouTube</a>, and with his guidance, you’ll have great aessstheticsss in no time.
+				</p>
+			</div>
 		</div>
 	</article>
 </body>

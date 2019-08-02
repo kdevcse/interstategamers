@@ -24,7 +24,7 @@
         "updated_at": "2019-05-12T21:30:39.424937-07:00"
     },
     {
-        "Rank": 20,
+        "Rank": 21,
         "Ranking Info": {
             "Aesthetics": 85.25,
             "Audio": 88.5,
@@ -54,8 +54,9 @@
             "P. Gameplay": 85,
             "P. Visuals": 80,
             "Peter's Rating": 83.33333333333333,
-            "Platform": "Nintendo 64",
-            "Visuals": 82
+            "Platform": "N64",
+            "Visuals": 82,
+            "Year": 1996
         },
         "analytics": null,
         "description": "The boys review Mario Kart 64 in their inaugural episode.",
@@ -111,8 +112,9 @@
             "P. Gameplay": 95,
             "P. Visuals": 90,
             "Peter's Rating": 90.83333333333333,
-            "Platform": "Nintendo 64",
-            "Visuals": 91.5
+            "Platform": "N64",
+            "Visuals": 91.5,
+            "Year": 1997
         },
         "analytics": null,
         "description": "The boys break down another N64 classic in Star Fox 64.",
@@ -169,7 +171,8 @@
             "P. Visuals": 95,
             "Peter's Rating": 89.16666666666667,
             "Platform": "PC",
-            "Visuals": 90
+            "Visuals": 90,
+            "Year": 1999
         },
         "analytics": null,
         "description": "Hold onto your harnesses, because this one's a doozy! The boys review a PC classic in RollerCoaster Tycoon. ",
@@ -195,7 +198,7 @@
         "updated_at": "2019-05-12T21:31:25.238138-07:00"
     },
     {
-        "Rank": 15,
+        "Rank": 16,
         "Ranking Info": {
             "Aesthetics": 87.75,
             "Audio": 86.5,
@@ -225,8 +228,9 @@
             "P. Gameplay": 85,
             "P. Visuals": 85,
             "Peter's Rating": 88.33333333333333,
-            "Platform": "Game Boy Advance",
-            "Visuals": 89
+            "Platform": "GBA",
+            "Visuals": 89,
+            "Year": 2004
         },
         "analytics": null,
         "description": "The boys jump into the aughts to review Kirby and the Amazing Mirror for the Game Boy Advance.",
@@ -283,8 +287,9 @@
             "P. Gameplay": 95,
             "P. Visuals": 95,
             "Peter's Rating": 90.83333333333333,
-            "Platform": "Game Boy Advance",
-            "Visuals": 93.33333333333333
+            "Platform": "GBA",
+            "Visuals": 93.33333333333333,
+            "Year": 2004
         },
         "analytics": null,
         "description": "In this Kraid-sized episode, the boys recruit resident Metroid expert Ryan Everitt to help them navigate the labyrinth of Metroid: Zero Mission for the Game Boy Advance.",
@@ -340,8 +345,9 @@
             "P. Gameplay": 95,
             "P. Visuals": 95,
             "Peter's Rating": 94.16666666666667,
-            "Platform": "Super Nintendo",
-            "Visuals": 93.5
+            "Platform": "SNES",
+            "Visuals": 93.5,
+            "Year": 1990
         },
         "analytics": null,
         "description": "The boys tackle one of the most legendary games for one of the most legendary consoles \u2013 Super Mario World for the Super Nintendo.",
@@ -391,7 +397,7 @@
         "updated_at": "2019-05-12T21:30:40.120304-07:00"
     },
     {
-        "Rank": 22,
+        "Rank": 23,
         "Ranking Info": {
             "Aesthetics": 86.25,
             "Audio": 82.5,
@@ -421,8 +427,9 @@
             "P. Gameplay": 80,
             "P. Visuals": 85,
             "Peter's Rating": 80.83333333333333,
-            "Platform": "Nintendo 64",
-            "Visuals": 90
+            "Platform": "N64",
+            "Visuals": 90,
+            "Year": 1998
         },
         "analytics": null,
         "description": "Gotta critique 'em all! The boys review Pok\u00e9mon Stadium, an N64 game darling to Pok\u00e9Fans the world over.",
@@ -448,7 +455,7 @@
         "updated_at": "2019-05-12T21:31:09.784334-07:00"
     },
     {
-        "Rank": 23,
+        "Rank": 24,
         "Ranking Info": {
             "Aesthetics": 78.25,
             "Audio": 81.5,
@@ -478,8 +485,9 @@
             "P. Gameplay": 95,
             "P. Visuals": 70,
             "Peter's Rating": 83.33333333333333,
-            "Platform": "Nintendo 64",
-            "Visuals": 75
+            "Platform": "N64",
+            "Visuals": 75,
+            "Year": 2000
         },
         "analytics": null,
         "description": "Join real-life professional skaters KSlugs and deal_4_real as they review the very game which brought skating to the masses \u2013 Tony Hawk's Pro Skater. Shred the gnar!",
@@ -535,8 +543,9 @@
             "P. Gameplay": 85,
             "P. Visuals": 90,
             "Peter's Rating": 89.16666666666667,
-            "Platform": "Nintendo 64",
-            "Visuals": 91.5
+            "Platform": "N64",
+            "Visuals": 91.5,
+            "Year": 1998
         },
         "analytics": null,
         "description": "Hup, two, three, four! The boys marvel at the piece of platforming perfection that is Banjo-Kazooie for the Nintendo 64.",
@@ -592,8 +601,9 @@
             "P. Gameplay": 90,
             "P. Visuals": 90,
             "Peter's Rating": 91.66666666666667,
-            "Platform": "Switch, Xbox One",
-            "Visuals": 87.5
+            "Platform": "All",
+            "Visuals": 87.5,
+            "Year": 2016
         },
         "analytics": null,
         "description": "The boys close out Season 1 with a game that's actually from this decade! Grab your farming tools and fishing rod, because it's time to visit Stardew Valley.",
@@ -655,7 +665,7 @@
             "G. Content": 0,
             "G. Gameplay": 0,
             "G. Visuals": 0,
-            "Game": "Legend of Zelda: A Link to the Past",
+            "Game": "A Link to the Past",
             "Gameplay": 89,
             "Guest Rating": 0,
             "IG Score": 92.58333333333334,
@@ -673,8 +683,9 @@
             "P. Gameplay": 90,
             "P. Visuals": 95,
             "Peter's Rating": 92.5,
-            "Platform": "Super Nintendo",
-            "Visuals": 93.5
+            "Platform": "SNES",
+            "Visuals": 93.5,
+            "Year": 1991
         },
         "analytics": null,
         "description": "The boys are back on the road! Season 2 begins with a first-time-playing perspective on A Link to the Past, one of the most-admired games in the illustrious Legend of Zelda franchise.",
@@ -700,7 +711,7 @@
         "updated_at": "2019-05-12T21:30:09.765083-07:00"
     },
     {
-        "Rank": 16,
+        "Rank": 17,
         "Ranking Info": {
             "Aesthetics": 86.25,
             "Audio": 80,
@@ -730,8 +741,9 @@
             "P. Gameplay": 90,
             "P. Visuals": 95,
             "Peter's Rating": 87.5,
-            "Platform": "Xbox One",
-            "Visuals": 92.5
+            "Platform": "All",
+            "Visuals": 92.5,
+            "Year": 2015
         },
         "analytics": null,
         "description": "What a save! The boys review a modern, non-Fortnite game that's sure to satisfy your adrenaline cravings \u2013 the esteemed and ever-popular Rocket League.",
@@ -757,7 +769,7 @@
         "updated_at": "2019-05-12T21:30:13.942204-07:00"
     },
     {
-        "Rank": 20,
+        "Rank": 21,
         "Ranking Info": {
             "Aesthetics": 86.25,
             "Audio": 91.5,
@@ -787,8 +799,9 @@
             "P. Gameplay": 90,
             "P. Visuals": 90,
             "Peter's Rating": 86.66666666666667,
-            "Platform": "Super Nintendo",
-            "Visuals": 81
+            "Platform": "SNES",
+            "Visuals": 81,
+            "Year": 1994
         },
         "analytics": null,
         "description": "The boys get down to (monkey) business with two very different perspectives on Rare's premiere primate platformer, Donkey Kong Country.",
@@ -838,7 +851,7 @@
         "updated_at": "2019-05-12T21:30:21.442284-07:00"
     },
     {
-        "Rank": 27,
+        "Rank": 28,
         "Ranking Info": {
             "Aesthetics": 67.5,
             "Audio": 77.5,
@@ -868,8 +881,9 @@
             "P. Gameplay": 70,
             "P. Visuals": 60,
             "Peter's Rating": 70,
-            "Platform": "Nintendo 64",
-            "Visuals": 57.5
+            "Platform": "N64",
+            "Visuals": 57.5,
+            "Year": 1997
         },
         "analytics": null,
         "description": "Wanna party tonight? The boys got you covered with this review of Chopper Attack, a (ahem) classic N64 title.",
@@ -895,7 +909,7 @@
         "updated_at": "2019-05-12T21:30:01.789489-07:00"
     },
     {
-        "Rank": 25,
+        "Rank": 26,
         "Ranking Info": {
             "Aesthetics": 88,
             "Audio": 91,
@@ -925,8 +939,9 @@
             "P. Gameplay": 75,
             "P. Visuals": 85,
             "Peter's Rating": 78.33333333333333,
-            "Platform": "GameCube",
-            "Visuals": 85
+            "Platform": "GC",
+            "Visuals": 85,
+            "Year": 2001
         },
         "analytics": null,
         "description": "Your scaredy-cat co-hosts bring you a special episode to give you that Halloween feel: a review of a truly frightening horror game, Luigi's Mansion.",
@@ -952,7 +967,7 @@
         "updated_at": "2019-05-12T21:30:20.283100-07:00"
     },
     {
-        "Rank": 18,
+        "Rank": 19,
         "Ranking Info": {
             "Aesthetics": 88.5,
             "Audio": 86.33333333333333,
@@ -983,8 +998,9 @@
             "P. Gameplay": 85,
             "P. Visuals": 95,
             "Peter's Rating": 85.83333333333333,
-            "Platform": "Super Nintendo",
-            "Visuals": 90.66666666666667
+            "Platform": "SNES",
+            "Visuals": 90.66666666666667,
+            "Year": 1993
         },
         "analytics": null,
         "description": "The boys take on the Mavericks with the help of Matt (a.k.a. Clubfrills), our first special guest of our second season.",
@@ -1034,7 +1050,7 @@
         "updated_at": "2019-05-12T21:30:33.566818-07:00"
     },
     {
-        "Rank": 24,
+        "Rank": 25,
         "Ranking Info": {
             "Aesthetics": 74.25,
             "Audio": 70,
@@ -1064,8 +1080,9 @@
             "P. Gameplay": 80,
             "P. Visuals": 80,
             "Peter's Rating": 83.33333333333333,
-            "Platform": "GameCube",
-            "Visuals": 78.5
+            "Platform": "GC",
+            "Visuals": 78.5,
+            "Year": 2002
         },
         "analytics": null,
         "description": "At first I typed an intro that packed in every monkey-related pun I could think of, but it was pretty obnoxious. Anyway, the boys play Super Monkey Ball 2 for the Nintendo GameCube.",
@@ -1121,8 +1138,9 @@
             "P. Gameplay": 95,
             "P. Visuals": 90,
             "Peter's Rating": 94.16666666666667,
-            "Platform": "Game Boy Advance",
-            "Visuals": 87.5
+            "Platform": "GBA",
+            "Visuals": 87.5,
+            "Year": 2004
         },
         "analytics": null,
         "description": "After teasing you back in Season 1 with a review of the Pok\u00e9mon Stadium spinoff game, the boys finally Tackle the mainline series with FireRed and LeafGreen.",
@@ -1180,7 +1198,8 @@
             "P. Visuals": 90,
             "Peter's Rating": 89.16666666666667,
             "Platform": "Switch, PC",
-            "Visuals": 85
+            "Visuals": 85,
+            "Year": 2004
         },
         "analytics": null,
         "description": "With the help of special guest and new IG family member (literally!) dave_s_k, the boys go spelunking in the wondrous world of Cave Story.",
@@ -1237,8 +1256,9 @@
             "P. Gameplay": 80,
             "P. Visuals": 90,
             "Peter's Rating": 89.16666666666667,
-            "Platform": "GameCube",
-            "Visuals": 92
+            "Platform": "GC",
+            "Visuals": 92,
+            "Year": 2002
         },
         "analytics": null,
         "description": "Joined again(!) by special guest Ryan \"Ryebread\" Everitt, the boys step onto the surface of Tallon IV to explore the depths of Metroid Prime. ",
@@ -1276,7 +1296,7 @@
             "G. Content": 100,
             "G. Gameplay": 92,
             "G. Visuals": 94,
-            "Game": "Legend of Zelda: Majora's Mask",
+            "Game": "Majora's Mask",
             "Gameplay": 92.33333333333333,
             "Guest": "Jason",
             "Guest Rating": 96,
@@ -1295,8 +1315,9 @@
             "P. Gameplay": 90,
             "P. Visuals": 90,
             "Peter's Rating": 91.66666666666667,
-            "Platform": "Nintendo 64",
-            "Visuals": 91.66666666666667
+            "Platform": "N64",
+            "Visuals": 91.66666666666667,
+            "Year": 2000
         },
         "analytics": null,
         "description": "The boys end Season 2 not with bang, but a tick-tock. Jason Tate of Yeasty Boys fame joins in for a review of the mysterious Majora's Mask chapter of the Legend of Zelda.",
@@ -1401,7 +1422,8 @@
             "P. Visuals": 90,
             "Peter's Rating": 89.16666666666667,
             "Platform": "Wii",
-            "Visuals": 92.5
+            "Visuals": 92.5,
+            "Year": 2010
         },
         "analytics": null,
         "description": "The boys return from their interstellar vacation to bring you a freshly-imported review of Super Mario Galaxy 2 for the Wii.",
@@ -1458,7 +1480,8 @@
             "P. Visuals": 95,
             "Peter's Rating": 97.5,
             "Platform": "Switch",
-            "Visuals": 92
+            "Visuals": 92,
+            "Year": 2018
         },
         "analytics": null,
         "description": "The boys reach new heights with Celeste, the darling indie platformer that's charmed audiences everywhere.",
@@ -1470,7 +1493,7 @@
         "image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/30bb4332-fe92-47e1-9ff3-a25ee098c47a/1557705732artwork.jpg",
         "is_hidden": false,
         "number": 2,
-        "published_at": "2019-05-13T05:00:04.166170-07:00",
+        "published_at": "2019-05-13T05:00:00.000000-07:00",
         "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
@@ -1484,7 +1507,7 @@
         "updated_at": "2019-05-13T05:00:04.166206-07:00"
     },
     {
-        "Rank": 19,
+        "Rank": 20,
         "Ranking Info": {
             "Aesthetics": 92.75,
             "Audio": 93,
@@ -1515,7 +1538,8 @@
             "P. Visuals": 95,
             "Peter's Rating": 90.83333333333333,
             "Platform": "NES",
-            "Visuals": 92.5
+            "Visuals": 92.5,
+            "Year": 1993
         },
         "analytics": null,
         "description": "Finally, an NES game! Join the boys as they take the highway to Dream Land and explore the Kirby game which set the stage for the series.",
@@ -1541,7 +1565,7 @@
         "updated_at": "2019-06-10T21:58:30.336266-07:00"
     },
     {
-        "Rank": 17,
+        "Rank": 18,
         "Ranking Info": {
             "Aesthetics": 82.83333333333333,
             "Audio": 79,
@@ -1573,7 +1597,8 @@
             "P. Visuals": 80,
             "Peter's Rating": 79.16666666666667,
             "Platform": "All",
-            "Visuals": 86.66666666666667
+            "Visuals": 86.66666666666667,
+            "Year": 2017
         },
         "analytics": null,
         "description": "Where we droppin', boys? In your ears, of course. Aaron Miller of Yeasty Boys fame joins Kevin and Peter to review a game so popular, even the dinosaurs know about it.",
@@ -1630,7 +1655,8 @@
             "P. Visuals": 85,
             "Peter's Rating": 90,
             "Platform": "PC",
-            "Visuals": 82.5
+            "Visuals": 82.5,
+            "Year": 1999
         },
         "analytics": null,
         "description": "The boys decide that it's time (really) for some real-time strategy via the classic PC title Age of Empires II.",
@@ -1656,7 +1682,7 @@
         "updated_at": "2019-06-24T04:00:06.216435-07:00"
     },
     {
-        "Rank": 26,
+        "Rank": 27,
         "Ranking Info": {
             "Aesthetics": 77.5,
             "Audio": 79.5,
@@ -1687,7 +1713,8 @@
             "P. Visuals": 70,
             "Peter's Rating": 69.16666666666667,
             "Platform": "All",
-            "Visuals": 75.5
+            "Visuals": 75.5,
+            "Year": 2017
         },
         "analytics": null,
         "description": "Did the team at Playtonic Games successfully revive the magic of Banjo-Kazooie with their 2017 game Yooka-Laylee? The boys find out in true buddy-duo fashion.",
@@ -1711,5 +1738,63 @@
         "token": "t1ITenxj",
         "type": "full",
         "updated_at": "2019-07-15T04:00:01.217405-07:00"
+    },
+    {
+        "Rank": 15,
+        "Ranking Info": {
+            "Aesthetics": 84.25,
+            "Audio": 89.5,
+            "Content": 94.5,
+            "Episode": "3-7",
+            "Episode Number": 35,
+            "G. Aesthetics": 0,
+            "G. Audio": 0,
+            "G. Content": 0,
+            "G. Gameplay": 0,
+            "G. Visuals": 0,
+            "Game": "Perfect Dark",
+            "Gameplay": 88,
+            "Guest Rating": 0,
+            "IG Score": 88.91666666666666,
+            "IGN": 0,
+            "K. Aesthetics": 78.5,
+            "K. Audio": 84,
+            "K. Content": 94,
+            "K. Gameplay": 91,
+            "K. Visuals": 73,
+            "Kevin's Rating": 87.83333333333333,
+            "Metacritic": 0,
+            "P. Aesthetics": 90,
+            "P. Audio": 95,
+            "P. Content": 95,
+            "P. Gameplay": 85,
+            "P. Visuals": 85,
+            "Peter's Rating": 90,
+            "Platform": "N64",
+            "Visuals": 79,
+            "Year": 2000
+        },
+        "analytics": null,
+        "description": "Step into the dark with the boys (ooo!) as they throw it back to Perfect Dark, the N64's spiritual successor to GoldenEye 007.",
+        "enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/be30d6fd-9d39-449c-ae6f-a689b73c9771/interstate_gamers_s03e07_perfect_dark_tc.mp3",
+        "guid": "b0afb38d-a56a-4f9a-b7d3-3e6a6a829d23",
+        "href": "https://api.simplecast.com/episodes/be30d6fd-9d39-449c-ae6f-a689b73c9771?preview=true",
+        "id": "be30d6fd-9d39-449c-ae6f-a689b73c9771",
+        "image_path": null,
+        "image_url": null,
+        "is_hidden": false,
+        "number": 7,
+        "published_at": "2019-07-29T05:00:04.135219-07:00",
+        "scheduled_for": null,
+        "season": {
+            "href": "https://api.simplecast.com/seasons/07bee8c2-869a-4f7a-8d30-2d730ab80f74",
+            "number": 3
+        },
+        "slug": "pd",
+        "status": "published",
+        "title": "3-7: Perfect Dark",
+        "token": "pCLI_Y55",
+        "type": "full",
+        "updated_at": "2019-07-29T05:00:04.135292-07:00"
     }
 ]

@@ -1,9 +1,102 @@
-function setPeteChart(gameplay,visuals,audio,content,overall){
-	
-}
+function createRankingsChart(title,gameplay,visuals,audio,content,overall){
 
-function setKevChart(gameplay,visuals,audio,content,overall){
+	let statClass = "stat-category";
+	let rankClass = "rank";
+	let progressClass = "progress";
+	let overallClass = "overall";
+	let overallProgressClass = "overall-progress";
+
+	//Create main elements
+	chartEle = document.createElement("div");
+	chartEle.className = "chart";
+  
+	let header = document.createElement("h3")
+	header.innerHTML = title;
+  
+	chartEle.appendChild(header);
+  
+	//Overall
+	statOverall = document.createElement("p");
+	statOverall.className = statClass;
+	statOverall.innerHTML = `Overall: ${overall}/100`; 
+  
+	rankOverall = document.createElement("div");
+	rankOverall.className = rankClass + ` ${overallClass}`;
 	
+	progressOverall = document.createElement("div");
+	progressOverall.className = progressClass + ` ${overallProgressClass}`;
+	progressOverall.style.width = overall + "%";
+  
+	rankOverall.appendChild(progressOverall);
+  
+	//Gameplay
+	statGameplay = document.createElement("p");
+	statGameplay.className = statClass;
+	statGameplay.innerHTML = `Gameplay: ${gameplay}/100`; 
+  
+	rankGameplay = document.createElement("div");
+	rankGameplay.className = rankClass;
+	
+	progressGameplay = document.createElement("div");
+	progressGameplay.className = progressClass;
+	progressGameplay.style.width = gameplay + "%";
+  
+	rankGameplay.appendChild(progressGameplay);
+  
+	//Visuals
+	statVisuals = document.createElement("p");
+	statVisuals.className = statClass;
+	statVisuals.innerHTML = `Visuals: ${visuals}/100`; 
+  
+	rankVisuals = document.createElement("div");
+	rankVisuals.className = rankClass;
+	
+	progressVisuals = document.createElement("div");
+	progressVisuals.className = progressClass;
+	progressVisuals.style.width = visuals + "%";
+  
+	rankVisuals.appendChild(progressVisuals);
+  
+	//Audio
+	statAudio = document.createElement("p");
+	statAudio.className = statClass;
+	statAudio.innerHTML = `Audio: ${audio}/100`; 
+  
+	rankAudio = document.createElement("div");
+	rankAudio.className = rankClass;
+	
+	progressAudio = document.createElement("div");
+	progressAudio.className = progressClass;
+	progressAudio.style.width = audio + "%";
+  
+	rankAudio.appendChild(progressAudio);
+  
+	//Content
+	statContent = document.createElement("p");
+	statContent.className = statClass;
+	statContent.innerHTML = `Content: ${content}/100`; 
+  
+	rankContent = document.createElement("div");
+	rankContent.className = rankClass;
+	
+	progressContent = document.createElement("div");
+	progressContent.className = progressClass;
+	progressContent.style.width = content + "%";
+  
+	rankContent.appendChild(progressContent);
+  
+	//Append elements
+	chartEle.appendChild(statOverall);
+	chartEle.appendChild(rankOverall);
+	chartEle.appendChild(statGameplay);
+	chartEle.appendChild(rankGameplay);
+	chartEle.appendChild(statVisuals);
+	chartEle.appendChild(rankVisuals);
+	chartEle.appendChild(statAudio);
+	chartEle.appendChild(rankAudio);
+	chartEle.appendChild(statContent);
+	chartEle.appendChild(rankContent);
+	return chartEle;
 }
 
 function expand(ele){
@@ -11,36 +104,15 @@ function expand(ele){
 	let nodes = table.getElementsByClassName("rankings-table-row");
 
 	for(let i = 0; i < nodes.length; i++){
-		let pBreakdown = nodes[i].nextSibling.getElementsByClassName("peteChart")[0];
-		let pRanks = nodes[i].nextSibling.getElementsByClassName("p-rank");
-		let kBreakdown = nodes[i].nextSibling.getElementsByClassName("kevChart")[0];
-		let kRanks = nodes[i].nextSibling.getElementsByClassName("k-rank");
+		let charts = nodes[i].nextSibling.getElementsByClassName("charts")[0];
 
 		if (nodes[i] === ele && nodes[i].className != "rankings-table-row selected"){
 			//Mark the two rows as selected
-			nodes[i].className = "rankings-table-row selected";
-			nodes[i].nextSibling.className = "rankings-table-row-info expanded"
+			nodes[i].classList.add("selected");
+			nodes[i].nextSibling.classList.add("expanded");
 
 			//Set individual charts to expand
-			pBreakdown.className = "peteChart expanded-breakdown";
-			kBreakdown.className = "kevChart expanded-breakdown";
-
-			//Set ranking categories to expand
-			for(let j = 0; j < pRanks.length; j++){
-				if (pRanks[j].className.includes("overall")){
-					pRanks[j].className = "p-rank expanded-rank overall";
-					continue;
-				}
-				pRanks[j].className = "p-rank expanded-rank";
-			}
-			
-			for(let j = 0; j < kRanks.length; j++){
-				if (kRanks[j].className.includes("overall")){
-					kRanks[j].className = "k-rank expanded-rank overall";
-					continue;
-				}
-				kRanks[j].className = "k-rank expanded-rank";
-			}
+			charts.classList.add("expanded-breakdown");
 			continue;
 		}
 		
@@ -49,24 +121,6 @@ function expand(ele){
 		nodes[i].nextSibling.className = "rankings-table-row-info"
 
 		//Minimize individual charts
-		pBreakdown.className = "peteChart";
-		kBreakdown.className = "kevChart";
-
-		//Minimize ranking categories
-		for(let j = 0; j < pRanks.length; j++){
-			if (pRanks[j].className.includes("overall")){
-				pRanks[j].className = "p-rank overall";
-				continue;
-			}
-			pRanks[j].className = "p-rank";
-		}
-
-		for(let j = 0; j < kRanks.length; j++){
-			if (kRanks[j].className.includes("overall")){
-				kRanks[j].className = "k-rank overall";
-				continue;
-			}
-			kRanks[j].className = "k-rank";
-		}
+		charts.classList.remove("expanded-breakdown");
 	}
 }
