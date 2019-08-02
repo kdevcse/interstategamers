@@ -166,8 +166,8 @@ main {
         justify-self: center;
     }
     #ig-main-left-trailer > svg{
-        margin-right: 5px;
-        font-size: 14px;
+        margin-right: 7px;
+        font-size: 25px;
         color: red;
     }
 }
