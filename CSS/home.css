@@ -140,14 +140,14 @@ main {
     }
     #ig-main-left{
         width: 100%;
-        grid-gap: 15px;
+        grid-gap: 25px;
         grid-template-columns: 100%;
         justify-content: center;
     }
     .ig-main-right-logo{
         height: auto;
         width: 65%;
-        border-radius: 1vw;
+        border-radius: 4px;
     }
     #ig-icons{
         display: none;
@@ -157,12 +157,11 @@ main {
     }
     .ig-main-left-text-container > p{
         margin-bottom: 0;
-        margin-top: 15px;
+        margin-top: 25px;
         padding-left: 3%;
         padding-right: 3%;
     }
     #ig-main-left-trailer{
-        width: 60%;
         color: #2d32af;
         padding: 10px;
         border-radius: 6px;
