@@ -110,7 +110,7 @@ main {
     main{
         display: block;
         text-align: center;
-        padding: 30px 5%;
+        padding: 20px 5% 30px 5%;
     }
 	#episodes {
         width: 100%;
