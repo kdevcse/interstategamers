@@ -135,6 +135,9 @@ main {
         padding-right: 5%;
         grid-template-columns: 100%;
     }
+    #ig-main-right{
+        display: block;
+    }
     #ig-main-left{
         width: 100%;
         grid-template-columns: 100%;
