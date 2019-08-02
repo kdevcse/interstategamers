@@ -152,7 +152,7 @@ main {
     #ig-main-left-trailer{
         color: #2d32af;
         padding: 8px;
-        border-radius: 6px;
+        border-radius: 4px;
         background-color: white;
         justify-self: center;
     }
@@ -210,7 +210,7 @@ main {
         color: #2d32af;
         font-size: 15px;
         padding: 7px;
-        border-radius: 6px;
+        border-radius: 4px;
         background-color: white;
     }
     #ig-main-left-trailer > svg{
@@ -236,7 +236,6 @@ main {
         color: #2d32af;
         font-size: 20px;
         padding: 15px;
-        border-radius: 6px;
         background-color: white;
     }
     #ig-main-left-trailer > svg{
