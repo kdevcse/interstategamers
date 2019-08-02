@@ -10,11 +10,11 @@ main {
 #ig-main-left{
     display: grid;
     grid-area: left;
-    grid-gap: 30px;
+    grid-gap: 20px;
     align-items: center;
 }
 .ig-main-right-logo{
-    height: 350px;
+    height: 375px;
 }
 .ig-main-left-text-container{
     align-items: center;
@@ -106,16 +106,15 @@ main {
     background-color: red;
 }
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     main{
         display: block;
         text-align: center;
-        padding-bottom: 7%;
-        padding-top: 2%;
+        padding: 30px 5%;
     }
 	#episodes {
         width: 100%;
-        margin-top: 5%;
+        margin-top: 20px;
 	}
 	#ig-content-rank {
 		display: none;
@@ -135,8 +134,7 @@ main {
         justify-content: center;
     }
     .ig-main-right-logo{
-        height: auto;
-        width: 65%;
+        height: 225px;
         border-radius: 4px;
     }
     #ig-icons{
@@ -153,29 +151,30 @@ main {
     }
     #ig-main-left-trailer{
         color: #2d32af;
-        padding: 10px;
+        padding: 8px;
         border-radius: 6px;
         background-color: white;
         justify-self: center;
     }
     #ig-main-left-trailer > svg{
-        margin-right: 7px;
+        margin-right: 11px;
         font-size: 25px;
         color: red;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
     main{
-        grid-template-columns: 50% 50%;
+        grid-template-columns: minmax(min-content,45%) 55%;
         height: 500px;
     }
     #ig-main-right{
         text-align: center;
+        justify-self: end;
     }
     .ig-main-right-logo{
-        height: 300px;
+        height: 340px;
         border-radius: 6px;
     }
 	#episodes {
@@ -191,53 +190,65 @@ main {
         padding: 50px 5%;
     }
     #ig-icons > a > svg{
-        font-size: 23px;
+        font-size: 27px;
     }
     #ig-main-left{
         align-self: center;
     }
     .ig-main-left-text-container > h1{
-        font-size: 30px;
-        /* transition: 0.1s font-size linear; */
+        font-size: 34px;
         margin-bottom: 5px;
         margin-top: 0;
     }
     .ig-main-left-text-container > p{
         margin: 0;
 	    margin-top: 10px;
-        font-size: 16px;
-        /* transition: 0.1s font-size linear; */
+        font-size: 17px;
     }
     #ig-main-left-trailer{
         width: 225px;
         color: #2d32af;
-        font-size: 16px;
-        padding: 10px;
+        font-size: 15px;
+        padding: 7px;
         border-radius: 6px;
         background-color: white;
-        /* transition: width 0.1s linear; */
+    }
+    #ig-main-left-trailer > svg{
+        margin-right: 10px;
+        font-size: 23px;
+        color: red;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main{
+        grid-template-columns: minmax(min-content,50%) 50%;
+    }
+    .ig-main-left-text-container > h1{
+        font-size: 45px;
+    }
+    .ig-main-left-text-container > p{
+        font-size: 21px;
+    }
+    #ig-main-left-trailer{
+        width: 275px;
+        color: #2d32af;
+        font-size: 20px;
+        padding: 15px;
+        border-radius: 6px;
+        background-color: white;
     }
     #ig-main-left-trailer > svg{
         margin-right: 11px;
         font-size: 27px;
         color: red;
     }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .ig-main-left-text-container > h1{
-        font-size: 35px;
+    .ig-main-right-logo{
+        height: 375px;
     }
-    .ig-main-left-text-container > p{
-        font-size: 16px;
-    }
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    main{
-        grid-template-columns: minmax(min-content,50%) 50%;
+    #ig-icons > a > svg{
+        font-size: 30px;
     }
     .ig-content{
         grid-template-columns: 50% 50%;
@@ -271,23 +282,13 @@ main {
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .ig-main-right-logo{
-        height: 375px;
+    main{
+        grid-template-columns: minmax(min-content,50%) 50%;
     }
-    #ig-icons > a > svg{
-        font-size: 27px;
-    }
-    .ig-main-left-text-container > h1{
-        font-size: 50px;
+    #ig-main-right{
+        justify-self: normal;
     }
     .ig-main-left-text-container > p{
-        font-size: 23px;
-    }
-    #ig-main-left-trailer{
-        width: 276px;
-        font-size: 23px;
-    }
-    #ig-main-left-trailer > svg{
-        font-size: 30px;
+        font-size: 25px;
     }
 }
