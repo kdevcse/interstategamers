@@ -134,8 +134,8 @@ main {
         justify-content: center;
     }
     .ig-main-right-logo{
-        height: 225px;
-        border-radius: 4px;
+        height: 250px;
+        border-radius: 6px;
     }
     #ig-icons{
         display: none;
@@ -151,8 +151,8 @@ main {
     }
     #ig-main-left-trailer{
         color: #2d32af;
-        padding: 8px;
-        border-radius: 4px;
+        padding: 12px;
+        border-radius: 6px;
         background-color: white;
         justify-self: center;
     }
