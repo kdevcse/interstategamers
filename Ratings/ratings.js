@@ -184,6 +184,13 @@ function tableInsert(game){
   titleE.setAttribute("class","rankings-table-title");
   titleE.innerHTML = title;
   titleE.title = title;
+  if(game["Ranking Info"]["Guest"]){
+    let icon = document.createElement("i");
+    icon.className = "fas fa-user-plus";
+    icon.title = "Guest Appearance";
+    titleE.innerHTML = title + " &nbsp; ";
+    titleE.appendChild(icon);
+  }
   let yearE = document.createElement("td");
   yearE.setAttribute("class","rankings-table-year");
   yearE.innerHTML = year;
