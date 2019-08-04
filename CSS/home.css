@@ -1,44 +1,70 @@
 main {
+    display: grid;
+    grid-template-columns: 0.5fr 50%;
+    grid-template-areas: "left right";
+    align-items: center;
+    width: 100%;
+    padding: 20px 5%;
     background-color: #2d32af;
-    clear: both;
-    overflow: auto;
-    padding-left: 5%;
-    padding-right: 5%;
+}
+#ig-main-left{
+    display: grid;
+    grid-area: left;
+    grid-gap: 20px;
+    align-items: center;
+}
+.ig-main-right-logo{
+    height: 375px;
 }
 .ig-main-left-text-container{
+    align-items: center;
     color: white;
 }
-.ig-content{
-    clear: both;
-    height: 100vh;
+#ig-main-left-trailer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#episodes{
-    float: left;
-    clear: left;
-    padding-right: 2%;
-    height: 100%;
+#ig-main-left-trailer:hover{
+    cursor: pointer;
+    text-decoration: underline;
+} 
+#ig-icons > a > svg:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+#ig-icons {
+    margin-top: 10px;
+}
+#ig-icons > a{
+    text-decoration: none;
+}
+#ig-icons > a > svg{
+	color: white;
+	margin-right: 1.1875%;
+	margin-left: 1.1875%;
+    transition: opacity .2s ease-in;
+}
+.ig-content{
+    display: grid;
 }
 .episode, .episode-first {
-    display: inline-block;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50px auto;
     width: 100%;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-	margin-bottom: -1%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 	overflow: hidden;
 }
 .episode {
     border-top: blue solid 1px;
 }
-.player {
-    float: left;
-	width: 12.5%;
+.player > svg {
+    font-size: 32px;
 }
 .player > svg:hover{
     cursor: pointer;
-}
-.ep-info{
-	float: right;
-	width: 85%;
 }
 .season-title{
     color: red;
@@ -50,57 +76,18 @@ main {
     color: #2d32af;
     font-size: 1.3rem;
     margin-bottom: 0;
+    margin-top: 0;
 }
 .ep-description {
     color: #2d32af;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-/* width */
-#episodes::-webkit-scrollbar {
-    width: 10px;
-}
-/* Track */
-#episodes::-webkit-scrollbar-track {
-	background: #f1f1f1;
-	border-radius: 30px;
-}
-/* Handle */
-#episodes::-webkit-scrollbar-thumb {
-	background: red;
-	border-radius: 30px;
-}
-#ig-main-left-trailer:hover{
-    cursor: pointer;
-    text-decoration: underline;
-} 
-#ig-icons > a > svg:hover{
-    cursor: pointer;
-    opacity: 0.8;
-}
-#ig-icons {
-	margin-top: 2vh;
-	text-align: center;
-}
-#ig-icons > a{
-    text-decoration: none;
-}
-#ig-icons > a > svg{
-	color: white;
-	font-size: 2.5vw;
-	margin-right: 2.375%;
-	margin-left: 2.375%;
-	overflow: auto;
-    transition: opacity .2s ease-in;
-}
 #ig-content-rank{
-    margin-left: 55%;
+    margin-left: 5%;
     height: 100%;
     color: #2d32af;
     display: none;
-}
-#ig-content-rank > h1{
-    margin-bottom: 3px;
 }
 #ig-content-rank-game-overall{
     color: red;
@@ -111,7 +98,7 @@ main {
     border-radius: 4px;
 }
 .progress-foreground{
-    height: 3.5vh;
+    height: 33px;
     background-color: #2d32af;
     border-radius: 4px;
 }
@@ -119,40 +106,36 @@ main {
     background-color: red;
 }
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     main{
-        padding-bottom: 7%;
-        padding-top: 2%;
+        display: block;
+        text-align: center;
+        padding: 20px 5% 30px 5%;
     }
 	#episodes {
         width: 100%;
-        margin-top: 5%;
+        margin-top: 20px;
 	}
 	#ig-content-rank {
 		display: none;
 	}
-    main {
-        text-align: center;
-    }
-	.player {
-    	margin-top: 6.5%;
-    	margin-left: 1%;
-    }
-    .player > svg {
-		font-size: 8vw;
-    }
     .ig-content{
         padding-left: 5%;
         padding-right: 5%;
+        grid-template-columns: 100%;
     }
-    .ig-main-left{
-        margin-top: 1.5%;
+    #ig-main-right{
+        display: block;
+    }
+    #ig-main-left{
         width: 100%;
+        grid-gap: 25px;
+        grid-template-columns: 100%;
+        justify-content: center;
     }
     .ig-main-right-logo{
-        height: auto;
-        width: 65%;
-        border-radius: 1vw;
+        height: 250px;
+        border-radius: 6px;
     }
     #ig-icons{
         display: none;
@@ -161,36 +144,38 @@ main {
         display: none;
     }
     .ig-main-left-text-container > p{
-        margin: 0;
-        margin-top: 7%;
+        margin-bottom: 0;
+        margin-top: 25px;
         padding-left: 3%;
         padding-right: 3%;
     }
     #ig-main-left-trailer{
-        width: 45%;
-        margin-top: 4vh;
         color: #2d32af;
-        font-size: 3.25vw;
-        padding: 2vw;
-        border-radius: 1vw;
-        display: inline-flex;
+        padding: 12px;
+        border-radius: 6px;
         background-color: white;
-    }
-    #ig-main-left-trailer > span {
-        margin-top: 2%;
+        justify-self: center;
     }
     #ig-main-left-trailer > svg{
-        margin-right: 4%;
-        font-size: 5vw;
+        margin-right: 8px;
+        font-size: 25px;
         color: red;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
     main{
-        padding-bottom: 20px;
-        padding-top: 20px;
+        grid-template-columns: minmax(min-content,45%) 55%;
+        height: 500px;
+    }
+    #ig-main-right{
+        text-align: center;
+        justify-self: end;
+    }
+    .ig-main-right-logo{
+        height: 340px;
+        border-radius: 6px;
     }
 	#episodes {
         width: 100%;
@@ -198,118 +183,111 @@ main {
 	#ig-content-rank {
 		display: none;
 	}
-	.player {
-    	margin-top: 2.5%;
-    	margin-left: 2.5%;
-    }
     .player > svg {
-		font-size: 5vw;
+		font-size: 32px;
     }
     .ig-content{
-        padding: 25px 5%;
-    }
-    .ig-main-right{
-        float: right;
-        clear: right;
-    }
-    .ig-main-left{
-        margin-top: 6%;
-        float: left;
-        clear: left;
-        width: 50%;
-    }
-    .ig-main-right-logo{
-        height: auto;
-        width: 26.5vw;
+        padding: 50px 5%;
     }
     #ig-icons > a > svg{
-        font-size: 3vw;
+        font-size: 27px;
+    }
+    #ig-main-left{
+        align-self: center;
     }
     .ig-main-left-text-container > h1{
-        font-size: 3.5vw;
+        font-size: 34px;
         margin-bottom: 5px;
         margin-top: 0;
     }
     .ig-main-left-text-container > p{
         margin: 0;
-	    margin-top: 1.5vh;
-        font-size: 2vw;
+	    margin-top: 10px;
+        font-size: 17px;
     }
     #ig-main-left-trailer{
-        width: 100%;
-        margin-top: 2vw;
+        width: 225px;
         color: #2d32af;
-        font-size: 3vw;
-        padding: .75vw .75vw .75vw 2.75vw;
-        border-radius: 6px;
-        display: inline-flex;
+        font-size: 15px;
+        padding: 7px;
+        border-radius: 4px;
         background-color: white;
-        transition: opacity .2s ease-in;
     }
     #ig-main-left-trailer > svg{
-        margin-right: 1vw;
-        font-size: 3.75vw;
+        margin-right: 10px;
+        font-size: 23px;
         color: red;
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .player > svg {
-		font-size: 5vw;
-    }
-    #ig-icons > a > svg{
-        font-size: 2.5vw;
-    }
-} 
-
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-	.player {
-    	margin-top: 3%;
-    	margin-left: 2.5%;
+    main{
+        grid-template-columns: minmax(min-content,50%) 50%;
     }
-    .player > svg {
-		font-size: 2.5vw;
+    .ig-main-left-text-container > h1{
+        font-size: 45px;
     }
-	#episodes {
-    	width: 50%;
-    	overflow-y: scroll;
+    .ig-main-left-text-container > p{
+        font-size: 21px;
+    }
+    #ig-main-left-trailer{
+        width: 275px;
+        color: #2d32af;
+        font-size: 20px;
+        padding: 15px;
+        background-color: white;
+    }
+    #ig-main-left-trailer > svg{
+        margin-right: 11px;
+        font-size: 27px;
+        color: red;
+    }
+    .ig-main-right-logo{
+        height: 375px;
+    }
+    #ig-icons > a > svg{
+        font-size: 30px;
+    }
+    .ig-content{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 90vh;
+    }
+    #episodes {
+        overflow-y: scroll;
         overflow-x: hidden;
-	}
+        padding-right: 2%;
+    }
+    /* width */
+    #episodes::-webkit-scrollbar {
+        width: 10px;
+    }
+    /* Track */
+    #episodes::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 30px;
+    }
+    /* Handle */
+    #episodes::-webkit-scrollbar-thumb {
+        background: red;
+        border-radius: 30px;
+    }
     .episode:hover,.episode-first:hover{
         background: #f1f1f1;
     }
 	#ig-content-rank {
 		display: none;
 	}
-    .ig-main-left-text-container > h1{
-        font-size: 2.9vw;
-        margin-bottom: 5px;
-        margin-top: 0;
-    }
-    .ig-main-left-text-container > p{
-        margin: 0;
-	    margin-top: 1.5vh;
-        font-size: 1.4vw;
-    }
-    #ig-main-left-trailer{
-        width: 25vw;
-        margin-top: 2vw;
-        color: #2d32af;
-        font-size: 1.7vw;
-        padding: .75vw .75vw .75vw 2.75vw;
-        border-radius: 6px;
-        display: inline-flex;
-        background-color: white;
-        transition: opacity .2s ease-in;
-    }
-    #ig-main-left-trailer > svg{
-        margin-right: 1vw;
-        font-size: 2.2vw;
-        color: red;
-    }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+    main{
+        grid-template-columns: minmax(min-content,50%) 50%;
+    }
+    #ig-main-right{
+        justify-self: normal;
+    }
+    .ig-main-left-text-container > p{
+        font-size: 25px;
+    }
 }

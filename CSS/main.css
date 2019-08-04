@@ -49,6 +49,8 @@ nav {
 	}
 	#mobile-nav-main-container{
 		display: flex;
+		height: 100%;
+		margin-bottom: -2px;
 	}
 	#mobile-nav-logo-container{
 		float: left;
