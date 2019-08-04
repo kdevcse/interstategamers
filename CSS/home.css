@@ -58,7 +58,7 @@ main {
 	overflow: hidden;
 }
 .episode {
-    border-top: blue solid 1px;
+    border-top: #2d32af solid 1px;
 }
 .player > svg {
     font-size: 32px;
@@ -77,6 +77,9 @@ main {
     font-size: 1.3rem;
     margin-bottom: 0;
     margin-top: 0;
+}
+.episode-title > svg {
+    color: red;
 }
 .ep-description {
     color: #2d32af;
