@@ -51,6 +51,7 @@ article{
     text-decoration: underline;
 }
 .live-text{
+    visibility: hidden;
     color: red;
     margin-top: 3px;
     margin-bottom: 3px;

@@ -81,6 +81,9 @@ th.sorted {
 	overflow: hidden;
 	white-space: nowrap;
 }
+.rankings-table-row > td > svg {
+	color: red;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
 	body{

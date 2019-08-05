@@ -58,7 +58,7 @@ main {
 	overflow: hidden;
 }
 .episode {
-    border-top: blue solid 1px;
+    border-top: #2d32af solid 1px;
 }
 .player > svg {
     font-size: 32px;
@@ -78,6 +78,9 @@ main {
     margin-bottom: 0;
     margin-top: 0;
 }
+.episode-title > svg {
+    color: red;
+}
 .ep-description {
     color: #2d32af;
     margin-top: 5px;
@@ -88,6 +91,17 @@ main {
     height: 100%;
     color: #2d32af;
     display: none;
+}
+#ig-content-rank-game-title{
+    margin-bottom: 0;
+}
+#ig-content-rank-game-rank{
+    font-size: 17px;
+    margin-top: 5px;
+}
+.rank-header{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #ig-content-rank-game-overall{
     color: red;

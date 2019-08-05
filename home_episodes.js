@@ -15,6 +15,7 @@ function resize(){
 /* exported fetchData */
 function fetchData(){
 	var xmlhttp = new XMLHttpRequest();
+	let latestRank = 0;
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 		var data = JSON.parse(this.responseText);
@@ -23,6 +24,7 @@ function fetchData(){
 		for(var i = 0; i < data.length; i++){
 			if(data[i]["Rank"]){
 				rankCount++;
+				latestRank = i;
 			}
 			if (data[i]["season"]["number"] < seasonNum){
 				seasonNum = data[i]["season"]["number"];
@@ -32,6 +34,8 @@ function fetchData(){
 				createEpisode(data[i],i,false);
 			}
 		}
+
+		setRatingValues(0);
 	  }
 	};
 	xmlhttp.open("GET", "Database/data.json", true);
@@ -62,9 +66,10 @@ function createEpisode(data,id,newSeason){
 		ep.setAttribute("class", "episode");
 	
 	ep.setAttribute("id", `ep${id}`);
-	ep.setAttribute("onmouseover",`setRatingValues(${id})`);
+	let title = data["title"] + " ";
 
 	if (data["Ranking Info"]){
+		ep.setAttribute("onmouseover",`setRatingValues(${id})`);
 		ep.setAttribute("data-rank",data["Rank"]);
 		ep.setAttribute("data-overall",data["Ranking Info"]["IG Score"]);
 		ep.setAttribute("data-gameplay",data["Ranking Info"]["Gameplay"]);
@@ -92,7 +97,13 @@ function createEpisode(data,id,newSeason){
 	var epTitle = document.createElement("h2");
 	epTitle.setAttribute("class", "episode-title");
 	epTitle.setAttribute("id",`ep${id}-title`);
-	epTitle.textContent = data["title"];
+	epTitle.textContent = title;
+	if(data["Ranking Info"]){
+		let icon = document.createElement("i");
+		icon.className = "fas fa-gamepad";
+		icon.title = "Game Review";
+		epTitle.appendChild(icon);
+	}
 	epInfo.appendChild(epTitle);
 		
 	var epDes = document.createElement("p");
@@ -123,7 +134,7 @@ function setRatingValues(id) {
 	clearInterval(contentInt);
 
 	var title = document.getElementById("ig-content-rank-game-title");
-	title.innerHTML = document.getElementById(`ep${id}-title`).textContent;
+	title.innerHTML = document.getElementById(`ep${id}-title`).innerText;
 
 	var rank = document.getElementById("ig-content-rank-game-rank");
 	rank.innerHTML = `Rank ${ep.getAttribute("data-rank")}/${rankCount}`;
