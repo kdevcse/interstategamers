@@ -38,6 +38,7 @@ h1 {
     }
     #boyz-description > p{
         margin-top: 0;
+        font-size: 1.2rem;
     }
     .contact-list-item, .contact-list-no-link {
         font-size: 125%;
