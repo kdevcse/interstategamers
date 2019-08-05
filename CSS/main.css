@@ -9,6 +9,7 @@ body {
 	margin-top: 70px;
 	scroll-behavior: smooth;
 	font-size: 1.20rem;
+	line-height: 1.25;
 }
 nav {
 	position: fixed;
