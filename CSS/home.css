@@ -92,6 +92,17 @@ main {
     color: #2d32af;
     display: none;
 }
+#ig-content-rank-game-title{
+    margin-bottom: 0;
+}
+#ig-content-rank-game-rank{
+    font-size: 17px;
+    margin-top: 5px;
+}
+.rank-header{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 #ig-content-rank-game-overall{
     color: red;
 }
