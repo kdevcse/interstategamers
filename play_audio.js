@@ -5,43 +5,56 @@ function playTrailer(){
 
     if(audio.paused){
         audio.play();
-        button.setAttribute("class","fas fa-pause-circle");
+        button.classList.remove("fa-play-circle");
+        button.classList.add("fa-pause-circle");
     }
     else{
         audio.pause();
-        button.setAttribute("class","fas fa-play-circle");
+        button.classList.remove("fa-pause-circle");
+        button.classList.add("fa-play-circle");
     }
 }
 
 /* exported stopTrailer */
 function stopTrailer(){
     const button = document.getElementById("ig-trailer-playButton");
-    button.setAttribute("class","fas fa-play-circle");
+    button.classList.remove("fa-pause-circle");
+    button.classList.add("fa-play-circle");
 }
 
 /* exported playEpisode */
 function playEpisode(episode,id){
     const audio = document.getElementById(`ep${id}-audio`);
+    episode.style.cursor = "pointer";
 
     if(audio.paused){
         audio.play();
-        episode.setAttribute("class","fas fa-pause-circle");
+        episode.classList.remove("fa-play-circle");
+        episode.classList.add("fa-pause-circle");
     }
     else{
         audio.pause();
-        episode.setAttribute("class","fas fa-play-circle");
+        episode.classList.remove("fa-pause-circle");
+        episode.classList.add("fa-play-circle");
     }
+}
+
+function loadEpisode(episode){
+    episode.style.cursor = "progress";
 }
 
 /* exported stopEpisode */
 function stopEpisode(episode){
-    episode.setAttribute("class","fas fa-play-circle");
+    episode.style.cursor = "pointer";
+    episode.classList.remove("fa-pause-circle");
+    episode.classList.add("fa-play-circle");
 }
 
 /* exported stopAudio */
 function stopAudio(){
-    var buttons = document.getElementsByClassName("fas fa-pause-circle");
+    var buttons = document.getElementsByClassName("fa-pause-circle");
     for(let i = 0; i < buttons.length; i++){
-        buttons[i].setAttribute("class","fas fa-play-circle");
+        buttons[i].classList.remove("fa-pause-circle");
+        buttons[i].classList.add("fa-play-circle");
     }
 }
