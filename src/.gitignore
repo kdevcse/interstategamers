@@ -1,0 +1,5 @@
+*.py
+*.[oa]
+*~
+Scripts/
+.netlify
