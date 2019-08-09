@@ -1,3 +1,3 @@
 [build]
 
-command = "pip3 install requests && python3 UpdateData.py ${PodId} ${PodKey} ${AirtableKey}"
+command = "python3 UpdateData.py ${PodId} ${PodKey} ${AirtableKey}"
