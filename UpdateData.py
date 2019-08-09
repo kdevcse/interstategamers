@@ -4,16 +4,6 @@ from pathlib import Path
 import json
 import datetime
 import sys
-import os
-
-def list_files(startpath):
-        for root, dirs, files in os.walk(startpath):
-            level = root.replace(startpath, '').count(os.sep)
-            indent = ' ' * 4 * (level)
-            print('{}{}/'.format(indent, os.path.basename(root)))
-            subindent = ' ' * 4 * (level + 1)
-            for f in files:
-                print('{}{}'.format(subindent, f))
 
 #Return the rankings information for a specific game
 def getRankInfo(rankings, epNum):
@@ -38,7 +28,7 @@ def ordered(obj):
         return obj
 
 #Program Start
-dataPath = "/src/Database/data.json"
+dataPath = "src/Database/data.json"
 
 #Gather Simplecast Data
 podID = sys.argv[1]
@@ -59,6 +49,5 @@ for episode in episodes.data:
                 episode["Rank"] = rankInfo[1]
 
 #Write data to file
-list_files('src')
-file = open("data.json","w+")
+file = Path(dataPath)
 file.write_text(json.dumps(episodes.data, indent=4, sort_keys=True))
