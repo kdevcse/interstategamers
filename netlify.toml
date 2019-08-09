@@ -1,3 +1,6 @@
 [build]
+    base = "/build"
+    
+    publish = "/build/../src"
 
-command = "ls; python3 UpdateData.py ${PodId} ${PodKey} ${AirtableKey}; ls;"
+    command = "python3 UpdateData.py ${PodId} ${PodKey} ${AirtableKey};"
