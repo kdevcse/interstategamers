@@ -28,7 +28,7 @@ def ordered(obj):
         return obj
 
 #Program Start
-dataPath = "/src/Database/data.json"
+dataPath = "src/Database/data.json"
 
 #Gather Simplecast Data
 podID = sys.argv[1]
@@ -49,5 +49,5 @@ for episode in episodes.data:
                 episode["Rank"] = rankInfo[1]
 
 #Write data to file
-file = Path(dataPath)
+file = open(dataPath,"w+")
 file.write_text(json.dumps(episodes.data, indent=4, sort_keys=True))
