@@ -11,7 +11,7 @@ function loadData(){
       }
 	  }
 	};
-	xmlhttp.open("GET", "../Database/data.json", true);
+	xmlhttp.open("GET", "../database/data.json", true);
 	xmlhttp.send();
 }
 

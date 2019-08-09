@@ -15,7 +15,7 @@ collections:
     files:
       - label: "Episode Data"
         name: "title"
-        file: "Database/data.json"
+        file: "database/data.json"
         fields:
           - {label: Title, name: title, widget: string}
 
