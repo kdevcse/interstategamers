@@ -31,12 +31,12 @@ def ordered(obj):
 dataPath = "src/Database/data.json"
 
 #Gather Simplecast Data
-podID = sys.argv[0]
-podKey = sys.argv[1]
+podID = sys.argv[1]
+podKey = sys.argv[2]
 episodes = Simplecast(podID,podKey)
 
 #Gather AirTable Data
-airTableKey = sys.argv[2]
+airTableKey = sys.argv[3]
 rankings = AirTable(airTableKey,"Ratings","IG Score")
 
 #Tether Information together
