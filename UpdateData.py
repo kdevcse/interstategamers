@@ -28,7 +28,7 @@ def ordered(obj):
         return obj
 
 #Program Start
-dataPath = "src/Database/data.json"
+dataPath = "/src/Database/data.json"
 
 #Gather Simplecast Data
 podID = sys.argv[1]
