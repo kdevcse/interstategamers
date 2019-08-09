@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import datetime
 import sys
+import os
 
 #Return the rankings information for a specific game
 def getRankInfo(rankings, epNum):
@@ -49,5 +50,6 @@ for episode in episodes.data:
                 episode["Rank"] = rankInfo[1]
 
 #Write data to file
+print(os.path.isdir("/src/Database"))
 file = open(dataPath,"w+")
 file.write_text(json.dumps(episodes.data, indent=4, sort_keys=True))
