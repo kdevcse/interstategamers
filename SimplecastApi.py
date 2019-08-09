@@ -10,6 +10,7 @@ class Simplecast:
         #Sending API request
         requests.auth = header
         response = requests.get(episodeGetUrl).json()
+        print(podId)
         print(response)
         episodes = self.gatherData(response,header)
         self.data = sorted(episodes,key=lambda k: k['published_at'])
