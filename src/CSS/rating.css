@@ -1,5 +1,6 @@
 #rankings-table{
 	position: relative;
+	top: 45px;
 	text-align: center;
 	border-collapse: collapse;
 	table-layout: fixed;
@@ -130,11 +131,17 @@ th.sorted {
 	#rankings-table-options .options-header{
 		padding: 10px 20px 0px 20px;
 	}
+	.options-header input {
+		margin-right: 15px;
+	}
 }
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
 	#rankings-table-options .options-header{
 		padding: 20px 65px 0px 65px;
+	}
+	.options-header input {
+		margin-right: 30px;
 	}
 	.rankings-table-row.selected{
 		background-color: #f0f0f5;

@@ -320,6 +320,7 @@ function search(searchbox){
       let data = row.getElementsByTagName("td");
       let save = false;
       for(let j = 0; j < data.length; j++){
+        console.log(data[j].innerText);
         if(data[j].innerText.toLowerCase().startsWith(txt))
           save = true;
       }
