@@ -4,7 +4,9 @@ var gameplayInt;
 var aestheticsInt;
 var contentInt;
 
-/* exported resize*/
+window.onload = fetchData();
+window.onresize = resize();
+
 function resize(){
 	if(window.innerWidth <= 600){
 		document.getElementById("ig-content-rank").style.display = "none";
@@ -12,7 +14,6 @@ function resize(){
 	}
 }
 
-/* exported fetchData */
 function fetchData(){
 	var xmlhttp = new XMLHttpRequest();
 	let latestRank = 0;

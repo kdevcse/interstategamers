@@ -1,6 +1,7 @@
 //Handle scroll icons
 window.addEventListener('scroll',function(){checkScrollIndicators()});
 window.addEventListener('resize',function(){checkScrollIndicators()});
+window.onload = loadData();
 
 function checkScrollIndicators(){
   let pos = window.scrollX;
@@ -21,7 +22,6 @@ function checkScrollIndicators(){
     right.style.visibility = "visible";
   }
 }
-window.onload = loadData();
 
 function loadData(){
   //Get data from server json file
