@@ -32,13 +32,10 @@
 	display: none;
 }
 #scroll-indicators{
-	display: inline;
+	float: right;
 }
 #scroll-indicator-left, #scroll-indicator-right{
 	visibility: hidden;
-}
-#scroll-indicator-right{
-	float: right;
 }
 .rankings-table-header{
 	background-color: #2d32af;
