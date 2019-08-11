@@ -21,6 +21,7 @@ function checkScrollIndicators(){
     right.style.visibility = "visible";
   }
 }
+window.onload = loadData();
 
 function loadData(){
   //Get data from server json file
@@ -36,6 +37,7 @@ function loadData(){
       //Add event listener to search box
       let searchBox = document.getElementById("options-searchbox");
       searchBox.addEventListener("input",function(){search(this)});
+      searchBox.addEventListener("change",function(){search(this)});
       checkScrollIndicators();
 	  }
 	};
@@ -107,8 +109,7 @@ function sortTableByCategory(ele,category){
     for(let i = 2; i < rows.length; i++){
       if(rows[i].className.includes("rankings-row-info") || !rows[i+2])
         continue;
-        
-      console.log(rows[i]);
+      
       x = rows[i].getElementsByClassName(`rankings-table-${category}`)[0];
       x.setAttribute("class",`rankings-table-${category} sorted`);
       y = rows[i + 2].getElementsByClassName(`rankings-table-${category}`)[0];
@@ -324,7 +325,6 @@ function search(searchbox){
       let data = row.getElementsByTagName("td");
       let save = false;
       for(let j = 0; j < data.length; j++){
-        console.log(data[j].innerText);
         if(data[j].innerText.toLowerCase().startsWith(txt))
           save = true;
       }
