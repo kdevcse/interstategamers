@@ -1,5 +1,8 @@
 //Handle scroll icons
-window.addEventListener('scroll',function(){
+window.addEventListener('scroll',function(){checkScrollIndicators()});
+window.addEventListener('resize',function(){checkScrollIndicators()});
+
+function checkScrollIndicators(){
   let pos = window.scrollX;
   let left = document.getElementById("scroll-indicator-left");
   let right = document.getElementById("scroll-indicator-right");
@@ -17,7 +20,7 @@ window.addEventListener('scroll',function(){
   } else {
     right.style.visibility = "visible";
   }
-});
+}
 
 function loadData(){
   //Get data from server json file
@@ -33,6 +36,7 @@ function loadData(){
       //Add event listener to search box
       let searchBox = document.getElementById("options-searchbox");
       searchBox.addEventListener("input",function(){search(this)});
+      checkScrollIndicators();
 	  }
 	};
 	xmlhttp.open("GET", "../database/data.json", true);

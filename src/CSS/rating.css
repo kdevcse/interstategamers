@@ -31,7 +31,7 @@
 #scroll-indicators{
 	display: inline;
 }
-#scroll-indicator-left{
+#scroll-indicator-left, #scroll-indicator-right{
 	visibility: hidden;
 }
 #scroll-indicator-right{
