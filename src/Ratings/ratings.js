@@ -1,3 +1,24 @@
+//Handle scroll icons
+window.addEventListener('scroll',function(){
+  let pos = window.scrollX;
+  let left = document.getElementById("scroll-indicator-left");
+  let right = document.getElementById("scroll-indicator-right");
+
+  let maxWidth = document.documentElement.scrollWidth - document.documentElement.clientWidth;
+
+  if (pos > 0){
+    left.style.visibility = "visible";
+  } else if (pos === 0){
+    left.style.visibility = "hidden";
+  }
+
+  if (pos === maxWidth){
+    right.style.visibility = "hidden";
+  } else {
+    right.style.visibility = "visible";
+  }
+});
+
 function loadData(){
   //Get data from server json file
   let xmlhttp = new XMLHttpRequest();
