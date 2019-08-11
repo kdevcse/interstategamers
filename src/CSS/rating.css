@@ -1,7 +1,25 @@
 #rankings-table{
+	position: relative;
 	text-align: center;
 	border-collapse: collapse;
 	table-layout: fixed;
+}
+#rankings-table-options{
+	background-color: #2d32af;
+	color: white;
+}
+#rankings-table-options .options-header{
+	text-align: left;
+	align-items: center;
+	padding: 20px 65px 0px 65px;
+}
+.options-header input {
+	height: 25px;
+	border: none;
+	border: solid 1px #ccc;
+	border-radius: 3px;
+	border-collapse: collapse;
+	padding: 6px 8px;
 }
 .rankings-table-header{
 	background-color: #2d32af;
@@ -20,7 +38,7 @@
 .rankings-table-row > td {
 	color: #2d32af;
 }
-.rankings-table-row-info{
+.rankings-row-info{
 	display: table-row;
 }
 .rankings-table-info{
@@ -47,9 +65,6 @@ th.sorted {
 }
 .sorted > .header-text > svg{
 	visibility: visible;
-}
-#rankings-table{
-	position: relative;
 }
 .rankings-table-header > th{
 	top: 70px;
@@ -97,9 +112,15 @@ th.sorted {
 		font-size: 14px;
 		min-width: 93px;
 	}
+	#rankings-table-options .options-header{
+		padding: 10px 20px 0px 20px;
+	}
 }
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
+	#rankings-table-options .options-header{
+		padding: 20px 65px 0px 65px;
+	}
 	.rankings-table-row.selected{
 		background-color: #f0f0f5;
 		border-top: #2d32af solid 1px;

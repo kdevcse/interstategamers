@@ -9,6 +9,9 @@ function loadData(){
       for(let i = 0; i < data.length; i++){
         tableInsert(data[i]);
       }
+      //Add event listener to search box
+      let searchBox = document.getElementById("options-searchbox");
+      searchBox.addEventListener("input",function(){search(this)});
 	  }
 	};
 	xmlhttp.open("GET", "../database/data.json", true);
@@ -76,10 +79,11 @@ function sortTableByCategory(ele,category){
   //Swap sort algorithm
   while(canSwitch){
     canSwitch = false;
-    for(let i = 1; i < rows.length; i++){
-      if(rows[i].className.includes("rankings-table-row-info") || !rows[i+2])
+    for(let i = 2; i < rows.length; i++){
+      if(rows[i].className.includes("rankings-row-info") || !rows[i+2])
         continue;
         
+      console.log(rows[i]);
       x = rows[i].getElementsByClassName(`rankings-table-${category}`)[0];
       x.setAttribute("class",`rankings-table-${category} sorted`);
       y = rows[i + 2].getElementsByClassName(`rankings-table-${category}`)[0];
@@ -125,8 +129,8 @@ function sortTableByName(ele, type){
   //Swap sort algorithm
   while(canSwitch){
     canSwitch = false;
-    for(let i = 1; i < rows.length; i++){
-      if(rows[i].className.includes("rankings-table-row-info") || !rows[i+2])
+    for(let i = 2; i < rows.length; i++){
+      if(rows[i].className.includes("rankings-row-info") || !rows[i+2])
         continue;
         
       x = rows[i].getElementsByClassName(`rankings-table-${type}`)[0];
@@ -232,7 +236,7 @@ function tableInsert(game){
 
   //Initialize game breakdown row
   newRowInfo = table.insertRow(-1);
-  newRowInfo.setAttribute("class","rankings-table-row-info");
+  newRowInfo.setAttribute("class","rankings-row-info");
 
   //Create table data element for game breakdown
   infoData = document.createElement("td");
@@ -284,4 +288,24 @@ function addInfo(infoData,game){
   }
 
   infoData.appendChild(chartContainer);
+}
+
+function search(searchbox){
+  let txt = searchbox.value.toLowerCase();
+  let table = document.getElementById("rankings-table").childNodes[1].childNodes;
+  for(let i = 0; i < table.length; i++){
+    let row = table[i];
+    if(row.className && row.className.includes("rankings-table-row")){
+      let data = row.getElementsByTagName("td");
+      let save = false;
+      for(let j = 0; j < data.length; j++){
+        if(data[j].innerText.toLowerCase().startsWith(txt))
+          save = true;
+      }
+      if(save)
+        row.style.display = "table-row";
+      else
+        row.style.display = "none";
+    }
+  }
 }

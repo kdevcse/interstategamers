@@ -118,7 +118,7 @@ function expand(ele){
 		
 		//Mark the two rows as unselected
 		nodes[i].className = "rankings-table-row";
-		nodes[i].nextSibling.className = "rankings-table-row-info"
+		nodes[i].nextSibling.className = "rankings-row-info"
 
 		//Minimize individual charts
 		charts.classList.remove("expanded-breakdown");
