@@ -5,6 +5,7 @@ window.onload = loadData();
 
 function checkScrollIndicators(){
   let pos = window.scrollX;
+  let indicators = document.getElementById("scroll-indicators");
   let left = document.getElementById("scroll-indicator-left");
   let right = document.getElementById("scroll-indicator-right");
 
@@ -20,6 +21,13 @@ function checkScrollIndicators(){
     right.style.visibility = "hidden";
   } else {
     right.style.visibility = "visible";
+  }
+
+  if (pos === maxWidth && pos === 0){
+    indicators.style.visibility = "hidden";
+  }
+  else {
+    indicators.style.visibility = "visible";
   }
 }
 
