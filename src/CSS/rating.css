@@ -63,6 +63,7 @@
 .charts{
 	display: none;
 	transition: height 2s linear;
+	align-items: center;
 }
 .breakdown-img{
 	width: 250px;
