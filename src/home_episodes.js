@@ -4,7 +4,7 @@ var gameplayInt;
 var aestheticsInt;
 var contentInt;
 
-window.onload = fetchData();
+window.addEventListener('load',function(){fetchData()});
 window.onresize = resize();
 
 function resize(){
@@ -16,7 +16,6 @@ function resize(){
 
 function fetchData(){
 	var xmlhttp = new XMLHttpRequest();
-	let latestRank = 0;
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 		var data = JSON.parse(this.responseText);
