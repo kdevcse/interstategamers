@@ -279,14 +279,14 @@ function tableInsert(game){
   infoData = document.createElement("td");
   infoData.setAttribute("class","rankings-table-info");
   infoData.setAttribute("colspan","10");
-  addInfo(infoData,game);
+  infoData.appendChild(addInfo(game));
 
   //Append game breakdown to table
   newRowInfo.appendChild(infoData);
   //table.appendChild(newRowInfo);
 }
 
-function addInfo(infoData,game){
+function addInfo(game){
   
   //Gather imperative data
   let pGameplay = game["Ranking Info"]["P. Gameplay"].toFixed(2);
@@ -300,13 +300,23 @@ function addInfo(infoData,game){
   let kAudio = game["Ranking Info"]["K. Audio"].toFixed(2);
   let kContent = game["Ranking Info"]["K. Content"].toFixed(2);
   let kOverall = game["Ranking Info"]["Kevin's Rating"].toFixed(2);
-
+  let hasImg = game["Game Image"];
+  
   pChartEle = createRankingsChart("Peter's Scores",pGameplay,pVisuals,pAudio,pContent,pOverall);
   kChartEle = createRankingsChart("Kevin's Scores",kGameplay,kVisuals,kAudio,kContent,kOverall);
 
   //Create div container
   var chartContainer = document.createElement("div");
   chartContainer.className = "charts";
+
+  //Show img if needed
+  if (hasImg){
+    let img = document.createElement("img");
+    img.classList.add("breakdown-img");
+    let name = game["Game Image"];
+    img.src = `../Images/${name}`;
+    chartContainer.appendChild(img);
+  }
   
   //Append Kev and Pete breakdown
   chartContainer.appendChild(pChartEle);
@@ -324,7 +334,7 @@ function addInfo(infoData,game){
     chartContainer.appendChild(gChartEle);
   }
 
-  infoData.appendChild(chartContainer);
+  return chartContainer;
 }
 
 function search(searchbox){

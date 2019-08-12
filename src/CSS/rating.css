@@ -64,6 +64,10 @@
 	display: none;
 	transition: height 2s linear;
 }
+.breakdown-img{
+	width: 250px;
+	align-self: center;
+}
 .rankings-table-row > td, .rankings-table-header > th{
 	height: 62px;
 }
@@ -164,7 +168,7 @@ th.sorted {
 	}
 	.expanded-breakdown{
 		display: inline-grid;
-		grid-template-columns: 300px 300px 300px auto;
+		grid-template-columns: 300px 300px 300px 300px auto;
 		margin-bottom: 10px;
 	}
 	.charts{
@@ -175,13 +179,13 @@ th.sorted {
 	.stat-category{
 		text-align: left;
 		margin-top: 0px;
-		margin-bottom: 5px;
+		margin-bottom: 2px;
 		font-size: 13px;
 	}
 	.rank {
 		height: 20px;
 		width: 100%;
-		margin-bottom: 10px;
+		margin-bottom: 6px;
 		background-color: white;
 		border: #2d32af solid 2px;
 		border-radius: 3px;

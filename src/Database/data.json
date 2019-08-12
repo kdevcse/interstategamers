@@ -24,6 +24,7 @@
         "updated_at": "2019-05-12T21:30:39.424937-07:00"
     },
     {
+        "Game Image": "mario_kart_64.png",
         "Rank": 22,
         "Ranking Info": {
             "Aesthetics": 85.25,
@@ -82,6 +83,7 @@
         "updated_at": "2019-05-12T21:31:23.875636-07:00"
     },
     {
+        "Game Image": "star_fox_64.jpg",
         "Rank": 8,
         "Ranking Info": {
             "Aesthetics": 92.75,
@@ -140,6 +142,7 @@
         "updated_at": "2019-05-12T21:31:13.049868-07:00"
     },
     {
+        "Game Image": "rollercoaster_tycoon.jpg",
         "Rank": 13,
         "Ranking Info": {
             "Aesthetics": 86.25,
@@ -198,6 +201,7 @@
         "updated_at": "2019-05-12T21:31:25.238138-07:00"
     },
     {
+        "Game Image": "kirby_and_the_amazing_mirror.jpg",
         "Rank": 17,
         "Ranking Info": {
             "Aesthetics": 87.75,
@@ -256,6 +260,7 @@
         "updated_at": "2019-05-12T21:31:19.718493-07:00"
     },
     {
+        "Game Image": "metroid_zero_mission.jpg",
         "Rank": 14,
         "Ranking Info": {
             "Aesthetics": 92.66666666666667,
@@ -315,6 +320,7 @@
         "updated_at": "2019-05-12T21:30:52.072266-07:00"
     },
     {
+        "Game Image": "super_mario_world.jpg",
         "Rank": 2,
         "Ranking Info": {
             "Aesthetics": 91.75,
@@ -397,6 +403,7 @@
         "updated_at": "2019-05-12T21:30:40.120304-07:00"
     },
     {
+        "Game Image": "pokmon_stadium.jpg",
         "Rank": 24,
         "Ranking Info": {
             "Aesthetics": 86.25,
@@ -455,6 +462,7 @@
         "updated_at": "2019-05-12T21:31:09.784334-07:00"
     },
     {
+        "Game Image": "tony_hawks_pro_skater.jpg",
         "Rank": 25,
         "Ranking Info": {
             "Aesthetics": 78.25,
@@ -513,6 +521,7 @@
         "updated_at": "2019-05-12T21:31:00.951567-07:00"
     },
     {
+        "Game Image": "banjokazooie.jpg",
         "Rank": 6,
         "Ranking Info": {
             "Aesthetics": 94,
@@ -571,6 +580,7 @@
         "updated_at": "2019-05-12T21:30:44.173227-07:00"
     },
     {
+        "Game Image": "stardew_valley.jpg",
         "Rank": 9,
         "Ranking Info": {
             "Aesthetics": 88.25,
@@ -711,6 +721,7 @@
         "updated_at": "2019-05-12T21:30:09.765083-07:00"
     },
     {
+        "Game Image": "rocket_league.jpg",
         "Rank": 18,
         "Ranking Info": {
             "Aesthetics": 86.25,
@@ -769,6 +780,7 @@
         "updated_at": "2019-05-12T21:30:13.942204-07:00"
     },
     {
+        "Game Image": "donkey_kong_country.png",
         "Rank": 22,
         "Ranking Info": {
             "Aesthetics": 86.25,
@@ -851,6 +863,7 @@
         "updated_at": "2019-05-12T21:30:21.442284-07:00"
     },
     {
+        "Game Image": "chopper_attack.jpg",
         "Rank": 29,
         "Ranking Info": {
             "Aesthetics": 67.5,
@@ -909,6 +922,7 @@
         "updated_at": "2019-05-12T21:30:01.789489-07:00"
     },
     {
+        "Game Image": "luigis_mansion.png",
         "Rank": 27,
         "Ranking Info": {
             "Aesthetics": 88,
@@ -967,6 +981,7 @@
         "updated_at": "2019-05-12T21:30:20.283100-07:00"
     },
     {
+        "Game Image": "mega_man_x.jpg",
         "Rank": 20,
         "Ranking Info": {
             "Aesthetics": 88.5,
@@ -1050,6 +1065,7 @@
         "updated_at": "2019-05-12T21:30:33.566818-07:00"
     },
     {
+        "Game Image": "super_monkey_ball_2.png",
         "Rank": 26,
         "Ranking Info": {
             "Aesthetics": 74.25,
