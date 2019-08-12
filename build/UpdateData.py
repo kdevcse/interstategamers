@@ -55,7 +55,7 @@ for episode in episodes.data:
                 rankInfo = getRankInfo(rankings.data,str(season) + "-" + str(number))
                 episode["Ranking Info"] = rankInfo[0]
                 episode["Rank"] = rankInfo[1]
-                getImg("src/images/",episode["Ranking Info"]["Game"])
+                getImg("src/Images/",episode["Ranking Info"]["Game"])
 
 #Write data to file
 file = Path(dataPath)
