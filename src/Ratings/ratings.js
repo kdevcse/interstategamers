@@ -289,6 +289,7 @@ function tableInsert(game){
 function addInfo(game){
   
   //Gather imperative data
+  let dte = new Date(game["published_at"]);
   let pGameplay = game["Ranking Info"]["P. Gameplay"].toFixed(2);
   let pVisuals = game["Ranking Info"]["P. Visuals"].toFixed(2);
   let pAudio = game["Ranking Info"]["P. Audio"].toFixed(2);
@@ -300,6 +301,8 @@ function addInfo(game){
   let kAudio = game["Ranking Info"]["K. Audio"].toFixed(2);
   let kContent = game["Ranking Info"]["K. Content"].toFixed(2);
   let kOverall = game["Ranking Info"]["Kevin's Rating"].toFixed(2);
+  let meta = game["Ranking Info"]["Metacritic"];
+  let ign = game["Ranking Info"]["IGN"];
   let hasImg = game["Game Image"];
   
   pChartEle = createRankingsChart("Peter's Scores",pGameplay,pVisuals,pAudio,pContent,pOverall);
@@ -309,16 +312,59 @@ function addInfo(game){
   var chartContainer = document.createElement("div");
   chartContainer.className = "charts";
 
+  //Create Info Div
+  let info = document.createElement("div");
+  info.className = "breakdown-info";
+  let day = document.createElement("p");
+  day.className = "breakdown-day";
+  day.innerText = `Reviewed: ${dte.getMonth() + 1}/${dte.getDate()}/${dte.getFullYear()}`;
+  info.appendChild(day);
+
   //Show img if needed
   if (hasImg){
     let img = document.createElement("img");
     img.classList.add("breakdown-img");
     let name = game["Game Image"];
     img.src = `../Images/${name}`;
-    chartContainer.appendChild(img);
+    info.appendChild(img);
   }
+
+  //Create Metacritic Scores
+  let scores = document.createElement("div");
+  scores.className = "breakdown-scores";
+
+  //Metacritic
+  let metaDiv = document.createElement("div");
+  metaDiv.className = "meta-container";
+  metaDiv.title = "Metacritic Score"
+  let metaLogo = document.createElement("img");
+  metaLogo.src = "../Images/MetaLogo.png";
+  metaLogo.className = "meta-logo";
+  let metaSpan = document.createElement("span");
+  metaSpan.className = "meta-score"
+  metaSpan.innerText = meta;
+  metaDiv.appendChild(metaLogo);
+  metaDiv.appendChild(metaSpan);
+  scores.appendChild(metaDiv);
+  
+  //IGN
+  let ignDiv = document.createElement("div");
+  ignDiv.className = "ign-container";
+  ignDiv.title = "IGN Score"
+  let ignLogo = document.createElement("img");
+  ignLogo.src = "../Images/IgnLogo.png";
+  ignLogo.className = "ign-logo";
+  let ignSpan = document.createElement("span");
+  ignSpan.className = "ign-score"
+  ignSpan.innerText = ign;
+  ignDiv.appendChild(ignLogo);
+  ignDiv.appendChild(ignSpan);
+  scores.appendChild(ignDiv);
+
+  info.appendChild(scores);
   
   //Append Kev and Pete breakdown
+  chartContainer.appendChild(info);
   chartContainer.appendChild(pChartEle);
   chartContainer.appendChild(kChartEle);
 
