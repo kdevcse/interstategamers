@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import datetime
 import sys
+import os
 
 #Return the rankings information for a specific game
 def getRankInfo(rankings, epNum):
@@ -26,6 +27,13 @@ def ordered(obj):
         return sorted(ordered(x) for x in obj)
     else:
         return obj
+
+#Return image information
+def getImg(dir, title):
+        expected = title.replace(" ","")
+        for f in os.scandir(dir):
+                if f.is_file():
+                        print("Yoooooo")
 
 #Program Start
 dataPath = "src/Database/data.json"
