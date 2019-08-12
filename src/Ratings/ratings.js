@@ -338,6 +338,7 @@ function addInfo(game){
 }
 
 function search(searchbox){
+  unselectAll();
   let txt = searchbox.value.toLowerCase();
   let table = document.getElementById("rankings-table").childNodes[1].childNodes;
   for(let i = 0; i < table.length; i++){

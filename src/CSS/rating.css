@@ -1,6 +1,7 @@
 #rankings-table{
 	position: relative;
 	top: 45px;
+	min-width: 100%;
 	text-align: center;
 	border-collapse: collapse;
 	table-layout: fixed;
