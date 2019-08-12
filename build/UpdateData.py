@@ -35,7 +35,7 @@ def getImg(dir, title):
         expected = re.sub('[^A-Za-z0-9]+', '', expected) + '.'
         print(expected)
         for f in os.scandir(dir):
-                if f.is_file() and f.startswith(expected):
+                if f.is_file() and f.name.startswith(expected):
                         return f
         return ""
 
