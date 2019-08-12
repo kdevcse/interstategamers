@@ -5,6 +5,7 @@ import json
 import datetime
 import sys
 import os
+import re
 
 #Return the rankings information for a specific game
 def getRankInfo(rankings, epNum):
@@ -30,10 +31,11 @@ def ordered(obj):
 
 #Return image information
 def getImg(dir, title):
-        expected = title.replace(" ","")
+        expected = re.sub('[^A-Za-z0-9]+', '', title).replace(" ","")
         for f in os.scandir(dir):
-                if f.is_file():
-                        print(f)
+                if f.is_file() and f == expected:
+                        return f
+        return ""
 
 #Program Start
 dataPath = "src/Database/data.json"
@@ -55,7 +57,8 @@ for episode in episodes.data:
                 rankInfo = getRankInfo(rankings.data,str(season) + "-" + str(number))
                 episode["Ranking Info"] = rankInfo[0]
                 episode["Rank"] = rankInfo[1]
-                getImg("src/Images/",episode["Ranking Info"]["Game"])
+                if (getImg("src/Images/",episode["Ranking Info"]["Game"]) != ""):
+                        episode["Game Image"]
 
 #Write data to file
 file = Path(dataPath)
