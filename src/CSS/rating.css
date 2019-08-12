@@ -67,18 +67,24 @@
 	align-items: center;
 }
 .breakdown-day{
-	margin-right: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 9px;
+	font-size: 15px;
 }
 .breakdown-img{
 	max-width: 200px;
-	max-height: 250px;
-	margin-right: 50px;
+	max-height: 188px;
+	margin-left: auto;
+	margin-right: auto;
 	border-radius: 3px;
 	align-self: center;
 }
 .breakdown-scores{
-	margin-right: 50px;
-	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2px;
 }
 .meta-container, .ign-container{
 	align-items: center;
@@ -185,6 +191,8 @@ th.sorted {
 		overflow: hidden;
 		width: 200px;
 		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.chart > h3{
 		margin-top: 0;
@@ -194,12 +202,12 @@ th.sorted {
 	.expanded-breakdown{
 		display: inline-grid;
 		grid-template-columns: 250px 250px 250px 250px;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 	.charts{
 		float: left;
-		margin-left: 6%;
-		margin-top: 15px;
+		margin-left: 64px;
+		margin-top: 13px;
 	}
 	.stat-category{
 		text-align: left;
