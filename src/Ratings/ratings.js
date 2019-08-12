@@ -346,7 +346,7 @@ function search(searchbox){
       let data = row.getElementsByTagName("td");
       let save = false;
       for(let j = 0; j < data.length; j++){
-        if(data[j].innerText.toLowerCase().startsWith(txt))
+        if(data[j].innerText.toLowerCase().includes(txt))
           save = true;
       }
       if(save)
