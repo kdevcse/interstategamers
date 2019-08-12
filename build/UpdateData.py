@@ -36,7 +36,7 @@ def getImg(dir, title):
         print(expected)
         for f in os.scandir(dir):
                 if f.is_file() and f.name.startswith(expected):
-                        return f
+                        return f.name
         return ""
 
 #Program Start
