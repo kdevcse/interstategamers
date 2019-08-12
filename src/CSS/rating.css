@@ -73,6 +73,7 @@
 	max-width: 200px;
 	max-height: 250px;
 	margin-right: 50px;
+	border-radius: 3px;
 	align-self: center;
 }
 .breakdown-scores{
