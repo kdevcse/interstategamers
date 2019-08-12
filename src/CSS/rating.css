@@ -194,12 +194,11 @@ th.sorted {
 	.expanded-breakdown{
 		display: inline-grid;
 		grid-template-columns: 250px 250px 250px 250px;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 	.charts{
 		float: left;
 		margin-left: 6%;
-		margin-top: 15px;
 	}
 	.stat-category{
 		text-align: left;
