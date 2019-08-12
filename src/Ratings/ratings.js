@@ -1,3 +1,36 @@
+//Handle scroll icons
+window.addEventListener('scroll',function(){checkScrollIndicators()});
+window.addEventListener('resize',function(){checkScrollIndicators()});
+window.onload = loadData();
+
+function checkScrollIndicators(){
+  let pos = window.scrollX;
+  let indicators = document.getElementById("scroll-indicators");
+  let left = document.getElementById("scroll-indicator-left");
+  let right = document.getElementById("scroll-indicator-right");
+
+  let maxWidth = document.documentElement.scrollWidth - document.documentElement.clientWidth;
+
+  if (pos > 0){
+    left.style.visibility = "visible";
+  } else if (pos === 0){
+    left.style.visibility = "hidden";
+  }
+
+  if (pos === maxWidth){
+    right.style.visibility = "hidden";
+  } else {
+    right.style.visibility = "visible";
+  }
+
+  if (pos === maxWidth && pos === 0){
+    indicators.style.visibility = "hidden";
+  }
+  else {
+    indicators.style.visibility = "visible";
+  }
+}
+
 function loadData(){
   //Get data from server json file
   let xmlhttp = new XMLHttpRequest();
@@ -9,6 +42,11 @@ function loadData(){
       for(let i = 0; i < data.length; i++){
         tableInsert(data[i]);
       }
+      //Add event listener to search box
+      let searchBox = document.getElementById("options-searchbox");
+      searchBox.addEventListener("input",function(){search(this)});
+      searchBox.addEventListener("change",function(){search(this)});
+      checkScrollIndicators();
 	  }
 	};
 	xmlhttp.open("GET", "../database/data.json", true);
@@ -19,9 +57,12 @@ function sortEpisodesByRank(episodes) {
   for(let i = 0; i < episodes.length; i++){
     if(!episodes[i]["Rank"]){
       episodes.splice(i,1);
+      i -= 1;
     }
   }
-  episodes.sort(function(a,b){return Number(b["Rank"]) - Number(a["Rank"])});
+  episodes.sort(function(a,b){
+    return Number(b["Rank"]) - Number(a["Rank"]);
+  });
   episodes.reverse();
   return episodes;
 }
@@ -76,10 +117,10 @@ function sortTableByCategory(ele,category){
   //Swap sort algorithm
   while(canSwitch){
     canSwitch = false;
-    for(let i = 1; i < rows.length; i++){
-      if(rows[i].className.includes("rankings-table-row-info") || !rows[i+2])
+    for(let i = 2; i < rows.length; i++){
+      if(rows[i].className.includes("rankings-row-info") || !rows[i+2])
         continue;
-        
+      
       x = rows[i].getElementsByClassName(`rankings-table-${category}`)[0];
       x.setAttribute("class",`rankings-table-${category} sorted`);
       y = rows[i + 2].getElementsByClassName(`rankings-table-${category}`)[0];
@@ -125,8 +166,8 @@ function sortTableByName(ele, type){
   //Swap sort algorithm
   while(canSwitch){
     canSwitch = false;
-    for(let i = 1; i < rows.length; i++){
-      if(rows[i].className.includes("rankings-table-row-info") || !rows[i+2])
+    for(let i = 2; i < rows.length; i++){
+      if(rows[i].className.includes("rankings-row-info") || !rows[i+2])
         continue;
         
       x = rows[i].getElementsByClassName(`rankings-table-${type}`)[0];
@@ -232,20 +273,20 @@ function tableInsert(game){
 
   //Initialize game breakdown row
   newRowInfo = table.insertRow(-1);
-  newRowInfo.setAttribute("class","rankings-table-row-info");
+  newRowInfo.setAttribute("class","rankings-row-info");
 
   //Create table data element for game breakdown
   infoData = document.createElement("td");
   infoData.setAttribute("class","rankings-table-info");
   infoData.setAttribute("colspan","10");
-  addInfo(infoData,game);
+  infoData.appendChild(addInfo(game));
 
   //Append game breakdown to table
   newRowInfo.appendChild(infoData);
   //table.appendChild(newRowInfo);
 }
 
-function addInfo(infoData,game){
+function addInfo(game){
   
   //Gather imperative data
   let pGameplay = game["Ranking Info"]["P. Gameplay"].toFixed(2);
@@ -259,13 +300,23 @@ function addInfo(infoData,game){
   let kAudio = game["Ranking Info"]["K. Audio"].toFixed(2);
   let kContent = game["Ranking Info"]["K. Content"].toFixed(2);
   let kOverall = game["Ranking Info"]["Kevin's Rating"].toFixed(2);
-
+  let hasImg = game["Game Image"];
+  
   pChartEle = createRankingsChart("Peter's Scores",pGameplay,pVisuals,pAudio,pContent,pOverall);
   kChartEle = createRankingsChart("Kevin's Scores",kGameplay,kVisuals,kAudio,kContent,kOverall);
 
   //Create div container
   var chartContainer = document.createElement("div");
   chartContainer.className = "charts";
+
+  //Show img if needed
+  if (hasImg){
+    let img = document.createElement("img");
+    img.classList.add("breakdown-img");
+    let name = game["Game Image"];
+    img.src = `../Images/${name}`;
+    chartContainer.appendChild(img);
+  }
   
   //Append Kev and Pete breakdown
   chartContainer.appendChild(pChartEle);
@@ -283,5 +334,26 @@ function addInfo(infoData,game){
     chartContainer.appendChild(gChartEle);
   }
 
-  infoData.appendChild(chartContainer);
+  return chartContainer;
+}
+
+function search(searchbox){
+  unselectAll();
+  let txt = searchbox.value.toLowerCase();
+  let table = document.getElementById("rankings-table").childNodes[1].childNodes;
+  for(let i = 0; i < table.length; i++){
+    let row = table[i];
+    if(row.className && row.className.includes("rankings-table-row")){
+      let data = row.getElementsByTagName("td");
+      let save = false;
+      for(let j = 0; j < data.length; j++){
+        if(data[j].innerText.toLowerCase().includes(txt))
+          save = true;
+      }
+      if(save)
+        row.style.display = "table-row";
+      else
+        row.style.display = "none";
+    }
+  }
 }

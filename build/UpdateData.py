@@ -4,6 +4,8 @@ from pathlib import Path
 import json
 import datetime
 import sys
+import os
+import re
 
 #Return the rankings information for a specific game
 def getRankInfo(rankings, epNum):
@@ -27,6 +29,15 @@ def ordered(obj):
     else:
         return obj
 
+#Return image information
+def getImg(dir, title):
+        expected = re.sub('\\s', '_', title).lower()
+        expected = re.sub('[^A-Za-z0-9_]+', '', expected) + '.'
+        for f in os.scandir(dir):
+                if f.is_file() and f.name.startswith(expected):
+                        return f.name
+        return ""
+
 #Program Start
 dataPath = "src/Database/data.json"
 
@@ -47,6 +58,10 @@ for episode in episodes.data:
                 rankInfo = getRankInfo(rankings.data,str(season) + "-" + str(number))
                 episode["Ranking Info"] = rankInfo[0]
                 episode["Rank"] = rankInfo[1]
+                if (episode["Ranking Info"]["Game"] is not None):
+                        img = getImg("src/Images/",episode["Ranking Info"]["Game"])
+                        if ( img != ""):
+                                episode["Game Image"] = img
 
 #Write data to file
 file = Path(dataPath)

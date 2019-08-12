@@ -18,6 +18,17 @@ h1 {
 .contact-list-item:hover{
     color: red;
 }
+#boyz-img{
+    border-radius: 3px;
+    text-align: center;
+}
+#boyz-img img {
+    width: 100%;
+}
+#boyz-img figcaption {
+    color: red;
+    font-size: 13px;
+}
 @media only screen and (max-width: 600px){ 
     #boyz-img{
         width: 100%;
@@ -31,7 +42,6 @@ h1 {
         float: left;
         width: 312px;
         margin-right: 30px;
-        margin-bottom: 17px;
     }
     #boyz-description {
         max-width: 1250px;

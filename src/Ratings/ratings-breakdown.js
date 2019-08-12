@@ -117,10 +117,27 @@ function expand(ele){
 		}
 		
 		//Mark the two rows as unselected
-		nodes[i].className = "rankings-table-row";
-		nodes[i].nextSibling.className = "rankings-table-row-info"
+		nodes[i].classList.remove("selected");
+		nodes[i].nextSibling.classList.remove("expanded");
 
 		//Minimize individual charts
 		charts.classList.remove("expanded-breakdown");
+	}
+}
+
+function unselectAll(){
+	selected = document.getElementsByClassName("selected");
+	for(let i = 0; i < selected.length; i++){
+		selected[i].classList.remove("selected");
+	}
+
+	expanded = document.getElementsByClassName("expanded");
+	for(let i = 0; i < expanded.length; i++){
+		expanded[i].classList.remove("expanded");
+	}
+
+	breakdown = document.getElementsByClassName("expanded-breakdown");
+	for(let i = 0; i < breakdown.length; i++){
+		breakdown[i].classList.remove("expanded-breakdown");
 	}
 }

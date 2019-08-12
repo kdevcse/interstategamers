@@ -14,7 +14,7 @@
 	<script src="ratings-breakdown.js" type="text/javascript"></script>
 	<script src="../global.js" type="text/javascript"></script>
 </head>
-<body onload="loadData()">
+<body>
 	<nav id="mobile-nav-bar">
 		<div id="mobile-nav-main-container">
 			<a id="mobile-nav-logo-container" href="../index.html"><img id="mobile-nav-logo" src="../images/IgLogo.png"></img></a>
@@ -42,6 +42,16 @@
 	</nav>
 	<main>
 		<table id="rankings-table">
+			<tr id="rankings-table-options">
+				<th class="options-header" colspan="10">
+					<input id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off"></input>
+					<div id="scroll-indicators">
+						<i id="scroll-indicator-left" class="fas fa-caret-square-left" title="Scroll left to see more content"></i>
+						<span>Scroll for more</span>
+						<i id="scroll-indicator-right" class="fas fa-caret-square-right" title="Scroll right to see more content"></i>
+					</div>
+				</th>
+			</tr>
 			<tr class="rankings-table-header">
 				<th id="header-rank" class="rankings-header sorted" onclick="sortTableByCategory(this,'rank')" ascending>
 					<div class="header-text">Rank <i class="fas fa-sort-up fa-lg sort-icon"></i></div>

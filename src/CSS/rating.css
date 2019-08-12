@@ -1,7 +1,42 @@
 #rankings-table{
+	position: relative;
+	top: 45px;
+	min-width: 100%;
 	text-align: center;
 	border-collapse: collapse;
 	table-layout: fixed;
+}
+#rankings-table-options{
+	background-color: #2d32af;
+	color: white;
+}
+#rankings-table-options .options-header{
+	background-color: #2d32af;
+	position: fixed;
+	height: 45px;
+	width: 100%;
+	top: 70px;
+	text-align: left;
+	align-items: center;
+	padding: 20px 65px 0px 65px;
+}
+.options-header input {
+	height: 25px;
+	border: none;
+	border: solid 1px #ccc;
+	border-radius: 3px;
+	border-collapse: collapse;
+	padding: 6px 8px;
+	margin-right: 30px;
+}
+.options-header input::-ms-clear{
+	display: none;
+}
+#scroll-indicators{
+	float: right;
+}
+#scroll-indicator-left, #scroll-indicator-right{
+	visibility: hidden;
 }
 .rankings-table-header{
 	background-color: #2d32af;
@@ -20,7 +55,7 @@
 .rankings-table-row > td {
 	color: #2d32af;
 }
-.rankings-table-row-info{
+.rankings-row-info{
 	display: table-row;
 }
 .rankings-table-info{
@@ -29,6 +64,12 @@
 .charts{
 	display: none;
 	transition: height 2s linear;
+	align-items: center;
+}
+.breakdown-img{
+	max-width: 250px;
+	max-height: 300px;
+	align-self: center;
 }
 .rankings-table-row > td, .rankings-table-header > th{
 	height: 62px;
@@ -48,11 +89,8 @@ th.sorted {
 .sorted > .header-text > svg{
 	visibility: visible;
 }
-#rankings-table{
-	position: relative;
-}
 .rankings-table-header > th{
-	top: 70px;
+	top: 115px;
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
 	-khtml-user-select: none; /* Konqueror HTML */
@@ -73,8 +111,8 @@ th.sorted {
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 .rankings-table-row > td, .rankings-table-header > th{
-	min-width: 185px;
-	width: 15%;
+	min-width: 179px;
+	width: 10%;
 }
 .rankings-table-row > td {
 	text-overflow: ellipsis;
@@ -97,9 +135,21 @@ th.sorted {
 		font-size: 14px;
 		min-width: 93px;
 	}
+	#rankings-table-options .options-header{
+		padding: 10px 20px 0px 20px;
+	}
+	.options-header input {
+		margin-right: 15px;
+	}
 }
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
+	#rankings-table-options .options-header{
+		padding: 20px 65px 0px 65px;
+	}
+	.options-header input {
+		margin-right: 30px;
+	}
 	.rankings-table-row.selected{
 		background-color: #f0f0f5;
 		border-top: #2d32af solid 1px;
@@ -121,7 +171,7 @@ th.sorted {
 	}
 	.expanded-breakdown{
 		display: inline-grid;
-		grid-template-columns: 300px 300px 300px auto;
+		grid-template-columns: 300px 300px 300px 300px auto;
 		margin-bottom: 10px;
 	}
 	.charts{
@@ -132,13 +182,13 @@ th.sorted {
 	.stat-category{
 		text-align: left;
 		margin-top: 0px;
-		margin-bottom: 5px;
+		margin-bottom: 2px;
 		font-size: 13px;
 	}
 	.rank {
 		height: 20px;
 		width: 100%;
-		margin-bottom: 10px;
+		margin-bottom: 6px;
 		background-color: white;
 		border: #2d32af solid 2px;
 		border-radius: 3px;
