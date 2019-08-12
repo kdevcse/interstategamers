@@ -67,13 +67,13 @@ article{
         margin-bottom: 0px;
     }
     .twitch-img{
-        height: 90px;
-        width: 90px;
+        height: 85px;
+        width: 85px;
     }
     .twitch-link{
         display: inline-block;
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 3%;
+        margin-right: 3%;
     }
     .logo-promo{
         margin-left: 2.5%;
@@ -87,16 +87,14 @@ article{
 }
 @media only screen and (min-width: 768px){
     #extras-twitch{
-        grid-template-columns: 200px 200px 200px;
+        grid-template-columns: 150px 150px 150px;
     }
-    .logo-promo{
-        margin-left: 2.5%;
+    .twitch-img{
+        height: 100px;
+        width: 100px;
     }
 }
 @media only screen and (min-width: 992px){
-    #extras-twitch{
-        grid-template-columns: 200px 200px 200px 200px;
-    }
     .twitch-img:hover{
         cursor: pointer;
         opacity: 0.5;
