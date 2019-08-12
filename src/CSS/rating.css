@@ -70,8 +70,8 @@
 	margin-right: 50px;
 }
 .breakdown-img{
-	max-width: 250px;
-	max-height: 300px;
+	max-width: 200px;
+	max-height: 250px;
 	margin-right: 50px;
 	align-self: center;
 }
@@ -192,7 +192,7 @@ th.sorted {
 	}
 	.expanded-breakdown{
 		display: inline-grid;
-		grid-template-columns: auto 250px 250px 250px auto;
+		grid-template-columns: 250px 250px 250px 250px;
 		margin-bottom: 10px;
 	}
 	.charts{
