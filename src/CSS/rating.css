@@ -66,7 +66,8 @@
 	align-items: center;
 }
 .breakdown-img{
-	width: 250px;
+	max-width: 250px;
+	max-height: 300px;
 	align-self: center;
 }
 .rankings-table-row > td, .rankings-table-header > th{
@@ -109,8 +110,8 @@ th.sorted {
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 .rankings-table-row > td, .rankings-table-header > th{
-	min-width: 185px;
-	width: 15%;
+	min-width: 179px;
+	width: 10%;
 }
 .rankings-table-row > td {
 	text-overflow: ellipsis;
