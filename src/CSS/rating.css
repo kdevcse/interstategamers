@@ -71,10 +71,11 @@
 	margin-right: auto;
 	margin-top: 0;
 	margin-bottom: 9px;
+	font-size: 15px;
 }
 .breakdown-img{
 	max-width: 200px;
-	max-height: 200px;
+	max-height: 188px;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 3px;
@@ -83,7 +84,7 @@
 .breakdown-scores{
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 5px;
+	margin-top: 2px;
 }
 .meta-container, .ign-container{
 	align-items: center;
