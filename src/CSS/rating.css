@@ -182,17 +182,17 @@ th.sorted {
 	}
 	.chart {
 		overflow: hidden;
-		width: 250px;
+		width: 200px;
 		text-align: center;
 	}
 	.chart > h3{
 		margin-top: 0;
 		margin-bottom: 8px;
-		/* font-size: 14px; */
+		font-size: 15px;
 	}
 	.expanded-breakdown{
 		display: inline-grid;
-		grid-template-columns: auto 300px 300px 300px auto;
+		grid-template-columns: auto 250px 250px 250px auto;
 		margin-bottom: 10px;
 	}
 	.charts{
