@@ -205,7 +205,8 @@ th.sorted {
 	}
 	.charts{
 		float: left;
-		margin-left: 32px;
+		margin-left: 64px;
+		margin-top: 13px;
 	}
 	.stat-category{
 		text-align: left;
