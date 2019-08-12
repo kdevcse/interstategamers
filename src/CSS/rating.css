@@ -70,9 +70,10 @@
 	margin-right: 50px;
 }
 .breakdown-img{
-	max-width: 250px;
-	max-height: 300px;
+	max-width: 200px;
+	max-height: 250px;
 	margin-right: 50px;
+	border-radius: 3px;
 	align-self: center;
 }
 .breakdown-scores{
@@ -182,17 +183,17 @@ th.sorted {
 	}
 	.chart {
 		overflow: hidden;
-		width: 250px;
+		width: 200px;
 		text-align: center;
 	}
 	.chart > h3{
 		margin-top: 0;
 		margin-bottom: 8px;
-		/* font-size: 14px; */
+		font-size: 15px;
 	}
 	.expanded-breakdown{
 		display: inline-grid;
-		grid-template-columns: auto 300px 300px 300px auto;
+		grid-template-columns: 250px 250px 250px 250px;
 		margin-bottom: 10px;
 	}
 	.charts{
