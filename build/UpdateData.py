@@ -32,7 +32,7 @@ def ordered(obj):
 #Return image information
 def getImg(dir, title):
         expected = re.sub('\\s', '_', title).lower()
-        #expected = re.sub('[^A-Za-z0-9]+', '', expected) + '.'
+        expected = re.sub('[^A-Za-z0-9_]+', '', expected) + '.'
         print(expected)
         for f in os.scandir(dir):
                 if f.is_file() and f.name.startswith(expected):
