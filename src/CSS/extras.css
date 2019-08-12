@@ -57,9 +57,11 @@ article{
     margin-bottom: 3px;
 }
 @media only screen and (max-width: 768px){
-    #extras-twitch{
-        grid-template-columns: 115px 115px 115px;
-        grid-template-rows: 115px;
+    #extras-twitch{    
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     .extras-header{
         margin-bottom: 0px;
@@ -67,6 +69,11 @@ article{
     .twitch-img{
         height: 90px;
         width: 90px;
+    }
+    .twitch-link{
+        display: inline-block;
+        margin-left: 5%;
+        margin-right: 5%;
     }
     .logo-promo{
         margin-left: 2.5%;
