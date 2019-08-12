@@ -59,7 +59,7 @@ for episode in episodes.data:
                 rankInfo = getRankInfo(rankings.data,str(season) + "-" + str(number))
                 episode["Ranking Info"] = rankInfo[0]
                 episode["Rank"] = rankInfo[1]
-                if (episode["Ranking Info"]["Game"]):
+                if (episode["Ranking Info"]["Game"] != None):
                         img = getImg("src/Images/",episode["Ranking Info"]["Game"])
                         if ( img != ""):
                                 episode["Game Image"] = img
