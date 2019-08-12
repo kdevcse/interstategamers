@@ -33,7 +33,7 @@ def getImg(dir, title):
         expected = title.replace(" ","")
         for f in os.scandir(dir):
                 if f.is_file():
-                        print("Yoooooo")
+                        print(f)
 
 #Program Start
 dataPath = "src/Database/data.json"
@@ -55,6 +55,7 @@ for episode in episodes.data:
                 rankInfo = getRankInfo(rankings.data,str(season) + "-" + str(number))
                 episode["Ranking Info"] = rankInfo[0]
                 episode["Rank"] = rankInfo[1]
+                getImg("src/images/",episode["Ranking Info"]["Game"])
 
 #Write data to file
 file = Path(dataPath)
