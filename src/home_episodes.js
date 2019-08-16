@@ -5,7 +5,7 @@ var aestheticsInt;
 var contentInt;
 
 window.addEventListener('load',function(){fetchData()});
-window.onresize = resize();
+window.addEventListener('resize',function(){resize()});
 
 function resize(){
 	if(window.innerWidth <= 600){
