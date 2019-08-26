@@ -15,7 +15,7 @@ class Simplecast:
 
     def gatherData(self,response,header):
         data = self.disperse([],response['collection'])
-        while response['pages']['next'] != None:
+        while response['pages']['next'] is not None:
             url = response["pages"]["next"]["href"]
             requests.auth = header
             response = requests.get(url).json()
