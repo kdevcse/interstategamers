@@ -28,4 +28,3 @@ class Simplecast:
             data.append(episode)
         
         return data
-
