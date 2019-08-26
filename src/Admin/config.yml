@@ -18,8 +18,3 @@ collections:
         file: "database/data.json"
         fields:
           - {label: Title, name: title, widget: string}
-
-          
-
-
-

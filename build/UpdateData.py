@@ -26,14 +26,13 @@ def ordered(obj):
         return sorted((k, ordered(v)) for k, v in obj.items())
     if isinstance(obj, list):
         return sorted(ordered(x) for x in obj)
-    else:
-        return obj
+    return obj
 
 #Return image information
-def getImg(dir, title):
+def getImg(dirctry, title):
         expected = re.sub('\\s', '_', title).lower()
         expected = re.sub('[^A-Za-z0-9_]+', '', expected) + '.'
-        for f in os.scandir(dir):
+        for f in os.scandir(dirctry):
                 if f.is_file() and f.name.startswith(expected):
                         return f.name
         return ""
@@ -64,5 +63,5 @@ for episode in episodes.data:
                                 episode["Game Image"] = img
 
 #Write data to file
-file = Path(dataPath)
-file.write_text(json.dumps(episodes.data, indent=4, sort_keys=True))
+f = Path(dataPath)
+f.write_text(json.dumps(episodes.data, indent=4, sort_keys=True))
