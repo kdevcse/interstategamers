@@ -1,10 +1,10 @@
 # The Interstate Gamers Website  
 This repo contains the underlying code for The Interstate Gamers Podcast website. It is currently a work in progress (WIP).
 
-## Build Status
+#### Build Status: 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f6b95e64-cfc4-4310-98ec-8c480461f0ff/deploy-status)](https://app.netlify.com/sites/interstategamers/deploys)
 
-## Code Quality
+#### Code Quality: 
 [![CodeFactor](https://www.codefactor.io/repository/github/klewiscse/interstategamers/badge)](https://www.codefactor.io/repository/github/klewiscse/interstategamers)
 
 # New Features
