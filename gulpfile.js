@@ -12,6 +12,15 @@ function cleanDist(cb){
   cb();
 }
 
+function initDist(cb){
+  exec('mkdir dist', function (err, stdout, stderr) {
+      console.log(stdout);
+      console.log(stderr);
+      cb(err);
+  });
+  cb();
+}
+
 function update(cb){
   exec('python3 build/UpdateData.py ${PodId} ${PodKey} ${AirtableKey};', function (err, stdout, stderr) {
       console.log(stdout);
@@ -48,5 +57,5 @@ function compileTs(cb){
 
 exports.clean = gulp.series(cleanDist);
 exports.update = gulp.series(update);
-exports.compile = gulp.series(copySrcToDist,compileTs);
+exports.compile = gulp.series(initDist,copySrcToDist,compileTs);
 exports.winCompile = gulp.series(runWinCompile,compileTs);
