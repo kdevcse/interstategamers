@@ -3,10 +3,12 @@ var ts = require('gulp-typescript');
 var tsProject = ts.createProject('tsconfig.json');
 var exec = require('child_process').exec;
 
-function compileTs(cb){
-  tsProject.src()
-    .pipe(tsProject())
-    .js.pipe(gulp.dest('testDist'));
+function cleanDist(cb){
+  exec('rm -v -R dist/*', function (err, stdout, stderr) {
+      console.log(stdout);
+      console.log(stderr);
+      cb(err);
+    });
   cb();
 }
 
@@ -19,5 +21,32 @@ function update(cb){
   cb();
 }
 
+function copySrcToDist(cb){
+  exec('cp -v -f -Recurse src/* dist', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+  cb();
+}
+
+function runWinCompile(cb){
+  exec('Powershell.exe -executionpolicy remotesigned -File winCompile.ps1', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+  cb();
+}
+
+function compileTs(cb){
+  tsProject.src()
+    .pipe(tsProject())
+    .js.pipe(gulp.dest('dist'));
+  cb();
+}
+
+exports.clean = gulp.series(cleanDist);
 exports.update = gulp.series(update);
-exports.compile = gulp.series(compileTs);
+exports.compile = gulp.series(copySrcToDist,compileTs);
+exports.winCompile = gulp.series(runWinCompile,compileTs);

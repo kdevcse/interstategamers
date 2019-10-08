@@ -1,7 +1,7 @@
 /* exported playTrailer */
 function playTrailer(){
-    const audio = document.getElementById("ig-audio");
-    var button = document.getElementById("ig-trailer-playButton");
+    let audio = <HTMLMediaElement>document.getElementById("ig-audio");
+    let button = document.getElementById("ig-trailer-playButton");
 
     if(audio.paused){
         audio.play();
@@ -23,8 +23,8 @@ function stopTrailer(){
 }
 
 /* exported playEpisode */
-function playEpisode(episode,id){
-    const audio = document.getElementById(`ep${id}-audio`);
+function playEpisode(episode:HTMLElement,id:number){
+    const audio = <HTMLMediaElement>document.getElementById(`ep${id}-audio`);
     episode.style.cursor = "pointer";
 
     if(audio.paused){
@@ -39,12 +39,12 @@ function playEpisode(episode,id){
     }
 }
 
-function loadEpisode(episode){
+function loadEpisode(episode:HTMLElement){
     episode.style.cursor = "progress";
 }
 
 /* exported stopEpisode */
-function stopEpisode(episode){
+function stopEpisode(episode:HTMLElement){
     episode.style.cursor = "pointer";
     episode.classList.remove("fa-pause-circle");
     episode.classList.add("fa-play-circle");

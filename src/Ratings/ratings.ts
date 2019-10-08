@@ -1,7 +1,7 @@
 //Handle scroll icons
 window.addEventListener('scroll',function(){checkScrollIndicators()});
 window.addEventListener('resize',function(){checkScrollIndicators()});
-window.onload = loadData();
+window.addEventListener('load',function(){loadData()});
 
 function checkScrollIndicators(){
   let pos = window.scrollX;
@@ -68,8 +68,8 @@ function sortEpisodesByRank(episodes) {
 }
 
 function resetTableRows(saveId){
-  table = document.getElementById("rankings-table");
-  rows = table.rows;
+  let table = <HTMLTableElement> document.getElementById("rankings-table");
+  let rows = table.rows;
 
   //reset ascending attributes
   let headers = rows[0].getElementsByTagName("th");
@@ -84,9 +84,9 @@ function resetTableRows(saveId){
   }
 
   //reset sorted class
-  for (i = 0; i < (rows.length); i++) {
+  for (let i = 0; i < (rows.length); i++) {
     let sorts = rows[i].getElementsByClassName("sorted");
-    for(j = 0; j < sorts.length; j++){
+    for(let j = 0; j < sorts.length; j++){
       sorts[j].classList.remove("sorted");
     }
   }
@@ -98,7 +98,7 @@ function sortTableByCategory(ele,category){
   ele.classList.add("sorted");
 
   let canSwitch = true;
-  let table = document.getElementById("rankings-table").childNodes[1];
+  let table = <HTMLTableElement> document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
   let ascending = ele.getAttribute("ascending") !== null;
   let sortIcon = ele.getElementsByTagName("svg")[0];
@@ -121,9 +121,9 @@ function sortTableByCategory(ele,category){
       if(rows[i].className.includes("rankings-row-info") || !rows[i+2])
         continue;
       
-      x = rows[i].getElementsByClassName(`rankings-table-${category}`)[0];
+      let x = rows[i].getElementsByClassName(`rankings-table-${category}`)[0];
       x.setAttribute("class",`rankings-table-${category} sorted`);
-      y = rows[i + 2].getElementsByClassName(`rankings-table-${category}`)[0];
+      let y = rows[i + 2].getElementsByClassName(`rankings-table-${category}`)[0];
       y.setAttribute("class",`rankings-table-${category} sorted`);
       if (!ascending && Number(x.innerHTML) > Number(y.innerHTML)) {
         canSwitch = true;
@@ -147,7 +147,7 @@ function sortTableByName(ele, type){
   ele.classList.add("sorted");
 
   let canSwitch = true;
-  let table = document.getElementById("rankings-table").childNodes[1];
+  let table = <HTMLTableElement> document.getElementById("rankings-table").childNodes[1];
   let rows = table.rows;
   let ascending = ele.getAttribute("ascending") !== null;
   let sortIcon = ele.getElementsByTagName("svg")[0];
@@ -170,9 +170,9 @@ function sortTableByName(ele, type){
       if(rows[i].className.includes("rankings-row-info") || !rows[i+2])
         continue;
         
-      x = rows[i].getElementsByClassName(`rankings-table-${type}`)[0];
+      let x = rows[i].getElementsByClassName(`rankings-table-${type}`)[0];
       x.setAttribute("class",`rankings-table-${type} sorted`);
-      y = rows[i + 2].getElementsByClassName(`rankings-table-${type}`)[0];
+      let y = rows[i + 2].getElementsByClassName(`rankings-table-${type}`)[0];
       y.setAttribute("class",`rankings-table-${type} sorted`);
       if (ascending && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
         canSwitch = true;
@@ -196,7 +196,7 @@ function tableInsert(game){
     return;
   }
 
-  let table = document.getElementById("rankings-table");
+  let table = <HTMLTableElement> document.getElementById("rankings-table");
 
   //Get data for the new row
   let rank = game["Rank"];
@@ -272,11 +272,11 @@ function tableInsert(game){
   //table.appendChild(newRow);
 
   //Initialize game breakdown row
-  newRowInfo = table.insertRow(-1);
+  let newRowInfo = table.insertRow(-1);
   newRowInfo.setAttribute("class","rankings-row-info");
 
   //Create table data element for game breakdown
-  infoData = document.createElement("td");
+  let infoData = document.createElement("td");
   infoData.setAttribute("class","rankings-table-info");
   infoData.setAttribute("colspan","10");
   infoData.appendChild(addInfo(game));
@@ -305,8 +305,8 @@ function addInfo(game){
   let ign = game["Ranking Info"]["IGN"];
   let hasImg = game["Game Image"];
   
-  pChartEle = createRankingsChart("Peter's Scores",pGameplay,pVisuals,pAudio,pContent,pOverall);
-  kChartEle = createRankingsChart("Kevin's Scores",kGameplay,kVisuals,kAudio,kContent,kOverall);
+  let pChartEle = createRankingsChart("Peter's Scores",pGameplay,pVisuals,pAudio,pContent,pOverall);
+  let kChartEle = createRankingsChart("Kevin's Scores",kGameplay,kVisuals,kAudio,kContent,kOverall);
 
   //Create div container
   var chartContainer = document.createElement("div");
@@ -376,7 +376,7 @@ function addInfo(game){
     let gAudio = game["Ranking Info"]["G. Audio"].toFixed(2);
     let gContent = game["Ranking Info"]["G. Content"].toFixed(2);
     let gOverall = game["Ranking Info"]["Guest Rating"].toFixed(2);
-    gChartEle = createRankingsChart(`${guest}'s Scores`,gGameplay,gVisuals,gAudio,gContent,gOverall);
+    let gChartEle = createRankingsChart(`${guest}'s Scores`,gGameplay,gVisuals,gAudio,gContent,gOverall);
     chartContainer.appendChild(gChartEle);
   }
 
@@ -388,7 +388,7 @@ function search(searchbox){
   let txt = searchbox.value.toLowerCase();
   let table = document.getElementById("rankings-table").childNodes[1].childNodes;
   for(let i = 0; i < table.length; i++){
-    let row = table[i];
+    let row = <HTMLElement> table[i];
     if(row.className && row.className.includes("rankings-table-row")){
       let data = row.getElementsByTagName("td");
       let save = false;

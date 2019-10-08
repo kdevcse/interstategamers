@@ -7,7 +7,8 @@ function getLiveStatus(){
             if (this.readyState == 4 && this.status == 200) {
                 var data = JSON.parse(this.responseText)["data"];
                 if(data.length > 0 && data[0]["type"] === "live"){
-                    channels[i].getElementsByClassName("live-text")[0].style.visibility = "visible";
+                    let text = <HTMLElement> channels[i].getElementsByClassName("live-text")[0];
+                    text.style.visibility = "visible";
                 }
             }
         };

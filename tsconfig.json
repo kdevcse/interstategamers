@@ -1,7 +1,6 @@
 {
     "include": [
-        "test/**/*",
-        "test/*"
+        "src/*"
     ],
     "compilerOptions": {
         "noImplicitAny": true,

@@ -1,14 +1,14 @@
 [build]
 
-    publish = "src"
+    publish = "dist"
 
     # Runs in root directory so traversing to this program is fine
     # command = "python3 build/UpdateData.py ${PodId} ${PodKey} ${AirtableKey};"
-    command = "gulp update; gulp compile;"
+    command = "gulp clean; gulp update; gulp compile;"
 
 [dev]
 
-    publish = "src"
+    publish = "dist"
 
     # We have a static file in place to help us out so we don't really need
     # to install python to run debug/develop. But if we need it, install
