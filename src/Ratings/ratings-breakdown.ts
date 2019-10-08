@@ -1,4 +1,4 @@
-function createRankingsChart(title,gameplay,visuals,audio,content,overall){
+function createRankingsChart(title: string, gameplay: string, visuals: string, audio: string, content: string, overall: string){
 
 	let statClass = "stat-category";
 	let rankClass = "rank";
@@ -99,7 +99,7 @@ function createRankingsChart(title,gameplay,visuals,audio,content,overall){
 	return chartEle;
 }
 
-function expand(ele){
+function expand(ele: HTMLElement){
 	let table = document.getElementById("rankings-table");
 	let nodes = table.getElementsByClassName("rankings-table-row");
 

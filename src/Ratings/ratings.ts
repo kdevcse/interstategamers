@@ -44,8 +44,8 @@ function loadData(){
       }
       //Add event listener to search box
       let searchBox = document.getElementById("options-searchbox");
-      searchBox.addEventListener("input",function(){search(this)});
-      searchBox.addEventListener("change",function(){search(this)});
+      searchBox.addEventListener("input",function(){search(<HTMLTextAreaElement> this)});
+      searchBox.addEventListener("change",function(){search(<HTMLTextAreaElement> this)});
       checkScrollIndicators();
 	  }
 	};
@@ -53,21 +53,21 @@ function loadData(){
 	xmlhttp.send();
 }
 
-function sortEpisodesByRank(episodes) {
+function sortEpisodesByRank(episodes: any) {
   for(let i = 0; i < episodes.length; i++){
     if(!episodes[i]["Rank"]){
       episodes.splice(i,1);
       i -= 1;
     }
   }
-  episodes.sort(function(a,b){
+  episodes.sort(function(a: any,b: any){
     return Number(b["Rank"]) - Number(a["Rank"]);
   });
   episodes.reverse();
   return episodes;
 }
 
-function resetTableRows(saveId){
+function resetTableRows(saveId: string){
   let table = <HTMLTableElement> document.getElementById("rankings-table");
   let rows = table.rows;
 
@@ -92,7 +92,7 @@ function resetTableRows(saveId){
   }
 }
 
-function sortTableByCategory(ele,category){
+function sortTableByCategory(ele: HTMLElement, category: string){
   //Set row to sorted class identifier
   resetTableRows(ele.id);
   ele.classList.add("sorted");
@@ -141,7 +141,7 @@ function sortTableByCategory(ele,category){
   }
 }
 
-function sortTableByName(ele, type){
+function sortTableByName(ele: HTMLElement, type: string){
   //Set row to sorted class identifier
   resetTableRows(ele.id);
   ele.classList.add("sorted");
@@ -190,7 +190,7 @@ function sortTableByName(ele, type){
   }
 }
 
-function tableInsert(game){
+function tableInsert(game: any){
   //Make sure game has ranking information
   if(!game["Ranking Info"]){
     return;
@@ -286,7 +286,7 @@ function tableInsert(game){
   //table.appendChild(newRowInfo);
 }
 
-function addInfo(game){
+function addInfo(game: any){
   
   //Gather imperative data
   let dte = new Date(game["published_at"]);
@@ -383,7 +383,7 @@ function addInfo(game){
   return chartContainer;
 }
 
-function search(searchbox){
+function search(searchbox: HTMLTextAreaElement){
   unselectAll();
   let txt = searchbox.value.toLowerCase();
   let table = document.getElementById("rankings-table").childNodes[1].childNodes;
