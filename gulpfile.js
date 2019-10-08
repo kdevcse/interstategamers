@@ -22,7 +22,7 @@ function update(cb){
 }
 
 function copySrcToDist(cb){
-  exec('cp -v -f -Recurse src/* dist', function (err, stdout, stderr) {
+  exec('cp -v -f -R src/* dist', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
