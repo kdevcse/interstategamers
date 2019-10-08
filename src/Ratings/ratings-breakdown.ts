@@ -18,7 +18,7 @@ function createRankingsChart(title: string, gameplay: string, visuals: string, a
 	//Overall
 	let statOverall = document.createElement("p");
 	statOverall.className = statClass;
-	statOverall.innerHTML = `Overall: ${overall}/100`; 
+	statOverall.innerHTML = `Overall: ${overall}/100`;
   
 	let rankOverall = document.createElement("div");
 	rankOverall.className = rankClass + ` ${overallClass}`;
@@ -32,7 +32,7 @@ function createRankingsChart(title: string, gameplay: string, visuals: string, a
 	//Gameplay
 	let statGameplay = document.createElement("p");
 	statGameplay.className = statClass;
-	statGameplay.innerHTML = `Gameplay: ${gameplay}/100`; 
+	statGameplay.innerHTML = `Gameplay: ${gameplay}/100`;
   
 	let rankGameplay = document.createElement("div");
 	rankGameplay.className = rankClass;
@@ -46,7 +46,7 @@ function createRankingsChart(title: string, gameplay: string, visuals: string, a
 	//Visuals
 	let statVisuals = document.createElement("p");
 	statVisuals.className = statClass;
-	statVisuals.innerHTML = `Visuals: ${visuals}/100`; 
+	statVisuals.innerHTML = `Visuals: ${visuals}/100`;
   
 	let rankVisuals = document.createElement("div");
 	rankVisuals.className = rankClass;
@@ -60,7 +60,7 @@ function createRankingsChart(title: string, gameplay: string, visuals: string, a
 	//Audio
 	let statAudio = document.createElement("p");
 	statAudio.className = statClass;
-	statAudio.innerHTML = `Audio: ${audio}/100`; 
+	statAudio.innerHTML = `Audio: ${audio}/100`;
   
 	let rankAudio = document.createElement("div");
 	rankAudio.className = rankClass;
@@ -74,7 +74,7 @@ function createRankingsChart(title: string, gameplay: string, visuals: string, a
 	//Content
 	let statContent = document.createElement("p");
 	statContent.className = statClass;
-	statContent.innerHTML = `Content: ${content}/100`; 
+	statContent.innerHTML = `Content: ${content}/100`;
   
 	let rankContent = document.createElement("div");
 	rankContent.className = rankClass;
