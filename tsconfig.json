@@ -1,0 +1,11 @@
+{
+    "include": [
+        "src/*",
+        "src/*/*"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "lib": ["es6", "dom", "es2017"],
+        "target": "es5"
+    }
+}

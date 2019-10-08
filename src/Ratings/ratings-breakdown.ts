@@ -1,4 +1,4 @@
-function createRankingsChart(title,gameplay,visuals,audio,content,overall){
+function createRankingsChart(title: string, gameplay: string, visuals: string, audio: string, content: string, overall: string){
 
 	let statClass = "stat-category";
 	let rankClass = "rank";
@@ -7,7 +7,7 @@ function createRankingsChart(title,gameplay,visuals,audio,content,overall){
 	let overallProgressClass = "overall-progress";
 
 	//Create main elements
-	chartEle = document.createElement("div");
+	let chartEle = document.createElement("div");
 	chartEle.className = "chart";
   
 	let header = document.createElement("h3")
@@ -16,70 +16,70 @@ function createRankingsChart(title,gameplay,visuals,audio,content,overall){
 	chartEle.appendChild(header);
   
 	//Overall
-	statOverall = document.createElement("p");
+	let statOverall = document.createElement("p");
 	statOverall.className = statClass;
-	statOverall.innerHTML = `Overall: ${overall}/100`; 
+	statOverall.innerHTML = `Overall: ${overall}/100`;
   
-	rankOverall = document.createElement("div");
+	let rankOverall = document.createElement("div");
 	rankOverall.className = rankClass + ` ${overallClass}`;
 	
-	progressOverall = document.createElement("div");
+	let progressOverall = document.createElement("div");
 	progressOverall.className = progressClass + ` ${overallProgressClass}`;
 	progressOverall.style.width = overall + "%";
   
 	rankOverall.appendChild(progressOverall);
   
 	//Gameplay
-	statGameplay = document.createElement("p");
+	let statGameplay = document.createElement("p");
 	statGameplay.className = statClass;
-	statGameplay.innerHTML = `Gameplay: ${gameplay}/100`; 
+	statGameplay.innerHTML = `Gameplay: ${gameplay}/100`;
   
-	rankGameplay = document.createElement("div");
+	let rankGameplay = document.createElement("div");
 	rankGameplay.className = rankClass;
 	
-	progressGameplay = document.createElement("div");
+	let progressGameplay = document.createElement("div");
 	progressGameplay.className = progressClass;
 	progressGameplay.style.width = gameplay + "%";
   
 	rankGameplay.appendChild(progressGameplay);
   
 	//Visuals
-	statVisuals = document.createElement("p");
+	let statVisuals = document.createElement("p");
 	statVisuals.className = statClass;
-	statVisuals.innerHTML = `Visuals: ${visuals}/100`; 
+	statVisuals.innerHTML = `Visuals: ${visuals}/100`;
   
-	rankVisuals = document.createElement("div");
+	let rankVisuals = document.createElement("div");
 	rankVisuals.className = rankClass;
 	
-	progressVisuals = document.createElement("div");
+	let progressVisuals = document.createElement("div");
 	progressVisuals.className = progressClass;
 	progressVisuals.style.width = visuals + "%";
   
 	rankVisuals.appendChild(progressVisuals);
   
 	//Audio
-	statAudio = document.createElement("p");
+	let statAudio = document.createElement("p");
 	statAudio.className = statClass;
-	statAudio.innerHTML = `Audio: ${audio}/100`; 
+	statAudio.innerHTML = `Audio: ${audio}/100`;
   
-	rankAudio = document.createElement("div");
+	let rankAudio = document.createElement("div");
 	rankAudio.className = rankClass;
 	
-	progressAudio = document.createElement("div");
+	let progressAudio = document.createElement("div");
 	progressAudio.className = progressClass;
 	progressAudio.style.width = audio + "%";
   
 	rankAudio.appendChild(progressAudio);
   
 	//Content
-	statContent = document.createElement("p");
+	let statContent = document.createElement("p");
 	statContent.className = statClass;
-	statContent.innerHTML = `Content: ${content}/100`; 
+	statContent.innerHTML = `Content: ${content}/100`;
   
-	rankContent = document.createElement("div");
+	let rankContent = document.createElement("div");
 	rankContent.className = rankClass;
 	
-	progressContent = document.createElement("div");
+	let progressContent = document.createElement("div");
 	progressContent.className = progressClass;
 	progressContent.style.width = content + "%";
   
@@ -99,17 +99,18 @@ function createRankingsChart(title,gameplay,visuals,audio,content,overall){
 	return chartEle;
 }
 
-function expand(ele){
+function expand(ele: HTMLElement){
 	let table = document.getElementById("rankings-table");
 	let nodes = table.getElementsByClassName("rankings-table-row");
 
 	for(let i = 0; i < nodes.length; i++){
-		let charts = nodes[i].nextSibling.getElementsByClassName("charts")[0];
+		let sibling = <HTMLElement> nodes[i].nextSibling;
+		let charts = sibling.getElementsByClassName("charts")[0];
 
 		if (nodes[i] === ele && nodes[i].className != "rankings-table-row selected"){
 			//Mark the two rows as selected
 			nodes[i].classList.add("selected");
-			nodes[i].nextSibling.classList.add("expanded");
+			sibling.classList.add("expanded");
 
 			//Set individual charts to expand
 			charts.classList.add("expanded-breakdown");
@@ -118,7 +119,7 @@ function expand(ele){
 		
 		//Mark the two rows as unselected
 		nodes[i].classList.remove("selected");
-		nodes[i].nextSibling.classList.remove("expanded");
+		sibling.classList.remove("expanded");
 
 		//Minimize individual charts
 		charts.classList.remove("expanded-breakdown");
@@ -126,17 +127,17 @@ function expand(ele){
 }
 
 function unselectAll(){
-	selected = document.getElementsByClassName("selected");
+	let selected = document.getElementsByClassName("selected");
 	for(let i = 0; i < selected.length; i++){
 		selected[i].classList.remove("selected");
 	}
 
-	expanded = document.getElementsByClassName("expanded");
+	let expanded = document.getElementsByClassName("expanded");
 	for(let i = 0; i < expanded.length; i++){
 		expanded[i].classList.remove("expanded");
 	}
 
-	breakdown = document.getElementsByClassName("expanded-breakdown");
+	let breakdown = document.getElementsByClassName("expanded-breakdown");
 	for(let i = 0; i < breakdown.length; i++){
 		breakdown[i].classList.remove("expanded-breakdown");
 	}
