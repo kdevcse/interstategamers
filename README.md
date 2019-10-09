@@ -18,6 +18,7 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 # Supporting Software
 - [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
 - [gulp.js](https://gulpjs.com) (Creates simple automated build commands)
+- [Jest](https://jestjs.io/) (Unit testing framework)
 - [Snipcart](https://snipcart.com/) (ECommerce Site)
 - [WatchTower Radar](https://radar.watchtower.ai) (Scans repo for credentials and secrets)
 - [CodeFactor](https://www.codefactor.io) (Performs code analysis)
