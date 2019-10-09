@@ -190,100 +190,136 @@ function sortTableByName(ele: HTMLElement, type: string){
   }
 }
 
+class GameData{
+  Type: string;
+  Value: string;
+  Title: boolean;
+
+  constructor(type: string, val: string, title: boolean = false){
+    this.Type = type.toLowerCase();
+    this.Value = val;
+  }
+
+  create(sort: boolean = false){
+    let tableData = document.createElement("td");
+    tableData.classList.add(`rankings-table-${this.Type}`);
+    tableData.innerHTML = this.Value;
+    if (sort){
+      tableData.classList.add("sorted");
+    }
+    if(this.Title){
+      tableData.title = this.Value;
+    }
+    return tableData;
+  }
+}
+
+class GameRankings {
+  Rank: number;
+  Title: string;
+  Year: number;
+  Platform: string;
+  Overall: number;
+  Gameplay: number;
+  Aesthetics: number;
+  Content: number;
+  pOverall: number;
+  kOverall: number;
+  Info: any;
+
+  //Feed JSON data to populate class
+  constructor(game: any){
+    this.Rank = game["Rank"];
+    this.Title = game["Ranking Info"]["Game"];
+    this.Year = game["Ranking Info"]["Year"];
+    this.Platform = game["Ranking Info"]["Platform"];
+    this.Overall = game["Ranking Info"]["IG Score"].toFixed(2);
+    this.Gameplay = game["Ranking Info"]["Gameplay"].toFixed(2);
+    this.Aesthetics = game["Ranking Info"]["Aesthetics"].toFixed(2);
+    this.Content = game["Ranking Info"]["Content"].toFixed(2);
+    this.pOverall = game["Ranking Info"]["Peter's Rating"].toFixed(2);
+    this.kOverall = game["Ranking Info"]["Kevin's Rating"].toFixed(2);
+    this.Info = game;
+  }
+
+  insertInTable(table: HTMLTableElement){
+
+    let newRow = table.insertRow(-1);
+    newRow.setAttribute("class","rankings-table-row");
+    newRow.setAttribute("game",this.Title);
+    newRow.addEventListener("click",function(){expand(this)});
+
+    //Create table data elements
+    const r = new GameData("rank",`${this.Rank}`);
+    const t = new GameData("title",`${this.Title}`,true);
+    const titleE = t.create();
+
+    if(this.Info["Ranking Info"]["Guest"]){
+      let icon = document.createElement("i");
+      icon.className = "fas fa-user-plus";
+      icon.title = "Guest Appearance";
+      titleE.innerHTML = this.Title + " &nbsp; ";
+      titleE.appendChild(icon);
+    }
+    
+    const y = new GameData("year",`${this.Year}`);
+    const p = new GameData("platform",`${this.Title}`,true);
+    const o = new GameData("overall",`${this.Overall}`);
+    const g = new GameData("gameplay",`${this.Gameplay}`);
+    const a = new GameData("aesthetics",`${this.Aesthetics}`);
+    const c = new GameData("content",`${this.Content}`);
+    const po = new GameData("p-overall",`${this.pOverall}`);
+    const ko = new GameData("k-overall",`${this.kOverall}`);
+    
+    //Append table data and row for the game
+    newRow.appendChild(r.create(true));
+    newRow.appendChild(titleE);
+    newRow.appendChild(y.create());
+    newRow.appendChild(p.create());
+    newRow.appendChild(o.create());
+    newRow.appendChild(g.create());
+    newRow.appendChild(a.create());
+    newRow.appendChild(c.create());
+    newRow.appendChild(po.create());
+    newRow.appendChild(ko.create());
+  }
+}
+
+class GameInfo{
+  GameData: any;
+
+  constructor(game: any){
+    this.GameData = game;
+  }
+
+  insertInTable(table: HTMLTableElement){
+    //Initialize game breakdown row
+    let newRowInfo = table.insertRow(-1);
+    newRowInfo.setAttribute("class","rankings-row-info");
+  
+    //Create table data element for game breakdown
+    let infoData = document.createElement("td");
+    infoData.setAttribute("class","rankings-table-info");
+    infoData.setAttribute("colspan","10");
+    infoData.appendChild(addInfo(this.GameData));
+  
+    //Append game breakdown to table
+    newRowInfo.appendChild(infoData);
+  }
+}
+
 function tableInsert(game: any){
   //Make sure game has ranking information
   if(!game["Ranking Info"]){
     return;
   }
 
-  let table = <HTMLTableElement> document.getElementById("rankings-table");
+  const table = <HTMLTableElement> document.getElementById("rankings-table");
+  const data = new GameRankings(game);
+  const info = new GameInfo(game);
 
-  //Get data for the new row
-  let rank = game["Rank"];
-  let title = game["Ranking Info"]["Game"];
-  let year = game["Ranking Info"]["Year"];
-  let platform = game["Ranking Info"]["Platform"];
-  let overall = game["Ranking Info"]["IG Score"].toFixed(2);
-  let gameplay = game["Ranking Info"]["Gameplay"].toFixed(2);
-  let aesthetics = game["Ranking Info"]["Aesthetics"].toFixed(2);
-  let content = game["Ranking Info"]["Content"].toFixed(2);
-  let pOverall = game["Ranking Info"]["Peter's Rating"].toFixed(2);
-  let kOverall = game["Ranking Info"]["Kevin's Rating"].toFixed(2);
-
-
-  //Initialize the new row
-  let newRow = table.insertRow(-1);
-  newRow.setAttribute("class","rankings-table-row");
-  newRow.setAttribute("game",title);
-  newRow.addEventListener("click",function(){expand(this)});
-
-  //Create table data elements
-  let rankE = document.createElement("td");
-  rankE.setAttribute("class","rankings-table-rank sorted");
-  rankE.innerHTML = rank;
-  let titleE = document.createElement("td");
-  titleE.setAttribute("class","rankings-table-title");
-  titleE.innerHTML = title;
-  titleE.title = title;
-  if(game["Ranking Info"]["Guest"]){
-    let icon = document.createElement("i");
-    icon.className = "fas fa-user-plus";
-    icon.title = "Guest Appearance";
-    titleE.innerHTML = title + " &nbsp; ";
-    titleE.appendChild(icon);
-  }
-  let yearE = document.createElement("td");
-  yearE.setAttribute("class","rankings-table-year");
-  yearE.innerHTML = year;
-  let platformE = document.createElement("td");
-  platformE.setAttribute("class","rankings-table-platform");
-  platformE.innerHTML = platform;
-  platformE.title = platform;
-  let overallE = document.createElement("td");
-  overallE.setAttribute("class","rankings-table-overall");
-  overallE.innerHTML = overall;
-  let gameplayE = document.createElement("td");
-  gameplayE.setAttribute("class","rankings-table-gameplay");
-  gameplayE.innerHTML = gameplay;
-  let aestheticsE = document.createElement("td");
-  aestheticsE.setAttribute("class","rankings-table-aesthetics");
-  aestheticsE.innerHTML = aesthetics;
-  let contentE = document.createElement("td");
-  contentE.setAttribute("class","rankings-table-content");
-  contentE.innerHTML = content;
-  let pScore = document.createElement("td");
-  pScore.setAttribute("class","rankings-table-p-overall");
-  pScore.innerHTML = pOverall;
-  let kScore = document.createElement("td");
-  kScore.setAttribute("class","rankings-table-k-overall");
-  kScore.innerHTML = kOverall;
-  
-  //Append table data and row for the game
-  newRow.appendChild(rankE);
-  newRow.appendChild(titleE);
-  newRow.appendChild(yearE);
-  newRow.appendChild(platformE);
-  newRow.appendChild(overallE);
-  newRow.appendChild(gameplayE);
-  newRow.appendChild(aestheticsE);
-  newRow.appendChild(contentE);
-  newRow.appendChild(pScore);
-  newRow.appendChild(kScore);
-  //table.appendChild(newRow);
-
-  //Initialize game breakdown row
-  let newRowInfo = table.insertRow(-1);
-  newRowInfo.setAttribute("class","rankings-row-info");
-
-  //Create table data element for game breakdown
-  let infoData = document.createElement("td");
-  infoData.setAttribute("class","rankings-table-info");
-  infoData.setAttribute("colspan","10");
-  infoData.appendChild(addInfo(game));
-
-  //Append game breakdown to table
-  newRowInfo.appendChild(infoData);
-  //table.appendChild(newRowInfo);
+  data.insertInTable(table);
+  info.insertInTable(table);
 }
 
 function addInfo(game: any){
