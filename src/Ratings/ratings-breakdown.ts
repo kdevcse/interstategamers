@@ -1,3 +1,33 @@
+class Chart {
+
+	Value: string;
+	Type: string;
+
+	constructor(val: string, type: string){
+		this.Value = val;
+		this.Type = type;
+	}
+
+	createHeader(){
+		let stat = document.createElement("p");
+		stat.className = "stat-category";
+		stat.innerHTML = `${this.Type}: ${this.Value}/100`;
+		return stat;
+	}
+
+	createProgressBar(){
+		let rank = document.createElement("div");
+		rank.className = "rank";
+		
+		let progress = document.createElement("div");
+		progress.className = "progress";
+		progress.style.width = this.Value + "%";
+	
+		rank.appendChild(progress);
+		return rank;
+	}
+}
+
 function createRankingsChart(title: string, gameplay: string, visuals: string, audio: string, content: string, overall: string){
 
 	let statClass = "stat-category";
@@ -30,18 +60,21 @@ function createRankingsChart(title: string, gameplay: string, visuals: string, a
 	rankOverall.appendChild(progressOverall);
   
 	//Gameplay
-	let statGameplay = document.createElement("p");
-	statGameplay.className = statClass;
-	statGameplay.innerHTML = `Gameplay: ${gameplay}/100`;
+	const g = new Chart(gameplay,"Gameplay");
+	g.createHeader();
+	g.createProgressBar();
+	// let statGameplay = document.createElement("p");
+	// statGameplay.className = statClass;
+	// statGameplay.innerHTML = `Gameplay: ${gameplay}/100`;
   
-	let rankGameplay = document.createElement("div");
-	rankGameplay.className = rankClass;
+	// let rankGameplay = document.createElement("div");
+	// rankGameplay.className = rankClass;
 	
-	let progressGameplay = document.createElement("div");
-	progressGameplay.className = progressClass;
-	progressGameplay.style.width = gameplay + "%";
+	// let progressGameplay = document.createElement("div");
+	// progressGameplay.className = progressClass;
+	// progressGameplay.style.width = gameplay + "%";
   
-	rankGameplay.appendChild(progressGameplay);
+	// rankGameplay.appendChild(progressGameplay);
   
 	//Visuals
 	let statVisuals = document.createElement("p");
@@ -88,8 +121,8 @@ function createRankingsChart(title: string, gameplay: string, visuals: string, a
 	//Append elements
 	chartEle.appendChild(statOverall);
 	chartEle.appendChild(rankOverall);
-	chartEle.appendChild(statGameplay);
-	chartEle.appendChild(rankGameplay);
+	chartEle.appendChild(g.createHeader());
+	chartEle.appendChild(g.createProgressBar());
 	chartEle.appendChild(statVisuals);
 	chartEle.appendChild(rankVisuals);
 	chartEle.appendChild(statAudio);
