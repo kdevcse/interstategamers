@@ -1,4 +1,53 @@
-class Chart {
+class RankingsChart {
+	Title: string;
+	Overall: string;
+	Gameplay: string;
+	Visuals: string;
+	Audio: string;
+	Content: string;
+
+	constructor(title: string, gameplay: string, visuals: string, audio: string, content: string, overall: string){
+		this.Title = title;
+		this.Gameplay = gameplay;
+		this.Visuals = visuals;
+		this.Audio = audio;
+		this.Content = content;
+		this.Overall = overall;
+	}
+
+	create(){
+		//Create main elements
+		let chartEle = document.createElement("div");
+		chartEle.className = "chart";
+		
+		let header = document.createElement("h3")
+		header.innerHTML = this.Title;
+		
+		chartEle.appendChild(header);
+		
+		const o = new ProgressBar(this.Overall,"Overall");
+		const g = new ProgressBar(this.Gameplay,"Gameplay");
+		const v = new ProgressBar(this.Visuals,"Visuals");
+		const a = new ProgressBar(this.Audio,"Audio");
+		const c = new ProgressBar(this.Content,"Content");
+
+		//Append elements
+		chartEle.appendChild(o.createHeader());
+		chartEle.appendChild(o.createProgressBar());
+		chartEle.appendChild(g.createHeader());
+		chartEle.appendChild(g.createProgressBar());
+		chartEle.appendChild(v.createHeader());
+		chartEle.appendChild(v.createProgressBar());
+		chartEle.appendChild(a.createHeader());
+		chartEle.appendChild(a.createProgressBar());
+		chartEle.appendChild(c.createHeader());
+		chartEle.appendChild(c.createProgressBar());
+
+		return chartEle;
+	}
+}
+
+class ProgressBar {
 
 	Value: string;
 	Type: string;
@@ -11,6 +60,11 @@ class Chart {
 	createHeader(){
 		let stat = document.createElement("p");
 		stat.className = "stat-category";
+
+		if (this.Type === "Overall"){
+			stat.classList.add("overall");
+		}
+
 		stat.innerHTML = `${this.Type}: ${this.Value}/100`;
 		return stat;
 	}
@@ -21,115 +75,16 @@ class Chart {
 		
 		let progress = document.createElement("div");
 		progress.className = "progress";
+		
+		if (this.Type === "Overall"){
+			progress.classList.add("overall-progress");
+		}
+
 		progress.style.width = this.Value + "%";
 	
 		rank.appendChild(progress);
 		return rank;
 	}
-}
-
-function createRankingsChart(title: string, gameplay: string, visuals: string, audio: string, content: string, overall: string){
-
-	let statClass = "stat-category";
-	let rankClass = "rank";
-	let progressClass = "progress";
-	let overallClass = "overall";
-	let overallProgressClass = "overall-progress";
-
-	//Create main elements
-	let chartEle = document.createElement("div");
-	chartEle.className = "chart";
-  
-	let header = document.createElement("h3")
-	header.innerHTML = title;
-  
-	chartEle.appendChild(header);
-  
-	//Overall
-	let statOverall = document.createElement("p");
-	statOverall.className = statClass;
-	statOverall.innerHTML = `Overall: ${overall}/100`;
-  
-	let rankOverall = document.createElement("div");
-	rankOverall.className = rankClass + ` ${overallClass}`;
-	
-	let progressOverall = document.createElement("div");
-	progressOverall.className = progressClass + ` ${overallProgressClass}`;
-	progressOverall.style.width = overall + "%";
-  
-	rankOverall.appendChild(progressOverall);
-  
-	//Gameplay
-	const g = new Chart(gameplay,"Gameplay");
-	g.createHeader();
-	g.createProgressBar();
-	// let statGameplay = document.createElement("p");
-	// statGameplay.className = statClass;
-	// statGameplay.innerHTML = `Gameplay: ${gameplay}/100`;
-  
-	// let rankGameplay = document.createElement("div");
-	// rankGameplay.className = rankClass;
-	
-	// let progressGameplay = document.createElement("div");
-	// progressGameplay.className = progressClass;
-	// progressGameplay.style.width = gameplay + "%";
-  
-	// rankGameplay.appendChild(progressGameplay);
-  
-	//Visuals
-	let statVisuals = document.createElement("p");
-	statVisuals.className = statClass;
-	statVisuals.innerHTML = `Visuals: ${visuals}/100`;
-  
-	let rankVisuals = document.createElement("div");
-	rankVisuals.className = rankClass;
-	
-	let progressVisuals = document.createElement("div");
-	progressVisuals.className = progressClass;
-	progressVisuals.style.width = visuals + "%";
-  
-	rankVisuals.appendChild(progressVisuals);
-  
-	//Audio
-	let statAudio = document.createElement("p");
-	statAudio.className = statClass;
-	statAudio.innerHTML = `Audio: ${audio}/100`;
-  
-	let rankAudio = document.createElement("div");
-	rankAudio.className = rankClass;
-	
-	let progressAudio = document.createElement("div");
-	progressAudio.className = progressClass;
-	progressAudio.style.width = audio + "%";
-  
-	rankAudio.appendChild(progressAudio);
-  
-	//Content
-	let statContent = document.createElement("p");
-	statContent.className = statClass;
-	statContent.innerHTML = `Content: ${content}/100`;
-  
-	let rankContent = document.createElement("div");
-	rankContent.className = rankClass;
-	
-	let progressContent = document.createElement("div");
-	progressContent.className = progressClass;
-	progressContent.style.width = content + "%";
-  
-	rankContent.appendChild(progressContent);
-  
-	//Append elements
-	chartEle.appendChild(statOverall);
-	chartEle.appendChild(rankOverall);
-	chartEle.appendChild(g.createHeader());
-	chartEle.appendChild(g.createProgressBar());
-	chartEle.appendChild(statVisuals);
-	chartEle.appendChild(rankVisuals);
-	chartEle.appendChild(statAudio);
-	chartEle.appendChild(rankAudio);
-	chartEle.appendChild(statContent);
-	chartEle.appendChild(rankContent);
-	return chartEle;
 }
 
 function expand(ele: HTMLElement){

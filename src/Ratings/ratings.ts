@@ -305,8 +305,10 @@ function addInfo(game: any){
   let ign = game["Ranking Info"]["IGN"];
   let hasImg = game["Game Image"];
   
-  let pChartEle = createRankingsChart("Peter's Scores",pGameplay,pVisuals,pAudio,pContent,pOverall);
-  let kChartEle = createRankingsChart("Kevin's Scores",kGameplay,kVisuals,kAudio,kContent,kOverall);
+  const pChart = new RankingsChart("Peter's Scores",pGameplay,pVisuals,pAudio,pContent,pOverall);
+  const kChart = new RankingsChart("Kevin's Scores",kGameplay,kVisuals,kAudio,kContent,kOverall);
+  const pChartEle = pChart.create();
+  const kChartEle = kChart.create();
 
   //Create div container
   var chartContainer = document.createElement("div");
@@ -376,7 +378,8 @@ function addInfo(game: any){
     let gAudio = game["Ranking Info"]["G. Audio"].toFixed(2);
     let gContent = game["Ranking Info"]["G. Content"].toFixed(2);
     let gOverall = game["Ranking Info"]["Guest Rating"].toFixed(2);
-    let gChartEle = createRankingsChart(`${guest}'s Scores`,gGameplay,gVisuals,gAudio,gContent,gOverall);
+    const gChart = new RankingsChart(`${guest}'s Scores`,gGameplay,gVisuals,gAudio,gContent,gOverall);
+    const gChartEle = gChart.create();
     chartContainer.appendChild(gChartEle);
   }
 
