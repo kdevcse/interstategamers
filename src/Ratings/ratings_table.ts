@@ -181,7 +181,7 @@ export class GameBreakdown {
 	}
 }
 
-export class RankingsChart {
+class RankingsChart {
 	Title: string;
 	Overall: string;
 	Gameplay: string;
@@ -230,7 +230,7 @@ export class RankingsChart {
 	}
 }
 
-export class ProgressBar {
+class ProgressBar {
 
 	Value: string;
 	Type: string;
@@ -267,7 +267,7 @@ export class ProgressBar {
 	}
 }
 
-export class GameData {
+class GameData {
 	Type: string;
 	Value: string;
 	IncludeTitle: boolean;
@@ -292,7 +292,7 @@ export class GameData {
 	}
 }
 
-export class GameCritic{
+class GameCritic{
 	Score: number;
 	ContainerClass: string;
 	ImageName: string;
