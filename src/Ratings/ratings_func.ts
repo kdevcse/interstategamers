@@ -1,4 +1,4 @@
-import { create } from "istanbul-reports";
+import './ratings_table';
 
 //Handle scroll icons
 window.addEventListener('scroll', function () { checkScrollIndicators() });
