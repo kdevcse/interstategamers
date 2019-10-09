@@ -181,7 +181,7 @@ export class GameBreakdown {
 	}
 }
 
-class RankingsChart {
+export class RankingsChart {
 	Title: string;
 	Overall: string;
 	Gameplay: string;
@@ -230,7 +230,7 @@ class RankingsChart {
 	}
 }
 
-class ProgressBar {
+export class ProgressBar {
 
 	Value: string;
 	Type: string;
@@ -267,7 +267,7 @@ class ProgressBar {
 	}
 }
 
-class GameData {
+export class GameData {
 	Type: string;
 	Value: string;
 	IncludeTitle: boolean;
@@ -292,7 +292,7 @@ class GameData {
 	}
 }
 
-class GameCritic{
+export class GameCritic{
 	Score: number;
 	ContainerClass: string;
 	ImageName: string;
@@ -323,7 +323,7 @@ class GameCritic{
 		logo.src = `../Images/${this.ImageName}`;
 		logo.className = this.ImageClass;
 		let span = document.createElement("span");
-		span.className = "meta-score"
+		span.className = this.TextClass;
 		span.innerText = `${this.Score}`;
 		criticContainer.appendChild(logo);
 		criticContainer.appendChild(span);
