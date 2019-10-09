@@ -200,8 +200,8 @@ function tableInsert(game: any) {
 	}
 
 	const table = <HTMLTableElement>document.getElementById("rankings-table");
-	const data = new GameRankings(game);
-	const breakdown = new GameBreakdown(game);
+	var data = new GameRankings(game);
+	var breakdown = new GameBreakdown(game);
 
 	data.insertInTable(table);
 	breakdown.insertInTable(table);
