@@ -3,7 +3,7 @@ This file handles all things related to the rankings table structure and composi
 */
 window.addEventListener('load', function () { loadData() });
 
-export class GameRankings {
+class GameRankings {
 	Rank: number;
 	Title: string;
 	Year: number;
@@ -74,7 +74,7 @@ export class GameRankings {
 	}
 }
 
-export class GameBreakdown {
+class GameBreakdown {
 	PeterChart: RankingsChart;
 	KevinChart: RankingsChart;
 	GuestChart: RankingsChart;
