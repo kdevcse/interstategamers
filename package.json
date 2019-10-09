@@ -4,7 +4,7 @@
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/f6b95e64-cfc4-4310-98ec-8c480461f0ff/deploy-status)](https://app.netlify.com/sites/interstategamers/deploys)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,15 @@
   },
   "homepage": "https://github.com/klewiscse/interstategamers#readme",
   "devDependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/jest": "^24.0.18",
+    "babel-jest": "^24.9.0",
     "gulp": "^4.0.0",
     "gulp-typescript": "^5.0.1",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {}

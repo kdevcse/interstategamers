@@ -5,7 +5,9 @@
     ],
     "compilerOptions": {
         "noImplicitAny": true,
-        "lib": ["es6", "dom", "es2017"],
-        "target": "es5"
+        "module":"es6",
+        "sourceMap": true,
+        "lib": ["es7", "dom", "es2018"],
+        "target": "es2019"
     }
 }
