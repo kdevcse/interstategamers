@@ -1,4 +1,4 @@
-import { GameBreakdown, GameRankings } from './ratings_table';
+import { GameBreakdown, GameRankings } from 'Ratings/ratings_table';
 
 //Handle scroll icons
 window.addEventListener('scroll', function () { checkScrollIndicators() });
