@@ -1,115 +1,4 @@
-class RankingsChart {
-	Title: string;
-	Overall: string;
-	Gameplay: string;
-	Visuals: string;
-	Audio: string;
-	Content: string;
-
-	constructor(title: string, gameplay: string, visuals: string, audio: string, content: string, overall: string){
-		this.Title = title;
-		this.Gameplay = gameplay;
-		this.Visuals = visuals;
-		this.Audio = audio;
-		this.Content = content;
-		this.Overall = overall;
-	}
-
-	create(){
-		//Create main elements
-		let chartEle = document.createElement("div");
-		chartEle.className = "chart";
-		
-		let header = document.createElement("h3")
-		header.innerHTML = this.Title;
-		
-		chartEle.appendChild(header);
-		
-		const o = new ProgressBar(this.Overall,"Overall");
-		const g = new ProgressBar(this.Gameplay,"Gameplay");
-		const v = new ProgressBar(this.Visuals,"Visuals");
-		const a = new ProgressBar(this.Audio,"Audio");
-		const c = new ProgressBar(this.Content,"Content");
-
-		//Append elements
-		chartEle.appendChild(o.createHeader());
-		chartEle.appendChild(o.createProgressBar());
-		chartEle.appendChild(g.createHeader());
-		chartEle.appendChild(g.createProgressBar());
-		chartEle.appendChild(v.createHeader());
-		chartEle.appendChild(v.createProgressBar());
-		chartEle.appendChild(a.createHeader());
-		chartEle.appendChild(a.createProgressBar());
-		chartEle.appendChild(c.createHeader());
-		chartEle.appendChild(c.createProgressBar());
-
-		return chartEle;
-	}
-}
-
-class ProgressBar {
-
-	Value: string;
-	Type: string;
-
-	constructor(val: string, type: string){
-		this.Value = val;
-		this.Type = type;
-	}
-
-	createHeader(){
-		let stat = document.createElement("p");
-		stat.className = "stat-category";
-
-		stat.innerHTML = `${this.Type}: ${this.Value}/100`;
-		return stat;
-	}
-
-	createProgressBar(){
-		let rank = document.createElement("div");
-		rank.className = "rank";
-
-		let progress = document.createElement("div");
-		progress.className = "progress";
-		
-		if (this.Type === "Overall"){
-			rank.classList.add("overall");
-			progress.classList.add("overall-progress");
-		}
-
-		progress.style.width = this.Value + "%";
-	
-		rank.appendChild(progress);
-		return rank;
-	}
-}
-
-class GameData {
-	Type: string;
-	Value: string;
-	IncludeTitle: boolean;
-
-	constructor(type: string, val: string, includeTitle: boolean = false) {
-		this.Type = type.toLowerCase();
-		this.Value = val;
-		this.IncludeTitle = includeTitle;
-	}
-
-	create(sort: boolean = false) {
-		let tableData = document.createElement("td");
-		tableData.classList.add(`rankings-table-${this.Type}`);
-		tableData.innerHTML = this.Value;
-		if (sort) {
-			tableData.classList.add("sorted");
-		}
-		if (this.IncludeTitle) {
-			tableData.title = this.Value;
-		}
-		return tableData;
-	}
-}
-
-class GameRankings {
+export class GameRankings {
 	Rank: number;
 	Title: string;
 	Year: number;
@@ -180,7 +69,7 @@ class GameRankings {
 	}
 }
 
-class GameBreakdown {
+export class GameBreakdown {
 	PeterChart: RankingsChart;
 	KevinChart: RankingsChart;
 	GuestChart: RankingsChart;
@@ -289,6 +178,117 @@ class GameBreakdown {
 
 		info.appendChild(scores);
 		return info;
+	}
+}
+
+class RankingsChart {
+	Title: string;
+	Overall: string;
+	Gameplay: string;
+	Visuals: string;
+	Audio: string;
+	Content: string;
+
+	constructor(title: string, gameplay: string, visuals: string, audio: string, content: string, overall: string){
+		this.Title = title;
+		this.Gameplay = gameplay;
+		this.Visuals = visuals;
+		this.Audio = audio;
+		this.Content = content;
+		this.Overall = overall;
+	}
+
+	create(){
+		//Create main elements
+		let chartEle = document.createElement("div");
+		chartEle.className = "chart";
+		
+		let header = document.createElement("h3")
+		header.innerHTML = this.Title;
+		
+		chartEle.appendChild(header);
+		
+		const o = new ProgressBar(this.Overall,"Overall");
+		const g = new ProgressBar(this.Gameplay,"Gameplay");
+		const v = new ProgressBar(this.Visuals,"Visuals");
+		const a = new ProgressBar(this.Audio,"Audio");
+		const c = new ProgressBar(this.Content,"Content");
+
+		//Append elements
+		chartEle.appendChild(o.createHeader());
+		chartEle.appendChild(o.createProgressBar());
+		chartEle.appendChild(g.createHeader());
+		chartEle.appendChild(g.createProgressBar());
+		chartEle.appendChild(v.createHeader());
+		chartEle.appendChild(v.createProgressBar());
+		chartEle.appendChild(a.createHeader());
+		chartEle.appendChild(a.createProgressBar());
+		chartEle.appendChild(c.createHeader());
+		chartEle.appendChild(c.createProgressBar());
+
+		return chartEle;
+	}
+}
+
+class ProgressBar {
+
+	Value: string;
+	Type: string;
+
+	constructor(val: string, type: string){
+		this.Value = val;
+		this.Type = type;
+	}
+
+	createHeader(){
+		let stat = document.createElement("p");
+		stat.className = "stat-category";
+
+		stat.innerHTML = `${this.Type}: ${this.Value}/100`;
+		return stat;
+	}
+
+	createProgressBar(){
+		let rank = document.createElement("div");
+		rank.className = "rank";
+
+		let progress = document.createElement("div");
+		progress.className = "progress";
+		
+		if (this.Type === "Overall"){
+			rank.classList.add("overall");
+			progress.classList.add("overall-progress");
+		}
+
+		progress.style.width = this.Value + "%";
+	
+		rank.appendChild(progress);
+		return rank;
+	}
+}
+
+class GameData {
+	Type: string;
+	Value: string;
+	IncludeTitle: boolean;
+
+	constructor(type: string, val: string, includeTitle: boolean = false) {
+		this.Type = type.toLowerCase();
+		this.Value = val;
+		this.IncludeTitle = includeTitle;
+	}
+
+	create(sort: boolean = false) {
+		let tableData = document.createElement("td");
+		tableData.classList.add(`rankings-table-${this.Type}`);
+		tableData.innerHTML = this.Value;
+		if (sort) {
+			tableData.classList.add("sorted");
+		}
+		if (this.IncludeTitle) {
+			tableData.title = this.Value;
+		}
+		return tableData;
 	}
 }
 
