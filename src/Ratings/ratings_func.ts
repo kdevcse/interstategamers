@@ -568,7 +568,7 @@ class GameCritic{
 		logo.src = `../Images/${this.ImageName}`;
 		logo.className = this.ImageClass;
 		let span = document.createElement("span");
-		span.className = "meta-score"
+		span.className = this.TextClass;
 		span.innerText = `${this.Score}`;
 		criticContainer.appendChild(logo);
 		criticContainer.appendChild(span);
