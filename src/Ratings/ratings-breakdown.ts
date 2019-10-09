@@ -61,10 +61,6 @@ class ProgressBar {
 		let stat = document.createElement("p");
 		stat.className = "stat-category";
 
-		if (this.Type === "Overall"){
-			stat.classList.add("overall");
-		}
-
 		stat.innerHTML = `${this.Type}: ${this.Value}/100`;
 		return stat;
 	}
@@ -77,6 +73,7 @@ class ProgressBar {
 		progress.className = "progress";
 		
 		if (this.Type === "Overall"){
+			rank.classList.add("overall");
 			progress.classList.add("overall-progress");
 		}
 
