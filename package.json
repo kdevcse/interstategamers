@@ -29,5 +29,7 @@
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0"
+  }
 }
