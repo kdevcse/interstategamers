@@ -14,7 +14,7 @@ class GameRankings {
 	Content: number;
 	pOverall: number;
 	kOverall: number;
-	Info: any;
+	HasGuest: boolean = false;
 
 	//Feed JSON data to populate class
 	constructor(game: any) {
@@ -28,7 +28,9 @@ class GameRankings {
 		this.Content = game["Ranking Info"]["Content"].toFixed(2);
 		this.pOverall = game["Ranking Info"]["Peter's Rating"].toFixed(2);
 		this.kOverall = game["Ranking Info"]["Kevin's Rating"].toFixed(2);
-		this.Info = game;
+		if (game["Ranking Info"]["Guest"]){
+			this.HasGuest = true;
+		}
 	}
 
 	insertInTable(table: HTMLTableElement) {
@@ -42,8 +44,8 @@ class GameRankings {
 		const r = new GameData("rank", `${this.Rank}`);
 		const t = new GameData("title", `${this.Title}`, true);
 		const titleE = t.create();
-
-		if (this.Info["Ranking Info"]["Guest"]) {
+		
+		if (this.HasGuest) {
 			let icon = document.createElement("i");
 			icon.className = "fas fa-user-plus";
 			icon.title = "Guest Appearance";
