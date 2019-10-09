@@ -1,3 +1,8 @@
+/*
+This file handles all things related to the rankings table structure and composition
+*/
+window.addEventListener('load', function () { loadData() });
+
 export class GameRankings {
 	Rank: number;
 	Title: string;
@@ -329,6 +334,43 @@ class GameCritic{
 		criticContainer.appendChild(span);
 		return criticContainer;
 	}
+}
+
+function loadData() {
+	//Get data from server json file
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			let data = JSON.parse(this.responseText);
+			//Sort by rank and insert each row into the table
+			sortEpisodesByRank(data);
+			for (let i = 0; i < data.length; i++) {
+				tableInsert(data[i]);
+			}
+			//Add event listener to search box
+			let searchBox = document.getElementById("options-searchbox");
+			searchBox.addEventListener("input", function () { search(<HTMLTextAreaElement>this) });
+			searchBox.addEventListener("change", function () { search(<HTMLTextAreaElement>this) });
+			checkScrollIndicators();
+		}
+	};
+	xmlhttp.open("GET", "../database/data.json", true);
+	xmlhttp.send();
+}
+
+//Insert Game Information into table
+function tableInsert(game: any) {
+	//Make sure game has ranking information
+	if (!game["Ranking Info"]) {
+		return;
+	}
+
+	const table = <HTMLTableElement>document.getElementById("rankings-table");
+	var data = new GameRankings(game);
+	var breakdown = new GameBreakdown(game);
+
+	data.insertInTable(table);
+	breakdown.insertInTable(table);
 }
 
 function expand(ele: HTMLElement){
