@@ -173,3 +173,30 @@ function unselectAll(){
 		breakdown[i].classList.remove("expanded-breakdown");
 	}
 }
+
+function expand(ele: HTMLElement){
+	let table = document.getElementById("rankings-table");
+	let nodes = table.getElementsByClassName("rankings-table-row");
+
+	for(let i = 0; i < nodes.length; i++){
+		let sibling = <HTMLElement> nodes[i].nextSibling;
+		let charts = sibling.getElementsByClassName("charts")[0];
+
+		if (nodes[i] === ele && nodes[i].className != "rankings-table-row selected"){
+			//Mark the two rows as selected
+			nodes[i].classList.add("selected");
+			sibling.classList.add("expanded");
+
+			//Set individual charts to expand
+			charts.classList.add("expanded-breakdown");
+			continue;
+		}
+		
+		//Mark the two rows as unselected
+		nodes[i].classList.remove("selected");
+		sibling.classList.remove("expanded");
+
+		//Minimize individual charts
+		charts.classList.remove("expanded-breakdown");
+	}
+}

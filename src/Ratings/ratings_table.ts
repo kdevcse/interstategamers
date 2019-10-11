@@ -177,11 +177,11 @@ class GameBreakdown {
 		scores.className = "breakdown-scores";
 
 		//Metacritic
-		const metaDiv = new GameCritic("Metacritic",this.Metacritic,"MetaLogo.png").createElement();
+		const metaDiv = new GameCritic("Metacritic",this.Metacritic).createElement();
 		scores.appendChild(metaDiv);
 
 		//IGN
-		const ignDiv = new GameCritic("IGN",this.Ign,"IgnLogo.png").createElement();
+		const ignDiv = new GameCritic("IGN",this.Ign).createElement();
 		scores.appendChild(ignDiv);
 
 		info.appendChild(scores);
@@ -189,7 +189,7 @@ class GameBreakdown {
 	}
 }
 
-class RankingsChart {
+export class RankingsChart {
 	Title: string;
 	Overall: number;
 	Gameplay: number;
@@ -275,7 +275,7 @@ export class ProgressBar {
 	}
 }
 
-class GameData {
+export class GameData {
 	Type: string;
 	Value: string;
 	IncludeTitle: boolean;
@@ -300,7 +300,7 @@ class GameData {
 	}
 }
 
-class GameCritic{
+export class GameCritic{
 	Score: number;
 	ContainerClass: string;
 	ImageName: string;
@@ -308,18 +308,19 @@ class GameCritic{
 	Title: string;
 	TextClass: string;
 
-	constructor(title: string, score: number, imageName: string){
+	constructor(title: string, score: number){
 		this.Score = score;
-		this.ImageName = imageName;
 		this.Title = title;
 		if(this.Title.toLowerCase() === "metacritic"){
 			this.ContainerClass = "meta-container";
 			this.ImageClass = "meta-logo";
 			this.TextClass = "meta-score";
+			this.ImageName = "MetaLogo.png"
 		} else if (this.Title.toLowerCase() === "ign"){
 			this.ContainerClass = "ign-container";
 			this.ImageClass = "ign-logo";
 			this.TextClass = "ign-score";
+			this.ImageName = "IgnLogo.png";
 		}
 	}
 
@@ -339,7 +340,7 @@ class GameCritic{
 	}
 }
 
-export function loadData() {
+function loadData() {
 	//Get data from server json file
 	let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function () {
@@ -376,34 +377,7 @@ function tableInsert(game: any) {
 	breakdown.insertInTable(table);
 }
 
-function expand(ele: HTMLElement){
-	let table = document.getElementById("rankings-table");
-	let nodes = table.getElementsByClassName("rankings-table-row");
-
-	for(let i = 0; i < nodes.length; i++){
-		let sibling = <HTMLElement> nodes[i].nextSibling;
-		let charts = sibling.getElementsByClassName("charts")[0];
-
-		if (nodes[i] === ele && nodes[i].className != "rankings-table-row selected"){
-			//Mark the two rows as selected
-			nodes[i].classList.add("selected");
-			sibling.classList.add("expanded");
-
-			//Set individual charts to expand
-			charts.classList.add("expanded-breakdown");
-			continue;
-		}
-		
-		//Mark the two rows as unselected
-		nodes[i].classList.remove("selected");
-		sibling.classList.remove("expanded");
-
-		//Minimize individual charts
-		charts.classList.remove("expanded-breakdown");
-	}
-}
-
-export function checkScrollIndicators() {
+function checkScrollIndicators() {
 	let pos = window.scrollX;
 	let indicators = document.getElementById("scroll-indicators");
 	let left = document.getElementById("scroll-indicator-left");
