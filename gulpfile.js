@@ -4,7 +4,7 @@ var tsProject = ts.createProject('tsconfig.json');
 var exec = require('child_process').exec;
 
 function cleanDist(cb){
-  exec('rm -v -R dist/*', function (err, stdout, stderr) {
+  exec('rm -v -R dist/*;', function (err, stdout, stderr) {
       console.log(stdout);
       console.log(stderr);
       cb(err);
@@ -13,7 +13,7 @@ function cleanDist(cb){
 }
 
 function initDist(cb){
-  exec('mkdir dist', function (err, stdout, stderr) {
+  exec('mkdir dist;', function (err, stdout, stderr) {
       console.log(stdout);
       console.log(stderr);
       cb(err);
@@ -31,7 +31,7 @@ function update(cb){
 }
 
 function copySrcToDist(cb){
-  exec('cp -v -f -R src/* dist', function (err, stdout, stderr) {
+  exec('cp -v -f -R src/* dist;', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
@@ -40,7 +40,7 @@ function copySrcToDist(cb){
 }
 
 function runWinCompile(cb){
-  exec('Powershell.exe -executionpolicy remotesigned -File winCompile.ps1', function (err, stdout, stderr) {
+  exec('Powershell.exe -executionpolicy remotesigned -File winCompile.ps1;', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);

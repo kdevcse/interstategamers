@@ -1,39 +1,3 @@
-/*
-This file handles events occuring after load on the ratings table page
-*/
-
-//Handle scroll icons
-window.addEventListener('scroll', function () { checkScrollIndicators() });
-window.addEventListener('resize', function () { checkScrollIndicators() });
-
-function checkScrollIndicators() {
-	let pos = window.scrollX;
-	let indicators = document.getElementById("scroll-indicators");
-	let left = document.getElementById("scroll-indicator-left");
-	let right = document.getElementById("scroll-indicator-right");
-
-	let maxWidth = document.documentElement.scrollWidth - document.documentElement.clientWidth;
-
-	if (pos > 0) {
-		left.style.visibility = "visible";
-	} else if (pos === 0) {
-		left.style.visibility = "hidden";
-	}
-
-	if (pos === maxWidth) {
-		right.style.visibility = "hidden";
-	} else {
-		right.style.visibility = "visible";
-	}
-
-	if (pos === maxWidth && pos === 0) {
-		indicators.style.visibility = "hidden";
-	}
-	else {
-		indicators.style.visibility = "visible";
-	}
-}
-
 function sortEpisodesByRank(episodes: any) {
 	for (let i = 0; i < episodes.length; i++) {
 		if (!episodes[i]["Rank"]) {
@@ -48,38 +12,13 @@ function sortEpisodesByRank(episodes: any) {
 	return episodes;
 }
 
-function resetTableRows(saveId: string) {
-	let table = <HTMLTableElement>document.getElementById("rankings-table");
-	let rows = table.rows;
-
-	//reset ascending attributes
-	let headers = rows[0].getElementsByTagName("th");
-	for (let h = 0; h < headers.length; h++) {
-		if (headers[h].id === saveId && headers[h].classList.contains("sorted"))
-			break;
-
-		if (headers[h].classList.contains("descender"))
-			headers[h].setAttribute("ascending", "");
-		else
-			headers[h].removeAttribute("ascending");
-	}
-
-	//reset sorted class
-	for (let i = 0; i < (rows.length); i++) {
-		let sorts = rows[i].getElementsByClassName("sorted");
-		for (let j = 0; j < sorts.length; j++) {
-			sorts[j].classList.remove("sorted");
-		}
-	}
-}
-
 function sortTableByCategory(ele: HTMLElement, category: string) {
 	//Set row to sorted class identifier
 	resetTableRows(ele.id);
 	ele.classList.add("sorted");
 
 	let canSwitch = true;
-	let table = <HTMLTableElement>document.getElementById("rankings-table").childNodes[1];
+	let table = <HTMLTableElement> document.getElementById("rankings-table").childNodes[1];
 	let rows = table.rows;
 	let ascending = ele.getAttribute("ascending") !== null;
 	let sortIcon = ele.getElementsByTagName("svg")[0];
@@ -118,6 +57,31 @@ function sortTableByCategory(ele: HTMLElement, category: string) {
 				table.insertBefore(rows[i + 3], rows[i + 1]);
 				break;
 			}
+		}
+	}
+}
+
+function resetTableRows(saveId: string) {
+	let table = <HTMLTableElement>document.getElementById("rankings-table");
+	let rows = table.rows;
+
+	//reset ascending attributes
+	let headers = rows[0].getElementsByTagName("th");
+	for (let h = 0; h < headers.length; h++) {
+		if (headers[h].id === saveId && headers[h].classList.contains("sorted"))
+			break;
+
+		if (headers[h].classList.contains("descender"))
+			headers[h].setAttribute("ascending", "");
+		else
+			headers[h].removeAttribute("ascending");
+	}
+
+	//reset sorted class
+	for (let i = 0; i < (rows.length); i++) {
+		let sorts = rows[i].getElementsByClassName("sorted");
+		for (let j = 0; j < sorts.length; j++) {
+			sorts[j].classList.remove("sorted");
 		}
 	}
 }
@@ -207,5 +171,32 @@ function unselectAll(){
 	let breakdown = document.getElementsByClassName("expanded-breakdown");
 	for(let i = 0; i < breakdown.length; i++){
 		breakdown[i].classList.remove("expanded-breakdown");
+	}
+}
+
+function expand(ele: HTMLElement){
+	let table = document.getElementById("rankings-table");
+	let nodes = table.getElementsByClassName("rankings-table-row");
+
+	for(let i = 0; i < nodes.length; i++){
+		let sibling = <HTMLElement> nodes[i].nextSibling;
+		let charts = sibling.getElementsByClassName("charts")[0];
+
+		if (nodes[i] === ele && nodes[i].className != "rankings-table-row selected"){
+			//Mark the two rows as selected
+			nodes[i].classList.add("selected");
+			sibling.classList.add("expanded");
+
+			//Set individual charts to expand
+			charts.classList.add("expanded-breakdown");
+			continue;
+		}
+		
+		//Mark the two rows as unselected
+		nodes[i].classList.remove("selected");
+		sibling.classList.remove("expanded");
+
+		//Minimize individual charts
+		charts.classList.remove("expanded-breakdown");
 	}
 }

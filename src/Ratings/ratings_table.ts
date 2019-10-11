@@ -1,6 +1,9 @@
 /*
 This file handles all things related to the rankings table structure and composition
 */
+
+window.addEventListener('scroll', function () { checkScrollIndicators() });
+window.addEventListener('resize', function () { checkScrollIndicators() });
 window.addEventListener('load', function () { loadData() });
 
 class GameRankings {
@@ -176,11 +179,11 @@ class GameBreakdown {
 		scores.className = "breakdown-scores";
 
 		//Metacritic
-		const metaDiv = new GameCritic("Metacritic",this.Metacritic,"MetaLogo.png").createElement();
+		const metaDiv = new GameCritic("Metacritic",this.Metacritic).createElement();
 		scores.appendChild(metaDiv);
 
 		//IGN
-		const ignDiv = new GameCritic("IGN",this.Ign,"IgnLogo.png").createElement();
+		const ignDiv = new GameCritic("IGN",this.Ign).createElement();
 		scores.appendChild(ignDiv);
 
 		info.appendChild(scores);
@@ -188,15 +191,15 @@ class GameBreakdown {
 	}
 }
 
-class RankingsChart {
+export class RankingsChart {
 	Title: string;
-	Overall: string;
-	Gameplay: string;
-	Visuals: string;
-	Audio: string;
-	Content: string;
+	Overall: number;
+	Gameplay: number;
+	Visuals: number;
+	Audio: number;
+	Content: number;
 
-	constructor(title: string, gameplay: string, visuals: string, audio: string, content: string, overall: string){
+	constructor(title: string, gameplay: number, visuals: number, audio: number, content: number, overall: number){
 		this.Title = title;
 		this.Gameplay = gameplay;
 		this.Visuals = visuals;
@@ -237,12 +240,12 @@ class RankingsChart {
 	}
 }
 
-class ProgressBar {
+export class ProgressBar {
 
-	Value: string;
+	Value: number;
 	Type: string;
 
-	constructor(val: string, type: string){
+	constructor(val: number, type: string){
 		this.Value = val;
 		this.Type = type;
 	}
@@ -274,7 +277,7 @@ class ProgressBar {
 	}
 }
 
-class GameData {
+export class GameData {
 	Type: string;
 	Value: string;
 	IncludeTitle: boolean;
@@ -299,7 +302,7 @@ class GameData {
 	}
 }
 
-class GameCritic{
+export class GameCritic{
 	Score: number;
 	ContainerClass: string;
 	ImageName: string;
@@ -307,18 +310,19 @@ class GameCritic{
 	Title: string;
 	TextClass: string;
 
-	constructor(title: string, score: number, imageName: string){
+	constructor(title: string, score: number){
 		this.Score = score;
-		this.ImageName = imageName;
 		this.Title = title;
 		if(this.Title.toLowerCase() === "metacritic"){
 			this.ContainerClass = "meta-container";
 			this.ImageClass = "meta-logo";
 			this.TextClass = "meta-score";
+			this.ImageName = "MetaLogo.png"
 		} else if (this.Title.toLowerCase() === "ign"){
 			this.ContainerClass = "ign-container";
 			this.ImageClass = "ign-logo";
 			this.TextClass = "ign-score";
+			this.ImageName = "IgnLogo.png";
 		}
 	}
 
@@ -375,29 +379,30 @@ function tableInsert(game: any) {
 	breakdown.insertInTable(table);
 }
 
-function expand(ele: HTMLElement){
-	let table = document.getElementById("rankings-table");
-	let nodes = table.getElementsByClassName("rankings-table-row");
+function checkScrollIndicators() {
+	let pos = window.scrollX;
+	let indicators = document.getElementById("scroll-indicators");
+	let left = document.getElementById("scroll-indicator-left");
+	let right = document.getElementById("scroll-indicator-right");
 
-	for(let i = 0; i < nodes.length; i++){
-		let sibling = <HTMLElement> nodes[i].nextSibling;
-		let charts = sibling.getElementsByClassName("charts")[0];
+	let maxWidth = document.documentElement.scrollWidth - document.documentElement.clientWidth;
 
-		if (nodes[i] === ele && nodes[i].className != "rankings-table-row selected"){
-			//Mark the two rows as selected
-			nodes[i].classList.add("selected");
-			sibling.classList.add("expanded");
+	if (pos > 0) {
+		left.style.visibility = "visible";
+	} else if (pos === 0) {
+		left.style.visibility = "hidden";
+	}
 
-			//Set individual charts to expand
-			charts.classList.add("expanded-breakdown");
-			continue;
-		}
-		
-		//Mark the two rows as unselected
-		nodes[i].classList.remove("selected");
-		sibling.classList.remove("expanded");
+	if (pos === maxWidth) {
+		right.style.visibility = "hidden";
+	} else {
+		right.style.visibility = "visible";
+	}
 
-		//Minimize individual charts
-		charts.classList.remove("expanded-breakdown");
+	if (pos === maxWidth && pos === 0) {
+		indicators.style.visibility = "hidden";
+	}
+	else {
+		indicators.style.visibility = "visible";
 	}
 }
