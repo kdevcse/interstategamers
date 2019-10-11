@@ -1,4 +1,4 @@
-import { ProgressBar, RankingsChart, GameData, GameCritic, tableInsert } from '../../../Ratings/ratings_table';
+import { ProgressBar, RankingsChart, GameData, GameCritic, tableInsert } from '../../../src/Ratings/ratings_table';
 
 test('Creating a progress bar',()=>{
     const val = 88;
@@ -161,7 +161,6 @@ test('Inserting table data (with no ranking info)',()=>{
     window.document.body.appendChild(table);
 
     const data ={
-        "analytics": null,
         "description": "The boys record a promotional trailer for the Interstate Gamers podcast and tell you what the show is all about!",
         "enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e8ed045d-938b-4104-b8a2-8d98e015680e/de3f727a_tc.mp3",
         "guid": "2d8e6e2b-2cb8-4b24-81f5-0c882b346105",
@@ -172,7 +171,6 @@ test('Inserting table data (with no ranking info)',()=>{
         "is_hidden": false,
         "number": 0,
         "published_at": "2018-01-01T00:00:00.000000-08:00",
-        "scheduled_for": null,
         "season": {
             "href": "https://api.simplecast.com/seasons/d90ced51-cee4-4a27-88e1-90bfc877fe92",
             "number": 1
