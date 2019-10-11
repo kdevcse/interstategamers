@@ -363,7 +363,7 @@ function loadData() {
 }
 
 //Insert Game Information into table
-function tableInsert(game: any) {
+export function tableInsert(game: any) {
 	//Make sure game has ranking information
 	if (!game["Ranking Info"]) {
 		return;
