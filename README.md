@@ -1,5 +1,5 @@
 # The Interstate Gamers Website  
-This repo contains the underlying code for The Interstate Gamers Podcast website. The site was originally coded in pure HTML, CSS, & JavaScript, but has recently been upgraded to utilize TypeScript. While the site has already been released to the public, it is still a work in progress (WIP).
+This repo contains the underlying code for The Interstate Gamers Podcast website. The site was originally coded in pure HTML, CSS, & JavaScript, but has recently been upgraded to utilize TypeScript. While the site has already been released to the public, it is still a work in progress (WIP) and is constantly maintained/updated by Kevin.
 
 #### Build Status: 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f6b95e64-cfc4-4310-98ec-8c480461f0ff/deploy-status)](https://app.netlify.com/sites/interstategamers/deploys)
@@ -24,5 +24,5 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 - [CodeFactor](https://www.codefactor.io) (Performs code analysis)
 - [BugBucket](https://bugbucket.io/issues/klewiscse/interstategamers) (Allows users to easily submit bugs)
 - [Discord](https://discordapp.com/) (Post notifications on the development process)
-- [AirTable](https://airtable.com/) (Online database/spreadsheet)
-- [SimpleCast](https://simplecast.com) (Podcast hosting service)
+- [AirTable](https://airtable.com/)
+- [SimpleCast](https://simplecast.com)
