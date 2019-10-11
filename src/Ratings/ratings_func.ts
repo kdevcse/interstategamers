@@ -2,9 +2,9 @@
 This file handles events occuring after load on the ratings table page
 */
 
-import {loadData, checkScrollIndicators} from './ratings_table';
+// import {loadData, checkScrollIndicators} from './ratings_table.js';
 
-//Handle scroll icons
-window.addEventListener('scroll', function () { checkScrollIndicators() });
-window.addEventListener('resize', function () { checkScrollIndicators() });
-window.addEventListener('load', function () { loadData() });
+// //Handle scroll icons
+// window.addEventListener('scroll', function () { checkScrollIndicators() });
+// window.addEventListener('resize', function () { checkScrollIndicators() });
+// window.addEventListener('load', function () { loadData() });
