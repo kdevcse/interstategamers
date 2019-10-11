@@ -1,4 +1,4 @@
-import {ProgressBar} from '../../../Ratings/ratings';
+import {ProgressBar} from '../../../Ratings/ratings_table';
 
 test('Creating a progress bar',()=>{
     const val = 88;
