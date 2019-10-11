@@ -1,4 +1,4 @@
-import { ProgressBar, RankingsChart, GameData, GameCritic, tableInsert } from '../../../src/Ratings/ratings_table';
+import { ProgressBar, RankingsChart, GameData, GameCritic, tableInsert } from '../../src/Ratings/ratings_table';
 
 test('Creating a progress bar',()=>{
     const val = 88;
