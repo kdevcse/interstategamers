@@ -1,0 +1,1 @@
+This folder just provides as an example on how unit testing in jest will work
