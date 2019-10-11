@@ -2,6 +2,10 @@
 This file handles all things related to the rankings table structure and composition
 */
 
+window.addEventListener('scroll', function () { checkScrollIndicators() });
+window.addEventListener('resize', function () { checkScrollIndicators() });
+window.addEventListener('load', function () { loadData() });
+
 class GameRankings {
 	Rank: number;
 	Title: string;
