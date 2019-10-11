@@ -335,7 +335,7 @@ class GameCritic{
 	}
 }
 
-function loadData() {
+export function loadData() {
 	//Get data from server json file
 	let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function () {
