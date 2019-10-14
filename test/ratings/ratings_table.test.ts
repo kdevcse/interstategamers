@@ -1,4 +1,4 @@
-import { 
+import {
     ProgressBar, RankingsChart, GameData, GameCritic,
     tableInsert, checkScrollIndicators, loadData, GameRankings
 } from '../../src/Ratings/ratings_table';
