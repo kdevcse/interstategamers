@@ -6,7 +6,7 @@ window.addEventListener('scroll', function () { checkScrollIndicators() });
 window.addEventListener('resize', function () { checkScrollIndicators() });
 window.addEventListener('load', function () { loadData() });
 
-class GameRankings {
+export class GameRankings {
 	Rank: number;
 	Title: string;
 	Year: number;
@@ -340,7 +340,7 @@ export class GameCritic{
 	}
 }
 
-function loadData() {
+export function loadData() {
 	//Get data from server json file
 	let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function () {
@@ -377,7 +377,7 @@ export function tableInsert(game: any) {
 	breakdown.insertInTable(table);
 }
 
-function checkScrollIndicators() {
+export function checkScrollIndicators() {
 	let pos = window.scrollX;
 	let indicators = document.getElementById("scroll-indicators");
 	let left = document.getElementById("scroll-indicator-left");
