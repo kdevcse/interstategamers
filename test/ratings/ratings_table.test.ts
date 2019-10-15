@@ -1,8 +1,9 @@
 import {
     ProgressBar, RankingsChart, GameData, GameCritic,
-    tableInsert, checkScrollIndicators, loadData, GameRankings
+    tableInsert, checkScrollIndicators, loadData, GameRankings, GameBreakdown
 } from '../../src/Ratings/ratings_table';
 
+//Mocked data
 const starFoxData = {
     "Game Image": "star_fox_64.jpg",
     "Rank": 8,
@@ -45,10 +46,56 @@ const starFoxData = {
     "slug": "sf64",
     "status": "published",
     "title": "1-2: Star Fox 64",
-    "token": "127f8309",
     "type": "full",
     "updated_at": "2019-05-12T21:31:13.049868-07:00"
 };
+
+const metroidData = {
+    "Game Image": "metroid_zero_mission.jpg",
+    "Rank": 14,
+    "Ranking Info": {
+        "Aesthetics": 92.66666666666667,
+        "Audio": 92,
+        "Content": 84.33333333333333,
+        "Episode": "1-5",
+        "Episode Number": 5,
+        "G. Aesthetics": 96.5,
+        "G. Audio": 98,
+        "G. Content": 85,
+        "G. Gameplay": 92,
+        "G. Visuals": 95,
+        "Game": "Metroid: Zero Mission",
+        "Gameplay": 92,
+        "Guest": "Ryan",
+        "Guest Rating": 91.16666666666667,
+        "IG Score": 89.66666666666667,
+        "IGN": 0,
+        "K. Aesthetics": 89,
+        "K. Audio": 88,
+        "K. Content": 83,
+        "K. Gameplay": 89,
+        "K. Visuals": 90,
+        "Kevin's Rating": 87,
+        "Metacritic": 0,
+        "P. Aesthetics": 92.5,
+        "P. Audio": 90,
+        "P. Content": 85,
+        "P. Gameplay": 95,
+        "P. Visuals": 95,
+        "Peter's Rating": 90.83333333333333,
+        "Platform": "GBA",
+        "Visuals": 93.33333333333333,
+        "Year": 2004
+    },
+    "description": "In this Kraid-sized episode, the boys recruit resident Metroid expert Ryan Everitt to help them navigate the labyrinth of Metroid: Zero Mission for the Game Boy Advance.",
+    "number": 5,
+    "published_at": "2018-03-12T05:00:00.000000-07:00",
+    "slug": "mzm",
+    "status": "published",
+    "title": "1-5: Metroid Zero Mission",
+    "type": "full",
+    "updated_at": "2019-05-12T21:30:52.072266-07:00"
+}
 
 beforeAll(()=>{
     //Create rankings table
@@ -57,7 +104,7 @@ beforeAll(()=>{
     window.document.body.appendChild(table);
 });
 
-//Helper functions used to help find a game
+//Helper functions used to help find a game in the table and its info
 function hasGame(table: HTMLTableElement, game: string): boolean {
     const rows = table.getElementsByClassName('rankings-table-row');
     for(let i = 0; i < rows.length; i++){
@@ -70,6 +117,26 @@ function hasGame(table: HTMLTableElement, game: string): boolean {
 
 function findGame(table: HTMLTableElement, game: string): Element {
     const rows = table.getElementsByClassName('rankings-table-row');
+    for(let i = 0; i < rows.length; i++){
+        if (rows[i].getAttribute('game') === game){
+            return rows[i];
+        }
+    }
+    return null;
+}
+
+function hasGameInfo(table: HTMLTableElement, game: string): boolean {
+    const rows = table.getElementsByClassName('rankings-row-info');
+    for(let i = 0; i < rows.length; i++){
+        if (rows[i].getAttribute('game') === game){
+            return true;
+        }
+    }
+    return false;
+}
+
+function findGameInfo(table: HTMLTableElement, game: string): Element {
+    const rows = table.getElementsByClassName('rankings-row-info');
     for(let i = 0; i < rows.length; i++){
         if (rows[i].getAttribute('game') === game){
             return rows[i];
@@ -149,6 +216,7 @@ describe('Creating table elements',()=>{
     test('Creating Game Rankings Row (no guest)',()=>{
         const rankings = new GameRankings(starFoxData);
         const fakeTable = document.createElement('table');
+        expect(fakeTable.childNodes.length).toBe(0);
         rankings.insertInTable(fakeTable);
         expect(hasGame(fakeTable,starFoxData['Ranking Info']['Game'])).toBeTruthy();
 
@@ -173,6 +241,79 @@ describe('Creating table elements',()=>{
         expect(pOverall.innerHTML).toBe(`${starFoxData['Ranking Info']['Peter\'s Rating'].toFixed(2)}`);
         const kOverall = <HTMLElement>row.childNodes[9];
         expect(kOverall.innerHTML).toBe(`${starFoxData['Ranking Info']['Kevin\'s Rating'].toFixed(2)}`);
+    });
+
+    test('Creating Game Rankings Row (no guest)',()=>{
+        const rankings = new GameRankings(metroidData);
+        const fakeTable = document.createElement('table');
+        expect(fakeTable.childNodes.length).toBe(0);
+        rankings.insertInTable(fakeTable);
+        expect(hasGame(fakeTable,metroidData['Ranking Info']['Game'])).toBeTruthy();
+
+        const row = findGame(fakeTable,metroidData['Ranking Info']['Game']);
+        const rank = <HTMLElement>row.childNodes[0];
+        expect(rank.innerHTML).toBe(`${metroidData['Rank']}`);
+        const title = <HTMLElement>row.childNodes[1];
+        expect(title.getAttribute('title')).toBe(`${metroidData['Ranking Info']['Game']}`);
+        expect(title.innerHTML.includes('fa-user-plus')).toBeTruthy();
+        const year = <HTMLElement>row.childNodes[2];
+        expect(year.innerHTML).toBe(`${metroidData['Ranking Info']['Year']}`);
+        const platform = <HTMLElement>row.childNodes[3];
+        expect(platform.innerHTML).toBe(`${metroidData['Ranking Info']['Platform']}`);
+        const overall = <HTMLElement>row.childNodes[4];
+        expect(overall.innerHTML).toBe(`${metroidData['Ranking Info']['IG Score'].toFixed(2)}`);
+        const gameplay = <HTMLElement>row.childNodes[5];
+        expect(gameplay.innerHTML).toBe(`${metroidData['Ranking Info']['Gameplay'].toFixed(2)}`);
+        const aesthetics = <HTMLElement>row.childNodes[6];
+        expect(aesthetics.innerHTML).toBe(`${metroidData['Ranking Info']['Aesthetics'].toFixed(2)}`);
+        const content = <HTMLElement>row.childNodes[7];
+        expect(content.innerHTML).toBe(`${metroidData['Ranking Info']['Content'].toFixed(2)}`);
+        const pOverall = <HTMLElement>row.childNodes[8];
+        expect(pOverall.innerHTML).toBe(`${metroidData['Ranking Info']['Peter\'s Rating'].toFixed(2)}`);
+        const kOverall = <HTMLElement>row.childNodes[9];
+        expect(kOverall.innerHTML).toBe(`${metroidData['Ranking Info']['Kevin\'s Rating'].toFixed(2)}`);
+    });
+
+    test('Creating Game Breakdown (no guest)',()=>{
+        const breakdown = new GameBreakdown(starFoxData);
+        const fakeTable = document.createElement('table');
+        expect(fakeTable.childNodes.length).toBe(0);
+
+        breakdown.insertInTable(fakeTable);
+        const row = fakeTable.getElementsByClassName('rankings-table-info')[0];
+        const tableData = <HTMLElement>row.firstChild;
+
+        expect(tableData.className).toBe('charts');
+        const charts = tableData.childNodes;
+
+        const brkdowninfo = <HTMLElement>charts[0];
+        expect(brkdowninfo.className).toBe('breakdown-info');
+        const chart1 = <HTMLElement>charts[1];
+        expect(chart1.className).toBe('chart');
+        const chart2 = <HTMLElement>charts[2];
+        expect(chart2.className).toBe('chart');
+    });
+
+    test('Creating Game Breakdown (guest)',()=>{
+        const breakdown = new GameBreakdown(metroidData);
+        const fakeTable = document.createElement('table');
+        expect(fakeTable.childNodes.length).toBe(0);
+
+        breakdown.insertInTable(fakeTable);
+        const row = fakeTable.getElementsByClassName('rankings-table-info')[0];
+        const tableData = <HTMLElement>row.firstChild;
+
+        expect(tableData.className).toBe('charts');
+        const charts = tableData.childNodes;
+
+        const brkdowninfo = <HTMLElement>charts[0];
+        expect(brkdowninfo.className).toBe('breakdown-info');
+        const chart1 = <HTMLElement>charts[1];
+        expect(chart1.className).toBe('chart');
+        const chart2 = <HTMLElement>charts[2];
+        expect(chart2.className).toBe('chart');
+        const chart3 = <HTMLElement>charts[3];
+        expect(chart3.className).toBe('chart');
     });
 });
 

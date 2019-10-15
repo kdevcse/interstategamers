@@ -77,7 +77,7 @@ export class GameRankings {
 	}
 }
 
-class GameBreakdown {
+export class GameBreakdown {
 	PeterChart: RankingsChart;
 	KevinChart: RankingsChart;
 	GuestChart: RankingsChart;
