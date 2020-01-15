@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         NetlifyBuildHook = credentials('NetlifyBuildHook')
-        Branch = ${GIT_BRANCH} 
+        Branch = "${GIT_BRANCH}"
     }
 
     stages {
