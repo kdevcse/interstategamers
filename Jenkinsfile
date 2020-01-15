@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'if ${Branch} = \'master\'; then curl -X POST -d {} ${NetlifyBuildHook} fi'
+                sh 'if ${Branch} = \'master\'; then curl -X POST -d {} ${NetlifyBuildHook}; fi'
             }
         }
     }
