@@ -5,19 +5,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                yarn
+                sh 'yarn'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                yarn test
+                sh 'yarn test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                curl -X POST -d {} ${NetlifyBuildHook}
+                sh 'curl -X POST -d {} ${NetlifyBuildHook}'
             }
         }
     }
