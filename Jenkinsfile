@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    environment {
+        NetlifyBuildHook = credentials('NetlifyBuildHook')
+    }
 
     stages {
         stage('Build') {
