@@ -3,4 +3,4 @@ RUN yarn
 RUN gulp update
 RUN gulp compile
 RUN jest --coverage;
-COPY ./dist
+COPY ./dist /dist/
