@@ -1,4 +1,3 @@
 FROM node:latest
-COPY package.json .
-RUN yarn build:prod
+CMD yarn build:prod
 COPY ./dist /dist/
