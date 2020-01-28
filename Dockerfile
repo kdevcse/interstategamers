@@ -1,5 +1,6 @@
 FROM node:latest
 RUN yarn
-CMD gulp update
-CMD gulp compile
-CMD jest --coverage;
+RUN gulp update
+RUN gulp compile
+RUN jest --coverage;
+COPY ./dist
