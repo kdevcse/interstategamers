@@ -3,8 +3,10 @@ FROM node:latest
 #Create Work Directory
 WORKDIR /usr/src/
 
-#Copy package.json to WORKDIR
+#Copy required files for compilation
 COPY package.json .
+COPY requirements.txt .
+COPY runtime.txt .
 
 #Install packages
 RUN yarn
