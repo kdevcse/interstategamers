@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM node:latest
 COPY ./
 RUN yarn
 CMD gulp update
