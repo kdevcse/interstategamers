@@ -4,7 +4,8 @@
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/f6b95e64-cfc4-4310-98ec-8c480461f0ff/deploy-status)](https://app.netlify.com/sites/interstategamers/deploys)",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build:prod": "gulp update; gulp compile; jest --coverage;"
   },
   "repository": {
     "type": "git",
