@@ -3,19 +3,19 @@ const Twitter = require('twitter-lite');
 
 const argv = yargs
     .option('consumer_key', {
-        alias: 'a',
-        type: 'string'
-    })
-    .option('consumer_secret', {
-        alias: 'b',
-        type: 'string'
-    })
-    .option('access_key', {
         alias: 'c',
         type: 'string'
     })
+    .option('consumer_secret', {
+        alias: 's',
+        type: 'string'
+    })
+    .option('access_key', {
+        alias: 'a',
+        type: 'string'
+    })
     .option('access_secret', {
-        alias: 'd',
+        alias: 't',
         type: 'string'
     }).help().argv;
 
