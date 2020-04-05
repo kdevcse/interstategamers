@@ -35,6 +35,8 @@
   },
   "dependencies": {
     "copyfiles": "^2.2.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "twitter-lite": "^0.9.4",
+    "yargs": "^15.3.1"
   }
 }
