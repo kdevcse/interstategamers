@@ -1,7 +1,7 @@
 import {
     ProgressBar, RankingsChart, GameData, GameCritic,
     tableInsert, checkScrollIndicators, loadData, GameRankings, GameBreakdown
-} from '../../src/Ratings/ratings_table';
+} from '../../src/ratings/ratings_table';
 
 //Mocked data
 const starFoxData = {

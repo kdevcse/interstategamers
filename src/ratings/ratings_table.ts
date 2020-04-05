@@ -168,7 +168,7 @@ export class GameBreakdown {
 			let img = document.createElement("img");
 			img.classList.add("breakdown-img");
 			let name = this.ImageName;
-			img.src = `../Images/${name}`;
+			img.src = `../images/${name}`;
 			info.appendChild(img);
 		}
 
@@ -329,7 +329,7 @@ export class GameCritic{
 		criticContainer.className = this.ContainerClass;
 		criticContainer.title = `${this.Title} Score`;
 		let logo = document.createElement("img");
-		logo.src = `../Images/${this.ImageName}`;
+		logo.src = `../images/${this.ImageName}`;
 		logo.className = this.ImageClass;
 		let span = document.createElement("span");
 		span.className = this.TextClass;
