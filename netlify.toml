@@ -4,7 +4,6 @@
 
     # Runs in root directory so traversing to this program is fine
     command = "python3 build/UpdateData.py ${PodId} ${PodKey} ${AirtableKey}; yarn start; yarn test;"
-    # command = "gulp update; gulp compile; jest --coverage;"
 
 [dev]
 
