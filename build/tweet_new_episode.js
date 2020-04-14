@@ -45,6 +45,10 @@ if (!argv.consumer_key || !argv.consumer_secret || !argv.access_key || !argv.acc
 }
 
 /* Implement */
+console.log(`Episode Status: ${ep_status}`);
+console.log(`Date now: ${now}`);
+console.log(`Date episode: ${epDate}`);
+
 if (ep_status === 'published' && epDate.sameDay(now) && now.getHours() <= DO_NOT_POST_PAST_HOUR){
     sendTweet(argv.consumer_key, argv.consumer_secret, argv.access_key, argv.access_secret);
 }
