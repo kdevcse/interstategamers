@@ -9,7 +9,7 @@ const ep_status = latestEpisode["status"];
 const ep_title = latestEpisode["title"];
 const ep_url = "https://theinterstategamers.simplecast.com/episodes/" + latestEpisode["slug"];
 const ep_desc = latestEpisode["description"];
-const DO_NOT_POST_PAST_HOUR = 12;
+const DO_NOT_POST_PAST_HOUR = 17;
 const epDate = new Date(latestEpisode.published_at);
 const now = new Date();
 
