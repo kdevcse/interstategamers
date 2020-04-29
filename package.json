@@ -4,8 +4,11 @@
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/f6b95e64-cfc4-4310-98ec-8c480461f0ff/deploy-status)](https://app.netlify.com/sites/interstategamers/deploys)",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "build:prod": "gulp update; gulp compile; jest --coverage;"
+    "test": "jest --coverage",
+    "clean": "rimraf dist/",
+    "pre-build": "copyup -e \"./src/**/*.ts\" \"./src/**/*\" dist",
+    "build": "tsc --project tsconfig.json",
+    "start": "yarn run clean && yarn pre-build && yarn build"
   },
   "repository": {
     "type": "git",
