@@ -24,13 +24,18 @@
           </p>
         </div>
       </div>
-      <InfoContactList heading='My heading' v-bind:items='whereToListenList'></InfoContactList>
+      <InfoContactList heading='Where to Listen:' v-bind:items='listenList'></InfoContactList>
+      <InfoContactList heading='How to Support Us:' v-bind:items='supportList'></InfoContactList>
+      <InfoContactList heading='Social Media:' v-bind:items='socialMediaList'></InfoContactList>
+      <InfoContactList heading='Business Inquiries:' v-bind:items='businessList'></InfoContactList>
+      <InfoContactList heading='Website Issues:' v-bind:items='issuesList'></InfoContactList>
     </article>
   </div>
 </template>
 <script>
 // @ is an alias to /src
 import InfoContactList from '../components/InfoContactList'
+import infoLinks from '../database/info-links'
 
 export default {
   name: 'Info',
@@ -39,40 +44,11 @@ export default {
   },
   data: function () {
     return {
-      whereToListenList: [
-        {
-          href:
-            'https://podcasts.apple.com/us/podcast/the-interstate-gamers/id133250306',
-          title: 'Apple Podcasts'
-        },
-        {
-          href:
-            'https://play.google.com/music/listen?u=0#/ps/I52grgkf57z7gdp6zqwewo3smlq',
-          title: 'Google Play'
-        },
-        {
-          href: 'https://open.spotify.com/show/3WiDNf7oaBADnLGycQzYuu',
-          title: 'Spotify'
-        },
-        {
-          href: 'https://www.stitcher.com/podcast/the-interstate-gamers',
-          title: 'Stitcher'
-        },
-        {
-          href:
-            'https://www.iheart.com/podcast/269-the-interstate-gamers-29827163/',
-          title: 'iHeart Radio'
-        },
-        {
-          href:
-            'https://www.youtube.com/channel/UCIg62C1mDZq6rOsDxZlye1A/featured',
-          title: 'YouTube'
-        },
-        {
-          href: 'https://feeds.simplecast.com/naeWXDEF',
-          title: 'RSS'
-        }
-      ]
+      listenList: infoLinks.whereToListenList,
+      supportList: infoLinks.howToSupportUsList,
+      socialMediaList: infoLinks.socialMediaList,
+      businessList: infoLinks.businessInquiriesList,
+      issuesList: infoLinks.websiteIssuesList
     }
   }
 }
