@@ -3,7 +3,7 @@
     publish = "dist"
 
     # Runs in root directory so traversing to this program is fine
-    command = "python3 build/UpdateData.py ${PodId} ${PodKey} ${AirtableKey}; yarn start; yarn test; node build/tweet_new_episode.js -c ${Twitter_CK} -s ${Twitter_CS} -a ${Twitter_AK} -t ${Twitter_AS}"
+    command = "python3 build/UpdateData.py ${PodId} ${PodKey} ${AirtableKey}; yarn build; node build/tweet_new_episode.js -c ${Twitter_CK} -s ${Twitter_CS} -a ${Twitter_AK} -t ${Twitter_AS}"
 
 [dev]
 
