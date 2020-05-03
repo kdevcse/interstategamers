@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <audio id="ig-audio" title="Listen to the trailer" src="audio/ig_promo.mp3"/>
+    <audio id="ig-audio" title="Listen to the trailer" src="../assets/audio/ig_promo.mp3"/>
   </div>
 </template>
 
