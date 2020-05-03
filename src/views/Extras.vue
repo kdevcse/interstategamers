@@ -1,13 +1,18 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/extras">Extras</router-link>
-      <router-link to="/info">Info</router-link>
-    </div>
-    <router-view/>
+  <div class="extras">
+    <h1>Extras</h1>
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+
+export default {
+  name: 'Extras',
+  components: {
+  }
+}
+</script>
 
 <style>
 #app {
