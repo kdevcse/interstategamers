@@ -58,7 +58,7 @@ for episode in episodes.data:
                 episode["Ranking Info"] = rankInfo[0]
                 episode["Rank"] = rankInfo[1]
                 if (episode["Ranking Info"]["Game"] is not None):
-                        img = getImg("src/images/",episode["Ranking Info"]["Game"])
+                        img = getImg("src/assets/images/",episode["Ranking Info"]["Game"])
                         if ( img != ""):
                                 episode["Game Image"] = img
 
