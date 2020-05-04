@@ -22,11 +22,6 @@ export default class ExtrasSection extends Vue {
     @Prop() header!: string;
     @Prop() items!: IFriendInfo[];
     @Prop() icon!: string;
-    generateHtml (str: string) {
-      const parser = new DOMParser()
-      const doc = parser.parseFromString(str, 'text/html')
-      return doc.body
-    }
 }
 </script>
 
