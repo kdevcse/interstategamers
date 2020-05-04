@@ -1,15 +1,23 @@
 <template>
   <div class="extras">
-    <h1>Extras</h1>
+      <ExtrasSection header="Code" icon="fas fa-code" v-bind:items="code"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import ExtrasSection from '../components/ExtrasSection'
+import codeSection from '../database/extra-sections'
 
 export default {
   name: 'Extras',
   components: {
+    ExtrasSection
+  },
+  data: function () {
+    return {
+      code: codeSection
+    }
   }
 }
 </script>
