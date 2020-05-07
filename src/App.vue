@@ -1,33 +1,37 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/extras">Extras</router-link>
-      <router-link to="/info">Info</router-link>
-    </div>
+    <NavBar/>
     <router-view/>
   </div>
 </template>
 
+<script>
+// @ is an alias to /src
+import NavBar from './components/NavBar'
+
+export default {
+  name: 'Info',
+  components: {
+    NavBar
+  }
+}
+</script>
+
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  margin-top: 70px;
 }
-
-#nav {
-  padding: 30px;
+* {
+  box-sizing: border-box;
+  font-family: Interstate;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+  line-height: 1.5;
 }
 </style>
