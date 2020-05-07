@@ -1,15 +1,16 @@
 <template>
   <div class="home">
     <audio id="ig-audio" title="Listen to the trailer" src="../assets/audio/ig_promo.mp3"/>
+    <IgHeader></IgHeader>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import IgHeader from '../components/IgHeader'
 export default {
   name: 'Home',
   components: {
+    IgHeader
   }
 }
 </script>
