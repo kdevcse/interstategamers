@@ -1,5 +1,5 @@
 <template>
-  <div class="extras">
+  <article>
       <h1 class="extras-header"><span><i class="fab fa-twitch"></i></span> Twitch</h1>
       <div class="extras-cat" id="extras-twitch">
           <TwitchLink channel="deal_4_real" href="https://www.twitch.tv/deal_4_real" v-bind:src="deal4RealTwitch"/>
@@ -9,7 +9,7 @@
       <ExtrasSection header="Music" icon="fas fa-music" v-bind:items="music"/>
       <ExtrasSection header="Code" icon="fas fa-code" v-bind:items="code"/>
       <ExtrasSection header="Friends" icon="fas fa-users" v-bind:items="friends"/>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -37,24 +37,45 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+article{
+    padding: 15px 5% 75px 5%;
 }
-
-#nav {
-  padding: 30px;
+#extras-twitch{
+    display: grid;
+    grid-auto-rows: 125px;
+    margin-top: 30px;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.extras-header{
+    border-bottom: red solid 2px;
+    color: red;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.info-links{
+    color: #2d32af;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.info-links:hover{
+    text-decoration: underline;
+}
+@media only screen and (max-width: 768px){
+    #extras-twitch {
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .extras-header{
+        margin-bottom: 0px;
+    }
+}
+@media only screen and (min-width: 768px){
+    #extras-twitch{
+        grid-template-columns: 150px 150px 150px;
+    }
+}
+@media only screen and (min-width: 992px){
+    .fa-play.hovered{
+        display: inline;
+    }
 }
 </style>

@@ -1,13 +1,11 @@
 <template>
     <div class="extras-section">
-        <h1 class="extras-header"><span><i :class="icon"></i></span>{{header}}</h1>
-        <div class="extras-cat logo-promo" id="extras-code">
-            <div v-for="item in items" :key="item.heading">
-                <img class="friend-img" :src="item.src"/>
-                <div class="friend-info">
-                    <h3>{{item.heading}}</h3>
-                    <p v-html="item.content"/>
-                </div>
+        <h1 class="extras-header"><span><i :class="icon"></i></span> {{header}}</h1>
+        <div class="extras-cat logo-promo" v-for="item in items" :key="item.heading">
+            <img class="friend-img" :src="item.src"/>
+            <div class="friend-info">
+                <h3>{{item.heading}}</h3>
+                <p v-html="item.content"/>
             </div>
         </div>
     </div>
@@ -27,4 +25,37 @@ export default class ExtrasSection extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.extras-cat{
+    margin-bottom: 10px;
+}
+.friend-info > h3{
+    color: #2d32af;
+    margin-bottom: 9px;
+    font-size: 19px;
+}
+.friend-info > p{
+    margin-top: 0;
+    max-width: 850px;
+}
+.friend-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.logo-promo{
+    display: grid;
+    grid-template-columns: 130px auto;
+    align-items: center;
+}
+@media only screen and (max-width: 768px){
+    .logo-promo{
+        margin-left: 2.5%;
+        grid-template-columns: auto;
+    }
+    .friend-img{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+    }
+}
 </style>

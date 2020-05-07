@@ -32,6 +32,7 @@
     </article>
   </div>
 </template>
+
 <script>
 // @ is an alias to /src
 import InfoContactList from '../components/InfoContactList'
@@ -61,20 +62,6 @@ article {
 h1 {
   color: #2d32af;
   border-bottom: 2px #2d32af solid;
-}
-.contact-list {
-  color: #2d32af;
-}
-.contact-list > li {
-  padding: 0.5vw;
-}
-.contact-list-item,
-.contact-list-no-link {
-  text-decoration: none;
-  color: #2d32af;
-}
-.contact-list-item:hover {
-  color: red;
 }
 #boyz-img {
   border-radius: 3px;
@@ -107,10 +94,6 @@ h1 {
   #boyz-description > p {
     margin-top: 0;
     font-size: 1.2rem;
-  }
-  .contact-list-item,
-  .contact-list-no-link {
-    font-size: 125%;
   }
   h1 {
     font-size: 150%;

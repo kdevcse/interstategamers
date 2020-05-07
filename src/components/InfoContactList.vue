@@ -22,18 +22,25 @@ export default class InfoContactList extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.contact-list {
+  color: #2d32af;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.contact-list > li {
+  padding: 0.5vw;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.contact-list-item,
+.contact-list-no-link {
+  text-decoration: none;
+  color: #2d32af;
 }
-a {
-  color: #42b983;
+.contact-list-item:hover {
+  color: red;
+}
+
+@media only screen and (min-width: 600px) {
+  .contact-list-item,
+  .contact-list-no-link {
+    font-size: 125%;
+  }
 }
 </style>
