@@ -6,15 +6,19 @@
       src='../assets/audio/ig_promo.mp3'
     />
     <IgHeader></IgHeader>
+    <IgContent></IgContent>
   </div>
 </template>
 
 <script>
 import IgHeader from '../components/IgHeader'
+import IgContent from '../components/IgContent'
+
 export default {
   name: 'Home',
   components: {
-    IgHeader
+    IgHeader,
+    IgContent
   }
 }
 </script>

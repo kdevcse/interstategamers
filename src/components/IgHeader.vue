@@ -1,7 +1,7 @@
 <template>
-  <main id='ig-main'>
-    <aside id='ig-main-right'>
-      <img class='ig-main-right-logo' src='../assets/images/Main.png' />
+  <header id='ig-header'>
+    <aside id='ig-header-right'>
+      <img class='ig-header-right-logo' src='../assets/images/Main.png' />
       <div id='ig-icons'>
         <a href='https://www.facebook.com/TheInterstateGamers/' title='Facebook'>
           <i class='fab fa-facebook-square fa-2x'></i>
@@ -20,20 +20,20 @@
         </a>
       </div>
     </aside>
-    <section id='ig-main-left'>
-      <div class='ig-main-left-text-container'>
+    <section id='ig-header-left'>
+      <div class='ig-header-left-text-container'>
         <h1>The Interstate Gamers</h1>
         <p>
           The podcast where your hosts, deal_4_real and KSlugs, rate and discuss your favorite
           video games by category from two different states, Colorado and Texas.
         </p>
       </div>
-      <div id='ig-main-left-trailer' onclick='playTrailer()'>
+      <div id='ig-header-left-trailer' onclick='playTrailer()'>
         <i id='ig-trailer-playButton' class='fas fa-play-circle'></i>
         <span>Listen to the trailer</span>
       </div>
     </section>
-  </main>
+  </header>
 </template>
 
 <script lang='ts'>
@@ -47,7 +47,7 @@ export default class IgHeader extends Vue {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
-main {
+header {
   display: grid;
   grid-template-columns: 0.5fr 50%;
   grid-template-areas: 'left right';
@@ -56,25 +56,25 @@ main {
   padding: 20px 5%;
   background-color: #2d32af;
 }
-#ig-main-left {
+#ig-header-left {
   display: grid;
   grid-area: left;
   grid-gap: 20px;
   align-items: center;
 }
-.ig-main-right-logo {
+.ig-header-right-logo {
   height: 375px;
 }
-.ig-main-left-text-container {
+.ig-header-left-text-container {
   align-items: center;
   color: white;
 }
-#ig-main-left-trailer {
+#ig-header-left-trailer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#ig-main-left-trailer:hover {
+#ig-header-left-trailer:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -96,44 +96,44 @@ main {
 }
 
 @media only screen and (max-width: 768px) {
-  main {
+  header {
     display: block;
     text-align: center;
     padding: 20px 5% 30px 5%;
   }
-  #ig-main-right {
+  #ig-header-right {
     display: block;
   }
-  #ig-main-left {
+  #ig-header-left {
     width: 100%;
     grid-gap: 25px;
     grid-template-columns: 100%;
     justify-content: center;
   }
-  .ig-main-right-logo {
+  .ig-header-right-logo {
     height: 250px;
     border-radius: 6px;
   }
   #ig-icons {
     display: none;
   }
-  .ig-main-left-text-container > h1 {
+  .ig-header-left-text-container > h1 {
     display: none;
   }
-  .ig-main-left-text-container > p {
+  .ig-header-left-text-container > p {
     margin-bottom: 0;
     margin-top: 25px;
     padding-left: 3%;
     padding-right: 3%;
   }
-  #ig-main-left-trailer {
+  #ig-header-left-trailer {
     color: #2d32af;
     padding: 12px;
     border-radius: 6px;
     background-color: white;
     justify-self: center;
   }
-  #ig-main-left-trailer > svg {
+  #ig-header-left-trailer > svg {
     margin-right: 8px;
     font-size: 25px;
     color: red;
@@ -141,36 +141,36 @@ main {
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
-  main {
+  header {
     grid-template-columns: minmax(min-content, 45%) 55%;
     height: 500px;
   }
-  #ig-main-right {
+  #ig-header-right {
     text-align: center;
     justify-self: end;
   }
-  .ig-main-right-logo {
+  .ig-header-right-logo {
     height: 340px;
     border-radius: 6px;
   }
   #ig-icons > a > svg {
     font-size: 27px;
   }
-  #ig-main-left {
+  #ig-header-left {
     align-self: center;
   }
-  .ig-main-left-text-container > h1 {
+  .ig-header-left-text-container > h1 {
     font-size: 34px;
     margin-bottom: 5px;
     margin-top: 0;
     color: white;
   }
-  .ig-main-left-text-container > p {
+  .ig-header-left-text-container > p {
     margin: 0;
     margin-top: 10px;
     font-size: 17px;
   }
-  #ig-main-left-trailer {
+  #ig-header-left-trailer {
     width: 225px;
     color: #2d32af;
     font-size: 15px;
@@ -178,7 +178,7 @@ main {
     border-radius: 4px;
     background-color: white;
   }
-  #ig-main-left-trailer > svg {
+  #ig-header-left-trailer > svg {
     margin-right: 10px;
     font-size: 23px;
     color: red;
@@ -187,28 +187,28 @@ main {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  main {
+  header {
     grid-template-columns: minmax(min-content, 50%) 50%;
   }
-  .ig-main-left-text-container > h1 {
+  .ig-header-left-text-container > h1 {
     font-size: 45px;
   }
-  .ig-main-left-text-container > p {
+  .ig-header-left-text-container > p {
     font-size: 21px;
   }
-  #ig-main-left-trailer {
+  #ig-header-left-trailer {
     width: 275px;
     color: #2d32af;
     font-size: 20px;
     padding: 15px;
     background-color: white;
   }
-  #ig-main-left-trailer > svg {
+  #ig-header-left-trailer > svg {
     margin-right: 11px;
     font-size: 27px;
     color: red;
   }
-  .ig-main-right-logo {
+  .ig-header-right-logo {
     height: 375px;
   }
   #ig-icons > a > svg {
@@ -218,13 +218,13 @@ main {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  main {
+  header {
     grid-template-columns: minmax(min-content, 50%) 50%;
   }
-  #ig-main-right {
+  #ig-header-right {
     justify-self: normal;
   }
-  .ig-main-left-text-container > p {
+  .ig-header-left-text-container > p {
     font-size: 25px;
   }
 }
