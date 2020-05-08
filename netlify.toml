@@ -4,7 +4,7 @@
 
     # Runs in root directory so traversing to this program is fine
     command = "python3 build/UpdateData.py ${PodId} ${PodKey} ${AirtableKey}; yarn build;"
-    # ADD TO END when framework switch is completed: node build/tweet_new_episode.js -c ${Twitter_CK} -s ${Twitter_CS} -a ${Twitter_AK} -t ${Twitter_AS}
+    # ADD TO END when framework switch is completed: node build/tweet-new-episode.js -c ${Twitter_CK} -s ${Twitter_CS} -a ${Twitter_AK} -t ${Twitter_AS}
 
 [dev]
 

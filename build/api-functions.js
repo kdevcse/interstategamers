@@ -2,9 +2,17 @@ const fetch = require('node-fetch');
 
 /* airtable */
 async function getAirtableData (key, table, sortBy) {
-  const data = await fetch(`https://api.airtable.com/v0/appDCLBXIkefciEz4/${table}?api_key=${key}`)
-  .then(res => res.json());
-  return data;
+  const rankingsData = await fetch(`https://api.airtable.com/v0/appDCLBXIkefciEz4/${table}?api_key=${key}`)
+  .then(res => res.json())
+  .then(async data => {
+    let rankings = [];
+    for(let i = 0; i < data.records.length; i++){
+      rankings.push(data.records[i].fields);
+    }
+    return rankings;
+  });
+
+  return rankingsData;
 }
 
 /* Simplecast */
@@ -17,7 +25,8 @@ function addEpisode(episodes, episode){
 
 async function getSimplecastData (podId, podKey) {
   const header = { 'authorization' : `Bearer ${podKey}` };
-	const data = await fetch(`https://api.simplecast.com/podcasts/${podId}/episodes`, {
+
+	const simplecastData = await fetch(`https://api.simplecast.com/podcasts/${podId}/episodes`, {
 		method: 'get',
 		headers: header
 	})
@@ -36,7 +45,8 @@ async function getSimplecastData (podId, podKey) {
     }
     return episodes;
   });
-	return data;
+
+	return simplecastData;
 }
 
 module.exports = {
