@@ -29,6 +29,11 @@
         </p>
       </div>
       <div id='ig-header-left-trailer' onclick='playTrailer()'>
+          <audio
+            id='ig-audio'
+            title='Listen to the trailer'
+            src='../assets/audio/ig_promo.mp3'
+          />
         <i id='ig-trailer-playButton' class='fas fa-play-circle'></i>
         <span>Listen to the trailer</span>
       </div>

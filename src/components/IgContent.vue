@@ -1,11 +1,13 @@
 <template>
-  <section>
+  <section class="ig-content">
+    <div id="episodes">
       <HomeEpisode
         v-for="episode in episodes" :key="episode.id"
         :title="episode.title"
         :description="episode.description"
         :audio="episode.enclosure_url">
       </HomeEpisode>
+    </div>
     <aside id='ig-content-rank'>
       <h2 id='ig-content-rank-game-title'>Hover a review to see its ranking!</h2>
       <h1 id='ig-content-rank-game-rank'></h1>
@@ -34,7 +36,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import HomeEpisode from '@/components/HomeEpisode.vue'
 import episodeData from '../database/episode-data'
 
@@ -44,7 +46,6 @@ import episodeData from '../database/episode-data'
   }
 })
 export default class IgContent extends Vue {
-  @Prop() placeholder!: string;
   data () {
     return {
       episodes: episodeData
@@ -55,4 +56,43 @@ export default class IgContent extends Vue {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+  #episodes {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) {
+  #episodes {
+    width: 100%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #episodes {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 2%;
+  }
+  /* width */
+  #episodes::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  #episodes::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 30px;
+  }
+  /* Handle */
+  #episodes::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 30px;
+  }
+}
+
 </style>

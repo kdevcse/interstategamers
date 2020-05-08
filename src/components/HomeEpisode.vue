@@ -32,4 +32,52 @@ export default class HomeEpisode extends Vue {
 </script>
 
 <style scoped>
+.episode,
+.episode-first {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50px auto;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+.episode {
+  border-top: #2d32af solid 1px;
+}
+.player > svg {
+  font-size: 32px;
+}
+.player > svg:hover {
+  cursor: pointer;
+}
+.episode-title {
+  color: #2d32af;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.episode-title > svg {
+  color: red;
+}
+.ep-description {
+  color: #2d32af;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) {
+  .player > svg {
+    font-size: 32px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .episode:hover,
+  .episode-first:hover {
+    background: #f1f1f1;
+  }
+}
 </style>
