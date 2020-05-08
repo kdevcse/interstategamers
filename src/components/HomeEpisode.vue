@@ -8,7 +8,10 @@
         <i class='fas fa-play-circle fa-lg' v-on:click='play()' />
       </section>
       <aside class='ep-info'>
-        <h2 class='episode-title'>{{title}}</h2>
+        <h2 class='episode-title'>
+            {{title}}
+            <i class="fas fa-gamepad" v-if="info"></i>
+        </h2>
         <p class='ep-description'>{{description}}</p>
       </aside>
     </div>
@@ -18,7 +21,10 @@
         <i class='fas fa-play-circle fa-lg' v-on:click='play()' />
       </section>
       <aside class='ep-info'>
-        <h2 class='episode-title'>{{title}}</h2>
+        <h2 class='episode-title'>
+            {{title}}
+            <i class="fas fa-gamepad" v-if="info"></i>
+        </h2>
         <p class='ep-description'>{{description}}</p>
       </aside>
     </div>
@@ -37,6 +43,7 @@ export default class HomeEpisode extends Vue {
   @Prop() season!: number;
   @Prop() episodeNumber!: number;
   @Prop() episodeType!: string;
+  @Prop() info!: object;
 
   public play () {
     console.log('Hello World')

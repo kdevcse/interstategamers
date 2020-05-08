@@ -8,7 +8,8 @@
         :audio="episode.enclosure_url"
         :season="episode.season.number"
         :episodeNumber="episode.number"
-        :episodeType="episode.type">
+        :episodeType="episode.type"
+        :info="episode['Ranking Info']">
       </HomeEpisode>
     </div>
     <aside id='ig-content-rank'>
@@ -57,7 +58,6 @@ export default class IgContent extends Vue {
 }
 </script>
 
-<!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
 
 /* Extra small devices (phones, 600px and down) */
