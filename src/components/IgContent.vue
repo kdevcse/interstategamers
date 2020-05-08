@@ -5,7 +5,10 @@
         v-for="episode in episodes" :key="episode.id"
         :title="episode.title"
         :description="episode.description"
-        :audio="episode.enclosure_url">
+        :audio="episode.enclosure_url"
+        :season="episode.season.number"
+        :episodeNumber="episode.number"
+        :episodeType="episode.type">
       </HomeEpisode>
     </div>
     <aside id='ig-content-rank'>

@@ -22,12 +22,6 @@ export default {
 .ig-content {
   display: grid;
 }
-.season-title {
-  color: red;
-  width: 100%;
-  border-bottom: solid red;
-  margin-bottom: 0;
-}
 #ig-content-rank {
   margin-left: 5%;
   height: 100%;

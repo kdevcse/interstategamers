@@ -1,18 +1,28 @@
 <template>
-    <div class='episode'>
-        <section class='player' v-on:click="play()">
-            <audio :src="audio"></audio>
-            <i class='fas fa-play-circle fa-lg' v-on:click="play()"/>
-        </section>
-        <aside class='ep-info'>
-            <h2 class='episode-title'>
-                {{title}}
-            </h2>
-            <p class='ep-description'>
-                {{description}}
-            </p>
-        </aside>
+  <div>
+    <h1 v-if='episodeNumber === 1' class='season-title'>Season {{season}}</h1>
+    <!-- Perhaps there's a better way to do this -->
+    <div class='episode-first' v-if="episodeNumber === 1 && episodeType !== 'trailer'">
+      <section class='player' v-on:click='play()'>
+        <audio :src='audio'></audio>
+        <i class='fas fa-play-circle fa-lg' v-on:click='play()' />
+      </section>
+      <aside class='ep-info'>
+        <h2 class='episode-title'>{{title}}</h2>
+        <p class='ep-description'>{{description}}</p>
+      </aside>
     </div>
+    <div class='episode' v-else-if="episodeType !== 'trailer'">
+      <section class='player' v-on:click='play()'>
+        <audio :src='audio'></audio>
+        <i class='fas fa-play-circle fa-lg' v-on:click='play()' />
+      </section>
+      <aside class='ep-info'>
+        <h2 class='episode-title'>{{title}}</h2>
+        <p class='ep-description'>{{description}}</p>
+      </aside>
+    </div>
+  </div>
 </template>
 
 <script lang='ts'>
@@ -24,6 +34,9 @@ export default class HomeEpisode extends Vue {
   @Prop() description!: string;
   @Prop() guest!: boolean;
   @Prop() audio!: string;
+  @Prop() season!: number;
+  @Prop() episodeNumber!: number;
+  @Prop() episodeType!: string;
 
   public play () {
     console.log('Hello World')
@@ -32,6 +45,12 @@ export default class HomeEpisode extends Vue {
 </script>
 
 <style scoped>
+.season-title {
+  color: red;
+  width: 100%;
+  border-bottom: solid red;
+  margin-bottom: 0;
+}
 .episode,
 .episode-first {
   display: grid;
