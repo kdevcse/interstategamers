@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="info-contact-list">
     <h1>{{heading}}</h1>
     <ul class="contact-list">
       <li v-for="item in items" :key="item.href">

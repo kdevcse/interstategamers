@@ -1,6 +1,8 @@
 <template>
   <section>
-    <div id='episodes'></div>
+    <div id='episodes' v-for="episode in episodes" :key="episode.id">
+        <HomeEpisode :title="episode.title" :description="episode.description"></HomeEpisode>
+    </div>
     <aside id='ig-content-rank'>
       <h2 id='ig-content-rank-game-title'>Hover a review to see its ranking!</h2>
       <h1 id='ig-content-rank-game-rank'></h1>
@@ -30,10 +32,21 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import HomeEpisode from '@/components/HomeEpisode.vue'
+import episodeData from '../database/episode-data'
 
-@Component
-export default class IgHeader extends Vue {
+@Component({
+  components: {
+    HomeEpisode
+  }
+})
+export default class IgContent extends Vue {
   @Prop() placeholder!: string;
+  data () {
+    return {
+      episodes: episodeData
+    }
+  }
 }
 </script>
 
