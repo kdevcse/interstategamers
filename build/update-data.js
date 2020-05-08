@@ -3,17 +3,38 @@ const fs = require('fs');
 const api = require('./api-functions');
 
 
+const argv = yargs
+    .option('airtable', {
+        alias: 'a',
+        type: 'string'
+    })
+    .option('podId', {
+        alias: 'i',
+        type: 'string'
+    })
+    .option('podKey', {
+        alias: 'k',
+        type: 'string'
+    })
+    .option().help().argv;
+
+if (!argv.airtable || !argv.podId || !argv.podKey) {
+    console.log("You entered the arguments incorrectly.");
+    return;
+}
+
 /* Main */
 let episodes, rankings;
 
-api.getAirtableData('keyiAfm7QZhgG2nkV','Ratings','IG Score').then((data) => {
+api.getAirtableData(argv.airtable,'Ratings','IG Score').then((data) => {
     rankings = data;
-    api.getSimplecastData('ce93694b-1ad6-421b-af90-5a35ac2d1430', 'eyJhcGlfa2V5IjoiMzBjZDYyYzJiMWJhODMwNzlkZmZmMzQ2NTdjMjlkMTUifQ==')
+    console.log(rankings);
+    api.getSimplecastData(argv.podId, argv.podKey)
     .then((data) => {
         episodes = data;
         for(let i = 0; i < episodes.length; i++){
             if (episodes[i].type === 'full'){
-                episodes[i]['Ranking Info']
+                episodes[i]['Ranking Info'] = rankings
             }
         }
         fs.writeFileSync('./src/database/data2.json', JSON.stringify(data, null, '\t'));
