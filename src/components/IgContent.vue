@@ -1,8 +1,11 @@
 <template>
   <section>
-    <div id='episodes' v-for="episode in episodes" :key="episode.id">
-        <HomeEpisode :title="episode.title" :description="episode.description"></HomeEpisode>
-    </div>
+      <HomeEpisode
+        v-for="episode in episodes" :key="episode.id"
+        :title="episode.title"
+        :description="episode.description"
+        :audio="episode.enclosure_url">
+      </HomeEpisode>
     <aside id='ig-content-rank'>
       <h2 id='ig-content-rank-game-title'>Hover a review to see its ranking!</h2>
       <h1 id='ig-content-rank-game-rank'></h1>

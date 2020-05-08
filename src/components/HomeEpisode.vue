@@ -1,8 +1,8 @@
 <template>
-    <div class='home-episode'>
-        <section class='player'>
-            <audio></audio>
-            <i class='fas fa-play-circle fa-lg'/>
+    <div class='episode'>
+        <section class='player' v-on:click="play()">
+            <audio :src="audio"></audio>
+            <i class='fas fa-play-circle fa-lg' v-on:click="play()"/>
         </section>
         <aside class='ep-info'>
             <h2 class='episode-title'>
@@ -24,6 +24,10 @@ export default class HomeEpisode extends Vue {
   @Prop() description!: string;
   @Prop() guest!: boolean;
   @Prop() audio!: string;
+
+  public play () {
+    console.log('Hello World')
+  }
 }
 </script>
 

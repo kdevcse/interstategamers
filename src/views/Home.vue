@@ -102,11 +102,6 @@ export default {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 768px) {
-  main {
-    display: block;
-    text-align: center;
-    padding: 20px 5% 30px 5%;
-  }
   #episodes {
     width: 100%;
     margin-top: 20px;
