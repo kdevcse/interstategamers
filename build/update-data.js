@@ -6,37 +6,33 @@ const api = require('./api-functions');
 const argv = yargs
     .option('airtable', {
         alias: 'a',
-        type: 'string'
+        type: 'string',
+        required: true
     })
     .option('podId', {
         alias: 'i',
-        type: 'string'
+        type: 'string',
+        required: true
     })
     .option('podKey', {
         alias: 'k',
-        type: 'string'
-    })
-    .option().help().argv;
-
-if (!argv.airtable || !argv.podId || !argv.podKey) {
-    console.log("You entered the arguments incorrectly.");
-    return;
-}
+        type: 'string',
+        required: true
+    }).help().argv;
 
 /* Main */
 let episodes, rankings;
 
 api.getAirtableData(argv.airtable,'Ratings','IG Score').then((data) => {
     rankings = data;
-    console.log(rankings);
     api.getSimplecastData(argv.podId, argv.podKey)
     .then((data) => {
         episodes = data;
-        for(let i = 0; i < episodes.length; i++){
-            if (episodes[i].type === 'full'){
-                episodes[i]['Ranking Info'] = rankings
+        episodes.map(episode => {
+            if (episode.type === 'full'){
+                episode['Ranking Info'] = rankings.find(r => r.Episode === `${episode.season.number}-${episode.number}`);
             }
-        }
-        fs.writeFileSync('./src/database/data2.json', JSON.stringify(data, null, '\t'));
+        });
+        fs.writeFileSync('./src/database/data.json', JSON.stringify(episodes, null, '\t'));
     });
 });
