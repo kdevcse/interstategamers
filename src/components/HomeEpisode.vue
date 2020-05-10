@@ -3,10 +3,11 @@
     <h1 v-if='finale' class='season-title'>Season {{season}}</h1>
     <!-- Perhaps there's a better way to do this -->
     <div class='episode-first' 
-      v-if="episodeType !== 'trailer' && finale">
-      <section class='player' v-on:click='play()'>
+      v-if="episodeType !== 'trailer' && finale"
+      @mouseover="sendScore(info)">
+      <section class='player' @click='play()'>
         <audio :src='audio'></audio>
-        <i class='fas fa-play-circle fa-lg' v-on:click='play()' />
+        <i class='fas fa-play-circle fa-lg' @click='play()' />
       </section>
       <aside class='ep-info'>
         <h2 class='episode-title'>
@@ -16,10 +17,11 @@
         <p class='ep-description'>{{description}}</p>
       </aside>
     </div>
-    <div class='episode' v-else-if="episodeType !== 'trailer'">
+    <div class='episode' v-else-if="episodeType !== 'trailer'"
+      @mouseover="sendScore(info)">
       <section class='player' v-on:click='play()'>
         <audio :src='audio'></audio>
-        <i class='fas fa-play-circle fa-lg' v-on:click='play()' />
+        <i class='fas fa-play-circle fa-lg' @click='play()' />
       </section>
       <aside class='ep-info'>
         <h2 class='episode-title'>
@@ -34,6 +36,7 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import IRankingInfo from '../interfaces/IRankingInfo';
 
 @Component
 export default class HomeEpisode extends Vue {
@@ -44,8 +47,14 @@ export default class HomeEpisode extends Vue {
   @Prop() season!: number;
   @Prop() episodeNumber!: number;
   @Prop() episodeType!: string;
-  @Prop() info!: object;
+  @Prop() info!: IRankingInfo;
   @Prop() finale!: boolean;
+
+  public sendScore (rankingInfo: IRankingInfo) {
+    if(rankingInfo){
+      this.$emit('show-score', rankingInfo);
+    }
+  }
 
   public play () {
     console.log('Hello World')

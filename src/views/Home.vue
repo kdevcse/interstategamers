@@ -26,7 +26,6 @@ export default {
   margin-left: 5%;
   height: 100%;
   color: #2d32af;
-  display: none;
 }
 #ig-content-rank-game-title {
   margin-bottom: 0;
@@ -70,9 +69,6 @@ export default {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
-  #ig-content-rank {
-    display: none;
-  }
   .ig-content {
     padding: 50px 5%;
   }
@@ -83,9 +79,6 @@ export default {
   .ig-content {
     grid-template-columns: 50% 50%;
     grid-template-rows: 90vh;
-  }
-  #ig-content-rank {
-    display: none;
   }
 }
 </style>
