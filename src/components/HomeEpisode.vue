@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h1 v-if='episodeNumber === 1' class='season-title'>Season {{season}}</h1>
+    <h1 v-if='finale' class='season-title'>Season {{season}}</h1>
     <!-- Perhaps there's a better way to do this -->
-    <div class='episode-first' v-if="episodeNumber === 1 && episodeType !== 'trailer'">
+    <div class='episode-first' 
+      v-if="episodeType !== 'trailer' && finale">
       <section class='player' v-on:click='play()'>
         <audio :src='audio'></audio>
         <i class='fas fa-play-circle fa-lg' v-on:click='play()' />
@@ -44,6 +45,7 @@ export default class HomeEpisode extends Vue {
   @Prop() episodeNumber!: number;
   @Prop() episodeType!: string;
   @Prop() info!: object;
+  @Prop() finale!: boolean;
 
   public play () {
     console.log('Hello World')

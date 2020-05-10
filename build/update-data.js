@@ -28,11 +28,17 @@ api.getAirtableData(argv.airtable,'Ratings','IG Score').then((data) => {
     api.getSimplecastData(argv.podId, argv.podKey)
     .then((data) => {
         episodes = data;
-        episodes.map(episode => {
-            if (episode.type === 'full'){
-                episode['Ranking Info'] = rankings.find(r => r.Episode === `${episode.season.number}-${episode.number}`);
+        let season = 0;
+        for(let i = 0; i < episodes.length; i++){
+            if(episodes[i].season.number < season || i === 0){
+                season = episodes[i].season.number;
+                episodes[i]["finale"] = true;
             }
-        });
+            if(episodes[i].type === 'full'){
+                episodes[i]['Ranking Info'] = rankings.find(r => r.Episode === `${episodes[i].season.number}-${episodes[i].number}`);
+            }
+        }
+        
         fs.writeFileSync('./src/database/data.json', JSON.stringify(episodes, null, '\t'));
     });
 });

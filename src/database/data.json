@@ -44,6 +44,7 @@
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=dd57c810-9e0b-4b4d-8e68-3bae7782c77a&preview=true"
 		},
+		"finale": true,
 		"Ranking Info": {
 			"Episode": "4-7",
 			"Game": "Sonic Adventure 2: Battle",
@@ -597,6 +598,7 @@
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=4a5de9c6-e130-4dbd-a392-743341bf460a&preview=true"
 		},
+		"finale": true,
 		"Ranking Info": {
 			"Episode": "3-10",
 			"Game": "Paper Mario: The Thousand Year Door",
@@ -1388,7 +1390,8 @@
 		"days_since_release": 403,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=314386d3-3a52-4173-9aef-97b3952d8a6d&preview=true"
-		}
+		},
+		"finale": true
 	},
 	{
 		"updated_at": "2019-05-12T21:29:41.397907-07:00",
@@ -2445,7 +2448,8 @@
 		"days_since_release": 683,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=50f69360-2339-4593-b6a8-3d366ca5daea&preview=true"
-		}
+		},
+		"finale": true
 	},
 	{
 		"updated_at": "2019-05-12T21:31:31.505665-07:00",

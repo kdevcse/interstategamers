@@ -9,7 +9,8 @@
         :season="episode.season.number"
         :episodeNumber="episode.number"
         :episodeType="episode.type"
-        :info="episode['Ranking Info']">
+        :info="episode['Ranking Info']"
+        :finale="episode.finale">
       </HomeEpisode>
     </div>
     <aside id='ig-content-rank'>
