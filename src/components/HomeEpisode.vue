@@ -52,7 +52,7 @@ export default class HomeEpisode extends Vue {
 
   public sendScore (rankingInfo: IRankingInfo) {
     if(rankingInfo){
-      this.$emit('show-score', rankingInfo);
+      this.$emit('show-score', [rankingInfo, this.title]);
     }
   }
 

@@ -14,7 +14,7 @@
         :finale="episode.finale">
       </HomeEpisode>
     </div>
-    <HomeRanking :info="rankings"></HomeRanking>
+    <HomeRanking :info="rankings" :title="hoveredTitle" :totalGames="episodes.length"></HomeRanking>
   </section>
 </template>
 
@@ -34,17 +34,21 @@ import IRankingInfo from '../interfaces/IRankingInfo'
 export default class IgContent extends Vue {
   episodes = episodeData
   rankings = {};
+  hoveredTitle = '';
 
-  public showScores (e: IRankingInfo ) {
-    if (e){
-      console.log(`Hey:\n ${e.Game}`);
-      this.rankings = e;
+  public showScores (e: any) {
+    if (e[0]) {
+      this.rankings = e[0];
+      this.hoveredTitle = e[1];
     }
   }
 }
 </script>
 
 <style scoped>
+.ig-content {
+  display: grid;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 768px) {
@@ -52,12 +56,20 @@ export default class IgContent extends Vue {
     width: 100%;
     margin-top: 20px;
   }
+  .ig-content {
+    padding-left: 5%;
+    padding-right: 5%;
+    grid-template-columns: 100%;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
   #episodes {
     width: 100%;
+  }
+  .ig-content {
+    padding: 50px 5%;
   }
 }
 
@@ -81,6 +93,10 @@ export default class IgContent extends Vue {
   #episodes::-webkit-scrollbar-thumb {
     background: red;
     border-radius: 30px;
+  }
+  .ig-content {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 90vh;
   }
 }
 
