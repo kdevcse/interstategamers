@@ -36,7 +36,7 @@ export default class IgContent extends Vue {
   rankings = {};
   hoveredTitle = '';
 
-  public showScores (e: any) {
+  showScores (e: any) {
     if (e[0]) {
       this.rankings = e[0];
       this.hoveredTitle = e[1];

@@ -111,7 +111,7 @@ export default class HomeRanking extends Vue {
   background-color: red;
 }
 .progress-foreground {
-    transition: width 0.3s ease-in-out;
+    transition: width 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
 /* Extra small devices (phones, 600px and down) */
