@@ -23,8 +23,7 @@ export default class ExtrasSection extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .extras-cat{
     margin-bottom: 10px;
 }
@@ -47,6 +46,19 @@ export default class ExtrasSection extends Vue {
     grid-template-columns: 130px auto;
     align-items: center;
 }
+.info-links{
+    color: #2d32af;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.info-links:hover{
+    text-decoration: underline;
+}
+.extras-header {
+    border-bottom: red solid 2px;
+    color: red;
+}
+
 @media only screen and (max-width: 768px){
     .logo-promo{
         margin-left: 2.5%;
@@ -56,6 +68,9 @@ export default class ExtrasSection extends Vue {
         margin-left: auto;
         margin-right: auto;
         margin-top: 40px;
+    }
+    .extras-header{
+        margin-bottom: 0px;
     }
 }
 </style>

@@ -36,27 +36,21 @@ export default {
 }
 </script>
 
-<style>
-article{
+<style scoped>
+
+article {
     padding: 15px 5% 75px 5%;
 }
-#extras-twitch{
+#extras-twitch {
     display: grid;
     grid-auto-rows: 125px;
     margin-top: 30px;
 }
-.extras-header{
+.extras-header {
     border-bottom: red solid 2px;
     color: red;
 }
-.info-links{
-    color: #2d32af;
-    text-decoration: none;
-    font-weight: bolder;
-}
-.info-links:hover{
-    text-decoration: underline;
-}
+
 @media only screen and (max-width: 768px){
     #extras-twitch {
         display: block;
@@ -68,11 +62,13 @@ article{
         margin-bottom: 0px;
     }
 }
+
 @media only screen and (min-width: 768px){
     #extras-twitch{
         grid-template-columns: 150px 150px 150px;
     }
 }
+
 @media only screen and (min-width: 992px){
     .fa-play.hovered{
         display: inline;

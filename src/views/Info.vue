@@ -55,7 +55,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 article {
   padding: 15px 5% 75px 5%;
 }
@@ -98,7 +99,5 @@ h1 {
   h1 {
     font-size: 150%;
   }
-}
-@media only screen and (min-width: 992px) {
 }
 </style>
