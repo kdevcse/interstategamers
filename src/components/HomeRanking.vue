@@ -60,19 +60,19 @@ export default class HomeRanking extends Vue {
     }
 
     get getGameplay () : number {
-        return this.info ? this.info.Gameplay: 0;
+        return this.info.Gameplay ? this.info.Gameplay: 0;
     }
 
     get getAesthetics () : number {
-        return this.info ? this.info.Aesthetics: 0;
+        return this.info.Aesthetics ? this.info.Aesthetics: 0;
     }
 
     get getContent () : number {
-        return this.info ? this.info.Content: 0;
+        return this.info.Content ? this.info.Content: 0;
     }
 
     get getOverall () : number {
-        return this.info ? this.info["IG Score"]: 0;
+        return this.info['IG Score'] ? this.info["IG Score"]: 0;
     }
 }
 </script>

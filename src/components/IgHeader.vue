@@ -50,7 +50,6 @@ export default class IgHeader extends Vue {
 }
 </script>
 
-<!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
 header {
   display: grid;
@@ -99,7 +98,7 @@ header {
   color: white;
   margin-right: 1.5%;
   margin-left: 1.5%;
-  transition: opacity transform 0.2s linear;
+  transition: opacity 0.25s, transform 0.25s ease-out;
 }
 
 @media only screen and (max-width: 768px) {

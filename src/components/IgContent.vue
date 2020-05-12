@@ -14,7 +14,7 @@
         :finale="episode.finale">
       </HomeEpisode>
     </div>
-    <HomeRanking :info="rankings" :title="hoveredTitle" :totalGames="episodes.length"></HomeRanking>
+    <HomeRanking :info="rankings" :title="hoveredTitle" :totalGames="getTotalGames"></HomeRanking>
   </section>
 </template>
 
@@ -33,14 +33,23 @@ import IRankingInfo from '../interfaces/IRankingInfo'
 })
 export default class IgContent extends Vue {
   episodes = episodeData
-  rankings = {};
+  rankings: any = {};
   hoveredTitle = '';
+
+  mounted () {
+    this.hoveredTitle = this.episodes[0].title;
+    this.rankings = this.episodes[0]['Ranking Info'];
+  }
 
   showScores (e: any) {
     if (e[0]) {
       this.rankings = e[0];
       this.hoveredTitle = e[1];
     }
+  }
+
+  get getTotalGames () {
+    return this.episodes.filter((ep: any) => ep.type === 'full').length;
   }
 }
 </script>
