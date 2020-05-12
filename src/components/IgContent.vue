@@ -14,7 +14,13 @@
         :finale="episode.finale">
       </HomeEpisode>
     </div>
-    <HomeRanking :info="rankings" :title="hoveredTitle" :totalGames="getTotalGames"></HomeRanking>
+    <HomeRanking
+    :gameplay="rankings.Gameplay"
+    :aesthetics="rankings.Aesthetics"
+    :content="rankings.Content"
+    :overall="rankings['IG Score']"
+    :title="hoveredTitle" 
+    :totalGames="getTotalGames"></HomeRanking>
   </section>
 </template>
 

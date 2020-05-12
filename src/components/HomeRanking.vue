@@ -49,9 +49,12 @@ import IRankingInfo from '../interfaces/IRankingInfo'
 
 @Component
 export default class HomeRanking extends Vue {
-    @Prop() info!: IRankingInfo;
     @Prop() totalGames!: number;
     @Prop() title!: string;
+    @Prop() gameplay!: number;
+    @Prop() aesthetics!: number;
+    @Prop() content!: number;
+    @Prop() overall!: number;
 
     rank: number = 0; //TODO
 
@@ -60,19 +63,19 @@ export default class HomeRanking extends Vue {
     }
 
     get getGameplay () : number {
-        return this.info.Gameplay ? this.info.Gameplay: 0;
+        return this.gameplay ? this.gameplay: 0;
     }
 
     get getAesthetics () : number {
-        return this.info.Aesthetics ? this.info.Aesthetics: 0;
+        return this.aesthetics ? this.aesthetics: 0;
     }
 
     get getContent () : number {
-        return this.info.Content ? this.info.Content: 0;
+        return this.content ? this.content: 0;
     }
 
     get getOverall () : number {
-        return this.info['IG Score'] ? this.info["IG Score"]: 0;
+        return this.overall ? this.overall: 0;
     }
 }
 </script>
