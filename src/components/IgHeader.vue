@@ -86,18 +86,20 @@ header {
 #ig-icons > a > svg:hover {
   cursor: pointer;
   opacity: 0.8;
+  transform: translate(0px,-5px);
 }
 #ig-icons {
   margin-top: 10px;
+  height: 35px;
 }
 #ig-icons > a {
   text-decoration: none;
 }
 #ig-icons > a > svg {
   color: white;
-  margin-right: 1.1875%;
-  margin-left: 1.1875%;
-  transition: opacity 0.2s ease-in;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+  transition: opacity transform 0.2s linear;
 }
 
 @media only screen and (max-width: 768px) {
