@@ -28,13 +28,14 @@
           video games by category from two different states, Colorado and Texas.
         </p>
       </div>
-      <div id='ig-header-left-trailer' onclick='playTrailer()'>
+      <div id='ig-header-left-trailer' v-on:click='playTrailer()'>
           <audio
             id='ig-audio'
             title='Listen to the trailer'
             src='../assets/audio/ig_promo.mp3'
           />
-        <i id='ig-trailer-playButton' class='fas fa-play-circle'></i>
+        <i v-if="playing" id='ig-trailer-playButton' class='fas fa-pause-circle'></i>
+        <i v-else id='ig-trailer-playButton' class='fas fa-play-circle'></i>
         <span>Listen to the trailer</span>
       </div>
     </section>
@@ -47,6 +48,12 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 @Component
 export default class IgHeader extends Vue {
   @Prop() placeholder!: string;
+
+  playing = false;
+
+  playTrailer () {
+    this.playing = !this.playing;
+  }
 }
 </script>
 
