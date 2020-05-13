@@ -102,6 +102,27 @@ export default class HomeEpisode extends Vue {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.episode:hover > .ep-info > h2 > svg,
+.episode-first:hover > .ep-info > h2 > svg {
+  animation: rumble 0.3s ease-out;
+}
+@keyframes rumble {
+  20% {
+    transform: translateY(-3px);
+  }
+  40% {
+    transform: translateY(3px);
+  }
+  60% {
+    transform: translateY(-1px);
+  }
+  80% {
+    transform: translate(1px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
@@ -115,29 +136,6 @@ export default class HomeEpisode extends Vue {
   .episode:hover,
   .episode-first:hover {
     background: #f1f1f1;
-  }
-
-  .episode:hover > .ep-info > h2 > svg,
-  .episode-first:hover > .ep-info > h2 > svg {
-    animation: rumble 0.3s ease-out;
-  }
-
-  @keyframes rumble {
-    20% {
-      transform: translateY(-3px);
-    }
-    40% {
-      transform: translateY(3px);
-    }
-    60% {
-      transform: translateY(-1px);
-    }
-    80% {
-      transform: translate(1px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
   }
 }
 </style>
