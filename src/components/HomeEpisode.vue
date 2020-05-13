@@ -116,5 +116,28 @@ export default class HomeEpisode extends Vue {
   .episode-first:hover {
     background: #f1f1f1;
   }
+
+  .episode:hover > .ep-info > h2 > svg,
+  .episode-first:hover > .ep-info > h2 > svg {
+    animation: rumble 0.3s ease-out;
+  }
+
+  @keyframes rumble {
+    20% {
+      transform: translateY(-3px);
+    }
+    40% {
+      transform: translateY(3px);
+    }
+    60% {
+      transform: translateY(-1px);
+    }
+    80% {
+      transform: translate(1px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
 }
 </style>
