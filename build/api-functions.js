@@ -9,6 +9,13 @@ async function getAirtableData (key, table, sortBy) {
     for(let i = 0; i < data.records.length; i++){
       rankings.push(data.records[i].fields);
     }
+    rankings.sort((a, b) => b['IG Score'] - a['IG Score']);
+    //Assign rank
+    for(let i = 0; i < rankings.length; i++) {
+      const currentScore = rankings[i]['IG Score'];
+      const lastScore = rankings[i - 1] ? rankings[i - 1]['IG Score']: null;
+      rankings[i]['rank'] = lastScore && (currentScore === lastScore) ? rankings[i - 1]['rank'] : i + 1;
+    }
     return rankings;
   });
 

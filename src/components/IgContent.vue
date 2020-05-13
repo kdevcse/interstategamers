@@ -19,6 +19,7 @@
     :aesthetics="rankings.Aesthetics"
     :content="rankings.Content"
     :overall="rankings['IG Score']"
+    :rank="rankings.rank"
     :title="hoveredTitle" 
     :totalGames="getTotalGames"></HomeRanking>
   </section>

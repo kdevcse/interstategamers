@@ -55,8 +55,7 @@ export default class HomeRanking extends Vue {
     @Prop() aesthetics!: number;
     @Prop() content!: number;
     @Prop() overall!: number;
-
-    rank: number = 0; //TODO
+    @Prop() rank!: number;
 
     get getTitle () : string {
         return this.title ? this.title : 'Hover a review to see its ranking!';

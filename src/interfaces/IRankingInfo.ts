@@ -29,5 +29,6 @@ export default interface IRankingInfo {
     "Aesthetics": number,
     "Visuals": number,
     "Audio": number,
-    "Content": number
+    "Content": number,
+    "rank": number
 }
