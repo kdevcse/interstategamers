@@ -13,7 +13,7 @@
       <aside class='ep-info'>
         <h2 class='episode-title'>
             {{title}}
-            <i class="fas fa-gamepad" v-if="info"></i>
+            <font-awesome-icon :icon="['fas', 'gamepad']" v-if="info"></font-awesome-icon>
         </h2>
         <p class='ep-description'>{{description}}</p>
       </aside>
@@ -28,7 +28,7 @@
       <aside class='ep-info'>
         <h2 class='episode-title'>
             {{title}}
-            <i class="fas fa-gamepad" v-if="info"></i>
+            <font-awesome-icon :icon="['fas', 'gamepad']" v-if="info"></font-awesome-icon>
         </h2>
         <p class='ep-description'>{{description}}</p>
       </aside>
