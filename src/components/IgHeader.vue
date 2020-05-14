@@ -34,8 +34,8 @@
             title='Listen to the trailer'
             src='../assets/audio/ig_promo.mp3'
           />
-        <i v-if="playing" id='ig-trailer-playButton' class='fas fa-pause-circle'></i>
-        <i v-else id='ig-trailer-playButton' class='fas fa-play-circle'></i>
+        <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" id='ig-trailer-playButton'></font-awesome-icon>
+        <font-awesome-icon :icon="['fas', 'play-circle']" v-else id='ig-trailer-playButton'></font-awesome-icon>
         <span>Listen to the trailer</span>
       </div>
     </section>

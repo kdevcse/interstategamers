@@ -5,9 +5,10 @@
     <div class='episode-first' 
       v-if="episodeType !== 'trailer' && finale"
       @mouseover="sendScore(info)">
-      <section class='player' @click='play()'>
+      <section class='player'>
         <audio :src='audio'></audio>
-        <i class='fas fa-play-circle fa-lg' @click='play()' />
+        <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" @click='play()'></font-awesome-icon>
+        <font-awesome-icon :icon="['fas', 'play-circle']" v-else @click='play()'></font-awesome-icon>
       </section>
       <aside class='ep-info'>
         <h2 class='episode-title'>
@@ -19,9 +20,10 @@
     </div>
     <div class='episode' v-else-if="episodeType !== 'trailer'"
       @mouseover="sendScore(info)">
-      <section class='player' v-on:click='play()'>
+      <section class='player'>
         <audio :src='audio'></audio>
-        <i class='fas fa-play-circle fa-lg' @click='play()' />
+        <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" @click='play()'></font-awesome-icon>
+        <font-awesome-icon :icon="['fas', 'play-circle']" v-else @click='play()'></font-awesome-icon>
       </section>
       <aside class='ep-info'>
         <h2 class='episode-title'>
@@ -50,6 +52,8 @@ export default class HomeEpisode extends Vue {
   @Prop() info!: IRankingInfo;
   @Prop() finale!: boolean;
 
+  playing = false;
+
   public sendScore (rankingInfo: IRankingInfo) {
     if(rankingInfo){
       this.$emit('show-score', [rankingInfo, this.title]);
@@ -57,7 +61,7 @@ export default class HomeEpisode extends Vue {
   }
 
   public play () {
-    console.log('Hello World')
+    this.playing = !this.playing;
   }
 }
 </script>
