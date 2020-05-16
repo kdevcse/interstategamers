@@ -29,11 +29,6 @@
         </p>
       </div>
       <div id='ig-header-left-trailer' v-on:click='playTrailer()'>
-          <audio
-            id='ig-audio'
-            title='Listen to the trailer'
-            src='../assets/audio/ig_promo.mp3'
-          />
         <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" id='ig-trailer-playButton'></font-awesome-icon>
         <font-awesome-icon :icon="['fas', 'play-circle']" v-else id='ig-trailer-playButton'></font-awesome-icon>
         <span>Listen to the trailer</span>
@@ -47,12 +42,18 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component
 export default class IgHeader extends Vue {
-  @Prop() placeholder!: string;
-
   playing = false;
+  trailer!: HTMLAudioElement;
+
+  mounted () {
+    const mp3 = require('../assets/audio/ig_promo.mp3');
+    this.trailer = new Audio(mp3);
+    this.trailer.title = 'Listen to the trailer';
+  }
 
   playTrailer () {
     this.playing = !this.playing;
+    this.playing ? this.trailer.play() : this.trailer.pause();
   }
 }
 </script>

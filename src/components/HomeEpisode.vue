@@ -6,7 +6,6 @@
       v-if="episodeType !== 'trailer' && finale"
       @mouseover="sendScore(info)">
       <section class='player'>
-        <audio :src='audio'></audio>
         <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" @click='play()'></font-awesome-icon>
         <font-awesome-icon :icon="['fas', 'play-circle']" v-else @click='play()'></font-awesome-icon>
       </section>
@@ -21,7 +20,6 @@
     <div class='episode' v-else-if="episodeType !== 'trailer'"
       @mouseover="sendScore(info)">
       <section class='player'>
-        <audio :src='audio'></audio>
         <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" @click='play()'></font-awesome-icon>
         <font-awesome-icon :icon="['fas', 'play-circle']" v-else @click='play()'></font-awesome-icon>
       </section>
@@ -53,6 +51,12 @@ export default class HomeEpisode extends Vue {
   @Prop() finale!: boolean;
 
   playing = false;
+  audioId = `${this.title}-audio`;
+  epAudio!: HTMLAudioElement;
+
+  mounted () {
+    this.epAudio = new Audio(this.audio);
+  }
 
   public sendScore (rankingInfo: IRankingInfo) {
     if(rankingInfo){
@@ -62,6 +66,7 @@ export default class HomeEpisode extends Vue {
 
   public play () {
     this.playing = !this.playing;
+    this.playing ? this.epAudio.play() : this.epAudio.pause();
   }
 }
 </script>
