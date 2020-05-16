@@ -5,6 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:prod": "yarn pre-build -a ${AirtableKey} -i ${PodId} -k ${PodKey}; yarn build;",
+    "build:dev": "yarn pre-build -a %AirtableKey% -i %PodId% -k %PodKey% && yarn build",
     "pre-build": "node build/update-data.js"
   },
   "dependencies": {

@@ -2,15 +2,11 @@
 
     publish = "dist"
 
-    # Runs in root directory so traversing to this program is fine
-    command = "yarn pre-build -a ${AirtableKey} -i ${PodId} -k ${PodKey}; yarn build;"
+    command = "yarn build:prod"
     # ADD TO END when framework switch is completed: node build/tweet-new-episode.js -c ${Twitter_CK} -s ${Twitter_CS} -a ${Twitter_AK} -t ${Twitter_AS}
 
 [dev]
 
     publish = "dist"
-
-    # We have a static file in place to help us out so we don't really need
-    # to install python to run debug/develop. But if we need it, install
-    # python in the enviornment and uncomment this command
-    command = "yarn pre-build -a ${AirtableKey} -i ${PodId} -k ${PodKey}; yarn build;"
+    #command = "node -p process.env"
+    command = "yarn build:dev"
