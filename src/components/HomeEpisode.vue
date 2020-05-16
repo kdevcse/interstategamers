@@ -56,6 +56,7 @@ export default class HomeEpisode extends Vue {
 
   mounted () {
     this.epAudio = new Audio(this.audio);
+    this.epAudio.preload = 'none';
   }
 
   public sendScore (rankingInfo: IRankingInfo) {
