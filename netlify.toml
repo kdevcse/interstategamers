@@ -8,5 +8,5 @@
 [dev]
 
     publish = "dist"
-    #command = "node -p process.env"
-    command = "yarn build:dev"
+    #command = "yarn build:prod"
+    command = "yarn build:win"
