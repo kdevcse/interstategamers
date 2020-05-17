@@ -1,15 +1,40 @@
 <template>
-  <div class='Ratings'>
-  </div>
+  <main class='Ratings'>
+    <table id="rankings-table">
+			<tr id="rankings-table-options">
+				<th class="options-header" colspan="10">
+					<input id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
+					<div id="scroll-indicators">
+						<i id="scroll-indicator-left" class="fas fa-caret-square-left" title="Scroll left to see more content"></i>
+						<span>Scroll for more</span>
+						<i id="scroll-indicator-right" class="fas fa-caret-square-right" title="Scroll right to see more content"></i>
+					</div>
+				</th>
+			</tr>
+			<tr class="rankings-table-header">
+        <RankingHeader title="Rank" category="rank" ascending=true sorted=true></RankingHeader>
+        <RankingHeader title="Title" category="title" ascending=false sorted=false></RankingHeader>
+        <RankingHeader title="Year" category="year" ascending=false sorted=false></RankingHeader>
+        <RankingHeader title="Platform" category="platform" ascending=false sorted=false></RankingHeader>
+        <RankingHeader title="IG Score" category="overall" ascending=true sorted=false></RankingHeader>
+        <RankingHeader title="Gameplay" category="gameplay" ascending=true sorted=false></RankingHeader>
+        <RankingHeader title="Aesthetics" category="aesthetics" ascending=true sorted=false></RankingHeader>
+        <RankingHeader title="Content" category="content" ascending=true sorted=false></RankingHeader>
+        <RankingHeader title="P. Overall" category="p-overall" ascending=true sorted=false></RankingHeader>
+        <RankingHeader title="K. Overall" category="k-overall" ascending=true sorted=false></RankingHeader>
+			</tr>
+		</table>
+  </main>
 </template>
 
 <script>
-// @ is an alias to /src
 import { pingClient } from '../database/faunadb'
+import RankingHeader from '@/components/RankingHeader'
 
 export default {
   name: 'Ratings',
   components: {
+    RankingHeader
   },
   mounted () {
       pingClient();
@@ -22,4 +47,243 @@ export default {
 </script>
 
 <style scoped>
+#rankings-table{
+	position: relative;
+	top: 45px;
+	min-width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+#rankings-table-options{
+	background-color: #2d32af;
+	color: white;
+}
+#rankings-table-options .options-header{
+	background-color: #2d32af;
+	position: fixed;
+	height: 45px;
+	width: 100%;
+	top: 70px;
+	text-align: left;
+	align-items: center;
+	padding: 20px 65px 0px 65px;
+}
+.options-header input {
+	height: 25px;
+	border: none;
+	border: solid 1px #ccc;
+	border-radius: 3px;
+	border-collapse: collapse;
+	padding: 6px 8px;
+	margin-right: 30px;
+}
+.options-header input::-ms-clear{
+	display: none;
+}
+#scroll-indicators{
+	float: right;
+}
+#scroll-indicator-left, #scroll-indicator-right{
+	visibility: hidden;
+}
+.rankings-table-header{
+	background-color: #2d32af;
+	color: white;
+	font-weight: normal;
+}
+.rankings-table-header > th {
+	background-color: #2d32af;
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0;
+}
+.rankings-table-row{
+	padding: 5px 0px;
+}
+.rankings-table-row > td {
+	color: #2d32af;
+}
+.rankings-row-info{
+	display: table-row;
+}
+.rankings-table-info{
+	padding: 0;
+}
+.charts{
+	display: none;
+	transition: height 2s linear;
+	align-items: center;
+}
+.breakdown-day{
+	margin: 0 auto 9px auto;
+	font-size: 15px;
+}
+.breakdown-img{
+	max-width: 200px;
+	max-height: 188px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 3px;
+	align-self: center;
+}
+.breakdown-scores{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2px;
+}
+.meta-container, .ign-container{
+	align-items: center;
+	align-self: center;
+	display: inline-flex;
+}
+.meta-logo, .ign-logo{
+	height: 30px;
+	width: 30px;
+	margin-right: 5px;
+}
+.meta-score{
+	margin-right: 20px;
+}
+.rankings-table-row > td, .rankings-table-header > th{
+	height: 62px;
+}
+td.sorted {
+	color: red !important;
+}
+th.sorted {
+	text-decoration: underline;
+}
+.sort-icon{
+	visibility: hidden;
+	position: relative;
+	bottom: 0;
+	padding-left: 5px;
+}
+.sorted > .header-text > svg{
+	visibility: visible;
+}
+.rankings-table-header > th{
+	top: 115px;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+.rankings-table-header > th:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+.rankings-table-row > td {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+.rankings-table-row > td, .rankings-table-header > th{
+	min-width: 179px;
+	width: 10%;
+}
+.rankings-table-row > td {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.rankings-table-row > td > svg {
+	color: red;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 770px){
+	body{
+		-webkit-overflow-scrolling: touch;
+	}
+	.rankings-table-row > td{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.rankings-table-row > td, .rankings-table-header > th{
+		font-size: 14px;
+		min-width: 93px;
+	}
+	#rankings-table-options .options-header{
+		padding: 10px 20px 0px 20px;
+	}
+	.options-header input {
+		margin-right: 15px;
+	}
+}
+/* Larger devices than phones */
+@media only screen and (min-width: 770px){
+	#rankings-table-options .options-header{
+		padding: 20px 65px 0px 65px;
+	}
+	.options-header input {
+		margin-right: 30px;
+	}
+	.rankings-table-row.selected{
+		background-color: #f0f0f5;
+		border-top: #2d32af solid 1px;
+		color: #2d32af;
+	}
+	.rankings-table-row:hover{
+		background-color: #f1f1f1;
+		cursor: pointer;
+	}
+	.chart {
+		overflow: hidden;
+		width: 200px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.chart > h3{
+		margin-top: 0;
+		margin-bottom: 8px;
+		font-size: 15px;
+	}
+	.expanded-breakdown{
+		display: inline-grid;
+		grid-template-columns: 250px 250px 250px 250px;
+		margin-bottom: 20px;
+	}
+	.charts{
+		float: left;
+		margin-left: 64px;
+		margin-top: 13px;
+	}
+	.stat-category{
+		text-align: left;
+		margin-top: 0px;
+		margin-bottom: 2px;
+		font-size: 13px;
+	}
+	.rank {
+		height: 20px;
+		width: 100%;
+		margin-bottom: 6px;
+		background-color: white;
+		border: #2d32af solid 2px;
+		border-radius: 3px;
+	}
+	.progress{
+		width: 0%;
+		height: 100%;
+		background-color: #2d32af;
+	}
+	.overall{
+		border: red solid 2px;
+	}
+	.overall-progress{
+		background-color: red;
+	}
+	.expanded{
+		display: table-row;
+		background-color: #f0f0f5;
+		border-bottom: #2d32af solid 1px;
+	}
+}
 </style>
