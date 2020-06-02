@@ -1,46 +1,64 @@
 <template>
   <main class='Ratings'>
     <table id="rankings-table">
-			<tr id="rankings-table-options">
-				<th class="options-header" colspan="10">
-					<input id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
-					<div id="scroll-indicators">
-						<i id="scroll-indicator-left" class="fas fa-caret-square-left" title="Scroll left to see more content"></i>
-						<span>Scroll for more</span>
-						<i id="scroll-indicator-right" class="fas fa-caret-square-right" title="Scroll right to see more content"></i>
-					</div>
-				</th>
-			</tr>
-			<tr class="rankings-table-header">
-        <RankingHeader title="Rank" category="rank" ascending=true sorted=true></RankingHeader>
-        <RankingHeader title="Title" category="title" ascending=false sorted=false></RankingHeader>
-        <RankingHeader title="Year" category="year" ascending=false sorted=false></RankingHeader>
-        <RankingHeader title="Platform" category="platform" ascending=false sorted=false></RankingHeader>
-        <RankingHeader title="IG Score" category="overall" ascending=true sorted=false></RankingHeader>
-        <RankingHeader title="Gameplay" category="gameplay" ascending=true sorted=false></RankingHeader>
-        <RankingHeader title="Aesthetics" category="aesthetics" ascending=true sorted=false></RankingHeader>
-        <RankingHeader title="Content" category="content" ascending=true sorted=false></RankingHeader>
-        <RankingHeader title="P. Overall" category="p-overall" ascending=true sorted=false></RankingHeader>
-        <RankingHeader title="K. Overall" category="k-overall" ascending=true sorted=false></RankingHeader>
-			</tr>
-		</table>
+		<tr id="rankings-table-options">
+			<th class="options-header" colspan="10">
+				<input id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
+				<div id="scroll-indicators">
+					<i id="scroll-indicator-left" class="fas fa-caret-square-left" title="Scroll left to see more content"></i>
+					<span>Scroll for more</span>
+					<i id="scroll-indicator-right" class="fas fa-caret-square-right" title="Scroll right to see more content"></i>
+				</div>
+			</th>
+		</tr>
+		<tr class="rankings-table-header">
+			<RankingHeader title="Rank" category="rank" ascending=true sorted=true></RankingHeader>
+			<RankingHeader title="Title" category="title" ascending=false sorted=false></RankingHeader>
+			<RankingHeader title="Year" category="year" ascending=false sorted=false></RankingHeader>
+			<RankingHeader title="Platform" category="platform" ascending=false sorted=false></RankingHeader>
+			<RankingHeader title="IG Score" category="overall" ascending=true sorted=false></RankingHeader>
+			<RankingHeader title="Gameplay" category="gameplay" ascending=true sorted=false></RankingHeader>
+			<RankingHeader title="Aesthetics" category="aesthetics" ascending=true sorted=false></RankingHeader>
+			<RankingHeader title="Content" category="content" ascending=true sorted=false></RankingHeader>
+			<RankingHeader title="P. Overall" category="p-overall" ascending=true sorted=false></RankingHeader>
+			<RankingHeader title="K. Overall" category="k-overall" ascending=true sorted=false></RankingHeader>
+		</tr>
+		<RankingRow 
+			v-for="episode in episodes"
+			:key="episode.id"
+			:rank="episode['Ranking Info'].rank"
+			:title="episode['Ranking Info'].Game"
+			:year="episode['Ranking Info'].Year"
+			:platform="episode['Ranking Info'].Platform"
+			:overall="episode['Ranking Info']['IG Score']"
+			:gameplay="episode['Ranking Info'].Gameplay"
+			:aesthetics="episode['Ranking Info'].Aesthetics"
+			:content="episode['Ranking Info'].Content"
+			:pOverall="episode['Ranking Info']['Peter\'s Rating']"
+			:kOverall="episode['Ranking Info']['Kevin\'s Rating']">
+		</RankingRow>
+	</table>
   </main>
 </template>
 
 <script>
 import { pingClient } from '../database/faunadb'
 import RankingHeader from '@/components/RankingHeader'
+import RankingRow from '@/components/RankingRow'
+import episodeData from '../database/episode-data'
 
 export default {
   name: 'Ratings',
   components: {
-    RankingHeader
+	RankingHeader,
+	RankingRow
   },
   mounted () {
       pingClient();
   },
   data: function () {
     return {
+		episodes: episodeData.filter(x => x['Ranking Info'])
     }
   }
 }
