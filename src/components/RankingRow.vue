@@ -1,15 +1,15 @@
 <template>
     <tr class="rankings-table-row">
-	    <td class="rankings-table-rank">{{rank}}</td>
-	    <td class="rankings-table-title">{{title}}</td>
-	    <td class="rankings-table-year">{{year}}</td>
-	    <td class="rankings-table-platform">{{platform}}</td>
-	    <td class="rankings-table-overall">{{overall}}</td>
-	    <td class="rankings-table-gameplay">{{gameplay}}</td>
-	    <td class="rankings-table-aesthetics">{{aesthetics}}</td>
-	    <td class="rankings-table-content">{{content}}</td>
-	    <td class="rankings-table-p-overall">{{pOverall}}</td>
-	    <td class="rankings-table-k-overall">{{kOverall}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('rank')}">{{rank}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('title')}">{{title}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('year')}">{{year}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('platform')}">{{platform}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('overall')}">{{overall}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('gameplay')}">{{gameplay}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('aesthetics')}">{{aesthetics}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('content')}">{{content}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('p-overall')}">{{pOverall}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('k-overall')}">{{kOverall}}</td>
 	</tr>
 </template>
 
@@ -28,6 +28,11 @@ export default class RankingRow extends Vue {
     @Prop() content!: number;
     @Prop() pOverall!: number;
     @Prop() kOverall!: number;
+    @Prop() sortBy!: string;
+
+    highlightRed(category: string) {
+        return category === this.sortBy;
+    }
 }
 </script>
 

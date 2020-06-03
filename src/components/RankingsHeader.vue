@@ -1,8 +1,8 @@
 <template>
-    <th class="rankings-header" v-on:click="sortTableByCategory(category)">
+    <th class="rankings-header" v-bind:class="{sorted: isSorted()}" @mousedown="sortTableByCategory(category)">
 	    <div class="header-text">{{title}} 
-            <font-awesome-icon class="sort-icon" v-show="ascending && sorted" :icon="['fas','sort-up']"></font-awesome-icon>
-            <font-awesome-icon class="sort-icon" v-show="!ascending && sorted" :icon="['fas','sort-down']"></font-awesome-icon>
+            <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="ascending" :icon="['fas','sort-up']"></font-awesome-icon>
+            <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="!ascending" :icon="['fas','sort-down']"></font-awesome-icon>
         </div>
 	</th>
 </template>
@@ -14,14 +14,13 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class RankingsHeader extends Vue {
     @Prop() title!: string;
     @Prop() category!: string;
+    @Prop() sortBy!: string;
 
     ascending: boolean = true;
-    sorted: boolean = false;
 
     mounted() {
         switch(this.category){
             case 'rank':
-                this.sorted = true;
                 this.ascending = true;
                 break;
             case 'title':
@@ -39,8 +38,11 @@ export default class RankingsHeader extends Vue {
         }
     }
 
+    isSorted() {
+        return this.category === this.sortBy;
+    }
+
     sortTableByCategory (val: string) {
-        this.sorted = true;
         this.ascending = !this.ascending;
         this.$emit('sort-table', [val, this.ascending]);
     }
@@ -63,7 +65,7 @@ export default class RankingsHeader extends Vue {
 	-ms-user-select: none; /* Internet Explorer/Edge */
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
-.rankings-header[sorted] {
+.rankings-header.sorted {
 	text-decoration: underline;
 }
 .rankings-header:hover {  
@@ -71,10 +73,14 @@ export default class RankingsHeader extends Vue {
 	text-decoration: underline;
 }
 .sort-icon{
+    visibility: hidden;
 	position: relative;
 	bottom: 0;
     padding: 1px;
 	margin-left: 5px;
+}
+.sort-icon.sorted {
+    visibility: visible;
 }
 
 /* Extra small devices (phones, 600px and down) */

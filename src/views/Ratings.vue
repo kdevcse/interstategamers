@@ -12,16 +12,16 @@
 			</th>
 		</tr>
 		<tr class="rankings-table-header">
-			<RankingsHeader title="Rank" category="rank"></RankingsHeader>
-			<RankingsHeader title="Title" category="title"></RankingsHeader>
-			<RankingsHeader title="Year" category="year"></RankingsHeader>
-			<RankingsHeader title="Platform" category="platform"></RankingsHeader>
-			<RankingsHeader title="IG Score" category="overall"></RankingsHeader>
-			<RankingsHeader title="Gameplay" category="gameplay"></RankingsHeader>
-			<RankingsHeader title="Aesthetics" category="aesthetics"></RankingsHeader>
-			<RankingsHeader title="Content" category="content"></RankingsHeader>
-			<RankingsHeader title="P. Overall" category="p-overall"></RankingsHeader>
-			<RankingsHeader title="K. Overall" category="k-overall"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="Rank" category="rank" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="Title" category="title" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="Year" category="year" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="Platform" category="platform" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="IG Score" category="overall" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="Gameplay" category="gameplay" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="Aesthetics" category="aesthetics" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="Content" category="content" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="P. Overall" category="p-overall" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortCateogry" title="K. Overall" category="k-overall" :sortBy="sortedCategory"></RankingsHeader>
 		</tr>
 		<RankingRow 
 			v-for="episode in episodes"
@@ -35,7 +35,8 @@
 			:aesthetics="episode['Ranking Info'].Aesthetics"
 			:content="episode['Ranking Info'].Content"
 			:pOverall="episode['Ranking Info']['Peter\'s Rating']"
-			:kOverall="episode['Ranking Info']['Kevin\'s Rating']">
+			:kOverall="episode['Ranking Info']['Kevin\'s Rating']"
+			:sortBy="sortedCategory">
 		</RankingRow>
 	</table>
   </main>
@@ -48,19 +49,25 @@ import RankingRow from '@/components/RankingRow'
 import episodeData from '../database/episode-data'
 
 export default {
-  name: 'Ratings',
-  components: {
-	RankingsHeader,
-	RankingRow
-  },
-  mounted () {
-      pingClient();
-  },
-  data: function () {
-    return {
-		episodes: episodeData.filter(x => x['Ranking Info'])
-    }
-  }
+	name: 'Ratings',
+	components: {
+		RankingsHeader,
+		RankingRow
+	},
+	mounted () {
+		pingClient();
+	},
+	data: function () {
+		return {
+			episodes: episodeData.filter(x => x['Ranking Info']),
+			sortedCategory: "rank"
+		}
+	},
+	methods: {
+		sortCateogry: function(e){
+			this.sortedCategory = e[0];
+		}
+	}
 }
 </script>
 
