@@ -4,12 +4,12 @@
 	    <td v-bind:class="{ sorted: highlightRed('title')}">{{title}}</td>
 	    <td v-bind:class="{ sorted: highlightRed('year')}">{{year}}</td>
 	    <td v-bind:class="{ sorted: highlightRed('platform')}">{{platform}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('overall')}">{{overall}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('gameplay')}">{{gameplay}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('aesthetics')}">{{aesthetics}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('content')}">{{content}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('p-overall')}">{{pOverall}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('k-overall')}">{{kOverall}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('overall')}">{{overall.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('gameplay')}">{{gameplay.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('aesthetics')}">{{aesthetics.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('content')}">{{content.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('p-overall')}">{{pOverall.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('k-overall')}">{{kOverall.toFixed(2)}}</td>
 	</tr>
 </template>
 
