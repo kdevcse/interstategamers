@@ -19,7 +19,11 @@ export default class RankingsHeader extends Vue {
     ascending: boolean = true;
 
     mounted() {
-        switch(this.category){
+        this.computeAscending(this.category);
+    }
+
+    computeAscending(category: string){
+        switch(category){
             case 'rank':
                 this.ascending = true;
                 break;
@@ -39,7 +43,11 @@ export default class RankingsHeader extends Vue {
     }
 
     isSorted() {
-        return this.category === this.sortBy;
+        const sort = this.category === this.sortBy;
+        if (!sort) {
+            this.computeAscending(this.category);
+        }
+        return sort;
     }
 
     sortTableByCategory (val: string) {
