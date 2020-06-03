@@ -12,16 +12,16 @@
 			</th>
 		</tr>
 		<tr class="rankings-table-header">
-			<RankingHeader title="Rank" category="rank" ascending=true sorted=true></RankingHeader>
-			<RankingHeader title="Title" category="title" ascending=false sorted=false></RankingHeader>
-			<RankingHeader title="Year" category="year" ascending=false sorted=false></RankingHeader>
-			<RankingHeader title="Platform" category="platform" ascending=false sorted=false></RankingHeader>
-			<RankingHeader title="IG Score" category="overall" ascending=true sorted=false></RankingHeader>
-			<RankingHeader title="Gameplay" category="gameplay" ascending=true sorted=false></RankingHeader>
-			<RankingHeader title="Aesthetics" category="aesthetics" ascending=true sorted=false></RankingHeader>
-			<RankingHeader title="Content" category="content" ascending=true sorted=false></RankingHeader>
-			<RankingHeader title="P. Overall" category="p-overall" ascending=true sorted=false></RankingHeader>
-			<RankingHeader title="K. Overall" category="k-overall" ascending=true sorted=false></RankingHeader>
+			<RankingsHeader title="Rank" category="rank"></RankingsHeader>
+			<RankingsHeader title="Title" category="title"></RankingsHeader>
+			<RankingsHeader title="Year" category="year"></RankingsHeader>
+			<RankingsHeader title="Platform" category="platform"></RankingsHeader>
+			<RankingsHeader title="IG Score" category="overall"></RankingsHeader>
+			<RankingsHeader title="Gameplay" category="gameplay"></RankingsHeader>
+			<RankingsHeader title="Aesthetics" category="aesthetics"></RankingsHeader>
+			<RankingsHeader title="Content" category="content"></RankingsHeader>
+			<RankingsHeader title="P. Overall" category="p-overall"></RankingsHeader>
+			<RankingsHeader title="K. Overall" category="k-overall"></RankingsHeader>
 		</tr>
 		<RankingRow 
 			v-for="episode in episodes"
@@ -43,14 +43,14 @@
 
 <script>
 import { pingClient } from '../database/faunadb'
-import RankingHeader from '@/components/RankingHeader'
+import RankingsHeader from '@/components/RankingsHeader'
 import RankingRow from '@/components/RankingRow'
 import episodeData from '../database/episode-data'
 
 export default {
   name: 'Ratings',
   components: {
-	RankingHeader,
+	RankingsHeader,
 	RankingRow
   },
   mounted () {
@@ -110,12 +110,6 @@ export default {
 	color: white;
 	font-weight: normal;
 }
-.rankings-table-header > th {
-	background-color: #2d32af;
-	position: -webkit-sticky; /* Safari */
-	position: sticky;
-	top: 0;
-}
 .rankings-row-info{
 	display: table-row;
 }
@@ -157,46 +151,10 @@ export default {
 .meta-score{
 	margin-right: 20px;
 }
-.rankings-table-header > th{
-	height: 62px;
-}
-th.sorted {
-	text-decoration: underline;
-}
-.sort-icon{
-	visibility: hidden;
-	position: relative;
-	bottom: 0;
-	padding-left: 5px;
-}
-.sorted > .header-text > svg{
-	visibility: visible;
-}
-.rankings-table-header > th{
-	top: 115px;
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-}
-.rankings-table-header > th:hover{
-	cursor: pointer;
-	text-decoration: underline;
-}
-.rankings-table-header > th{
-	min-width: 179px;
-	width: 10%;
-}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
 	body{
 		-webkit-overflow-scrolling: touch;
-	}
-	.rankings-table-header > th{
-		font-size: 14px;
-		min-width: 93px;
 	}
 	#rankings-table-options .options-header{
 		padding: 10px 20px 0px 20px;
