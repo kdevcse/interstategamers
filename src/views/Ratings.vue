@@ -116,12 +116,6 @@ export default {
 	position: sticky;
 	top: 0;
 }
-.rankings-table-row{
-	padding: 5px 0px;
-}
-.rankings-table-row > td {
-	color: #2d32af;
-}
 .rankings-row-info{
 	display: table-row;
 }
@@ -163,11 +157,8 @@ export default {
 .meta-score{
 	margin-right: 20px;
 }
-.rankings-table-row > td, .rankings-table-header > th{
+.rankings-table-header > th{
 	height: 62px;
-}
-td.sorted {
-	color: red !important;
 }
 th.sorted {
 	text-decoration: underline;
@@ -194,36 +185,16 @@ th.sorted {
 	cursor: pointer;
 	text-decoration: underline;
 }
-.rankings-table-row > td {
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-}
-.rankings-table-row > td, .rankings-table-header > th{
+.rankings-table-header > th{
 	min-width: 179px;
 	width: 10%;
-}
-.rankings-table-row > td {
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-}
-.rankings-table-row > td > svg {
-	color: red;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
 	body{
 		-webkit-overflow-scrolling: touch;
 	}
-	.rankings-table-row > td{
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
-	.rankings-table-row > td, .rankings-table-header > th{
+	.rankings-table-header > th{
 		font-size: 14px;
 		min-width: 93px;
 	}
@@ -241,15 +212,6 @@ th.sorted {
 	}
 	.options-header input {
 		margin-right: 30px;
-	}
-	.rankings-table-row.selected{
-		background-color: #f0f0f5;
-		border-top: #2d32af solid 1px;
-		color: #2d32af;
-	}
-	.rankings-table-row:hover{
-		background-color: #f1f1f1;
-		cursor: pointer;
 	}
 	.chart {
 		overflow: hidden;
