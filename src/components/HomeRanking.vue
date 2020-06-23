@@ -45,7 +45,7 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import IRankingInfo from '../interfaces/IRankingInfo'
+import { IRankingInfo } from '../interfaces/IRankingInfo'
 
 @Component
 export default class HomeRanking extends Vue {

@@ -1,4 +1,4 @@
-export default interface IRankingInfo {
+export interface IRankingInfo {
     "Episode": string,
     "Game": string,
     "Platform": string,
@@ -31,4 +31,17 @@ export default interface IRankingInfo {
     "Audio": number,
     "Content": number,
     "rank": number
+}
+
+export enum CategoryTypes {
+    Rank = "rank",
+    Title = "Game",
+    Year = "Year",
+    Platform = "Platform",
+    Overall = "IG Score",
+    Gameplay = "Gameplay",
+    Aesthetics = "Aesthetics",
+    Content = "Content",
+    KOverall = "Kevin's Rating",
+    POverall = "Peter's Rating"
 }

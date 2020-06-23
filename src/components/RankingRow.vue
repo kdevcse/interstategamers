@@ -1,20 +1,21 @@
 <template>
     <tr class="rankings-table-row">
 	    <td v-bind:class="{ sorted: highlightRed('rank')}">{{rank}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('title')}">{{title}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('year')}">{{year}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('platform')}">{{platform}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('overall')}">{{overall.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('gameplay')}">{{gameplay.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('aesthetics')}">{{aesthetics.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('content')}">{{content.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('p-overall')}">{{pOverall.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('k-overall')}">{{kOverall.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('Game')}">{{title}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('Year')}">{{year}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('Platform')}">{{platform}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('IG Score')}">{{overall.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('Gameplay')}">{{gameplay.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('Aesthetics')}">{{aesthetics.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('Content')}">{{content.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('Peter\'s Rating')}">{{pOverall.toFixed(2)}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('Kevin\'s Rating')}">{{kOverall.toFixed(2)}}</td>
 	</tr>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import { CategoryTypes } from '../interfaces/IRankingInfo';
 
 @Component
 export default class RankingRow extends Vue {

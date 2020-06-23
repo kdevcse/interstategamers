@@ -9,6 +9,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import { CategoryTypes, IRankingInfo } from '@/interfaces/IRankingInfo'
 
 @Component
 export default class RankingsHeader extends Vue {
@@ -24,16 +25,16 @@ export default class RankingsHeader extends Vue {
 
     computeAscending(category: string){
         switch(category){
-            case 'rank':
+            case CategoryTypes.Rank:
+                this.ascending = false;
+                break;
+            case CategoryTypes.Title:
+                this.ascending = false;
+                break;
+            case CategoryTypes.Year:
                 this.ascending = true;
                 break;
-            case 'title':
-                this.ascending = false;
-                break;
-            case 'year':
-                this.ascending = false;
-                break;
-            case 'platform':
+            case CategoryTypes.Platform:
                 this.ascending = false;
                 break;
             default:
@@ -50,7 +51,7 @@ export default class RankingsHeader extends Vue {
         return sort;
     }
 
-    sortTableByCategory (val: string) {
+    sortTableByCategory (val: CategoryTypes) {
         this.ascending = !this.ascending;
         this.$emit('sort-table', [val, this.ascending]);
     }
