@@ -44,7 +44,6 @@
 </template>
 
 <script>
-import { pingClient } from '../database/faunadb'
 import RankingsHeader from '@/components/RankingsHeader'
 import RankingRow from '@/components/RankingRow'
 import episodeData from '../database/episode-data'
@@ -54,9 +53,6 @@ export default {
 	components: {
 		RankingsHeader,
 		RankingRow
-	},
-	mounted () {
-		pingClient();
 	},
 	data: function () {
 		return {

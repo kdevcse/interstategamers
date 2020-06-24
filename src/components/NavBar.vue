@@ -21,7 +21,6 @@
             <div class="nav-list">
                 <router-link class="nav-tab" @click="setSelected" to="/"><img class="nav-tab-logo" src="../assets/images/IGLogo.png"></router-link>
                 <router-link class="nav-tab" @click="setSelected" to="/ratings">Ratings</router-link>
-                <a class="nav-tab" target="_blank" rel="noopener noreferrer" href="https://medium.com/the-interstate-gamers-podcast">Blog</a>
                 <a class="nav-tab" target="_blank" rel="noopener noreferrer" href="https://www.teepublic.com/stores/the-interstate-gamers?ref_id=7904">Store</a>
                 <router-link class="nav-tab" @click="setSelected" to="/extras">Extras</router-link>
                 <router-link class="nav-tab" @click="setSelected" to="/info">Info</router-link>
