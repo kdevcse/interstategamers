@@ -1,8 +1,8 @@
 <template>
     <th class="rankings-header" v-bind:class="{sorted: isSorted()}" @mousedown="sortTableByCategory(category)">
 	    <div class="header-text">{{title}} 
-            <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="ascending" :icon="['fas','sort-up']"></font-awesome-icon>
-            <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="!ascending" :icon="['fas','sort-down']"></font-awesome-icon>
+            <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="!ascending" :icon="['fas','sort-up']"></font-awesome-icon>
+            <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="ascending" :icon="['fas','sort-down']"></font-awesome-icon>
         </div>
 	</th>
 </template>
@@ -20,7 +20,7 @@ export default class RankingsHeader extends Vue {
     ascending: boolean = true;
 
     mounted() {
-        this.computeAscending(this.category);
+        //this.computeAscending(this.category);
     }
 
     computeAscending(category: string){

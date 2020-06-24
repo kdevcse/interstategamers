@@ -70,15 +70,27 @@ export default {
 			const category = e[0];
 			const ascending = e[1];
 
-			this.episodes = this.episodes.sort(function (a, b) {
-				if(ascending) {
-					return a['Ranking Info'][category] - b['Ranking Info'][category];
-				}
-				else {
-					return b['Ranking Info'][category] - a['Ranking Info'][category];
-				}
-			});
-
+			if (category === 'Game' || category === 'Platform'){
+				this.episodes.sort(function (a, b) {
+					if(ascending) {
+						return a['Ranking Info'][category].localeCompare(b['Ranking Info'][category]);
+					}
+					else {
+						return b['Ranking Info'][category].localeCompare(a['Ranking Info'][category]);
+					}
+				});
+			}
+			else {
+				this.episodes.sort(function (a, b) {
+					if(ascending) {
+						return a['Ranking Info'][category] - b['Ranking Info'][category];
+					}
+					else {
+						return b['Ranking Info'][category] - a['Ranking Info'][category];
+					}
+				});
+			}
+			
 			this.sortedCategory = category;
 		}
 	}
