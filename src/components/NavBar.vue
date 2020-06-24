@@ -19,12 +19,12 @@
         </nav>
         <nav id="nav-bar">
             <div class="nav-list">
-                <router-link class="nav-tab" to="/"><img class="nav-tab-logo" src="../assets/images/IGLogo.png"></router-link>
-                <router-link class="nav-tab" to="/ratings">Ratings</router-link>
+                <router-link class="nav-tab" @click="setSelected" to="/"><img class="nav-tab-logo" src="../assets/images/IGLogo.png"></router-link>
+                <router-link class="nav-tab" @click="setSelected" to="/ratings">Ratings</router-link>
                 <a class="nav-tab" target="_blank" rel="noopener noreferrer" href="https://medium.com/the-interstate-gamers-podcast">Blog</a>
                 <a class="nav-tab" target="_blank" rel="noopener noreferrer" href="https://www.teepublic.com/stores/the-interstate-gamers?ref_id=7904">Store</a>
-                <router-link class="nav-tab" to="/extras">Extras</router-link>
-                <router-link class="nav-tab" to="/info">Info</router-link>
+                <router-link class="nav-tab" @click="setSelected" to="/extras">Extras</router-link>
+                <router-link class="nav-tab" @click="setSelected" to="/info">Info</router-link>
             </div>
         </nav>
   </div>
@@ -35,7 +35,11 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component
 export default class NavBar extends Vue {
-  @Prop() placeholder!: string;
+  @Prop() selected!: boolean;
+
+  setSelected(){
+      console.log('Hello World');
+  }
 }
 </script>
 
@@ -71,8 +75,8 @@ nav {
     vertical-align: middle;
     transition: text-decoration .2s ease-in;
 }
-.nav-list > a:hover {
-    text-decoration: white underline solid
+.nav-list > a:hover, .router-link-exact-active {
+    text-decoration: white underline solid;
 }
 @media only screen and (max-width: 770px){
     #nav-bar{
