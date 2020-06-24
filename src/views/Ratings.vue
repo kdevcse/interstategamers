@@ -28,6 +28,7 @@
 			:key="episode.id"
 			:rank="episode['Ranking Info'].rank"
 			:title="episode['Ranking Info'].Game"
+			:guest="episode['Ranking Info'].Guest"
 			:year="episode['Ranking Info'].Year"
 			:platform="episode['Ranking Info'].Platform"
 			:overall="episode['Ranking Info']['IG Score']"

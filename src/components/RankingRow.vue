@@ -1,7 +1,10 @@
 <template>
     <tr class="rankings-table-row">
 	    <td v-bind:class="{ sorted: highlightRed('rank')}">{{rank}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('Game')}">{{title}}</td>
+	    <td v-bind:class="{ sorted: highlightRed('Game')}">
+			{{title}}
+        	<font-awesome-icon class='guest-icon' :icon="['fas', 'user-plus']" v-if="guest"></font-awesome-icon>
+		</td>
 	    <td v-bind:class="{ sorted: highlightRed('Year')}">{{year}}</td>
 	    <td v-bind:class="{ sorted: highlightRed('Platform')}">{{platform}}</td>
 	    <td v-bind:class="{ sorted: highlightRed('IG Score')}">{{overall.toFixed(2)}}</td>
@@ -29,11 +32,12 @@ export default class RankingRow extends Vue {
     @Prop() content!: number;
     @Prop() pOverall!: number;
     @Prop() kOverall!: number;
-    @Prop() sortBy!: string;
+	@Prop() sortBy!: string;
+	@Prop() guest!: string;
 
     highlightRed(category: string) {
         return category === this.sortBy;
-    }
+	}
 }
 </script>
 
@@ -61,6 +65,9 @@ td.sorted {
 }
 .rankings-table-row > td > svg {
 	color: red;
+}
+.guest-icon{
+	margin-left: 5px;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
