@@ -3,7 +3,7 @@
     <table id="rankings-table">
 		<tr id="rankings-table-options">
 			<th class="options-header" colspan="10">
-				<input id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
+				<input @input="search" id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
 				<div id="scroll-indicators">
 					<i id="scroll-indicator-left" class="fas fa-caret-square-left" title="Scroll left to see more content"></i>
 					<span>Scroll for more</span>
@@ -12,16 +12,16 @@
 			</th>
 		</tr>
 		<tr class="rankings-table-header">
-			<RankingsHeader @sort-table="sortCateogry" title="Rank" category="rank" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortCateogry" title="Title" category="Game" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortCateogry" title="Year" category="Year" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortCateogry" title="Platform" category="Platform" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortCateogry" title="IG Score" category="IG Score" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortCateogry" title="Gameplay" category="Gameplay" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortCateogry" title="Aesthetics" category="Aesthetics" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortCateogry" title="Content" category="Content" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortCateogry" title="P. Overall" category="Peter's Rating" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortCateogry" title="K. Overall" category="Kevin's Rating" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Rank" category="rank" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Title" category="Game" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Year" category="Year" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Platform" category="Platform" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="IG Score" category="IG Score" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Gameplay" category="Gameplay" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Aesthetics" category="Aesthetics" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Content" category="Content" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="P. Overall" category="Peter's Rating" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="K. Overall" category="Kevin's Rating" :sortBy="sortedCategory"></RankingsHeader>
 		</tr>
 		<RankingRow 
 			v-for="episode in episodes"
@@ -63,14 +63,15 @@ export default {
 			episodes: episodeData.filter(x => x['Ranking Info']).sort((a, b) => {
 				return a['Ranking Info']['rank'] - b['Ranking Info']['rank'];
 			}),
-			sortedCategory: "rank"
+			sortedCategory: "rank",
+			sortedIsAscending: true
 		}
 	},
 	methods: {
-		sortCateogry: function(e){
-			const category = e[0];
-			const ascending = e[1];
-
+		sortHandler: function(e){
+			this.sortByCategory(e[0],e[1]);
+		},
+		sortByCategory(category, ascending){
 			if (category === 'Game' || category === 'Platform'){
 				this.episodes.sort(function (a, b) {
 					if(ascending) {
@@ -91,8 +92,28 @@ export default {
 					}
 				});
 			}
-			
+
 			this.sortedCategory = category;
+			this.sortedIsAscending = ascending;
+		},
+		search(e) {
+			if (!e.target.value){
+				this.episodes = episodeData.filter(x => x['Ranking Info']);
+			}
+			else {
+				this.episodes = episodeData.filter((ep) => {
+					if(ep['Ranking Info']){
+						const allInfo = Object.values(ep['Ranking Info']);
+						return allInfo.some(i => {
+							return i.toString().includes(e.target.value);
+						});
+					}
+					else {
+						return false;
+					}
+				});
+			}
+			this.sortByCategory(this.sortedCategory,this.sortedIsAscending);
 		}
 	}
 }
