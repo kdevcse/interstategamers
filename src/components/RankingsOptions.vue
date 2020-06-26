@@ -1,12 +1,14 @@
 <template>
-    <th class="options-header" colspan="10">
-        <input @input="search" id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
-        <div v-bind:class="{show: showBothIndicators}" id="scroll-indicator">
-            <font-awesome-icon id="scroll-indicator-left" v-bind:class="{show: showLeftIndicator}" :icon="['fas', 'caret-square-left']" title="Scroll left to see more content"></font-awesome-icon>
-            <span id="scroll-indicator-txt">Scroll for more</span>
-            <font-awesome-icon id="scroll-indicator-right" v-bind:class="{show: showRightIndicator}" :icon="['fas', 'caret-square-right']" title="Scroll right to see more content"></font-awesome-icon>
-        </div>
-    </th>
+    <tr id="rankings-table-options">
+        <th class="options-header" colspan="10">
+            <input @input="search" id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
+            <div v-bind:class="{show: showBothIndicators}" id="scroll-indicator">
+                <font-awesome-icon id="scroll-indicator-left" v-bind:class="{show: showLeftIndicator}" :icon="['fas', 'caret-square-left']" title="Scroll left to see more content"></font-awesome-icon>
+                <span id="scroll-indicator-txt">Scroll for more</span>
+                <font-awesome-icon id="scroll-indicator-right" v-bind:class="{show: showRightIndicator}" :icon="['fas', 'caret-square-right']" title="Scroll right to see more content"></font-awesome-icon>
+            </div>
+        </th>
+    </tr>
 </template>
 
 <script lang="ts">
@@ -59,6 +61,10 @@ export default class RankingsOptions extends Vue {
 </script>
 
 <style scoped>
+#rankings-table-options{
+	background-color: #2d32af;
+	color: white;
+}
 .options-header{
 	background-color: #2d32af;
 	position: fixed;

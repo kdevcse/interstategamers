@@ -1,9 +1,7 @@
 <template>
   <main class='Ratings'>
     <table id="rankings-table">
-		<tr id="rankings-table-options">
-			<RankingsOptions @search-table="searchHandler"></RankingsOptions>
-		</tr>
+		<RankingsOptions @search-table="searchHandler"></RankingsOptions>
 		<tr class="rankings-table-header">
 			<RankingsHeader @sort-table="sortHandler" title="Rank" category="rank" :sortBy="sortedCategory"></RankingsHeader>
 			<RankingsHeader @sort-table="sortHandler" title="Title" category="Game" :sortBy="sortedCategory"></RankingsHeader>
@@ -119,10 +117,6 @@ export default {
 	border-collapse: collapse;
 	table-layout: fixed;
 }
-#rankings-table-options{
-	background-color: #2d32af;
-	color: white;
-}
 .rankings-table-header{
 	background-color: #2d32af;
 	color: white;
@@ -177,12 +171,6 @@ export default {
 }
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
-	#rankings-table-options .options-header{
-		padding: 20px 65px 0px 65px;
-	}
-	.options-header input {
-		margin-right: 30px;
-	}
 	.chart {
 		overflow: hidden;
 		width: 200px;
