@@ -2,14 +2,7 @@
   <main class='Ratings'>
     <table id="rankings-table">
 		<tr id="rankings-table-options">
-			<th class="options-header" colspan="10">
-				<input @input="search" id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
-				<div id="scroll-indicators">
-					<i id="scroll-indicator-left" class="fas fa-caret-square-left" title="Scroll left to see more content"></i>
-					<span>Scroll for more</span>
-					<i id="scroll-indicator-right" class="fas fa-caret-square-right" title="Scroll right to see more content"></i>
-				</div>
-			</th>
+			<RankingsOptions @search-table="searchHandler"></RankingsOptions>
 		</tr>
 		<tr class="rankings-table-header">
 			<RankingsHeader @sort-table="sortHandler" title="Rank" category="rank" :sortBy="sortedCategory"></RankingsHeader>
@@ -44,6 +37,7 @@
 </template>
 
 <script>
+import RankingsOptions from '@/components/RankingsOptions'
 import RankingsHeader from '@/components/RankingsHeader'
 import RankingRow from '@/components/RankingRow'
 import episodeData from '../database/episode-data'
@@ -51,6 +45,7 @@ import episodeData from '../database/episode-data'
 export default {
 	name: 'Ratings',
 	components: {
+		RankingsOptions,
 		RankingsHeader,
 		RankingRow
 	},
@@ -66,6 +61,25 @@ export default {
 	methods: {
 		sortHandler: function(e){
 			this.sortByCategory(e[0],e[1]);
+		},
+		searchHandler: function(searchTxt) {
+			if (!searchTxt){
+				this.episodes = episodeData.filter(x => x['Ranking Info']);
+			}
+			else {
+				this.episodes = episodeData.filter((ep) => {
+					if(ep['Ranking Info']){
+						const allInfo = Object.values(ep['Ranking Info']);
+						return allInfo.some(i => {
+							return i.toString().includes(searchTxt);
+						});
+					}
+					else {
+						return false;
+					}
+				});
+			}
+			this.sortByCategory(this.sortedCategory,this.sortedIsAscending);
 		},
 		sortByCategory(category, ascending){
 			if (category === 'Game' || category === 'Platform'){
@@ -92,25 +106,6 @@ export default {
 			this.sortedCategory = category;
 			this.sortedIsAscending = ascending;
 		},
-		search(e) {
-			if (!e.target.value){
-				this.episodes = episodeData.filter(x => x['Ranking Info']);
-			}
-			else {
-				this.episodes = episodeData.filter((ep) => {
-					if(ep['Ranking Info']){
-						const allInfo = Object.values(ep['Ranking Info']);
-						return allInfo.some(i => {
-							return i.toString().includes(e.target.value);
-						});
-					}
-					else {
-						return false;
-					}
-				});
-			}
-			this.sortByCategory(this.sortedCategory,this.sortedIsAscending);
-		}
 	}
 }
 </script>
@@ -127,34 +122,6 @@ export default {
 #rankings-table-options{
 	background-color: #2d32af;
 	color: white;
-}
-#rankings-table-options .options-header{
-	background-color: #2d32af;
-	position: fixed;
-	height: 45px;
-	width: 100%;
-	top: 70px;
-	text-align: left;
-	align-items: center;
-	padding: 20px 65px 0px 65px;
-}
-.options-header input {
-	height: 25px;
-	border: none;
-	border: solid 1px #ccc;
-	border-radius: 3px;
-	border-collapse: collapse;
-	padding: 6px 8px;
-	margin-right: 30px;
-}
-.options-header input::-ms-clear{
-	display: none;
-}
-#scroll-indicators{
-	float: right;
-}
-#scroll-indicator-left, #scroll-indicator-right{
-	visibility: hidden;
 }
 .rankings-table-header{
 	background-color: #2d32af;
@@ -206,12 +173,6 @@ export default {
 @media only screen and (max-width: 770px){
 	body{
 		-webkit-overflow-scrolling: touch;
-	}
-	#rankings-table-options .options-header{
-		padding: 10px 20px 0px 20px;
-	}
-	.options-header input {
-		margin-right: 15px;
 	}
 }
 /* Larger devices than phones */
