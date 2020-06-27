@@ -4,11 +4,12 @@ import './registerServiceWorker'
 import router from './router'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPlayCircle, faPauseCircle, faGamepad, faSortUp, faSortDown, 
-        faUserPlus, faCaretSquareLeft, faCaretSquareRight} from '@fortawesome/free-solid-svg-icons'
+        faUserPlus, faCaretSquareLeft, faCaretSquareRight, faBars} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faPlayCircle, faPauseCircle, faGamepad, faSortUp,
-             faSortDown, faUserPlus, faCaretSquareLeft, faCaretSquareRight)
+             faSortDown, faUserPlus, faCaretSquareLeft, faCaretSquareRight,
+             faBars)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
