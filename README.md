@@ -10,7 +10,8 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 # Status of New Features
 - [x] Rewritten as a SPA in the [Vue.Js](https://vuejs.org/) framework
 - [x] Faster navigation
-- [x] Faster and optimized algorithms
+- [x] Faster and optimized algorithms\
+- [x] Cleaner code
 - [ ] Dark mode
 - [ ] Online store (No outside parties. Seeking local solutions)
 - [ ] Easier way to submit scores
