@@ -6,7 +6,8 @@
                     <img id="mobile-nav-logo" src="../assets/images/IGLogo.png"/>
                 </router-link>
                 <div id="mobile-nav-button">
-                    <font-awesome-icon id="mobile-nav-icon" :icon="['fa','bars']" @click="openMobileMenu()"/>
+                    <font-awesome-icon v-show="!mobileMenuOpened" id="mobile-nav-icon" :icon="['fa','bars']" @click="openMobileMenu()"/>
+                    <font-awesome-icon v-show="mobileMenuOpened" id="mobile-nav-icon" :icon="['fa','times']" @click="openMobileMenu()"/>
                 </div>
             </div>
             <div id="mobile-nav-list" v-bind:class="{ opened: mobileMenuOpened }">
