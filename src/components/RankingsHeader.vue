@@ -1,10 +1,9 @@
 <template>
-    <th class="rankings-header" v-bind:class="{sorted: isSorted()}" @mousedown="sortTableByCategory(category)">
-	    <div class="header-text">{{title}} 
-            <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="!ascending" :icon="['fas','sort-up']"></font-awesome-icon>
-            <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="ascending" :icon="['fas','sort-down']"></font-awesome-icon>
-        </div>
-	</th>
+    <strong class="rankings-header" v-bind:class="{sorted: isSorted()}" @mousedown="sortTableByCategory(category)">
+        {{title}} 
+        <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="!ascending" :icon="['fas','sort-up']"></font-awesome-icon>
+        <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="ascending" :icon="['fas','sort-down']"></font-awesome-icon>
+	</strong>
 </template>
 
 <script lang="ts">
@@ -49,13 +48,9 @@ export default class RankingsHeader extends Vue {
 
 <style scoped>
 .rankings-header {
+    flex: 1;
 	background-color: #2d32af;
-	position: -webkit-sticky; /* Safari */
-	position: sticky;
-	height: 62px;
-	top: 115px;
-	min-width: 179px;
-	width: 10%;
+    color: white;
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
 	-khtml-user-select: none; /* Konqueror HTML */

@@ -1,42 +1,74 @@
 <template>
   <main class='Ratings'>
-    <table id="rankings-table">
-		<RankingsOptions @search-table="searchHandler"></RankingsOptions>
-		<tr class="rankings-table-header">
-			<RankingsHeader @sort-table="sortHandler" title="Rank" category="rank" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortHandler" title="Title" category="Game" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortHandler" title="Year" category="Year" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortHandler" title="Platform" category="Platform" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortHandler" title="IG Score" category="IG Score" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortHandler" title="Gameplay" category="Gameplay" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortHandler" title="Aesthetics" category="Aesthetics" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortHandler" title="Content" category="Content" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortHandler" title="P. Overall" category="Peter's Rating" :sortBy="sortedCategory"></RankingsHeader>
-			<RankingsHeader @sort-table="sortHandler" title="K. Overall" category="Kevin's Rating" :sortBy="sortedCategory"></RankingsHeader>
-		</tr>
-		<RankingRow 
-			v-for="episode in episodes"
-			:key="episode.id"
-			:rank="episode['Ranking Info'].rank"
-			:title="episode['Ranking Info'].Game"
-			:guest="episode['Ranking Info'].Guest"
-			:year="episode['Ranking Info'].Year"
-			:platform="episode['Ranking Info'].Platform"
-			:overall="episode['Ranking Info']['IG Score']"
-			:gameplay="episode['Ranking Info'].Gameplay"
-			:aesthetics="episode['Ranking Info'].Aesthetics"
-			:content="episode['Ranking Info'].Content"
-			:pOverall="episode['Ranking Info']['Peter\'s Rating']"
-			:kOverall="episode['Ranking Info']['Kevin\'s Rating']"
-			:sortBy="sortedCategory">
-		</RankingRow>
-	</table>
+	<RankingsOptions @search-table="searchHandler"></RankingsOptions>
+    <div id="rankings-table">
+		<RankingsHeader @sort-table="sortHandler" title="Rank" category="rank" :sortBy="sortedCategory"></RankingsHeader>
+		<RankingsHeader @sort-table="sortHandler" title="Title" category="Game" :sortBy="sortedCategory"></RankingsHeader>
+		<RankingsHeader @sort-table="sortHandler" title="Year" category="Year" :sortBy="sortedCategory"></RankingsHeader>
+		<RankingsHeader @sort-table="sortHandler" title="Platform" category="Platform" :sortBy="sortedCategory"></RankingsHeader>
+		<RankingsHeader @sort-table="sortHandler" title="IG Score" category="IG Score" :sortBy="sortedCategory"></RankingsHeader>
+		<RankingsHeader @sort-table="sortHandler" title="Gameplay" category="Gameplay" :sortBy="sortedCategory"></RankingsHeader>
+		<RankingsHeader @sort-table="sortHandler" title="Aesthetics" category="Aesthetics" :sortBy="sortedCategory"></RankingsHeader>
+		<RankingsHeader @sort-table="sortHandler" title="Content" category="Content" :sortBy="sortedCategory"></RankingsHeader>
+		<RankingsHeader @sort-table="sortHandler" title="P. Overall" category="Peter's Rating" :sortBy="sortedCategory"></RankingsHeader>
+		<RankingsHeader @sort-table="sortHandler" title="K. Overall" category="Kevin's Rating" :sortBy="sortedCategory"></RankingsHeader>
+		<template v-for="episode in episodes">
+				<RankingsCell 
+					:key="`${episode.id}-rank`"
+					:value="episode['Ranking Info'].rank"
+					:highlight="shouldHighlight('rank')"/>
+				<RankingsCell 
+					:key="`${episode.id}-title`"
+					:guest="episode['Ranking Info'].Guest"
+					:value="episode['Ranking Info'].Game"
+					:highlight="shouldHighlight('Game')"/>
+				<RankingsCell 
+					:key="`${episode.id}-year`"
+					:value="episode['Ranking Info'].Year"
+					:highlight="shouldHighlight('Year')"/>
+				<RankingsCell 
+					:key="`${episode.id}-platform`"
+					:value="episode['Ranking Info'].Platform"
+					:highlight="shouldHighlight('Platform')"/>
+				<RankingsCell 
+					:key="`${episode.id}-overall`"
+					:value="episode['Ranking Info']['IG Score']"
+					round="true"
+					:highlight="shouldHighlight('IG Score')"/>
+				<RankingsCell 
+					:key="`${episode.id}-gameplay`"
+					:value="episode['Ranking Info'].Gameplay"
+					round="true"
+					:highlight="shouldHighlight('Gameplay')"/>
+				<RankingsCell 
+					:key="`${episode.id}-aesthetics`" 
+					:value="episode['Ranking Info'].Aesthetics"
+					round="true"
+					:highlight="shouldHighlight('Aesthetics')"/>
+				<RankingsCell
+					:key="`${episode.id}-content`"
+					:value="episode['Ranking Info'].Content"
+					round="true"
+					:highlight="shouldHighlight('Content')"/>
+				<RankingsCell 
+					:key="`${episode.id}-pRating`" 
+					:value="episode['Ranking Info']['Peter\'s Rating']"
+					round="true"
+					:highlight="shouldHighlight('Peter\'s Rating')"/>
+				<RankingsCell 
+					:key="`${episode.id}-kRating`"
+					:value="episode['Ranking Info']['Kevin\'s Rating']"
+					round="true"
+					:highlight="shouldHighlight('Kevin\'s Rating')"/>
+		</template>
+	</div>
   </main>
 </template>
 
 <script>
 import RankingsOptions from '@/components/RankingsOptions'
 import RankingsHeader from '@/components/RankingsHeader'
+import RankingsCell from '@/components/RankingsCell'
 import RankingRow from '@/components/RankingRow'
 import episodeData from '../database/episode-data'
 
@@ -45,7 +77,8 @@ export default {
 	components: {
 		RankingsOptions,
 		RankingsHeader,
-		RankingRow
+		RankingRow,
+		RankingsCell
 	},
 	data: function () {
 		return {
@@ -57,6 +90,9 @@ export default {
 		}
 	},
 	methods: {
+		shouldHighlight(category) {
+			return category === this.sortedCategory;
+		},
 		sortHandler: function(e){
 			this.sortByCategory(e[0],e[1]);
 		},
@@ -109,18 +145,18 @@ export default {
 </script>
 
 <style scoped>
-#rankings-table{
-	position: relative;
-	top: 45px;
-	min-width: 100%;
+#rankings-table {
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
 	text-align: center;
 	border-collapse: collapse;
-	table-layout: fixed;
 }
-.rankings-table-header{
+.rankings-table-header {
+	display: flex;
 	background-color: #2d32af;
 	color: white;
 	font-weight: normal;
+	width: 100%;
 }
 .rankings-row-info{
 	display: table-row;

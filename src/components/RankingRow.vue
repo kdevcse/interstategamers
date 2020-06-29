@@ -1,24 +1,25 @@
 <template>
-    <tr class="rankings-table-row">
-	    <td v-bind:class="{ sorted: highlightRed('rank')}">{{rank}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('Game')}">
+    <span class="rankings-table-row">
+	    <p v-bind:class="{ sorted: highlightRed('rank')}">{{rank}}</p>
+	    <p v-bind:class="{ sorted: highlightRed('Game')}">
 			{{title}}
         	<font-awesome-icon class='guest-icon' :icon="['fas', 'user-plus']" v-if="guest"></font-awesome-icon>
-		</td>
-	    <td v-bind:class="{ sorted: highlightRed('Year')}">{{year}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('Platform')}">{{platform}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('IG Score')}">{{overall.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('Gameplay')}">{{gameplay.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('Aesthetics')}">{{aesthetics.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('Content')}">{{content.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('Peter\'s Rating')}">{{pOverall.toFixed(2)}}</td>
-	    <td v-bind:class="{ sorted: highlightRed('Kevin\'s Rating')}">{{kOverall.toFixed(2)}}</td>
-	</tr>
+		</p>
+	    <p v-bind:class="{ sorted: highlightRed('Year')}">{{year}}</p>
+	    <p v-bind:class="{ sorted: highlightRed('Platform')}">{{platform}}</p>
+	    <p v-bind:class="{ sorted: highlightRed('IG Score')}">{{overall.toFixed(2)}}</p>
+	    <p v-bind:class="{ sorted: highlightRed('Gameplay')}">{{gameplay.toFixed(2)}}</p>
+	    <p v-bind:class="{ sorted: highlightRed('Aesthetics')}">{{aesthetics.toFixed(2)}}</p>
+	    <p v-bind:class="{ sorted: highlightRed('Content')}">{{content.toFixed(2)}}</p>
+	    <p v-bind:class="{ sorted: highlightRed('Peter\'s Rating')}">{{pOverall.toFixed(2)}}</p>
+	    <p v-bind:class="{ sorted: highlightRed('Kevin\'s Rating')}">{{kOverall.toFixed(2)}}</p>
+	</span>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { CategoryTypes } from '../interfaces/IRankingInfo';
+import RankingsCell from '@/components/RankingsCell.vue';
 
 @Component
 export default class RankingRow extends Vue {
@@ -34,6 +35,7 @@ export default class RankingRow extends Vue {
     @Prop() kOverall!: number;
 	@Prop() sortBy!: string;
 	@Prop() guest!: string;
+	@Prop() items!: any;
 
     highlightRed(category: string) {
         return category === this.sortBy;
@@ -42,14 +44,13 @@ export default class RankingRow extends Vue {
 </script>
 
 <style scoped>
-.rankings-table-row{
+.rankings-table-row {
 	padding: 5px 0px;
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
 }
-.rankings-table-row > td {
+.rankings-table-row > p {
 	color: #2d32af;
-    height: 62px;
-    min-width: 179px;
-	width: 10%;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
@@ -60,10 +61,10 @@ export default class RankingRow extends Vue {
 	-ms-user-select: none; /* Internet Explorer/Edge */
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
-td.sorted {
+div.sorted {
 	color: red !important;
 }
-.rankings-table-row > td > svg {
+.rankings-table-row > div > svg {
 	color: red;
 }
 .guest-icon{
@@ -71,11 +72,11 @@ td.sorted {
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
-	.rankings-table-row > td{
+	.rankings-table-row > div{
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
-	.rankings-table-row > td{
+	.rankings-table-row > div{
 		font-size: 14px;
 		min-width: 93px;
 	}
