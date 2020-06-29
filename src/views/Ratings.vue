@@ -146,6 +146,8 @@ export default {
 
 <style scoped>
 #rankings-table {
+	position: relative;
+	top: 55px;
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(10, minmax(150px, auto));
