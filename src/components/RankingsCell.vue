@@ -34,19 +34,15 @@ p {
 	-ms-user-select: none; /* Internet Explorer/Edge */
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
-
 p.sorted {
 	color: red !important;
 }
-
 p > svg {
 	color: red;
 }
-
 .guest-icon{
 	margin-left: 5px;
 }
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
 	.rankings-table-row > p {

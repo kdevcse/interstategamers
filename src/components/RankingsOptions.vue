@@ -1,12 +1,10 @@
 <template>
-    <div id="rankings-table-options">
-        <div class="options-header" colspan="10">
-            <input @input="search" id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
-            <div v-bind:class="{show: showBothIndicators}" id="scroll-indicator">
-                <font-awesome-icon id="scroll-indicator-left" v-bind:class="{show: showLeftIndicator}" :icon="['fas', 'caret-square-left']" title="Scroll left to see more content"></font-awesome-icon>
-                <span id="scroll-indicator-txt">Scroll for more</span>
-                <font-awesome-icon id="scroll-indicator-right" v-bind:class="{show: showRightIndicator}" :icon="['fas', 'caret-square-right']" title="Scroll right to see more content"></font-awesome-icon>
-            </div>
+    <div class="options-header" colspan="10">
+        <input @input="search" id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
+        <div v-bind:class="{show: showBothIndicators}" id="scroll-indicator">
+            <font-awesome-icon id="scroll-indicator-left" v-bind:class="{show: showLeftIndicator}" :icon="['fas', 'caret-square-left']" title="Scroll left to see more content"></font-awesome-icon>
+            <span id="scroll-indicator-txt">Scroll for more</span>
+            <font-awesome-icon id="scroll-indicator-right" v-bind:class="{show: showRightIndicator}" :icon="['fas', 'caret-square-right']" title="Scroll right to see more content"></font-awesome-icon>
         </div>
     </div>
 </template>
@@ -61,18 +59,15 @@ export default class RankingsOptions extends Vue {
 </script>
 
 <style scoped>
-#rankings-table-options{
+.options-header{
+    position: fixed;
+	top: 70px;
 	background-color: #2d32af;
 	color: white;
-}
-.options-header{
-	background-color: #2d32af;
-	height: 45px;
 	width: 100%;
-	top: 70px;
 	text-align: left;
 	align-items: center;
-	padding: 20px 65px 0px 65px;
+	padding: 15px 10px;
 }
 .options-header input {
 	height: 25px;
@@ -115,9 +110,6 @@ export default class RankingsOptions extends Vue {
 }
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
-	.options-header{
-		padding: 20px 65px 0px 65px;
-	}
 	.options-header input {
 		margin-right: 30px;
 	}

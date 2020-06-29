@@ -146,13 +146,12 @@ export default {
 
 <style scoped>
 #rankings-table {
+	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(10, 1fr);
+	grid-template-columns: repeat(10, minmax(150px, auto));
 	text-align: center;
-	border-collapse: collapse;
 }
 .rankings-table-header {
-	display: flex;
 	background-color: #2d32af;
 	color: white;
 	font-weight: normal;

@@ -48,7 +48,9 @@ export default class RankingsHeader extends Vue {
 
 <style scoped>
 .rankings-header {
-    flex: 1;
+    position: sticky;
+    top: 125px;
+    padding: 16px 0px;
 	background-color: #2d32af;
     color: white;
 	-webkit-touch-callout: none; /* iOS Safari */
