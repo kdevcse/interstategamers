@@ -6,15 +6,15 @@
                     <img id="mobile-nav-logo" src="../assets/images/IGLogo.png"/>
                 </router-link>
                 <div id="mobile-nav-button">
-                    <font-awesome-icon v-show="!mobileMenuOpened" id="mobile-nav-icon" :icon="['fa','bars']" @click="openMobileMenu()"/>
-                    <font-awesome-icon v-show="mobileMenuOpened" id="mobile-nav-icon" :icon="['fa','times']" @click="openMobileMenu()"/>
+                    <font-awesome-icon v-show="!mobileMenuOpened" id="mobile-nav-icon" :icon="['fa','bars']" @click="toggleMobileMenu()"/>
+                    <font-awesome-icon v-show="mobileMenuOpened" id="mobile-nav-icon" :icon="['fa','times']" @click="toggleMobileMenu()"/>
                 </div>
             </div>
             <div id="mobile-nav-list" v-bind:class="{ opened: mobileMenuOpened }">
-                <router-link to="/ratings" @click="openMobileMenu()">Ratings</router-link>
+                <router-link to="/ratings">Ratings</router-link>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.teepublic.com/stores/the-interstate-gamers?ref_id=7904">Store</a>
-                <router-link to="/extras" @click="openMobileMenu()">Extras</router-link>
-                <router-link to="/info" @click="openMobileMenu()">Info</router-link>
+                <router-link to="/extras">Extras</router-link>
+                <router-link to="/info">Info</router-link>
             </div>
         </nav>
         <nav id="nav-bar">
@@ -30,15 +30,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
 
 @Component
 export default class NavBar extends Vue {
   @Prop() selected!: boolean;
   mobileMenuOpened = false;
 
-  openMobileMenu(){
+  toggleMobileMenu(){
       this.mobileMenuOpened = !this.mobileMenuOpened;
+  }
+
+  @Watch('$route')
+  closeMobileMenu() {
+      this.mobileMenuOpened = false;
   }
 }
 </script>
