@@ -1,5 +1,5 @@
 <template>
-    <p v-bind:class="{ sorted: highlight}">
+    <p @mouseover="emitEpisodeId" v-bind:class="{ sorted: highlight, hovered: rowHovered}">
         {{getValue()}}
         <font-awesome-icon class='guest-icon' :icon="['fas', 'user-plus']" v-if="guest"></font-awesome-icon>
     </p>
@@ -14,9 +14,15 @@ export default class RankingsCell extends Vue {
     @Prop() value!: any;
     @Prop() guest!: boolean;
     @Prop() round!: boolean;
+    @Prop() episodeId!: string;
+    @Prop() rowHovered!: boolean;
 
     getValue() {
         return this.round ? this.value.toFixed(2) : this.value;
+    }
+
+    emitEpisodeId() {
+        this.$emit('cell-hovered', this.episodeId);
     }
 }
 </script>
@@ -39,6 +45,9 @@ p {
 }
 p.sorted {
 	color: red !important;
+}
+p.hovered {
+    background-color: #f1f1f1;
 }
 p > svg {
 	color: red;

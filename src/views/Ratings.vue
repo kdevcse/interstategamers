@@ -15,61 +15,81 @@
 		<template v-for="episode in episodes">
 				<RankingsCell 
 					:key="`${episode.id}-rank`"
-					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].rank"
-					:highlight="shouldHighlight('rank')"/>
+					:highlight="shouldHighlight('rank')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-title`"
-					:class="`${episode.number}`"
 					:guest="episode['Ranking Info'].Guest"
 					:value="episode['Ranking Info'].Game"
-					:highlight="shouldHighlight('Game')"/>
+					:highlight="shouldHighlight('Game')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-year`"
-					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].Year"
-					:highlight="shouldHighlight('Year')"/>
+					:highlight="shouldHighlight('Year')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-platform`"
-					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].Platform"
-					:highlight="shouldHighlight('Platform')"/>
+					:highlight="shouldHighlight('Platform')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-overall`"
-					:class="`${episode.number}`"
 					:value="episode['Ranking Info']['IG Score']"
 					round="true"
-					:highlight="shouldHighlight('IG Score')"/>
+					:highlight="shouldHighlight('IG Score')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-gameplay`"
-					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].Gameplay"
 					round="true"
-					:highlight="shouldHighlight('Gameplay')"/>
+					:highlight="shouldHighlight('Gameplay')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsCell 
-					:key="`${episode.id}-aesthetics`" 
-					:class="`${episode.number}`"
+					:key="`${episode.id}-aesthetics`"
 					:value="episode['Ranking Info'].Aesthetics"
 					round="true"
-					:highlight="shouldHighlight('Aesthetics')"/>
+					:highlight="shouldHighlight('Aesthetics')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsCell
 					:key="`${episode.id}-content`"
-					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].Content"
 					round="true"
-					:highlight="shouldHighlight('Content')"/>
+					:highlight="shouldHighlight('Content')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsCell 
-					:key="`${episode.id}-pRating`" 
-					:class="`${episode.number}`"
+					:key="`${episode.id}-pRating`"
 					:value="episode['Ranking Info']['Peter\'s Rating']"
 					round="true"
-					:highlight="shouldHighlight('Peter\'s Rating')"/>
+					:highlight="shouldHighlight('Peter\'s Rating')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-kRating`"
-					:class="`${episode.number}`"
 					:value="episode['Ranking Info']['Kevin\'s Rating']"
 					round="true"
-					:highlight="shouldHighlight('Kevin\'s Rating')"/>
+					:highlight="shouldHighlight('Kevin\'s Rating')"
+					:episodeId="episode.id"
+					:rowHovered="isRowHovered(episode.id)"
+					@cell-hovered="hoveredRowHandler"/>
 				<RankingsInfo :key="`${episode.id}-info`"></RankingsInfo>
 		</template>
 	</div>
@@ -99,12 +119,19 @@ export default {
 				return a['Ranking Info']['rank'] - b['Ranking Info']['rank'];
 			}),
 			sortedCategory: "rank",
-			sortedIsAscending: true
+			sortedIsAscending: true,
+			hoveredEpisode: null
 		}
 	},
 	methods: {
 		shouldHighlight(category) {
 			return category === this.sortedCategory;
+		},
+		isRowHovered(episode) {
+			return episode === this.hoveredEpisode;
+		},
+		hoveredRowHandler(e) {
+			this.hoveredEpisode = e;
 		},
 		sortHandler: function(e){
 			this.sortByCategory(e[0],e[1]);
