@@ -18,78 +18,88 @@
 					:value="episode['Ranking Info'].rank"
 					:highlight="shouldHighlight('rank')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-title`"
 					:guest="episode['Ranking Info'].Guest"
 					:value="episode['Ranking Info'].Game"
 					:highlight="shouldHighlight('Game')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-year`"
 					:value="episode['Ranking Info'].Year"
 					:highlight="shouldHighlight('Year')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-platform`"
 					:value="episode['Ranking Info'].Platform"
 					:highlight="shouldHighlight('Platform')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-overall`"
 					:value="episode['Ranking Info']['IG Score']"
 					round="true"
 					:highlight="shouldHighlight('IG Score')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-gameplay`"
 					:value="episode['Ranking Info'].Gameplay"
 					round="true"
 					:highlight="shouldHighlight('Gameplay')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-aesthetics`"
 					:value="episode['Ranking Info'].Aesthetics"
 					round="true"
 					:highlight="shouldHighlight('Aesthetics')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsCell
 					:key="`${episode.id}-content`"
 					:value="episode['Ranking Info'].Content"
 					round="true"
 					:highlight="shouldHighlight('Content')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-pRating`"
 					:value="episode['Ranking Info']['Peter\'s Rating']"
 					round="true"
 					:highlight="shouldHighlight('Peter\'s Rating')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsCell 
 					:key="`${episode.id}-kRating`"
 					:value="episode['Ranking Info']['Kevin\'s Rating']"
 					round="true"
 					:highlight="shouldHighlight('Kevin\'s Rating')"
 					:episodeId="episode.id"
-					:rowHovered="isRowHovered(episode.id)"
-					@cell-hovered="hoveredRowHandler"/>
+					:emphasize="shouldEmphasize(episode.id)"
+					@row-hovered="hoveredRowHandler"
+					@row-selected="selectedRowHandler"/>
 				<RankingsInfo :key="`${episode.id}-info`"></RankingsInfo>
 		</template>
 	</div>
@@ -120,23 +130,27 @@ export default {
 			}),
 			sortedCategory: "rank",
 			sortedIsAscending: true,
-			hoveredEpisode: null
+			hoveredEpisode: null,
+			selectedEpisode: null
 		}
 	},
 	methods: {
 		shouldHighlight(category) {
 			return category === this.sortedCategory;
 		},
-		isRowHovered(episode) {
-			return episode === this.hoveredEpisode;
+		shouldEmphasize(episode) {
+			return episode === this.hoveredEpisode || episode === this.selectedEpisode;
 		},
 		hoveredRowHandler(e) {
 			this.hoveredEpisode = e;
 		},
-		sortHandler: function(e){
+		selectedRowHandler(e) {
+			this.selectedEpisode = e;
+		},
+		sortHandler(e) {
 			this.sortByCategory(e[0],e[1]);
 		},
-		searchHandler: function(searchTxt) {
+		searchHandler(searchTxt) {
 			if (!searchTxt){
 				this.episodes = episodeData.filter(x => x['Ranking Info']);
 			}
@@ -155,7 +169,7 @@ export default {
 			}
 			this.sortByCategory(this.sortedCategory,this.sortedIsAscending);
 		},
-		sortByCategory(category, ascending){
+		sortByCategory(category, ascending) {
 			if (category === 'Game' || category === 'Platform'){
 				this.episodes.sort(function (a, b) {
 					if(ascending) {
@@ -185,9 +199,6 @@ export default {
 </script>
 
 <style scoped>
-.test:hover {
-	background-color: purple;
-}
 #rankings-table {
 	position: relative;
 	top: 65px;
