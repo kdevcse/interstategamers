@@ -23,6 +23,9 @@ export default class RankingsCell extends Vue {
 
 <style scoped>
 p {
+    cursor: pointer;
+    margin: 0;
+    padding: 16px 0px;
 	color: #2d32af;
 	text-overflow: ellipsis;
 	overflow: hidden;

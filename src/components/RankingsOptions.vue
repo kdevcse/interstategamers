@@ -68,7 +68,7 @@ export default class RankingsOptions extends Vue {
 	width: 100%;
 	text-align: left;
 	align-items: center;
-	padding: 15px 10px;
+	padding: 30px 55px 10px 55px;
 }
 .options-header input {
 	height: 25px;

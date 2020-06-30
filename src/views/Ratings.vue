@@ -15,51 +15,62 @@
 		<template v-for="episode in episodes">
 				<RankingsCell 
 					:key="`${episode.id}-rank`"
+					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].rank"
 					:highlight="shouldHighlight('rank')"/>
 				<RankingsCell 
 					:key="`${episode.id}-title`"
+					:class="`${episode.number}`"
 					:guest="episode['Ranking Info'].Guest"
 					:value="episode['Ranking Info'].Game"
 					:highlight="shouldHighlight('Game')"/>
 				<RankingsCell 
 					:key="`${episode.id}-year`"
+					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].Year"
 					:highlight="shouldHighlight('Year')"/>
 				<RankingsCell 
 					:key="`${episode.id}-platform`"
+					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].Platform"
 					:highlight="shouldHighlight('Platform')"/>
 				<RankingsCell 
 					:key="`${episode.id}-overall`"
+					:class="`${episode.number}`"
 					:value="episode['Ranking Info']['IG Score']"
 					round="true"
 					:highlight="shouldHighlight('IG Score')"/>
 				<RankingsCell 
 					:key="`${episode.id}-gameplay`"
+					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].Gameplay"
 					round="true"
 					:highlight="shouldHighlight('Gameplay')"/>
 				<RankingsCell 
 					:key="`${episode.id}-aesthetics`" 
+					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].Aesthetics"
 					round="true"
 					:highlight="shouldHighlight('Aesthetics')"/>
 				<RankingsCell
 					:key="`${episode.id}-content`"
+					:class="`${episode.number}`"
 					:value="episode['Ranking Info'].Content"
 					round="true"
 					:highlight="shouldHighlight('Content')"/>
 				<RankingsCell 
 					:key="`${episode.id}-pRating`" 
+					:class="`${episode.number}`"
 					:value="episode['Ranking Info']['Peter\'s Rating']"
 					round="true"
 					:highlight="shouldHighlight('Peter\'s Rating')"/>
 				<RankingsCell 
 					:key="`${episode.id}-kRating`"
+					:class="`${episode.number}`"
 					:value="episode['Ranking Info']['Kevin\'s Rating']"
 					round="true"
 					:highlight="shouldHighlight('Kevin\'s Rating')"/>
+				<RankingsInfo :key="`${episode.id}-info`"></RankingsInfo>
 		</template>
 	</div>
   </main>
@@ -70,6 +81,7 @@ import RankingsOptions from '@/components/RankingsOptions'
 import RankingsHeader from '@/components/RankingsHeader'
 import RankingsCell from '@/components/RankingsCell'
 import RankingRow from '@/components/RankingRow'
+import RankingsInfo from '@/components/RankingsInfo'
 import episodeData from '../database/episode-data'
 
 export default {
@@ -78,7 +90,8 @@ export default {
 		RankingsOptions,
 		RankingsHeader,
 		RankingRow,
-		RankingsCell
+		RankingsCell,
+		RankingsInfo
 	},
 	data: function () {
 		return {
@@ -145,9 +158,12 @@ export default {
 </script>
 
 <style scoped>
+.test:hover {
+	background-color: purple;
+}
 #rankings-table {
 	position: relative;
-	top: 55px;
+	top: 65px;
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(10, minmax(150px, auto));
@@ -159,106 +175,11 @@ export default {
 	font-weight: normal;
 	width: 100%;
 }
-.rankings-row-info{
-	display: table-row;
-}
-.rankings-table-info{
-	padding: 0;
-}
-.charts{
-	display: none;
-	transition: height 2s linear;
-	align-items: center;
-}
-.breakdown-day{
-	margin: 0 auto 9px auto;
-	font-size: 15px;
-}
-.breakdown-img{
-	max-width: 200px;
-	max-height: 188px;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 3px;
-	align-self: center;
-}
-.breakdown-scores{
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 2px;
-}
-.meta-container, .ign-container{
-	align-items: center;
-	align-self: center;
-	display: inline-flex;
-}
-.meta-logo, .ign-logo{
-	height: 30px;
-	width: 30px;
-	margin-right: 5px;
-}
-.meta-score{
-	margin-right: 20px;
-}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){
 	body{
 		-webkit-overflow-scrolling: touch;
-	}
-}
-/* Larger devices than phones */
-@media only screen and (min-width: 770px){
-	.chart {
-		overflow: hidden;
-		width: 200px;
-		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.chart > h3{
-		margin-top: 0;
-		margin-bottom: 8px;
-		font-size: 15px;
-	}
-	.expanded-breakdown{
-		display: inline-grid;
-		grid-template-columns: 250px 250px 250px 250px;
-		margin-bottom: 20px;
-	}
-	.charts{
-		float: left;
-		margin-left: 64px;
-		margin-top: 13px;
-	}
-	.stat-category{
-		text-align: left;
-		margin-top: 0px;
-		margin-bottom: 2px;
-		font-size: 13px;
-	}
-	.rank {
-		height: 20px;
-		width: 100%;
-		margin-bottom: 6px;
-		background-color: white;
-		border: #2d32af solid 2px;
-		border-radius: 3px;
-	}
-	.progress{
-		width: 0%;
-		height: 100%;
-		background-color: #2d32af;
-	}
-	.overall{
-		border: red solid 2px;
-	}
-	.overall-progress{
-		background-color: red;
-	}
-	.expanded{
-		display: table-row;
-		background-color: #f0f0f5;
-		border-bottom: #2d32af solid 1px;
 	}
 }
 </style>
