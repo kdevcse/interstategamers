@@ -2,104 +2,34 @@
   <main class='Ratings'>
 	<RankingsOptions @search-table="searchHandler"></RankingsOptions>
     <div id="rankings-table">
-		<RankingsHeader @sort-table="sortHandler" title="Rank" category="rank" :sortBy="sortedCategory"></RankingsHeader>
-		<RankingsHeader @sort-table="sortHandler" title="Title" category="Game" :sortBy="sortedCategory"></RankingsHeader>
-		<RankingsHeader @sort-table="sortHandler" title="Year" category="Year" :sortBy="sortedCategory"></RankingsHeader>
-		<RankingsHeader @sort-table="sortHandler" title="Platform" category="Platform" :sortBy="sortedCategory"></RankingsHeader>
-		<RankingsHeader @sort-table="sortHandler" title="IG Score" category="IG Score" :sortBy="sortedCategory"></RankingsHeader>
-		<RankingsHeader @sort-table="sortHandler" title="Gameplay" category="Gameplay" :sortBy="sortedCategory"></RankingsHeader>
-		<RankingsHeader @sort-table="sortHandler" title="Aesthetics" category="Aesthetics" :sortBy="sortedCategory"></RankingsHeader>
-		<RankingsHeader @sort-table="sortHandler" title="Content" category="Content" :sortBy="sortedCategory"></RankingsHeader>
-		<RankingsHeader @sort-table="sortHandler" title="P. Overall" category="Peter's Rating" :sortBy="sortedCategory"></RankingsHeader>
-		<RankingsHeader @sort-table="sortHandler" title="K. Overall" category="Kevin's Rating" :sortBy="sortedCategory"></RankingsHeader>
+		<div id="rankings-header">
+			<RankingsHeader @sort-table="sortHandler" title="Rank" category="rank" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Title" category="Game" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Year" category="Year" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Platform" category="Platform" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="IG Score" category="IG Score" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Gameplay" category="Gameplay" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Aesthetics" category="Aesthetics" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="Content" category="Content" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="P. Overall" category="Peter's Rating" :sortBy="sortedCategory"></RankingsHeader>
+			<RankingsHeader @sort-table="sortHandler" title="K. Overall" category="Kevin's Rating" :sortBy="sortedCategory"></RankingsHeader>
+		</div>
 		<template v-for="episode in episodes">
-				<RankingsCell 
-					:key="`${episode.id}-rank`"
-					:value="episode['Ranking Info'].rank"
-					:highlight="shouldHighlight('rank')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
-				<RankingsCell 
-					:key="`${episode.id}-title`"
+				<RankingRow
+					:key="episode.id"
+					:rank="episode['Ranking Info'].rank"
+					:title="episode['Ranking Info'].Game"
 					:guest="episode['Ranking Info'].Guest"
-					:value="episode['Ranking Info'].Game"
-					:highlight="shouldHighlight('Game')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
-				<RankingsCell 
-					:key="`${episode.id}-year`"
-					:value="episode['Ranking Info'].Year"
-					:highlight="shouldHighlight('Year')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
-				<RankingsCell 
-					:key="`${episode.id}-platform`"
-					:value="episode['Ranking Info'].Platform"
-					:highlight="shouldHighlight('Platform')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
-				<RankingsCell 
-					:key="`${episode.id}-overall`"
-					:value="episode['Ranking Info']['IG Score']"
-					round="true"
-					:highlight="shouldHighlight('IG Score')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
-				<RankingsCell 
-					:key="`${episode.id}-gameplay`"
-					:value="episode['Ranking Info'].Gameplay"
-					round="true"
-					:highlight="shouldHighlight('Gameplay')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
-				<RankingsCell 
-					:key="`${episode.id}-aesthetics`"
-					:value="episode['Ranking Info'].Aesthetics"
-					round="true"
-					:highlight="shouldHighlight('Aesthetics')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
-				<RankingsCell
-					:key="`${episode.id}-content`"
-					:value="episode['Ranking Info'].Content"
-					round="true"
-					:highlight="shouldHighlight('Content')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
-				<RankingsCell 
-					:key="`${episode.id}-pRating`"
-					:value="episode['Ranking Info']['Peter\'s Rating']"
-					round="true"
-					:highlight="shouldHighlight('Peter\'s Rating')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
-				<RankingsCell 
-					:key="`${episode.id}-kRating`"
-					:value="episode['Ranking Info']['Kevin\'s Rating']"
-					round="true"
-					:highlight="shouldHighlight('Kevin\'s Rating')"
-					:episodeId="episode.id"
-					:emphasize="shouldEmphasize(episode.id)"
-					@row-hovered="hoveredRowHandler"
-					@row-selected="selectedRowHandler"/>
+					:year="episode['Ranking Info'].Year"
+					:platform="episode['Ranking Info'].Platform"
+					:overall="episode['Ranking Info']['IG Score']"
+					:gameplay="episode['Ranking Info'].Gameplay"
+					:aesthetics="episode['Ranking Info'].Aesthetics"
+					:content="episode['Ranking Info'].Content"
+					:pOverall="episode['Ranking Info']['Peter\'s Rating']"
+					:kOverall="episode['Ranking Info']['Kevin\'s Rating']"
+					:sortBy="sortedCategory">
+				</RankingRow>
 				<RankingsInfo :key="`${episode.id}-info`"></RankingsInfo>
 		</template>
 	</div>
@@ -203,9 +133,13 @@ export default {
 	position: relative;
 	top: 65px;
 	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(10, minmax(150px, auto));
 	text-align: center;
+}
+#rankings-header{
+	position: sticky;
+	top: 135px;
+	display: grid;
+	grid-template-columns: minmax(150px, 1fr) minmax(150px, 2fr) repeat(8, minmax(150px, 1fr));
 }
 .rankings-table-header {
 	background-color: #2d32af;

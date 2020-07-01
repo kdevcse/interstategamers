@@ -1,8 +1,8 @@
 <template>
-    <span class="rankings-table-row">
+    <div class="rankings-table-row">
 	    <p v-bind:class="{ sorted: highlightRed('rank')}">{{rank}}</p>
 	    <p v-bind:class="{ sorted: highlightRed('Game')}">
-			{{title}}
+			<span>{{title}}</span>
         	<font-awesome-icon class='guest-icon' :icon="['fas', 'user-plus']" v-if="guest"></font-awesome-icon>
 		</p>
 	    <p v-bind:class="{ sorted: highlightRed('Year')}">{{year}}</p>
@@ -13,7 +13,7 @@
 	    <p v-bind:class="{ sorted: highlightRed('Content')}">{{content.toFixed(2)}}</p>
 	    <p v-bind:class="{ sorted: highlightRed('Peter\'s Rating')}">{{pOverall.toFixed(2)}}</p>
 	    <p v-bind:class="{ sorted: highlightRed('Kevin\'s Rating')}">{{kOverall.toFixed(2)}}</p>
-	</span>
+	</div>
 </template>
 
 <script lang="ts">
@@ -47,7 +47,7 @@ export default class RankingRow extends Vue {
 .rankings-table-row {
 	padding: 5px 0px;
 	display: grid;
-	grid-template-columns: repeat(10, 1fr);
+	grid-template-columns: minmax(150px, 1fr) minmax(150px, 2fr) repeat(8, minmax(150px, 1fr));
 }
 .rankings-table-row > p {
 	color: #2d32af;
@@ -61,14 +61,14 @@ export default class RankingRow extends Vue {
 	-ms-user-select: none; /* Internet Explorer/Edge */
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
-div.sorted {
+p.sorted {
 	color: red !important;
 }
-.rankings-table-row > div > svg {
+.rankings-table-row > p > svg {
 	color: red;
 }
 .guest-icon{
-	margin-left: 5px;
+	margin-left: 10px;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px){

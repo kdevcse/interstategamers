@@ -48,8 +48,6 @@ export default class RankingsHeader extends Vue {
 
 <style scoped>
 .rankings-header {
-    position: sticky;
-    top: 135px;
     padding: 16px 0px;
 	background-color: #2d32af;
     color: white;
