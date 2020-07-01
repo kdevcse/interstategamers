@@ -41,7 +41,6 @@
 <script>
 import RankingsOptions from '@/components/RankingsOptions'
 import RankingsHeader from '@/components/RankingsHeader'
-import RankingsCell from '@/components/RankingsCell'
 import RankingRow from '@/components/RankingRow'
 import RankingsInfo from '@/components/RankingsInfo'
 import episodeData from '../database/episode-data'
@@ -52,7 +51,6 @@ export default {
 		RankingsOptions,
 		RankingsHeader,
 		RankingRow,
-		RankingsCell,
 		RankingsInfo
 	},
 	data: function () {

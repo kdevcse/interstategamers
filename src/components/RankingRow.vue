@@ -19,7 +19,6 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { CategoryTypes } from '../interfaces/IRankingInfo';
-import RankingsCell from '@/components/RankingsCell.vue';
 
 @Component
 export default class RankingRow extends Vue 
