@@ -1,5 +1,5 @@
 <template>
-    <div class="rankings-table-row">
+    <div @click="selectRowHandler" class="rankings-table-row" v-bind:class="{ selected: rowIsSelected() }">
 	    <p v-bind:class="{ sorted: highlightRed('rank')}">{{rank}}</p>
 	    <p v-bind:class="{ sorted: highlightRed('Game')}">
 			<span>{{title}}</span>
@@ -22,7 +22,8 @@ import { CategoryTypes } from '../interfaces/IRankingInfo';
 import RankingsCell from '@/components/RankingsCell.vue';
 
 @Component
-export default class RankingRow extends Vue {
+export default class RankingRow extends Vue 
+{
     @Prop() rank!: number;
     @Prop() title!: string;
     @Prop() year!: number;
@@ -35,10 +36,28 @@ export default class RankingRow extends Vue {
     @Prop() kOverall!: number;
 	@Prop() sortBy!: string;
 	@Prop() guest!: string;
-	@Prop() items!: any;
+	@Prop() selected!: string;
 
-    highlightRed(category: string) {
+	highlightRed(category: string) 
+	{
         return category === this.sortBy;
+	}
+
+	rowIsSelected() 
+	{
+		return this.title === this.selected;
+	}
+
+	selectRowHandler() 
+	{
+		if(this.title !== this.selected)
+		{
+			this.$emit('row-selected', this.title);
+		}
+		else 
+		{
+			this.$emit('row-selected', null);
+		}
 	}
 }
 </script>
@@ -84,7 +103,7 @@ p.sorted {
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
 	.rankings-table-row.selected{
-		background-color: #f0f0f5;
+		background-color: #f1f1f1;
 		border-top: #2d32af solid 1px;
 		color: #2d32af;
 	}

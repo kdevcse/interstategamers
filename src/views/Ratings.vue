@@ -28,7 +28,9 @@
 					:content="episode['Ranking Info'].Content"
 					:pOverall="episode['Ranking Info']['Peter\'s Rating']"
 					:kOverall="episode['Ranking Info']['Kevin\'s Rating']"
-					:sortBy="sortedCategory">
+					:sortBy="sortedCategory"
+					:selected="selectedEpisode"
+					@row-selected="selectedRowHandler">
 				</RankingRow>
 				<RankingsInfo :key="`${episode.id}-info`"></RankingsInfo>
 		</template>
