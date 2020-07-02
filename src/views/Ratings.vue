@@ -32,7 +32,13 @@
 					:selected="selectedEpisode"
 					@row-selected="selectedRowHandler">
 				</RankingRow>
-				<RankingsInfo :key="`${episode.id}-info`"></RankingsInfo>
+				<RankingsInfo 
+					:key="`${episode.id}-info`"
+					:title="episode['Ranking Info'].Game"
+					:selected="selectedEpisode"
+					:ign="episode['Ranking Info'].IGN"
+					:metacritic="episode['Ranking Info'].Metacritic">
+				</RankingsInfo>
 		</template>
 	</div>
   </main>

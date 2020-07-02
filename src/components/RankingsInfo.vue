@@ -1,5 +1,13 @@
 <template>
-    <div class="test-info"></div>
+    <div class="rankings-info-row" :class="{expanded: isSelected()}">
+		<div class="breakdown-details">
+			<p class="breakdown-day"></p>
+			<img class="breakdown-img"/>
+			<div class="breakdown-scores"></div>
+		</div>
+		<div></div>
+		<div></div>
+	</div>
 </template>
 
 <script lang="ts">
@@ -7,21 +15,30 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component
 export default class RankingsInfo extends Vue {
-    
+	@Prop() title!: string;
+	@Prop() selected!: string;
+	@Prop() date!: Date;
+	@Prop() img!: string;
+	@Prop() ign!: number;
+	@Prop() metacritic!: number;
+	@Prop() peterScores!: number[];
+	@Prop() kevinScores!: number[];
+
+	isSelected() {
+		return this.title === this.selected;
+	}
 }
 </script>
 
 <style scoped>
-.test-info {
+.rankings-info-row {
+	margin-top: -9px; /* idk why either lol */
 	grid-column: 1/-1;
 	height: 0px;
 	transition: height 0.2s ease-out;
-}
-.rankings-table-info{
-	display: table-row;
 	padding: 0;
 }
-.charts{
+.charts {
 	display: none;
 	transition: height 2s linear;
 	align-items: center;
@@ -106,8 +123,8 @@ export default class RankingsInfo extends Vue {
 	.overall-progress{
 		background-color: red;
 	}
-	.expanded{
-		display: table-row;
+	.rankings-info-row.expanded {
+		height: 300px;
 		background-color: #f0f0f5;
 		border-bottom: #2d32af solid 1px;
 	}

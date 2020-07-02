@@ -102,12 +102,12 @@ p.sorted {
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
 	.rankings-table-row.selected{
-		background-color: #f1f1f1;
+		background-color: #f0f0f5;
 		border-top: #2d32af solid 1px;
 		color: #2d32af;
 	}
 	.rankings-table-row:hover{
-		background-color: #f1f1f1;
+		background-color: #f0f0f5;
 		cursor: pointer;
 	}
 }
