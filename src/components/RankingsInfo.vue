@@ -23,7 +23,7 @@ import RankingsBreakdown from '@/components/RankingsBreakdown.vue';
 export default class RankingsInfo extends Vue {
 	@Prop() title!: string;
 	@Prop() selected!: string;
-	@Prop() date!: Date;
+	@Prop() date!: string;
 	@Prop() img!: string;
 	@Prop() ign!: number;
 	@Prop() metacritic!: number;
@@ -40,7 +40,9 @@ export default class RankingsInfo extends Vue {
 	}
 
 	getReleaseDateTxt(): string {
-		return `Reviewed ${this.date}`
+		const dateObj = new Date(this.date);
+		let dateTxt = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`;
+		return `Reviewed ${dateTxt}`;
 	}
 
 	mounted() {
