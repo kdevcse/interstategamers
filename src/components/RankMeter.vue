@@ -33,8 +33,8 @@ export default class RankMeter extends Vue {
 <style scoped>
 .rank-header {
   margin: 2px 0px 2px 0px;
-  font-size: 12px;
-  text-align: center;
+  font-size: 14px;
+  text-align: left;
 }
 .rank-meter {
   height: auto;

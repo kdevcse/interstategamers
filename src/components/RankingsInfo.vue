@@ -200,7 +200,7 @@ export default class RankingsInfo extends Vue {
 		background-color: red;
 	}
 	.rankings-info-row.expanded {
-		height: 300px;
+		height: 325px;
 		background-color: #f0f0f5;
 		border-bottom: #2d32af solid 1px;
 	}
