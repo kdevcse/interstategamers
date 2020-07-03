@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="rankings-breakdown">
         <h3>{{reviewer}}'s Scores</h3>
         <RankMeter alt type="Overall" :percentage="scores[0]"></RankMeter>
         <RankMeter type="Gameplay" :percentage="scores[1]"></RankMeter>
@@ -25,7 +25,10 @@ export default class IgContent extends Vue {
 </script>
 
 <style scoped>
+.rankings-breakdown {
+    padding: 0px 15%;
+}
 h3 {
-    margin-bottom: 5px;
+    margin: 5px 0px;
 }
 </style>

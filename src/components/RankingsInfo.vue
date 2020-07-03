@@ -104,10 +104,8 @@ export default class RankingsInfo extends Vue {
 	padding: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.rankings-info-row > div {
-	height: 0;
-	padding: 0;
+	grid-auto-columns: 1fr;
+	overflow: hidden;
 }
 .charts {
 	display: none;
