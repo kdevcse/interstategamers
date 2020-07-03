@@ -63,11 +63,11 @@ export default class RankingRow extends Vue
 
 <style scoped>
 .rankings-table-row {
-	padding: 5px 0px;
 	display: grid;
 	grid-template-columns: minmax(150px, 1fr) minmax(150px, 2fr) repeat(8, minmax(150px, 1fr));
 }
 .rankings-table-row > p {
+	padding: 5px 0px;
 	color: #2d32af;
 	text-overflow: ellipsis;
 	overflow: hidden;

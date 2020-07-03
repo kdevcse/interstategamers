@@ -1,19 +1,24 @@
 <template>
     <div class="rankings-info-row" :class="{expanded: isSelected()}">
 		<div class="breakdown-details">
-			<p class="breakdown-day"></p>
+			<p v-show="isSelected()" class="breakdown-day">{{getReleaseDateTxt()}}</p>
 			<img class="breakdown-img"/>
 			<div class="breakdown-scores"></div>
 		</div>
-		<div></div>
-		<div></div>
+		<RankingsBreakdown  reviewer="Peter" v-show="isSelected()" :scores="peterScores"></RankingsBreakdown>
+		<RankingsBreakdown  reviewer="Kevin" v-show="isSelected()" :scores="kevinScores"></RankingsBreakdown>
 	</div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
+import RankingsBreakdown from '@/components/RankingsBreakdown.vue';
 
-@Component
+@Component({
+	components: {
+		RankingsBreakdown
+	}
+})
 export default class RankingsInfo extends Vue {
 	@Prop() title!: string;
 	@Prop() selected!: string;
@@ -21,21 +26,73 @@ export default class RankingsInfo extends Vue {
 	@Prop() img!: string;
 	@Prop() ign!: number;
 	@Prop() metacritic!: number;
-	@Prop() peterScores!: number[];
-	@Prop() kevinScores!: number[];
+	@Prop() rankInfo!: any;
+
+	peterScores = [];
+	kevinScores = [];
+	chartLoaded = false;
 
 	isSelected() {
 		return this.title === this.selected;
+	}
+
+	getReleaseDateTxt(): string {
+		return `Reviewed ${this.date}`
+	}
+
+	mounted() {
+		this.getScores();
+		this.chartLoaded = true;
+	}
+
+	@Watch('rankInfo')
+	getScores() {
+		let gatherKevinScores: any = [];
+		gatherKevinScores.push(this.rankInfo['Kevin\'s Rating']);
+		gatherKevinScores.push(this.rankInfo['K. Gameplay']);
+		gatherKevinScores.push(this.rankInfo['K. Visuals']);
+		gatherKevinScores.push(this.rankInfo['K. Audio']);
+		gatherKevinScores.push(this.rankInfo['K. Content']);
+
+		let gatherPeterScores: any = [];
+		gatherPeterScores.push(this.rankInfo['Peter\'s Rating']);
+		gatherPeterScores.push(this.rankInfo['P. Gameplay']);
+		gatherPeterScores.push(this.rankInfo['P. Visuals']);
+		gatherPeterScores.push(this.rankInfo['P. Audio']);
+		gatherPeterScores.push(this.rankInfo['P. Content']);
+
+		this.kevinScores = gatherKevinScores;
+		this.peterScores = gatherPeterScores;
+	}
+
+	insertData(person: string) {
+		let scores: number[] = this.peterScores;
+
+		if(person === 'Kevin'){
+			scores = this.kevinScores
+		}
+
+		return {
+			labels: ['Gameplay', 'Visuals', 'Audio', 'Aesthetics', 'Content'],
+			datasets: [{
+				data: [1, 2 ,3, 4, 5]
+			}]
+		}
 	}
 }
 </script>
 
 <style scoped>
 .rankings-info-row {
-	margin-top: -9px; /* idk why either lol */
 	grid-column: 1/-1;
 	height: 0px;
 	transition: height 0.2s ease-out;
+	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.rankings-info-row > div {
+	height: 0;
 	padding: 0;
 }
 .charts {
@@ -46,6 +103,13 @@ export default class RankingsInfo extends Vue {
 .breakdown-day{
 	margin: 0 auto 9px auto;
 	font-size: 15px;
+}
+.breakdown-radar {
+	overflow: hidden;
+	height: 0px;
+	width: 225px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .breakdown-img{
 	max-width: 200px;
@@ -127,6 +191,9 @@ export default class RankingsInfo extends Vue {
 		height: 300px;
 		background-color: #f0f0f5;
 		border-bottom: #2d32af solid 1px;
+	}
+	.rankings-info-row.expanded > .breakdown-radar {
+		height: auto;
 	}
 }
 </style>

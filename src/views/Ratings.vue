@@ -36,6 +36,7 @@
 					:key="`${episode.id}-info`"
 					:title="episode['Ranking Info'].Game"
 					:selected="selectedEpisode"
+					:rankInfo="episode['Ranking Info']"
 					:ign="episode['Ranking Info'].IGN"
 					:metacritic="episode['Ranking Info'].Metacritic">
 				</RankingsInfo>
