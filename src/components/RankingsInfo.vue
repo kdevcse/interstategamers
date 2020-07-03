@@ -7,6 +7,7 @@
 		</div>
 		<RankingsBreakdown  reviewer="Peter" v-show="isSelected()" :scores="peterScores"></RankingsBreakdown>
 		<RankingsBreakdown  reviewer="Kevin" v-show="isSelected()" :scores="kevinScores"></RankingsBreakdown>
+		<RankingsBreakdown  :reviewer="guest" v-if="guest" v-show="isSelected()" :scores="kevinScores"></RankingsBreakdown>
 	</div>
 </template>
 
@@ -30,7 +31,9 @@ export default class RankingsInfo extends Vue {
 
 	peterScores = [];
 	kevinScores = [];
+	guestScores = [];
 	chartLoaded = false;
+	guest = null;
 
 	isSelected() {
 		return this.title === this.selected;
@@ -60,6 +63,17 @@ export default class RankingsInfo extends Vue {
 		gatherPeterScores.push(this.rankInfo['P. Visuals']);
 		gatherPeterScores.push(this.rankInfo['P. Audio']);
 		gatherPeterScores.push(this.rankInfo['P. Content']);
+
+		if(this.rankInfo.Guest) {
+			this.guest = this.rankInfo.Guest;
+			let gatherGuestScores: any = [];
+			gatherGuestScores.push(this.rankInfo['Guest Rating']);
+			gatherGuestScores.push(this.rankInfo['G. Gameplay']);
+			gatherGuestScores.push(this.rankInfo['G. Visuals']);
+			gatherGuestScores.push(this.rankInfo['G. Audio']);
+			gatherGuestScores.push(this.rankInfo['G. Content']);
+			this.guestScores = gatherGuestScores;
+		}
 
 		this.kevinScores = gatherKevinScores;
 		this.peterScores = gatherPeterScores;
