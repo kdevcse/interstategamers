@@ -1,5 +1,252 @@
 [
 	{
+		"updated_at": "2020-06-29T05:00:05.000000-07:00",
+		"type": "full",
+		"token": "FCgiia1Q",
+		"title": "4-11: The Legend of Zelda: Breath of the Wild",
+		"status": "published",
+		"slug": "botw",
+		"season": {
+			"href": "https://api.simplecast.com/seasons/d686df30-ce3d-4523-939f-62ce7e9e8c96",
+			"number": 4
+		},
+		"scheduled_for": null,
+		"published_at": "2020-06-29T05:00:05.000000-07:00",
+		"number": 11,
+		"markers": {
+			"href": "https://api.simplecast.com/episodes/ad2a4e5e-4247-4283-9af1-51e6bde329cb/markers",
+			"collection": [
+				{
+					"offset_seconds": 4145,
+					"offset_milliseconds": 4145000,
+					"name": "Post-roll 1",
+					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
+					"ad_type": "post",
+					"ad_limit": 1
+				},
+				{
+					"offset_seconds": 0,
+					"offset_milliseconds": 0,
+					"name": "Pre-roll 1",
+					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
+					"ad_type": "pre",
+					"ad_limit": 1
+				}
+			]
+		},
+		"is_hidden": false,
+		"image_url": null,
+		"image_path": null,
+		"id": "ad2a4e5e-4247-4283-9af1-51e6bde329cb",
+		"href": "https://api.simplecast.com/episodes/ad2a4e5e-4247-4283-9af1-51e6bde329cb?preview=true",
+		"guid": "d85232fd-9cdd-4aed-baff-8e38590249cb",
+		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/ad2a4e5e-4247-4283-9af1-51e6bde329cb/interstate-gamers-s04e11-the-legend-of-zelda-breath-of-the-wild_tc.mp3",
+		"description": "It's finally here – the review you all may or may not have been waiting for! The boys conclude Season 4 with a wild adventure across Hyrule.",
+		"days_since_release": 4,
+		"analytics": {
+			"href": "https://api.simplecast.com/analytics/downloads?episode=ad2a4e5e-4247-4283-9af1-51e6bde329cb&preview=true"
+		},
+		"finale": true,
+		"Ranking Info": {
+			"Episode": "4-11",
+			"Game": "The Legend of Zelda: Breath of the Wild",
+			"Platform": "Switch",
+			"K. Gameplay": 94,
+			"K. Visuals": 99,
+			"K. Audio": 93,
+			"K. Content": 88,
+			"P. Gameplay": 95,
+			"P. Visuals": 95,
+			"P. Audio": 99,
+			"P. Content": 90,
+			"Episode Number": 49,
+			"G. Gameplay": 0,
+			"G. Visuals": 0,
+			"G. Audio": 0,
+			"G. Content": 0,
+			"IGN": 0,
+			"Metacritic": 0,
+			"Year": 2017,
+			"IG Score": 93.33333333333334,
+			"Kevin's Rating": 92.66666666666667,
+			"Peter's Rating": 94,
+			"Guest Rating": 0,
+			"K. Aesthetics": 96,
+			"P. Aesthetics": 97,
+			"G. Aesthetics": 0,
+			"Gameplay": 94.5,
+			"Aesthetics": 96.5,
+			"Visuals": 97,
+			"Audio": 96,
+			"Content": 89,
+			"rank": 3
+		}
+	},
+	{
+		"updated_at": "2020-06-15T05:00:16.000000-07:00",
+		"type": "full",
+		"token": "6IZzE1zo",
+		"title": "4-10: Pokémon Sword and Shield",
+		"status": "published",
+		"slug": "pss",
+		"season": {
+			"href": "https://api.simplecast.com/seasons/d686df30-ce3d-4523-939f-62ce7e9e8c96",
+			"number": 4
+		},
+		"scheduled_for": null,
+		"published_at": "2020-06-15T05:00:16.000000-07:00",
+		"number": 10,
+		"markers": {
+			"href": "https://api.simplecast.com/episodes/9c407fd1-4a23-4405-bd77-e8bff135905b/markers",
+			"collection": [
+				{
+					"offset_seconds": 3945,
+					"offset_milliseconds": 3945000,
+					"name": "Post-roll 1",
+					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
+					"ad_type": "post",
+					"ad_limit": 1
+				},
+				{
+					"offset_seconds": 0,
+					"offset_milliseconds": 0,
+					"name": "Pre-roll 1",
+					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
+					"ad_type": "pre",
+					"ad_limit": 1
+				}
+			]
+		},
+		"is_hidden": false,
+		"image_url": null,
+		"image_path": null,
+		"id": "9c407fd1-4a23-4405-bd77-e8bff135905b",
+		"href": "https://api.simplecast.com/episodes/9c407fd1-4a23-4405-bd77-e8bff135905b?preview=true",
+		"guid": "bf8341b2-dbcf-4962-9127-9d3f587ea3e9",
+		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/9c407fd1-4a23-4405-bd77-e8bff135905b/46-s4-e10-pokemon-sword-and-shield_tc.mp3",
+		"description": "The latest pair of Pokémon games arrived with plenty of controversy – but now that the smoke has cleared, how do they actually stack up? The boys travel the region of Galar to find out.",
+		"days_since_release": 18,
+		"analytics": {
+			"href": "https://api.simplecast.com/analytics/downloads?episode=9c407fd1-4a23-4405-bd77-e8bff135905b&preview=true"
+		},
+		"Ranking Info": {
+			"Episode": "4-10",
+			"Game": "Pokemon Sword and Shield",
+			"Platform": "Switch",
+			"K. Gameplay": 78,
+			"K. Visuals": 71,
+			"K. Audio": 85,
+			"K. Content": 70,
+			"P. Gameplay": 80,
+			"P. Visuals": 75,
+			"P. Audio": 85,
+			"P. Content": 75,
+			"Episode Number": 48,
+			"G. Gameplay": 0,
+			"G. Visuals": 0,
+			"G. Audio": 0,
+			"G. Content": 0,
+			"IGN": 0,
+			"Metacritic": 0,
+			"Year": 2019,
+			"IG Score": 76.83333333333333,
+			"Kevin's Rating": 75.33333333333333,
+			"Peter's Rating": 78.33333333333333,
+			"Guest Rating": 0,
+			"K. Aesthetics": 78,
+			"P. Aesthetics": 80,
+			"G. Aesthetics": 0,
+			"Gameplay": 79,
+			"Aesthetics": 79,
+			"Visuals": 73,
+			"Audio": 85,
+			"Content": 72.5,
+			"rank": 39
+		}
+	},
+	{
+		"updated_at": "2020-06-01T05:00:03.000000-07:00",
+		"type": "full",
+		"token": "K_00hcm_",
+		"title": "4-9: Burnout 2: Point of Impact",
+		"status": "published",
+		"slug": "bo2",
+		"season": {
+			"href": "https://api.simplecast.com/seasons/d686df30-ce3d-4523-939f-62ce7e9e8c96",
+			"number": 4
+		},
+		"scheduled_for": null,
+		"published_at": "2020-06-01T05:00:03.000000-07:00",
+		"number": 9,
+		"markers": {
+			"href": "https://api.simplecast.com/episodes/6a1a8f94-4835-4ee7-9536-6decabcf3b87/markers",
+			"collection": [
+				{
+					"offset_seconds": 2594,
+					"offset_milliseconds": 2594000,
+					"name": "Post-roll 1",
+					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
+					"ad_type": "post",
+					"ad_limit": 1
+				},
+				{
+					"offset_seconds": 0,
+					"offset_milliseconds": 0,
+					"name": "Pre-roll 1",
+					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
+					"ad_type": "pre",
+					"ad_limit": 1
+				}
+			]
+		},
+		"is_hidden": false,
+		"image_url": null,
+		"image_path": null,
+		"id": "6a1a8f94-4835-4ee7-9536-6decabcf3b87",
+		"href": "https://api.simplecast.com/episodes/6a1a8f94-4835-4ee7-9536-6decabcf3b87?preview=true",
+		"guid": "deaee377-a0c6-406b-88a7-a53c8f890f18",
+		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/6a1a8f94-4835-4ee7-9536-6decabcf3b87/45-s4-e9-burnout-2-point-of-impact_tc.mp3",
+		"description": "The boys speed toward the finish line without regard for life, limb, or property.",
+		"days_since_release": 32,
+		"analytics": {
+			"href": "https://api.simplecast.com/analytics/downloads?episode=6a1a8f94-4835-4ee7-9536-6decabcf3b87&preview=true"
+		},
+		"Ranking Info": {
+			"Episode": "4-9",
+			"Game": "Burnout 2",
+			"Platform": "GC, PS2, XBox",
+			"K. Gameplay": 76,
+			"K. Visuals": 86,
+			"K. Audio": 77,
+			"K. Content": 63,
+			"P. Gameplay": 85,
+			"P. Visuals": 75,
+			"P. Audio": 75,
+			"P. Content": 85,
+			"Episode Number": 47,
+			"G. Gameplay": 0,
+			"G. Visuals": 0,
+			"G. Audio": 0,
+			"G. Content": 0,
+			"IGN": 0,
+			"Metacritic": 0,
+			"Year": 2002,
+			"IG Score": 77.58333333333334,
+			"Kevin's Rating": 73.5,
+			"Peter's Rating": 81.66666666666667,
+			"Guest Rating": 0,
+			"K. Aesthetics": 81.5,
+			"P. Aesthetics": 75,
+			"G. Aesthetics": 0,
+			"Gameplay": 80.5,
+			"Aesthetics": 78.25,
+			"Visuals": 80.5,
+			"Audio": 76,
+			"Content": 74,
+			"rank": 38
+		}
+	},
+	{
 		"updated_at": "2020-05-11T05:00:04.000000-07:00",
 		"type": "full",
 		"token": "t89Or3Dn",
@@ -21,14 +268,16 @@
 					"offset_milliseconds": 3839000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -40,11 +289,10 @@
 		"guid": "1cfc639c-e4b6-45b4-8ab9-1d2313d53ad8",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/88ad4ff0-66da-441a-bec0-3febc56b1ce8/interstate-gamers-s04e08-hollow-knight_tc.mp3",
 		"description": "Owo, what's this – known Metroid expert Ryebread joining the boys for a non-Metroid review? Truly these are interesting times.",
-		"days_since_release": 5,
+		"days_since_release": 53,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=88ad4ff0-66da-441a-bec0-3febc56b1ce8&preview=true"
 		},
-		"finale": true,
 		"Ranking Info": {
 			"Episode": "4-8",
 			"Game": "Hollow Knight",
@@ -78,7 +326,7 @@
 			"Visuals": 92,
 			"Audio": 92.66666666666667,
 			"Content": 94.33333333333333,
-			"rank": 5
+			"rank": 6
 		}
 	},
 	{
@@ -103,14 +351,16 @@
 					"offset_milliseconds": 3711000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -122,7 +372,7 @@
 		"guid": "a1c90db0-e63a-4c94-8698-fc403b67a49d",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/dd57c810-9e0b-4b4d-8e68-3bae7782c77a/interstate-gamers-s04e07-sonic-adventure-2_tc.mp3",
 		"description": "Does this beloved entry in the Sonic series stand the test of time? The boys put on their fastest pairs of red shoes and find out. Spoiler alert: we hope the developers \"Lived and Learned\" from this one.",
-		"days_since_release": 19,
+		"days_since_release": 67,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=dd57c810-9e0b-4b4d-8e68-3bae7782c77a&preview=true"
 		},
@@ -158,7 +408,7 @@
 			"Visuals": 70,
 			"Audio": 67.5,
 			"Content": 77.5,
-			"rank": 38
+			"rank": 41
 		}
 	},
 	{
@@ -183,14 +433,16 @@
 					"offset_milliseconds": 2873000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -202,7 +454,7 @@
 		"guid": "3d4dbf51-3095-4ec5-bc48-5246b09be948",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/5a735a00-aa9e-4870-82ea-686ff330e5b6/interstate-gamers-s04e06-super-mario-odyssey_tc.mp3",
 		"description": "Bowser's back at it again, but this time, his shoes are much nicer than any white Vans. Can the boys successfully pursue him across the globe and foil his latest dastardly plan to kidnap Peach?",
-		"days_since_release": 33,
+		"days_since_release": 81,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=5a735a00-aa9e-4870-82ea-686ff330e5b6&preview=true"
 		},
@@ -263,14 +515,16 @@
 					"offset_milliseconds": 3029000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -282,7 +536,7 @@
 		"guid": "f9e890a0-c48f-439b-b9d8-4e415c01733a",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/390dccc4-d100-4713-a650-cf3480da76d0/interstate-gamers-s04e05-super-metroid_tc.mp3",
 		"description": "Another calassic is incoming. Get ready to zap some Space Pirates!",
-		"days_since_release": 45,
+		"days_since_release": 93,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=390dccc4-d100-4713-a650-cf3480da76d0&preview=true"
 		},
@@ -318,7 +572,7 @@
 			"Visuals": 97,
 			"Audio": 91.5,
 			"Content": 87,
-			"rank": 17
+			"rank": 18
 		}
 	},
 	{
@@ -343,14 +597,16 @@
 					"offset_milliseconds": 3383000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -362,7 +618,7 @@
 		"guid": "f19be56f-b806-48cd-9be9-a8ff2f4473a5",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a91f3630-209b-45bc-8629-69207dd0614e/interstate-gamers-s04e04-diddy-kong-racing_tc.mp3",
 		"description": "It only took us over two years to review the second big N64 kart racing game, but here we are.",
-		"days_since_release": 61,
+		"days_since_release": 109,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=a91f3630-209b-45bc-8629-69207dd0614e&preview=true"
 		},
@@ -398,7 +654,7 @@
 			"Visuals": 80.5,
 			"Audio": 84,
 			"Content": 89.5,
-			"rank": 24
+			"rank": 25
 		}
 	},
 	{
@@ -423,14 +679,16 @@
 					"offset_milliseconds": 3642000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -442,7 +700,7 @@
 		"guid": "188e92cc-c20c-4e57-84c0-3124e412761e",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/24709bf6-7a7c-4ae2-8008-759eec3eb001/interstate-gamers-s04e03-legend-of-zelda-oracle-of-seasons_tc.mp3",
 		"description": "Winter is transitioning to spring, and the boys celebrate the warmth with a seasonally-appropriate entry in the Zelda series.",
-		"days_since_release": 74,
+		"days_since_release": 122,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=24709bf6-7a7c-4ae2-8008-759eec3eb001&preview=true"
 		},
@@ -478,7 +736,7 @@
 			"Visuals": 90,
 			"Audio": 85,
 			"Content": 89,
-			"rank": 25
+			"rank": 26
 		}
 	},
 	{
@@ -503,14 +761,16 @@
 					"offset_milliseconds": 3031000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -522,7 +782,7 @@
 		"guid": "18adb8e6-d7fd-4012-98bd-362e9b8a9b68",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/2cbfd342-f15e-4f43-a854-e071e473a26a/interstate-gamers-s04e02-super-smash-bros-brawl_tc.mp3",
 		"description": "It was only a matter of time before these Smash geeks decided to review a Smash game. Why not tackle the first truly epic game in the series, Super Smash Bros. Brawl?",
-		"days_since_release": 96,
+		"days_since_release": 144,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=2cbfd342-f15e-4f43-a854-e071e473a26a&preview=true"
 		},
@@ -558,7 +818,7 @@
 			"Visuals": 94.5,
 			"Audio": 98.5,
 			"Content": 99,
-			"rank": 14
+			"rank": 15
 		}
 	},
 	{
@@ -583,14 +843,16 @@
 					"offset_milliseconds": 3103000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -602,7 +864,7 @@
 		"guid": "6e53b193-bfe1-4d59-8748-d49a7af68aef",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/bd0e128c-aa5a-452a-a036-2b644da16e39/interstate-gamers-s04e01-mario-party-3_tc.mp3",
 		"description": "It's party time, y'all! The boys start off Season 4 with a rambunctious review courtesy of Mario Party 3.",
-		"days_since_release": 110,
+		"days_since_release": 158,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=bd0e128c-aa5a-452a-a036-2b644da16e39&preview=true"
 		},
@@ -638,7 +900,7 @@
 			"Visuals": 72.5,
 			"Audio": 84.5,
 			"Content": 85.5,
-			"rank": 34
+			"rank": 35
 		}
 	},
 	{
@@ -663,14 +925,16 @@
 					"offset_milliseconds": 4162000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -682,7 +946,7 @@
 		"guid": "7134e612-f011-4222-b558-d06f30aee06d",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/4a5de9c6-e130-4dbd-a392-743341bf460a/interstate_gamers_s03e10_paper_mario_the_thousand_year_door_tc.mp3",
 		"description": "The boys invite special guest Ryan Everitt to the stage to review Paper Mario: The Thousand-Year Door for a fittingly cinematic conclusion to Season 3.",
-		"days_since_release": 250,
+		"days_since_release": 298,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=4a5de9c6-e130-4dbd-a392-743341bf460a&preview=true"
 		},
@@ -720,7 +984,7 @@
 			"Visuals": 93.33333333333333,
 			"Audio": 89.66666666666667,
 			"Content": 93.33333333333333,
-			"rank": 12
+			"rank": 13
 		}
 	},
 	{
@@ -745,14 +1009,16 @@
 					"offset_milliseconds": 2970000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -764,7 +1030,7 @@
 		"guid": "87108983-2c64-4be0-b617-8f1770d80025",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/83b8a9d2-19f9-4351-822c-0051c0e42ef3/interstate_gamers_s03e09_shovel_knight_tc.mp3",
 		"description": "Steel thy shovel! The boys take on the Order of No Quarter in their review of the indie mainstay Shovel Knight.",
-		"days_since_release": 264,
+		"days_since_release": 312,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=83b8a9d2-19f9-4351-822c-0051c0e42ef3&preview=true"
 		},
@@ -800,7 +1066,7 @@
 			"Visuals": 86.5,
 			"Audio": 96.5,
 			"Content": 91.5,
-			"rank": 19
+			"rank": 20
 		}
 	},
 	{
@@ -825,14 +1091,16 @@
 					"offset_milliseconds": 4052000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -844,7 +1112,7 @@
 		"guid": "655d0f4a-5271-475c-a004-acc96a02e0f0",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d2a2028f-859f-47ff-8966-fe5682337b50/interstate_gamers_s03e08_legend_of_zelda_ocarina_of_time_tc.mp3",
 		"description": "After years of training, the boys descend from the mountains of Tibet to present their review of Ocarina of Time.",
-		"days_since_release": 278,
+		"days_since_release": 326,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=d2a2028f-859f-47ff-8966-fe5682337b50&preview=true"
 		},
@@ -880,7 +1148,7 @@
 			"Visuals": 88,
 			"Audio": 100,
 			"Content": 94,
-			"rank": 9
+			"rank": 10
 		}
 	},
 	{
@@ -905,14 +1173,16 @@
 					"offset_milliseconds": 4633000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -924,7 +1194,7 @@
 		"guid": "b0afb38d-a56a-4f9a-b7d3-3e6a6a829d23",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/be30d6fd-9d39-449c-ae6f-a689b73c9771/interstate_gamers_s03e07_perfect_dark_tc.mp3",
 		"description": "Step into the dark with the boys (ooo!) as they throw it back to Perfect Dark, the N64's spiritual successor to GoldenEye 007.",
-		"days_since_release": 292,
+		"days_since_release": 340,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=be30d6fd-9d39-449c-ae6f-a689b73c9771&preview=true"
 		},
@@ -960,7 +1230,7 @@
 			"Visuals": 79,
 			"Audio": 89.5,
 			"Content": 94.5,
-			"rank": 22
+			"rank": 23
 		}
 	},
 	{
@@ -985,14 +1255,16 @@
 					"offset_milliseconds": 4561000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -1004,7 +1276,7 @@
 		"guid": "05e736f4-779b-4a3b-8cf3-397970128c33",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/072ff1e4-05fb-4aa8-8d2f-997870a705b6/interstate_gamers_s03e06_yooka_laylee_tc.mp3",
 		"description": "Did the team at Playtonic Games successfully revive the magic of Banjo-Kazooie with their 2017 game Yooka-Laylee? The boys find out in true buddy-duo fashion.",
-		"days_since_release": 306,
+		"days_since_release": 354,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=072ff1e4-05fb-4aa8-8d2f-997870a705b6&preview=true"
 		},
@@ -1040,7 +1312,7 @@
 			"Visuals": 75.5,
 			"Audio": 79.5,
 			"Content": 71,
-			"rank": 37
+			"rank": 40
 		}
 	},
 	{
@@ -1065,14 +1337,16 @@
 					"offset_milliseconds": 3606000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -1084,7 +1358,7 @@
 		"guid": "34c1c739-e9bf-4526-adc8-be9abea8944b",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/2d4cd585-af56-4459-8e63-92371c870d7d/interstate_gamers_s03e05_age_of_empires_ii_tc.mp3",
 		"description": "The boys decide that it's time (really) for some real-time strategy via the classic PC title Age of Empires II.",
-		"days_since_release": 327,
+		"days_since_release": 375,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=2d4cd585-af56-4459-8e63-92371c870d7d&preview=true"
 		},
@@ -1120,7 +1394,7 @@
 			"Visuals": 82.5,
 			"Audio": 85,
 			"Content": 95,
-			"rank": 16
+			"rank": 17
 		}
 	},
 	{
@@ -1145,14 +1419,16 @@
 					"offset_milliseconds": 5260000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -1164,7 +1440,7 @@
 		"guid": "7ffb6f68-61d7-407f-ae41-0e96d7fcae97",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/fe251278-5ae9-4479-80c4-8115e7cf008e/Interstate_Gamers_S03E04_Fortnite_Battle_Royale_tc.mp3",
 		"description": "Where we droppin', boys? In your ears, of course. Aaron Miller of Yeasty Boys fame joins Kevin and Peter to review a game so popular, even the dinosaurs know about it.",
-		"days_since_release": 340,
+		"days_since_release": 388,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=fe251278-5ae9-4479-80c4-8115e7cf008e&preview=true"
 		},
@@ -1201,7 +1477,7 @@
 			"Visuals": 86.66666666666667,
 			"Audio": 79,
 			"Content": 85.33333333333333,
-			"rank": 27
+			"rank": 28
 		}
 	},
 	{
@@ -1226,14 +1502,16 @@
 					"offset_milliseconds": 3537000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
@@ -1245,7 +1523,7 @@
 		"guid": "d7aa3bd8-cef4-42a3-b344-60d69414c70c",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/47569564-ee34-4452-afe1-161f0f80210f/Interstate_Gamers_S03E03_Kirbys_Adventure_tc.mp3",
 		"description": "Finally, an NES game! Join the boys as they take the highway to Dream Land and explore the Kirby game which set the stage for the series.",
-		"days_since_release": 355,
+		"days_since_release": 403,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=47569564-ee34-4452-afe1-161f0f80210f&preview=true"
 		},
@@ -1281,7 +1559,7 @@
 			"Visuals": 92.5,
 			"Audio": 93,
 			"Content": 85,
-			"rank": 29
+			"rank": 30
 		}
 	},
 	{
@@ -1306,17 +1584,20 @@
 					"offset_milliseconds": 3890000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 296612,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/30bb4332-fe92-47e1-9ff3-a25ee098c47a/1557705732artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/30bb4332-fe92-47e1-9ff3-a25ee098c47a/1557705732artwork.jpg",
@@ -1325,7 +1606,7 @@
 		"guid": "706de79c-ac54-4683-badc-44b6a9269259",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/30bb4332-fe92-47e1-9ff3-a25ee098c47a/055c1bad_tc.mp3",
 		"description": "The boys reach new heights with Celeste, the darling indie platformer that's charmed audiences everywhere.",
-		"days_since_release": 369,
+		"days_since_release": 417,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=30bb4332-fe92-47e1-9ff3-a25ee098c47a&preview=true"
 		},
@@ -1361,7 +1642,7 @@
 			"Visuals": 92,
 			"Audio": 96.5,
 			"Content": 89,
-			"rank": 7
+			"rank": 8
 		}
 	},
 	{
@@ -1386,17 +1667,20 @@
 					"offset_milliseconds": 3344000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 294404,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/b76ccac1-37e8-4c41-9e87-b28b96de2624/1556498655artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/b76ccac1-37e8-4c41-9e87-b28b96de2624/1556498655artwork.jpg",
@@ -1405,7 +1689,7 @@
 		"guid": "d9eb7a3c-c97e-48b7-9e5a-8855a0234419",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/b76ccac1-37e8-4c41-9e87-b28b96de2624/8235483b_tc.mp3",
 		"description": "The boys return from their interstellar vacation to bring you a freshly-imported review of Super Mario Galaxy 2 for the Wii.",
-		"days_since_release": 383,
+		"days_since_release": 431,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=b76ccac1-37e8-4c41-9e87-b28b96de2624&preview=true"
 		},
@@ -1441,7 +1725,7 @@
 			"Visuals": 92.5,
 			"Audio": 95,
 			"Content": 93,
-			"rank": 13
+			"rank": 14
 		}
 	},
 	{
@@ -1466,17 +1750,20 @@
 					"offset_milliseconds": 3186000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 289577,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/314386d3-3a52-4173-9aef-97b3952d8a6d/1554177738artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/314386d3-3a52-4173-9aef-97b3952d8a6d/1554177738artwork.jpg",
@@ -1485,7 +1772,7 @@
 		"guid": "0144c453-87ae-457e-bff3-ddd29116d48e",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/314386d3-3a52-4173-9aef-97b3952d8a6d/2cfbe1b0_tc.mp3",
 		"description": "In their ongoing effort to B O N D with the fans out there, the boys field an array of listener-submitted questions. With topics ranging from speedrunning to special fart powers, you're guaranteed to learn more than you ever cared to know about your hosts!",
-		"days_since_release": 410,
+		"days_since_release": 458,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=314386d3-3a52-4173-9aef-97b3952d8a6d&preview=true"
 		},
@@ -1513,17 +1800,20 @@
 					"offset_milliseconds": 1927000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 280046,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0b786374-6c63-4920-b1a2-d9f9b24c91e8/1551661979artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0b786374-6c63-4920-b1a2-d9f9b24c91e8/1551661979artwork.jpg",
@@ -1532,7 +1822,7 @@
 		"guid": "a41727b2-923d-443b-91d1-4368597b6bf7",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0b786374-6c63-4920-b1a2-d9f9b24c91e8/2e87a5b7_tc.mp3",
 		"description": "It boggles our minds that people are supporting our podcast financially via Patreon, so we sat down with early supporter Simon Webb to chat and to tell him we love him. Topics include zombie survival techniques, desert island game picks, and an embarrassing story from Kevin's past.",
-		"days_since_release": 439,
+		"days_since_release": 487,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=0b786374-6c63-4920-b1a2-d9f9b24c91e8&preview=true"
 		}
@@ -1559,17 +1849,20 @@
 					"offset_milliseconds": 4958000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 268670,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a63ab80a-3ace-474e-b03a-66c152dc13dc/1549785655artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a63ab80a-3ace-474e-b03a-66c152dc13dc/1549785655artwork.jpg",
@@ -1578,7 +1871,7 @@
 		"guid": "6177cf82-f1ac-43c1-8953-2efbbfacb0fd",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a63ab80a-3ace-474e-b03a-66c152dc13dc/97f3ab44_tc.mp3",
 		"description": "The boys end Season 2 not with bang, but a tick-tock. Jason Tate of Yeasty Boys fame joins in for a review of the mysterious Majora's Mask chapter of the Legend of Zelda.",
-		"days_since_release": 460,
+		"days_since_release": 508,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=a63ab80a-3ace-474e-b03a-66c152dc13dc&preview=true"
 		},
@@ -1640,17 +1933,20 @@
 					"offset_milliseconds": 5201000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 259995,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/20c96613-4f8b-42c9-8f4b-c8c8bdff76ef/1548634781artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/20c96613-4f8b-42c9-8f4b-c8c8bdff76ef/1548634781artwork.jpg",
@@ -1659,7 +1955,7 @@
 		"guid": "53a69011-5279-4b1a-8c9a-9cb54d42c3ae",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/20c96613-4f8b-42c9-8f4b-c8c8bdff76ef/712b4a9a_tc.mp3",
 		"description": "Joined again(!) by special guest Ryan \"Ryebread\" Everitt, the boys step onto the surface of Tallon IV to explore the depths of Metroid Prime. ",
-		"days_since_release": 474,
+		"days_since_release": 522,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=20c96613-4f8b-42c9-8f4b-c8c8bdff76ef&preview=true"
 		},
@@ -1696,7 +1992,7 @@
 			"Visuals": 92,
 			"Audio": 95.33333333333333,
 			"Content": 93,
-			"rank": 6
+			"rank": 7
 		}
 	},
 	{
@@ -1721,17 +2017,20 @@
 					"offset_milliseconds": 4176000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 251283,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0e2d88e6-0297-4913-9725-2b2cad4c07f3/1547436833artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0e2d88e6-0297-4913-9725-2b2cad4c07f3/1547436833artwork.jpg",
@@ -1740,7 +2039,7 @@
 		"guid": "0bbd4a2b-3ecc-43b9-88ef-eda3330ec4f9",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/0e2d88e6-0297-4913-9725-2b2cad4c07f3/e7a86041_tc.mp3",
 		"description": "With the help of special guest and new IG family member (literally!) dave_s_k, the boys go spelunking in the wondrous world of Cave Story.",
-		"days_since_release": 488,
+		"days_since_release": 536,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=0e2d88e6-0297-4913-9725-2b2cad4c07f3&preview=true"
 		},
@@ -1777,7 +2076,7 @@
 			"Visuals": 85,
 			"Audio": 90.33333333333333,
 			"Content": 93.33333333333333,
-			"rank": 15
+			"rank": 16
 		}
 	},
 	{
@@ -1802,17 +2101,20 @@
 					"offset_milliseconds": 4683000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 241615,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/4216e2c2-b8d2-44ce-9e94-806aa840a75e/1545026500artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/4216e2c2-b8d2-44ce-9e94-806aa840a75e/1545026500artwork.jpg",
@@ -1821,7 +2123,7 @@
 		"guid": "673193e2-96c0-4cc7-b531-48620354d38c",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/4216e2c2-b8d2-44ce-9e94-806aa840a75e/792e2a6c_tc.mp3",
 		"description": "After teasing you back in Season 1 with a review of the Pokémon Stadium spinoff game, the boys finally Tackle the mainline series with FireRed and LeafGreen.",
-		"days_since_release": 516,
+		"days_since_release": 564,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=4216e2c2-b8d2-44ce-9e94-806aa840a75e&preview=true"
 		},
@@ -1857,7 +2159,7 @@
 			"Visuals": 87.5,
 			"Audio": 87.5,
 			"Content": 90,
-			"rank": 21
+			"rank": 22
 		}
 	},
 	{
@@ -1882,17 +2184,20 @@
 					"offset_milliseconds": 2897000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 234488,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/40a2d915-c74f-4554-9052-132213cc0918/1543726282artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/40a2d915-c74f-4554-9052-132213cc0918/1543726282artwork.jpg",
@@ -1901,7 +2206,7 @@
 		"guid": "9f22c9f0-7657-4206-89ea-9d6b3ec8640f",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/40a2d915-c74f-4554-9052-132213cc0918/64cf28a7_tc.mp3",
 		"description": "At first I typed an intro that packed in every monkey-related pun I could think of, but it was pretty obnoxious. Anyway, the boys play Super Monkey Ball 2 for the Nintendo GameCube.",
-		"days_since_release": 530,
+		"days_since_release": 578,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=40a2d915-c74f-4554-9052-132213cc0918&preview=true"
 		},
@@ -1937,7 +2242,7 @@
 			"Visuals": 78.5,
 			"Audio": 70,
 			"Content": 87.5,
-			"rank": 35
+			"rank": 36
 		}
 	},
 	{
@@ -1962,17 +2267,20 @@
 					"offset_milliseconds": 4206000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 232162,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/770b4b69-a030-4cef-8b90-df6c2cf92d5c/1543250275artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/770b4b69-a030-4cef-8b90-df6c2cf92d5c/1543250275artwork.jpg",
@@ -1981,7 +2289,7 @@
 		"guid": "def764a7-1eaf-4484-85d6-d7f5e936d14a",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/770b4b69-a030-4cef-8b90-df6c2cf92d5c/865c54d6_tc.mp3",
 		"description": "The boys join their good buddies Toby and Goobz on the Secret Levels podcast to chat about Mega Man X, video games in general, and the origins of their respective shows!",
-		"days_since_release": 537,
+		"days_since_release": 585,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=770b4b69-a030-4cef-8b90-df6c2cf92d5c&preview=true"
 		}
@@ -2008,17 +2316,20 @@
 					"offset_milliseconds": 5351000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 226159,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d3680d21-6a46-40d2-b426-748bda83fbee/1542001914artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d3680d21-6a46-40d2-b426-748bda83fbee/1542001914artwork.jpg",
@@ -2027,7 +2338,7 @@
 		"guid": "0d7370f8-5298-4d9b-9a75-aa7f52f26f96",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d3680d21-6a46-40d2-b426-748bda83fbee/6ef6b5fe_tc.mp3",
 		"description": "The boys take on the Mavericks with the help of Matt (a.k.a. Clubfrills), our first special guest of our second season.",
-		"days_since_release": 551,
+		"days_since_release": 599,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=d3680d21-6a46-40d2-b426-748bda83fbee&preview=true"
 		},
@@ -2064,7 +2375,7 @@
 			"Visuals": 90.66666666666667,
 			"Audio": 86.33333333333333,
 			"Content": 84,
-			"rank": 28
+			"rank": 29
 		}
 	},
 	{
@@ -2089,17 +2400,20 @@
 					"offset_milliseconds": 4171000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 220011,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/def34029-bd61-41f6-8b9a-3d5e074b9e17/1540785198artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/def34029-bd61-41f6-8b9a-3d5e074b9e17/1540785198artwork.jpg",
@@ -2108,7 +2422,7 @@
 		"guid": "6df841c9-c728-4976-9eca-2f9f18c1edbf",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/def34029-bd61-41f6-8b9a-3d5e074b9e17/778a930e_tc.mp3",
 		"description": "Your scaredy-cat co-hosts bring you a special episode to give you that Halloween feel: a review of a truly frightening horror game, Luigi's Mansion.",
-		"days_since_release": 565,
+		"days_since_release": 613,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=def34029-bd61-41f6-8b9a-3d5e074b9e17&preview=true"
 		},
@@ -2144,7 +2458,7 @@
 			"Visuals": 85,
 			"Audio": 91,
 			"Content": 74,
-			"rank": 36
+			"rank": 37
 		}
 	},
 	{
@@ -2169,17 +2483,20 @@
 					"offset_milliseconds": 3625000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 212148,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/368326cb-f122-4feb-9245-1d032d344304/1539568426artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/368326cb-f122-4feb-9245-1d032d344304/1539568426artwork.jpg",
@@ -2188,7 +2505,7 @@
 		"guid": "fee43be4-e546-4c44-b0f2-1f43e0bc6675",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/368326cb-f122-4feb-9245-1d032d344304/ee7263fd_tc.mp3",
 		"description": "Wanna party tonight? The boys got you covered with this review of Chopper Attack, a (ahem) classic N64 title.",
-		"days_since_release": 579,
+		"days_since_release": 627,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=368326cb-f122-4feb-9245-1d032d344304&preview=true"
 		},
@@ -2224,7 +2541,7 @@
 			"Visuals": 57.5,
 			"Audio": 77.5,
 			"Content": 62.5,
-			"rank": 39
+			"rank": 42
 		}
 	},
 	{
@@ -2249,17 +2566,20 @@
 					"offset_milliseconds": 1461000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 208327,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/56318819-37a7-44a0-b38f-bdbafcd7d3d5/1538950695artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/56318819-37a7-44a0-b38f-bdbafcd7d3d5/1538950695artwork.jpg",
@@ -2268,7 +2588,7 @@
 		"guid": "67cf1229-caa4-4423-bc3d-786b4d478b76",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/56318819-37a7-44a0-b38f-bdbafcd7d3d5/3cc4a70f_tc.mp3",
 		"description": "The boys look through the lens of 20/20 hindsight to correct the mistakes of their past. (I'm being melodramatic – we just tweaked ratings for some games, mostly from season 1.) Enjoy this mini-episode!",
-		"days_since_release": 586,
+		"days_since_release": 634,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=56318819-37a7-44a0-b38f-bdbafcd7d3d5&preview=true"
 		}
@@ -2295,17 +2615,20 @@
 					"offset_milliseconds": 3600000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 204245,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/9d29afbe-c607-4946-a0af-26ba0487238d/1538355728artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/9d29afbe-c607-4946-a0af-26ba0487238d/1538355728artwork.jpg",
@@ -2314,7 +2637,7 @@
 		"guid": "4caab93d-f566-419f-906d-1f119fe314b8",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/9d29afbe-c607-4946-a0af-26ba0487238d/0beace37_tc.mp3",
 		"description": "The boys get down to (monkey) business with two very different perspectives on Rare's premiere primate platformer, Donkey Kong Country.",
-		"days_since_release": 593,
+		"days_since_release": 641,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=9d29afbe-c607-4946-a0af-26ba0487238d&preview=true"
 		},
@@ -2350,7 +2673,7 @@
 			"Visuals": 81,
 			"Audio": 91.5,
 			"Content": 80,
-			"rank": 30
+			"rank": 31
 		}
 	},
 	{
@@ -2375,17 +2698,20 @@
 					"offset_milliseconds": 3677000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 198652,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/5914151f-c9a2-4ebb-80b9-ef506e458bbe/1537149869artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/5914151f-c9a2-4ebb-80b9-ef506e458bbe/1537149869artwork.jpg",
@@ -2394,7 +2720,7 @@
 		"guid": "1f434019-bf39-486b-ad60-63dad167794b",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/5914151f-c9a2-4ebb-80b9-ef506e458bbe/40a84fb7_tc.mp3",
 		"description": "What a save! The boys review a modern, non-Fortnite game that's sure to satisfy your adrenaline cravings – the esteemed and ever-popular Rocket League.",
-		"days_since_release": 607,
+		"days_since_release": 655,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=5914151f-c9a2-4ebb-80b9-ef506e458bbe&preview=true"
 		},
@@ -2430,7 +2756,7 @@
 			"Visuals": 92.5,
 			"Audio": 80,
 			"Content": 87.5,
-			"rank": 26
+			"rank": 27
 		}
 	},
 	{
@@ -2455,17 +2781,20 @@
 					"offset_milliseconds": 4191000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 190908,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d01d38da-0669-4eaf-b89a-916b2a898619/1536010154artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d01d38da-0669-4eaf-b89a-916b2a898619/1536010154artwork.jpg",
@@ -2474,7 +2803,7 @@
 		"guid": "9f17af6e-b8dc-4b66-adbd-0ab383d9b70c",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/d01d38da-0669-4eaf-b89a-916b2a898619/720fe565_tc.mp3",
 		"description": "The boys are back on the road! Season 2 begins with a first-time-playing perspective on A Link to the Past, one of the most-admired games in the illustrious Legend of Zelda franchise.",
-		"days_since_release": 620,
+		"days_since_release": 668,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=d01d38da-0669-4eaf-b89a-916b2a898619&preview=true"
 		},
@@ -2510,7 +2839,7 @@
 			"Visuals": 93.5,
 			"Audio": 92,
 			"Content": 96,
-			"rank": 3
+			"rank": 4
 		}
 	},
 	{
@@ -2535,17 +2864,20 @@
 					"offset_milliseconds": 7488000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 161144,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/50f69360-2339-4593-b6a8-3d366ca5daea/1536009369artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/50f69360-2339-4593-b6a8-3d366ca5daea/1536009369artwork.jpg",
@@ -2554,7 +2886,7 @@
 		"guid": "e2ecf683-3804-451f-801c-9abc88d4bbca",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/50f69360-2339-4593-b6a8-3d366ca5daea/f38fb03e_tc.mp3",
 		"description": "The boys take a break from their break to discuss their impressions of E3 2018 with the help of returning guest Ryan Everitt! Spoiler alert: we spend 30 minutes fanboying over Super Smash Bros. Ultimate.",
-		"days_since_release": 690,
+		"days_since_release": 738,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=50f69360-2339-4593-b6a8-3d366ca5daea&preview=true"
 		},
@@ -2582,17 +2914,20 @@
 					"offset_milliseconds": 4668000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 148179,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/ed5bba2e-6e23-4f37-a46e-cb9572a0a7c1/1536009296artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/ed5bba2e-6e23-4f37-a46e-cb9572a0a7c1/1536009296artwork.jpg",
@@ -2601,7 +2936,7 @@
 		"guid": "2709d7e0-b400-4cd4-ba4e-6c4e3aa1638b",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/ed5bba2e-6e23-4f37-a46e-cb9572a0a7c1/9d66b570_tc.mp3",
 		"description": "The boys close out Season 1 with a game that's actually from this decade! Grab your farming tools and fishing rod, because it's time to visit Stardew Valley.",
-		"days_since_release": 726,
+		"days_since_release": 774,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=ed5bba2e-6e23-4f37-a46e-cb9572a0a7c1&preview=true"
 		},
@@ -2637,7 +2972,7 @@
 			"Visuals": 87.5,
 			"Audio": 89,
 			"Content": 95.5,
-			"rank": 11
+			"rank": 12
 		}
 	},
 	{
@@ -2662,17 +2997,20 @@
 					"offset_milliseconds": 4906000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 143631,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a29ef33c-7a07-4bd2-b6a4-37284e48a01b/1536009278artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a29ef33c-7a07-4bd2-b6a4-37284e48a01b/1536009278artwork.jpg",
@@ -2681,7 +3019,7 @@
 		"guid": "3fc68ac7-abe8-481b-bf7f-5fb665b2c4bd",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/a29ef33c-7a07-4bd2-b6a4-37284e48a01b/f82efb44_tc.mp3",
 		"description": "Hup, two, three, four! The boys marvel at the piece of platforming perfection that is Banjo-Kazooie for the Nintendo 64.",
-		"days_since_release": 740,
+		"days_since_release": 788,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=a29ef33c-7a07-4bd2-b6a4-37284e48a01b&preview=true"
 		},
@@ -2717,7 +3055,7 @@
 			"Visuals": 91.5,
 			"Audio": 96.5,
 			"Content": 93,
-			"rank": 8
+			"rank": 9
 		}
 	},
 	{
@@ -2742,17 +3080,20 @@
 					"offset_milliseconds": 5393000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 137240,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e0b216f8-58ba-4a8d-9db0-3ff41e4897e1/1536009318artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e0b216f8-58ba-4a8d-9db0-3ff41e4897e1/1536009318artwork.jpg",
@@ -2761,7 +3102,7 @@
 		"guid": "3a4b1560-8283-4648-abb4-5a71b7ba0f68",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e0b216f8-58ba-4a8d-9db0-3ff41e4897e1/f30b0576_tc.mp3",
 		"description": "Join real-life professional skaters KSlugs and deal_4_real as they review the very game which brought skating to the masses – Tony Hawk's Pro Skater. Shred the gnar!",
-		"days_since_release": 754,
+		"days_since_release": 802,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=e0b216f8-58ba-4a8d-9db0-3ff41e4897e1&preview=true"
 		},
@@ -2797,7 +3138,7 @@
 			"Visuals": 75,
 			"Audio": 81.5,
 			"Content": 81,
-			"rank": 33
+			"rank": 34
 		}
 	},
 	{
@@ -2822,17 +3163,20 @@
 					"offset_milliseconds": 5268000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 132726,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8eff73c4-276d-4187-a721-a3521d6b755b/1536009303artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8eff73c4-276d-4187-a721-a3521d6b755b/1536009303artwork.jpg",
@@ -2841,7 +3185,7 @@
 		"guid": "55a0665d-e042-49dc-ad44-ebe5137bc3c5",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8eff73c4-276d-4187-a721-a3521d6b755b/70e2583e_tc.mp3",
 		"description": "Gotta critique 'em all! The boys review Pokémon Stadium, an N64 game darling to PokéFans the world over.",
-		"days_since_release": 768,
+		"days_since_release": 816,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=8eff73c4-276d-4187-a721-a3521d6b755b&preview=true"
 		},
@@ -2877,7 +3221,7 @@
 			"Visuals": 90,
 			"Audio": 82.5,
 			"Content": 80.5,
-			"rank": 32
+			"rank": 33
 		}
 	},
 	{
@@ -2902,17 +3246,20 @@
 					"offset_milliseconds": 53000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 129811,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8190703e-4a42-4eb6-aaef-db745c5cd214/1536009225artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8190703e-4a42-4eb6-aaef-db745c5cd214/1536009225artwork.jpg",
@@ -2921,7 +3268,7 @@
 		"guid": "58bc1970-5b6e-4bac-9be0-6e4d43a52809",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/8190703e-4a42-4eb6-aaef-db745c5cd214/9fa77d48_tc.mp3",
 		"description": "The boys are excited to announce the Interstate Insiders program! Our biggest fans can enjoy early access to a ton of new material we've been working on, like videos, live streams, and more. Tune in for details!",
-		"days_since_release": 776,
+		"days_since_release": 824,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=8190703e-4a42-4eb6-aaef-db745c5cd214&preview=true"
 		}
@@ -2948,17 +3295,20 @@
 					"offset_milliseconds": 5048000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 129119,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/c77ee3eb-02c1-4649-a65d-57cd6d434a93/1536009266artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/c77ee3eb-02c1-4649-a65d-57cd6d434a93/1536009266artwork.jpg",
@@ -2967,7 +3317,7 @@
 		"guid": "45d6d4c6-1fce-4382-9c03-d5f599e3a72f",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/c77ee3eb-02c1-4649-a65d-57cd6d434a93/53bcc623_tc.mp3",
 		"description": "The boys tackle one of the most legendary games for one of the most legendary consoles – Super Mario World for the Super Nintendo.",
-		"days_since_release": 780,
+		"days_since_release": 828,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=c77ee3eb-02c1-4649-a65d-57cd6d434a93&preview=true"
 		},
@@ -3003,7 +3353,7 @@
 			"Visuals": 93.5,
 			"Audio": 90,
 			"Content": 93.5,
-			"rank": 3
+			"rank": 4
 		}
 	},
 	{
@@ -3028,17 +3378,20 @@
 					"offset_milliseconds": 6748000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 123687,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/bbbd00eb-7c01-4918-99a9-584ff73ae56f/1536009249artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/bbbd00eb-7c01-4918-99a9-584ff73ae56f/1536009249artwork.jpg",
@@ -3047,7 +3400,7 @@
 		"guid": "f4935630-c4c6-4a22-8ee1-48e54ccbaef5",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/bbbd00eb-7c01-4918-99a9-584ff73ae56f/c645febf_tc.mp3",
 		"description": "In this Kraid-sized episode, the boys recruit resident Metroid expert Ryan Everitt to help them navigate the labyrinth of Metroid: Zero Mission for the Game Boy Advance.",
-		"days_since_release": 796,
+		"days_since_release": 844,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=bbbd00eb-7c01-4918-99a9-584ff73ae56f&preview=true"
 		},
@@ -3084,7 +3437,7 @@
 			"Visuals": 93.33333333333333,
 			"Audio": 92,
 			"Content": 84.33333333333333,
-			"rank": 20
+			"rank": 21
 		}
 	},
 	{
@@ -3109,17 +3462,20 @@
 					"offset_milliseconds": 4315000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 118254,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e88faa84-867c-4b28-9ed8-ee7ae87a8ece/1536009231artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e88faa84-867c-4b28-9ed8-ee7ae87a8ece/1536009231artwork.jpg",
@@ -3128,7 +3484,7 @@
 		"guid": "9b747de5-933c-4937-81c8-6f571c812465",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e88faa84-867c-4b28-9ed8-ee7ae87a8ece/3ddee2bc_tc.mp3",
 		"description": "The boys jump into the aughts to review Kirby and the Amazing Mirror for the Game Boy Advance.",
-		"days_since_release": 810,
+		"days_since_release": 858,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=e88faa84-867c-4b28-9ed8-ee7ae87a8ece&preview=true"
 		},
@@ -3164,7 +3520,7 @@
 			"Visuals": 89,
 			"Audio": 86.5,
 			"Content": 89.5,
-			"rank": 23
+			"rank": 24
 		}
 	},
 	{
@@ -3189,17 +3545,20 @@
 					"offset_milliseconds": 4778000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 110733,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/62bf6dd6-59e8-4a02-a6d4-8ad45166625d/1536009212artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/62bf6dd6-59e8-4a02-a6d4-8ad45166625d/1536009212artwork.jpg",
@@ -3208,7 +3567,7 @@
 		"guid": "7b4d81c1-3b5f-45af-8d6a-8a2dee67d2b9",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/62bf6dd6-59e8-4a02-a6d4-8ad45166625d/070743b0_tc.mp3",
 		"description": "Hold onto your harnesses, because this one's a doozy! The boys review a PC classic in RollerCoaster Tycoon. ",
-		"days_since_release": 831,
+		"days_since_release": 879,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=62bf6dd6-59e8-4a02-a6d4-8ad45166625d&preview=true"
 		},
@@ -3244,7 +3603,7 @@
 			"Visuals": 90,
 			"Audio": 82.5,
 			"Content": 90,
-			"rank": 18
+			"rank": 19
 		}
 	},
 	{
@@ -3269,17 +3628,20 @@
 					"offset_milliseconds": 4204000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 106820,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/6030baf2-0516-408e-bc7a-0b51fc7ceae8/1536009166artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/6030baf2-0516-408e-bc7a-0b51fc7ceae8/1536009166artwork.jpg",
@@ -3288,7 +3650,7 @@
 		"guid": "e2b603bc-9f7b-46cc-b114-c4c40787e868",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/6030baf2-0516-408e-bc7a-0b51fc7ceae8/127f8309_tc.mp3",
 		"description": "The boys break down another N64 classic in Star Fox 64.",
-		"days_since_release": 846,
+		"days_since_release": 894,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=6030baf2-0516-408e-bc7a-0b51fc7ceae8&preview=true"
 		},
@@ -3324,7 +3686,7 @@
 			"Visuals": 91.5,
 			"Audio": 94,
 			"Content": 87,
-			"rank": 10
+			"rank": 11
 		}
 	},
 	{
@@ -3349,17 +3711,20 @@
 					"offset_milliseconds": 3993000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 103665,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/613d292f-46c9-4eb5-8a10-650e578eef98/1536009148artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/613d292f-46c9-4eb5-8a10-650e578eef98/1536009148artwork.jpg",
@@ -3368,7 +3733,7 @@
 		"guid": "d0295df8-9ce5-4bc0-ab87-56300c97e56f",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/613d292f-46c9-4eb5-8a10-650e578eef98/d17c5991_tc.mp3",
 		"description": "The boys review Mario Kart 64 in their inaugural episode.",
-		"days_since_release": 860,
+		"days_since_release": 908,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=613d292f-46c9-4eb5-8a10-650e578eef98&preview=true"
 		},
@@ -3404,7 +3769,7 @@
 			"Visuals": 82,
 			"Audio": 88.5,
 			"Content": 80.5,
-			"rank": 30
+			"rank": 31
 		}
 	},
 	{
@@ -3429,17 +3794,20 @@
 					"offset_milliseconds": 37000,
 					"name": "Post-roll 1",
 					"id": "ae07f08c-b348-4924-b976-497030cb8c34",
-					"ad_type": "post"
+					"ad_type": "post",
+					"ad_limit": 1
 				},
 				{
 					"offset_seconds": 0,
 					"offset_milliseconds": 0,
 					"name": "Pre-roll 1",
 					"id": "fe8a98b9-1f8d-491b-82ab-f6a59b91eb1a",
-					"ad_type": "pre"
+					"ad_type": "pre",
+					"ad_limit": 1
 				}
 			]
 		},
+		"legacy_id": 198251,
 		"is_hidden": false,
 		"image_url": "https://cdn.simplecast.com/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e8ed045d-938b-4104-b8a2-8d98e015680e/1536958547artwork.jpg",
 		"image_path": "/images/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e8ed045d-938b-4104-b8a2-8d98e015680e/1536958547artwork.jpg",
@@ -3448,7 +3816,7 @@
 		"guid": "2d8e6e2b-2cb8-4b24-81f5-0c882b346105",
 		"enclosure_url": "https://dts.podtrac.com/redirect.mp3/cdn.simplecast.com/audio/ce9369/ce93694b-1ad6-421b-af90-5a35ac2d1430/e8ed045d-938b-4104-b8a2-8d98e015680e/de3f727a_tc.mp3",
 		"description": "The boys record a promotional trailer for the Interstate Gamers podcast and tell you what the show is all about!",
-		"days_since_release": 866,
+		"days_since_release": 914,
 		"analytics": {
 			"href": "https://api.simplecast.com/analytics/downloads?episode=e8ed045d-938b-4104-b8a2-8d98e015680e&preview=true"
 		}
