@@ -102,7 +102,9 @@ export default class HomeRanking extends Vue {
 .progress-background {
   background-color: #f1f1f1;
   width: 100%;
+  border: 2px solid;
   border-radius: 4px;
+  padding: 2px;
 }
 .progress-foreground {
   height: 33px;
