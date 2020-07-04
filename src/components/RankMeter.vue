@@ -42,6 +42,7 @@ export default class RankMeter extends Vue {
   padding: 1px 0px;
 }
 .progress-background {
+  padding: 1px;
   margin-left: auto;
   margin-right: auto;
   height: 24px;
@@ -49,7 +50,8 @@ export default class RankMeter extends Vue {
   border-radius: 5px;
 }
 .progress-foreground {
-  height: 100%;
+  height: 18px;
+  border-radius: 3px;
   background-color: #2d32af;
 }
 .progress-background.red {
