@@ -1,9 +1,18 @@
 <template>
     <div class="rankings-info-row" :class="{expanded: isSelected()}">
-		<div class="breakdown-details">
-			<p v-show="isSelected()" class="breakdown-day">{{getReleaseDateTxt()}}</p>
+		<div v-show="isSelected()" class="breakdown-details">
+			<p class="breakdown-day">{{getReleaseDateTxt()}}</p>
 			<img class="breakdown-img"/>
-			<div class="breakdown-scores"></div>
+			<div class="breakdown-scores">
+				<div class="critic-section">
+					<img class="critic-logo" src="../assets/images/meta_logo.png"/>
+					<span>{{metacritic}}</span>
+				</div>
+				<div class="critic-section">
+					<img class="critic-logo" src="../assets/images/ign_logo.png"/>
+					<span>{{ign}}</span>
+				</div>
+			</div>
 		</div>
 		<RankingsBreakdown  reviewer="Peter" v-show="isSelected()" :scores="peterScores"></RankingsBreakdown>
 		<RankingsBreakdown  reviewer="Kevin" v-show="isSelected()" :scores="kevinScores"></RankingsBreakdown>
@@ -80,21 +89,6 @@ export default class RankingsInfo extends Vue {
 		this.kevinScores = gatherKevinScores;
 		this.peterScores = gatherPeterScores;
 	}
-
-	insertData(person: string) {
-		let scores: number[] = this.peterScores;
-
-		if(person === 'Kevin'){
-			scores = this.kevinScores
-		}
-
-		return {
-			labels: ['Gameplay', 'Visuals', 'Audio', 'Aesthetics', 'Content'],
-			datasets: [{
-				data: [1, 2 ,3, 4, 5]
-			}]
-		}
-	}
 }
 </script>
 
@@ -114,18 +108,11 @@ export default class RankingsInfo extends Vue {
 	transition: height 2s linear;
 	align-items: center;
 }
-.breakdown-day{
+.breakdown-day {
 	margin: 0 auto 9px auto;
 	font-size: 15px;
 }
-.breakdown-radar {
-	overflow: hidden;
-	height: 0px;
-	width: 225px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.breakdown-img{
+.breakdown-img {
 	max-width: 200px;
 	max-height: 188px;
 	margin-left: auto;
@@ -133,17 +120,31 @@ export default class RankingsInfo extends Vue {
 	border-radius: 3px;
 	align-self: center;
 }
-.breakdown-scores{
+.breakdown-details {
+	padding: 0 10%;
+	overflow: hidden;
+}
+.breakdown-scores {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 2px;
+	display: grid;
+	grid-template-columns: 50% 50%;
 }
-.meta-container, .ign-container{
+.critic-logo {
+	height: 30px;
+	width: 30px;
+	margin-right: 5px;
+	justify-self: center;
+}
+.critic-section {
+	justify-items: center;
+}
+.meta-container, .ign-container {
 	align-items: center;
 	align-self: center;
 	display: inline-flex;
 }
-.meta-logo, .ign-logo{
+.meta-logo, .ign-logo {
 	height: 30px;
 	width: 30px;
 	margin-right: 5px;
