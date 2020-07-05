@@ -5,7 +5,7 @@
     <h1 class='rank-header' id='ig-content-rank-game-overall'>
       Overall score {{getOverall.toFixed(2)}}/100
     </h1>
-    <div class='progress-background'>
+    <div class='progress-background overall'>
       <div
         :style="{width: getOverall + '%'}"
         class='progress-foreground'
@@ -105,6 +105,10 @@ export default class HomeRanking extends Vue {
   border: 2px solid;
   border-radius: 4px;
   padding: 2px;
+  overflow: hidden;
+}
+.progress-background.overall {
+  border-color: red;
 }
 .progress-foreground {
   height: 33px;
