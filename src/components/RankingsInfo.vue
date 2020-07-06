@@ -111,14 +111,14 @@ export default class RankingsInfo extends Vue {
 	align-items: center;
 }
 .breakdown-day {
-	margin: 5px 0px;
+	margin: 5px 0px 10px 0px;
 }
 .breakdown-img {
 	max-width: 200px;
 	max-height: 188px;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 3px;
+	border-radius: 6px;
 	align-self: center;
 }
 .breakdown-details {
@@ -137,6 +137,7 @@ export default class RankingsInfo extends Vue {
 	width: 30px;
 	margin-right: 5px;
 	margin-left: auto;
+	margin-top: 5px;
 }
 .critic-section {
     display: inline-flex;
@@ -199,7 +200,7 @@ export default class RankingsInfo extends Vue {
 		background-color: red;
 	}
 	.rankings-info-row.expanded {
-		height: 325px;
+		height: 350px;
 		opacity: 1;
 		background-color: #f0f0f5;
 		border-bottom: #2d32af solid 1px;
