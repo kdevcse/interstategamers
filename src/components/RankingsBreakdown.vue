@@ -26,7 +26,11 @@ export default class IgContent extends Vue {
 
 <style scoped>
 .rankings-breakdown {
-    padding: 0px 15%;
+    margin: 0px 5%;
+    padding: 16px 8% 20px 8%;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px #777;
 }
 h3 {
     margin: 5px 0px;

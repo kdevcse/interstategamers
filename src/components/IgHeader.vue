@@ -190,7 +190,7 @@ header {
     color: #2d32af;
     font-size: 15px;
     padding: 7px;
-    border-radius: 4px;
+    border-radius: 6px;
     background-color: white;
   }
   #ig-header-left-trailer > svg {

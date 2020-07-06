@@ -103,7 +103,7 @@ export default class HomeRanking extends Vue {
   background-color: #f1f1f1;
   width: 100%;
   border: 2px solid;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 2px;
   overflow: hidden;
 }
