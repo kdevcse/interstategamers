@@ -2,15 +2,16 @@
     <div class="rankings-info-row" :class="{expanded: isSelected()}">
 		<div v-show="isSelected()" class="breakdown-details">
 			<p class="breakdown-day">{{getReleaseDateTxt()}}</p>
-			<img class="breakdown-img"/>
+			<img v-if="img" class="breakdown-img" :src="getImg()"/>
+			<img v-else class="breakdown-img" src="../assets/images/Main.png"/>
 			<div class="breakdown-scores">
 				<div class="critic-section">
 					<img class="critic-logo" src="../assets/images/meta_logo.png"/>
-					<span>{{metacritic}}</span>
+					<p class="critic-score">{{metacritic}}</p>
 				</div>
 				<div class="critic-section">
 					<img class="critic-logo" src="../assets/images/ign_logo.png"/>
-					<span>{{ign}}</span>
+					<p class="critic-score">{{ign}}</p>
 				</div>
 			</div>
 		</div>
@@ -44,6 +45,15 @@ export default class RankingsInfo extends Vue {
 	chartLoaded = false;
 	guest = null;
 
+	mounted() {
+		this.getScores();
+		this.chartLoaded = true;
+	}
+
+	getImg() {
+		return require(`../assets/images/${this.img}`);
+	}
+
 	isSelected() {
 		return this.title === this.selected;
 	}
@@ -52,11 +62,6 @@ export default class RankingsInfo extends Vue {
 		const dateObj = new Date(this.date);
 		let dateTxt = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`;
 		return `Reviewed ${dateTxt}`;
-	}
-
-	mounted() {
-		this.getScores();
-		this.chartLoaded = true;
 	}
 
 	@Watch('rankInfo')
@@ -96,21 +101,17 @@ export default class RankingsInfo extends Vue {
 .rankings-info-row {
 	grid-column: 1/-1;
 	height: 0px;
-	transition: height 0.2s ease-out;
+	transition: height 0.3s ease-out, opacity 0.3s ease-out;
 	padding: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-auto-columns: 1fr;
 	overflow: hidden;
-}
-.charts {
-	display: none;
-	transition: height 2s linear;
+	opacity: 0;
 	align-items: center;
 }
 .breakdown-day {
-	margin: 0 auto 9px auto;
-	font-size: 15px;
+	margin: 5px 0px;
 }
 .breakdown-img {
 	max-width: 200px;
@@ -123,34 +124,29 @@ export default class RankingsInfo extends Vue {
 .breakdown-details {
 	padding: 0 10%;
 	overflow: hidden;
+	justify-self: center;
+	align-self: center;
 }
 .breakdown-scores {
 	margin-left: auto;
 	margin-right: auto;
-	display: grid;
-	grid-template-columns: 50% 50%;
+	display: flex;
 }
 .critic-logo {
 	height: 30px;
 	width: 30px;
 	margin-right: 5px;
-	justify-self: center;
+	margin-left: auto;
 }
 .critic-section {
+    display: inline-flex;
+	flex: 1;
+    align-items: center;
 	justify-items: center;
 }
-.meta-container, .ign-container {
-	align-items: center;
-	align-self: center;
-	display: inline-flex;
-}
-.meta-logo, .ign-logo {
-	height: 30px;
-	width: 30px;
-	margin-right: 5px;
-}
-.meta-score{
-	margin-right: 20px;
+.critic-score {
+	margin: 0;
+	margin-right: auto;
 }
 
 /* Larger devices than phones */
@@ -204,11 +200,9 @@ export default class RankingsInfo extends Vue {
 	}
 	.rankings-info-row.expanded {
 		height: 325px;
+		opacity: 1;
 		background-color: #f0f0f5;
 		border-bottom: #2d32af solid 1px;
-	}
-	.rankings-info-row.expanded > .breakdown-radar {
-		height: auto;
 	}
 }
 </style>

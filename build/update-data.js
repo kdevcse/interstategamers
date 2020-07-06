@@ -36,6 +36,18 @@ api.getAirtableData(argv.airtable,'Ratings','IG Score').then((data) => {
             }
             if(episodes[i].type === 'full'){
                 episodes[i]['Ranking Info'] = rankings.find(r => r.Episode === `${episodes[i].season.number}-${episodes[i].number}`);
+                let potentialFilename = episodes[i]['Ranking Info'].Game.replace(/\s/g, '_');
+                potentialFilename = potentialFilename.replace(/[^A-Za-z0-9_]+/g, '').toLowerCase();
+
+                if(fs.existsSync(`./src/assets/images/${potentialFilename}.png`))
+                {
+                    episodes[i]['Ranking Info'].GameImage = `${potentialFilename}.png`;
+                }
+                
+                if(fs.existsSync(`./src/assets/images/${potentialFilename}.jpg`))
+                {
+                    episodes[i]['Ranking Info'].GameImage = `${potentialFilename}.jpg`;
+                }
             }
         }
         

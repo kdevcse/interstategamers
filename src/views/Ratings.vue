@@ -35,6 +35,7 @@
 				<RankingsInfo 
 					:key="`${episode.id}-info`"
 					:date="episode.published_at"
+					:img="episode['Ranking Info'].GameImage"
 					:title="episode['Ranking Info'].Game"
 					:selected="selectedEpisode"
 					:rankInfo="episode['Ranking Info']"
