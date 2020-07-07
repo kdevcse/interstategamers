@@ -114,9 +114,9 @@ export default class RankingsInfo extends Vue {
 	margin: 5px 0px 10px 0px;
 }
 .breakdown-img {
-	-webkit-box-shadow: 2px 2px 5px #777;
-	-moz-box-shadow: 2px 2px 5px #777;
-	box-shadow: 2px 2px 5px #777;
+	-webkit-box-shadow: 0px 1px 4px #777;
+	-moz-box-shadow: 0px 1px 4px #777;
+	box-shadow: 0px 1px 4px #777;
 	max-width: 200px;
 	max-height: 188px;
 	margin-left: auto;

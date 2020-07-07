@@ -30,7 +30,9 @@ export default class IgContent extends Vue {
     padding: 16px 8% 20px 8%;
     background-color: white;
     border-radius: 6px;
-    box-shadow: 2px 2px 5px #777;
+	-webkit-box-shadow: 0px 1px 4px #777;
+	-moz-box-shadow: 0px 1px 4px #777;
+	box-shadow: 0px 1px 4px #777;
 }
 h3 {
     margin: 5px 0px;
