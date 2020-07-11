@@ -1,6 +1,6 @@
 <template>
     <div class="rankings-info-row" :class="{expanded: isSelected()}">
-		<div v-show="isSelected()" class="breakdown-details">
+		<div class="breakdown-details">
 			<p class="breakdown-day">{{getReleaseDateTxt()}}</p>
 			<img v-if="img" class="breakdown-img" :src="getImg()"/>
 			<img v-else class="breakdown-img" src="../assets/images/Main.png"/>
@@ -15,9 +15,9 @@
 				</div>
 			</div>
 		</div>
-		<RankingsBreakdown  reviewer="Peter" v-show="isSelected()" :scores="peterScores"></RankingsBreakdown>
-		<RankingsBreakdown  reviewer="Kevin" v-show="isSelected()" :scores="kevinScores"></RankingsBreakdown>
-		<RankingsBreakdown  :reviewer="guest" v-if="guest" v-show="isSelected()" :scores="kevinScores"></RankingsBreakdown>
+		<RankingsBreakdown  reviewer="Peter" :scores="peterScores"></RankingsBreakdown>
+		<RankingsBreakdown  reviewer="Kevin" :scores="kevinScores"></RankingsBreakdown>
+		<RankingsBreakdown  :reviewer="guest" v-if="guest" :scores="kevinScores"></RankingsBreakdown>
 	</div>
 </template>
 
@@ -101,7 +101,7 @@ export default class RankingsInfo extends Vue {
 .rankings-info-row {
 	grid-column: 1/-1;
 	height: 0px;
-	transition: height 0.3s ease-out, opacity 0.3s ease-out;
+	transition: height 0.3s ease-out, opacity 0.3s ease-in-out;
 	padding: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -114,13 +114,11 @@ export default class RankingsInfo extends Vue {
 	margin: 5px 0px 10px 0px;
 }
 .breakdown-img {
-	-webkit-box-shadow: 0px 1px 4px #777;
-	-moz-box-shadow: 0px 1px 4px #777;
-	box-shadow: 0px 1px 4px #777;
 	max-width: 200px;
 	max-height: 188px;
 	margin-left: auto;
 	margin-right: auto;
+	border: 1px solid lightgray;
 	border-radius: 6px;
 	align-self: center;
 }

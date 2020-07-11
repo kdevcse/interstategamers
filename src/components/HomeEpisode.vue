@@ -114,20 +114,20 @@ export default class HomeEpisode extends Vue {
 }
 .episode:hover > .ep-info > h2 > svg,
 .episode-first:hover > .ep-info > h2 > svg {
-  animation: rumble 0.3s ease-out;
+  animation: rumble 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @keyframes rumble {
   20% {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
   40% {
-    transform: translateY(3px);
+    transform: translateY(2px);
   }
   60% {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
   80% {
-    transform: translate(1px);
+    transform: translateY(2px);
   }
   100% {
     transform: translateY(0px);
