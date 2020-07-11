@@ -123,7 +123,7 @@ export default class HomeRanking extends Vue {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   #ig-content-rank {
     display: none;
   }
