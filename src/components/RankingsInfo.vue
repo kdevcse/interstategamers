@@ -101,7 +101,8 @@ export default class RankingsInfo extends Vue {
 .rankings-info-row {
 	grid-column: 1/-1;
 	height: 0px;
-	transition: height 0.3s ease-out, opacity 0.3s ease-in-out;
+	border-bottom: none;
+	transition: height 0.3s ease-out, opacity 0.3s ease-out;
 	padding: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -159,5 +160,6 @@ export default class RankingsInfo extends Vue {
 		background-color: #f0f0f5;
 		border-bottom: #2d32af solid 1px;
 	}
+
 }
 </style>
