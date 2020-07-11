@@ -3,7 +3,7 @@
     <h2 id='ig-content-rank-game-title'>{{getTitle}}</h2>
     <h1 id='ig-content-rank-game-rank'>Rank {{rank}}/{{totalGames}}</h1>
     <h1 class='rank-header' id='ig-content-rank-game-overall'>
-      Overall score {{getOverall.toFixed(2)}}/100
+      Overall {{getOverall.toFixed(2)}}/100
     </h1>
     <div class='progress-background overall'>
       <div
