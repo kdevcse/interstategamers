@@ -1,24 +1,7 @@
 <template>
   <div>
     <h1 v-if='finale' class='season-title'>Season {{season}}</h1>
-    <!-- Perhaps there's a better way to do this -->
-    <div class='episode-first' 
-      v-if="episodeType !== 'trailer' && finale"
-      @mouseover="sendScore(info)">
-      <section class='player'>
-        <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" @click='play()'></font-awesome-icon>
-        <font-awesome-icon :icon="['fas', 'play-circle']" v-else @click='play()'></font-awesome-icon>
-      </section>
-      <aside class='ep-info'>
-        <h2 class='episode-title'>
-            {{title}}
-            <font-awesome-icon title="Game Review" :icon="['fas', 'gamepad']" v-if="info"></font-awesome-icon>
-        </h2>
-        <p class='ep-description'>{{description}}</p>
-      </aside>
-    </div>
-    <div class='episode' v-else-if="episodeType !== 'trailer'"
-      @mouseover="sendScore(info)">
+    <div class='episode' :class="{top: isTopEpisode()}" @mouseover="sendScore(info)">
       <section class='player'>
         <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" @click='play()'></font-awesome-icon>
         <font-awesome-icon :icon="['fas', 'play-circle']" v-else @click='play()'></font-awesome-icon>
@@ -59,6 +42,10 @@ export default class HomeEpisode extends Vue {
     this.epAudio.preload = 'none';
   }
 
+  isTopEpisode() {
+    return this.episodeType !== 'trailer' && this.finale;
+  }
+
   public sendScore (rankingInfo: IRankingInfo) {
     if(rankingInfo){
       this.$emit('show-score', [rankingInfo, this.title]);
@@ -79,8 +66,7 @@ export default class HomeEpisode extends Vue {
   border-bottom: solid red;
   margin-bottom: 0;
 }
-.episode,
-.episode-first {
+.episode {
   display: grid;
   align-items: center;
   grid-template-columns: 50px auto;
@@ -91,6 +77,9 @@ export default class HomeEpisode extends Vue {
 }
 .episode {
   border-top: #2d32af solid 1px;
+}
+.episode.top {
+  border-top: none;
 }
 .player > svg {
   font-size: 32px;
@@ -122,12 +111,10 @@ export default class HomeEpisode extends Vue {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .episode:hover,
-  .episode-first:hover {
+  .episode:hover {
     background: #f1f1f1;
   }
-  .episode:hover > .ep-info > h2 > svg,
-  .episode-first:hover > .ep-info > h2 > svg {
+  .episode:hover > .ep-info > h2 > svg {
     animation: rumble 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   @keyframes rumble {
