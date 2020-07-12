@@ -102,12 +102,13 @@ export default class RankingsOptions extends Vue {
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px) {
-	.options-header{
-		padding: 10px 20px 0px 20px;
+	.options-header {
+		padding: 10px 10px 30px 10px;
 	}
-	.options-header input {
-		margin-right: 15px;
-	}
+    .options-header input {
+        margin-right: 15px;
+        padding: 4px 6px;
+    }
 }
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
