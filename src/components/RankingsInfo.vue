@@ -102,14 +102,19 @@ export default class RankingsInfo extends Vue {
 	grid-column: 1/-1;
 	height: 0px;
 	border-bottom: none;
-	transition: height 0.3s ease-out, opacity 0.3s ease-out;
+	background-color: #f0f0f5;
+	transition: height 0.3s ease-out;
 	padding: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-auto-columns: 1fr;
 	overflow: hidden;
-	opacity: 0;
 	align-items: center;
+}
+.rankings-info-row > * {
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+	overflow: hidden;
 }
 .breakdown-day {
 	margin: 5px 0px 10px 0px;
@@ -156,10 +161,10 @@ export default class RankingsInfo extends Vue {
 @media only screen and (min-width: 770px){
 	.rankings-info-row.expanded {
 		height: 375px;
-		opacity: 1;
-		background-color: #f0f0f5;
 		border-bottom: #2d32af solid 1px;
 	}
-
+	.rankings-info-row.expanded > * {
+		opacity: 1;
+	}
 }
 </style>
