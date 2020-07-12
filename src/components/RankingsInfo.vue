@@ -3,7 +3,7 @@
 		<div class="breakdown-details">
 			<p class="breakdown-day">{{getReleaseDateTxt()}}</p>
 			<img v-if="img" class="breakdown-img" :src="getImg()"/>
-			<img v-else class="breakdown-img" src="../assets/images/Main.png"/>
+			<img v-else class="breakdown-img" src="../assets/images/main.png"/>
 			<div class="breakdown-scores">
 				<div class="critic-section">
 					<img class="critic-logo" title="Metacritic Score" src="../assets/images/meta_logo.png"/>

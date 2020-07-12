@@ -7,7 +7,7 @@ const extrasSectionData = {
             <a class='info-links' target='_blank' rel='noopener noreferrer' href='https://open.spotify.com/artist/6aBKiDvFoc5LBDUMtCZgvy'>Click here to see his Spotify profile</a>, 
             but keep in mind he’s got even more goodness on his 
             <a class='info-links' target='_blank' rel='noopener noreferrer' href='https://soundcloud.com/peterwtunes'>SoundCloud page</a>.`,
-      src: require('../assets/images/PRW.png')
+      src: require('../assets/images/prw.png')
     }
   ],
   codeSections: [
@@ -26,7 +26,7 @@ const extrasSectionData = {
           His relaxing commentary is sure to keep you good company and help you unwind. 
           <a class='info-links' target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/channel/UCdAwCnEt2WcaOy_KcT3sGiA'>Click here to visit ZLink Gaming on YouTube</a>, 
           but don’t sleep on his Twitch channel if you want to catch a stream with the IG boys.`,
-      src: require('../assets/images/ZLG.png')
+      src: require('../assets/images/zlg.png')
     },
     {
       heading: 'Ground Up Productions',

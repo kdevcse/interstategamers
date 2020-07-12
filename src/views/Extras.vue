@@ -30,7 +30,7 @@ export default {
       friends: extrasSectionData.friendSections,
       deal4RealTwitch: require('../assets/images/d4r.png'),
       kslugsTwitch: require('../assets/images/kslugs.png'),
-      zlinkTwitch: require('../assets/images/ZLG.png')
+      zlinkTwitch: require('../assets/images/zlg.png')
     }
   }
 }

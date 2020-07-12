@@ -3,7 +3,7 @@
         <nav id="mobile-nav-bar">
             <div id="mobile-nav-main-container">
                 <router-link id="mobile-nav-logo-container" to="/">
-                    <img id="mobile-nav-logo" src="../assets/images/IGLogo.png"/>
+                    <img id="mobile-nav-logo" src="../assets/images/badge_sm.png"/>
                 </router-link>
                 <div id="mobile-nav-button">
                     <font-awesome-icon v-show="!mobileMenuOpened" id="mobile-nav-icon" :icon="['fa','bars']" @click="toggleMobileMenu()"/>
@@ -19,7 +19,7 @@
         </nav>
         <nav id="nav-bar">
             <div class="nav-list">
-                <router-link class="nav-tab" to="/"><img class="nav-tab-logo" src="../assets/images/IGLogo.png"></router-link>
+                <router-link class="nav-tab" to="/"><img class="nav-tab-logo" src="../assets/images/badge_sm.png"></router-link>
                 <router-link class="nav-tab" to="/ratings">Ratings</router-link>
                 <a class="nav-tab" target="_blank" rel="noopener noreferrer" href="https://www.teepublic.com/stores/the-interstate-gamers?ref_id=7904">Store</a>
                 <router-link class="nav-tab" to="/extras">Extras</router-link>
@@ -59,10 +59,10 @@ nav {
     background-color: #2d32af;
 }
 .nav-tab-logo{
-    height: 50px;
+    height: 55px;
 }
 #mobile-nav-logo{
-    width: 38px;
+    width: 45px;
 }
 .nav-list {
     display: flex;

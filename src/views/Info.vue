@@ -4,7 +4,7 @@
       <h1>About Us:</h1>
       <div id='boyz'>
         <div id='boyz-img'>
-          <img src='../assets/images/TheBoyz.jpg' />
+          <img src='../assets/images/the_boyz.jpg' />
           <figcaption>From left: Peter, Kevin and Chris (ZLink)</figcaption>
         </div>
         <div id='boyz-description'>

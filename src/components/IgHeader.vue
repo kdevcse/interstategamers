@@ -1,7 +1,7 @@
 <template>
   <header id='ig-header'>
     <aside id='ig-header-right'>
-      <img class='ig-header-right-logo' src='../assets/images/Main.png' />
+      <img class='ig-header-right-logo' src='../assets/images/main.png' />
       <div id='ig-icons'>
         <a href='https://www.facebook.com/TheInterstateGamers/' title='Facebook'>
           <i class='fab fa-facebook-square fa-2x'></i>
