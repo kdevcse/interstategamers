@@ -6,11 +6,11 @@
 			<img v-else class="breakdown-img" src="../assets/images/Main.png"/>
 			<div class="breakdown-scores">
 				<div class="critic-section">
-					<img class="critic-logo" src="../assets/images/meta_logo.png"/>
+					<img class="critic-logo" title="Metacritic Score" src="../assets/images/meta_logo.png"/>
 					<p class="critic-score">{{metacritic}}</p>
 				</div>
 				<div class="critic-section">
-					<img class="critic-logo" src="../assets/images/ign_logo.png"/>
+					<img class="critic-logo" title="IGN Score" src="../assets/images/ign_logo.png"/>
 					<p class="critic-score">{{ign}}</p>
 				</div>
 			</div>

@@ -3,7 +3,11 @@
 	    <p v-bind:class="{ sorted: highlightRed('rank')}">{{rank}}</p>
 	    <p v-bind:class="{ sorted: highlightRed('Game')}">
 			<span>{{title}}</span>
-        	<font-awesome-icon class='guest-icon' :icon="['fas', 'user-plus']" v-if="guest"></font-awesome-icon>
+        	<font-awesome-icon 
+				class='guest-icon' 
+				:icon="['fas', 'user-plus']" 
+				:title='getGuestTxt()'
+				v-if="guest"></font-awesome-icon>
 		</p>
 	    <p v-bind:class="{ sorted: highlightRed('Year')}">{{year}}</p>
 	    <p v-bind:class="{ sorted: highlightRed('Platform')}">{{platform}}</p>
@@ -36,6 +40,11 @@ export default class RankingRow extends Vue
 	@Prop() sortBy!: string;
 	@Prop() guest!: string;
 	@Prop() selected!: string;
+
+	getGuestTxt()
+	{
+		return `Guest: ${this.guest}`;
+	}
 
 	highlightRed(category: string) 
 	{
