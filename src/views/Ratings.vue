@@ -142,6 +142,7 @@ export default {
 	position: relative;
 	top: 65px;
 	width: 100%;
+	min-width: fit-content;
 	text-align: center;
 }
 #rankings-header{
