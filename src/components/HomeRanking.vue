@@ -2,52 +2,23 @@
   <aside id='ig-content-rank'>
     <h2 id='ig-content-rank-game-title'>{{getTitle}}</h2>
     <h1 id='ig-content-rank-game-rank'>Rank {{rank}}/{{totalGames}}</h1>
-    <h1 class='rank-header' id='ig-content-rank-game-overall'>
-      Overall {{getOverall.toFixed(2)}}/100
-    </h1>
-    <div class='progress-background overall'>
-      <div
-        :style="{width: getOverall + '%'}"
-        class='progress-foreground'
-        id='ig-content-rank-progress-overall'
-      ></div>
-    </div>
-    <h1 class='rank-header' id='ig-content-rank-game-gameplay'>
-      Gameplay {{getGameplay.toFixed(2)}}/100
-    </h1>
-    <div class='progress-background'>
-      <div
-        :style="{width: getGameplay + '%'}"
-        class='progress-foreground'
-        id='ig-content-rank-progress-gameplay'
-      ></div>
-    </div>
-    <h1 class='rank-header' id='ig-content-rank-game-aesthetics'>
-      Aesthetics {{getAesthetics.toFixed(2)}}/100
-    </h1>
-    <div class='progress-background'>
-      <div
-        :style="{width: getAesthetics + '%'}"
-        class='progress-foreground'
-        id='ig-content-rank-progress-aesthetics'
-      ></div>
-    </div>
-    <h1 class='rank-header' id='ig-content-rank-game-content'>Content {{getContent.toFixed(2)}}/100</h1>
-    <div class='progress-background'>
-      <div
-        :style="{width: getContent + '%'}"
-        class='progress-foreground'
-        id='ig-content-rank-progress-content'
-      ></div>
-    </div>
+    <RankMeter alt h1 type="Overall" height="33px" :percentage="getOverall"></RankMeter>
+    <RankMeter h1 type="Gameplay" height="33px" :percentage="getGameplay"></RankMeter>
+    <RankMeter h1 type="Aesthetics" height="33px" :percentage="getAesthetics"></RankMeter>
+    <RankMeter h1 type="Content" height="33px" :percentage="getContent"></RankMeter>
   </aside>
 </template>
 
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { IRankingInfo } from '../interfaces/IRankingInfo'
+import RankMeter from '@/components/RankMeter.vue';
 
-@Component
+@Component({
+	components: {
+    RankMeter
+	}
+})
 export default class HomeRanking extends Vue {
     @Prop() totalGames!: number;
     @Prop() title!: string;
@@ -90,36 +61,12 @@ export default class HomeRanking extends Vue {
 }
 #ig-content-rank-game-rank {
   font-size: 17px;
-  margin-top: 5px;
+  margin: 5px 0px;
 }
-.rank-header {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-#ig-content-rank-game-overall {
-  color: red;
-}
-.progress-background {
-  background-color: #f1f1f1;
-  width: 100%;
-  border: 2px solid;
-  border-radius: 6px;
-  padding: 2px;
-  overflow: hidden;
-}
-.progress-background.overall {
-  border-color: red;
-}
-.progress-foreground {
-  height: 33px;
-  background-color: #2d32af;
-  border-radius: 4px;
-}
-#ig-content-rank-progress-overall {
-  background-color: red;
-}
-.progress-foreground {
-    transition: width 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+#ig-content-rank > .rank-meter > .rank-header {
+  margin: 10px 0px;
+  font-size: 18.72px;
+  font-weight: bolder;
 }
 
 /* Extra small devices (phones, 600px and down) */
