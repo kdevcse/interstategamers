@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 v-if='finale' class='season-title'>Season {{season}}</h1>
-    <div class='episode' :class="{top: isTopEpisode()}" @mouseover="sendScore(info)">
+    <div class='episode' :class="{top: finale}" @mouseover="sendScore(info)">
       <section class='player'>
         <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" @click='play()'></font-awesome-icon>
         <font-awesome-icon :icon="['fas', 'play-circle']" v-else @click='play()'></font-awesome-icon>
@@ -40,10 +40,6 @@ export default class HomeEpisode extends Vue {
   mounted () {
     this.epAudio = new Audio(this.audio);
     this.epAudio.preload = 'none';
-  }
-
-  isTopEpisode() {
-    return this.episodeType !== 'trailer' && this.finale;
   }
 
   public sendScore (rankingInfo: IRankingInfo) {

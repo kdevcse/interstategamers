@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
     "build:prod": "yarn pre-build -a ${AirtableKey} -i ${PodId} -k ${PodKey}; yarn build;",
     "build:win": "yarn pre-build -a %AirtableKey% -i %PodId% -k %PodKey% && yarn build",
     "pre-build": "node build/update-data.js"
@@ -20,10 +21,13 @@
     "vue-router": "^3.1.6"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.19",
     "@vue/cli-plugin-babel": "~4.3.0",
     "@vue/cli-plugin-router": "~4.3.0",
     "@vue/cli-plugin-typescript": "~4.3.0",
+    "@vue/cli-plugin-unit-jest": "^4.4.6",
     "@vue/cli-service": "~4.3.0",
+    "@vue/test-utils": "^1.0.3",
     "node-fetch": "^2.6.0",
     "twitter-lite": "^0.11.0",
     "typescript": "~3.8.3",

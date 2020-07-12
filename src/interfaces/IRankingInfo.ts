@@ -31,7 +31,8 @@ export interface IRankingInfo {
     "Audio": number,
     "Content": number,
     "rank": number,
-    "Guest": string
+    "Guest": string,
+    "GameImage"?: string
 }
 
 export enum CategoryTypes {
