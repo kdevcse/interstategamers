@@ -116,10 +116,14 @@ header {
     border-bottom: solid var(--primary-color);
   }
 	#ig-header-left-trailer {
-		background-color: var(--default-text-color);
+		border: solid var(--default-text-color);
+    background-color: none;
 	}
   #ig-icons > a > svg, .ig-header-left-text-container {
     color: var(--default-text-color);
+  }
+  .ig-header-right-logo {
+    opacity: 87%;
   }
 }
 @media only screen and (max-width: 768px) {

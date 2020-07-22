@@ -114,6 +114,14 @@ export default class IgContent extends Vue {
     grid-template-columns: 50% 50%;
     grid-template-rows: 90vh;
   }
+  @media screen and (prefers-color-scheme: dark) {
+    #episodes::-webkit-scrollbar-track {
+      background: var(--default-text-color);
+    }
+    #episodes::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+    }
+  }
 }
 
 </style>

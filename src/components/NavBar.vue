@@ -1,5 +1,5 @@
 <template>
-    <div class="nav">
+    <div class="nav-container">
         <nav id="mobile-nav-bar">
             <div id="mobile-nav-main-container">
                 <router-link id="mobile-nav-logo-container" to="/">
@@ -53,7 +53,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 70px;
+    height: 72px;
     z-index: 1;
     list-style-type: none;
     background-color: var(--primary-color);
@@ -67,7 +67,7 @@ nav {
 .nav-list {
     display: flex;
     align-items: center;
-    margin-left: 62px;
+    padding-left: 62px;
 }
 .nav-tab {
     text-decoration: none;
@@ -103,14 +103,12 @@ nav {
     }
     #mobile-nav-bar{
         display: inherit;
-        background-color: var(--primary-color);
     }
     #mobile-nav-list{
         display: none;
         position: fixed;
         width: 100%;
         padding-bottom: 7px;
-        background-color: var(--primary-color);
         z-index: 1;
     }
     #mobile-nav-list.opened{
@@ -128,7 +126,6 @@ nav {
         margin-right: 5%;
     }
     #mobile-nav-button {
-        color: white;
         float: right;
         margin-left: auto;
     }
@@ -152,5 +149,25 @@ nav {
     #mobile-nav-bar, #mobile-nav-logo-container, #mobile-nav-logo{
         display: none;
     }
+    @media screen and (prefers-color-scheme: dark) {
+        #nav-bar {
+            border-bottom: var(--primary-color) solid 1px;
+        }
+    }
+}
+@media screen and (prefers-color-scheme: dark) {
+  .nav-container > nav {
+    background-color: var(--secondary-color);
+    color: var(--default-text-color)
+  }
+  .nav-tab {
+    color: var(--default-text-color);
+  }
+  .nav-container > nav > div {
+    background-color: var(--hover-color);
+  }
+  .nav-list > a:hover, .router-link-exact-active {
+    text-decoration: var(--default-text-color) underline solid;
+  }
 }
 </style>

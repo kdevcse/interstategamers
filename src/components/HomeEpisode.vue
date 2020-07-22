@@ -98,8 +98,11 @@ export default class HomeEpisode extends Vue {
   margin-bottom: 5px;
 }
 @media screen and (prefers-color-scheme: dark) {
-  .episode-title, .ep-description {
-    color: white;
+  .episode-title, .ep-description, .season-title {
+    color: var(--default-text-color);
+  }
+  .season-title {
+    border-bottom: solid var(--primary-color);
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
