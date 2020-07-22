@@ -77,7 +77,7 @@ export default class RankingRow extends Vue
 }
 .rankings-table-row > p {
 	padding: 5px 0px;
-	color: #2d32af;
+	color: var(--primary-color);
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
@@ -112,8 +112,8 @@ p.sorted {
 @media only screen and (min-width: 770px){
 	.rankings-table-row.selected{
 		background-color: #f0f0f5;
-		border-top: #2d32af solid 1px;
-		color: #2d32af;
+		border-top: var(--primary-color) solid 1px;
+		color: var(--primary-color);
 	}
 	.rankings-table-row:hover{
 		background-color: #f0f0f5;

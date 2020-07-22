@@ -67,7 +67,7 @@ header {
   align-items: center;
   width: 100%;
   padding: 20px 5%;
-  background-color: #2d32af;
+  background-color: var(--primary-color);
 }
 #ig-header-left {
   display: grid;
@@ -142,7 +142,7 @@ header {
     padding-right: 3%;
   }
   #ig-header-left-trailer {
-    color: #2d32af;
+    color: var(--primary-color);
     padding: 12px;
     border-radius: 6px;
     background-color: white;
@@ -187,7 +187,7 @@ header {
   }
   #ig-header-left-trailer {
     width: 225px;
-    color: #2d32af;
+    color: var(--primary-color);
     font-size: 15px;
     padding: 7px;
     border-radius: 6px;
@@ -213,7 +213,7 @@ header {
   }
   #ig-header-left-trailer {
     width: 275px;
-    color: #2d32af;
+    color: var(--primary-color);
     font-size: 20px;
     padding: 15px;
     background-color: white;

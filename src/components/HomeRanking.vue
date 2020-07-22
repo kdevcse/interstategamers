@@ -54,7 +54,7 @@ export default class HomeRanking extends Vue {
 #ig-content-rank {
   margin-left: 5%;
   height: 100%;
-  color: #2d32af;
+  color: var(--primary-color);
 }
 #ig-content-rank-game-title {
   margin-bottom: 0;

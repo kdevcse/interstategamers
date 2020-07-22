@@ -56,7 +56,7 @@ nav {
     height: 70px;
     z-index: 1;
     list-style-type: none;
-    background-color: #2d32af;
+    background-color: var(--primary-color);
 }
 .nav-tab-logo{
     height: 55px;
@@ -103,14 +103,14 @@ nav {
     }
     #mobile-nav-bar{
         display: inherit;
-        background-color: #2d32af;
+        background-color: var(--primary-color);
     }
     #mobile-nav-list{
         display: none;
         position: fixed;
         width: 100%;
         padding-bottom: 7px;
-        background-color: #2d32af;
+        background-color: var(--primary-color);
         z-index: 1;
     }
     #mobile-nav-list.opened{
@@ -134,7 +134,7 @@ nav {
     }
     #mobile-nav-list a:hover {
         background-color: white;
-        color: #2d32af;
+        color: var(--primary-color);
     }
     #mobile-nav-button > svg{
         vertical-align: unset;

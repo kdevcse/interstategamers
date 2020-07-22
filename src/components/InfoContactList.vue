@@ -22,7 +22,7 @@ export default class InfoContactList extends Vue {
 
 <style scoped>
 .contact-list {
-  color: #2d32af;
+  color: var(--primary-color);
 }
 .contact-list > li {
   padding: 0.5vw;
@@ -30,14 +30,14 @@ export default class InfoContactList extends Vue {
 .contact-list-item,
 .contact-list-no-link {
   text-decoration: none;
-  color: #2d32af;
+  color: var(--primary-color);
 }
 .contact-list-item:hover {
   color: red;
 }
 h1 {
-  color: #2d32af;
-  border-bottom: 2px #2d32af solid;
+  color: var(--primary-color);
+  border-bottom: 2px var(--primary-color) solid;
 }
 
 @media only screen and (min-width: 600px) {

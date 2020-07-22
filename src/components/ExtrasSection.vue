@@ -28,7 +28,7 @@ export default class ExtrasSection extends Vue {
     margin-bottom: 10px;
 }
 .friend-info > h3{
-    color: #2d32af;
+    color: var(--primary-color);
     margin-bottom: 9px;
     font-size: 19px;
 }
@@ -47,7 +47,7 @@ export default class ExtrasSection extends Vue {
     align-items: center;
 }
 .info-links{
-    color: #2d32af;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bolder;
 }

@@ -61,8 +61,8 @@ article {
   padding: 15px 5% 75px 5%;
 }
 h1 {
-  color: #2d32af;
-  border-bottom: 2px #2d32af solid;
+  color: var(--primary-color);
+  border-bottom: 2px var(--primary-color) solid;
 }
 #boyz-img {
   border-radius: 3px;

@@ -161,7 +161,7 @@ export default class RankingsInfo extends Vue {
 @media only screen and (min-width: 770px){
 	.rankings-info-row.expanded {
 		height: 375px;
-		border-bottom: #2d32af solid 1px;
+		border-bottom: var(--primary-color) solid 1px;
 	}
 	.rankings-info-row.expanded > * {
 		opacity: 1;

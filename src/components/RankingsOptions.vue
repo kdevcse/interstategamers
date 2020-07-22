@@ -63,7 +63,7 @@ export default class RankingsOptions extends Vue {
     position: fixed;
 	top: 70px;
     z-index: 1;
-	background-color: #2d32af;
+	background-color: var(--primary-color);
 	color: white;
 	width: 100%;
 	text-align: left;

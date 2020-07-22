@@ -72,7 +72,7 @@ export default class HomeEpisode extends Vue {
   overflow: hidden;
 }
 .episode {
-  border-top: #2d32af solid 1px;
+  border-top: var(--primary-color) solid 1px;
 }
 .episode.top {
   border-top: none;
@@ -84,7 +84,7 @@ export default class HomeEpisode extends Vue {
   cursor: pointer;
 }
 .episode-title {
-  color: #2d32af;
+  color: var(--primary-color);
   font-size: 1.3rem;
   margin-bottom: 0;
   margin-top: 0;
@@ -93,7 +93,7 @@ export default class HomeEpisode extends Vue {
   color: red;
 }
 .ep-description {
-  color: #2d32af;
+  color: var(--primary-color);
   margin-top: 5px;
   margin-bottom: 5px;
 }

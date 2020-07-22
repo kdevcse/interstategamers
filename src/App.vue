@@ -17,6 +17,9 @@ export default {
 </script>
 
 <style>
+:root {
+  --primary-color: #2d32af;
+}
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

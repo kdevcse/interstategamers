@@ -152,7 +152,7 @@ export default {
 	grid-template-columns: minmax(150px, 1fr) minmax(150px, 2fr) repeat(8, minmax(150px, 1fr));
 }
 .rankings-table-header {
-	background-color: #2d32af;
+	background-color: var(--primary-color);
 	color: white;
 	font-weight: normal;
 	width: 100%;
