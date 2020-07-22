@@ -87,6 +87,7 @@ header {
   align-items: center;
   justify-content: center;
   color: white;
+  background-color: white;
 }
 #ig-header-left-trailer:hover {
   cursor: pointer;
