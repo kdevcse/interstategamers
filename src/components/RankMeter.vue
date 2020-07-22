@@ -73,7 +73,7 @@ h1.rank-header{
   color: var(--accent-color);
 }
 .progress-background.red {
-  border: 2px solid red;
+  border: 2px solid  var(--accent-color);
 }
 .progress-foreground.red {
   background-color: var(--accent-color);

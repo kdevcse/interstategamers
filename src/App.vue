@@ -33,7 +33,7 @@ export default {
     --accent-color: #ff5436;
     --default-text-color: rgba(255,255,255, 87%);
     --hover-color: rgba(255,255,255,5%);
-    --elevation-color: rgba(255,255,255, 14%);
+    --elevation-color: rgba(255,255,255, 7%);
   }
   body {
     background-color: var(--secondary-color);

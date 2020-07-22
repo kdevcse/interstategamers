@@ -55,7 +55,7 @@ export default class ExtrasSection extends Vue {
     text-decoration: underline;
 }
 .extras-header {
-    border-bottom: red solid 2px;
+    border-bottom: var(--accent-color) solid 2px;
     color: var(--accent-color);
 }
 

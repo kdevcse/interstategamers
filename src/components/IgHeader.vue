@@ -86,6 +86,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 #ig-header-left-trailer:hover {
   cursor: pointer;
@@ -109,7 +110,18 @@ header {
   margin-left: 1.5%;
   transition: opacity 0.25s, transform 0.25s ease-out;
 }
-
+@media screen and (prefers-color-scheme: dark) {
+  header{
+    background-color: var(--secondary-color);
+    border-bottom: solid var(--primary-color);
+  }
+	#ig-header-left-trailer {
+		background-color: var(--default-text-color);
+	}
+  #ig-icons > a > svg, .ig-header-left-text-container {
+    color: var(--default-text-color);
+  }
+}
 @media only screen and (max-width: 768px) {
   header {
     display: block;
@@ -145,7 +157,6 @@ header {
     color: var(--primary-color);
     padding: 12px;
     border-radius: 6px;
-    background-color: white;
     justify-self: center;
   }
   #ig-header-left-trailer > svg {
@@ -178,7 +189,6 @@ header {
     font-size: 34px;
     margin-bottom: 5px;
     margin-top: 0;
-    color: white;
   }
   .ig-header-left-text-container > p {
     margin: 0;
@@ -191,7 +201,6 @@ header {
     font-size: 15px;
     padding: 7px;
     border-radius: 6px;
-    background-color: white;
   }
   #ig-header-left-trailer > svg {
     margin-right: 10px;
@@ -216,7 +225,6 @@ header {
     color: var(--primary-color);
     font-size: 20px;
     padding: 15px;
-    background-color: white;
   }
   #ig-header-left-trailer > svg {
     margin-right: 11px;

@@ -156,6 +156,11 @@ export default class RankingsInfo extends Vue {
 	margin: 0;
 	margin-right: auto;
 }
+@media screen and (prefers-color-scheme: dark) {
+	.breakdown-img  {
+		border-color: var(--primary-color);
+	}	
+}
 
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){

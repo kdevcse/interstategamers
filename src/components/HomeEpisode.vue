@@ -59,7 +59,7 @@ export default class HomeEpisode extends Vue {
 .season-title {
   color: var(--accent-color);
   width: 100%;
-  border-bottom: solid red;
+  border-bottom: solid var(--accent-color);
   margin-bottom: 0;
 }
 .episode {

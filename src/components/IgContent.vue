@@ -107,7 +107,7 @@ export default class IgContent extends Vue {
   }
   /* Handle */
   #episodes::-webkit-scrollbar-thumb {
-    background: red;
+    background: var(--accent-color);
     border-radius: 30px;
   }
   .ig-content {

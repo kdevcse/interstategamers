@@ -47,7 +47,7 @@ article {
     margin-top: 30px;
 }
 .extras-header {
-    border-bottom: red solid 2px;
+    border-bottom:  var(--accent-color) solid 2px;
     color: var(--accent-color);
 }
 
