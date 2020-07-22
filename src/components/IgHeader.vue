@@ -245,10 +245,10 @@ header {
     background-color: var(--secondary-color);
     border-bottom: solid var(--elevation-color);
   }
-	#ig-header-left-trailer {
-    background-color: var(--elevation-color);
-    color: var(--default-text-color)
-	}
+  #ig-header-left-trailer {
+  	background-color: var(--elevation-color);
+    color: var(--default-text-color);
+  }
   #ig-icons > a > svg, .ig-header-left-text-container {
     color: var(--default-text-color);
   }
