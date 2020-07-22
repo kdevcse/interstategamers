@@ -1,10 +1,12 @@
 <template>
-    <div class="options-header" colspan="10">
-        <input @input="search" id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
-        <div v-bind:class="{show: showBothIndicators}" id="scroll-indicator">
-            <font-awesome-icon id="scroll-indicator-left" v-bind:class="{show: showLeftIndicator}" :icon="['fas', 'caret-square-left']" title="Scroll left to see more content"></font-awesome-icon>
-            <span id="scroll-indicator-txt">Scroll for more</span>
-            <font-awesome-icon id="scroll-indicator-right" v-bind:class="{show: showRightIndicator}" :icon="['fas', 'caret-square-right']" title="Scroll right to see more content"></font-awesome-icon>
+    <div class="options-container">
+        <div class="options-header">
+            <input @input="search" id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
+            <div v-bind:class="{show: showBothIndicators}" id="scroll-indicator">
+                <font-awesome-icon id="scroll-indicator-left" v-bind:class="{show: showLeftIndicator}" :icon="['fas', 'caret-square-left']" title="Scroll left to see more content"></font-awesome-icon>
+                <span id="scroll-indicator-txt">Scroll for more</span>
+                <font-awesome-icon id="scroll-indicator-right" v-bind:class="{show: showRightIndicator}" :icon="['fas', 'caret-square-right']" title="Scroll right to see more content"></font-awesome-icon>
+            </div>
         </div>
     </div>
 </template>
@@ -59,7 +61,7 @@ export default class RankingsOptions extends Vue {
 </script>
 
 <style scoped>
-.options-header{
+.options-container{
     position: fixed;
 	top: 70px;
     z-index: 1;
@@ -68,6 +70,9 @@ export default class RankingsOptions extends Vue {
 	width: 100%;
 	text-align: left;
 	align-items: center;
+}
+.options-header {
+    background-color: var(--elevation-color);
 	padding: 30px 55px 10px 55px;
 }
 .options-header input {
@@ -99,6 +104,11 @@ export default class RankingsOptions extends Vue {
 #scroll-indicator-right.show,
 #scroll-indicator.show{
 	visibility: visible;
+}
+@media screen and (prefers-color-scheme: dark) {
+	.options-container {
+		background-color: var(--secondary-color);
+	}	
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px) {

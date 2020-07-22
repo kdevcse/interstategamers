@@ -24,6 +24,20 @@ export default {
   --accent-color: red;
   --default-text-color: #2d32af;
   --hover-color: #f0f0f5;
+  --elevation-color: #2d32af;
+}
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #4450d2;
+    --secondary-color: #121212;
+    --accent-color: #ff5436;
+    --default-text-color: rgba(255,255,255, 87%);
+    --hover-color: rgba(255,255,255,5%);
+    --elevation-color: rgba(255,255,255, 14%);
+  }
+  body {
+    background-color: var(--secondary-color);
+  }
 }
 #app {
   -webkit-font-smoothing: antialiased;
@@ -42,17 +56,5 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   line-height: 1.5;
-}
-@media screen and (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #4450d2;
-    --secondary-color: #121212;
-    --accent-color: #ff5436;
-    --default-text-color: rgba(255,255,255, 87%);
-    --hover-color: rgba(255,255,255,5%);
-  }
-  body {
-    background-color: var(--secondary-color);
-  }
 }
 </style>

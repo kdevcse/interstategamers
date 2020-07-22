@@ -1,5 +1,5 @@
 <template>
-  <main class='Ratings'>
+  <main class='ratings'>
 	<RankingsOptions @search-table="searchHandler"></RankingsOptions>
     <div id="rankings-table">
 		<div id="rankings-header">
@@ -150,12 +150,12 @@ export default {
 	top: 135px;
 	display: grid;
 	grid-template-columns: minmax(150px, 1fr) minmax(150px, 2fr) repeat(8, minmax(150px, 1fr));
-}
-.rankings-table-header {
 	background-color: var(--primary-color);
-	color: white;
-	font-weight: normal;
-	width: 100%;
+}
+@media screen and (prefers-color-scheme: dark) {
+	#rankings-header {
+		background-color: var(--secondary-color);
+	}	
 }
 
 /* Extra small devices (phones, 600px and down) */
