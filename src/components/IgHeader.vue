@@ -243,7 +243,7 @@ header {
 @media screen and (prefers-color-scheme: dark) {
   header{
     background-color: var(--secondary-color);
-    border-bottom: solid var(--primary-color);
+    border-bottom: solid var(--elevation-color);
   }
 	#ig-header-left-trailer {
     background-color: var(--elevation-color);

@@ -126,5 +126,11 @@ export default class HomeEpisode extends Vue {
   .episode-title, .ep-description, .season-title, .player > svg {
     color: var(--default-text-color);
   }
+  .episode {
+    border-top-color: var(--elevation-color);
+  }
+  .season-title {
+    border-bottom-color: var(--primary-color);
+  }
 }
 </style>
