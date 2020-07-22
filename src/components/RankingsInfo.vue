@@ -102,7 +102,7 @@ export default class RankingsInfo extends Vue {
 	grid-column: 1/-1;
 	height: 0px;
 	border-bottom: none;
-	background-color: var(--hover-color);
+	background-color: var(--elevation-first-lvl-color);
 	transition: height 0.3s ease-out;
 	padding: 0;
 	display: grid;

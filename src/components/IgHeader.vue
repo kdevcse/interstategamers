@@ -243,10 +243,10 @@ header {
 @media screen and (prefers-color-scheme: dark) {
   header{
     background-color: var(--secondary-color);
-    border-bottom: solid var(--elevation-color);
+    border-bottom: solid var(--primary-color);
   }
   #ig-header-left-trailer {
-  	background-color: var(--elevation-color);
+  	background-color: var(--elevation-second-lvl-color);
     color: var(--default-text-color);
   }
   #ig-icons > a > svg, .ig-header-left-text-container {

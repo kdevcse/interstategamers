@@ -23,17 +23,19 @@ export default {
   --secondary-color: white;
   --accent-color: red;
   --default-text-color: #2d32af;
-  --hover-color: #f0f0f5;
-  --elevation-color: #2d32af;
+  --elevation-first-lvl-color: #f0f0f5;
+  --elevation-second-lvl-color: #2d32af;
+  --elevation-third-lvl-color: rgba(255, 255, 255, 9%);
 }
 @media screen and (prefers-color-scheme: dark) {
   :root {
     --primary-color: #4450d2;
     --secondary-color: #121212;
     --accent-color: #ff5436;
-    --default-text-color: rgba(255,255,255, 87%);
-    --hover-color: rgba(255,255,255,5%);
-    --elevation-color: rgba(255,255,255, 7%);
+    --default-text-color: rgba(255, 255, 255, 87%);
+    --elevation-first-lvl-color: rgba(255, 255, 255, 5%);
+    --elevation-second-lvl-color: rgba(255, 255, 255, 7%);
+    --elevation-third-lvl-color: rgba(255, 255, 255, 9%);
   }
   body {
     background-color: var(--secondary-color);

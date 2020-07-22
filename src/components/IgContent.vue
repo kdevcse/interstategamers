@@ -116,10 +116,10 @@ export default class IgContent extends Vue {
   }
   @media screen and (prefers-color-scheme: dark) {
     #episodes::-webkit-scrollbar-track {
-      background: none;
+      background: var(--elevation-first-lvl-color);
     }
     #episodes::-webkit-scrollbar-thumb {
-      background: var(--hover-color);
+      background: var(--elevation-second-lvl-color);
     }
   }
 }

@@ -37,7 +37,7 @@ h3 {
 }
 @media screen and (prefers-color-scheme: dark) {
   .rankings-breakdown {
-    background-color: rgba(255, 255, 255, 4%);
+    background-color: var(--elevation-second-lvl-color);
     border-color: var(--secondary-color);
   }
 }

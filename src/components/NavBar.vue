@@ -164,7 +164,7 @@ nav {
     color: var(--default-text-color);
   }
   .nav-container > nav > div {
-    background-color: var(--hover-color);
+    background-color: var(--elevation-third-lvl-color);
   }
   .nav-list > a:hover, .router-link-exact-active {
     text-decoration: var(--default-text-color) underline solid;

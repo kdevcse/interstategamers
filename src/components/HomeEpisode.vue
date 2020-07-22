@@ -108,7 +108,7 @@ export default class HomeEpisode extends Vue {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .episode:hover {
-    background: var(--hover-color);
+    background: var(--elevation-first-lvl-color);
   }
   .episode:hover > .ep-info > h2 > svg {
     animation: rumble 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -127,7 +127,7 @@ export default class HomeEpisode extends Vue {
     color: var(--default-text-color);
   }
   .episode {
-    border-top-color: var(--elevation-color);
+    border-top-color: var(--elevation-second-lvl-color);
   }
   .season-title {
     border-bottom-color: var(--primary-color);

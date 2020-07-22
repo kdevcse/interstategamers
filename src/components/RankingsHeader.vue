@@ -49,7 +49,7 @@ export default class RankingsHeader extends Vue {
 <style scoped>
 .rankings-header {
     padding: 16px 0px;
-	background-color: var(--elevation-color);
+	background-color: var(--elevation-second-lvl-color);
     color: white;
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */

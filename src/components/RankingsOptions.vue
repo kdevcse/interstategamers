@@ -72,7 +72,7 @@ export default class RankingsOptions extends Vue {
 	align-items: center;
 }
 .options-header {
-    background-color: var(--elevation-color);
+    background-color: var(--elevation-second-lvl-color);
 	padding: 30px 55px 10px 55px;
 }
 .options-header input {

@@ -111,12 +111,12 @@ p.sorted {
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
 	.rankings-table-row.selected{
-		background-color: var(--hover-color);
+		background-color: var(--elevation-first-lvl-color);
 		border-top: var(--primary-color) solid 1px;
 		color: var(--default-text-color);
 	}
 	.rankings-table-row:hover{
-		background-color: var(--hover-color);
+		background-color: var(--elevation-first-lvl-color);
 		cursor: pointer;
 	}
 }
