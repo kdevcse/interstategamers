@@ -151,7 +151,7 @@ header {
   #ig-header-left-trailer > svg {
     margin-right: 8px;
     font-size: 25px;
-    color: red;
+    color: var(--accent-color);
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -196,7 +196,7 @@ header {
   #ig-header-left-trailer > svg {
     margin-right: 10px;
     font-size: 23px;
-    color: red;
+    color: var(--accent-color);
   }
 }
 
@@ -221,7 +221,7 @@ header {
   #ig-header-left-trailer > svg {
     margin-right: 11px;
     font-size: 27px;
-    color: red;
+    color: var(--accent-color);
   }
   .ig-header-right-logo {
     height: 375px;

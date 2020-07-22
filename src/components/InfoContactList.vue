@@ -33,7 +33,7 @@ export default class InfoContactList extends Vue {
   color: var(--primary-color);
 }
 .contact-list-item:hover {
-  color: red;
+  color: var(--accent-color);
 }
 h1 {
   color: var(--primary-color);

@@ -89,10 +89,10 @@ export default class RankingRow extends Vue
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 p.sorted {
-	color: red !important;
+	color: var(--accent-color) !important;
 }
 .rankings-table-row > p > svg {
-	color: red;
+	color: var(--accent-color);
 }
 .guest-icon{
 	margin-left: 10px;

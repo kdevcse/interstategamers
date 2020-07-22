@@ -57,7 +57,7 @@ export default class HomeEpisode extends Vue {
 
 <style scoped>
 .season-title {
-  color: red;
+  color: var(--accent-color);
   width: 100%;
   border-bottom: solid red;
   margin-bottom: 0;
@@ -90,7 +90,7 @@ export default class HomeEpisode extends Vue {
   margin-top: 0;
 }
 .episode-title > svg {
-  color: red;
+  color: var(--accent-color);
 }
 .ep-description {
   color: var(--primary-color);

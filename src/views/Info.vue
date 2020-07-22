@@ -72,7 +72,7 @@ h1 {
   width: 100%;
 }
 #boyz-img figcaption {
-  color: red;
+  color: var(--accent-color);
   font-size: 13px;
 }
 @media only screen and (max-width: 600px) {

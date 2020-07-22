@@ -70,12 +70,12 @@ h1.rank-header{
   transition: width 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 .rank-header.red {
-  color: red;
+  color: var(--accent-color);
 }
 .progress-background.red {
   border: 2px solid red;
 }
 .progress-foreground.red {
-  background-color: red;
+  background-color: var(--accent-color);
 }
 </style>

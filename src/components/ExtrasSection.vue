@@ -56,7 +56,7 @@ export default class ExtrasSection extends Vue {
 }
 .extras-header {
     border-bottom: red solid 2px;
-    color: red;
+    color: var(--accent-color);
 }
 
 @media only screen and (max-width: 768px){
