@@ -108,7 +108,11 @@ export default class RankingsOptions extends Vue {
 @media screen and (prefers-color-scheme: dark) {
 	.options-container {
 		background-color: var(--secondary-color);
-	}	
+        color: var(--default-text-color);
+	}
+    .options-header input {
+        background-color: var(--default-text-color);
+    }
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px) {

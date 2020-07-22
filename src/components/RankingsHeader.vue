@@ -83,4 +83,9 @@ export default class RankingsHeader extends Vue {
 		min-width: 93px;
     }
 }
+@media screen and (prefers-color-scheme: dark) {
+  .rankings-header {
+    color: var(--default-text-color);
+  }
+}
 </style>

@@ -3,7 +3,7 @@
 		<div class="breakdown-details">
 			<p class="breakdown-day">{{getReleaseDateTxt()}}</p>
 			<img v-if="img" class="breakdown-img" :src="getImg()"/>
-			<img v-else class="breakdown-img" src="../assets/images/main.png"/>
+			<img v-else class="breakdown-img default" src="../assets/images/main.png"/>
 			<div class="breakdown-scores">
 				<div class="critic-section">
 					<img class="critic-logo" title="Metacritic Score" src="../assets/images/meta_logo.png"/>
@@ -158,8 +158,11 @@ export default class RankingsInfo extends Vue {
 }
 @media screen and (prefers-color-scheme: dark) {
 	.breakdown-img  {
-		border-color: var(--primary-color);
-	}	
+		border-color: var(--secondary-color);
+	}
+	.breakdown-img.default {
+		opacity: 87%;
+	}
 }
 
 /* Larger devices than phones */
