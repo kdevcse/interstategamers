@@ -57,6 +57,9 @@ export default class ExtrasSection extends Vue {
 }
 .extras-header {
     border-bottom: var(--primary-color) solid 2px;
+    color: var(--primary-color);
+}
+.extras-header > span > svg {
     color: var(--accent-color);
 }
 

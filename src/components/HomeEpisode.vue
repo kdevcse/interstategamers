@@ -79,6 +79,7 @@ export default class HomeEpisode extends Vue {
 }
 .player > svg {
   font-size: 32px;
+  color: black;
 }
 .player > svg:hover {
   cursor: pointer;
@@ -96,11 +97,6 @@ export default class HomeEpisode extends Vue {
   color: var(--primary-color);
   margin-top: 5px;
   margin-bottom: 5px;
-}
-@media screen and (prefers-color-scheme: dark) {
-  .episode-title, .ep-description, .season-title {
-    color: var(--default-text-color);
-  }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
@@ -124,6 +120,11 @@ export default class HomeEpisode extends Vue {
     20%, 40%, 60%, 80%, 100% {
       transform: translateY(1px);
     }
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  .episode-title, .ep-description, .season-title, .player > svg {
+    color: var(--default-text-color);
   }
 }
 </style>
