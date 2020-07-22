@@ -47,8 +47,8 @@ article {
     margin-top: 30px;
 }
 .extras-header {
-    border-bottom:  var(--accent-color) solid 2px;
-    color: var(--accent-color);
+    border-bottom: var(--primary-color) solid 2px;
+    color: var(--primary-color);
 }
 
 @media only screen and (max-width: 768px){
@@ -73,5 +73,10 @@ article {
     .fa-play.hovered{
         display: inline;
     }
+}
+@media screen and (prefers-color-scheme: dark) {
+  .extras-header, .friend-info > h3 {
+    color: var(--default-text-color);
+  }
 }
 </style>

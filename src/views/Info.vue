@@ -100,4 +100,9 @@ h1 {
     font-size: 150%;
   }
 }
+@media screen and (prefers-color-scheme: dark) {
+  h1 {
+    color: var(--default-text-color);
+  }
+}
 </style>

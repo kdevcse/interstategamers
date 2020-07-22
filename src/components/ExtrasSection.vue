@@ -53,9 +53,10 @@ export default class ExtrasSection extends Vue {
 }
 .info-links:hover{
     text-decoration: underline;
+    color: var(--accent-color);
 }
 .extras-header {
-    border-bottom: var(--accent-color) solid 2px;
+    border-bottom: var(--primary-color) solid 2px;
     color: var(--accent-color);
 }
 
@@ -72,5 +73,10 @@ export default class ExtrasSection extends Vue {
     .extras-header{
         margin-bottom: 0px;
     }
+}
+@media screen and (prefers-color-scheme: dark) {
+  .extras-header, .friend-info > h3 {
+    color: var(--default-text-color);
+  }
 }
 </style>

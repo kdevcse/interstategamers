@@ -101,9 +101,6 @@ export default class HomeEpisode extends Vue {
   .episode-title, .ep-description, .season-title {
     color: var(--default-text-color);
   }
-  .season-title {
-    border-bottom: solid var(--primary-color);
-  }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {

@@ -110,22 +110,6 @@ header {
   margin-left: 1.5%;
   transition: opacity 0.25s, transform 0.25s ease-out;
 }
-@media screen and (prefers-color-scheme: dark) {
-  header{
-    background-color: var(--secondary-color);
-    border-bottom: solid var(--primary-color);
-  }
-	#ig-header-left-trailer {
-		border: solid var(--default-text-color);
-    background-color: none;
-	}
-  #ig-icons > a > svg, .ig-header-left-text-container {
-    color: var(--default-text-color);
-  }
-  .ig-header-right-logo {
-    opacity: 87%;
-  }
-}
 @media only screen and (max-width: 768px) {
   header {
     display: block;
@@ -253,6 +237,22 @@ header {
   }
   .ig-header-left-text-container > p {
     font-size: 25px;
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  header{
+    background-color: var(--secondary-color);
+    border-bottom: solid var(--primary-color);
+  }
+	#ig-header-left-trailer {
+    background-color: var(--elevation-color);
+    color: var(--default-text-color)
+	}
+  #ig-icons > a > svg, .ig-header-left-text-container {
+    color: var(--default-text-color);
+  }
+  .ig-header-right-logo {
+    opacity: 87%;
   }
 }
 </style>
