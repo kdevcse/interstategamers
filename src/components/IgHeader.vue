@@ -253,7 +253,7 @@ header {
     color: var(--default-text-color);
   }
   .ig-header-right-logo {
-    opacity: 87%;
+    opacity: 0.87;
   }
 }
 </style>
