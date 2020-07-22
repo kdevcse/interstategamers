@@ -63,7 +63,7 @@ export default class RankingsOptions extends Vue {
 <style scoped>
 .options-container{
     position: fixed;
-	top: 70px;
+	top: 72px;
     z-index: 1;
 	background-color: var(--primary-color);
 	color: white;

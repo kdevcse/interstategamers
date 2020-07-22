@@ -140,14 +140,14 @@ export default {
 <style scoped>
 #rankings-table {
 	position: relative;
-	top: 65px;
+	top: 67px;
 	width: 100%;
 	min-width: fit-content;
 	text-align: center;
 }
 #rankings-header{
 	position: sticky;
-	top: 135px;
+	top: 137px;
 	display: grid;
 	grid-template-columns: minmax(150px, 1fr) minmax(150px, 2fr) repeat(8, minmax(150px, 1fr));
 	background-color: var(--primary-color);
