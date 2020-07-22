@@ -97,7 +97,11 @@ export default class HomeEpisode extends Vue {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
+@media screen and (prefers-color-scheme: dark) {
+  .episode-title, .ep-description {
+    color: white;
+  }
+}
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
   .player > svg {
@@ -108,7 +112,7 @@ export default class HomeEpisode extends Vue {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .episode:hover {
-    background: #f1f1f1;
+    background: var(--hover-color);
   }
   .episode:hover > .ep-info > h2 > svg {
     animation: rumble 0.3s cubic-bezier(0.16, 1, 0.3, 1);

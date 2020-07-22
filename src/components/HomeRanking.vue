@@ -54,7 +54,7 @@ export default class HomeRanking extends Vue {
 #ig-content-rank {
   margin-left: 5%;
   height: 100%;
-  color: var(--primary-color);
+  color: var(--default-text-color);
 }
 #ig-content-rank-game-title {
   margin-bottom: 0;
@@ -68,7 +68,6 @@ export default class HomeRanking extends Vue {
   font-size: 18.72px;
   font-weight: bolder;
 }
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 992px) {
   #ig-content-rank {

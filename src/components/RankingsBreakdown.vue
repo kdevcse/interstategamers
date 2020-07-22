@@ -35,4 +35,10 @@ export default class IgContent extends Vue {
 h3 {
     margin: 5px 0px;
 }
+@media screen and (prefers-color-scheme: dark) {
+  .rankings-breakdown {
+    background-color: rgba(255,255,255, 6%);
+    border-color: var(--primary-color);
+  }
+}
 </style>
