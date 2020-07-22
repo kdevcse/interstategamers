@@ -161,7 +161,7 @@ export default class RankingsInfo extends Vue {
 		border-color: var(--secondary-color);
 	}
 	.breakdown-img.default {
-		opacity: 87%;
+		opacity: 0.87;
 	}
 }
 
