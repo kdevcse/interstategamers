@@ -12,7 +12,7 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 - [x] Faster navigation
 - [x] Faster and optimized algorithms\
 - [x] Cleaner code
-- [ ] Dark mode
+- [x] Dark mode
 - [ ] Online store (No outside parties. Seeking local solutions)
 - [ ] Easier way to submit scores
 
