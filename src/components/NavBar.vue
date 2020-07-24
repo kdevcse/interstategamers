@@ -1,5 +1,5 @@
 <template>
-    <div class="nav">
+    <div class="nav-container">
         <nav id="mobile-nav-bar">
             <div id="mobile-nav-main-container">
                 <router-link id="mobile-nav-logo-container" to="/">
@@ -53,13 +53,17 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 70px;
+    height: 72px;
     z-index: 1;
     list-style-type: none;
-    background-color: #2d32af;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
-.nav-tab-logo{
+.nav-tab-logo {
     height: 55px;
+}
+#mobile-nav-list {
+    background-color: var(--primary-color);
 }
 #mobile-nav-logo{
     width: 45px;
@@ -67,11 +71,10 @@ nav {
 .nav-list {
     display: flex;
     align-items: center;
-    margin-left: 62px;
+    padding-left: 62px;
 }
 .nav-tab {
     text-decoration: none;
-    color: white;
     font-family: Interstate;
     font-weight: bold;
     font-size: 25px;
@@ -83,40 +86,38 @@ nav {
 .nav-list > a:hover, .router-link-exact-active {
     text-decoration: white underline solid;
 }
-@media only screen and (max-width: 770px){
-    #nav-bar{
+@media only screen and (max-width: 770px) {
+    #nav-bar {
         display: none;
     }
-    #mobile-nav-main-container{
+    #mobile-nav-main-container {
         display: flex;
         align-items: center;
         height: 100%;
         margin-bottom: -2px;
     }
-    #mobile-nav-logo-container{
+    #mobile-nav-logo-container {
         float: left;
     }
-    #mobile-nav-logo-container, #mobile-nav-button{
+    #mobile-nav-logo-container, #mobile-nav-button {
         font-size: 38px;
         padding: 7.5px 5%;
         margin-top: 7.5px;
     }
-    #mobile-nav-bar{
+    #mobile-nav-bar {
         display: inherit;
-        background-color: #2d32af;
     }
-    #mobile-nav-list{
+    #mobile-nav-list {
         display: none;
         position: fixed;
         width: 100%;
-        padding-bottom: 7px;
-        background-color: #2d32af;
+        margin-bottom: 7px;
         z-index: 1;
     }
-    #mobile-nav-list.opened{
+    #mobile-nav-list.opened {
         display: inherit;
     }
-    #mobile-nav-list > a{
+    #mobile-nav-list > a {
         color: white;
         padding: 14px 16px;
         text-decoration: none;
@@ -124,33 +125,59 @@ nav {
         font-size: 15px;
         display: block;
         border-top: white solid 1px;
-        margin-left: 5%;
-        margin-right: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     #mobile-nav-button {
-        color: white;
         float: right;
         margin-left: auto;
     }
     #mobile-nav-list a:hover {
         background-color: white;
-        color: #2d32af;
+        color: var(--primary-color);
     }
-    #mobile-nav-button > svg{
+    #mobile-nav-button > svg {
         vertical-align: unset;
-    }
-    .active {
-        background-color: #4CAF50;
-        color: white;
     }
 }
 @media only screen and (min-width: 770px){
-    #nav-bar{
+    #nav-bar {
         display: inherit;
         border-bottom: white solid 1px;
     }
-    #mobile-nav-bar, #mobile-nav-logo-container, #mobile-nav-logo{
+    #mobile-nav-bar, #mobile-nav-logo-container, #mobile-nav-logo {
         display: none;
+    }
+    @media screen and (prefers-color-scheme: dark) {
+        #nav-bar {
+            border-bottom: var(--primary-color) solid 1px;
+        }
+    }
+}
+@media screen and (prefers-color-scheme: dark) {
+    #mobile-nav-list {
+        background-color: var(--secondary-color);
+    }
+    #mobile-nav-list > a {
+        background-color: var(--elevation-third-lvl-color);
+        color: var(--default-text-color);
+        border-top: var(--default-text-color) solid 1px;
+    }
+    nav {
+        color: var(--default-text-color);
+    }
+    .nav-container > nav {
+        background-color: var(--secondary-color);
+        color: var(--default-text-color)
+    }
+    .nav-tab {
+        color: var(--default-text-color);
+    }
+    .nav-container > nav > div {
+        background-color: var(--elevation-third-lvl-color);
+    }
+    .nav-list > a:hover, .router-link-exact-active {
+        text-decoration: var(--default-text-color) underline solid;
     }
 }
 </style>

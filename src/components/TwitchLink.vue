@@ -30,7 +30,7 @@ export default class TwitchLink extends Vue {
 }
 .live-text{
     visibility: hidden;
-    color: red;
+    color: var(--accent-color);
     margin-top: 3px;
     margin-bottom: 3px;
 }

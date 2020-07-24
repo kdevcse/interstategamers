@@ -40,7 +40,7 @@ export default class RankMeter extends Vue {
 <style scoped>
 .rank-header {
   text-align: left;
-  color: #2d32af;
+  color: var(--default-text-color);
 }
 p.rank-header{
   margin: 2px 0px 2px 0px;
@@ -59,23 +59,28 @@ h1.rank-header{
   padding: 2px;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid #2d32af;
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   overflow: hidden;
 }
 .progress-foreground {
   height: 18px;
   border-radius: 3px;
-  background-color: #2d32af;
+  background-color: var(--primary-color);
   transition: width 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 .rank-header.red {
-  color: red;
+  color: var(--accent-color);
 }
 .progress-background.red {
-  border: 2px solid red;
+  border: 2px solid  var(--accent-color);
 }
 .progress-foreground.red {
-  background-color: red;
+  background-color: var(--accent-color);
+}
+@media screen and (prefers-color-scheme: dark) {
+  .rank-header.red {
+    color: var(--default-text-color);
+  }
 }
 </style>

@@ -49,7 +49,7 @@ export default class RankingsHeader extends Vue {
 <style scoped>
 .rankings-header {
     padding: 16px 0px;
-	background-color: #2d32af;
+	background-color: var(--elevation-second-lvl-color);
     color: white;
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
@@ -83,8 +83,9 @@ export default class RankingsHeader extends Vue {
 		min-width: 93px;
     }
 }
-/* Larger devices than phones */
-@media only screen and (min-width: 770px){
-
+@media screen and (prefers-color-scheme: dark) {
+  .rankings-header {
+    color: var(--default-text-color);
+  }
 }
 </style>

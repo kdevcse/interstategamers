@@ -67,7 +67,7 @@ header {
   align-items: center;
   width: 100%;
   padding: 20px 5%;
-  background-color: #2d32af;
+  background-color: var(--primary-color);
 }
 #ig-header-left {
   display: grid;
@@ -86,6 +86,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  background-color: white;
 }
 #ig-header-left-trailer:hover {
   cursor: pointer;
@@ -109,7 +111,6 @@ header {
   margin-left: 1.5%;
   transition: opacity 0.25s, transform 0.25s ease-out;
 }
-
 @media only screen and (max-width: 768px) {
   header {
     display: block;
@@ -142,16 +143,15 @@ header {
     padding-right: 3%;
   }
   #ig-header-left-trailer {
-    color: #2d32af;
+    color: var(--primary-color);
     padding: 12px;
     border-radius: 6px;
-    background-color: white;
     justify-self: center;
   }
   #ig-header-left-trailer > svg {
     margin-right: 8px;
     font-size: 25px;
-    color: red;
+    color: var(--accent-color);
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -178,7 +178,6 @@ header {
     font-size: 34px;
     margin-bottom: 5px;
     margin-top: 0;
-    color: white;
   }
   .ig-header-left-text-container > p {
     margin: 0;
@@ -187,16 +186,15 @@ header {
   }
   #ig-header-left-trailer {
     width: 225px;
-    color: #2d32af;
+    color: var(--primary-color);
     font-size: 15px;
     padding: 7px;
     border-radius: 6px;
-    background-color: white;
   }
   #ig-header-left-trailer > svg {
     margin-right: 10px;
     font-size: 23px;
-    color: red;
+    color: var(--accent-color);
   }
 }
 
@@ -213,15 +211,14 @@ header {
   }
   #ig-header-left-trailer {
     width: 275px;
-    color: #2d32af;
+    color: var(--primary-color);
     font-size: 20px;
     padding: 15px;
-    background-color: white;
   }
   #ig-header-left-trailer > svg {
     margin-right: 11px;
     font-size: 27px;
-    color: red;
+    color: var(--accent-color);
   }
   .ig-header-right-logo {
     height: 375px;
@@ -241,6 +238,22 @@ header {
   }
   .ig-header-left-text-container > p {
     font-size: 25px;
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  header{
+    background-color: var(--secondary-color);
+    border-bottom: solid var(--primary-color);
+  }
+  #ig-header-left-trailer {
+  	background-color: var(--elevation-second-lvl-color);
+    color: var(--default-text-color);
+  }
+  #ig-icons > a > svg, .ig-header-left-text-container {
+    color: var(--default-text-color);
+  }
+  .ig-header-right-logo {
+    opacity: 0.87;
   }
 }
 </style>

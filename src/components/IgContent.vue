@@ -107,12 +107,20 @@ export default class IgContent extends Vue {
   }
   /* Handle */
   #episodes::-webkit-scrollbar-thumb {
-    background: red;
+    background: var(--accent-color);
     border-radius: 30px;
   }
   .ig-content {
     grid-template-columns: 50% 50%;
     grid-template-rows: 90vh;
+  }
+  @media screen and (prefers-color-scheme: dark) {
+    #episodes::-webkit-scrollbar-track {
+      background: var(--elevation-first-lvl-color);
+    }
+    #episodes::-webkit-scrollbar-thumb {
+      background: var(--elevation-second-lvl-color);
+    }
   }
 }
 

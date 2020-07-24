@@ -28,7 +28,7 @@ export default class ExtrasSection extends Vue {
     margin-bottom: 10px;
 }
 .friend-info > h3{
-    color: #2d32af;
+    color: var(--primary-color);
     margin-bottom: 9px;
     font-size: 19px;
 }
@@ -47,16 +47,20 @@ export default class ExtrasSection extends Vue {
     align-items: center;
 }
 .info-links{
-    color: #2d32af;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bolder;
 }
 .info-links:hover{
     text-decoration: underline;
+    color: var(--accent-color);
 }
 .extras-header {
-    border-bottom: red solid 2px;
-    color: red;
+    border-bottom: var(--primary-color) solid 2px;
+    color: var(--primary-color);
+}
+.extras-header > span > svg {
+    color: var(--accent-color);
 }
 
 @media only screen and (max-width: 768px){
@@ -72,5 +76,10 @@ export default class ExtrasSection extends Vue {
     .extras-header{
         margin-bottom: 0px;
     }
+}
+@media screen and (prefers-color-scheme: dark) {
+  .extras-header, .friend-info > h3 {
+    color: var(--default-text-color);
+  }
 }
 </style>

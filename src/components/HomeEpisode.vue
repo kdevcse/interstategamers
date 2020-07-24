@@ -57,9 +57,9 @@ export default class HomeEpisode extends Vue {
 
 <style scoped>
 .season-title {
-  color: red;
+  color: var(--accent-color);
   width: 100%;
-  border-bottom: solid red;
+  border-bottom: solid var(--accent-color);
   margin-bottom: 0;
 }
 .episode {
@@ -72,32 +72,32 @@ export default class HomeEpisode extends Vue {
   overflow: hidden;
 }
 .episode {
-  border-top: #2d32af solid 1px;
+  border-top: var(--primary-color) solid 1px;
 }
 .episode.top {
   border-top: none;
 }
 .player > svg {
   font-size: 32px;
+  color: black;
 }
 .player > svg:hover {
   cursor: pointer;
 }
 .episode-title {
-  color: #2d32af;
+  color: var(--primary-color);
   font-size: 1.3rem;
   margin-bottom: 0;
   margin-top: 0;
 }
 .episode-title > svg {
-  color: red;
+  color: var(--accent-color);
 }
 .ep-description {
-  color: #2d32af;
+  color: var(--primary-color);
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
   .player > svg {
@@ -108,7 +108,7 @@ export default class HomeEpisode extends Vue {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .episode:hover {
-    background: #f1f1f1;
+    background: var(--elevation-first-lvl-color);
   }
   .episode:hover > .ep-info > h2 > svg {
     animation: rumble 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -120,6 +120,17 @@ export default class HomeEpisode extends Vue {
     20%, 40%, 60%, 80%, 100% {
       transform: translateY(1px);
     }
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  .episode-title, .ep-description, .season-title, .player > svg {
+    color: var(--default-text-color);
+  }
+  .episode {
+    border-top-color: var(--elevation-second-lvl-color);
+  }
+  .season-title {
+    border-bottom-color: var(--primary-color);
   }
 }
 </style>

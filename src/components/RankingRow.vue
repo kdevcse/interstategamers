@@ -77,7 +77,7 @@ export default class RankingRow extends Vue
 }
 .rankings-table-row > p {
 	padding: 5px 0px;
-	color: #2d32af;
+	color: var(--default-text-color);
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
@@ -89,10 +89,10 @@ export default class RankingRow extends Vue
 	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 p.sorted {
-	color: red !important;
+	color: var(--accent-color) !important;
 }
 .rankings-table-row > p > svg {
-	color: red;
+	color: var(--accent-color);
 }
 .guest-icon{
 	margin-left: 10px;
@@ -111,12 +111,12 @@ p.sorted {
 /* Larger devices than phones */
 @media only screen and (min-width: 770px){
 	.rankings-table-row.selected{
-		background-color: #f0f0f5;
-		border-top: #2d32af solid 1px;
-		color: #2d32af;
+		background-color: var(--elevation-first-lvl-color);
+		border-top: var(--primary-color) solid 1px;
+		color: var(--default-text-color);
 	}
 	.rankings-table-row:hover{
-		background-color: #f0f0f5;
+		background-color: var(--elevation-first-lvl-color);
 		cursor: pointer;
 	}
 }

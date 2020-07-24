@@ -61,8 +61,8 @@ article {
   padding: 15px 5% 75px 5%;
 }
 h1 {
-  color: #2d32af;
-  border-bottom: 2px #2d32af solid;
+  color: var(--primary-color);
+  border-bottom: 2px var(--primary-color) solid;
 }
 #boyz-img {
   border-radius: 3px;
@@ -72,7 +72,7 @@ h1 {
   width: 100%;
 }
 #boyz-img figcaption {
-  color: red;
+  color: var(--accent-color);
   font-size: 13px;
 }
 @media only screen and (max-width: 600px) {
@@ -98,6 +98,11 @@ h1 {
   }
   h1 {
     font-size: 150%;
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  h1 {
+    color: var(--default-text-color);
   }
 }
 </style>
