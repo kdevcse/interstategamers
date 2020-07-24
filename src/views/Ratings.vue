@@ -148,6 +148,7 @@ export default {
 #rankings-header{
 	position: sticky;
 	top: 137px;
+	z-index: 1;
 	display: grid;
 	grid-template-columns: minmax(150px, 1fr) minmax(150px, 2fr) repeat(8, minmax(150px, 1fr));
 	background-color: var(--primary-color);
