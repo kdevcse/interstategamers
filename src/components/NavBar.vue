@@ -59,7 +59,7 @@ nav {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
-.nav-tab-logo{
+.nav-tab-logo {
     height: 55px;
 }
 #mobile-nav-list {
@@ -86,38 +86,38 @@ nav {
 .nav-list > a:hover, .router-link-exact-active {
     text-decoration: white underline solid;
 }
-@media only screen and (max-width: 770px){
-    #nav-bar{
+@media only screen and (max-width: 770px) {
+    #nav-bar {
         display: none;
     }
-    #mobile-nav-main-container{
+    #mobile-nav-main-container {
         display: flex;
         align-items: center;
         height: 100%;
         margin-bottom: -2px;
     }
-    #mobile-nav-logo-container{
+    #mobile-nav-logo-container {
         float: left;
     }
-    #mobile-nav-logo-container, #mobile-nav-button{
+    #mobile-nav-logo-container, #mobile-nav-button {
         font-size: 38px;
         padding: 7.5px 5%;
         margin-top: 7.5px;
     }
-    #mobile-nav-bar{
+    #mobile-nav-bar {
         display: inherit;
     }
-    #mobile-nav-list{
+    #mobile-nav-list {
         display: none;
         position: fixed;
         width: 100%;
         margin-bottom: 7px;
         z-index: 1;
     }
-    #mobile-nav-list.opened{
+    #mobile-nav-list.opened {
         display: inherit;
     }
-    #mobile-nav-list > a{
+    #mobile-nav-list > a {
         color: white;
         padding: 14px 16px;
         text-decoration: none;
@@ -136,20 +136,16 @@ nav {
         background-color: white;
         color: var(--primary-color);
     }
-    #mobile-nav-button > svg{
+    #mobile-nav-button > svg {
         vertical-align: unset;
-    }
-    .active {
-        background-color: #4CAF50;
-        color: white;
     }
 }
 @media only screen and (min-width: 770px){
-    #nav-bar{
+    #nav-bar {
         display: inherit;
         border-bottom: white solid 1px;
     }
-    #mobile-nav-bar, #mobile-nav-logo-container, #mobile-nav-logo{
+    #mobile-nav-bar, #mobile-nav-logo-container, #mobile-nav-logo {
         display: none;
     }
     @media screen and (prefers-color-scheme: dark) {
@@ -167,7 +163,7 @@ nav {
         color: var(--default-text-color);
         border-top: var(--default-text-color) solid 1px;
     }
-    nav{
+    nav {
         color: var(--default-text-color);
     }
     .nav-container > nav {
