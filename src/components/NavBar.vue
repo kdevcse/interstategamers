@@ -57,9 +57,13 @@ nav {
     z-index: 1;
     list-style-type: none;
     background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 .nav-tab-logo{
     height: 55px;
+}
+#mobile-nav-list {
+    background-color: var(--primary-color);
 }
 #mobile-nav-logo{
     width: 45px;
@@ -71,7 +75,6 @@ nav {
 }
 .nav-tab {
     text-decoration: none;
-    color: white;
     font-family: Interstate;
     font-weight: bold;
     font-size: 25px;
@@ -108,7 +111,7 @@ nav {
         display: none;
         position: fixed;
         width: 100%;
-        padding-bottom: 7px;
+        margin-bottom: 7px;
         z-index: 1;
     }
     #mobile-nav-list.opened{
@@ -122,8 +125,8 @@ nav {
         font-size: 15px;
         display: block;
         border-top: white solid 1px;
-        margin-left: 5%;
-        margin-right: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     #mobile-nav-button {
         float: right;
@@ -156,18 +159,29 @@ nav {
     }
 }
 @media screen and (prefers-color-scheme: dark) {
-  .nav-container > nav {
-    background-color: var(--secondary-color);
-    color: var(--default-text-color)
-  }
-  .nav-tab {
-    color: var(--default-text-color);
-  }
-  .nav-container > nav > div {
-    background-color: var(--elevation-third-lvl-color);
-  }
-  .nav-list > a:hover, .router-link-exact-active {
-    text-decoration: var(--default-text-color) underline solid;
-  }
+    #mobile-nav-list {
+        background-color: var(--secondary-color);
+    }
+    #mobile-nav-list > a {
+        background-color: var(--elevation-third-lvl-color);
+        color: var(--default-text-color);
+        border-top: var(--default-text-color) solid 1px;
+    }
+    nav{
+        color: var(--default-text-color);
+    }
+    .nav-container > nav {
+        background-color: var(--secondary-color);
+        color: var(--default-text-color)
+    }
+    .nav-tab {
+        color: var(--default-text-color);
+    }
+    .nav-container > nav > div {
+        background-color: var(--elevation-third-lvl-color);
+    }
+    .nav-list > a:hover, .router-link-exact-active {
+        text-decoration: var(--default-text-color) underline solid;
+    }
 }
 </style>
