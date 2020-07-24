@@ -74,6 +74,7 @@ nav {
     padding-left: 62px;
 }
 .nav-tab {
+    color: white;
     text-decoration: none;
     font-family: Interstate;
     font-weight: bold;
