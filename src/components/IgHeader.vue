@@ -2,6 +2,7 @@
   <header id='ig-header'>
     <aside id='ig-header-right'>
       <img class='ig-header-right-logo' src='../assets/images/main.png' />
+      <img class='ig-header-right-logo dark' src='../assets/images/main_dark-mode-colors.png' />
       <div id='ig-icons'>
         <a href='https://www.facebook.com/TheInterstateGamers/' title='Facebook'>
           <i class='fab fa-facebook-square fa-2x'></i>
@@ -77,6 +78,9 @@ header {
 }
 .ig-header-right-logo {
   height: 375px;
+}
+.ig-header-right-logo.dark{
+  display: none;
 }
 .ig-header-left-text-container {
   align-items: center;
@@ -234,7 +238,7 @@ header {
     grid-template-columns: minmax(min-content, 50%) 50%;
   }
   #ig-header-right {
-    justify-self: normal;
+    justify-self: center;
   }
   .ig-header-left-text-container > p {
     font-size: 25px;
@@ -254,6 +258,10 @@ header {
   }
   .ig-header-right-logo {
     opacity: 0.87;
+    display: none;
+  }
+  .ig-header-right-logo.dark{
+    display: inherit;
   }
 }
 </style>

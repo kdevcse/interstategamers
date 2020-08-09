@@ -19,7 +19,8 @@
         </nav>
         <nav id="nav-bar">
             <div class="nav-list">
-                <router-link class="nav-tab" to="/"><img class="nav-tab-logo" src="../assets/images/badge_sm.png"></router-link>
+                <router-link class="nav-tab light" to="/"><img class="nav-tab-logo" src="../assets/images/badge_sm.png"></router-link>
+                <router-link class="nav-tab dark" to="/"><img class="nav-tab-logo" src="../assets/images/badge_sm_dark-mode-colors.png"></router-link>
                 <router-link class="nav-tab" to="/ratings">Ratings</router-link>
                 <a class="nav-tab" target="_blank" rel="noopener noreferrer" href="https://www.teepublic.com/stores/the-interstate-gamers?ref_id=7904">Store</a>
                 <router-link class="nav-tab" to="/extras">Extras</router-link>
@@ -59,6 +60,9 @@ nav {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
+.nav-tab.dark {
+    display: none;
+}
 .nav-tab-logo {
     height: 55px;
 }
@@ -72,6 +76,7 @@ nav {
     display: flex;
     align-items: center;
     padding-left: 62px;
+    height: 100%;
 }
 .nav-tab {
     color: white;
@@ -173,6 +178,12 @@ nav {
     }
     .nav-tab {
         color: var(--default-text-color);
+    }
+    .nav-tab.dark {
+        display: initial;
+    }
+    .nav-tab.light {
+        display: none;
     }
     .nav-container > nav > div {
         background-color: var(--elevation-third-lvl-color);
