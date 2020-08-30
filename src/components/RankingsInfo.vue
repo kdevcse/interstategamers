@@ -17,7 +17,7 @@
 		</div>
 		<RankingsBreakdown  reviewer="Peter" :scores="peterScores"></RankingsBreakdown>
 		<RankingsBreakdown  reviewer="Kevin" :scores="kevinScores"></RankingsBreakdown>
-		<RankingsBreakdown  :reviewer="guest" v-if="guest" :scores="kevinScores"></RankingsBreakdown>
+		<RankingsBreakdown  :reviewer="guest" v-if="guest" :scores="guestScores"></RankingsBreakdown>
 	</div>
 </template>
 
