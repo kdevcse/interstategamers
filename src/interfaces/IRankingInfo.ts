@@ -35,6 +35,38 @@ export interface IRankingInfo {
     "GameImage"?: string
 }
 
+export interface EpisodeInfo {
+    updated_at : Date,
+    type: string,
+    token: string,
+    title: string,
+    status: string,
+    slug: string,
+    season: {
+        href: string,
+        number: number
+    },
+    scheduled_for: Date,
+    published_at: Date,
+    number: number,
+    markers: {
+        href: string,
+        collection: Array<Object>
+    },
+    is_hidden: boolean,
+    image_url: string,
+    image_path: string,
+    id: string,
+    href: string,
+    guid: string,
+    enclosure_url: string,
+    description: string,
+    days_since_release: number,
+    analytics: {
+        href: string
+    }
+}
+
 export enum CategoryTypes {
     Rank = "rank",
     Title = "Game",
