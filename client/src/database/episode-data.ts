@@ -1,4 +1,4 @@
-import episodeData from '../database/data.json'
+import episodeData from './data.json'
 
 /* eslint-disable */
 function sortEpisodesByDate (a: any, b: any) {
