@@ -17,13 +17,12 @@ Vue.config.productionTip = true;
 
 /*Firebase Setup*/
 const firebaseConfig = {
-  apiKey: "AIzaSyBtt-MwRoY5x0ValrczH7bomtx5cyMvopc",
-  authDomain: "interstategamers-7122d.firebaseapp.com",
-  projectId: "interstategamers-7122d",
-  storageBucket: "interstategamers-7122d.appspot.com",
-  messagingSenderId: "960788987586",
-  appId: "1:960788987586:web:d1fe11bb12f8c6512d455b",
-  measurementId: "G-2342HJ4PT9"
+  apiKey: "AIzaSyCmzX1CIW5vK7ri6C5EL6zt_APHE7n5-WM",
+  authDomain: "ig-serverless-functions.firebaseapp.com",
+  projectId: "ig-serverless-functions",
+  storageBucket: "ig-serverless-functions.appspot.com",
+  messagingSenderId: "751599859347",
+  appId: "1:751599859347:web:36cb3e4de18bad70d17f66"
 };
 
 firebase.initializeApp(firebaseConfig);
