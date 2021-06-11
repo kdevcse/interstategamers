@@ -1,7 +1,6 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const fetch = require('node-fetch');
-//import admin from 'firebase-admin';
 
 admin.initializeApp();
 
@@ -15,10 +14,6 @@ function getSimplecastData (url, podKey) {
   .then(res => res.json())
 	.then(data => {
     return data;
-    /*return { 
-      episodes: data.collection,
-      next: data.pages.next ? data.pages.next.href : null
-    };*/
   }).catch((error) => {
     functions.logger.info(`Error: ${error}`, { structuredData: true });
   });
@@ -41,12 +36,14 @@ async function updatePodcastData(data) {
     }
     return;
   }).catch((error) => {
-    functions.logger.info(`Error: ${error}`, { structuredData: true });
+    functions.logger.warn(`Error: ${error}`, { structuredData: true });
   });
   
 }
 
-exports.updatePodcastData = functions.https.onRequest(async (request, response) => {
+exports.updatePodcastData = functions.pubsub.schedule('50 7 * * *')
+.timeZone('America/Chicago')
+.onRun(async (context) => {
   try { 
     var apiKeysColl = await admin.firestore().collection('api-keys').get();
 
@@ -69,9 +66,8 @@ exports.updatePodcastData = functions.https.onRequest(async (request, response) 
     }
 
     updatePodcastData(data);
-
-    response.send('Podcast data updated');
+    functions.logger.info('Podcast data updated');
   } catch(e) {
-    response.send(`Error occurred while trying to update podcast data: ${e}`);
+    functions.logger.warn(`Error occurred while trying to update podcast data: ${e}`);
   }
 });
