@@ -35,7 +35,7 @@ export interface IRankingInfo {
     "GameImage"?: string
 }
 
-export interface EpisodeInfo {
+export interface IEpisodeInfo {
     updated_at : Date,
     type: string,
     token: string,

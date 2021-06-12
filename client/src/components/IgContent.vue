@@ -2,7 +2,7 @@
   <section class="ig-content">
     <div id="episodes">
       <HomeEpisode
-        v-for="episode in episodes" :key="episode.id"
+        v-for="episode in sortedEpisodes" :key="episode.id"
         @show-score='showScores'
         :title="episode.title"
         :description="episode.description"
@@ -14,14 +14,14 @@
         :finale="episode.finale">
       </HomeEpisode>
     </div>
-    <HomeRanking
+    <!--<HomeRanking
     :gameplay="rankings.Gameplay"
     :aesthetics="rankings.Aesthetics"
     :content="rankings.Content"
     :overall="rankings['IG Score']"
     :rank="rankings.rank"
     :title="hoveredTitle" 
-    :totalGames="getTotalGames"></HomeRanking>
+    :totalGames="getTotalGames"></HomeRanking>-->
   </section>
 </template>
 
@@ -29,8 +29,11 @@
 import { Component, Vue } from 'vue-property-decorator'
 import HomeEpisode from '@/components/HomeEpisode.vue'
 import HomeRanking from '@/components/HomeRanking.vue'
-import episodeData from '../database/episode-data'
+//import episodeData from '../database/episode-data'
 import { IRankingInfo } from '../interfaces/IRankingInfo'
+import { IEpisodeInfo } from '../interfaces/IRankingInfo'
+import firebase from 'firebase/app';
+import '@firebase/firestore';
 
 @Component({
   components: {
@@ -39,16 +42,20 @@ import { IRankingInfo } from '../interfaces/IRankingInfo'
   }
 })
 export default class IgContent extends Vue {
-  episodes = episodeData
-  rankings: any = {};
-  hoveredTitle = '';
+  episodes: Array<IEpisodeInfo> = []
+  rankings: any;
+  hoveredTitle: string = '';
 
   mounted () {
-    this.hoveredTitle = this.episodes[0].title;
-    this.rankings = this.episodes[0]['Ranking Info'];
+    firebase.firestore().collection('podcast-data').get().then((c: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>) => {
+      c.docs.forEach((doc: firebase.firestore.DocumentData) => {
+        this.episodes.push(doc.data());
+      });
+      this.hoveredTitle = this.episodes[0].title;
+    });
   }
 
-  showScores (e: any) {
+  showScores (e: Array<any>) {
     if (e[0]) {
       this.rankings = e[0];
       this.hoveredTitle = e[1];
@@ -56,7 +63,13 @@ export default class IgContent extends Vue {
   }
 
   get getTotalGames () {
-    return this.episodes.filter((ep: any) => ep.type === 'full').length;
+    return this.episodes.filter((ep: IEpisodeInfo) => ep.type === 'full').length;
+  }
+
+  get sortedEpisodes () {
+    return this.episodes.sort((epA: IEpisodeInfo, epB: IEpisodeInfo) => {
+      return (new Date(epB.published_at) as any) - (new Date(epA.published_at) as any)
+    });
   }
 }
 </script>
