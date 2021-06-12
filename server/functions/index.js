@@ -15,7 +15,7 @@ function getSimplecastData (url, podKey) {
 	.then(data => {
     return data;
   }).catch((error) => {
-    functions.logger.info(`Error: ${error}`, { structuredData: true });
+    functions.logger.warn(`Error: ${error}`, { structuredData: true });
   });
 }
 
@@ -25,7 +25,6 @@ async function updatePodcastData(data) {
 
   await admin.firestore().collection('podcast-data').get().then((c) => {
     for (let i = 0; i < data.length; i++) {
-      functions.logger.info(data[i].id);
       if (!c.docs.some(doc => doc.id === data[i].id)) {
         admin.firestore().collection('podcast-data').doc(data[i].id).set(data[i]);
         functions.logger.info(`Added episode Id: ${data[i].id}`, { structuredData: true });
