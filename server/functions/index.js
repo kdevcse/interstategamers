@@ -4,6 +4,30 @@ const fetch = require('node-fetch');
 
 admin.initializeApp();
 
+async function updateData(data, collection) {
+  if (!data)
+    return;
+
+  var collectionRef = admin.firestore().collection(collection);
+  
+  await collectionRef.get().then((c) => {
+    for (let i = 0; i < data.length; i++) {
+      if (!c.docs.some(doc => doc.id === data[i].id)) {
+        data[i].id ? collectionRef.doc(data[i].id).set(data[i]) : collectionRef.add(data[i]);
+        functions.logger.info(`Added ${collection} Id: ${data[i].id}`, { structuredData: true });
+      } else {
+        collectionRef.doc(data[i].id).update(data[i]);
+        functions.logger.info(`Updated ${collection} Id: ${data[i].id}`, { structuredData: true });
+      }
+    }
+    return;
+  }).catch((error) => {
+    functions.logger.warn(error, { structuredData: true });
+  });
+  
+}
+
+/* Simplecast Integration */
 function getSimplecastData (url, podKey) {
   const header = { 'authorization' : `Bearer ${podKey}` };
 
@@ -15,29 +39,8 @@ function getSimplecastData (url, podKey) {
 	.then(data => {
     return data;
   }).catch((error) => {
-    functions.logger.warn(`Error: ${error}`, { structuredData: true });
+    functions.logger.warn(error, { structuredData: true });
   });
-}
-
-async function updatePodcastData(data) {
-  if (!data)
-    return;
-
-  await admin.firestore().collection('podcast-data').get().then((c) => {
-    for (let i = 0; i < data.length; i++) {
-      if (!c.docs.some(doc => doc.id === data[i].id)) {
-        admin.firestore().collection('podcast-data').doc(data[i].id).set(data[i]);
-        functions.logger.info(`Added episode Id: ${data[i].id}`, { structuredData: true });
-      } else {
-        admin.firestore().collection('podcast-data').doc(data[i].id).update(data[i]);
-        functions.logger.info(`Updated episode Id: ${data[i].id}`, { structuredData: true });
-      }
-    }
-    return;
-  }).catch((error) => {
-    functions.logger.warn(`Error: ${error}`, { structuredData: true });
-  });
-  
 }
 
 exports.updatePodcastData = functions.pubsub.schedule('50 7 * * *')
@@ -64,9 +67,58 @@ exports.updatePodcastData = functions.pubsub.schedule('50 7 * * *')
       count++;
     }
 
-    updatePodcastData(data);
+    updateData(data, 'podcast-data');
     functions.logger.info('Podcast data updated');
   } catch(e) {
     functions.logger.warn(`Error occurred while trying to update podcast data: ${e}`);
   }
 });
+
+/* Airtable Integration */
+/*
+const runtimeOpts = {
+  timeoutSeconds: 30,
+  memory: '512MB'
+};
+
+function correctAirtableObjectPropertyNames(dataObj) {
+  var rData = {};
+  rData.id = dataObj.id; //Need to put id into one object container
+
+  Object.keys(dataObj.fields).forEach((key) => {
+    var newKeyName = key.toLowerCase().replace(' ', '_').replace('.','');
+    newKeyName = newKeyName.includes('kevin\'s') ? newKeyName.replace('kevin\'s', 'k') : newKeyName;
+    newKeyName = newKeyName.includes('peter\'s') ? newKeyName.replace('peter\'s', 'k') : newKeyName;
+    rData[newKeyName] = dataObj.fields[key];
+  });
+
+  return rData;
+}
+
+exports.importAirtableData = functions.runWith(runtimeOpts).https.onRequest(async (request, response) => {
+  var apiKeysColl = await admin.firestore().collection('api-keys').get();
+
+  if (!apiKeysColl.docs[0])
+    return;
+
+  var apiKeys = apiKeysColl.docs[0].data();
+  var url = `https://api.airtable.com/v0/appDCLBXIkefciEz4/Ratings?api_key=${apiKeys.airtable_key}`;
+  var rankingsData = await fetch(url, {
+    method: 'get'
+  })
+  .then(res => res.json())
+  .then(data => {
+    var rankings = [];
+    for(let i = 0; i < data.records.length; i++) {
+      var rData = correctAirtableObjectPropertyNames(data.records[i]);
+      rankings.push(rData);
+      console.log(rankings[i]);
+    }
+    return rankings;
+  }).catch((error) => {
+    console.log(error);
+  });
+
+  updateData(rankingsData, 'ratings-data');
+  response.send('Ratings successfully imported from AirTable');
+});*/
