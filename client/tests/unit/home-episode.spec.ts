@@ -14,6 +14,7 @@ describe('HomeEpisode', () => {
         });
         const rankInfo: IRankingInfo = {
 			episode: "2-10",
+			id: "asdkadsfhjfj123",
 			game: "Metroid Prime",
 			platform: "GC",
 			k_gameplay: 93,
@@ -45,7 +46,6 @@ describe('HomeEpisode', () => {
 			visuals: 92,
 			audio: 95.33333333333333,
 			content: 93,
-			rank: 7,
 			game_image: "metroid_prime.jpg"
         };
 

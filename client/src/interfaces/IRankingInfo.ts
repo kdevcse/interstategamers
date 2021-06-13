@@ -1,4 +1,5 @@
 export interface IRankingInfo {
+    id: string,
     episode : string,
     episode_number: number,
     game : string,
@@ -27,7 +28,7 @@ export interface IRankingInfo {
     aesthetics: number,
     content: number,
     ig_score: number,
-    rank: number,
+    rank?: number,
     ign: number,
     metacritic: number,
     year: number,
@@ -64,7 +65,8 @@ export interface IEpisodeInfo {
     days_since_release: number,
     analytics: {
         href: string
-    }
+    },
+    finale: boolean
 }
 
 export enum CategoryTypes {

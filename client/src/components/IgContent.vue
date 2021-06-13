@@ -2,7 +2,8 @@
   <section class="ig-content">
     <div id="episodes">
       <HomeEpisode
-        v-for="episode in sortedEpisodes" :key="episode.id"
+        :v-if="pageIsReady"
+        v-for="(episode, index) in sortedEpisodes" :key="episode.id"
         @show-score='showScores'
         :title="episode.title"
         :description="episode.description"
@@ -10,18 +11,19 @@
         :season="episode.season.number"
         :episodeNumber="episode.number"
         :episodeType="episode.type"
-        :info="episode['Ranking Info']"
-        :finale="episode.finale">
+        :rankingId="getRankingId(episode.season.number, episode.number)"
+        :finale="isFinale(index)">
       </HomeEpisode>
     </div>
-    <!--<HomeRanking
-    :gameplay="rankings.Gameplay"
-    :aesthetics="rankings.Aesthetics"
-    :content="rankings.Content"
-    :overall="rankings['IG Score']"
-    :rank="rankings.rank"
-    :title="hoveredTitle" 
-    :totalGames="getTotalGames"></HomeRanking>-->
+    <HomeRanking
+    :v-if="pageIsReady"
+    :gameplay="hoveredRanking.gameplay"
+    :aesthetics="hoveredRanking.aesthetics"
+    :content="hoveredRanking.content"
+    :overall="hoveredRanking.ig_score"
+    :rank="hoveredRanking.rank"
+    :title="getHoveredRankingsTitle(hoveredRanking.episode, hoveredRanking.game)" 
+    :totalGames="getTotalGames"></HomeRanking>
   </section>
 </template>
 
@@ -43,23 +45,61 @@ import '@firebase/firestore';
 })
 export default class IgContent extends Vue {
   episodes: Array<IEpisodeInfo> = []
-  rankings: any;
-  hoveredTitle: string = '';
+  rankings: Array<IRankingInfo> = [];
+  hoveredRankingId: string = '';
 
   mounted () {
-    firebase.firestore().collection('podcast-data').get().then((c: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>) => {
-      c.docs.forEach((doc: firebase.firestore.DocumentData) => {
-        this.episodes.push(doc.data());
-      });
-      this.hoveredTitle = this.episodes[0].title;
+    var podcastDataPromise = this.getDataFromFirestore('podcast', this.episodes);
+    var ratingsDataPromise = this.getDataFromFirestore('ratings', this.rankings);
+
+    Promise.all([podcastDataPromise, ratingsDataPromise]).then(() => {
+      this.hoveredRankingId = this.getRankingId(this.sortedEpisodes[0].season.number, this.sortedEpisodes[0].number);
     });
   }
 
   showScores (e: Array<any>) {
     if (e[0]) {
-      this.rankings = e[0];
-      this.hoveredTitle = e[1];
+      this.hoveredRankingId = e[0];
     }
+  }
+
+  getRankingId(seasonNumber: number, episodeNumber: number) {
+    var rankingInfo = this.rankings.find((ranking) => ranking.episode === `${seasonNumber}-${episodeNumber}`);
+    return rankingInfo ? rankingInfo.id : '';
+  }
+
+  getHoveredRankingsTitle(episode: string, game: string) {
+    return episode && game ? `${episode}: ${game}`: null;
+  }
+
+  getDataFromFirestore(type: string, dataArray: Array<any>) {
+    return firebase.firestore().collection(`${type}-data`).get().then((c: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>) => {
+      c.docs.forEach((doc: firebase.firestore.DocumentData) => {
+        dataArray.push(doc.data());
+      });
+    }).catch((error) => {
+      console.error(`An error occured fetching ${type} data: ${error}`);
+    });
+  }
+  
+  isFinale(index: number) {
+    return this.sortedEpisodes[index - 1] && this.sortedEpisodes[index - 1].season.number > this.sortedEpisodes[index].season.number || index === 0;
+  }
+
+  get hoveredRanking() {
+    var rankingFound;
+    this.sortedRankings.forEach((ranking, index) => {
+      const currentScore = ranking.ig_score;
+      const lastScore = index > 0 ? this.sortedRankings[index - 1].ig_score : null;
+      ranking.rank = lastScore && (currentScore === lastScore) ? this.sortedRankings[index - 1].rank : index + 1;
+
+      if (ranking.id === this.hoveredRankingId) {
+        rankingFound = ranking;
+        return;   
+      }
+    });
+
+    return rankingFound ?? {};
   }
 
   get getTotalGames () {
@@ -68,8 +108,18 @@ export default class IgContent extends Vue {
 
   get sortedEpisodes () {
     return this.episodes.sort((epA: IEpisodeInfo, epB: IEpisodeInfo) => {
-      return (new Date(epB.published_at) as any) - (new Date(epA.published_at) as any)
+      return (new Date(epB.published_at) as any) - (new Date(epA.published_at) as any);
     });
+  }
+
+  get sortedRankings () {
+    return this.rankings.sort((epA: IRankingInfo, epB: IRankingInfo) => {
+      return (new Date(epB.ig_score) as any) - (new Date(epA.ig_score) as any);
+    });
+  }
+
+  get pageIsReady () {
+    return this.rankings && this.episodes && this.rankings.length > 0 && this.episodes.length > 0;
   }
 }
 </script>
