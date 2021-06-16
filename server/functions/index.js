@@ -14,15 +14,13 @@ async function updateData(data, collection) {
     for (let i = 0; i < data.length; i++) {
       if (!c.docs.some(doc => doc.id === data[i].id)) {
         data[i].id ? collectionRef.doc(data[i].id).set(data[i]) : collectionRef.add(data[i]);
-        functions.logger.info(`Added ${collection} Id: ${data[i].id}`, { structuredData: true });
       } else {
         collectionRef.doc(data[i].id).update(data[i]);
-        functions.logger.info(`Updated ${collection} Id: ${data[i].id}`, { structuredData: true });
       }
     }
     return;
   }).catch((error) => {
-    functions.logger.warn(error, { structuredData: true });
+    functions.logger.warn(error);
   });
   
 }
@@ -38,8 +36,6 @@ function getSimplecastData (url, podKey) {
   .then(res => res.json())
 	.then(data => {
     return data;
-  }).catch((error) => {
-    functions.logger.warn(error, { structuredData: true });
   });
 }
 
@@ -56,6 +52,10 @@ exports.updatePodcastData = functions.pubsub.schedule('50 7 * * *')
     var data = [];
     var url = `https://api.simplecast.com/podcasts/${apiKeys.simplecast_id}/episodes`;
     var responseData = await getSimplecastData(url, apiKeys.simplecast_key);
+
+    if (!responseData)
+      return;
+
     Array.prototype.push.apply(data, responseData.collection);
 
     const total = responseData.pages.total;
@@ -63,12 +63,15 @@ exports.updatePodcastData = functions.pubsub.schedule('50 7 * * *')
     while (responseData && responseData.pages.next && count < total) {
       // eslint-disable-next-line no-await-in-loop
       responseData = await getSimplecastData(responseData.pages.next.href, apiKeys.simplecast_key);
+
+      if (!responseData)
+        return;
+
       Array.prototype.push.apply(data, responseData.collection);
       count++;
     }
 
     updateData(data, 'podcast-data');
-    functions.logger.info('Podcast data updated');
   } catch(e) {
     functions.logger.warn(`Error occurred while trying to update podcast data: ${e}`);
   }
