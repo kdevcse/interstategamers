@@ -20,7 +20,7 @@ async function updateData(data, collection) {
     }
     return;
   }).catch((error) => {
-    functions.logger.warn(error);
+    functions.logger.warn(`Error updating data: ${error}`);
   });
   
 }
@@ -36,6 +36,8 @@ function getSimplecastData (url, podKey) {
   .then(res => res.json())
 	.then(data => {
     return data;
+  }).catch((error) => {
+    functions.logger.warn(`Error making Simplecast request: ${error}`);
   });
 }
 
@@ -43,9 +45,11 @@ exports.updatePodcastData = functions.pubsub.schedule('50 7 * * *')
 .timeZone('America/Chicago')
 .onRun(async (context) => {
   try { 
-    var apiKeysColl = await admin.firestore().collection('api-keys').get();
+    var apiKeysColl = await admin.firestore().collection('api-keys').get().catch(error => {
+      functions.logger.warn(`Error retrieving api key: ${error}`);
+    });
 
-    if (!apiKeysColl.docs[0])
+    if (!apiKeysColl || !apiKeysColl.docs[0])
       return;
 
     var apiKeys = apiKeysColl.docs[0].data();
