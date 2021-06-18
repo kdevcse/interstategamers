@@ -95,7 +95,7 @@ function correctAirtableObjectPropertyNames(dataObj) {
   Object.keys(dataObj.fields).forEach((key) => {
     var newKeyName = key.toLowerCase().replace(' ', '_').replace('.','');
     newKeyName = newKeyName.includes('kevin\'s') ? newKeyName.replace('kevin\'s', 'k') : newKeyName;
-    newKeyName = newKeyName.includes('peter\'s') ? newKeyName.replace('peter\'s', 'k') : newKeyName;
+    newKeyName = newKeyName.includes('peter\'s') ? newKeyName.replace('peter\'s', 'p') : newKeyName;
     rData[newKeyName] = dataObj.fields[key];
   });
 
