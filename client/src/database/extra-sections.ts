@@ -27,13 +27,6 @@ const extrasSectionData = {
           <a class='info-links' target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/channel/UCdAwCnEt2WcaOy_KcT3sGiA'>Click here to visit ZLink Gaming on YouTube</a>, 
           but don’t sleep on his Twitch channel if you want to catch a stream with the IG boys.`,
       src: require('../assets/images/zlg.png')
-    },
-    {
-      heading: 'Ground Up Productions',
-      content: `Aaron Miller would like nothing more than for you to produce the best-sounding, best-looking content possible – because you deserve it. 
-          On his new channel Ground Up Productions, Aaron provides mic reviews, video tips, and more useful info for the budget-conscious content creator. 
-          <a class='info-links' target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/channel/UC8KDr1L4eimv-csT_IClYdA'>Click here to visit his channel on YouTube</a>, and with his guidance, you’ll have great aessstheticsss in no time.`,
-      src: require('../assets/images/aaron.jpg')
     }
   ]
 }
