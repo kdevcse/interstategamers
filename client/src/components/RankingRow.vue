@@ -4,8 +4,8 @@
     class="rankings-table-row"
     v-bind:class="{ selected: rowIsSelected() }"
   >
-    <p v-bind:class="{ sorted: highlightRed('rank')}">{{rank}}</p>
-    <p v-bind:class="{ sorted: highlightRed('Game')}">
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Rank)}">{{rank}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Title)}">
       <span>{{title}}</span>
       <font-awesome-icon
         class="guest-icon"
@@ -14,14 +14,14 @@
         v-if="guest"
       ></font-awesome-icon>
     </p>
-    <p v-bind:class="{ sorted: highlightRed('Year')}">{{year}}</p>
-    <p v-bind:class="{ sorted: highlightRed('Platform')}">{{platform}}</p>
-    <p v-bind:class="{ sorted: highlightRed('IG Score')}">{{overall.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed('Gameplay')}">{{gameplay.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed('Aesthetics')}">{{aesthetics.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed('Content')}">{{content.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed('Peter\'s Rating')}">{{pOverall.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed('Kevin\'s Rating')}">{{kOverall.toFixed(2)}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Year)}">{{year}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Platform)}">{{platform}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Overall)}">{{overall.toFixed(2)}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Gameplay)}">{{gameplay.toFixed(2)}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Aesthetics)}">{{aesthetics.toFixed(2)}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Content)}">{{content.toFixed(2)}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.POverall)}">{{pOverall.toFixed(2)}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.KOverall)}">{{kOverall.toFixed(2)}}</p>
   </div>
 </template>
 
@@ -64,6 +64,8 @@ export default class RankingRow extends Vue {
       this.$emit("row-selected", null);
     }
   }
+
+  get CategoryTypes() { return CategoryTypes }
 }
 </script>
 

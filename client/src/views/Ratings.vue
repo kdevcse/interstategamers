@@ -6,61 +6,61 @@
         <RankingsHeader
           @sort-table="sortHandler"
           title="Rank"
-          category="rank"
+          :category="CategoryTypes.Rank"
           :sortBy="sortedCategory"
         ></RankingsHeader>
         <RankingsHeader
           @sort-table="sortHandler"
           title="Title"
-          category="Game"
+          :category="CategoryTypes.Title"
           :sortBy="sortedCategory"
         ></RankingsHeader>
         <RankingsHeader
           @sort-table="sortHandler"
           title="Year"
-          category="Year"
+          :category="CategoryTypes.Year"
           :sortBy="sortedCategory"
         ></RankingsHeader>
         <RankingsHeader
           @sort-table="sortHandler"
           title="Platform"
-          category="Platform"
+          :category="CategoryTypes.Platform"
           :sortBy="sortedCategory"
         ></RankingsHeader>
         <RankingsHeader
           @sort-table="sortHandler"
           title="IG Score"
-          category="IG Score"
+          :category="CategoryTypes.Overall"
           :sortBy="sortedCategory"
         ></RankingsHeader>
         <RankingsHeader
           @sort-table="sortHandler"
           title="Gameplay"
-          category="Gameplay"
+          :category="CategoryTypes.Gameplay"
           :sortBy="sortedCategory"
         ></RankingsHeader>
         <RankingsHeader
           @sort-table="sortHandler"
           title="Aesthetics"
-          category="Aesthetics"
+          :category="CategoryTypes.Aesthetics"
           :sortBy="sortedCategory"
         ></RankingsHeader>
         <RankingsHeader
           @sort-table="sortHandler"
           title="Content"
-          category="Content"
+          :category="CategoryTypes.Content"
           :sortBy="sortedCategory"
         ></RankingsHeader>
         <RankingsHeader
           @sort-table="sortHandler"
           title="P. Overall"
-          category="Peter's Rating"
+          :category="CategoryTypes.POverall"
           :sortBy="sortedCategory"
         ></RankingsHeader>
         <RankingsHeader
           @sort-table="sortHandler"
           title="K. Overall"
-          category="Kevin's Rating"
+          :category="CategoryTypes.KOverall"
           :sortBy="sortedCategory"
         ></RankingsHeader>
       </div>
@@ -98,6 +98,7 @@
 </template>
 
 <script>
+import { CategoryTypes } from "../interfaces/IRankingInfo"; //Used in template
 import RankingsOptions from "@/components/RankingsOptions";
 import RankingsHeader from "@/components/RankingsHeader";
 import RankingRow from "@/components/RankingRow";
@@ -107,6 +108,7 @@ import "@firebase/firestore";
 
 export default {
   name: "Ratings",
+  CategoryTypes,
   components: {
     RankingsOptions,
     RankingsHeader,
@@ -121,16 +123,17 @@ export default {
     return {
       episodes: [],
       rankings: [],
-      sortedCategory: "ig_score",
+      sortedCategory: CategoryTypes.Overall,
       sortedIsAscending: true,
       hoveredEpisode: null,
       selectedEpisode: null,
-      searchTxt: null,
+      searchTxt: null
     };
   },
   computed: {
+    CategoryTypes:() => CategoryTypes,
     sortedRankings() {
-      const isAlphabeticSort = this.sortedCategory === "game" || this.sortedCategory === "platform";
+      const isAlphabeticSort = this.sortedCategory === CategoryTypes.Title || this.sortedCategory === CategoryTypes.Platform;
       const sortFunc = isAlphabeticSort ? this.sortByAlphabet : this.sortByNumber;
       const sortedRanks = this.rankings.sort((a, b) => sortFunc(a, b));
       sortedRanks.forEach((ranking, index) => {
