@@ -5,10 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "build:prod": "yarn pre-build -a ${AirtableKey} -i ${PodId} -k ${PodKey}; yarn build;",
-    "build:win": "yarn pre-build -a %AirtableKey% -i %PodId% -k %PodKey% && yarn build",
-    "pre-build": "node build/update-data.js"
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
