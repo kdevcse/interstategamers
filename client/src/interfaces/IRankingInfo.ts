@@ -33,7 +33,8 @@ export interface IRankingInfo {
     metacritic: number,
     year: number,
     guest: string,
-    game_image?: string
+    game_image?: string,
+    published_at?: Date
 }
 
 export interface IEpisodeInfo {
