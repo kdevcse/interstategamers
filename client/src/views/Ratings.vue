@@ -116,8 +116,8 @@ export default {
     RankingsInfo
   },
   mounted() {
-    const episodePromise = this.getDataFromFirestore('podcast', this.episodes);
-    const rankingsPromise = this.getDataFromFirestore('ratings', this.rankings);
+    this.getDataFromFirestore('podcast', this.episodes);
+    this.getDataFromFirestore('ratings', this.rankings);
   },
   data: function() {
     return {
@@ -135,37 +135,41 @@ export default {
     sortedRankings() {
       const isAlphabeticSort = this.sortedCategory === CategoryTypes.Title || this.sortedCategory === CategoryTypes.Platform;
       const sortFunc = isAlphabeticSort ? this.sortByAlphabet : this.sortByNumber;
-      const sortedRanks = this.rankings.sort((a, b) => sortFunc(a, b));
-      sortedRanks.forEach((ranking, index) => {
-        const currentScore = ranking.ig_score;
-        const lastScore = index > 0 ? sortedRanks[index - 1].ig_score : null;
-        ranking.rank = lastScore && (currentScore === lastScore) ? sortedRanks[index - 1].rank : index + 1;
 
-        if (ranking.id === this.hoveredRankingId) {
-          rankingFound = ranking;
-          return;   
-        }
-      });
-      return this.searchTxt ? sortedRanks.filter((rank) => {
+      this.rankings.sort((a, b) => sortFunc(a, b));
+      
+      return this.searchTxt ? this.rankings.filter((rank) => {
         const allInfo = Object.values(rank);
         return allInfo.some(i => i.toString().includes(this.searchTxt));
-      }) : sortedRanks;
+      }) : this.rankings;
     }
   },
   methods: {
-    getDataFromFirestore(type, dataArray) {
-      return firebase
-        .firestore()
-        .collection(`${type}-data`)
-        .get()
-        .then(c => {
-          c.docs.forEach(doc => {
-            dataArray.push(doc.data());
-          });
-        })
-        .catch(error => {
-          console.error(`An error occured fetching ${type} data: ${error}`);
+    computeRank(index) {
+      const ranking = this.sortedRankings[index];
+      const currentScore = ranking[CategoryTypes.Overall];
+      this.sortedRankings
+    },
+    async getDataFromFirestore(type, dataArray) {
+      try {
+        const collection = await firebase.firestore().collection(`${type}-data`).get();
+        collection.docs.forEach(doc => {
+          dataArray.push(doc.data());
         });
+
+        if (type !== 'ratings')
+          return;
+
+      //Assign Rankings
+      //TODO: Perhaps in the future we can re-rank them on category sort?
+        dataArray.sort((a, b) => b[CategoryTypes.Overall] - a[CategoryTypes.Overall]).forEach((ranking, index) => {
+          const currentScore = ranking[CategoryTypes.Overall];
+          const lastScore = index > 0 ? dataArray[index - 1][CategoryTypes.Overall] : null;
+          ranking[CategoryTypes.Rank] = lastScore && (currentScore === lastScore) ? dataArray[index - 1][CategoryTypes.Rank] : index + 1;
+        });
+      } catch(error) {
+        console.error(`An error occured fetching ${type} data: ${error}`);
+      }
     },
     shouldHighlight(category) {
       return category === this.sortedCategory;

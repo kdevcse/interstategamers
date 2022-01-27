@@ -21,12 +21,10 @@ export default class RankingsHeader extends Vue {
     computeAscending(category: string){
         switch(category){
             case CategoryTypes.Rank:
-            case CategoryTypes.Title:
-            case CategoryTypes.Platform:
-                this.ascending = false;
+                this.ascending = true;
                 break;
             default:
-                this.ascending = true;
+                this.ascending = false;
                 break;
         }
     }
