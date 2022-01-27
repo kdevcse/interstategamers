@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 v-if='finale' class='season-title'>Season {{season}}</h1>
-    <div class='episode' :class="{top: finale}" @mouseover="sendScore(info)">
+    <div class='episode' :class="{top: finale}" @mouseover="sendScore(rankingId)">
       <section class='player'>
         <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" @click='play()'></font-awesome-icon>
         <font-awesome-icon :icon="['fas', 'play-circle']" v-else @click='play()'></font-awesome-icon>
@@ -9,7 +9,7 @@
       <aside class='ep-info'>
         <h2 class='episode-title'>
             {{title}}
-            <font-awesome-icon title="Game Review" :icon="['fas', 'gamepad']" v-if="info"></font-awesome-icon>
+            <font-awesome-icon title="Game Review" :icon="['fas', 'gamepad']" v-if="rankingId"></font-awesome-icon>
         </h2>
         <p class='ep-description'>{{description}}</p>
       </aside>
@@ -30,7 +30,7 @@ export default class HomeEpisode extends Vue {
   @Prop() season!: number;
   @Prop() episodeNumber!: number;
   @Prop() episodeType!: string;
-  @Prop() info!: IRankingInfo;
+  @Prop() rankingId!: string;
   @Prop() finale!: boolean;
 
   playing = false;
@@ -42,9 +42,9 @@ export default class HomeEpisode extends Vue {
     this.epAudio.preload = 'none';
   }
 
-  public sendScore (rankingInfo: IRankingInfo) {
-    if(rankingInfo){
-      this.$emit('show-score', [rankingInfo, this.title]);
+  public sendScore (rankingId: string) {
+    if(rankingId){
+      this.$emit('show-score', [rankingId]);
     }
   }
 

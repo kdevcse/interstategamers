@@ -2,11 +2,10 @@
 
     publish = "dist"
 
-    command = "yarn test:unit; yarn build:prod"
-    # ADD TO END when framework switch is completed: node build/tweet-new-episode.js -c ${Twitter_CK} -s ${Twitter_CS} -a ${Twitter_AK} -t ${Twitter_AS}
+    command = "yarn test:unit; yarn build"
 
 [dev]
 
     publish = "dist"
-    #command = "yarn build:prod"
-    command = "yarn build:win"
+    #command = "yarn build"
+    command = "yarn build"

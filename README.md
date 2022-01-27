@@ -10,11 +10,12 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 # Status of New Features
 - [x] Rewritten as a SPA in the [Vue.Js](https://vuejs.org/) framework
 - [x] Faster navigation
-- [x] Faster and optimized algorithms\
+- [x] Faster and optimized algorithms
 - [x] Cleaner code
 - [x] Dark mode
-- [ ] Online store (No outside parties. Seeking local solutions)
+- [ ] Utilize cloud firestore database
 - [ ] Easier way to submit scores
+- [ ] Email subscribers?
 
 # Supporting Software
 - [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
@@ -23,5 +24,5 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 - [CodeFactor](https://www.codefactor.io) (Performs code analysis)
 - [BugBucket](https://bugbucket.io/issues/klewiscse/interstategamers) (Allows users to easily submit bugs)
 - [Discord](https://discordapp.com/) (Post notifications on the development process)
-- [AirTable](https://airtable.com/)
+- [Firebase](https://firebase.google.com/)
 - [SimpleCast](https://simplecast.com)
