@@ -145,11 +145,6 @@ export default {
     }
   },
   methods: {
-    computeRank(index) {
-      const ranking = this.sortedRankings[index];
-      const currentScore = ranking[CategoryTypes.Overall];
-      this.sortedRankings
-    },
     async getDataFromFirestore(type, dataArray) {
       try {
         const collection = await firebase.firestore().collection(`${type}-data`).get();
