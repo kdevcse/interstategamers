@@ -2,10 +2,10 @@
 
     publish = "dist"
 
-    command = "yarn test:unit; yarn build"
+    command = "npm run test:unit; npm run build"
 
 [dev]
 
     publish = "dist"
-    #command = "yarn build"
-    command = "yarn build"
+    #command = "npm run build"
+    command = "npm run build"
