@@ -31,7 +31,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import HomeEpisode from '@/components/HomeEpisode.vue'
 import HomeRanking from '@/components/HomeRanking.vue'
-//import episodeData from '../database/episode-data'
 import { IRankingInfo } from '../interfaces/IRankingInfo'
 import { IEpisodeInfo } from '../interfaces/IRankingInfo'
 import firebase from 'firebase/app';
