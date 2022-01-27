@@ -123,7 +123,7 @@ export default {
     return {
       episodes: [],
       rankings: [],
-      sortedCategory: CategoryTypes.Overall,
+      sortedCategory: CategoryTypes.Rank,
       sortedIsAscending: true,
       hoveredEpisode: null,
       selectedEpisode: null,
@@ -191,7 +191,7 @@ export default {
     },
     sortByNumber(a, b) {
       const category = this.sortedCategory;
-      return this.sortedIsAscending ? b[category] - a[category] : a[category] - b[category];
+      return this.sortedIsAscending ? a[category] - b[category] : b[category] - a[category];
     },
     sortByAlphabet(a, b) {
       const category = this.sortedCategory;

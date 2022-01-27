@@ -1,8 +1,8 @@
 <template>
     <strong class="rankings-header" v-bind:class="{sorted: isSorted()}" @mousedown="sortTableByCategory(category)">
         {{title}} 
-        <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="!ascending" :icon="['fas','sort-up']"></font-awesome-icon>
-        <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="ascending" :icon="['fas','sort-down']"></font-awesome-icon>
+        <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="ascending" :icon="['fas','sort-up']"></font-awesome-icon>
+        <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="!ascending" :icon="['fas','sort-down']"></font-awesome-icon>
 	</strong>
 </template>
 
@@ -16,15 +16,18 @@ export default class RankingsHeader extends Vue {
     @Prop() category!: string;
     @Prop() sortBy!: string;
 
+    //NOTE: Default state for icon is here. Needs to match category. See Ratings.vue
     ascending: boolean = true;
 
-    computeAscending(category: string){
+    computeNonSortedState(category: string){
         switch(category){
+            case CategoryTypes.Title:
             case CategoryTypes.Rank:
-                this.ascending = true;
+            case CategoryTypes.Platform:
+                this.ascending = false;
                 break;
             default:
-                this.ascending = false;
+                this.ascending = true;
                 break;
         }
     }
@@ -32,7 +35,7 @@ export default class RankingsHeader extends Vue {
     isSorted() {
         const sort = this.category === this.sortBy;
         if (!sort) {
-            this.computeAscending(this.category);
+            this.computeNonSortedState(this.category);
         }
         return sort;
     }
