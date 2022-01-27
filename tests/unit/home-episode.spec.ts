@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import HomeEpisode from 'src/components/HomeEpisode.vue';
+import HomeEpisode from '@/components/HomeEpisode.vue';
 import { IRankingInfo } from 'src/interfaces/IRankingInfo';
 
 describe('HomeEpisode', () => {
@@ -49,10 +49,9 @@ describe('HomeEpisode', () => {
 			game_image: "metroid_prime.jpg"
         };
 
-        (homeEpisode.vm as any).sendScore(rankInfo);
+        (homeEpisode.vm as any).sendScore(rankInfo.id);
         homeEpisode.vm.$nextTick();
         const result = (homeEpisode.emitted('show-score')as any)[0][0];
-        expect(result[0]).toBe(rankInfo);
-        expect(result[1]).toBe('2:10: Metroid Prime');
+        expect(result[0]).toBe(rankInfo.id);
     });
 })
