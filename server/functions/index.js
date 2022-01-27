@@ -4,6 +4,12 @@ const fetch = require('node-fetch');
 
 admin.initializeApp();
 
+/*Global*/
+const runtimeOpts = {
+  timeoutSeconds: 30,
+  memory: '512MB'
+};
+
 async function updateData(data, collection) {
   if (!data)
     return;
@@ -26,68 +32,51 @@ async function updateData(data, collection) {
 }
 
 /* Simplecast Integration */
-function getSimplecastData (url, podKey) {
+async function getSimplecastData (url, podKey) {
   const header = { 'authorization' : `Bearer ${podKey}` };
 
-	return fetch(url, {
-		method: 'get',
-		headers: header
-	})
-  .then(res => res.json())
-	.then(data => {
+	try {
+    const res = await fetch(url, {
+      method: 'get',
+      headers: header
+    });
+    const data = res.json();
     return data;
-  }).catch((error) => {
+  } catch (error) {
     functions.logger.warn(`Error making Simplecast request: ${error}`);
-  });
+    return null;
+  }
 }
 
-exports.updatePodcastData = functions.pubsub.schedule('50 7 * * *')
-.timeZone('America/Chicago')
-.onRun(async (context) => {
-  try { 
-    var apiKeysColl = await admin.firestore().collection('api-keys').get().catch(error => {
-      functions.logger.warn(`Error retrieving api key: ${error}`);
-    });
+async function updatedSimplecastData(apiKeys){
+  var updatedSimplecastData = [];
+  var url = `https://api.simplecast.com/podcasts/${apiKeys.simplecast_id}/episodes`;
+  var simplecastData = await getSimplecastData(url, apiKeys.simplecast_key);
 
-    if (!apiKeysColl || !apiKeysColl.docs[0])
-      return;
+  if (!simplecastData)
+    return updatedSimplecastData;
 
-    var apiKeys = apiKeysColl.docs[0].data();
-    var data = [];
-    var url = `https://api.simplecast.com/podcasts/${apiKeys.simplecast_id}/episodes`;
-    var responseData = await getSimplecastData(url, apiKeys.simplecast_key);
+  Array.prototype.push.apply(updatedSimplecastData, simplecastData.collection);
 
-    if (!responseData)
-      return;
+  const total = simplecastData.pages.total;
+  var count = 0;
+  while (simplecastData && simplecastData.pages.next && count < total) {
+    // eslint-disable-next-line no-await-in-loop
+    simplecastData = await getSimplecastData(simplecastData.pages.next.href, apiKeys.simplecast_key);
 
-    Array.prototype.push.apply(data, responseData.collection);
+    if (!simplecastData)
+      return updatedSimplecastData;
 
-    const total = responseData.pages.total;
-    var count = 0;
-    while (responseData && responseData.pages.next && count < total) {
-      // eslint-disable-next-line no-await-in-loop
-      responseData = await getSimplecastData(responseData.pages.next.href, apiKeys.simplecast_key);
-
-      if (!responseData)
-        return;
-
-      Array.prototype.push.apply(data, responseData.collection);
-      count++;
-    }
-
-    updateData(data, 'podcast-data');
-  } catch(e) {
-    functions.logger.warn(`Error occurred while trying to update podcast data: ${e}`);
+    Array.prototype.push.apply(updatedSimplecastData, simplecastData.collection);
+    count++;
   }
-});
+
+  updateData(updatedSimplecastData, 'podcast-data');
+  console.log('Episodes successfully imported from Simplecast');
+  return updatedSimplecastData;
+}
 
 /* Airtable Integration */
-/*
-const runtimeOpts = {
-  timeoutSeconds: 30,
-  memory: '512MB'
-};
-
 function correctAirtableObjectPropertyNames(dataObj) {
   var rData = {};
   rData.id = dataObj.id; //Need to put id into one object container
@@ -102,30 +91,49 @@ function correctAirtableObjectPropertyNames(dataObj) {
   return rData;
 }
 
-exports.importAirtableData = functions.runWith(runtimeOpts).https.onRequest(async (request, response) => {
-  var apiKeysColl = await admin.firestore().collection('api-keys').get();
-
-  if (!apiKeysColl.docs[0])
-    return;
-
-  var apiKeys = apiKeysColl.docs[0].data();
+async function updatedAirtableData(apiKeys, simplecastData) {
   var url = `https://api.airtable.com/v0/appDCLBXIkefciEz4/Ratings?api_key=${apiKeys.airtable_key}`;
-  var rankingsData = await fetch(url, {
-    method: 'get'
-  })
-  .then(res => res.json())
-  .then(data => {
-    var rankings = [];
-    for(let i = 0; i < data.records.length; i++) {
-      var rData = correctAirtableObjectPropertyNames(data.records[i]);
-      rankings.push(rData);
-      console.log(rankings[i]);
-    }
-    return rankings;
-  }).catch((error) => {
-    console.log(error);
-  });
+  const airtableResponse = await fetch(url, {method: 'get'});
+  const airtableResponseData = await airtableResponse.json();
+  var rankings = [];
+  for(let i = 0; i < airtableResponseData.records.length; i++) {
+    var rData = correctAirtableObjectPropertyNames(airtableResponseData.records[i]);
 
-  updateData(rankingsData, 'ratings-data');
-  response.send('Ratings successfully imported from AirTable');
-});*/
+    /*Tie episode to ranking*/
+    // eslint-disable-next-line no-loop-func
+    const episodeData = simplecastData.find(ep => rData.episode === `${ep.season.number}-${ep.number}`);
+
+    if (episodeData) {
+      rData.published_at = episodeData.published_at;
+    }
+
+    rankings.push(rData);
+  }
+  updateData(rankings, 'ratings-data');
+  console.log('Ratings successfully imported from AirTable');
+}
+
+/*Main Function*/
+
+//exports.updatePodcastData = functions.runWith(runtimeOpts).https.onRequest(async (request, response) => {
+exports.updatePodcastData = functions.pubsub.schedule('50 7 * * *').timeZone('America/Chicago')
+.onRun(async (context) => {
+  try { 
+    var apiKeysColl = await admin.firestore().collection('api-keys').get().catch(error => {
+      functions.logger.warn(`Error retrieving api key: ${error}`);
+    });
+
+    if (!apiKeysColl || !apiKeysColl.docs[0])
+      return;
+
+    var apiKeys = apiKeysColl.docs[0].data();
+
+    const simplecastData = await updatedSimplecastData(apiKeys);
+    await updatedAirtableData(apiKeys, simplecastData);
+
+    //response.send('Import successful'); --Debug Only
+  } catch(e) {
+    functions.logger.warn(`Error occurred while trying to update podcast data: ${e}`);
+    //response.send('Import Failed'); --Debug Only
+  }
+});
