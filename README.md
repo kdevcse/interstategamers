@@ -19,10 +19,7 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 
 # Supporting Software
 - [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
-- [Snipcart](https://snipcart.com/) (ECommerce Site)
-- [WatchTower Radar](https://radar.watchtower.ai) (Scans repo for credentials and secrets)
 - [CodeFactor](https://www.codefactor.io) (Performs code analysis)
-- [BugBucket](https://bugbucket.io/issues/klewiscse/interstategamers) (Allows users to easily submit bugs)
 - [Discord](https://discordapp.com/) (Post notifications on the development process)
 - [Firebase](https://firebase.google.com/)
 - [SimpleCast](https://simplecast.com)
