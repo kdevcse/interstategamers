@@ -37,6 +37,20 @@ export interface IRankingInfo {
     published_at?: Date
 }
 
+/*TODO: Look at removing this redundancy later*/
+export interface IHoveredRanking {
+    id?: string,
+    episode? : string,
+    gameplay?: number,
+    visuals?: number,
+    audio?: number,
+    aesthetics?: number,
+    content?: number,
+    ig_score?: number,
+    rank?: number,
+    game? : string
+}
+
 export interface IEpisodeInfo {
     updated_at : Date,
     type: string,

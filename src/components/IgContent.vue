@@ -17,12 +17,12 @@
     </div>
     <HomeRanking
     :v-if="pageIsReady"
-    :gameplay="hoveredRanking?.gameplay"
-    :aesthetics="hoveredRanking?.aesthetics"
-    :content="hoveredRanking?.content"
-    :overall="hoveredRanking?.ig_score"
-    :rank="hoveredRanking?.rank"
-    :title="getHoveredRankingsTitle(hoveredRanking?.episode, hoveredRanking?.game)" 
+    :gameplay="hoveredRanking.gameplay"
+    :aesthetics="hoveredRanking.aesthetics"
+    :content="hoveredRanking.content"
+    :overall="hoveredRanking.ig_score"
+    :rank="hoveredRanking.rank"
+    :title="getHoveredRankingsTitle(hoveredRanking.episode, hoveredRanking.game)" 
     :totalGames="getTotalGames"></HomeRanking>
   </section>
 </template>
@@ -31,7 +31,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import HomeEpisode from '@/components/HomeEpisode.vue'
 import HomeRanking from '@/components/HomeRanking.vue'
-import { IRankingInfo } from '../interfaces/IRankingInfo'
+import { IHoveredRanking, IRankingInfo } from '../interfaces/IRankingInfo'
 import { IEpisodeInfo } from '../interfaces/IRankingInfo'
 import firebase from 'firebase/app';
 import '@firebase/firestore';
@@ -71,31 +71,36 @@ export default class IgContent extends Vue {
     return episode && game ? `${episode}: ${game}`: null;
   }
 
-  getDataFromFirestore(type: string, dataArray: Array<any>) {
-    return firebase.firestore().collection(`${type}-data`).get().then((c: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>) => {
+  async getDataFromFirestore(type: string, dataArray: Array<any>) {
+    try {
+      const c = await firebase.firestore().collection(`${type}-data`).get();
       c.docs.forEach((doc: firebase.firestore.DocumentData) => {
-        dataArray.push(doc.data());
+        dataArray.push(doc.data())
       });
-    }).catch((error) => {
+    } catch (error) {
       console.error(`An error occured fetching ${type} data: ${error}`);
-    });
+    }
   }
   
   isFinale(index: number) {
     return this.sortedEpisodes[index - 1] && this.sortedEpisodes[index - 1].season.number > this.sortedEpisodes[index].season.number || index === 0;
   }
 
-  get hoveredRanking(): IRankingInfo | undefined {
+  get hoveredRanking(): IHoveredRanking {
+    let hoveredRank: IHoveredRanking = {};
     for(let i = 0; i < this.sortedRankings.length; i++) {
-      const ranking = this.sortedRankings[i];
+      const ranking = this.sortedRankings[i] as IHoveredRanking;
       const currentScore = ranking.ig_score;
       const lastScore = i > 0 ? this.sortedRankings[i - 1].ig_score : null;
       ranking.rank = lastScore && (currentScore === lastScore) ? this.sortedRankings[i - 1].rank : i + 1;
 
       if (ranking.id === this.hoveredRankingId) {
-        return ranking;  
+        hoveredRank = ranking;
+        break;  
       }
     }
+
+    return hoveredRank;
   }
 
   get getTotalGames () {
