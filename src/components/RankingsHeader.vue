@@ -13,7 +13,7 @@ import { CategoryTypes, IRankingInfo } from '@/interfaces/IRankingInfo'
 @Component
 export default class RankingsHeader extends Vue {
     @Prop() title!: string;
-    @Prop() category!: string;
+    @Prop() category!: CategoryTypes;
     @Prop() sortBy!: string;
 
     //NOTE: Default state for icon is here. Needs to match category. See Ratings.vue

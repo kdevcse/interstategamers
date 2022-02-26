@@ -51,7 +51,7 @@ export default class RankingsInfo extends Vue {
   }
 
   getImg() {
-    return require(`../assets/images/${this.img}`);
+    return `../assets/images/${this.img}`;
   }
 
   isSelected() {

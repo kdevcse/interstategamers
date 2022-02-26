@@ -17,12 +17,12 @@
     </div>
     <HomeRanking
     :v-if="pageIsReady"
-    :gameplay="hoveredRanking.gameplay"
-    :aesthetics="hoveredRanking.aesthetics"
-    :content="hoveredRanking.content"
-    :overall="hoveredRanking.ig_score"
-    :rank="hoveredRanking.rank"
-    :title="getHoveredRankingsTitle(hoveredRanking.episode, hoveredRanking.game)" 
+    :gameplay="hoveredRanking?.gameplay"
+    :aesthetics="hoveredRanking?.aesthetics"
+    :content="hoveredRanking?.content"
+    :overall="hoveredRanking?.ig_score"
+    :rank="hoveredRanking?.rank"
+    :title="getHoveredRankingsTitle(hoveredRanking?.episode, hoveredRanking?.game)" 
     :totalGames="getTotalGames"></HomeRanking>
   </section>
 </template>
@@ -67,7 +67,7 @@ export default class IgContent extends Vue {
     return rankingInfo ? rankingInfo.id : '';
   }
 
-  getHoveredRankingsTitle(episode: string, game: string) {
+  getHoveredRankingsTitle(episode: string | undefined, game: string | undefined) {
     return episode && game ? `${episode}: ${game}`: null;
   }
 
@@ -85,20 +85,17 @@ export default class IgContent extends Vue {
     return this.sortedEpisodes[index - 1] && this.sortedEpisodes[index - 1].season.number > this.sortedEpisodes[index].season.number || index === 0;
   }
 
-  get hoveredRanking() {
-    var rankingFound;
-    this.sortedRankings.forEach((ranking, index) => {
+  get hoveredRanking(): IRankingInfo | undefined {
+    for(let i = 0; i < this.sortedRankings.length; i++) {
+      const ranking = this.sortedRankings[i];
       const currentScore = ranking.ig_score;
-      const lastScore = index > 0 ? this.sortedRankings[index - 1].ig_score : null;
-      ranking.rank = lastScore && (currentScore === lastScore) ? this.sortedRankings[index - 1].rank : index + 1;
+      const lastScore = i > 0 ? this.sortedRankings[i - 1].ig_score : null;
+      ranking.rank = lastScore && (currentScore === lastScore) ? this.sortedRankings[i - 1].rank : i + 1;
 
       if (ranking.id === this.hoveredRankingId) {
-        rankingFound = ranking;
-        return;   
+        return ranking;  
       }
-    });
-
-    return rankingFound ?? {};
+    }
   }
 
   get getTotalGames () {
