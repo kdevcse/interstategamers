@@ -2,7 +2,7 @@
 
     publish = "dist"
 
-    command = "npm run test:unit; npm run build"
+    command = "npm run test; npm run build"
 
 [dev]
 

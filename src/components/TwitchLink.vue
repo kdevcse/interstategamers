@@ -12,7 +12,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class TwitchLink extends Vue {
     @Prop() channel!: string
     @Prop() href!: string
-    @Prop() src!: NodeRequire
+    @Prop() src!: string
 }
 </script>
 

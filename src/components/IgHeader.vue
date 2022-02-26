@@ -47,7 +47,7 @@ export default class IgHeader extends Vue {
   trailer!: HTMLAudioElement;
 
   mounted () {
-    const mp3 = require('../assets/audio/ig_promo.mp3');
+    const mp3 = '../assets/audio/ig_promo.mp3';
     this.trailer = new Audio(mp3);
     this.trailer.title = 'Listen to the trailer';
     this.trailer.preload = 'none';

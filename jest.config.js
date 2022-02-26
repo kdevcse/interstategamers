@@ -1,3 +1,14 @@
+const {defaults} = require('jest-config');
+
 module.exports = {
-  preset: '@vue/cli-plugin-unit-jest/presets/typescript-and-babel'
+  moduleDirectories: ['node_modules', 'src'],
+  moduleFileExtensions: [...defaults.moduleFileExtensions, 'js', 'ts', 'json', 'vue'],
+  transform: {
+    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.vue$': 'vue-jest',
+  },
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+  testEnvironment: 'jsdom'
 }

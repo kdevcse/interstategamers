@@ -28,9 +28,9 @@ export default {
       music: extrasSectionData.musicSection,
       code: extrasSectionData.codeSections,
       friends: extrasSectionData.friendSections,
-      deal4RealTwitch: require('../assets/images/d4r.png'),
-      kslugsTwitch: require('../assets/images/kslugs.png'),
-      zlinkTwitch: require('../assets/images/zlg.png')
+      deal4RealTwitch: './src/assets/images/d4r.png',
+      kslugsTwitch: './src/assets/images/kslugs.png',
+      zlinkTwitch: './src/assets/images/zlg.png'
     }
   }
 }

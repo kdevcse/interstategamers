@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import HomeEpisode from '@/components/HomeEpisode.vue';
-import { IRankingInfo } from 'src/interfaces/IRankingInfo';
+import { IRankingInfo } from '@/interfaces/IRankingInfo';
 
 describe('HomeEpisode', () => {
   it('Send score', () => {
