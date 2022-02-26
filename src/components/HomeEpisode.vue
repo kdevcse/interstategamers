@@ -17,41 +17,32 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator'
-import { IRankingInfo } from '../interfaces/IRankingInfo';
+<script setup lang='ts'>
+const props = defineProps({
+  title!: String,
+  description!: String,
+  guest!: Boolean,
+  audio!: String,
+  season!: Number,
+  episodeNumber!: Number,
+  episodeType!: String,
+  rankingId!: String,
+  finale!: Boolean,
+});
+const emit = defineEmits(['show-score']);
 
-@Component
-export default class HomeEpisode extends Vue {
-  @Prop() title!: string;
-  @Prop() description!: string;
-  @Prop() guest!: boolean;
-  @Prop() audio!: string;
-  @Prop() season!: number;
-  @Prop() episodeNumber!: number;
-  @Prop() episodeType!: string;
-  @Prop() rankingId!: string;
-  @Prop() finale!: boolean;
+let playing = false;
+let epAudio = new Audio(props.audio);
+epAudio.preload = 'none';
 
-  playing = false;
-  audioId = `${this.title}-audio`;
-  epAudio!: HTMLAudioElement;
-
-  mounted () {
-    this.epAudio = new Audio(this.audio);
-    this.epAudio.preload = 'none';
-  }
-
-  public sendScore (rankingId: string) {
-    if(rankingId){
-      this.$emit('show-score', [rankingId]);
-    }
-  }
-
-  public play () {
-    this.playing = !this.playing;
-    this.playing ? this.epAudio.play() : this.epAudio.pause();
-  }
+function sendScore (rankingId: string | undefined) {
+  if (!rankingId)
+    return;
+  emit('show-score', [rankingId]);
+};
+function play () {
+  playing = !playing;
+  playing ? epAudio.play() : epAudio.pause();
 }
 </script>
 

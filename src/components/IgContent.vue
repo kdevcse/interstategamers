@@ -1,7 +1,7 @@
 <template>
   <section class="ig-content">
     <div id="episodes">
-      <HomeEpisode
+      <home-episode
         :v-if="pageIsReady"
         v-for="(episode, index) in sortedEpisodes" :key="episode.id"
         @show-score='showScores'
@@ -13,9 +13,9 @@
         :episodeType="episode.type"
         :rankingId="getRankingId(episode.season.number, episode.number)"
         :finale="isFinale(index)">
-      </HomeEpisode>
+      </home-episode>
     </div>
-    <HomeRanking
+    <home-ranking
     :v-if="pageIsReady"
     :gameplay="hoveredRanking.gameplay"
     :aesthetics="hoveredRanking.aesthetics"
@@ -23,106 +23,101 @@
     :overall="hoveredRanking.ig_score"
     :rank="hoveredRanking.rank"
     :title="getHoveredRankingsTitle(hoveredRanking.episode, hoveredRanking.game)" 
-    :totalGames="getTotalGames"></HomeRanking>
+    :totalGames="getTotalGames"></home-ranking>
   </section>
 </template>
 
-<script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator'
-import HomeEpisode from '@/components/HomeEpisode.vue'
-import HomeRanking from '@/components/HomeRanking.vue'
-import { IHoveredRanking, IRankingInfo } from '../interfaces/IRankingInfo'
-import { IEpisodeInfo } from '../interfaces/IRankingInfo'
+<script setup lang='ts'>
+import { computed, onMounted } from 'vue';
+import HomeEpisode from './components/HomeEpisode.vue';
+import HomeRanking from './components/HomeRanking.vue';
+import { IHoveredRanking, IRankingInfo } from '../interfaces/IRankingInfo';
+import { IEpisodeInfo } from '../interfaces/IRankingInfo';
 import firebase from 'firebase/app';
 import '@firebase/firestore';
 
-@Component({
-  components: {
-    HomeEpisode,
-    HomeRanking
-  }
-})
-export default class IgContent extends Vue {
-  episodes: Array<IEpisodeInfo> = []
-  rankings: Array<IRankingInfo> = [];
-  hoveredRankingId: string = '';
+const episodes: Array<IEpisodeInfo> = [];
+const rankings: Array<IRankingInfo> = [];
+let hoveredRankingId: string = '';
 
-  mounted () {
-    var podcastDataPromise = this.getDataFromFirestore('podcast', this.episodes);
-    var ratingsDataPromise = this.getDataFromFirestore('ratings', this.rankings);
+onMounted(() => {
+  var podcastDataPromise = getDataFromFirestore('podcast', episodes);
+  var ratingsDataPromise = getDataFromFirestore('ratings', rankings);
 
-    Promise.all([podcastDataPromise, ratingsDataPromise]).then(() => {
-      this.hoveredRankingId = this.getRankingId(this.sortedEpisodes[0].season.number, this.sortedEpisodes[0].number);
-    });
-  }
+  Promise.all([podcastDataPromise, ratingsDataPromise]).then(() => {
+    const sortedEps = sortedEpisodes.value;
+    hoveredRankingId = getRankingId(sortedEps[0].season.number, sortedEps[0].number);
+  });
+});
 
-  showScores (e: Array<any>) {
-    if (e[0]) {
-      this.hoveredRankingId = e[0];
-    }
-  }
-
-  getRankingId(seasonNumber: number, episodeNumber: number) {
-    var rankingInfo = this.rankings.find((ranking) => ranking.episode === `${seasonNumber}-${episodeNumber}`);
-    return rankingInfo ? rankingInfo.id : '';
-  }
-
-  getHoveredRankingsTitle(episode: string | undefined, game: string | undefined) {
-    return episode && game ? `${episode}: ${game}`: null;
-  }
-
-  async getDataFromFirestore(type: string, dataArray: Array<any>) {
-    try {
-      const c = await firebase.firestore().collection(`${type}-data`).get();
-      c.docs.forEach((doc: firebase.firestore.DocumentData) => {
-        dataArray.push(doc.data())
-      });
-    } catch (error) {
-      console.error(`An error occured fetching ${type} data: ${error}`);
-    }
-  }
-  
-  isFinale(index: number) {
-    return this.sortedEpisodes[index - 1] && this.sortedEpisodes[index - 1].season.number > this.sortedEpisodes[index].season.number || index === 0;
-  }
-
-  get hoveredRanking(): IHoveredRanking {
-    let hoveredRank: IHoveredRanking = {};
-    for(let i = 0; i < this.sortedRankings.length; i++) {
-      const ranking = this.sortedRankings[i] as IHoveredRanking;
-      const currentScore = ranking.ig_score;
-      const lastScore = i > 0 ? this.sortedRankings[i - 1].ig_score : null;
-      ranking.rank = lastScore && (currentScore === lastScore) ? this.sortedRankings[i - 1].rank : i + 1;
-
-      if (ranking.id === this.hoveredRankingId) {
-        hoveredRank = ranking;
-        break;  
-      }
-    }
-
-    return hoveredRank;
-  }
-
-  get getTotalGames () {
-    return this.episodes.filter((ep: IEpisodeInfo) => ep.type === 'full').length;
-  }
-
-  get sortedEpisodes () {
-    return this.episodes.sort((epA: IEpisodeInfo, epB: IEpisodeInfo) => {
-      return (new Date(epB.published_at) as any) - (new Date(epA.published_at) as any);
-    });
-  }
-
-  get sortedRankings () {
-    return this.rankings.sort((epA: IRankingInfo, epB: IRankingInfo) => {
-      return (new Date(epB.ig_score) as any) - (new Date(epA.ig_score) as any);
-    });
-  }
-
-  get pageIsReady () {
-    return this.rankings && this.episodes && this.rankings.length > 0 && this.episodes.length > 0;
+function showScores (e: Array<any>) {
+  if (e[0]) {
+    hoveredRankingId = e[0];
   }
 }
+
+function getRankingId(seasonNumber: number, episodeNumber: number) {
+  var rankingInfo = rankings.find((ranking) => ranking.episode === `${seasonNumber}-${episodeNumber}`);
+  return rankingInfo ? rankingInfo.id : '';
+}
+
+function getHoveredRankingsTitle(episode: string | undefined, game: string | undefined) {
+  return episode && game ? `${episode}: ${game}`: undefined;
+}
+
+async function getDataFromFirestore(type: string, dataArray: Array<any>) {
+  try {
+    const c = await firebase.firestore().collection(`${type}-data`).get();
+    c.docs.forEach((doc: firebase.firestore.DocumentData) => {
+      dataArray.push(doc.data())
+    });
+  } catch (error) {
+    console.error(`An error occured fetching ${type} data: ${error}`);
+  }
+}
+
+function isFinale(index: number) {
+  const sortedEps = sortedEpisodes.value;
+  return sortedEps[index - 1] && sortedEps[index - 1].season.number > sortedEps[index].season.number || index === 0;
+}
+
+const hoveredRanking = computed((): IHoveredRanking => {
+  let hoveredRank: IHoveredRanking = {};
+  const sortedRanks = sortedRankings.value;
+  for(let i = 0; i < sortedRanks.length; i++) {
+    const ranking = sortedRanks[i] as IHoveredRanking;
+    const currentScore = ranking.ig_score;
+    const lastScore = i > 0 ? sortedRanks[i - 1].ig_score : null;
+    ranking.rank = lastScore && (currentScore === lastScore) ? sortedRanks[i - 1].rank : i + 1;
+
+    if (ranking.id === hoveredRankingId) {
+      hoveredRank = ranking;
+      break;  
+    }
+  }
+
+  return hoveredRank;
+});
+
+const getTotalGames = computed(() => {
+  return episodes.filter((ep: IEpisodeInfo) => ep.type === 'full').length;
+});
+
+const sortedEpisodes = computed(() => {
+  return episodes.sort((epA: IEpisodeInfo, epB: IEpisodeInfo) => {
+    return (new Date(epB.published_at) as any) - (new Date(epA.published_at) as any);
+  });
+});
+
+const sortedRankings = computed(() : IRankingInfo[] => {
+  return rankings.sort((epA: IRankingInfo, epB: IRankingInfo) => {
+    return (new Date(epB.ig_score) as any) - (new Date(epA.ig_score) as any);
+  });
+});
+
+const pageIsReady = computed(() => {
+  return rankings && episodes && rankings.length > 0 && episodes.length > 0;
+});
 </script>
 
 <style scoped>

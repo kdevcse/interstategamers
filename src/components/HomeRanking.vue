@@ -9,45 +9,39 @@
   </aside>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator'
-import { IRankingInfo } from '../interfaces/IRankingInfo'
+<script setup lang='ts'>
+import { computed } from 'vue';
 import RankMeter from '@/components/RankMeter.vue';
 
-@Component({
-	components: {
-    RankMeter
-	}
-})
-export default class HomeRanking extends Vue {
-    @Prop() totalGames!: number;
-    @Prop() title!: string;
-    @Prop() gameplay!: number;
-    @Prop() aesthetics!: number;
-    @Prop() content!: number;
-    @Prop() overall!: number;
-    @Prop() rank!: number;
+const props = defineProps({
+  totalGames!: Number,
+  title!: String,
+  gameplay!: Number,
+  aesthetics!: Number,
+  content!: Number,
+  overall!: Number,
+  rank!: Number
+});
 
-    get getTitle () : string {
-        return this.title ? this.title : 'Hover a review to see its ranking!';
-    }
+const getTitle = computed(() : string => {
+  return props.title ? props.title : 'Hover a review to see its ranking!';
+});
 
-    get getGameplay () : number {
-        return this.gameplay ? this.gameplay : 0;
-    }
+const getGameplay = computed(() : number => {
+  return props.gameplay ? props.gameplay : 0;
+});
 
-    get getAesthetics () : number {
-        return this.aesthetics ? this.aesthetics : 0;
-    }
+const getAesthetics = computed(() : number => {
+  return props.aesthetics ? props.aesthetics : 0;
+});
 
-    get getContent () : number {
-        return this.content ? this.content : 0;
-    }
+const getContent = computed(() : number => {
+  return props.content ? props.content : 0;
+});
 
-    get getOverall () : number {
-        return this.overall ? this.overall : 0;
-    }
-}
+const getOverall = computed(() : number => {
+  return props.overall ? props.overall : 0;
+});
 </script>
 
 <style scoped>
