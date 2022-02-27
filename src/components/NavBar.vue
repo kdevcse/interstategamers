@@ -55,21 +55,21 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { watch } from 'vue';
+import { watch, ref } from 'vue';
 
 defineProps<{
   selected?: Boolean
 }>();
 
 const route = useRoute();
-let mobileMenuOpened = false;
+let mobileMenuOpened = ref(false);
 
 function toggleMobileMenu() {
-  mobileMenuOpened = !mobileMenuOpened;
+  mobileMenuOpened.value = !mobileMenuOpened.value;
 }
 
 watch(route, () => {
-  mobileMenuOpened = false;
+  mobileMenuOpened.value = false;
 });
 </script>
 
