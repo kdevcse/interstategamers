@@ -1,133 +1,150 @@
 <template>
-    <div class="options-container">
-        <div class="options-header">
-            <input @input="search" id="options-searchbox" type="text" placeholder="Search" value="" autocomplete="off">
-            <div v-bind:class="{show: showBothIndicators}" id="scroll-indicator">
-                <font-awesome-icon id="scroll-indicator-left" v-bind:class="{show: showLeftIndicator}" :icon="['fas', 'caret-square-left']" title="Scroll left to see more content"></font-awesome-icon>
-                <span id="scroll-indicator-txt">Scroll for more</span>
-                <font-awesome-icon id="scroll-indicator-right" v-bind:class="{show: showRightIndicator}" :icon="['fas', 'caret-square-right']" title="Scroll right to see more content"></font-awesome-icon>
-            </div>
-        </div>
+  <div class="options-container">
+    <div class="options-header">
+      <input
+        @input="search"
+        id="options-searchbox"
+        type="text"
+        placeholder="Search"
+        value
+        autocomplete="off"
+      />
+      <div v-bind:class="{ show: showBothIndicators }" id="scroll-indicator">
+        <font-awesome-icon
+          id="scroll-indicator-left"
+          v-bind:class="{ show: showLeftIndicator }"
+          :icon="['fas', 'caret-square-left']"
+          title="Scroll left to see more content"
+        ></font-awesome-icon>
+        <span id="scroll-indicator-txt">Scroll for more</span>
+        <font-awesome-icon
+          id="scroll-indicator-right"
+          v-bind:class="{ show: showRightIndicator }"
+          :icon="['fas', 'caret-square-right']"
+          title="Scroll right to see more content"
+        ></font-awesome-icon>
+      </div>
     </div>
+  </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+<script setup lang="ts">
+import { onBeforeMount, onBeforeUnmount } from 'vue';
 
-@Component
-export default class RankingsOptions extends Vue {
+onBeforeMount(() => {
+  window.addEventListener('resize', showIndicator);
+  window.addEventListener('scroll', showIndicator);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', showIndicator);
+  window.removeEventListener('scroll', showIndicator);
+});
+
+const emit = defineEmits(['search-table']);
+
+let showLeftIndicator = false;
+let showRightIndicator = false;
+let showBothIndicators = false;
+
+function showIndicator() {
+  const pos = window.scrollX;
+  const maxWidth = document.documentElement.scrollWidth - document.documentElement.clientWidth;
+
+  if (pos > 0) {
+    showLeftIndicator = true;
+  } else {
     showLeftIndicator = false;
+  }
+
+  if (pos !== maxWidth) {
+    showRightIndicator = true;
+  } else {
     showRightIndicator = false;
+  }
+
+  if (showLeftIndicator || showRightIndicator) {
+    showBothIndicators = true;
+  }
+  else {
     showBothIndicators = false;
+  }
+};
 
-    created() {
-        window.addEventListener('resize', this.showIndicator);
-        window.addEventListener('scroll', this.showIndicator);
-    };
+function search(e: any) {
+  emit('search-table', e.target.value);
+};
 
-    destroyed() {
-        window.removeEventListener('resize', this.showIndicator);
-        window.removeEventListener('scroll', this.showIndicator);
-    };
-
-    showIndicator() {
-        const pos = window.scrollX;
-	    const maxWidth = document.documentElement.scrollWidth - document.documentElement.clientWidth;
-
-        if (pos > 0) {
-            this.showLeftIndicator = true;
-        } else {
-            this.showLeftIndicator = false;
-        }
-
-        if (pos !== maxWidth) {
-            this.showRightIndicator = true;
-        } else {
-            this.showRightIndicator = false;
-        }
-
-        if (this.showLeftIndicator || this.showRightIndicator) {
-            this.showBothIndicators = true;
-        }
-        else {
-            this.showBothIndicators = false;
-        }
-    };
-
-    search(e: any) {
-        this.$emit('search-table', e.target.value);
-    };
-}
 </script>
 
 <style scoped>
-.options-container{
-    position: fixed;
-	top: 72px;
-    z-index: 1;
-	background-color: var(--primary-color);
-	color: white;
-	width: 100%;
-	text-align: left;
-	align-items: center;
+.options-container {
+  position: fixed;
+  top: 72px;
+  z-index: 1;
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+  text-align: left;
+  align-items: center;
 }
 .options-header {
-    background-color: var(--elevation-second-lvl-color);
-	padding: 30px 55px 10px 55px;
+  background-color: var(--elevation-second-lvl-color);
+  padding: 30px 55px 10px 55px;
 }
 .options-header input {
-	height: 25px;
-	border: none;
-	border: solid 1px #ccc;
-	border-radius: 3px;
-	border-collapse: collapse;
-	padding: 6px 8px;
-	margin-right: 30px;
+  height: 25px;
+  border: none;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  border-collapse: collapse;
+  padding: 6px 8px;
+  margin-right: 30px;
 }
-.options-header input::-ms-clear{
-	display: none;
+.options-header input::-ms-clear {
+  display: none;
 }
-#scroll-indicator{
-    visibility: hidden;
-	float: right;
+#scroll-indicator {
+  visibility: hidden;
+  float: right;
 }
 #scroll-indicator-txt {
-    margin: 0px 5px;
+  margin: 0px 5px;
 }
 #scroll-indicator-left,
 #scroll-indicator-right {
-	visibility: hidden;
-    height: 15px;
-    width: 15px;
+  visibility: hidden;
+  height: 15px;
+  width: 15px;
 }
 #scroll-indicator-left.show,
 #scroll-indicator-right.show,
-#scroll-indicator.show{
-	visibility: visible;
+#scroll-indicator.show {
+  visibility: visible;
 }
 @media screen and (prefers-color-scheme: dark) {
-	.options-container {
-		background-color: var(--secondary-color);
-        color: var(--default-text-color);
-	}
-    .options-header input {
-        background-color: var(--default-text-color);
-    }
+  .options-container {
+    background-color: var(--secondary-color);
+    color: var(--default-text-color);
+  }
+  .options-header input {
+    background-color: var(--default-text-color);
+  }
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 770px) {
-	.options-header {
-		padding: 10px 10px 30px 10px;
-	}
-    .options-header input {
-        margin-right: 15px;
-        padding: 4px 6px;
-    }
+  .options-header {
+    padding: 10px 10px 30px 10px;
+  }
+  .options-header input {
+    margin-right: 15px;
+    padding: 4px 6px;
+  }
 }
 /* Larger devices than phones */
-@media only screen and (min-width: 770px){
-	.options-header input {
-		margin-right: 30px;
-	}
+@media only screen and (min-width: 770px) {
+  .options-header input {
+    margin-right: 30px;
+  }
 }
 </style>

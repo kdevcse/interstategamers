@@ -16,57 +16,83 @@
     </p>
     <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Year)}">{{year}}</p>
     <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Platform)}">{{platform}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Overall)}">{{overall.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Gameplay)}">{{gameplay.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Aesthetics)}">{{aesthetics.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Content)}">{{content.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.POverall)}">{{pOverall.toFixed(2)}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.KOverall)}">{{kOverall.toFixed(2)}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Overall)}">{{getOverallTxt}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Gameplay)}">{{getGameplayTxt}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Aesthetics)}">{{getAestheticsTxt}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Content)}">{{getContentTxt}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.POverall)}">{{getPOverallTxt}}</p>
+    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.KOverall)}">{{getKOverallTxt}}</p>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+<script setup lang="ts">
+import { computed, defineEmits } from "vue";
 import { CategoryTypes } from "../interfaces/IRankingInfo";
 
-@Component
-export default class RankingRow extends Vue {
-  @Prop() rank!: number;
-  @Prop() title!: string;
-  @Prop() year!: number;
-  @Prop() platform!: string;
-  @Prop() overall!: number;
-  @Prop() gameplay!: number;
-  @Prop() aesthetics!: number;
-  @Prop() content!: number;
-  @Prop() pOverall!: number;
-  @Prop() kOverall!: number;
-  @Prop() sortBy!: string;
-  @Prop() guest!: string;
-  @Prop() selected!: string;
+const props = defineProps<{
+  rank?: number,
+  title?: string,
+  year?: number,
+  platform?: string,
+  overall?: number,
+  gameplay?: number,
+  aesthetics?: number,
+  content?: number,
+  pOverall?: number,
+  kOverall?: number,
+  sortBy?: string,
+  guest?: string,
+  selected?: string
+}>();
 
-  getGuestTxt() {
-    return `Guest: ${this.guest}`;
-  }
+const emit = defineEmits(['row-selected']);
 
-  highlightRed(category: string) {
-    return category === this.sortBy;
-  }
-
-  rowIsSelected() {
-    return this.title === this.selected;
-  }
-
-  selectRowHandler() {
-    if (this.title !== this.selected) {
-      this.$emit("row-selected", this.title);
-    } else {
-      this.$emit("row-selected", null);
-    }
-  }
-
-  get CategoryTypes() { return CategoryTypes }
+function getGuestTxt() {
+  return `Guest: ${props.guest}`;
 }
+
+function highlightRed(category: string) {
+  return category === props.sortBy;
+}
+
+function rowIsSelected() {
+  return props.title === props.selected;
+}
+
+function selectRowHandler() {
+  if (props.title !== props.selected) {
+    emit("row-selected", props.title);
+  } else {
+    emit("row-selected", null);
+  }
+}
+
+const getOverallTxt = computed(() => {
+  return props.overall ? props.overall.toFixed(2) : '';
+});
+
+const getGameplayTxt = computed(() => {
+  return props.gameplay ? props.gameplay.toFixed(2) : '';
+});
+
+const getAestheticsTxt = computed(() => {
+  return props.aesthetics ? props.aesthetics.toFixed(2) : '';
+});
+
+const getContentTxt = computed(() => {
+  return props.content ? props.content.toFixed(2) : '';
+});
+
+const getPOverallTxt = computed(() => {
+  return props.pOverall ? props.pOverall.toFixed(2) : '';
+});
+
+const getKOverallTxt = computed(() => {
+  return props.kOverall ? props.kOverall.toFixed(2) : '';
+});
+
+//const CategoryTypes = computed(() => { return CategoryTypes });
+
 </script>
 
 <style scoped>

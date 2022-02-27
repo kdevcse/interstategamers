@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import firebase from 'firebase/app';
@@ -9,13 +9,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
+const app = createApp({App});
+
 library.add(faPlayCircle, faPauseCircle, faGamepad, faSortUp,
   faSortDown, faUserPlus, faCaretSquareLeft, faCaretSquareRight,
   faBars, faTimes);
 
-Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-Vue.config.productionTip = true;
+app.component('font-awesome-icon', FontAwesomeIcon);
 
 /*Firebase Setup*/
 const firebaseConfig = {
@@ -29,7 +30,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+app.use(router);
+
+app.mount('#app');

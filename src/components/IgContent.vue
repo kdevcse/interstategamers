@@ -29,8 +29,8 @@
 
 <script setup lang='ts'>
 import { computed, onMounted } from 'vue';
-import HomeEpisode from './components/HomeEpisode.vue';
-import HomeRanking from './components/HomeRanking.vue';
+import HomeEpisode from '@/components/HomeEpisode.vue';
+import HomeRanking from '@/components/HomeRanking.vue';
 import { IHoveredRanking, IRankingInfo } from '../interfaces/IRankingInfo';
 import { IEpisodeInfo } from '../interfaces/IRankingInfo';
 import firebase from 'firebase/app';

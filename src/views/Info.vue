@@ -24,35 +24,25 @@
           </p>
         </div>
       </div>
-      <InfoContactList heading='Where to Listen:' v-bind:items='listenList'></InfoContactList>
-      <InfoContactList heading='How to Support Us:' v-bind:items='supportList'></InfoContactList>
-      <InfoContactList heading='Social Media:' v-bind:items='socialMediaList'></InfoContactList>
-      <InfoContactList heading='Business Inquiries:' v-bind:items='businessList'></InfoContactList>
-      <InfoContactList heading='Website Issues:' v-bind:items='issuesList'></InfoContactList>
+      <info-contact-list heading='Where to Listen:' v-bind:items='listenList'></info-contact-list>
+      <info-contact-list heading='How to Support Us:' v-bind:items='supportList'></info-contact-list>
+      <info-contact-list heading='Social Media:' v-bind:items='socialMediaList'></info-contact-list>
+      <info-contact-list heading='Business Inquiries:' v-bind:items='businessList'></info-contact-list>
+      <info-contact-list heading='Website Issues:' v-bind:items='issuesList'></info-contact-list>
     </article>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 // @ is an alias to /src
-import InfoContactList from '../components/InfoContactList'
-import infoLinks from '../database/info-links'
+import InfoContactList from '../components/InfoContactList.vue';
+import infoLinks from '../database/info-links';
 
-export default {
-  name: 'Info',
-  components: {
-    InfoContactList
-  },
-  data: function () {
-    return {
-      listenList: infoLinks.whereToListenList,
-      supportList: infoLinks.howToSupportUsList,
-      socialMediaList: infoLinks.socialMediaList,
-      businessList: infoLinks.businessInquiriesList,
-      issuesList: infoLinks.websiteIssuesList
-    }
-  }
-}
+const listenList = infoLinks.whereToListenList;
+const supportList = infoLinks.howToSupportUsList;
+const socialMediaList = infoLinks.socialMediaList;
+const businessList = infoLinks.businessInquiriesList;
+const issuesList = infoLinks.websiteIssuesList;
 </script>
 
 <style scoped>

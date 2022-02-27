@@ -9,15 +9,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
-import { IContactListItem } from '../interfaces/IContactListItem'
+<script setup lang="ts">
+import { IContactListItem } from '../interfaces/IContactListItem';
 
-@Component
-export default class InfoContactList extends Vue {
-  @Prop() heading!: string;
-  @Prop() items!: IContactListItem[];
-}
+defineProps<{
+  heading?: string,
+  items?: IContactListItem[]
+}>();
 </script>
 
 <style scoped>

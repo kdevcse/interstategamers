@@ -8,32 +8,30 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator'
+<script setup lang='ts'>
 
-@Component
-export default class RankMeter extends Vue {
-  @Prop() alt!: boolean;
-  @Prop() type!: string;
-  @Prop() percentage!: number;
-  @Prop() height!: string;
-  @Prop() h1!: boolean;
+const props = defineProps<{
+  alt?: boolean,
+  type?: string,
+  percentage?: number,
+  height?: string,
+  h1?: boolean,
+}>();
 
-  isRed() {
-    return this.alt !== undefined ? true : false;
+function isRed() {
+  return props.alt !== undefined ? true : false;
+}
+
+function hasH1() {
+  return props.h1 !== undefined ? true : false;
+}
+
+function getPercentageTxt() {
+  if (props.percentage) {
+    return props.percentage.toFixed(2);
   }
 
-  hasH1() {
-    return this.h1 !== undefined ? true : false;
-  }
-
-  getPercentageTxt() {
-    if (this.percentage) {
-      return this.percentage.toFixed(2);
-    }
-
-    return "";
-  }
+  return "";
 }
 </script>
 

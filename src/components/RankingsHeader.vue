@@ -1,88 +1,102 @@
 <template>
-    <strong class="rankings-header" v-bind:class="{sorted: isSorted()}" @mousedown="sortTableByCategory(category)">
-        {{title}} 
-        <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="ascending" :icon="['fas','sort-up']"></font-awesome-icon>
-        <font-awesome-icon class="sort-icon" v-bind:class="{sorted: isSorted()}" v-show="!ascending" :icon="['fas','sort-down']"></font-awesome-icon>
-	</strong>
+  <strong
+    class="rankings-header"
+    v-bind:class="{ sorted: isSorted() }"
+    @mousedown="sortTableByCategory(category)"
+  >
+    {{ title }}
+    <font-awesome-icon
+      class="sort-icon"
+      v-bind:class="{ sorted: isSorted() }"
+      v-show="ascending"
+      :icon="['fas', 'sort-up']"
+    ></font-awesome-icon>
+    <font-awesome-icon
+      class="sort-icon"
+      v-bind:class="{ sorted: isSorted() }"
+      v-show="!ascending"
+      :icon="['fas', 'sort-down']"
+    ></font-awesome-icon>
+  </strong>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
-import { CategoryTypes, IRankingInfo } from '@/interfaces/IRankingInfo'
+<script setup lang="ts">
+import { CategoryTypes } from '@/interfaces/IRankingInfo'
 
-@Component
-export default class RankingsHeader extends Vue {
-    @Prop() title!: string;
-    @Prop() category!: CategoryTypes;
-    @Prop() sortBy!: string;
+const props = defineProps<{
+  title?: string,
+  category?: CategoryTypes,
+  sortBy?: string
+}>();
 
-    //NOTE: Default state for icon is here. Needs to match category. See Ratings.vue
-    ascending: boolean = true;
+const emit = defineEmits(['sort-table']);
 
-    computeNonSortedState(category: string){
-        switch(category){
-            case CategoryTypes.Title:
-            case CategoryTypes.Rank:
-            case CategoryTypes.Platform:
-                this.ascending = false;
-                break;
-            default:
-                this.ascending = true;
-                break;
-        }
-    }
+//NOTE: Default state for icon is here. Needs to match category. See Ratings.vue
+let ascending = true;
 
-    isSorted() {
-        const sort = this.category === this.sortBy;
-        if (!sort) {
-            this.computeNonSortedState(this.category);
-        }
-        return sort;
-    }
+function computeNonSortedState(category: CategoryTypes | undefined) {
+  switch (category) {
+    case CategoryTypes.Title:
+    case CategoryTypes.Rank:
+    case CategoryTypes.Platform:
+      ascending = false;
+      break;
+    default:
+      ascending = true;
+      break;
+  }
+}
 
-    sortTableByCategory (val: CategoryTypes) {
-        this.ascending = !this.ascending;
-        this.$emit('sort-table', [val, this.ascending]);
-    }
+function isSorted() {
+  const sort = props.category === props.sortBy;
+  if (!sort) {
+    computeNonSortedState(props.category);
+  }
+  return sort;
+}
+
+function sortTableByCategory(val: CategoryTypes | undefined) {
+  ascending = !ascending;
+  emit('sort-table', [val, ascending]);
 }
 </script>
 
 <style scoped>
 .rankings-header {
-    padding: 16px 0px;
-	background-color: var(--elevation-second-lvl-color);
-    color: white;
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+  padding: 16px 0px;
+  background-color: var(--elevation-second-lvl-color);
+  color: white;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 .rankings-header.sorted {
-	text-decoration: underline;
+  text-decoration: underline;
 }
-.rankings-header:hover {  
-	cursor: pointer;
-	text-decoration: underline;
+.rankings-header:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
-.sort-icon{
-    visibility: hidden;
-	position: relative;
-	bottom: 0;
-    padding: 1px;
-	margin-left: 5px;
+.sort-icon {
+  visibility: hidden;
+  position: relative;
+  bottom: 0;
+  padding: 1px;
+  margin-left: 5px;
 }
 .sort-icon.sorted {
-    visibility: visible;
+  visibility: visible;
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 770px){
-    .rankings-header{
-		font-size: 14px;
-		min-width: 93px;
-    }
+@media only screen and (max-width: 770px) {
+  .rankings-header {
+    font-size: 14px;
+    min-width: 93px;
+  }
 }
 @media screen and (prefers-color-scheme: dark) {
   .rankings-header {

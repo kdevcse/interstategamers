@@ -38,25 +38,16 @@
   </header>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator'
+<script setup lang='ts'>
+const mp3 = '../assets/audio/ig_promo.mp3';
+let playing = false;
+let trailer = new Audio(mp3);
+trailer.title = 'Listen to the trailer';
+trailer.preload = 'none';
 
-@Component
-export default class IgHeader extends Vue {
-  playing = false;
-  trailer!: HTMLAudioElement;
-
-  mounted () {
-    const mp3 = '../assets/audio/ig_promo.mp3';
-    this.trailer = new Audio(mp3);
-    this.trailer.title = 'Listen to the trailer';
-    this.trailer.preload = 'none';
-  }
-
-  playTrailer () {
-    this.playing = !this.playing;
-    this.playing ? this.trailer.play() : this.trailer.pause();
-  }
+function playTrailer () {
+  playing = !playing;
+  playing ? trailer.play() : trailer.pause();
 }
 </script>
 

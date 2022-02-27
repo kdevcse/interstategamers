@@ -18,17 +18,17 @@
 </template>
 
 <script setup lang='ts'>
-const props = defineProps({
-  title!: String,
-  description!: String,
-  guest!: Boolean,
-  audio!: String,
-  season!: Number,
-  episodeNumber!: Number,
-  episodeType!: String,
-  rankingId!: String,
-  finale!: Boolean,
-});
+const props = defineProps<{
+  title?: string,
+  description?: string,
+  guest?: boolean,
+  audio?: string,
+  season?: number,
+  episodeNumber?: number,
+  episodeType?: string,
+  rankingId?: string,
+  finale?: boolean,
+}>();
 const emit = defineEmits(['show-score']);
 
 let playing = false;

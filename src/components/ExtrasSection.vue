@@ -17,14 +17,13 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
 import { IFriendInfo } from '../interfaces/IFriendInfo';
 
-defineProps({
-  header!: String,
-  items!: Object as PropType<IFriendInfo[]>,
-  icon!: String
-});
+defineProps<{
+  header?: string,
+  items?: IFriendInfo[],
+  icon?: string
+}>();
 </script>
 
 <style>

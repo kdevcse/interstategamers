@@ -1,21 +1,13 @@
 <template>
   <div class='home'>
-    <IgHeader></IgHeader>
-    <IgContent></IgContent>
+    <ig-header></ig-header>
+    <ig-content></ig-content>
   </div>
 </template>
 
-<script>
-import IgHeader from '../components/IgHeader'
-import IgContent from '../components/IgContent'
-
-export default {
-  name: 'Home',
-  components: {
-    IgHeader,
-    IgContent
-  }
-}
+<script setup lang="ts">
+import IgHeader from '../components/IgHeader.vue';
+import IgContent from '../components/IgContent.vue';
 </script>
 
 <style scoped>

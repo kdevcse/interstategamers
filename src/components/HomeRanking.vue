@@ -2,10 +2,10 @@
   <aside id='ig-content-rank'>
     <h2 id='ig-content-rank-game-title'>{{getTitle}}</h2>
     <h1 id='ig-content-rank-game-rank'>Rank {{rank}}/{{totalGames}}</h1>
-    <RankMeter alt h1 type="Overall" height="33px" :percentage="getOverall"></RankMeter>
-    <RankMeter h1 type="Gameplay" height="33px" :percentage="getGameplay"></RankMeter>
-    <RankMeter h1 type="Aesthetics" height="33px" :percentage="getAesthetics"></RankMeter>
-    <RankMeter h1 type="Content" height="33px" :percentage="getContent"></RankMeter>
+    <rank-meter alt h1 type="Overall" height="33px" :percentage="getOverall"></rank-meter>
+    <rank-meter h1 type="Gameplay" height="33px" :percentage="getGameplay"></rank-meter>
+    <rank-meter h1 type="Aesthetics" height="33px" :percentage="getAesthetics"></rank-meter>
+    <rank-meter h1 type="Content" height="33px" :percentage="getContent"></rank-meter>
   </aside>
 </template>
 
@@ -13,15 +13,15 @@
 import { computed } from 'vue';
 import RankMeter from '@/components/RankMeter.vue';
 
-const props = defineProps({
-  totalGames!: Number,
-  title!: String,
-  gameplay!: Number,
-  aesthetics!: Number,
-  content!: Number,
-  overall!: Number,
-  rank!: Number
-});
+const props = defineProps<{
+  totalGames?: number,
+  title?: string,
+  gameplay?: number,
+  aesthetics?: number,
+  content?: number,
+  overall?: number,
+  rank?: number
+}>();
 
 const getTitle = computed(() : string => {
   return props.title ? props.title : 'Hover a review to see its ranking!';

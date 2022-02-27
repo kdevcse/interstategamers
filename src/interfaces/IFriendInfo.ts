@@ -1,5 +1,5 @@
 export interface IFriendInfo {
-    heading: string,
-    content: string,
-    src: string
+  heading: string;
+  content: string;
+  src: string;
 }
