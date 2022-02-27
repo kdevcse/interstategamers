@@ -109,9 +109,8 @@ let episodes: IEpisodeInfo[] = reactive([]);
 let rankings: IRankingInfo[] = reactive([]);
 let sortedCategory = ref(CategoryTypes.Rank);
 let sortedIsAscending = ref(true);
-let hoveredEpisode: IEpisodeInfo | undefined = undefined;
-let selectedEpisode: string | undefined = undefined;
-let searchTxt: string | undefined = undefined;
+let selectedEpisode = ref(undefined);
+let searchTxt = ref('');
 
 onBeforeMount(() => {
   getDataFromFirestore('podcast', episodes);
@@ -140,11 +139,11 @@ async function getDataFromFirestore(type: string, dataArray: any[]) {
   }
 };
 function selectedRowHandler(e: any) {
-  selectedEpisode = e;
+  selectedEpisode.value = e;
 };
 function sortHandler(e: any) {
-  sortedCategory = e[0];
-  sortedIsAscending = e[1];
+  sortedCategory.value = e[0];
+  sortedIsAscending.value = e[1];
 };
 function sortByNumber(a: any, b: any) {
   const category = sortedCategory.value;
@@ -154,8 +153,8 @@ function sortByAlphabet(a: any, b: any) {
   const category = sortedCategory.value;
   return sortedIsAscending ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
 };
-function searchHandler(searchTxt: string) {
-  searchTxt = searchTxt;
+function searchHandler(searchInput: string) {
+  searchTxt.value = searchInput;
 }
 
 const sortedRankings = computed((): IRankingInfo[] => {
@@ -164,7 +163,7 @@ const sortedRankings = computed((): IRankingInfo[] => {
 
   rankings.sort((a, b) => sortFunc(a, b));
 
-  return searchTxt ? rankings.filter((rank) => {
+  return searchTxt.value !== '' ? rankings.filter((rank) => {
     const allInfo = Object.values(rank);
     return allInfo.some(i => i.toString().includes(searchTxt));
   }) : rankings;

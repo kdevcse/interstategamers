@@ -8,13 +8,13 @@
     <font-awesome-icon
       class="sort-icon"
       v-bind:class="{ sorted: isSorted() }"
-      v-show="ascending.valueOf"
+      v-show="ascending"
       :icon="['fas', 'sort-up']"
     ></font-awesome-icon>
     <font-awesome-icon
       class="sort-icon"
       v-bind:class="{ sorted: isSorted() }"
-      v-show="!ascending.valueOf"
+      v-show="!ascending"
       :icon="['fas', 'sort-down']"
     ></font-awesome-icon>
   </strong>
