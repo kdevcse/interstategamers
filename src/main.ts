@@ -9,12 +9,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-const app = createApp({App});
+const app = createApp(App as any);
 
 library.add(faPlayCircle, faPauseCircle, faGamepad, faSortUp,
   faSortDown, faUserPlus, faCaretSquareLeft, faCaretSquareRight,
   faBars, faTimes);
-
 
 app.component('font-awesome-icon', FontAwesomeIcon);
 
