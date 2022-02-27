@@ -39,15 +39,16 @@
 </template>
 
 <script setup lang='ts'>
-const mp3 = '../assets/audio/ig_promo.mp3';
-let playing = false;
-let trailer = new Audio(mp3);
+import { ref, reactive } from 'vue';
+const mp3 = './src/assets/audio/ig_promo.mp3';
+let playing = ref(false);
+let trailer = reactive(new Audio(mp3));
 trailer.title = 'Listen to the trailer';
 trailer.preload = 'none';
 
 function playTrailer () {
-  playing = !playing;
-  playing ? trailer.play() : trailer.pause();
+  playing.value = !playing.value;
+  playing.value ? trailer.play() : trailer.pause();
 }
 </script>
 

@@ -1,9 +1,9 @@
 <template>
   <div class="rank-meter">
-    <h1 v-if="hasH1()" class="rank-header" :class="{red: isRed()}">{{type}} {{getPercentageTxt()}}/100</h1>
-    <p v-else class='rank-header' :class="{red: isRed()}">{{type}} {{getPercentageTxt()}}/100</p>
-    <div class='progress-background' :class="{red: isRed()}">
-      <div class='progress-foreground' :class="{red: isRed()}" :style="{ width: `${percentage}%`, height:`${height}`}"></div>
+    <h1 v-if="props.h1" class="rank-header" :class="{red: !props.alt}">{{type}} {{getPercentageTxt()}}/100</h1>
+    <p v-else class='rank-header' :class="{red: props.alt}">{{type}} {{getPercentageTxt()}}/100</p>
+    <div class='progress-background' :class="{red: props.alt}">
+      <div class='progress-foreground' :class="{red: props.alt}" :style="{ width: `${percentage}%`, height:`${height}`}"></div>
     </div>
   </div>
 </template>
@@ -17,14 +17,6 @@ const props = defineProps<{
   height?: string,
   h1?: boolean,
 }>();
-
-function isRed() {
-  return props.alt !== undefined ? true : false;
-}
-
-function hasH1() {
-  return props.h1 !== undefined ? true : false;
-}
 
 function getPercentageTxt() {
   if (props.percentage) {

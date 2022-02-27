@@ -18,6 +18,8 @@
 </template>
 
 <script setup lang='ts'>
+import { ref, reactive } from 'vue';
+
 const props = defineProps<{
   title?: string,
   description?: string,
@@ -31,8 +33,8 @@ const props = defineProps<{
 }>();
 const emit = defineEmits(['show-score']);
 
-let playing = false;
-let epAudio = new Audio(props.audio);
+let playing = ref(false);
+let epAudio = reactive(new Audio(props.audio));
 epAudio.preload = 'none';
 
 function sendScore (rankingId: string | undefined) {
@@ -41,8 +43,8 @@ function sendScore (rankingId: string | undefined) {
   emit('show-score', [rankingId]);
 };
 function play () {
-  playing = !playing;
-  playing ? epAudio.play() : epAudio.pause();
+  playing.value = !playing.value;
+  playing.value ? epAudio.play() : epAudio.pause();
 }
 </script>
 

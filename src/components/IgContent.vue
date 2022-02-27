@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang='ts'>
-import { computed, onMounted } from 'vue';
+import { computed, onBeforeMount, reactive, ref } from 'vue';
 import HomeEpisode from '@/components/HomeEpisode.vue';
 import HomeRanking from '@/components/HomeRanking.vue';
 import { IHoveredRanking, IRankingInfo } from '../interfaces/IRankingInfo';
@@ -36,23 +36,23 @@ import { IEpisodeInfo } from '../interfaces/IRankingInfo';
 import firebase from 'firebase/app';
 import '@firebase/firestore';
 
-const episodes: Array<IEpisodeInfo> = [];
-const rankings: Array<IRankingInfo> = [];
-let hoveredRankingId: string = '';
+const episodes: Array<IEpisodeInfo> = reactive([]);
+const rankings: Array<IRankingInfo> = reactive([]);
+let hoveredRankingId = ref('');
 
-onMounted(() => {
+onBeforeMount(() => {
   var podcastDataPromise = getDataFromFirestore('podcast', episodes);
   var ratingsDataPromise = getDataFromFirestore('ratings', rankings);
 
   Promise.all([podcastDataPromise, ratingsDataPromise]).then(() => {
     const sortedEps = sortedEpisodes.value;
-    hoveredRankingId = getRankingId(sortedEps[0].season.number, sortedEps[0].number);
+    hoveredRankingId.value = getRankingId(sortedEps[0].season.number, sortedEps[0].number);
   });
 });
 
 function showScores (e: Array<any>) {
   if (e[0]) {
-    hoveredRankingId = e[0];
+    hoveredRankingId.value = e[0];
   }
 }
 
@@ -90,7 +90,7 @@ const hoveredRanking = computed((): IHoveredRanking => {
     const lastScore = i > 0 ? sortedRanks[i - 1].ig_score : null;
     ranking.rank = lastScore && (currentScore === lastScore) ? sortedRanks[i - 1].rank : i + 1;
 
-    if (ranking.id === hoveredRankingId) {
+    if (ranking.id === hoveredRankingId.value) {
       hoveredRank = ranking;
       break;  
     }
