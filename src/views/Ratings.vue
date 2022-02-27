@@ -103,17 +103,17 @@ import RankingRow from "@/components/RankingRow.vue";
 import RankingsInfo from "@/components/RankingsInfo.vue";
 import firebase from "firebase/app";
 import "@firebase/firestore";
-import { computed, onMounted } from "vue";
+import { computed, onBeforeMount, reactive, ref } from "vue";
 
-let episodes: IEpisodeInfo[] = [];
-let rankings: IRankingInfo[] = [];
-let sortedCategory = CategoryTypes.Rank;
-let sortedIsAscending = true;
+let episodes: IEpisodeInfo[] = reactive([]);
+let rankings: IRankingInfo[] = reactive([]);
+let sortedCategory = ref(CategoryTypes.Rank);
+let sortedIsAscending = ref(true);
 let hoveredEpisode: IEpisodeInfo | undefined = undefined;
 let selectedEpisode: string | undefined = undefined;
-let searchTxt: String | undefined = undefined;
+let searchTxt: string | undefined = undefined;
 
-onMounted(() => {
+onBeforeMount(() => {
   getDataFromFirestore('podcast', episodes);
   getDataFromFirestore('ratings', rankings);
 });
@@ -147,11 +147,11 @@ function sortHandler(e: any) {
   sortedIsAscending = e[1];
 };
 function sortByNumber(a: any, b: any) {
-  const category = sortedCategory;
+  const category = sortedCategory.value;
   return sortedIsAscending ? a[category] - b[category] : b[category] - a[category];
 };
 function sortByAlphabet(a: any, b: any) {
-  const category = sortedCategory;
+  const category = sortedCategory.value;
   return sortedIsAscending ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
 };
 function searchHandler(searchTxt: string) {
@@ -159,7 +159,7 @@ function searchHandler(searchTxt: string) {
 }
 
 const sortedRankings = computed((): IRankingInfo[] => {
-  const isAlphabeticSort = sortedCategory === CategoryTypes.Title || sortedCategory === CategoryTypes.Platform;
+  const isAlphabeticSort = sortedCategory.value === CategoryTypes.Title || sortedCategory.value === CategoryTypes.Platform;
   const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
 
   rankings.sort((a, b) => sortFunc(a, b));

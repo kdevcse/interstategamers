@@ -8,13 +8,13 @@
     <font-awesome-icon
       class="sort-icon"
       v-bind:class="{ sorted: isSorted() }"
-      v-show="ascending"
+      v-show="ascending.valueOf"
       :icon="['fas', 'sort-up']"
     ></font-awesome-icon>
     <font-awesome-icon
       class="sort-icon"
       v-bind:class="{ sorted: isSorted() }"
-      v-show="!ascending"
+      v-show="!ascending.valueOf"
       :icon="['fas', 'sort-down']"
     ></font-awesome-icon>
   </strong>
@@ -22,6 +22,7 @@
 
 <script setup lang="ts">
 import { CategoryTypes } from '@/interfaces/IRankingInfo'
+import { ref } from 'vue';
 
 const props = defineProps<{
   title?: string,
@@ -32,17 +33,17 @@ const props = defineProps<{
 const emit = defineEmits(['sort-table']);
 
 //NOTE: Default state for icon is here. Needs to match category. See Ratings.vue
-let ascending = true;
+let ascending = ref(true);
 
 function computeNonSortedState(category: CategoryTypes | undefined) {
   switch (category) {
     case CategoryTypes.Title:
     case CategoryTypes.Rank:
     case CategoryTypes.Platform:
-      ascending = false;
+      ascending.value = false;
       break;
     default:
-      ascending = true;
+      ascending.value = true;
       break;
   }
 }
@@ -56,8 +57,8 @@ function isSorted() {
 }
 
 function sortTableByCategory(val: CategoryTypes | undefined) {
-  ascending = !ascending;
-  emit('sort-table', [val, ascending]);
+  ascending.value = !ascending.value;
+  emit('sort-table', [val, ascending.value]);
 }
 </script>
 

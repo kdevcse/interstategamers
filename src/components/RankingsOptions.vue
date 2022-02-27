@@ -9,17 +9,17 @@
         value
         autocomplete="off"
       />
-      <div v-bind:class="{ show: showBothIndicators }" id="scroll-indicator">
+      <div v-bind:class="{ show: showBothIndicators.valueOf }" id="scroll-indicator">
         <font-awesome-icon
           id="scroll-indicator-left"
-          v-bind:class="{ show: showLeftIndicator }"
+          v-bind:class="{ show: showLeftIndicator.valueOf }"
           :icon="['fas', 'caret-square-left']"
           title="Scroll left to see more content"
         ></font-awesome-icon>
         <span id="scroll-indicator-txt">Scroll for more</span>
         <font-awesome-icon
           id="scroll-indicator-right"
-          v-bind:class="{ show: showRightIndicator }"
+          v-bind:class="{ show: showRightIndicator.valueOf }"
           :icon="['fas', 'caret-square-right']"
           title="Scroll right to see more content"
         ></font-awesome-icon>
@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, onBeforeUnmount } from 'vue';
+import { onBeforeMount, onBeforeUnmount, ref } from 'vue';
 
 onBeforeMount(() => {
   window.addEventListener('resize', showIndicator);
@@ -43,31 +43,31 @@ onBeforeUnmount(() => {
 
 const emit = defineEmits(['search-table']);
 
-let showLeftIndicator = false;
-let showRightIndicator = false;
-let showBothIndicators = false;
+let showLeftIndicator = ref(false);
+let showRightIndicator = ref(false);
+let showBothIndicators = ref(false);
 
 function showIndicator() {
   const pos = window.scrollX;
   const maxWidth = document.documentElement.scrollWidth - document.documentElement.clientWidth;
 
   if (pos > 0) {
-    showLeftIndicator = true;
+    showLeftIndicator.value = true;
   } else {
-    showLeftIndicator = false;
+    showLeftIndicator.value = false;
   }
 
   if (pos !== maxWidth) {
-    showRightIndicator = true;
+    showRightIndicator.value = true;
   } else {
-    showRightIndicator = false;
+    showRightIndicator.value = false;
   }
 
-  if (showLeftIndicator || showRightIndicator) {
-    showBothIndicators = true;
+  if (showLeftIndicator.value || showRightIndicator.value) {
+    showBothIndicators.value = true;
   }
   else {
-    showBothIndicators = false;
+    showBothIndicators.value = false;
   }
 };
 

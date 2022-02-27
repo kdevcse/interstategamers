@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, watch} from "vue";
+import { reactive, watch, ref, onBeforeMount} from "vue";
 import RankingsBreakdown from "@/components/RankingsBreakdown.vue";
 import { IRankingInfo } from "../interfaces/IRankingInfo";
 
@@ -39,14 +39,14 @@ const props = defineProps<{
   metacritic?: number,
   rankInfo?: IRankingInfo
 }>();
-let peterScores: Array<number> = [];
-let kevinScores: Array<number> = [];
-let guestScores: Array<number> = [];
-let chartLoaded = false;
+let peterScores: Array<number> = reactive([]);
+let kevinScores: Array<number> = reactive([]);
+let guestScores: Array<number> = reactive([]);
+let chartLoaded = ref(false);
 
-onMounted(() => {
+onBeforeMount(() => {
   getScores();
-  chartLoaded = true;
+  chartLoaded.value = true;
 });
 
 function getImg() {

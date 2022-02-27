@@ -63,7 +63,7 @@ function selectRowHandler() {
   if (props.title !== props.selected) {
     emit("row-selected", props.title);
   } else {
-    emit("row-selected", null);
+    emit("row-selected", undefined);
   }
 }
 
