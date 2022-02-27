@@ -9,17 +9,17 @@
         value
         autocomplete="off"
       />
-      <div v-bind:class="{ show: showBothIndicators.valueOf }" id="scroll-indicator">
+      <div v-bind:class="{ show: showBothIndicators }" id="scroll-indicator">
         <font-awesome-icon
           id="scroll-indicator-left"
-          v-bind:class="{ show: showLeftIndicator.valueOf }"
+          v-bind:class="{ show: showLeftIndicator }"
           :icon="['fas', 'caret-square-left']"
           title="Scroll left to see more content"
         ></font-awesome-icon>
         <span id="scroll-indicator-txt">Scroll for more</span>
         <font-awesome-icon
           id="scroll-indicator-right"
-          v-bind:class="{ show: showRightIndicator.valueOf }"
+          v-bind:class="{ show: showRightIndicator }"
           :icon="['fas', 'caret-square-right']"
           title="Scroll right to see more content"
         ></font-awesome-icon>
