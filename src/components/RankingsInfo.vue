@@ -15,18 +15,18 @@
         </div>
       </div>
     </div>
-    <rankings-breakdown reviewer="Peter" :scores="peterScores"></rankings-breakdown>
-    <rankings-breakdown reviewer="Kevin" :scores="kevinScores"></rankings-breakdown>
+    <rankings-breakdown reviewer="Peter" :scores="getPetersScores"></rankings-breakdown>
+    <rankings-breakdown reviewer="Kevin" :scores="getKevinsScores"></rankings-breakdown>
     <rankings-breakdown
       :reviewer="rankInfo.guest"
       v-if="rankInfo && rankInfo.guest"
-      :scores="guestScores"
+      :scores="getGuestScores"
     ></rankings-breakdown>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, watch, ref, onBeforeMount} from "vue";
+import { ref, onBeforeMount, computed} from "vue";
 import RankingsBreakdown from "@/components/RankingsBreakdown.vue";
 import { IRankingInfo } from "../interfaces/IRankingInfo";
 
@@ -37,15 +37,11 @@ const props = defineProps<{
   img?: string,
   ign?: number,
   metacritic?: number,
-  rankInfo?: IRankingInfo
+  rankInfo: IRankingInfo
 }>();
-let peterScores: Array<number> = reactive([]);
-let kevinScores: Array<number> = reactive([]);
-let guestScores: Array<number> = reactive([]);
 let chartLoaded = ref(false);
 
 onBeforeMount(() => {
-  getScores();
   chartLoaded.value = true;
 });
 
@@ -67,16 +63,23 @@ function getReleaseDateTxt(): string {
   return `Reviewed ${dateTxt}`;
 }
 
-function getScores() {
+const getKevinsScores = computed(() => {
   if (!props.rankInfo)
-    return;
+    return[];
 
-  let gatherKevinScores: number[] = [];
+  let gatherKevinScores = [];
   gatherKevinScores.push(props.rankInfo.k_rating);
   gatherKevinScores.push(props.rankInfo.k_gameplay);
   gatherKevinScores.push(props.rankInfo.k_visuals);
   gatherKevinScores.push(props.rankInfo.k_audio);
   gatherKevinScores.push(props.rankInfo.k_content);
+
+  return gatherKevinScores;
+});
+
+const getPetersScores = computed(() => {
+  if (!props.rankInfo)
+    return[];
 
   let gatherPeterScores: number[] = [];
   gatherPeterScores.push(props.rankInfo.p_rating);
@@ -85,23 +88,21 @@ function getScores() {
   gatherPeterScores.push(props.rankInfo.p_audio);
   gatherPeterScores.push(props.rankInfo.p_content);
 
-  if (props.rankInfo.guest) {
-    let gatherGuestScores: number[] = [];
-    gatherGuestScores.push(props.rankInfo.g_rating);
-    gatherGuestScores.push(props.rankInfo.g_gameplay);
-    gatherGuestScores.push(props.rankInfo.g_visuals);
-    gatherGuestScores.push(props.rankInfo.g_audio);
-    gatherGuestScores.push(props.rankInfo.g_content);
-    guestScores = gatherGuestScores;
-  }
+  return gatherPeterScores;
+});
 
-  kevinScores = gatherKevinScores;
-  peterScores = gatherPeterScores;
-}
-
-if (props.rankInfo)
-  watch(props.rankInfo, getScores);
-
+const getGuestScores = computed(() => {
+  if (!props.rankInfo || !props.rankInfo.guest)
+    return[];
+  
+  let gatherGuestScores: number[] = [];
+  gatherGuestScores.push(props.rankInfo.g_rating);
+  gatherGuestScores.push(props.rankInfo.g_gameplay);
+  gatherGuestScores.push(props.rankInfo.g_visuals);
+  gatherGuestScores.push(props.rankInfo.g_audio);
+  gatherGuestScores.push(props.rankInfo.g_content);
+  return gatherGuestScores;
+});
 </script>
 
 <style scoped>
