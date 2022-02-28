@@ -2,6 +2,8 @@
 
     publish = "dist"
 
+    environment = { NODE_VERSION = "16.14.0" }
+
     command = "npm run build"
 
 [dev]
