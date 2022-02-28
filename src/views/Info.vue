@@ -35,8 +35,8 @@
 
 <script setup lang="ts">
 // @ is an alias to /src
-import InfoContactList from '../components/InfoContactList.vue';
-import infoLinks from '../database/info-links';
+import InfoContactList from '@/components/InfoContactList.vue';
+import infoLinks from '@/database/info-links';
 
 const listenList = infoLinks.whereToListenList;
 const supportList = infoLinks.howToSupportUsList;

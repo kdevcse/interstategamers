@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { IFriendInfo } from '../interfaces/IFriendInfo';
+import { IFriendInfo } from '@/interfaces/IFriendInfo';
 
 defineProps<{
   header?: string,

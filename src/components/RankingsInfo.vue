@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import { ref, onBeforeMount, computed} from "vue";
 import RankingsBreakdown from "@/components/RankingsBreakdown.vue";
-import { IRankingInfo } from "../interfaces/IRankingInfo";
+import { IRankingInfo } from "@/interfaces/IRankingInfo";
 
 const props = defineProps<{
   title?: string,

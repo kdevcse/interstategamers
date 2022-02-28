@@ -96,7 +96,7 @@
 </template>
 
 <script setup lang="ts">
-import { CategoryTypes, IEpisodeInfo, IRankingInfo } from "../interfaces/IRankingInfo"; //Used in template
+import { CategoryTypes, IEpisodeInfo, IRankingInfo } from "@/interfaces/IRankingInfo"; //Used in template
 import RankingsOptions from "@/components/RankingsOptions.vue";
 import RankingsHeader from "@/components/RankingsHeader.vue";
 import RankingRow from "@/components/RankingRow.vue";

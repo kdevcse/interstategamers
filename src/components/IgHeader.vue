@@ -40,9 +40,8 @@
 
 <script setup lang='ts'>
 import { ref, reactive } from 'vue';
-const mp3 = './src/assets/audio/ig_promo.mp3';
 let playing = ref(false);
-let trailer = reactive(new Audio(mp3));
+let trailer = reactive(new Audio('../src/assets/audio/ig_promo.mp3'));
 trailer.title = 'Listen to the trailer';
 trailer.preload = 'none';
 
