@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import firebase from 'firebase/app';
@@ -9,27 +9,26 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
+const app = createApp(App as any);
+
 library.add(faPlayCircle, faPauseCircle, faGamepad, faSortUp,
   faSortDown, faUserPlus, faCaretSquareLeft, faCaretSquareRight,
   faBars, faTimes);
 
-Vue.component('font-awesome-icon', FontAwesomeIcon);
-
-Vue.config.productionTip = true;
+app.component('font-awesome-icon', FontAwesomeIcon);
 
 /*Firebase Setup*/
 const firebaseConfig = {
-  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
-  authDomain: process.env.VUE_APP_FIREBASE_AUTH,
-  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.VUE_APP_FIREBASE_MSG_ID,
-  appId: process.env.VUE_APP_FIREBASE_APP_ID
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MSG_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 firebase.initializeApp(firebaseConfig);
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+app.use(router);
+
+app.mount('#app');

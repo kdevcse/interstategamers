@@ -1,72 +1,71 @@
 <template>
   <main class="ratings">
-    <RankingsOptions @search-table="searchHandler"></RankingsOptions>
+    <rankings-options @search-table="searchHandler"></rankings-options>
     <div id="rankings-table">
       <div id="rankings-header">
-        <RankingsHeader
+        <rankings-header
           @sort-table="sortHandler"
           title="Rank"
           :category="CategoryTypes.Rank"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
-        <RankingsHeader
+        ></rankings-header>
+        <rankings-header
           @sort-table="sortHandler"
           title="Title"
           :category="CategoryTypes.Title"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
-        <RankingsHeader
+        ></rankings-header>
+        <rankings-header
           @sort-table="sortHandler"
           title="Year"
           :category="CategoryTypes.Year"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
-        <RankingsHeader
+        ></rankings-header>
+        <rankings-header
           @sort-table="sortHandler"
           title="Platform"
           :category="CategoryTypes.Platform"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
-        <RankingsHeader
+        ></rankings-header>
+        <rankings-header
           @sort-table="sortHandler"
           title="IG Score"
           :category="CategoryTypes.Overall"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
-        <RankingsHeader
+        ></rankings-header>
+        <rankings-header
           @sort-table="sortHandler"
           title="Gameplay"
           :category="CategoryTypes.Gameplay"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
-        <RankingsHeader
+        ></rankings-header>
+        <rankings-header
           @sort-table="sortHandler"
           title="Aesthetics"
           :category="CategoryTypes.Aesthetics"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
-        <RankingsHeader
+        ></rankings-header>
+        <rankings-header
           @sort-table="sortHandler"
           title="Content"
           :category="CategoryTypes.Content"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
-        <RankingsHeader
+        ></rankings-header>
+        <rankings-header
           @sort-table="sortHandler"
           title="P. Overall"
           :category="CategoryTypes.POverall"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
-        <RankingsHeader
+        ></rankings-header>
+        <rankings-header
           @sort-table="sortHandler"
           title="K. Overall"
           :category="CategoryTypes.KOverall"
           :sortBy="sortedCategory"
-        ></RankingsHeader>
+        ></rankings-header>
       </div>
-      <template v-for="ranking in sortedRankings">
-        <RankingRow
-          :key="ranking.id"
+      <template v-for="ranking in sortedRankings" :key="ranking.id">
+        <ranking-row
           :rank="ranking.rank"
           :title="ranking.game"
           :guest="ranking.guest"
@@ -81,9 +80,8 @@
           :sortBy="sortedCategory"
           :selected="selectedEpisode"
           @row-selected="selectedRowHandler"
-        ></RankingRow>
-        <RankingsInfo
-          :key="`${ranking.id}-info`"
+        ></ranking-row>
+        <rankings-info
           :date="ranking.published_at"
           :img="ranking.game_image"
           :title="ranking.game"
@@ -91,112 +89,85 @@
           :rankInfo="ranking"
           :ign="ranking.ign"
           :metacritic="ranking.metacritic"
-        ></RankingsInfo>
+        ></rankings-info>
       </template>
     </div>
   </main>
 </template>
 
-<script>
-import { CategoryTypes } from "../interfaces/IRankingInfo"; //Used in template
-import RankingsOptions from "@/components/RankingsOptions";
-import RankingsHeader from "@/components/RankingsHeader";
-import RankingRow from "@/components/RankingRow";
-import RankingsInfo from "@/components/RankingsInfo";
+<script setup lang="ts">
+import { CategoryTypes, IEpisodeInfo, IRankingInfo } from "../interfaces/IRankingInfo"; //Used in template
+import RankingsOptions from "@/components/RankingsOptions.vue";
+import RankingsHeader from "@/components/RankingsHeader.vue";
+import RankingRow from "@/components/RankingRow.vue";
+import RankingsInfo from "@/components/RankingsInfo.vue";
 import firebase from "firebase/app";
 import "@firebase/firestore";
+import { computed, onBeforeMount, reactive, ref } from "vue";
 
-export default {
-  name: "Ratings",
-  CategoryTypes,
-  components: {
-    RankingsOptions,
-    RankingsHeader,
-    RankingRow,
-    RankingsInfo
-  },
-  mounted() {
-    this.getDataFromFirestore('podcast', this.episodes);
-    this.getDataFromFirestore('ratings', this.rankings);
-  },
-  data: function() {
-    return {
-      episodes: [],
-      rankings: [],
-      sortedCategory: CategoryTypes.Rank,
-      sortedIsAscending: true,
-      hoveredEpisode: null,
-      selectedEpisode: null,
-      searchTxt: null
-    };
-  },
-  computed: {
-    CategoryTypes:() => CategoryTypes,
-    sortedRankings() {
-      const isAlphabeticSort = this.sortedCategory === CategoryTypes.Title || this.sortedCategory === CategoryTypes.Platform;
-      const sortFunc = isAlphabeticSort ? this.sortByAlphabet : this.sortByNumber;
+let episodes: IEpisodeInfo[] = reactive([]);
+let rankings: IRankingInfo[] = reactive([]);
+let sortedCategory = ref(CategoryTypes.Rank);
+let sortedIsAscending = ref(true);
+let selectedEpisode = ref(undefined);
+let searchTxt = ref('');
 
-      this.rankings.sort((a, b) => sortFunc(a, b));
-      
-      return this.searchTxt ? this.rankings.filter((rank) => {
-        const allInfo = Object.values(rank);
-        return allInfo.some(i => i.toString().includes(this.searchTxt));
-      }) : this.rankings;
-    }
-  },
-  methods: {
-    async getDataFromFirestore(type, dataArray) {
-      try {
-        const collection = await firebase.firestore().collection(`${type}-data`).get();
-        collection.docs.forEach(doc => {
-          dataArray.push(doc.data());
-        });
+onBeforeMount(() => {
+  getDataFromFirestore('podcast', episodes);
+  getDataFromFirestore('ratings', rankings);
+});
 
-        if (type !== 'ratings')
-          return;
+async function getDataFromFirestore(type: string, dataArray: any[]) {
+  try {
+    const collection = await firebase.firestore().collection(`${type}-data`).get();
+    collection.docs.forEach(doc => {
+      dataArray.push(doc.data());
+    });
 
-      //Assign Rankings
-      //TODO: Perhaps in the future we can re-rank them on category sort?
-        dataArray.sort((a, b) => b[CategoryTypes.Overall] - a[CategoryTypes.Overall]).forEach((ranking, index) => {
-          const currentScore = ranking[CategoryTypes.Overall];
-          const lastScore = index > 0 ? dataArray[index - 1][CategoryTypes.Overall] : null;
-          ranking[CategoryTypes.Rank] = lastScore && (currentScore === lastScore) ? dataArray[index - 1][CategoryTypes.Rank] : index + 1;
-        });
-      } catch(error) {
-        console.error(`An error occured fetching ${type} data: ${error}`);
-      }
-    },
-    shouldHighlight(category) {
-      return category === this.sortedCategory;
-    },
-    shouldEmphasize(episode) {
-      return (
-        episode === this.hoveredEpisode || episode === this.selectedEpisode
-      );
-    },
-    hoveredRowHandler(e) {
-      this.hoveredEpisode = e;
-    },
-    selectedRowHandler(e) {
-      this.selectedEpisode = e;
-    },
-    sortHandler(e) {
-      this.sortedCategory = e[0];
-      this.sortedIsAscending = e[1];
-    },
-    sortByNumber(a, b) {
-      const category = this.sortedCategory;
-      return this.sortedIsAscending ? a[category] - b[category] : b[category] - a[category];
-    },
-    sortByAlphabet(a, b) {
-      const category = this.sortedCategory;
-      return this.sortedIsAscending ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
-    },
-    searchHandler(searchTxt) {
-      this.searchTxt = searchTxt;
-    }
+    if (type !== 'ratings')
+      return;
+
+    //Assign Rankings
+    //TODO: Perhaps in the future we can re-rank them on category sort?
+    dataArray.sort((a, b) => b[CategoryTypes.Overall] - a[CategoryTypes.Overall]).forEach((ranking, index) => {
+      const currentScore = ranking[CategoryTypes.Overall];
+      const lastScore = index > 0 ? dataArray[index - 1][CategoryTypes.Overall] : null;
+      ranking[CategoryTypes.Rank] = lastScore && (currentScore === lastScore) ? dataArray[index - 1][CategoryTypes.Rank] : index + 1;
+    });
+  } catch (error) {
+    console.error(`An error occured fetching ${type} data: ${error}`);
   }
 };
+function selectedRowHandler(e: any) {
+  selectedEpisode.value = e;
+};
+function sortHandler(e: any) {
+  sortedCategory.value = e[0];
+  sortedIsAscending.value = e[1];
+};
+function sortByNumber(a: any, b: any) {
+  const category = sortedCategory.value;
+  return sortedIsAscending.value ? a[category] - b[category] : b[category] - a[category];
+};
+function sortByAlphabet(a: any, b: any) {
+  const category = sortedCategory.value;
+  return sortedIsAscending.value ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
+};
+function searchHandler(searchInput: string) {
+  searchTxt.value = searchInput;
+}
+
+const sortedRankings = computed((): IRankingInfo[] => {
+  const isAlphabeticSort = sortedCategory.value === CategoryTypes.Title || sortedCategory.value === CategoryTypes.Platform;
+  const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
+
+  rankings.sort((a, b) => sortFunc(a, b));
+
+  return searchTxt.value !== '' ? rankings.filter((rank) => {
+    const allInfo = Object.values(rank);
+    return allInfo.some(i => i.toString().includes(searchTxt));
+  }) : rankings;
+});
 </script>
 
 <style scoped>

@@ -1,100 +1,108 @@
 <template>
-  <div class="rankings-info-row" :class="{expanded: isSelected()}">
+  <div class="rankings-info-row" :class="{ expanded: isSelected() }">
     <div class="breakdown-details">
-      <p class="breakdown-day">{{getReleaseDateTxt()}}</p>
+      <p class="breakdown-day">{{ getReleaseDateTxt() }}</p>
       <img v-if="img" class="breakdown-img" :src="getImg()" />
       <img v-else class="breakdown-img default" src="../assets/images/main.png" />
       <div class="breakdown-scores">
         <div class="critic-section">
           <img class="critic-logo" title="Metacritic Score" src="../assets/images/meta_logo.png" />
-          <p class="critic-score">{{metacritic}}</p>
+          <p class="critic-score">{{ metacritic }}</p>
         </div>
         <div class="critic-section">
           <img class="critic-logo" title="IGN Score" src="../assets/images/ign_logo.png" />
-          <p class="critic-score">{{ign}}</p>
+          <p class="critic-score">{{ ign }}</p>
         </div>
       </div>
     </div>
-    <RankingsBreakdown reviewer="Peter" :scores="peterScores"></RankingsBreakdown>
-    <RankingsBreakdown reviewer="Kevin" :scores="kevinScores"></RankingsBreakdown>
-    <RankingsBreakdown :reviewer="rankInfo.guest" v-if="rankInfo.guest" :scores="guestScores"></RankingsBreakdown>
+    <rankings-breakdown reviewer="Peter" :scores="getPetersScores"></rankings-breakdown>
+    <rankings-breakdown reviewer="Kevin" :scores="getKevinsScores"></rankings-breakdown>
+    <rankings-breakdown
+      :reviewer="rankInfo.guest"
+      v-if="rankInfo && rankInfo.guest"
+      :scores="getGuestScores"
+    ></rankings-breakdown>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+<script setup lang="ts">
+import { ref, onBeforeMount, computed} from "vue";
 import RankingsBreakdown from "@/components/RankingsBreakdown.vue";
 import { IRankingInfo } from "../interfaces/IRankingInfo";
 
-@Component({
-  components: {
-    RankingsBreakdown
-  }
-})
-export default class RankingsInfo extends Vue {
-  @Prop() title!: string;
-  @Prop() selected!: string;
-  @Prop() date!: string;
-  @Prop() img!: string;
-  @Prop() ign!: number;
-  @Prop() metacritic!: number;
-  @Prop() rankInfo!: IRankingInfo;
+const props = defineProps<{
+  title?: string,
+  selected?: string,
+  date?: string,
+  img?: string,
+  ign?: number,
+  metacritic?: number,
+  rankInfo: IRankingInfo
+}>();
+let chartLoaded = ref(false);
 
-  peterScores: Array<number> = [];
-  kevinScores: Array<number> = [];
-  guestScores: Array<number> = [];
-  chartLoaded = false;
+onBeforeMount(() => {
+  chartLoaded.value = true;
+});
 
-  mounted() {
-    this.getScores();
-    this.chartLoaded = true;
-  }
-
-  getImg() {
-    return require(`../assets/images/${this.img}`);
-  }
-
-  isSelected() {
-    return this.title === this.selected;
-  }
-
-  getReleaseDateTxt(): string {
-    const dateObj = new Date(this.date);
-    let dateTxt = `${dateObj.getMonth() +
-      1}/${dateObj.getDate()}/${dateObj.getFullYear()}`;
-    return `Reviewed ${dateTxt}`;
-  }
-
-  @Watch("rankInfo")
-  getScores() {
-    let gatherKevinScores: Array<number> = [];
-    gatherKevinScores.push(this.rankInfo.k_rating);
-    gatherKevinScores.push(this.rankInfo.k_gameplay);
-    gatherKevinScores.push(this.rankInfo.k_visuals);
-    gatherKevinScores.push(this.rankInfo.k_audio);
-    gatherKevinScores.push(this.rankInfo.k_content);
-
-    let gatherPeterScores: any = [];
-    gatherPeterScores.push(this.rankInfo.p_rating);
-    gatherPeterScores.push(this.rankInfo.p_gameplay);
-    gatherPeterScores.push(this.rankInfo.p_visuals);
-    gatherPeterScores.push(this.rankInfo.p_audio);
-    gatherPeterScores.push(this.rankInfo.p_content);
-
-    if (this.rankInfo.guest) {
-      let gatherGuestScores: any = [];
-      gatherGuestScores.push(this.rankInfo.g_rating);
-      gatherGuestScores.push(this.rankInfo.g_gameplay);
-      gatherGuestScores.push(this.rankInfo.g_visuals);
-      gatherGuestScores.push(this.rankInfo.g_audio);
-      gatherGuestScores.push(this.rankInfo.g_content);
-      this.guestScores = gatherGuestScores;
-    }
-
-    this.kevinScores = gatherKevinScores;
-    this.peterScores = gatherPeterScores;
-  }
+function getImg() {
+  return `../assets/images/${props.img}`;
 }
+
+function isSelected() {
+  return props.title === props.selected;
+}
+
+function getReleaseDateTxt(): string {
+  if (!props.date)
+    return '';
+
+  const dateObj = new Date(props.date);
+  let dateTxt = `${dateObj.getMonth() +
+    1}/${dateObj.getDate()}/${dateObj.getFullYear()}`;
+  return `Reviewed ${dateTxt}`;
+}
+
+const getKevinsScores = computed(() => {
+  if (!props.rankInfo)
+    return[];
+
+  let gatherKevinScores = [];
+  gatherKevinScores.push(props.rankInfo.k_rating);
+  gatherKevinScores.push(props.rankInfo.k_gameplay);
+  gatherKevinScores.push(props.rankInfo.k_visuals);
+  gatherKevinScores.push(props.rankInfo.k_audio);
+  gatherKevinScores.push(props.rankInfo.k_content);
+
+  return gatherKevinScores;
+});
+
+const getPetersScores = computed(() => {
+  if (!props.rankInfo)
+    return[];
+
+  let gatherPeterScores: number[] = [];
+  gatherPeterScores.push(props.rankInfo.p_rating);
+  gatherPeterScores.push(props.rankInfo.p_gameplay);
+  gatherPeterScores.push(props.rankInfo.p_visuals);
+  gatherPeterScores.push(props.rankInfo.p_audio);
+  gatherPeterScores.push(props.rankInfo.p_content);
+
+  return gatherPeterScores;
+});
+
+const getGuestScores = computed(() => {
+  if (!props.rankInfo || !props.rankInfo.guest)
+    return[];
+  
+  let gatherGuestScores: number[] = [];
+  gatherGuestScores.push(props.rankInfo.g_rating);
+  gatherGuestScores.push(props.rankInfo.g_gameplay);
+  gatherGuestScores.push(props.rankInfo.g_visuals);
+  gatherGuestScores.push(props.rankInfo.g_audio);
+  gatherGuestScores.push(props.rankInfo.g_content);
+  return gatherGuestScores;
+});
 </script>
 
 <style scoped>
