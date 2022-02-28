@@ -2,9 +2,9 @@
   <article>
       <h1 class="extras-header"><span><i class="fab fa-twitch"></i></span> Twitch</h1>
       <div class="extras-cat" id="extras-twitch">
-          <twitch-link channel="deal_4_real" href="https://www.twitch.tv/deal_4_real" v-bind:src="deal4RealTwitch"/>
-          <twitch-link channel="kslugs" href="https://www.twitch.tv/kslugs" v-bind:src="kslugsTwitch"/>
-          <twitch-link channel="zlinkgaming" href="https://www.twitch.tv/zlinkgaming" v-bind:src="zlinkTwitch"/>
+          <twitch-link channel="deal_4_real" href="https://www.twitch.tv/deal_4_real" :src="deal4RealTwitch"/>
+          <twitch-link channel="kslugs" href="https://www.twitch.tv/kslugs" :src="kslugsTwitch"/>
+          <twitch-link channel="zlinkgaming" href="https://www.twitch.tv/zlinkgaming" :src="zlinkTwitch"/>
       </div>
       <extras-section header="Music" icon="fas fa-music" v-bind:items="music"/>
       <extras-section header="Code" icon="fas fa-code" v-bind:items="code"/>
@@ -20,9 +20,9 @@ import TwitchLink from '@/components/TwitchLink.vue';
 const music = extrasSectionData.musicSection;
 const code = extrasSectionData.codeSections;
 const friends = extrasSectionData.friendSections;
-const deal4RealTwitch = '../src/assets/images/d4r.png';
-const kslugsTwitch = '../src/assets/images/kslugs.png';
-const zlinkTwitch = '../src/assets/images/zlg.png';
+const deal4RealTwitch = './src/assets/images/d4r.png';
+const kslugsTwitch = './src/assets/images/kslugs.png';
+const zlinkTwitch = './src/assets/images/zlg.png';
 </script>
 
 <style scoped>
