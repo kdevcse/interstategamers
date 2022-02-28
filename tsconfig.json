@@ -13,8 +13,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "vite/client",
-      "@types/jest"
+      "vite/client"
     ],
     "paths": {
       "@/*": [
@@ -30,10 +29,7 @@
   },
   "include": [
     "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./src/**/*.vue",
-    "./tests/**/*.ts",
-    "./tests/**/*.tsx"
+    "./src/**/*.vue"
   ],
   "exclude": [
     "./node_modules"
