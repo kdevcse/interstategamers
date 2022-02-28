@@ -1,6 +1,6 @@
 <template>
   <div class="rank-meter">
-    <h1 v-if="props.h1" class="rank-header" :class="{red: !props.alt}">{{type}} {{getPercentageTxt()}}/100</h1>
+    <h1 v-if="props.h1" class="rank-header" :class="{red: props.alt}">{{type}} {{getPercentageTxt()}}/100</h1>
     <p v-else class='rank-header' :class="{red: props.alt}">{{type}} {{getPercentageTxt()}}/100</p>
     <div class='progress-background' :class="{red: props.alt}">
       <div class='progress-foreground' :class="{red: props.alt}" :style="{ width: `${percentage}%`, height:`${height}`}"></div>
