@@ -5,7 +5,7 @@
     v-bind:class="{ selected: rowIsSelected() }"
   >
     <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Rank)}">{{rank}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Title)}">
+    <p :title="title" v-bind:class="{ sorted: highlightRed(CategoryTypes.Title)}">
       <span>{{title}}</span>
       <font-awesome-icon
         class="guest-icon"
@@ -15,7 +15,7 @@
       ></font-awesome-icon>
     </p>
     <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Year)}">{{year}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Platform)}">{{platform}}</p>
+    <p :title="platform" v-bind:class="{ sorted: highlightRed(CategoryTypes.Platform)}">{{platform}}</p>
     <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Overall)}">{{getOverallTxt}}</p>
     <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Gameplay)}">{{getGameplayTxt}}</p>
     <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Aesthetics)}">{{getAestheticsTxt}}</p>
