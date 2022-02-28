@@ -147,11 +147,11 @@ function sortHandler(e: any) {
 };
 function sortByNumber(a: any, b: any) {
   const category = sortedCategory.value;
-  return sortedIsAscending ? a[category] - b[category] : b[category] - a[category];
+  return sortedIsAscending.value ? a[category] - b[category] : b[category] - a[category];
 };
 function sortByAlphabet(a: any, b: any) {
   const category = sortedCategory.value;
-  return sortedIsAscending ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
+  return sortedIsAscending.value ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
 };
 function searchHandler(searchInput: string) {
   searchTxt.value = searchInput;
