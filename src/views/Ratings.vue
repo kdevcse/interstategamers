@@ -165,7 +165,7 @@ const sortedRankings = computed((): IRankingInfo[] => {
 
   return searchTxt.value !== '' ? rankings.filter((rank) => {
     const allInfo = Object.values(rank);
-    return allInfo.some(i => i.toString().includes(searchTxt));
+    return allInfo.some(i => i.toString().includes(searchTxt.value));
   }) : rankings;
 });
 </script>
