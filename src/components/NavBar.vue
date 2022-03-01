@@ -3,7 +3,7 @@
     <nav id="mobile-nav-bar">
       <div id="mobile-nav-main-container">
         <router-link id="mobile-nav-logo-container" to="/">
-          <img id="mobile-nav-logo" src="../assets/images/badge_sm.png" />
+          <img id="mobile-nav-logo" :src="smallBadge" />
         </router-link>
         <div id="mobile-nav-button">
           <font-awesome-icon
@@ -34,10 +34,10 @@
     <nav id="nav-bar">
       <div class="nav-list">
         <router-link class="nav-tab light" to="/">
-          <img class="nav-tab-logo" src="../assets/images/badge_sm.png" />
+          <img class="nav-tab-logo" :src="smallBadge" />
         </router-link>
         <router-link class="nav-tab dark" to="/">
-          <img class="nav-tab-logo" src="../assets/images/badge_sm_dark-mode-colors.png" />
+          <img class="nav-tab-logo" :src="smallDarkBadge" />
         </router-link>
         <router-link class="nav-tab" to="/ratings">Ratings</router-link>
         <a
@@ -56,6 +56,8 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { watch, ref } from 'vue';
+import smallBadge from '@/assets/images/badge_sm.png';
+import smallDarkBadge from '@/assets/images/badge_sm_dark-mode-colors.png';
 
 defineProps<{
   selected?: Boolean
