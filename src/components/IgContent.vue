@@ -31,8 +31,8 @@
 import { computed, onBeforeMount, reactive, ref } from 'vue';
 import HomeEpisode from '@/components/HomeEpisode.vue';
 import HomeRanking from '@/components/HomeRanking.vue';
-import { IHoveredRanking, IRankingInfo } from '../interfaces/IRankingInfo';
-import { IEpisodeInfo } from '../interfaces/IRankingInfo';
+import { IHoveredRanking, IRankingInfo } from '@/interfaces/IRankingInfo';
+import { IEpisodeInfo } from '@/interfaces/IRankingInfo';
 import firebase from 'firebase/app';
 import '@firebase/firestore';
 

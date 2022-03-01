@@ -1,8 +1,8 @@
 <template>
   <header id='ig-header'>
     <aside id='ig-header-right'>
-      <img class='ig-header-right-logo' src='../assets/images/main.png' />
-      <img class='ig-header-right-logo dark' src='../assets/images/main_dark-mode-colors.png' />
+      <img class='ig-header-right-logo' :src="mainLogo" />
+      <img class='ig-header-right-logo dark' :src="mainDarkLogo" />
       <div id='ig-icons'>
         <a href='https://www.facebook.com/TheInterstateGamers/' title='Facebook'>
           <i class='fab fa-facebook-square fa-2x'></i>
@@ -40,9 +40,12 @@
 
 <script setup lang='ts'>
 import { ref, reactive } from 'vue';
-const mp3 = './src/assets/audio/ig_promo.mp3';
+import mainLogo from '@/assets/images/main.png';
+import mainDarkLogo from '@/assets/images/main_dark-mode-colors.png';
+import trailerPromo from '@/assets/audio/ig_promo.mp3';
+
 let playing = ref(false);
-let trailer = reactive(new Audio(mp3));
+let trailer = reactive(new Audio(trailerPromo));
 trailer.title = 'Listen to the trailer';
 trailer.preload = 'none';
 

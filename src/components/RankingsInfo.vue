@@ -3,14 +3,14 @@
     <div class="breakdown-details">
       <p class="breakdown-day">{{ getReleaseDateTxt() }}</p>
       <img v-if="img" class="breakdown-img" :src="getImg()" />
-      <img v-else class="breakdown-img default" src="../assets/images/main.png" />
+      <img v-else class="breakdown-img default" :src="mainLogo" />
       <div class="breakdown-scores">
         <div class="critic-section">
-          <img class="critic-logo" title="Metacritic Score" src="../assets/images/meta_logo.png" />
+          <img class="critic-logo" title="Metacritic Score" :src="metacriticLogo" />
           <p class="critic-score">{{ metacritic }}</p>
         </div>
         <div class="critic-section">
-          <img class="critic-logo" title="IGN Score" src="../assets/images/ign_logo.png" />
+          <img class="critic-logo" title="IGN Score" :src="ignLogo" />
           <p class="critic-score">{{ ign }}</p>
         </div>
       </div>
@@ -28,7 +28,10 @@
 <script setup lang="ts">
 import { ref, onBeforeMount, computed} from "vue";
 import RankingsBreakdown from "@/components/RankingsBreakdown.vue";
-import { IRankingInfo } from "../interfaces/IRankingInfo";
+import { IRankingInfo } from "@/interfaces/IRankingInfo";
+import metacriticLogo from '@/assets/images/meta_logo.png';
+import ignLogo from '@/assets/images/ign_logo.png';
+import mainLogo from '@/assets/images/main.png';
 
 const props = defineProps<{
   title?: string,

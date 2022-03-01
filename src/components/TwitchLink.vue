@@ -1,12 +1,12 @@
 <template>
-  <a class="twitch-link" :channel="channel" target="_blank" rel="noopener noreferrer" :href="href">
-    <img class="twitch-img" :src="src" />
+  <a class="twitch-link" :channel="props.channel" target="_blank" rel="noopener noreferrer" :href="props.href">
+    <img class="twitch-img" :src="props.src" />
     <p class="live-text">Live!</p>
   </a>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   channel?: string,
   href?: string,
   src?: string
