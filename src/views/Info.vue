@@ -4,7 +4,7 @@
       <h1>About Us:</h1>
       <div id='boyz'>
         <div id='boyz-img'>
-          <img src='../assets/images/the_boyz.jpg' />
+          <img :src="theBoyz" />
           <figcaption>From left: Peter, Kevin and Chris (ZLink)</figcaption>
         </div>
         <div id='boyz-description'>
@@ -34,9 +34,9 @@
 </template>
 
 <script setup lang="ts">
-// @ is an alias to /src
 import InfoContactList from '@/components/InfoContactList.vue';
 import infoLinks from '@/database/info-links';
+import theBoyz from '@/assets/images/the_boyz.jpg';
 
 const listenList = infoLinks.whereToListenList;
 const supportList = infoLinks.howToSupportUsList;

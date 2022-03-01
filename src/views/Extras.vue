@@ -16,13 +16,13 @@
 import ExtrasSection from '@/components/ExtrasSection.vue';
 import extrasSectionData from '@/database/extra-sections';
 import TwitchLink from '@/components/TwitchLink.vue';
+import deal4RealTwitch from '@/assets/images/d4r.png';
+import kslugsTwitch from '@/assets/images/kslugs.png';
+import zlinkTwitch from '@/assets/images/zlg.png';
 
 const music = extrasSectionData.musicSection;
 const code = extrasSectionData.codeSections;
 const friends = extrasSectionData.friendSections;
-const deal4RealTwitch = './src/assets/images/d4r.png';
-const kslugsTwitch = './src/assets/images/kslugs.png';
-const zlinkTwitch = './src/assets/images/zlg.png';
 </script>
 
 <style scoped>
