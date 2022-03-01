@@ -181,7 +181,7 @@ const sortedRankings = computed((): IRankingInfo[] => {
 #rankings-header {
   position: sticky;
   top: 137px;
-  z-index: 1;
+  z-index: 0;
   display: grid;
   grid-template-columns: minmax(150px, 1fr) minmax(150px, 2fr) repeat(
       8,
