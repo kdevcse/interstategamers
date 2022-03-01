@@ -256,7 +256,7 @@ header {
     display: none;
   }
   .ig-header-right-logo.dark{
-    display: inherit;
+    display: inline;
   }
 }
 </style>
