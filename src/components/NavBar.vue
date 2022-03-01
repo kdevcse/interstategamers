@@ -81,7 +81,7 @@ nav {
   top: 0;
   width: 100%;
   height: 72px;
-  z-index: 1;
+  z-index: 2;
   list-style-type: none;
   background-color: var(--primary-color);
   color: var(--secondary-color);
@@ -146,7 +146,7 @@ nav {
     position: fixed;
     width: 100%;
     margin-bottom: 7px;
-    z-index: 1;
+    z-index: 2;
   }
   #mobile-nav-list.opened {
     display: inherit;
