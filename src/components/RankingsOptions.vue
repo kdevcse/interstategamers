@@ -81,7 +81,7 @@ function search(e: any) {
 .options-container {
   position: fixed;
   top: 72px;
-  z-index: 0;
+  z-index: 1;
   background-color: var(--primary-color);
   color: white;
   width: 100%;
