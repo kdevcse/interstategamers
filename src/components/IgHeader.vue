@@ -5,19 +5,19 @@
       <img class='ig-header-right-logo dark' :src="mainDarkLogo" />
       <div id='ig-icons'>
         <a href='https://www.facebook.com/TheInterstateGamers/' title='Facebook'>
-          <i class='fab fa-facebook-square fa-2x'></i>
+          <font-awesome-icon :icon="['fab','facebook-square']"></font-awesome-icon>
         </a>
         <a href='https://twitter.com/theIG_cast' title='Twitter'>
-          <i class='fab fa-twitter fa-2x'></i>
+          <font-awesome-icon :icon="['fab','twitter']"></font-awesome-icon>
         </a>
         <a href='https://instagram.com/theigcast' title='Instagram'>
-          <i class='fab fa-instagram fa-2x'></i>
+          <font-awesome-icon :icon="['fab', 'instagram']"></font-awesome-icon>
         </a>
         <a href='https://www.patreon.com/TheIGCast' title='Patreon'>
-          <i class='fab fa-patreon fa-2x'></i>
+          <font-awesome-icon :icon="['fab', 'patreon']"></font-awesome-icon>
         </a>
         <a href='https://feeds.simplecast.com/naeWXDEF' title='RSS'>
-          <i class='fas fa-rss fa-2x'></i>
+          <font-awesome-icon :icon="['fas', 'rss']"></font-awesome-icon>
         </a>
       </div>
     </aside>
