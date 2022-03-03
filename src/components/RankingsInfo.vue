@@ -80,6 +80,7 @@ onBeforeMount(() => {
 });
 
 function getImg() {
+  //TODO: Update to utilize IMDB API
   return `../assets/images/${props.img}`;
 }
 

@@ -106,13 +106,13 @@ const getTotalGames = computed(() => {
 });
 
 const sortedEpisodes = computed(() => {
-  return episodes.sort((epA: IEpisodeInfo, epB: IEpisodeInfo) => {
+  return episodes.slice(0).sort((epA: IEpisodeInfo, epB: IEpisodeInfo) => {
     return (new Date(epB.published_at) as any) - (new Date(epA.published_at) as any);
   });
 });
 
 const sortedRankings = computed(() : IRankingInfo[] => {
-  return rankings.sort((epA: IRankingInfo, epB: IRankingInfo) => {
+  return rankings.slice(0).sort((epA: IRankingInfo, epB: IRankingInfo) => {
     return (new Date(epB.ig_score) as any) - (new Date(epA.ig_score) as any);
   });
 });

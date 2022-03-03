@@ -164,7 +164,7 @@ const sortedRankings = computed((): IRankingInfo[] => {
   const isAlphabeticSort = sortedCategory.value === CategoryTypes.Title || sortedCategory.value === CategoryTypes.Platform;
   const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
 
-  rankings.sort((a, b) => sortFunc(a, b));
+  rankings.slice(0).sort((a, b) => sortFunc(a, b));
 
   return searchTxt.value !== '' ? rankings.filter((rank) => {
     const allInfo = Object.values(rank);

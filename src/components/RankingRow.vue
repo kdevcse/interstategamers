@@ -115,8 +115,6 @@ const getKOverallTxt = computed(() => {
   return props.kOverall ? props.kOverall.toFixed(2) : '';
 });
 
-//const CategoryTypes = computed(() => { return CategoryTypes });
-
 </script>
 
 <style scoped>
