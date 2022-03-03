@@ -25,7 +25,7 @@ const routes: any[] = [
     name: "Extras",
     component: Extras
   }
-]
+];
 
 const router = createRouter({
   history: createWebHashHistory(),

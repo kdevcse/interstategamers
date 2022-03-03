@@ -1,6 +1,5 @@
 module.exports = {
   parser: "vue-eslint-parser",
-  files: [".ts", ".vue"],
   parserOptions: {
     parser: "@typescript-eslint/parser"
   },
@@ -13,7 +12,9 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
-    "quotes": ["error", "double"]
+    "quotes": ["error", "double"],
+    "semi": "off",
+    "@typescript-eslint/semi": ["error", "always"]
   },
   env: {
     "vue/setup-compiler-macros": true
