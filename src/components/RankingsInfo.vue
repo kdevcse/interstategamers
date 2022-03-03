@@ -60,9 +60,9 @@
 import { ref, onBeforeMount, computed} from "vue";
 import RankingsBreakdown from "@/components/RankingsBreakdown.vue";
 import { IRankingInfo } from "@/interfaces/IRankingInfo";
-import metacriticLogo from '@/assets/images/meta_logo.png';
-import ignLogo from '@/assets/images/ign_logo.png';
-import mainLogo from '@/assets/images/main.png';
+import metacriticLogo from "@/assets/images/meta_logo.png";
+import ignLogo from "@/assets/images/ign_logo.png";
+import mainLogo from "@/assets/images/main.png";
 
 const props = defineProps<{
   title?: string,
@@ -90,7 +90,7 @@ function isSelected() {
 
 function getReleaseDateTxt(): string {
   if (!props.date)
-    return '';
+    return "";
 
   const dateObj = new Date(props.date);
   let dateTxt = `${dateObj.getMonth() +

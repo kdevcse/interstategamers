@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang='ts'>
-import { ref, reactive } from 'vue';
+import { ref, reactive } from "vue";
 
 const props = defineProps<{
   title?: string,
@@ -54,16 +54,16 @@ const props = defineProps<{
   rankingId?: string,
   finale?: boolean,
 }>();
-const emit = defineEmits(['show-score']);
+const emit = defineEmits(["show-score"]);
 
 let playing = ref(false);
 let epAudio = reactive(new Audio(props.audio));
-epAudio.preload = 'none';
+epAudio.preload = "none";
 
 function sendScore(rankingId: string | undefined) {
   if (!rankingId)
     return;
-  emit('show-score', [rankingId]);
+  emit("show-score", [rankingId]);
 }
 
 function play() {

@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { IContactListItem } from '@/interfaces/IContactListItem';
+import { IContactListItem } from "@/interfaces/IContactListItem";
 
 defineProps<{
   heading?: string,

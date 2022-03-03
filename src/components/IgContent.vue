@@ -30,21 +30,21 @@
 </template>
 
 <script setup lang='ts'>
-import { computed, onBeforeMount, reactive, ref } from 'vue';
-import HomeEpisode from '@/components/HomeEpisode.vue';
-import HomeRanking from '@/components/HomeRanking.vue';
-import { IHoveredRanking, IRankingInfo } from '@/interfaces/IRankingInfo';
-import { IEpisodeInfo } from '@/interfaces/IRankingInfo';
-import firebase from 'firebase/app';
-import '@firebase/firestore';
+import { computed, onBeforeMount, reactive, ref } from "vue";
+import HomeEpisode from "@/components/HomeEpisode.vue";
+import HomeRanking from "@/components/HomeRanking.vue";
+import { IHoveredRanking, IRankingInfo } from "@/interfaces/IRankingInfo";
+import { IEpisodeInfo } from "@/interfaces/IRankingInfo";
+import firebase from "firebase/app";
+import "@firebase/firestore";
 
 const episodes: Array<IEpisodeInfo> = reactive([]);
 const rankings: Array<IRankingInfo> = reactive([]);
-let hoveredRankingId = ref('');
+let hoveredRankingId = ref("");
 
 onBeforeMount(() => {
-  var podcastDataPromise = getDataFromFirestore('podcast', episodes);
-  var ratingsDataPromise = getDataFromFirestore('ratings', rankings);
+  var podcastDataPromise = getDataFromFirestore("podcast", episodes);
+  var ratingsDataPromise = getDataFromFirestore("ratings", rankings);
 
   Promise.all([podcastDataPromise, ratingsDataPromise]).then(() => {
     const sortedEps = sortedEpisodes.value;
@@ -60,7 +60,7 @@ function showScores (e: Array<any>) {
 
 function getRankingId(seasonNumber: number, episodeNumber: number) {
   var rankingInfo = rankings.find((ranking) => ranking.episode === `${seasonNumber}-${episodeNumber}`);
-  return rankingInfo ? rankingInfo.id : '';
+  return rankingInfo ? rankingInfo.id : "";
 }
 
 function getHoveredRankingsTitle(episode: string | undefined, game: string | undefined) {
@@ -102,7 +102,7 @@ const hoveredRanking = computed((): IHoveredRanking => {
 });
 
 const getTotalGames = computed(() => {
-  return episodes.filter((ep: IEpisodeInfo) => ep.type === 'full').length;
+  return episodes.filter((ep: IEpisodeInfo) => ep.type === "full").length;
 });
 
 const sortedEpisodes = computed(() => {

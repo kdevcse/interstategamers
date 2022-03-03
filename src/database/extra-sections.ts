@@ -1,6 +1,6 @@
-import prw from '@/assets/images/prw.png';
-import slugzbot from '@/assets/images/slugzbot.png';
-import zlg from '@/assets/images/zlg.png';
+import prw from "@/assets/images/prw.png";
+import slugzbot from "@/assets/images/slugzbot.png";
+import zlg from "@/assets/images/zlg.png";
 
 const extrasSectionData = {
   musicSection: [

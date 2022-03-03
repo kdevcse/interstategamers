@@ -71,15 +71,15 @@
 </template>
 
 <script setup lang='ts'>
-import { ref, reactive } from 'vue';
-import mainLogo from '@/assets/images/main.png';
-import mainDarkLogo from '@/assets/images/main_dark-mode-colors.png';
-import trailerPromo from '@/assets/audio/ig_promo.mp3';
+import { ref, reactive } from "vue";
+import mainLogo from "@/assets/images/main.png";
+import mainDarkLogo from "@/assets/images/main_dark-mode-colors.png";
+import trailerPromo from "@/assets/audio/ig_promo.mp3";
 
 let playing = ref(false);
 let trailer = reactive(new Audio(trailerPromo));
-trailer.title = 'Listen to the trailer';
-trailer.preload = 'none';
+trailer.title = "Listen to the trailer";
+trailer.preload = "none";
 
 function playTrailer () {
   playing.value = !playing.value;

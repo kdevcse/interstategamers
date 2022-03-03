@@ -49,9 +49,9 @@
 </template>
 
 <script setup lang="ts">
-import InfoContactList from '@/components/InfoContactList.vue';
-import infoLinks from '@/database/info-links';
-import theBoyz from '@/assets/images/the_boyz.jpg';
+import InfoContactList from "@/components/InfoContactList.vue";
+import infoLinks from "@/database/info-links";
+import theBoyz from "@/assets/images/the_boyz.jpg";
 
 const listenList = infoLinks.whereToListenList;
 const supportList = infoLinks.howToSupportUsList;

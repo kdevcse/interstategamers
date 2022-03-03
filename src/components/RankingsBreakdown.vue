@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import RankMeter from '@/components/RankMeter.vue';
+import RankMeter from "@/components/RankMeter.vue";
 
 const props = defineProps<{
   reviewer?: string,

@@ -9,7 +9,8 @@
     <div
       v-for="item in items"
       :key="item.heading" 
-      class="extras-cat logo-promo">
+      class="extras-cat logo-promo"
+    >
       <img
         class="friend-img"
         :src="item.src"
@@ -23,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { IFriendInfo } from '@/interfaces/IFriendInfo';
+import { IFriendInfo } from "@/interfaces/IFriendInfo";
 
 defineProps<{
   header?: string,

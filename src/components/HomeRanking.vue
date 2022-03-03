@@ -35,8 +35,8 @@
 </template>
 
 <script setup lang='ts'>
-import { computed } from 'vue';
-import RankMeter from '@/components/RankMeter.vue';
+import { computed } from "vue";
+import RankMeter from "@/components/RankMeter.vue";
 
 const props = defineProps<{
   totalGames?: number,
@@ -49,7 +49,7 @@ const props = defineProps<{
 }>();
 
 const getTitle = computed(() : string => {
-  return props.title ? props.title : 'Hover a review to see its ranking!';
+  return props.title ? props.title : "Hover a review to see its ranking!";
 });
 
 const getGameplay = computed(() : number => {

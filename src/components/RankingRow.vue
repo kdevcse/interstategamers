@@ -69,7 +69,7 @@ const props = defineProps<{
   selected?: string
 }>();
 
-const emit = defineEmits(['row-selected']);
+const emit = defineEmits(["row-selected"]);
 
 function getGuestTxt() {
   return `Guest: ${props.guest}`;
@@ -92,27 +92,27 @@ function selectRowHandler() {
 }
 
 const getOverallTxt = computed(() => {
-  return props.overall ? props.overall.toFixed(2) : '';
+  return props.overall ? props.overall.toFixed(2) : "";
 });
 
 const getGameplayTxt = computed(() => {
-  return props.gameplay ? props.gameplay.toFixed(2) : '';
+  return props.gameplay ? props.gameplay.toFixed(2) : "";
 });
 
 const getAestheticsTxt = computed(() => {
-  return props.aesthetics ? props.aesthetics.toFixed(2) : '';
+  return props.aesthetics ? props.aesthetics.toFixed(2) : "";
 });
 
 const getContentTxt = computed(() => {
-  return props.content ? props.content.toFixed(2) : '';
+  return props.content ? props.content.toFixed(2) : "";
 });
 
 const getPOverallTxt = computed(() => {
-  return props.pOverall ? props.pOverall.toFixed(2) : '';
+  return props.pOverall ? props.pOverall.toFixed(2) : "";
 });
 
 const getKOverallTxt = computed(() => {
-  return props.kOverall ? props.kOverall.toFixed(2) : '';
+  return props.kOverall ? props.kOverall.toFixed(2) : "";
 });
 
 </script>

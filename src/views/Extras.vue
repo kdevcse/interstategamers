@@ -42,12 +42,12 @@
 </template>
 
 <script setup lang="ts">
-import ExtrasSection from '@/components/ExtrasSection.vue';
-import extrasSectionData from '@/database/extra-sections';
-import TwitchLink from '@/components/TwitchLink.vue';
-import deal4RealTwitch from '@/assets/images/d4r.png';
-import kslugsTwitch from '@/assets/images/kslugs.png';
-import zlinkTwitch from '@/assets/images/zlg.png';
+import ExtrasSection from "@/components/ExtrasSection.vue";
+import extrasSectionData from "@/database/extra-sections";
+import TwitchLink from "@/components/TwitchLink.vue";
+import deal4RealTwitch from "@/assets/images/d4r.png";
+import kslugsTwitch from "@/assets/images/kslugs.png";
+import zlinkTwitch from "@/assets/images/zlg.png";
 
 const music = extrasSectionData.musicSection;
 const code = extrasSectionData.codeSections;

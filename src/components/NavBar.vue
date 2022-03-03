@@ -96,10 +96,10 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
-import { watch, ref } from 'vue';
-import smallBadge from '@/assets/images/badge_sm.png';
-import smallDarkBadge from '@/assets/images/badge_sm_dark-mode-colors.png';
+import { useRoute } from "vue-router";
+import { watch, ref } from "vue";
+import smallBadge from "@/assets/images/badge_sm.png";
+import smallDarkBadge from "@/assets/images/badge_sm_dark-mode-colors.png";
 
 defineProps<{
   selected?: boolean
