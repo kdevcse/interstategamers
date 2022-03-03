@@ -14,7 +14,9 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "quotes": ["error", "double"],
     "semi": "off",
-    "@typescript-eslint/semi": ["error", "always"]
+    "@typescript-eslint/semi": ["error", "always"],
+    "space-before-blocks": "off",
+    "@typescript-eslint/space-before-blocks": ["error", "always"]
   },
   env: {
     "vue/setup-compiler-macros": true

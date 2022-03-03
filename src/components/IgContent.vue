@@ -71,7 +71,7 @@ async function getDataFromFirestore(type: string, dataArray: Array<any>) {
   try {
     const c = await firebase.firestore().collection(`${type}-data`).get();
     c.docs.forEach((doc: firebase.firestore.DocumentData) => {
-      dataArray.push(doc.data())
+      dataArray.push(doc.data());
     });
   } catch (error) {
     console.error(`An error occured fetching ${type} data: ${error}`);
