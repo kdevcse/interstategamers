@@ -1,11 +1,11 @@
 # The Interstate Gamers Website  
 This repo contains the underlying code for The Interstate Gamers Podcast website. The site was originally coded in pure HTML, CSS, & JavaScript, but it has been upgraded over the years and now utilizes the power of [Vue.Js](https://vuejs.org/).
 
-#### Build Status: 
+#### Build Status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f6b95e64-cfc4-4310-98ec-8c480461f0ff/deploy-status)](https://app.netlify.com/sites/interstategamers/deploys)
 
-#### Code Quality:
-[![CodeFactor](https://www.codefactor.io/repository/github/kdevcse/interstategamers/badge)](https://www.codefactor.io/repository/github/kdevcse/interstategamers)
+#### Code Quality
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f1bea37b4abc4c33aab020818513e8b6)](https://www.codacy.com/gh/kdevcse/interstategamers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kdevcse/interstategamers&amp;utm_campaign=Badge_Grade)
 
 # Status of New Features
 - [x] Dark mode
@@ -20,7 +20,7 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 
 # Supporting Software
 - [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
-- [CodeFactor](https://www.codefactor.io) (Performs code analysis)
+- [Codacy](https://app.codacy.com/) (Performs code analysis)
 - [Discord](https://discordapp.com/) (Post notifications on the development process)
 - [Firebase](https://firebase.google.com/)
 - [SimpleCast](https://simplecast.com)
