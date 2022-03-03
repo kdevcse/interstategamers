@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "serve": "vite preview",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "npm run lint && vue-tsc --noEmit && vite build",
     "lint": "eslint src",
     "test": "jest tests"
   },
