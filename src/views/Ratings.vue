@@ -169,12 +169,12 @@ const sortedRankings = computed((): IRankingInfo[] => {
   const isAlphabeticSort = sortedCategory.value === CategoryTypes.Title || sortedCategory.value === CategoryTypes.Platform;
   const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
 
-  rankings.slice(0).sort((a, b) => sortFunc(a, b));
+  let sortedRanks = rankings.slice(0).sort((a, b) => sortFunc(a, b));
 
-  return searchTxt.value !== "" ? rankings.filter((rank) => {
+  return searchTxt.value !== "" ? sortedRanks.filter((rank) => {
     const allInfo = Object.values(rank);
     return allInfo.some(i => i.toString().includes(searchTxt.value));
-  }) : rankings;
+  }) : sortedRanks;
 });
 </script>
 
