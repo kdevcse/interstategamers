@@ -140,22 +140,27 @@ async function getDataFromFirestore(type: string, dataArray: any[]) {
   } catch (error) {
     console.error(`An error occured fetching ${type} data: ${error}`);
   }
-};
+}
+
 function selectedRowHandler(e: any) {
   selectedEpisode.value = e;
-};
+}
+
 function sortHandler(e: any) {
   sortedCategory.value = e[0];
   sortedIsAscending.value = e[1];
-};
+}
+
 function sortByNumber(a: any, b: any) {
   const category = sortedCategory.value;
   return sortedIsAscending.value ? a[category] - b[category] : b[category] - a[category];
-};
+}
+
 function sortByAlphabet(a: any, b: any) {
   const category = sortedCategory.value;
   return sortedIsAscending.value ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
-};
+}
+
 function searchHandler(searchInput: string) {
   searchTxt.value = searchInput;
 }

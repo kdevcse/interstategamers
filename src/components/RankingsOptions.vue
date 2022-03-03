@@ -72,11 +72,11 @@ function showIndicator() {
   else {
     showBothIndicators.value = false;
   }
-};
+}
 
 function search(e: any) {
   emit('search-table', e.target.value);
-};
+}
 
 </script>
 

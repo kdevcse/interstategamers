@@ -64,7 +64,8 @@ function sendScore(rankingId: string | undefined) {
   if (!rankingId)
     return;
   emit('show-score', [rankingId]);
-};
+}
+
 function play() {
   playing.value = !playing.value;
   playing.value ? epAudio.play() : epAudio.pause();

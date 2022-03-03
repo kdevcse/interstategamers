@@ -102,7 +102,7 @@ import smallBadge from '@/assets/images/badge_sm.png';
 import smallDarkBadge from '@/assets/images/badge_sm_dark-mode-colors.png';
 
 defineProps<{
-  selected?: Boolean
+  selected?: boolean
 }>();
 
 const route = useRoute();

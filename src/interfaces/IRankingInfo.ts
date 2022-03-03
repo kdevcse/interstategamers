@@ -67,7 +67,7 @@ export interface IEpisodeInfo {
   number: number;
   markers: {
     href: string;
-    collection: Array<Object>;
+    collection: Array<unknown>;
   };
   is_hidden: boolean;
   image_url: string;
