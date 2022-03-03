@@ -10,7 +10,7 @@
       <img class="friend-img" :src="item.src" />
       <div class="friend-info">
         <h3>{{ item.heading }}</h3>
-        <p v-html="item.content" />
+        <p v-html="item.content"></p>
       </div>
     </div>
   </div>
