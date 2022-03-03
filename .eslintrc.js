@@ -1,5 +1,6 @@
 module.exports = {
   parser: "vue-eslint-parser",
+  files: [".ts", ".vue"],
   parserOptions: {
     parser: "@typescript-eslint/parser"
   },
