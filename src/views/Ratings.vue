@@ -1,70 +1,73 @@
 <template>
   <main class="ratings">
-    <rankings-options @search-table="searchHandler"></rankings-options>
+    <rankings-options @search-table="searchHandler" />
     <div id="rankings-table">
       <div id="rankings-header">
         <rankings-header
-          @sort-table="sortHandler"
           title="Rank"
           :category="CategoryTypes.Rank"
-          :sortBy="sortedCategory"
-        ></rankings-header>
-        <rankings-header
+          :sort-by="sortedCategory"
           @sort-table="sortHandler"
+        />
+        <rankings-header
           title="Title"
           :category="CategoryTypes.Title"
-          :sortBy="sortedCategory"
-        ></rankings-header>
-        <rankings-header
+          :sort-by="sortedCategory"
           @sort-table="sortHandler"
+        />
+        <rankings-header
           title="Year"
           :category="CategoryTypes.Year"
-          :sortBy="sortedCategory"
-        ></rankings-header>
-        <rankings-header
+          :sort-by="sortedCategory"
           @sort-table="sortHandler"
+        />
+        <rankings-header
           title="Platform"
           :category="CategoryTypes.Platform"
-          :sortBy="sortedCategory"
-        ></rankings-header>
-        <rankings-header
+          :sort-by="sortedCategory"
           @sort-table="sortHandler"
+        />
+        <rankings-header
           title="IG Score"
           :category="CategoryTypes.Overall"
-          :sortBy="sortedCategory"
-        ></rankings-header>
-        <rankings-header
+          :sort-by="sortedCategory"
           @sort-table="sortHandler"
+        />
+        <rankings-header
           title="Gameplay"
           :category="CategoryTypes.Gameplay"
-          :sortBy="sortedCategory"
-        ></rankings-header>
-        <rankings-header
+          :sort-by="sortedCategory"
           @sort-table="sortHandler"
+        />
+        <rankings-header
           title="Aesthetics"
           :category="CategoryTypes.Aesthetics"
-          :sortBy="sortedCategory"
-        ></rankings-header>
-        <rankings-header
+          :sort-by="sortedCategory"
           @sort-table="sortHandler"
+        />
+        <rankings-header
           title="Content"
           :category="CategoryTypes.Content"
-          :sortBy="sortedCategory"
-        ></rankings-header>
-        <rankings-header
+          :sort-by="sortedCategory"
           @sort-table="sortHandler"
+        />
+        <rankings-header
           title="P. Overall"
           :category="CategoryTypes.POverall"
-          :sortBy="sortedCategory"
-        ></rankings-header>
-        <rankings-header
+          :sort-by="sortedCategory"
           @sort-table="sortHandler"
+        />
+        <rankings-header
           title="K. Overall"
           :category="CategoryTypes.KOverall"
-          :sortBy="sortedCategory"
-        ></rankings-header>
+          :sort-by="sortedCategory"
+          @sort-table="sortHandler"
+        />
       </div>
-      <template v-for="ranking in sortedRankings" :key="ranking.id">
+      <template
+        v-for="ranking in sortedRankings"
+        :key="ranking.id"
+      >
         <ranking-row
           :rank="ranking.rank"
           :title="ranking.game"
@@ -75,21 +78,21 @@
           :gameplay="ranking.gameplay"
           :aesthetics="ranking.aesthetics"
           :content="ranking.content"
-          :pOverall="ranking.p_rating"
-          :kOverall="ranking.k_rating"
-          :sortBy="sortedCategory"
+          :p-overall="ranking.p_rating"
+          :k-overall="ranking.k_rating"
+          :sort-by="sortedCategory"
           :selected="selectedEpisode"
           @row-selected="selectedRowHandler"
-        ></ranking-row>
+        />
         <rankings-info
           :date="ranking.published_at"
           :img="ranking.game_image"
           :title="ranking.game"
           :selected="selectedEpisode"
-          :rankInfo="ranking"
+          :rank-info="ranking"
           :ign="ranking.ign"
           :metacritic="ranking.metacritic"
-        ></rankings-info>
+        />
       </template>
     </div>
   </main>
@@ -110,11 +113,11 @@ let rankings: IRankingInfo[] = reactive([]);
 let sortedCategory = ref(CategoryTypes.Rank);
 let sortedIsAscending = ref(true);
 let selectedEpisode = ref(undefined);
-let searchTxt = ref('');
+let searchTxt = ref("");
 
 onBeforeMount(() => {
-  getDataFromFirestore('podcast', episodes);
-  getDataFromFirestore('ratings', rankings);
+  getDataFromFirestore("podcast", episodes);
+  getDataFromFirestore("ratings", rankings);
 });
 
 async function getDataFromFirestore(type: string, dataArray: any[]) {
@@ -124,7 +127,7 @@ async function getDataFromFirestore(type: string, dataArray: any[]) {
       dataArray.push(doc.data());
     });
 
-    if (type !== 'ratings')
+    if (type !== "ratings")
       return;
 
     //Assign Rankings
@@ -137,22 +140,27 @@ async function getDataFromFirestore(type: string, dataArray: any[]) {
   } catch (error) {
     console.error(`An error occured fetching ${type} data: ${error}`);
   }
-};
+}
+
 function selectedRowHandler(e: any) {
   selectedEpisode.value = e;
-};
+}
+
 function sortHandler(e: any) {
   sortedCategory.value = e[0];
   sortedIsAscending.value = e[1];
-};
+}
+
 function sortByNumber(a: any, b: any) {
   const category = sortedCategory.value;
   return sortedIsAscending.value ? a[category] - b[category] : b[category] - a[category];
-};
+}
+
 function sortByAlphabet(a: any, b: any) {
   const category = sortedCategory.value;
   return sortedIsAscending.value ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
-};
+}
+
 function searchHandler(searchInput: string) {
   searchTxt.value = searchInput;
 }
@@ -161,12 +169,12 @@ const sortedRankings = computed((): IRankingInfo[] => {
   const isAlphabeticSort = sortedCategory.value === CategoryTypes.Title || sortedCategory.value === CategoryTypes.Platform;
   const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
 
-  rankings.sort((a, b) => sortFunc(a, b));
+  let sortedRanks = rankings.slice(0).sort((a, b) => sortFunc(a, b));
 
-  return searchTxt.value !== '' ? rankings.filter((rank) => {
+  return searchTxt.value !== "" ? sortedRanks.filter((rank) => {
     const allInfo = Object.values(rank);
     return allInfo.some(i => i.toString().includes(searchTxt.value));
-  }) : rankings;
+  }) : sortedRanks;
 });
 </script>
 

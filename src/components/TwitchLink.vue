@@ -1,6 +1,15 @@
 <template>
-  <a class="twitch-link" :channel="props.channel" target="_blank" rel="noopener noreferrer" :href="props.href">
-    <img class="twitch-img" :src="props.src" />
+  <a
+    class="twitch-link"
+    :channel="props.channel"
+    target="_blank"
+    rel="noopener noreferrer"
+    :href="props.href"
+  >
+    <img
+      class="twitch-img"
+      :src="props.src"
+    >
     <p class="live-text">Live!</p>
   </a>
 </template>

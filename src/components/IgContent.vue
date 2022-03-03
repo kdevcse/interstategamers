@@ -2,47 +2,49 @@
   <section class="ig-content">
     <div id="episodes">
       <home-episode
+        v-for="(episode, index) in sortedEpisodes"
+        :key="episode.id"
         :v-if="pageIsReady"
-        v-for="(episode, index) in sortedEpisodes" :key="episode.id"
-        @show-score='showScores'
         :title="episode.title"
         :description="episode.description"
         :audio="episode.enclosure_url"
         :season="episode.season.number"
-        :episodeNumber="episode.number"
-        :episodeType="episode.type"
-        :rankingId="getRankingId(episode.season.number, episode.number)"
-        :finale="isFinale(index)">
-      </home-episode>
+        :episode-number="episode.number"
+        :episode-type="episode.type"
+        :ranking-id="getRankingId(episode.season.number, episode.number)"
+        :finale="isFinale(index)"
+        @show-score="showScores"
+      />
     </div>
     <home-ranking
-    :v-if="pageIsReady"
-    :gameplay="hoveredRanking.gameplay"
-    :aesthetics="hoveredRanking.aesthetics"
-    :content="hoveredRanking.content"
-    :overall="hoveredRanking.ig_score"
-    :rank="hoveredRanking.rank"
-    :title="getHoveredRankingsTitle(hoveredRanking.episode, hoveredRanking.game)" 
-    :totalGames="getTotalGames"></home-ranking>
+      :v-if="pageIsReady"
+      :gameplay="hoveredRanking.gameplay"
+      :aesthetics="hoveredRanking.aesthetics"
+      :content="hoveredRanking.content"
+      :overall="hoveredRanking.ig_score"
+      :rank="hoveredRanking.rank"
+      :title="getHoveredRankingsTitle(hoveredRanking.episode, hoveredRanking.game)" 
+      :total-games="getTotalGames"
+    />
   </section>
 </template>
 
 <script setup lang='ts'>
-import { computed, onBeforeMount, reactive, ref } from 'vue';
-import HomeEpisode from '@/components/HomeEpisode.vue';
-import HomeRanking from '@/components/HomeRanking.vue';
-import { IHoveredRanking, IRankingInfo } from '@/interfaces/IRankingInfo';
-import { IEpisodeInfo } from '@/interfaces/IRankingInfo';
-import firebase from 'firebase/app';
-import '@firebase/firestore';
+import { computed, onBeforeMount, reactive, ref } from "vue";
+import HomeEpisode from "@/components/HomeEpisode.vue";
+import HomeRanking from "@/components/HomeRanking.vue";
+import { IHoveredRanking, IRankingInfo } from "@/interfaces/IRankingInfo";
+import { IEpisodeInfo } from "@/interfaces/IRankingInfo";
+import firebase from "firebase/app";
+import "@firebase/firestore";
 
 const episodes: Array<IEpisodeInfo> = reactive([]);
 const rankings: Array<IRankingInfo> = reactive([]);
-let hoveredRankingId = ref('');
+let hoveredRankingId = ref("");
 
 onBeforeMount(() => {
-  var podcastDataPromise = getDataFromFirestore('podcast', episodes);
-  var ratingsDataPromise = getDataFromFirestore('ratings', rankings);
+  var podcastDataPromise = getDataFromFirestore("podcast", episodes);
+  var ratingsDataPromise = getDataFromFirestore("ratings", rankings);
 
   Promise.all([podcastDataPromise, ratingsDataPromise]).then(() => {
     const sortedEps = sortedEpisodes.value;
@@ -50,7 +52,7 @@ onBeforeMount(() => {
   });
 });
 
-function showScores (e: Array<any>) {
+function showScores(e: Array<any>) {
   if (e[0]) {
     hoveredRankingId.value = e[0];
   }
@@ -58,7 +60,7 @@ function showScores (e: Array<any>) {
 
 function getRankingId(seasonNumber: number, episodeNumber: number) {
   var rankingInfo = rankings.find((ranking) => ranking.episode === `${seasonNumber}-${episodeNumber}`);
-  return rankingInfo ? rankingInfo.id : '';
+  return rankingInfo ? rankingInfo.id : "";
 }
 
 function getHoveredRankingsTitle(episode: string | undefined, game: string | undefined) {
@@ -69,7 +71,7 @@ async function getDataFromFirestore(type: string, dataArray: Array<any>) {
   try {
     const c = await firebase.firestore().collection(`${type}-data`).get();
     c.docs.forEach((doc: firebase.firestore.DocumentData) => {
-      dataArray.push(doc.data())
+      dataArray.push(doc.data());
     });
   } catch (error) {
     console.error(`An error occured fetching ${type} data: ${error}`);
@@ -100,17 +102,17 @@ const hoveredRanking = computed((): IHoveredRanking => {
 });
 
 const getTotalGames = computed(() => {
-  return episodes.filter((ep: IEpisodeInfo) => ep.type === 'full').length;
+  return episodes.filter((ep: IEpisodeInfo) => ep.type === "full").length;
 });
 
 const sortedEpisodes = computed(() => {
-  return episodes.sort((epA: IEpisodeInfo, epB: IEpisodeInfo) => {
+  return episodes.slice(0).sort((epA: IEpisodeInfo, epB: IEpisodeInfo) => {
     return (new Date(epB.published_at) as any) - (new Date(epA.published_at) as any);
   });
 });
 
-const sortedRankings = computed(() : IRankingInfo[] => {
-  return rankings.sort((epA: IRankingInfo, epB: IRankingInfo) => {
+const sortedRankings = computed((): IRankingInfo[] => {
+  return rankings.slice(0).sort((epA: IRankingInfo, epB: IRankingInfo) => {
     return (new Date(epB.ig_score) as any) - (new Date(epA.ig_score) as any);
   });
 });

@@ -1,27 +1,58 @@
 <template>
-  <div class="rankings-info-row" :class="{ expanded: isSelected() }">
+  <div
+    class="rankings-info-row"
+    :class="{ expanded: isSelected() }"
+  >
     <div class="breakdown-details">
-      <p class="breakdown-day">{{ getReleaseDateTxt() }}</p>
-      <img v-if="img" class="breakdown-img" :src="getImg()" />
-      <img v-else class="breakdown-img default" :src="mainLogo" />
+      <p class="breakdown-day">
+        {{ getReleaseDateTxt() }}
+      </p>
+      <img
+        v-if="img"
+        class="breakdown-img"
+        :src="getImg()"
+      >
+      <img
+        v-else
+        class="breakdown-img default"
+        :src="mainLogo"
+      >
       <div class="breakdown-scores">
         <div class="critic-section">
-          <img class="critic-logo" title="Metacritic Score" :src="metacriticLogo" />
-          <p class="critic-score">{{ metacritic }}</p>
+          <img
+            class="critic-logo"
+            title="Metacritic Score"
+            :src="metacriticLogo"
+          >
+          <p class="critic-score">
+            {{ metacritic }}
+          </p>
         </div>
         <div class="critic-section">
-          <img class="critic-logo" title="IGN Score" :src="ignLogo" />
-          <p class="critic-score">{{ ign }}</p>
+          <img
+            class="critic-logo"
+            title="IGN Score"
+            :src="ignLogo"
+          >
+          <p class="critic-score">
+            {{ ign }}
+          </p>
         </div>
       </div>
     </div>
-    <rankings-breakdown reviewer="Peter" :scores="getPetersScores"></rankings-breakdown>
-    <rankings-breakdown reviewer="Kevin" :scores="getKevinsScores"></rankings-breakdown>
     <rankings-breakdown
-      :reviewer="rankInfo.guest"
+      reviewer="Peter"
+      :scores="getPetersScores"
+    />
+    <rankings-breakdown
+      reviewer="Kevin"
+      :scores="getKevinsScores"
+    />
+    <rankings-breakdown
       v-if="rankInfo && rankInfo.guest"
+      :reviewer="rankInfo.guest"
       :scores="getGuestScores"
-    ></rankings-breakdown>
+    />
   </div>
 </template>
 
@@ -29,9 +60,9 @@
 import { ref, onBeforeMount, computed} from "vue";
 import RankingsBreakdown from "@/components/RankingsBreakdown.vue";
 import { IRankingInfo } from "@/interfaces/IRankingInfo";
-import metacriticLogo from '@/assets/images/meta_logo.png';
-import ignLogo from '@/assets/images/ign_logo.png';
-import mainLogo from '@/assets/images/main.png';
+import metacriticLogo from "@/assets/images/meta_logo.png";
+import ignLogo from "@/assets/images/ign_logo.png";
+import mainLogo from "@/assets/images/main.png";
 
 const props = defineProps<{
   title?: string,
@@ -49,6 +80,7 @@ onBeforeMount(() => {
 });
 
 function getImg() {
+  //TODO: Update to utilize IMDB API
   return `../assets/images/${props.img}`;
 }
 
@@ -58,7 +90,7 @@ function isSelected() {
 
 function getReleaseDateTxt(): string {
   if (!props.date)
-    return '';
+    return "";
 
   const dateObj = new Date(props.date);
   let dateTxt = `${dateObj.getMonth() +

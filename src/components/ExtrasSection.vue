@@ -2,12 +2,19 @@
   <div class="extras-section">
     <h1 class="extras-header">
       <span>
-        <i :class="icon"></i>
+        <i :class="icon" />
       </span>
       {{ header }}
     </h1>
-    <div class="extras-cat logo-promo" v-for="item in items" :key="item.heading">
-      <img class="friend-img" :src="item.src" />
+    <div
+      v-for="item in items"
+      :key="item.heading" 
+      class="extras-cat logo-promo"
+    >
+      <img
+        class="friend-img"
+        :src="item.src"
+      >
       <div class="friend-info">
         <h3>{{ item.heading }}</h3>
         <p v-html="item.content" />
@@ -17,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { IFriendInfo } from '@/interfaces/IFriendInfo';
+import { IFriendInfo } from "@/interfaces/IFriendInfo";
 
 defineProps<{
   header?: string,

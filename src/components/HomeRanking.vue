@@ -1,17 +1,42 @@
 <template>
-  <aside id='ig-content-rank'>
-    <h2 id='ig-content-rank-game-title'>{{getTitle}}</h2>
-    <h1 id='ig-content-rank-game-rank'>Rank {{rank}}/{{totalGames}}</h1>
-    <rank-meter alt h1 type="Overall" height="33px" :percentage="getOverall"></rank-meter>
-    <rank-meter h1 type="Gameplay" height="33px" :percentage="getGameplay"></rank-meter>
-    <rank-meter h1 type="Aesthetics" height="33px" :percentage="getAesthetics"></rank-meter>
-    <rank-meter h1 type="Content" height="33px" :percentage="getContent"></rank-meter>
+  <aside id="ig-content-rank">
+    <h2 id="ig-content-rank-game-title">
+      {{ getTitle }}
+    </h2>
+    <h1 id="ig-content-rank-game-rank">
+      Rank {{ rank }}/{{ totalGames }}
+    </h1>
+    <rank-meter
+      alt
+      h1
+      type="Overall"
+      height="33px"
+      :percentage="getOverall"
+    />
+    <rank-meter
+      h1
+      type="Gameplay"
+      height="33px"
+      :percentage="getGameplay"
+    />
+    <rank-meter
+      h1
+      type="Aesthetics"
+      height="33px"
+      :percentage="getAesthetics"
+    />
+    <rank-meter
+      h1
+      type="Content"
+      height="33px"
+      :percentage="getContent"
+    />
   </aside>
 </template>
 
 <script setup lang='ts'>
-import { computed } from 'vue';
-import RankMeter from '@/components/RankMeter.vue';
+import { computed } from "vue";
+import RankMeter from "@/components/RankMeter.vue";
 
 const props = defineProps<{
   totalGames?: number,
@@ -23,23 +48,23 @@ const props = defineProps<{
   rank?: number
 }>();
 
-const getTitle = computed(() : string => {
-  return props.title ? props.title : 'Hover a review to see its ranking!';
+const getTitle = computed((): string => {
+  return props.title ? props.title : "Hover a review to see its ranking!";
 });
 
-const getGameplay = computed(() : number => {
+const getGameplay = computed((): number => {
   return props.gameplay ? props.gameplay : 0;
 });
 
-const getAesthetics = computed(() : number => {
+const getAesthetics = computed((): number => {
   return props.aesthetics ? props.aesthetics : 0;
 });
 
-const getContent = computed(() : number => {
+const getContent = computed((): number => {
   return props.content ? props.content : 0;
 });
 
-const getOverall = computed(() : number => {
+const getOverall = computed((): number => {
   return props.overall ? props.overall : 0;
 });
 </script>

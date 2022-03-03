@@ -1,28 +1,28 @@
 <template>
   <strong
     class="rankings-header"
-    v-bind:class="{ sorted: isSorted() }"
+    :class="{ sorted: isSorted() }"
     @mousedown="sortTableByCategory(category)"
   >
     {{ title }}
     <font-awesome-icon
-      class="sort-icon"
-      v-bind:class="{ sorted: isSorted() }"
       v-show="ascending"
-      :icon="['fas', 'sort-up']"
-    ></font-awesome-icon>
-    <font-awesome-icon
       class="sort-icon"
-      v-bind:class="{ sorted: isSorted() }"
+      :class="{ sorted: isSorted() }"
+      :icon="['fas', 'sort-up']"
+    />
+    <font-awesome-icon
       v-show="!ascending"
+      class="sort-icon"
+      :class="{ sorted: isSorted() }"
       :icon="['fas', 'sort-down']"
-    ></font-awesome-icon>
+    />
   </strong>
 </template>
 
 <script setup lang="ts">
-import { CategoryTypes } from '@/interfaces/IRankingInfo'
-import { ref } from 'vue';
+import { CategoryTypes } from "@/interfaces/IRankingInfo";
+import { ref } from "vue";
 
 const props = defineProps<{
   title?: string,
@@ -30,7 +30,7 @@ const props = defineProps<{
   sortBy?: string
 }>();
 
-const emit = defineEmits(['sort-table']);
+const emit = defineEmits(["sort-table"]);
 
 //NOTE: Default state for icon is here. Needs to match category. See Ratings.vue
 let ascending = ref(true);
@@ -58,7 +58,7 @@ function isSorted() {
 
 function sortTableByCategory(val: CategoryTypes | undefined) {
   ascending.value = !ascending.value;
-  emit('sort-table', [val, ascending.value]);
+  emit("sort-table", [val, ascending.value]);
 }
 </script>
 

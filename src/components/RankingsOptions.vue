@@ -2,46 +2,49 @@
   <div class="options-container">
     <div class="options-header">
       <input
-        @input="search"
         id="options-searchbox"
         type="text"
         placeholder="Search"
         value
         autocomplete="off"
-      />
-      <div v-bind:class="{ show: showBothIndicators }" id="scroll-indicator">
+        @input="search"
+      >
+      <div
+        id="scroll-indicator"
+        :class="{ show: showBothIndicators }"
+      >
         <font-awesome-icon
           id="scroll-indicator-left"
-          v-bind:class="{ show: showLeftIndicator }"
+          :class="{ show: showLeftIndicator }"
           :icon="['fas', 'caret-square-left']"
           title="Scroll left to see more content"
-        ></font-awesome-icon>
+        />
         <span id="scroll-indicator-txt">Scroll for more</span>
         <font-awesome-icon
           id="scroll-indicator-right"
-          v-bind:class="{ show: showRightIndicator }"
+          :class="{ show: showRightIndicator }"
           :icon="['fas', 'caret-square-right']"
           title="Scroll right to see more content"
-        ></font-awesome-icon>
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, onBeforeUnmount, ref } from 'vue';
+import { onBeforeMount, onBeforeUnmount, ref } from "vue";
 
 onBeforeMount(() => {
-  window.addEventListener('resize', showIndicator);
-  window.addEventListener('scroll', showIndicator);
+  window.addEventListener("resize", showIndicator);
+  window.addEventListener("scroll", showIndicator);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', showIndicator);
-  window.removeEventListener('scroll', showIndicator);
+  window.removeEventListener("resize", showIndicator);
+  window.removeEventListener("scroll", showIndicator);
 });
 
-const emit = defineEmits(['search-table']);
+const emit = defineEmits(["search-table"]);
 
 let showLeftIndicator = ref(false);
 let showRightIndicator = ref(false);
@@ -69,11 +72,11 @@ function showIndicator() {
   else {
     showBothIndicators.value = false;
   }
-};
+}
 
 function search(e: any) {
-  emit('search-table', e.target.value);
-};
+  emit("search-table", e.target.value);
+}
 
 </script>
 

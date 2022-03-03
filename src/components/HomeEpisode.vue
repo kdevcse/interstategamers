@@ -1,24 +1,47 @@
 <template>
   <div>
-    <h1 v-if='finale' class='season-title'>Season {{season}}</h1>
-    <div class='episode' :class="{top: finale}" @mouseover="sendScore(rankingId)">
-      <section class='player'>
-        <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" @click='play()'></font-awesome-icon>
-        <font-awesome-icon :icon="['fas', 'play-circle']" v-else @click='play()'></font-awesome-icon>
+    <h1
+      v-if="finale"
+      class="season-title"
+    >
+      Season {{ season }}
+    </h1>
+    <div
+      class="episode"
+      :class="{ top: finale }"
+      @mouseover="sendScore(rankingId)"
+    >
+      <section class="player">
+        <font-awesome-icon
+          v-if="playing"
+          :icon="['fas', 'pause-circle']"
+          @click="play()"
+        />
+        <font-awesome-icon
+          v-else
+          :icon="['fas', 'play-circle']"
+          @click="play()"
+        />
       </section>
-      <aside class='ep-info'>
-        <h2 class='episode-title'>
-            {{title}}
-            <font-awesome-icon title="Game Review" :icon="['fas', 'gamepad']" v-if="rankingId"></font-awesome-icon>
+      <aside class="ep-info">
+        <h2 class="episode-title">
+          {{ title }}
+          <font-awesome-icon
+            v-if="rankingId"
+            title="Game Review"
+            :icon="['fas', 'gamepad']"
+          />
         </h2>
-        <p class='ep-description'>{{description}}</p>
+        <p class="ep-description">
+          {{ description }}
+        </p>
       </aside>
     </div>
   </div>
 </template>
 
 <script setup lang='ts'>
-import { ref, reactive } from 'vue';
+import { ref, reactive } from "vue";
 
 const props = defineProps<{
   title?: string,
@@ -31,18 +54,19 @@ const props = defineProps<{
   rankingId?: string,
   finale?: boolean,
 }>();
-const emit = defineEmits(['show-score']);
+const emit = defineEmits(["show-score"]);
 
 let playing = ref(false);
 let epAudio = reactive(new Audio(props.audio));
-epAudio.preload = 'none';
+epAudio.preload = "none";
 
-function sendScore (rankingId: string | undefined) {
+function sendScore(rankingId: string | undefined) {
   if (!rankingId)
     return;
-  emit('show-score', [rankingId]);
-};
-function play () {
+  emit("show-score", [rankingId]);
+}
+
+function play() {
   playing.value = !playing.value;
   playing.value ? epAudio.play() : epAudio.pause();
 }
@@ -107,16 +131,27 @@ function play () {
     animation: rumble 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   @keyframes rumble {
-    10%, 30%, 50%, 70%, 90% {
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
       transform: translateY(-1px);
     }
-    20%, 40%, 60%, 80%, 100% {
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
       transform: translateY(1px);
     }
   }
 }
 @media screen and (prefers-color-scheme: dark) {
-  .episode-title, .ep-description, .season-title, .player > svg {
+  .episode-title,
+  .ep-description,
+  .season-title,
+  .player > svg {
     color: var(--default-text-color);
   }
   .episode {
