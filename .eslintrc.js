@@ -12,8 +12,6 @@ module.exports = {
     "plugin:@typescript-eslint/recommended"
   ],
   rules: {
-    // override/add rules settings here, such as:
-    // 'vue/no-unused-vars': 'error'
     "@typescript-eslint/no-explicit-any": "off",
     "quotes": ["error", "double"]
   },
