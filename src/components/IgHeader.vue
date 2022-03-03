@@ -81,7 +81,7 @@ let trailer = reactive(new Audio(trailerPromo));
 trailer.title = "Listen to the trailer";
 trailer.preload = "none";
 
-function playTrailer () {
+function playTrailer() {
   playing.value = !playing.value;
   playing.value ? trailer.play() : trailer.pause();
 }

@@ -7,8 +7,8 @@
     "dev": "vite --host",
     "serve": "vite preview",
     "build": "npm run lint && vue-tsc --noEmit && vite build",
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix",
+    "lint": "eslint src --ext .ts,.js,.vue",
+    "lint:fix": "eslint src --ext .ts,.js,.vue --fix",
     "test": "jest tests"
   },
   "dependencies": {

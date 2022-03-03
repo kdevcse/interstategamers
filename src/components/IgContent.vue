@@ -52,7 +52,7 @@ onBeforeMount(() => {
   });
 });
 
-function showScores (e: Array<any>) {
+function showScores(e: Array<any>) {
   if (e[0]) {
     hoveredRankingId.value = e[0];
   }
@@ -111,7 +111,7 @@ const sortedEpisodes = computed(() => {
   });
 });
 
-const sortedRankings = computed(() : IRankingInfo[] => {
+const sortedRankings = computed((): IRankingInfo[] => {
   return rankings.slice(0).sort((epA: IRankingInfo, epB: IRankingInfo) => {
     return (new Date(epB.ig_score) as any) - (new Date(epA.ig_score) as any);
   });

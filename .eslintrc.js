@@ -16,7 +16,10 @@ module.exports = {
     "semi": "off",
     "@typescript-eslint/semi": ["error", "always"],
     "space-before-blocks": "off",
-    "@typescript-eslint/space-before-blocks": ["error", "always"]
+    "@typescript-eslint/space-before-blocks": ["error", "always"],
+    "@typescript-eslint/type-annotation-spacing": ["error", { "after": true }],
+    "space-before-function-paren": "off",
+    "@typescript-eslint/space-before-function-paren": ["error", "never"]
   },
   env: {
     "vue/setup-compiler-macros": true
