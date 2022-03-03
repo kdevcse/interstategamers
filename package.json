@@ -8,6 +8,7 @@
     "serve": "vite preview",
     "build": "npm run lint && vue-tsc --noEmit && vite build",
     "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "test": "jest tests"
   },
   "dependencies": {
