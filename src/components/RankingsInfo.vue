@@ -1,27 +1,58 @@
 <template>
-  <div class="rankings-info-row" :class="{ expanded: isSelected() }">
+  <div
+    class="rankings-info-row"
+    :class="{ expanded: isSelected() }"
+  >
     <div class="breakdown-details">
-      <p class="breakdown-day">{{ getReleaseDateTxt() }}</p>
-      <img v-if="img" class="breakdown-img" :src="getImg()" />
-      <img v-else class="breakdown-img default" :src="mainLogo" />
+      <p class="breakdown-day">
+        {{ getReleaseDateTxt() }}
+      </p>
+      <img
+        v-if="img"
+        class="breakdown-img"
+        :src="getImg()"
+      >
+      <img
+        v-else
+        class="breakdown-img default"
+        :src="mainLogo"
+      >
       <div class="breakdown-scores">
         <div class="critic-section">
-          <img class="critic-logo" title="Metacritic Score" :src="metacriticLogo" />
-          <p class="critic-score">{{ metacritic }}</p>
+          <img
+            class="critic-logo"
+            title="Metacritic Score"
+            :src="metacriticLogo"
+          >
+          <p class="critic-score">
+            {{ metacritic }}
+          </p>
         </div>
         <div class="critic-section">
-          <img class="critic-logo" title="IGN Score" :src="ignLogo" />
-          <p class="critic-score">{{ ign }}</p>
+          <img
+            class="critic-logo"
+            title="IGN Score"
+            :src="ignLogo"
+          >
+          <p class="critic-score">
+            {{ ign }}
+          </p>
         </div>
       </div>
     </div>
-    <rankings-breakdown reviewer="Peter" :scores="getPetersScores"></rankings-breakdown>
-    <rankings-breakdown reviewer="Kevin" :scores="getKevinsScores"></rankings-breakdown>
     <rankings-breakdown
-      :reviewer="rankInfo.guest"
+      reviewer="Peter"
+      :scores="getPetersScores"
+    />
+    <rankings-breakdown
+      reviewer="Kevin"
+      :scores="getKevinsScores"
+    />
+    <rankings-breakdown
       v-if="rankInfo && rankInfo.guest"
+      :reviewer="rankInfo.guest"
       :scores="getGuestScores"
-    ></rankings-breakdown>
+    />
   </div>
 </template>
 

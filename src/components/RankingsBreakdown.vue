@@ -1,11 +1,27 @@
 <template>
   <div class="rankings-breakdown">
     <h3>{{ reviewer }}'s Scores</h3>
-    <rank-meter alt type="Overall" :percentage="getScore(0)"></rank-meter>
-    <rank-meter type="Gameplay" :percentage="getScore(1)"></rank-meter>
-    <rank-meter type="Visuals" :percentage="getScore(2)"></rank-meter>
-    <rank-meter type="Audio" :percentage="getScore(3)"></rank-meter>
-    <rank-meter type="Content" :percentage="getScore(4)"></rank-meter>
+    <rank-meter
+      alt
+      type="Overall"
+      :percentage="getScore(0)"
+    />
+    <rank-meter
+      type="Gameplay"
+      :percentage="getScore(1)"
+    />
+    <rank-meter
+      type="Visuals"
+      :percentage="getScore(2)"
+    />
+    <rank-meter
+      type="Audio"
+      :percentage="getScore(3)"
+    />
+    <rank-meter
+      type="Content"
+      :percentage="getScore(4)"
+    />
   </div>
 </template>
 

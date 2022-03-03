@@ -2,28 +2,30 @@
   <section class="ig-content">
     <div id="episodes">
       <home-episode
+        v-for="(episode, index) in sortedEpisodes"
+        :key="episode.id"
         :v-if="pageIsReady"
-        v-for="(episode, index) in sortedEpisodes" :key="episode.id"
-        @show-score='showScores'
         :title="episode.title"
         :description="episode.description"
         :audio="episode.enclosure_url"
         :season="episode.season.number"
-        :episodeNumber="episode.number"
-        :episodeType="episode.type"
-        :rankingId="getRankingId(episode.season.number, episode.number)"
-        :finale="isFinale(index)">
-      </home-episode>
+        :episode-number="episode.number"
+        :episode-type="episode.type"
+        :ranking-id="getRankingId(episode.season.number, episode.number)"
+        :finale="isFinale(index)"
+        @show-score="showScores"
+      />
     </div>
     <home-ranking
-    :v-if="pageIsReady"
-    :gameplay="hoveredRanking.gameplay"
-    :aesthetics="hoveredRanking.aesthetics"
-    :content="hoveredRanking.content"
-    :overall="hoveredRanking.ig_score"
-    :rank="hoveredRanking.rank"
-    :title="getHoveredRankingsTitle(hoveredRanking.episode, hoveredRanking.game)" 
-    :totalGames="getTotalGames"></home-ranking>
+      :v-if="pageIsReady"
+      :gameplay="hoveredRanking.gameplay"
+      :aesthetics="hoveredRanking.aesthetics"
+      :content="hoveredRanking.content"
+      :overall="hoveredRanking.ig_score"
+      :rank="hoveredRanking.rank"
+      :title="getHoveredRankingsTitle(hoveredRanking.episode, hoveredRanking.game)" 
+      :total-games="getTotalGames"
+    />
   </section>
 </template>
 

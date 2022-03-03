@@ -1,9 +1,17 @@
 <template>
   <div class="info-contact-list">
-    <h1>{{heading}}</h1>
+    <h1>{{ heading }}</h1>
     <ul class="contact-list">
-      <li v-for="item in items" :key="item.href">
-        <a class="contact-list-item" target="_blank" rel="noopener noreferrer" :href="item.href">{{item.title}}</a>
+      <li
+        v-for="item in items"
+        :key="item.href"
+      >
+        <a
+          class="contact-list-item"
+          target="_blank"
+          rel="noopener noreferrer"
+          :href="item.href"
+        >{{ item.title }}</a>
       </li>
     </ul>
   </div>

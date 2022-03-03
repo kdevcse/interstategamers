@@ -1,27 +1,51 @@
 <template>
   <div
-    @click="selectRowHandler"
     class="rankings-table-row"
-    v-bind:class="{ selected: rowIsSelected() }"
+    :class="{ selected: rowIsSelected() }"
+    @click="selectRowHandler"
   >
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Rank)}">{{rank}}</p>
-    <p :title="title" v-bind:class="{ sorted: highlightRed(CategoryTypes.Title)}">
-      <span>{{title}}</span>
+    <p :class="{ sorted: highlightRed(CategoryTypes.Rank)}">
+      {{ rank }}
+    </p>
+    <p
+      :title="title"
+      :class="{ sorted: highlightRed(CategoryTypes.Title)}"
+    >
+      <span>{{ title }}</span>
       <font-awesome-icon
+        v-if="guest"
         class="guest-icon"
         :icon="['fas', 'user-plus']"
         :title="getGuestTxt()"
-        v-if="guest"
-      ></font-awesome-icon>
+      />
     </p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Year)}">{{year}}</p>
-    <p :title="platform" v-bind:class="{ sorted: highlightRed(CategoryTypes.Platform)}">{{platform}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Overall)}">{{getOverallTxt}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Gameplay)}">{{getGameplayTxt}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Aesthetics)}">{{getAestheticsTxt}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.Content)}">{{getContentTxt}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.POverall)}">{{getPOverallTxt}}</p>
-    <p v-bind:class="{ sorted: highlightRed(CategoryTypes.KOverall)}">{{getKOverallTxt}}</p>
+    <p :class="{ sorted: highlightRed(CategoryTypes.Year)}">
+      {{ year }}
+    </p>
+    <p
+      :title="platform"
+      :class="{ sorted: highlightRed(CategoryTypes.Platform)}"
+    >
+      {{ platform }}
+    </p>
+    <p :class="{ sorted: highlightRed(CategoryTypes.Overall)}">
+      {{ getOverallTxt }}
+    </p>
+    <p :class="{ sorted: highlightRed(CategoryTypes.Gameplay)}">
+      {{ getGameplayTxt }}
+    </p>
+    <p :class="{ sorted: highlightRed(CategoryTypes.Aesthetics)}">
+      {{ getAestheticsTxt }}
+    </p>
+    <p :class="{ sorted: highlightRed(CategoryTypes.Content)}">
+      {{ getContentTxt }}
+    </p>
+    <p :class="{ sorted: highlightRed(CategoryTypes.POverall)}">
+      {{ getPOverallTxt }}
+    </p>
+    <p :class="{ sorted: highlightRed(CategoryTypes.KOverall)}">
+      {{ getKOverallTxt }}
+    </p>
   </div>
 </template>
 

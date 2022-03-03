@@ -1,13 +1,13 @@
 <template>
-  <div class='info'>
+  <div class="info">
     <article>
       <h1>About Us:</h1>
-      <div id='boyz'>
-        <div id='boyz-img'>
-          <img :src="theBoyz" />
+      <div id="boyz">
+        <div id="boyz-img">
+          <img :src="theBoyz">
           <figcaption>From left: Peter, Kevin and Chris (ZLink)</figcaption>
         </div>
-        <div id='boyz-description'>
+        <div id="boyz-description">
           <p>
             On a serendipitous autumn day in 2015, Kevin “KSlugs” Lewis and Peter “deal_4_real” Williams met on Twitch during one of Kevin’s Pokémon streams.
             The pair became fast friends thanks to a shared love of speedrunning and Smash Bros., and continued to grow their friendship over the years on the general foundation of video games.
@@ -24,11 +24,26 @@
           </p>
         </div>
       </div>
-      <info-contact-list heading='Where to Listen:' v-bind:items='listenList'></info-contact-list>
-      <info-contact-list heading='How to Support Us:' v-bind:items='supportList'></info-contact-list>
-      <info-contact-list heading='Social Media:' v-bind:items='socialMediaList'></info-contact-list>
-      <info-contact-list heading='Business Inquiries:' v-bind:items='businessList'></info-contact-list>
-      <info-contact-list heading='Website Issues:' v-bind:items='issuesList'></info-contact-list>
+      <info-contact-list
+        heading="Where to Listen:"
+        :items="listenList"
+      />
+      <info-contact-list
+        heading="How to Support Us:"
+        :items="supportList"
+      />
+      <info-contact-list
+        heading="Social Media:"
+        :items="socialMediaList"
+      />
+      <info-contact-list
+        heading="Business Inquiries:"
+        :items="businessList"
+      />
+      <info-contact-list
+        heading="Website Issues:"
+        :items="issuesList"
+      />
     </article>
   </div>
 </template>

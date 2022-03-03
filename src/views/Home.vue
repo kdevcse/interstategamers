@@ -1,7 +1,7 @@
 <template>
-  <div class='home'>
-    <ig-header></ig-header>
-    <ig-content></ig-content>
+  <div class="home">
+    <ig-header />
+    <ig-content />
   </div>
 </template>
 

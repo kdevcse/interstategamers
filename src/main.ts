@@ -17,7 +17,7 @@ library.add(faPlayCircle, faPauseCircle, faGamepad, faSortUp,
   faBars, faTimes, faFacebookSquare, faTwitter, faPatreon, faInstagram,
   faRss);
 
-app.component('font-awesome-icon', FontAwesomeIcon);
+app.component('FontAwesomeIcon', FontAwesomeIcon);
 
 /*Firebase Setup*/
 const firebaseConfig = {

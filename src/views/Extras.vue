@@ -1,14 +1,43 @@
 <template>
   <article>
-      <h1 class="extras-header"><span><i class="fab fa-twitch"></i></span> Twitch</h1>
-      <div class="extras-cat" id="extras-twitch">
-          <twitch-link channel="deal_4_real" href="https://www.twitch.tv/deal_4_real" :src="deal4RealTwitch"/>
-          <twitch-link channel="kslugs" href="https://www.twitch.tv/kslugs" :src="kslugsTwitch"/>
-          <twitch-link channel="zlinkgaming" href="https://www.twitch.tv/zlinkgaming" :src="zlinkTwitch"/>
-      </div>
-      <extras-section header="Music" icon="fas fa-music" v-bind:items="music"/>
-      <extras-section header="Code" icon="fas fa-code" v-bind:items="code"/>
-      <extras-section header="Friends" icon="fas fa-users" v-bind:items="friends"/>
+    <h1 class="extras-header">
+      <span><i class="fab fa-twitch" /></span> Twitch
+    </h1>
+    <div
+      id="extras-twitch"
+      class="extras-cat"
+    >
+      <twitch-link
+        channel="deal_4_real"
+        href="https://www.twitch.tv/deal_4_real"
+        :src="deal4RealTwitch"
+      />
+      <twitch-link
+        channel="kslugs"
+        href="https://www.twitch.tv/kslugs"
+        :src="kslugsTwitch"
+      />
+      <twitch-link
+        channel="zlinkgaming"
+        href="https://www.twitch.tv/zlinkgaming"
+        :src="zlinkTwitch"
+      />
+    </div>
+    <extras-section
+      header="Music"
+      icon="fas fa-music"
+      :items="music"
+    />
+    <extras-section
+      header="Code"
+      icon="fas fa-code"
+      :items="code"
+    />
+    <extras-section
+      header="Friends"
+      icon="fas fa-users"
+      :items="friends"
+    />
   </article>
 </template>
 

@@ -1,11 +1,36 @@
 <template>
-  <aside id='ig-content-rank'>
-    <h2 id='ig-content-rank-game-title'>{{getTitle}}</h2>
-    <h1 id='ig-content-rank-game-rank'>Rank {{rank}}/{{totalGames}}</h1>
-    <rank-meter alt h1 type="Overall" height="33px" :percentage="getOverall"></rank-meter>
-    <rank-meter h1 type="Gameplay" height="33px" :percentage="getGameplay"></rank-meter>
-    <rank-meter h1 type="Aesthetics" height="33px" :percentage="getAesthetics"></rank-meter>
-    <rank-meter h1 type="Content" height="33px" :percentage="getContent"></rank-meter>
+  <aside id="ig-content-rank">
+    <h2 id="ig-content-rank-game-title">
+      {{ getTitle }}
+    </h2>
+    <h1 id="ig-content-rank-game-rank">
+      Rank {{ rank }}/{{ totalGames }}
+    </h1>
+    <rank-meter
+      alt
+      h1
+      type="Overall"
+      height="33px"
+      :percentage="getOverall"
+    />
+    <rank-meter
+      h1
+      type="Gameplay"
+      height="33px"
+      :percentage="getGameplay"
+    />
+    <rank-meter
+      h1
+      type="Aesthetics"
+      height="33px"
+      :percentage="getAesthetics"
+    />
+    <rank-meter
+      h1
+      type="Content"
+      height="33px"
+      :percentage="getContent"
+    />
   </aside>
 </template>
 

@@ -2,8 +2,14 @@
   <div class="nav-container">
     <nav id="mobile-nav-bar">
       <div id="mobile-nav-main-container">
-        <router-link id="mobile-nav-logo-container" to="/">
-          <img id="mobile-nav-logo" :src="smallBadge" />
+        <router-link
+          id="mobile-nav-logo-container"
+          to="/"
+        >
+          <img
+            id="mobile-nav-logo"
+            :src="smallBadge"
+          >
         </router-link>
         <div id="mobile-nav-button">
           <font-awesome-icon
@@ -20,34 +26,70 @@
           />
         </div>
       </div>
-      <div id="mobile-nav-list" v-bind:class="{ opened: mobileMenuOpened }">
-        <router-link to="/ratings">Ratings</router-link>
+      <div
+        id="mobile-nav-list"
+        :class="{ opened: mobileMenuOpened }"
+      >
+        <router-link to="/ratings">
+          Ratings
+        </router-link>
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.teepublic.com/stores/the-interstate-gamers?ref_id=7904"
         >Store</a>
-        <router-link to="/extras">Extras</router-link>
-        <router-link to="/info">Info</router-link>
+        <router-link to="/extras">
+          Extras
+        </router-link>
+        <router-link to="/info">
+          Info
+        </router-link>
       </div>
     </nav>
     <nav id="nav-bar">
       <div class="nav-list">
-        <router-link class="nav-tab light" to="/">
-          <img class="nav-tab-logo" :src="smallBadge" />
+        <router-link
+          class="nav-tab light"
+          to="/"
+        >
+          <img
+            class="nav-tab-logo"
+            :src="smallBadge"
+          >
         </router-link>
-        <router-link class="nav-tab dark" to="/">
-          <img class="nav-tab-logo" :src="smallDarkBadge" />
+        <router-link
+          class="nav-tab dark"
+          to="/"
+        >
+          <img
+            class="nav-tab-logo"
+            :src="smallDarkBadge"
+          >
         </router-link>
-        <router-link class="nav-tab" to="/ratings">Ratings</router-link>
+        <router-link
+          class="nav-tab"
+          to="/ratings"
+        >
+          Ratings
+        </router-link>
         <a
           class="nav-tab"
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.teepublic.com/stores/the-interstate-gamers?ref_id=7904"
         >Store</a>
-        <router-link class="nav-tab" to="/extras">Extras</router-link>
-        <router-link class="nav-tab" to="/info">Info</router-link>
+        <router-link
+          class="nav-tab"
+          to="/extras"
+        >
+          Extras
+        </router-link>
+        <router-link
+          class="nav-tab"
+          to="/info"
+        >
+          Info
+        </router-link>
       </div>
     </nav>
   </div>

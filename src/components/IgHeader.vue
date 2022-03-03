@@ -1,37 +1,69 @@
 <template>
-  <header id='ig-header'>
-    <aside id='ig-header-right'>
-      <img class='ig-header-right-logo' :src="mainLogo" />
-      <img class='ig-header-right-logo dark' :src="mainDarkLogo" />
-      <div id='ig-icons'>
-        <a href='https://www.facebook.com/TheInterstateGamers/' title='Facebook'>
-          <font-awesome-icon :icon="['fab','facebook-square']"></font-awesome-icon>
+  <header id="ig-header">
+    <aside id="ig-header-right">
+      <img
+        class="ig-header-right-logo"
+        :src="mainLogo"
+      >
+      <img
+        class="ig-header-right-logo dark"
+        :src="mainDarkLogo"
+      >
+      <div id="ig-icons">
+        <a
+          href="https://www.facebook.com/TheInterstateGamers/"
+          title="Facebook"
+        >
+          <font-awesome-icon :icon="['fab','facebook-square']" />
         </a>
-        <a href='https://twitter.com/theIG_cast' title='Twitter'>
-          <font-awesome-icon :icon="['fab','twitter']"></font-awesome-icon>
+        <a
+          href="https://twitter.com/theIG_cast"
+          title="Twitter"
+        >
+          <font-awesome-icon :icon="['fab','twitter']" />
         </a>
-        <a href='https://instagram.com/theigcast' title='Instagram'>
-          <font-awesome-icon :icon="['fab', 'instagram']"></font-awesome-icon>
+        <a
+          href="https://instagram.com/theigcast"
+          title="Instagram"
+        >
+          <font-awesome-icon :icon="['fab', 'instagram']" />
         </a>
-        <a href='https://www.patreon.com/TheIGCast' title='Patreon'>
-          <font-awesome-icon :icon="['fab', 'patreon']"></font-awesome-icon>
+        <a
+          href="https://www.patreon.com/TheIGCast"
+          title="Patreon"
+        >
+          <font-awesome-icon :icon="['fab', 'patreon']" />
         </a>
-        <a href='https://feeds.simplecast.com/naeWXDEF' title='RSS'>
-          <font-awesome-icon :icon="['fas', 'rss']"></font-awesome-icon>
+        <a
+          href="https://feeds.simplecast.com/naeWXDEF"
+          title="RSS"
+        >
+          <font-awesome-icon :icon="['fas', 'rss']" />
         </a>
       </div>
     </aside>
-    <section id='ig-header-left'>
-      <div class='ig-header-left-text-container'>
+    <section id="ig-header-left">
+      <div class="ig-header-left-text-container">
         <h1>The Interstate Gamers</h1>
         <p>
           The podcast where your hosts, deal_4_real and KSlugs, rate and discuss your favorite
           video games by category from two different states, Colorado and Texas.
         </p>
       </div>
-      <div id='ig-header-left-trailer' v-on:click='playTrailer()'>
-        <font-awesome-icon :icon="['fas', 'pause-circle']" v-if="playing" id='ig-trailer-playButton'></font-awesome-icon>
-        <font-awesome-icon :icon="['fas', 'play-circle']" v-else id='ig-trailer-playButton'></font-awesome-icon>
+      <div
+        id="ig-header-left-trailer"
+        @click="playTrailer()"
+      >
+        <font-awesome-icon
+          v-if="playing"
+          id="ig-trailer-playButton"
+          :icon="['fas', 'pause-circle']"
+        />
+        <font-awesome-icon
+          v-else
+          id="ig-trailer-playButton"
+          :icon="['fas', 'play-circle']"
+        />
         <span>Listen to the trailer</span>
       </div>
     </section>

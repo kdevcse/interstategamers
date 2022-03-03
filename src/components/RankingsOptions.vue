@@ -2,27 +2,30 @@
   <div class="options-container">
     <div class="options-header">
       <input
-        @input="search"
         id="options-searchbox"
         type="text"
         placeholder="Search"
         value
         autocomplete="off"
-      />
-      <div v-bind:class="{ show: showBothIndicators }" id="scroll-indicator">
+        @input="search"
+      >
+      <div
+        id="scroll-indicator"
+        :class="{ show: showBothIndicators }"
+      >
         <font-awesome-icon
           id="scroll-indicator-left"
-          v-bind:class="{ show: showLeftIndicator }"
+          :class="{ show: showLeftIndicator }"
           :icon="['fas', 'caret-square-left']"
           title="Scroll left to see more content"
-        ></font-awesome-icon>
+        />
         <span id="scroll-indicator-txt">Scroll for more</span>
         <font-awesome-icon
           id="scroll-indicator-right"
-          v-bind:class="{ show: showRightIndicator }"
+          :class="{ show: showRightIndicator }"
           :icon="['fas', 'caret-square-right']"
           title="Scroll right to see more content"
-        ></font-awesome-icon>
+        />
       </div>
     </div>
   </div>
