@@ -41,23 +41,14 @@
 </template>
 
 <script setup lang='ts'>
-import { useAudio, useSendScore } from "./HomeEpisode";
+import { IHomeEpisodeProps, useAudio, useSendScore } from "./HomeEpisode";
 
-const props = defineProps<{
-  title?: string,
-  description?: string,
-  guest?: boolean,
-  audio?: string,
-  season?: number,
-  episodeNumber?: number,
-  episodeType?: string,
-  rankingId?: string,
-  finale?: boolean,
-}>();
+const props = defineProps<IHomeEpisodeProps>();
 const emit = defineEmits(["show-score"]);
 const audioElement: HTMLAudioElement = new Audio(props.audio);
 const { playing, play } = useAudio(audioElement);
 const { sendScore } = useSendScore(emit);
+
 </script>
 
 <style scoped>
