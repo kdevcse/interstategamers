@@ -1,7 +1,6 @@
-import { ref, Ref} from "vue";
+import { ref } from "vue";
 
-export function useSendScore() {
-  const emit = defineEmits(["show-score"]);
+export function useSendScore(emit: any) {
 
   function sendScore(rankingId: string | undefined) {
     if (!rankingId) {

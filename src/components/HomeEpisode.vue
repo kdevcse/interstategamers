@@ -54,11 +54,10 @@ const props = defineProps<{
   rankingId?: string,
   finale?: boolean,
 }>();
-
+const emit = defineEmits(["show-score"]);
 const audioElement: HTMLAudioElement = new Audio(props.audio);
 const { playing, play } = useAudio(audioElement);
-const { sendScore } = useSendScore();
-
+const { sendScore } = useSendScore(emit);
 </script>
 
 <style scoped>
