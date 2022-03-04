@@ -10,7 +10,7 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 # Status of New Features
 - [x] Dark mode
 - [x] Migrate from vue-cli to vite
-- [x] Migration from Vue 2 to Vue 3[Vue.Js](https://vuejs.org/) framework
+- [x] Migration from Vue 2 to Vue 3
 - [x] Utilize Composition API
 - [x] Cleaner code
 - [x] Utilize cloud firestore database
