@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang='ts'>
-import { ref, reactive } from "vue";
+import { useAudio, useSendScore } from "./HomeEpisode";
 
 const props = defineProps<{
   title?: string,
@@ -55,21 +55,9 @@ const props = defineProps<{
   finale?: boolean,
 }>();
 const emit = defineEmits(["show-score"]);
-
-let playing = ref(false);
-let epAudio = reactive(new Audio(props.audio));
-epAudio.preload = "none";
-
-function sendScore(rankingId: string | undefined) {
-  if (!rankingId)
-    return;
-  emit("show-score", [rankingId]);
-}
-
-function play() {
-  playing.value = !playing.value;
-  playing.value ? epAudio.play() : epAudio.pause();
-}
+const audioElement: HTMLAudioElement = new Audio(props.audio);
+const { playing, play } = useAudio(audioElement);
+const { sendScore } = useSendScore(emit);
 </script>
 
 <style scoped>
