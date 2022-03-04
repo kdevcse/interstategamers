@@ -10,7 +10,7 @@
     "lint": "eslint src --ext .ts,.js,.vue",
     "lint:fix": "eslint src --ext .ts,.js,.vue --fix",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26-2",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@typescript-eslint/parser": "^5.13.0",
     "@vitejs/plugin-vue": "^2.2.2",
+    "c8": "^7.11.0",
     "eslint": "^8.10.0",
     "eslint-plugin-vue": "^8.5.0",
     "typescript": "^4.5.5",

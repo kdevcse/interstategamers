@@ -14,6 +14,10 @@ export default defineConfig({
     }
   },
   test: {
-    include: [...configDefaults.include]
-  }
+    globals: true,
+    include: [...configDefaults.include],
+    coverage: {
+      reporter: ["text", "json", "html"]
+    }
+  },
 });
