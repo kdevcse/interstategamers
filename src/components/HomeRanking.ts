@@ -1,5 +1,6 @@
 import { computed } from "vue";
 
+// We can use this once issue https://github.com/vuejs/core/issues/4294 is solved
 export interface IHomeRankingProps {
   totalGames?: number,
   title?: string,
