@@ -1,5 +1,4 @@
 # The Interstate Gamers Website  
-## About
 This repo contains the underlying code for The Interstate Gamers Podcast website. The site was originally coded in pure HTML, CSS, & JavaScript, but it has been upgraded over the years and now utilizes the power of [Vue.Js](https://vuejs.org/).
 
 ## Build Status
