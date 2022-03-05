@@ -96,25 +96,15 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-import { watch, ref } from "vue";
 import smallBadge from "@/assets/images/badge_sm.png";
 import smallDarkBadge from "@/assets/images/badge_sm_dark-mode-colors.png";
+import { useNavBar } from "@/composables/NavBar";
 
 defineProps<{
   selected?: boolean
 }>();
 
-const route = useRoute();
-let mobileMenuOpened = ref(false);
-
-function toggleMobileMenu() {
-  mobileMenuOpened.value = !mobileMenuOpened.value;
-}
-
-watch(route, () => {
-  mobileMenuOpened.value = false;
-});
+const { mobileMenuOpened, toggleMobileMenu } = useNavBar();
 </script>
 
 <style scoped>

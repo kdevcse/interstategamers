@@ -4,12 +4,12 @@
     :class="{ selected: rowIsSelected() }"
     @click="selectRowHandler"
   >
-    <p :class="{ sorted: highlightRed(CategoryTypes.Rank)}">
+    <p :class="{ sorted: highlightRed(CategoryTypes.RANK)}">
       {{ rank }}
     </p>
     <p
       :title="title"
-      :class="{ sorted: highlightRed(CategoryTypes.Title)}"
+      :class="{ sorted: highlightRed(CategoryTypes.TITLE)}"
     >
       <span>{{ title }}</span>
       <font-awesome-icon
@@ -19,31 +19,31 @@
         :title="getGuestTxt()"
       />
     </p>
-    <p :class="{ sorted: highlightRed(CategoryTypes.Year)}">
+    <p :class="{ sorted: highlightRed(CategoryTypes.YEAR)}">
       {{ year }}
     </p>
     <p
       :title="platform"
-      :class="{ sorted: highlightRed(CategoryTypes.Platform)}"
+      :class="{ sorted: highlightRed(CategoryTypes.PLATFORM)}"
     >
       {{ platform }}
     </p>
-    <p :class="{ sorted: highlightRed(CategoryTypes.Overall)}">
+    <p :class="{ sorted: highlightRed(CategoryTypes.OVERALL)}">
       {{ getOverallTxt }}
     </p>
-    <p :class="{ sorted: highlightRed(CategoryTypes.Gameplay)}">
+    <p :class="{ sorted: highlightRed(CategoryTypes.GAMEPLAY)}">
       {{ getGameplayTxt }}
     </p>
-    <p :class="{ sorted: highlightRed(CategoryTypes.Aesthetics)}">
+    <p :class="{ sorted: highlightRed(CategoryTypes.AESTHETICS)}">
       {{ getAestheticsTxt }}
     </p>
-    <p :class="{ sorted: highlightRed(CategoryTypes.Content)}">
+    <p :class="{ sorted: highlightRed(CategoryTypes.CONTENT)}">
       {{ getContentTxt }}
     </p>
-    <p :class="{ sorted: highlightRed(CategoryTypes.POverall)}">
+    <p :class="{ sorted: highlightRed(CategoryTypes.POVERALL)}">
       {{ getPOverallTxt }}
     </p>
-    <p :class="{ sorted: highlightRed(CategoryTypes.KOverall)}">
+    <p :class="{ sorted: highlightRed(CategoryTypes.KOVERALL)}">
       {{ getKOverallTxt }}
     </p>
   </div>

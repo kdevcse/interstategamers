@@ -15,6 +15,7 @@ export default defineConfig({
   },
   test: {
     globals: true,
+    silent: true,
     include: [...configDefaults.include],
     coverage: {
       reporter: ["text", "json", "html"]

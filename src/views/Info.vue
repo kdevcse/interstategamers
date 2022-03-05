@@ -26,23 +26,23 @@
       </div>
       <info-contact-list
         heading="Where to Listen:"
-        :items="listenList"
+        :items="INFO_LINKS.whereToListenList"
       />
       <info-contact-list
         heading="How to Support Us:"
-        :items="supportList"
+        :items="INFO_LINKS.howToSupportUsList"
       />
       <info-contact-list
         heading="Social Media:"
-        :items="socialMediaList"
+        :items="INFO_LINKS.socialMediaList"
       />
       <info-contact-list
         heading="Business Inquiries:"
-        :items="businessList"
+        :items="INFO_LINKS.businessInquiriesList"
       />
       <info-contact-list
         heading="Website Issues:"
-        :items="issuesList"
+        :items="INFO_LINKS.websiteIssuesList"
       />
     </article>
   </div>
@@ -50,14 +50,8 @@
 
 <script setup lang="ts">
 import InfoContactList from "@/components/InfoContactList.vue";
-import infoLinks from "@/database/info-links";
+import INFO_LINKS from "@/database/info-links";
 import theBoyz from "@/assets/images/the_boyz.jpg";
-
-const listenList = infoLinks.whereToListenList;
-const supportList = infoLinks.howToSupportUsList;
-const socialMediaList = infoLinks.socialMediaList;
-const businessList = infoLinks.businessInquiriesList;
-const issuesList = infoLinks.websiteIssuesList;
 </script>
 
 <style scoped>

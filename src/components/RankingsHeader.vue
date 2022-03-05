@@ -37,9 +37,9 @@ let ascending = ref(true);
 
 function computeNonSortedState(category: CategoryTypes | undefined) {
   switch (category) {
-    case CategoryTypes.Title:
-    case CategoryTypes.Rank:
-    case CategoryTypes.Platform:
+    case CategoryTypes.TITLE:
+    case CategoryTypes.RANK:
+    case CategoryTypes.PLATFORM:
       ascending.value = false;
       break;
     default:

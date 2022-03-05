@@ -131,11 +131,11 @@ const getGuestScores = computed(() => {
     return[];
   
   let gatherGuestScores: number[] = [];
-  gatherGuestScores.push(props.rankInfo.g_rating);
-  gatherGuestScores.push(props.rankInfo.g_gameplay);
-  gatherGuestScores.push(props.rankInfo.g_visuals);
-  gatherGuestScores.push(props.rankInfo.g_audio);
-  gatherGuestScores.push(props.rankInfo.g_content);
+  gatherGuestScores.push(props.rankInfo.g_rating || 0);
+  gatherGuestScores.push(props.rankInfo.g_gameplay || 0);
+  gatherGuestScores.push(props.rankInfo.g_visuals || 0);
+  gatherGuestScores.push(props.rankInfo.g_audio || 0);
+  gatherGuestScores.push(props.rankInfo.g_content || 0);
   return gatherGuestScores;
 });
 </script>

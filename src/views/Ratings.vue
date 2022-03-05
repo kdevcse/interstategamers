@@ -5,61 +5,61 @@
       <div id="rankings-header">
         <rankings-header
           title="Rank"
-          :category="CategoryTypes.Rank"
+          :category="CategoryTypes.RANK"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
         <rankings-header
           title="Title"
-          :category="CategoryTypes.Title"
+          :category="CategoryTypes.TITLE"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
         <rankings-header
           title="Year"
-          :category="CategoryTypes.Year"
+          :category="CategoryTypes.YEAR"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
         <rankings-header
           title="Platform"
-          :category="CategoryTypes.Platform"
+          :category="CategoryTypes.PLATFORM"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
         <rankings-header
           title="IG Score"
-          :category="CategoryTypes.Overall"
+          :category="CategoryTypes.OVERALL"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
         <rankings-header
           title="Gameplay"
-          :category="CategoryTypes.Gameplay"
+          :category="CategoryTypes.GAMEPLAY"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
         <rankings-header
           title="Aesthetics"
-          :category="CategoryTypes.Aesthetics"
+          :category="CategoryTypes.AESTHETICS"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
         <rankings-header
           title="Content"
-          :category="CategoryTypes.Content"
+          :category="CategoryTypes.CONTENT"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
         <rankings-header
           title="P. Overall"
-          :category="CategoryTypes.POverall"
+          :category="CategoryTypes.POVERALL"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
         <rankings-header
           title="K. Overall"
-          :category="CategoryTypes.KOverall"
+          :category="CategoryTypes.KOVERALL"
           :sort-by="sortedCategory"
           @sort-table="sortHandler"
         />
@@ -110,7 +110,7 @@ import { computed, onBeforeMount, reactive, ref } from "vue";
 
 let episodes: IEpisodeInfo[] = reactive([]);
 let rankings: IRankingInfo[] = reactive([]);
-let sortedCategory = ref(CategoryTypes.Rank);
+let sortedCategory = ref(CategoryTypes.RANK);
 let sortedIsAscending = ref(true);
 let selectedEpisode = ref(undefined);
 let searchTxt = ref("");
@@ -132,10 +132,10 @@ async function getDataFromFirestore(type: string, dataArray: any[]) {
 
     //Assign Rankings
     //TODO: Perhaps in the future we can re-rank them on category sort?
-    dataArray.sort((a, b) => b[CategoryTypes.Overall] - a[CategoryTypes.Overall]).forEach((ranking, index) => {
-      const currentScore = ranking[CategoryTypes.Overall];
-      const lastScore = index > 0 ? dataArray[index - 1][CategoryTypes.Overall] : null;
-      ranking[CategoryTypes.Rank] = lastScore && (currentScore === lastScore) ? dataArray[index - 1][CategoryTypes.Rank] : index + 1;
+    dataArray.sort((a, b) => b[CategoryTypes.OVERALL] - a[CategoryTypes.OVERALL]).forEach((ranking, index) => {
+      const currentScore = ranking[CategoryTypes.OVERALL];
+      const lastScore = index > 0 ? dataArray[index - 1][CategoryTypes.OVERALL] : null;
+      ranking[CategoryTypes.RANK] = lastScore && (currentScore === lastScore) ? dataArray[index - 1][CategoryTypes.RANK] : index + 1;
     });
   } catch (error) {
     console.error(`An error occured fetching ${type} data: ${error}`);
@@ -166,7 +166,7 @@ function searchHandler(searchInput: string) {
 }
 
 const sortedRankings = computed((): IRankingInfo[] => {
-  const isAlphabeticSort = sortedCategory.value === CategoryTypes.Title || sortedCategory.value === CategoryTypes.Platform;
+  const isAlphabeticSort = sortedCategory.value === CategoryTypes.TITLE || sortedCategory.value === CategoryTypes.PLATFORM;
   const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
 
   let sortedRanks = rankings.slice(0).sort((a, b) => sortFunc(a, b));

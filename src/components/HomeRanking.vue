@@ -35,8 +35,8 @@
 </template>
 
 <script setup lang='ts'>
-import { computed } from "vue";
 import RankMeter from "@/components/RankMeter.vue";
+import { useRankingValues } from "@/composables/HomeRanking";
 
 const props = defineProps<{
   totalGames?: number,
@@ -47,26 +47,8 @@ const props = defineProps<{
   overall?: number,
   rank?: number
 }>();
+const { getTitle, getGameplay, getAesthetics, getContent, getOverall } = useRankingValues(props);
 
-const getTitle = computed((): string => {
-  return props.title ? props.title : "Hover a review to see its ranking!";
-});
-
-const getGameplay = computed((): number => {
-  return props.gameplay ? props.gameplay : 0;
-});
-
-const getAesthetics = computed((): number => {
-  return props.aesthetics ? props.aesthetics : 0;
-});
-
-const getContent = computed((): number => {
-  return props.content ? props.content : 0;
-});
-
-const getOverall = computed((): number => {
-  return props.overall ? props.overall : 0;
-});
 </script>
 
 <style scoped>
