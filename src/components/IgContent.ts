@@ -49,7 +49,7 @@ export function useIgContent() {
 
   function isFinale(index: number) {
     const sortedEps = sortedEpisodes.value;
-    return sortedEps[index - 1] && sortedEps[index - 1].season.number > sortedEps[index].season.number || index === 0;
+    return ((sortedEps[index - 1] && sortedEps[index]) && sortedEps[index - 1].season.number > sortedEps[index].season.number) || index === 0;
   }
 
   const hoveredRanking = computed((): IHoveredRanking => {
@@ -94,6 +94,7 @@ export function useIgContent() {
     episodes,
     rankings,
     hoveredRanking,
+    hoveredRankingId,
     totalGames,
     sortedEpisodes,
     sortedRankings,

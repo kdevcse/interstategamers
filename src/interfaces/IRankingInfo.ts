@@ -16,12 +16,12 @@ export interface IRankingInfo {
   p_Aesthetics: number;
   p_content: number;
   p_rating: number;
-  g_gameplay: number;
-  g_visuals: number;
-  g_audio: number;
-  g_Aesthetics: number;
-  g_content: number;
-  g_rating: number;
+  g_gameplay?: number;
+  g_visuals?: number;
+  g_audio?: number;
+  g_Aesthetics?: number;
+  g_content?: number;
+  g_rating?: number;
   gameplay: number;
   visuals: number;
   audio: number;
@@ -65,7 +65,7 @@ export interface IEpisodeInfo {
   scheduled_for: Date;
   published_at: Date;
   number: number;
-  markers: {
+  markers?: {
     href: string;
     collection: Array<unknown>;
   };
@@ -75,10 +75,10 @@ export interface IEpisodeInfo {
   id: string;
   href: string;
   guid: string;
-  enclosure_url: string;
+  enclosure_url?: string;
   description: string;
   days_since_release: number;
-  analytics: {
+  analytics?: {
     href: string;
   };
   finale: boolean;
