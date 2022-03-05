@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 import ExtrasSection from "@/components/ExtrasSection.vue";
-import EXTRAS_SECTION_DATA from "@/database/extra-sections";
+import EXTRAS_SECTION_DATA from "@/globals/extra-sections";
 import TwitchLink from "@/components/TwitchLink.vue";
 import deal4RealTwitch from "@/assets/images/d4r.png";
 import kslugsTwitch from "@/assets/images/kslugs.png";

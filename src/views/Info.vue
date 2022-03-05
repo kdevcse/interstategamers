@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 import InfoContactList from "@/components/InfoContactList.vue";
-import INFO_LINKS from "@/database/info-links";
+import INFO_LINKS from "@/globals/info-links";
 import theBoyz from "@/assets/images/the_boyz.jpg";
 </script>
 
