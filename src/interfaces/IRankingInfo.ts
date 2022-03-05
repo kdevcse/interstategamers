@@ -85,14 +85,14 @@ export interface IEpisodeInfo {
 }
 
 export enum CategoryTypes {
-  Rank = "rank",
-  Title = "game",
-  Year = "year",
-  Platform = "platform",
-  Overall = "ig_score",
-  Gameplay = "gameplay",
-  Aesthetics = "aesthetics",
-  Content = "content",
-  KOverall = "k_rating",
-  POverall = "p_rating",
+  RANK = "rank",
+  TITLE = "game",
+  YEAR = "year",
+  PLATFORM = "platform",
+  OVERALL = "ig_score",
+  GAMEPLAY = "gameplay",
+  AESTHETICS = "aesthetics",
+  CONTENT = "content",
+  KOVERALL = "k_rating",
+  POVERALL = "p_rating",
 }
