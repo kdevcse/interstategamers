@@ -2,7 +2,7 @@ import prw from "@/assets/images/prw.png";
 import slugzbot from "@/assets/images/slugzbot.png";
 import zlg from "@/assets/images/zlg.png";
 
-const extrasSectionData = {
+const EXTRAS_SECTION_DATA = {
   musicSection: [
     {
       heading: "PeteRW",
@@ -35,4 +35,4 @@ const extrasSectionData = {
   ],
 };
 
-export default extrasSectionData;
+export default EXTRAS_SECTION_DATA;

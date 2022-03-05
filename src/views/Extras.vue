@@ -26,32 +26,28 @@
     <extras-section
       header="Music"
       icon="fas fa-music"
-      :items="music"
+      :items="EXTRAS_SECTION_DATA.musicSection"
     />
     <extras-section
       header="Code"
       icon="fas fa-code"
-      :items="code"
+      :items="EXTRAS_SECTION_DATA.codeSections"
     />
     <extras-section
       header="Friends"
       icon="fas fa-users"
-      :items="friends"
+      :items="EXTRAS_SECTION_DATA.friendSections"
     />
   </article>
 </template>
 
 <script setup lang="ts">
 import ExtrasSection from "@/components/ExtrasSection.vue";
-import extrasSectionData from "@/database/extra-sections";
+import EXTRAS_SECTION_DATA from "@/database/extra-sections";
 import TwitchLink from "@/components/TwitchLink.vue";
 import deal4RealTwitch from "@/assets/images/d4r.png";
 import kslugsTwitch from "@/assets/images/kslugs.png";
 import zlinkTwitch from "@/assets/images/zlg.png";
-
-const music = extrasSectionData.musicSection;
-const code = extrasSectionData.codeSections;
-const friends = extrasSectionData.friendSections;
 </script>
 
 <style scoped>

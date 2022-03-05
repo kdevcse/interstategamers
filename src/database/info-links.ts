@@ -1,4 +1,4 @@
-const infoLinks = {
+const INFO_LINKS = {
   whereToListenList: [
     {
       href: "https://podcasts.apple.com/us/podcast/the-interstate-gamers/id133250306",
@@ -69,4 +69,4 @@ const infoLinks = {
   ],
 };
 
-export default infoLinks;
+export default INFO_LINKS;
