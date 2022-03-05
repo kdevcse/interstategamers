@@ -36,7 +36,7 @@
 
 <script setup lang='ts'>
 import RankMeter from "@/components/RankMeter.vue";
-import { useRankingValues } from "./HomeRanking";
+import { useRankingValues } from "@/composables/HomeRanking";
 
 const props = defineProps<{
   totalGames?: number,

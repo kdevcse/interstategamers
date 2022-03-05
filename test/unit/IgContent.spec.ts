@@ -1,4 +1,4 @@
-import { getHoveredRankingsTitle, useIgContent } from "@/components/IgContent";
+import { getHoveredRankingsTitle, useIgContent } from "@/composables/IgContent";
 import { MOCKED_RATINGS, pushAllMockedEpisodes, pushAllMockedRatings } from "../helpers/episode-data-helper";
 
 describe("IgContent unit tests", () => {

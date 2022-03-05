@@ -1,6 +1,4 @@
 
-import { ref } from "vue";
-
 export interface IHomeEpisodeProps {
   title?: string,
   description?: string,
@@ -26,17 +24,3 @@ export function useSendScore(emit: any) {
   return { sendScore };
 }
 
-export function useAudio(audioElement: HTMLAudioElement) {
-  const playing = ref(false);
-
-  function play() {
-    if (!audioElement) {
-      return;
-    }
-
-    playing.value = !playing.value;
-    playing.value ? audioElement.play() : audioElement.pause();
-  }
-
-  return { playing, play };
-}

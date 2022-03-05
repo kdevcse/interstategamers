@@ -1,4 +1,4 @@
-import { useRankingValues } from "@/components/HomeRanking";
+import { useRankingValues } from "@/composables/HomeRanking";
 
 describe("HomeRanking unit tests", () => {
   describe("useRankingValues composable", () => {

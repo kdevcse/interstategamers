@@ -32,7 +32,7 @@
 <script setup lang='ts'>
 import HomeEpisode from "@/components/HomeEpisode.vue";
 import HomeRanking from "@/components/HomeRanking.vue";
-import { useIgContent, getHoveredRankingsTitle } from "./IgContent";
+import { useIgContent, getHoveredRankingsTitle } from "@/composables/IgContent";
 
 const { 
   sortedEpisodes, 

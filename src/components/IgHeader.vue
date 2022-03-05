@@ -52,7 +52,7 @@
       </div>
       <div
         id="ig-header-left-trailer"
-        @click="playTrailer()"
+        @click="play()"
       >
         <font-awesome-icon
           v-if="playing"
@@ -71,20 +71,16 @@
 </template>
 
 <script setup lang='ts'>
-import { ref, reactive } from "vue";
 import mainLogo from "@/assets/images/main.png";
 import mainDarkLogo from "@/assets/images/main_dark-mode-colors.png";
 import trailerPromo from "@/assets/audio/ig_promo.mp3";
+import { useAudio } from "@/composables/global-composables";
 
-let playing = ref(false);
-let trailer = reactive(new Audio(trailerPromo));
-trailer.title = "Listen to the trailer";
-trailer.preload = "none";
+const audioElement: HTMLAudioElement = new Audio(trailerPromo);
+audioElement.title = "";
+audioElement.preload = "none";
 
-function playTrailer() {
-  playing.value = !playing.value;
-  playing.value ? trailer.play() : trailer.pause();
-}
+const { playing, play } = useAudio(audioElement);
 </script>
 
 <style scoped>

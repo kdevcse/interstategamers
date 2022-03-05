@@ -41,7 +41,8 @@
 </template>
 
 <script setup lang='ts'>
-import { useAudio, useSendScore } from "./HomeEpisode";
+import { useAudio } from "@/composables/global-composables";
+import { useSendScore } from "@/composables/HomeEpisode";
 
 const props = defineProps<{
   title?: string,
@@ -55,7 +56,11 @@ const props = defineProps<{
   finale?: boolean,
 }>();
 const emit = defineEmits(["show-score"]);
+
 const audioElement: HTMLAudioElement = new Audio(props.audio);
+audioElement.title = props.title || "";
+audioElement.preload = "none";
+
 const { playing, play } = useAudio(audioElement);
 const { sendScore } = useSendScore(emit);
 
