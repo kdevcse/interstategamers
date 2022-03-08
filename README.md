@@ -12,7 +12,7 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 - [x] Migration from Vue 2 to Vue 3
 - [x] Utilize Composition API
 - [x] Cleaner code
-- [x] Utilize cloud firestore database
+- [x] Migrate to Supabase
 - [x] Better unit testing
 - [ ] Easier way to submit scores
 - [ ] Completely self-hosted solution (Remove need for SimpleCast and AirTable)
@@ -22,5 +22,5 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 - [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
 - [Codacy](https://app.codacy.com/) (Performs code analysis)
 - [Discord](https://discordapp.com/) (Post notifications on the development process)
-- [Firebase](https://firebase.google.com/)
+- [Supabase](https://supabase.com/)
 - [SimpleCast](https://simplecast.com)

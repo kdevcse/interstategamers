@@ -115,11 +115,11 @@ let selectedEpisode = ref(undefined);
 let searchTxt = ref("");
 
 onBeforeMount(() => {
-  getDataFromFirestore(SupabaseTables.SIMPLECAST_EPISODES, episodes);
-  getDataFromFirestore(SupabaseTables.RATINGS, rankings);
+  getDataFromSupabase(SupabaseTables.SIMPLECAST_EPISODES, episodes);
+  getDataFromSupabase(SupabaseTables.RATINGS, rankings);
 });
 
-async function getDataFromFirestore(table: SupabaseTables, dataArray: any[]) {
+async function getDataFromSupabase(table: SupabaseTables, dataArray: any[]) {
   const { data, error } = await SUPABASE.from(table).select("*");
 
   if (error) {
