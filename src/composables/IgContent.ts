@@ -2,12 +2,7 @@
 import { computed, onBeforeMount, reactive, ref } from "vue";
 import { IHoveredRanking, IRankingInfo } from "@/interfaces/IRankingInfo";
 import { IEpisodeInfo } from "@/interfaces/IRankingInfo";
-import firebase from "firebase/app";
-import "@firebase/firestore";
-  
-export function getHoveredRankingsTitle(episode: string | undefined, game: string | undefined) {
-  return episode && game ? `${episode}: ${game}`: undefined;
-}
+import { SUPABASE, SupabaseTables } from "@/globals/supabase";
 
 export function useIgContent() {
   const episodes: Array<IEpisodeInfo> = reactive([]);
@@ -15,12 +10,12 @@ export function useIgContent() {
   const hoveredRankingId = ref("");
 
   onBeforeMount(() => {
-    const podcastDataPromise = getDataFromFirestore("podcast", episodes);
-    const ratingsDataPromise = getDataFromFirestore("ratings", rankings);
+    const podcastDataPromise = getDataFromSupabase(SupabaseTables.SIMPLECAST_EPISODES, episodes);
+    const ratingsDataPromise = getDataFromSupabase(SupabaseTables.RATINGS, rankings);
 
     Promise.all([podcastDataPromise, ratingsDataPromise]).then(() => {
       const sortedEps = sortedEpisodes.value;
-      hoveredRankingId.value = getRankingId(sortedEps[0].season.number, sortedEps[0].number);
+      hoveredRankingId.value = getRankingId(sortedEps[0].simplecast_id);
     });
   });
 
@@ -30,26 +25,27 @@ export function useIgContent() {
     }
   }
 
-  function getRankingId(seasonNumber: number, episodeNumber: number) {
-    const rankingInfo = rankings.find((ranking) => ranking.episode === `${seasonNumber}-${episodeNumber}`);
+  function getRankingId(episodeId: string) {
+    const rankingInfo = rankings.find((ranking) => ranking.simplecast_id === episodeId);
     return rankingInfo ? rankingInfo.id : "";
   }
 
+  async function getDataFromSupabase(table: SupabaseTables, dataArray: Array<any>) {
+      const { data, error } = await SUPABASE.from(table).select("*");
 
-  async function getDataFromFirestore(type: string, dataArray: Array<any>) {
-    try {
-      const c = await firebase.firestore().collection(`${type}-data`).get();
-      c.docs.forEach((doc: firebase.firestore.DocumentData) => {
-        dataArray.push(doc.data());
+      if (error) {
+        console.error(`Error retrieving data: ${error.message}`);
+        return;
+      }
+
+      data?.forEach((d) => {
+        dataArray.push(d);
       });
-    } catch (error) {
-      console.error(`An error occured fetching ${type} data: ${error}`);
-    }
   }
 
   function isFinale(index: number) {
     const sortedEps = sortedEpisodes.value;
-    return ((sortedEps[index - 1] && sortedEps[index]) && sortedEps[index - 1].season.number > sortedEps[index].season.number) || index === 0;
+    return ((sortedEps[index - 1] && sortedEps[index]) && sortedEps[index - 1].season > sortedEps[index].season) || index === 0;
   }
 
   const hoveredRanking = computed((): IHoveredRanking => {
@@ -68,6 +64,10 @@ export function useIgContent() {
     }
 
     return hoveredRank;
+  });
+
+  const hoveredEpisode = computed(() => {
+    return episodes.find(ep => ep.simplecast_id === hoveredRanking.value.simplecast_id);
   });
 
   const totalGames = computed(() => {
@@ -95,13 +95,14 @@ export function useIgContent() {
     rankings,
     hoveredRanking,
     hoveredRankingId,
+    hoveredEpisode,
     totalGames,
     sortedEpisodes,
     sortedRankings,
     pageIsReady,
     showScores,
     getRankingId,
-    getDataFromFirestore,
+    getDataFromSupabase,
     isFinale
   };
 }

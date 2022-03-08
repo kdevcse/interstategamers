@@ -85,7 +85,7 @@
           @row-selected="selectedRowHandler"
         />
         <rankings-info
-          :date="ranking.published_at"
+          :date="getReviewDate(ranking.simplecast_id)"
           :img="ranking.game_image"
           :title="ranking.game"
           :selected="selectedEpisode"
@@ -104,9 +104,8 @@ import RankingsOptions from "@/components/RankingsOptions.vue";
 import RankingsHeader from "@/components/RankingsHeader.vue";
 import RankingRow from "@/components/RankingRow.vue";
 import RankingsInfo from "@/components/RankingsInfo.vue";
-import firebase from "firebase/app";
-import "@firebase/firestore";
 import { computed, onBeforeMount, reactive, ref } from "vue";
+import { SUPABASE, SupabaseTables } from "@/globals/supabase";
 
 let episodes: IEpisodeInfo[] = reactive([]);
 let rankings: IRankingInfo[] = reactive([]);
@@ -116,30 +115,29 @@ let selectedEpisode = ref(undefined);
 let searchTxt = ref("");
 
 onBeforeMount(() => {
-  getDataFromFirestore("podcast", episodes);
-  getDataFromFirestore("ratings", rankings);
+  getDataFromFirestore(SupabaseTables.SIMPLECAST_EPISODES, episodes);
+  getDataFromFirestore(SupabaseTables.RATINGS, rankings);
 });
 
-async function getDataFromFirestore(type: string, dataArray: any[]) {
-  try {
-    const collection = await firebase.firestore().collection(`${type}-data`).get();
-    collection.docs.forEach(doc => {
-      dataArray.push(doc.data());
-    });
+async function getDataFromFirestore(table: SupabaseTables, dataArray: any[]) {
+  const { data, error } = await SUPABASE.from(table).select("*");
 
-    if (type !== "ratings")
-      return;
-
-    //Assign Rankings
-    //TODO: Perhaps in the future we can re-rank them on category sort?
-    dataArray.sort((a, b) => b[CategoryTypes.OVERALL] - a[CategoryTypes.OVERALL]).forEach((ranking, index) => {
-      const currentScore = ranking[CategoryTypes.OVERALL];
-      const lastScore = index > 0 ? dataArray[index - 1][CategoryTypes.OVERALL] : null;
-      ranking[CategoryTypes.RANK] = lastScore && (currentScore === lastScore) ? dataArray[index - 1][CategoryTypes.RANK] : index + 1;
-    });
-  } catch (error) {
-    console.error(`An error occured fetching ${type} data: ${error}`);
+  if (error) {
+    console.error(`Error retrieving data: ${error.message}`);
+    return;
   }
+
+  data?.forEach((d) => {
+    dataArray.push(d);
+  });
+
+  //Assign Rankings
+  //TODO: Perhaps in the future we can re-rank them on category sort?
+  dataArray.sort((a, b) => b[CategoryTypes.OVERALL] - a[CategoryTypes.OVERALL]).forEach((ranking, index) => {
+    const currentScore = ranking[CategoryTypes.OVERALL];
+    const lastScore = index > 0 ? dataArray[index - 1][CategoryTypes.OVERALL] : null;
+    ranking[CategoryTypes.RANK] = lastScore && (currentScore === lastScore) ? dataArray[index - 1][CategoryTypes.RANK] : index + 1;
+  });
 }
 
 function selectedRowHandler(e: any) {
@@ -163,6 +161,11 @@ function sortByAlphabet(a: any, b: any) {
 
 function searchHandler(searchInput: string) {
   searchTxt.value = searchInput;
+}
+
+function getReviewDate(simplecastId: string) {
+  const episode = episodes.find(ep => ep.simplecast_id === simplecastId);
+  return episode?.published_at.toLocaleString();
 }
 
 const sortedRankings = computed((): IRankingInfo[] => {

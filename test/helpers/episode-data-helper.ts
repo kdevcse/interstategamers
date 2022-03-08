@@ -29,6 +29,7 @@ const mockedRanking1 = {
   ign: 0,
   metacritic: 0,
   year: 2018,
+  simplecast_id: "djka234fds-34fsdfnjf-12fjek54"
 } as IRankingInfo;
 
 const mockedRanking2 = {
@@ -59,6 +60,7 @@ const mockedRanking2 = {
   ign: 0,
   metacritic: 0,
   year: 2017,
+  simplecast_id: "erta234fds-54fsdfnjf-31fjek89"
 } as IRankingInfo;
 
 const mockedRanking3 = {
@@ -89,6 +91,7 @@ const mockedRanking3 = {
   ign: 0,
   metacritic: 0,
   year: 2017,
+  simplecast_id: "htof869fds-57ftyuikj-15tpok54"
 } as IRankingInfo;
 
 const episode1 = {
@@ -98,10 +101,7 @@ const episode1 = {
   title: "1-1: MyGame",
   status: "published",
   slug: "test_slug",
-  season: {
-    href: "linktoszn.com",
-    number: 1,
-  },
+  season: 1,
   scheduled_for:  new Date(),
   published_at: new Date("1/1/2022"),
   number: 1,
@@ -114,6 +114,7 @@ const episode1 = {
   description: "This is a test description for episode 1-1",
   days_since_release: 2,
   finale: true,
+  simplecast_id: "djka234fds-34fsdfnjf-12fjek54"
 } as IEpisodeInfo;
 
 const episode2 = {
@@ -123,10 +124,7 @@ const episode2 = {
   title: "2-1: MyGame The Sequel",
   status: "published",
   slug: "test_slug",
-  season: {
-    href: "linktoszn2.com",
-    number: 2,
-  },
+  season: 2,
   scheduled_for: new Date(),
   published_at: new Date("1/2/2022"),
   number: 1,
@@ -139,6 +137,7 @@ const episode2 = {
   description: "This is a test description for episode 2-1",
   days_since_release: 1,
   finale: true,
+  simplecast_id: "erta234fds-54fsdfnjf-31fjek89"
 } as IEpisodeInfo;
 
 const episode3 = {
@@ -148,10 +147,7 @@ const episode3 = {
   title: "2-2: MyGame The Threequel",
   status: "published",
   slug: "test_slug",
-  season: {
-    href: "linktoszn2.com",
-    number: 2,
-  },
+  season: 2,
   scheduled_for: new Date(),
   published_at: new Date("1/3/2022"),
   number: 2,
@@ -164,6 +160,7 @@ const episode3 = {
   description: "This is a test description for episode 2-2",
   days_since_release: 0,
   finale: true,
+  simplecast_id: "htof869fds-57ftyuikj-15tpok54"
 } as IEpisodeInfo;
 
 export const MOCKED_EPISODES = [episode1, episode2, episode3];

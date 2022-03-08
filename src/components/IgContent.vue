@@ -8,10 +8,10 @@
         :title="episode.title"
         :description="episode.description"
         :audio="episode.enclosure_url"
-        :season="episode.season.number"
+        :season="episode.season"
         :episode-number="episode.number"
         :episode-type="episode.type"
-        :ranking-id="getRankingId(episode.season.number, episode.number)"
+        :ranking-id="getRankingId(episode.simplecast_id)"
         :finale="isFinale(index)"
         @show-score="showScores"
       />
@@ -23,7 +23,7 @@
       :content="hoveredRanking.content"
       :overall="hoveredRanking.ig_score"
       :rank="hoveredRanking.rank"
-      :title="getHoveredRankingsTitle(hoveredRanking.episode, hoveredRanking.game)" 
+      :title="hoveredEpisode?.title" 
       :total-games="totalGames"
     />
   </section>
@@ -32,11 +32,12 @@
 <script setup lang='ts'>
 import HomeEpisode from "@/components/HomeEpisode.vue";
 import HomeRanking from "@/components/HomeRanking.vue";
-import { useIgContent, getHoveredRankingsTitle } from "@/composables/IgContent";
+import { useIgContent } from "@/composables/IgContent";
 
 const { 
   sortedEpisodes, 
-  hoveredRanking, 
+  hoveredRanking,
+  hoveredEpisode,
   totalGames, 
   pageIsReady,
   isFinale, 
