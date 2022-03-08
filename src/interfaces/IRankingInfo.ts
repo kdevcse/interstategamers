@@ -35,6 +35,7 @@ export interface IRankingInfo {
   guest?: string;
   game_image?: string;
   published_at?: string;
+  simplecast_id: string;
 }
 
 /*TODO: Look at removing this redundancy later*/
@@ -49,26 +50,19 @@ export interface IHoveredRanking {
   ig_score?: number;
   rank?: number;
   game?: string;
+  simplecast_id?: string;
 }
 
 export interface IEpisodeInfo {
+  simplecast_id: string;
   updated_at: Date;
   type: string;
   token: string;
   title: string;
   status: string;
-  slug: string;
-  season: {
-    href: string;
-    number: number;
-  };
-  scheduled_for: Date;
+  season: number
   published_at: Date;
   number: number;
-  markers?: {
-    href: string;
-    collection: Array<unknown>;
-  };
   is_hidden: boolean;
   image_url: string;
   image_path: string;
@@ -78,10 +72,6 @@ export interface IEpisodeInfo {
   enclosure_url?: string;
   description: string;
   days_since_release: number;
-  analytics?: {
-    href: string;
-  };
-  finale: boolean;
 }
 
 export enum CategoryTypes {
