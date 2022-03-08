@@ -10,8 +10,8 @@ export function useIgContent() {
   const hoveredRankingId = ref("");
 
   onBeforeMount(() => {
-    const podcastDataPromise = getDataFromFirestore(SupabaseTables.SIMPLECAST_EPISODES, episodes);
-    const ratingsDataPromise = getDataFromFirestore(SupabaseTables.RATINGS, rankings);
+    const podcastDataPromise = getDataFromSupabase(SupabaseTables.SIMPLECAST_EPISODES, episodes);
+    const ratingsDataPromise = getDataFromSupabase(SupabaseTables.RATINGS, rankings);
 
     Promise.all([podcastDataPromise, ratingsDataPromise]).then(() => {
       const sortedEps = sortedEpisodes.value;
@@ -30,7 +30,7 @@ export function useIgContent() {
     return rankingInfo ? rankingInfo.id : "";
   }
 
-  async function getDataFromFirestore(table: SupabaseTables, dataArray: Array<any>) {
+  async function getDataFromSupabase(table: SupabaseTables, dataArray: Array<any>) {
       const { data, error } = await SUPABASE.from(table).select("*");
 
       if (error) {
@@ -102,7 +102,7 @@ export function useIgContent() {
     pageIsReady,
     showScores,
     getRankingId,
-    getDataFromFirestore,
+    getDataFromSupabase,
     isFinale
   };
 }
