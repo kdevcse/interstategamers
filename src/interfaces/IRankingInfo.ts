@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export interface IRankingInfo {
   id: string;
   episode: string;

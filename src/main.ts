@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./router";
+import ROUTER from "./router";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faFacebookSquare, faTwitter, faPatreon, faInstagram} from "@fortawesome/free-brands-svg-icons";
 import {
@@ -18,6 +18,6 @@ library.add(faPlayCircle, faPauseCircle, faGamepad, faSortUp,
 
 app.component("FontAwesomeIcon", FontAwesomeIcon);
 
-app.use(router);
+app.use(ROUTER);
 
 app.mount("#app");
