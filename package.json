@@ -7,6 +7,7 @@
     "dev": "vite --host",
     "serve": "vite preview",
     "build": "npm run lint && vue-tsc --noEmit && vite build",
+    "build:netlify": "npm run lint && --noEmit && vite build",
     "lint": "eslint src --ext .ts,.js,.vue",
     "lint:fix": "eslint src --ext .ts,.js,.vue --fix",
     "test": "vitest",
