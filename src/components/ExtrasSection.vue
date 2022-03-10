@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 import { IFriendInfo } from "@/interfaces/IFriendInfo";
-import DOMPurify from "DOMPurify";
+import DOMPurify from "dompurify";
 
 defineProps<{
   header?: string,
