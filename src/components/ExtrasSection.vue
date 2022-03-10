@@ -17,7 +17,7 @@
       >
       <div class="friend-info">
         <h3>{{ item.heading }}</h3>
-        <p v-html="item.content" />
+        <p v-html="purifyContent(item.content)" />
       </div>
     </div>
   </div>
@@ -25,12 +25,17 @@
 
 <script setup lang="ts">
 import { IFriendInfo } from "@/interfaces/IFriendInfo";
+import DOMPurify from "DOMPurify";
 
 defineProps<{
   header?: string,
   items?: IFriendInfo[],
   icon?: string
 }>();
+
+function purifyContent(content: string): string {
+  return DOMPurify.sanitize(content);
+}
 </script>
 
 <style>

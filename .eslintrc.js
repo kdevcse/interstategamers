@@ -11,6 +11,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended"
   ],
   rules: {
+    "vue/no-v-html": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "quotes": ["error", "double"],
     "semi": "off",
