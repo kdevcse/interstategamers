@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { IEpisodeInfo, IRankingInfo } from "@/interfaces/IRankingInfo";
+import { IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo";
 
 const mockedRanking1 = {
   episode: "1-1",
@@ -30,7 +30,7 @@ const mockedRanking1 = {
   metacritic: 0,
   year: 2018,
   simplecast_id: "djka234fds-34fsdfnjf-12fjek54"
-} as IRankingInfo;
+} as IRatingInfo;
 
 const mockedRanking2 = {
   episode: "2-1",
@@ -61,7 +61,7 @@ const mockedRanking2 = {
   metacritic: 0,
   year: 2017,
   simplecast_id: "erta234fds-54fsdfnjf-31fjek89"
-} as IRankingInfo;
+} as IRatingInfo;
 
 const mockedRanking3 = {
   episode: "2-2",
@@ -92,7 +92,7 @@ const mockedRanking3 = {
   metacritic: 0,
   year: 2017,
   simplecast_id: "htof869fds-57ftyuikj-15tpok54"
-} as IRankingInfo;
+} as IRatingInfo;
 
 const episode1 = {
   updated_at: new Date(),
@@ -172,7 +172,7 @@ export function pushAllMockedEpisodes(originEpisodes: IEpisodeInfo[]) {
   });
 }
 
-export function pushAllMockedRatings(originRatings: IRankingInfo[]) {
+export function pushAllMockedRatings(originRatings: IRatingInfo[]) {
   MOCKED_RATINGS.forEach((ranking) => {
     originRatings.push(ranking);
   });

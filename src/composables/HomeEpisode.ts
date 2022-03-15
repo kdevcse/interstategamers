@@ -1,3 +1,4 @@
+import { computed } from "vue";
 
 export interface IHomeEpisodeProps {
   title?: string,
@@ -9,18 +10,19 @@ export interface IHomeEpisodeProps {
   episodeType?: string,
   rankingId?: string,
   finale?: boolean,
+  type?: string
 }
 
-export function useSendScore(emit: any) {
+export function useHomeEpisode(type: string, emit: any) {
 
-  function sendScore(rankingId: string | undefined) {
-    if (!rankingId) {
-      return;
-    }
-
-    emit("show-score", [rankingId]);
+  function emitId(episodeId: string) {
+    emit("id-hovered", [episodeId]);
   }
 
-  return { sendScore };
+  const isGameReview = computed(() => {
+    return type === "full";
+  });
+
+  return { isGameReview, emitId };
 }
 

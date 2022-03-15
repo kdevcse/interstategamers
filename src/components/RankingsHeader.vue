@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { CategoryTypes } from "@/interfaces/IRankingInfo";
+import { CategoryTypes } from "@/interfaces/IRatingInfo";
 import { ref } from "vue";
 
 const props = defineProps<{

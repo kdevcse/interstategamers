@@ -99,46 +99,25 @@
 </template>
 
 <script setup lang="ts">
-import { CategoryTypes, IEpisodeInfo, IRankingInfo } from "@/interfaces/IRankingInfo"; //Used in template
+import { CategoryTypes, IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo"; //Used in template
 import RankingsOptions from "@/components/RankingsOptions.vue";
 import RankingsHeader from "@/components/RankingsHeader.vue";
 import RankingRow from "@/components/RankingRow.vue";
 import RankingsInfo from "@/components/RankingsInfo.vue";
 import { computed, onBeforeMount, reactive, ref } from "vue";
-import { SUPABASE, SupabaseTables } from "@/globals/supabase";
+import { getRatings, getEpisodes } from "@/globals/supabase";
 
 let episodes: IEpisodeInfo[] = reactive([]);
-let rankings: IRankingInfo[] = reactive([]);
+let rankings: IRatingInfo[] = reactive([]);
 let sortedCategory = ref(CategoryTypes.RANK);
 let sortedIsAscending = ref(true);
 let selectedEpisode = ref(undefined);
 let searchTxt = ref("");
 
-onBeforeMount(() => {
-  getDataFromSupabase(SupabaseTables.SIMPLECAST_EPISODES, episodes);
-  getDataFromSupabase(SupabaseTables.RATINGS, rankings);
+onBeforeMount(async() => {
+  await getEpisodes(episodes);
+  await getRatings(rankings);
 });
-
-async function getDataFromSupabase(table: SupabaseTables, dataArray: any[]) {
-  const { data, error } = await SUPABASE.from(table).select("*");
-
-  if (error) {
-    console.error(`Error retrieving data: ${error.message}`);
-    return;
-  }
-
-  data?.forEach((d) => {
-    dataArray.push(d);
-  });
-
-  //Assign Rankings
-  //TODO: Perhaps in the future we can re-rank them on category sort?
-  dataArray.sort((a, b) => b[CategoryTypes.OVERALL] - a[CategoryTypes.OVERALL]).forEach((ranking, index) => {
-    const currentScore = ranking[CategoryTypes.OVERALL];
-    const lastScore = index > 0 ? dataArray[index - 1][CategoryTypes.OVERALL] : null;
-    ranking[CategoryTypes.RANK] = lastScore && (currentScore === lastScore) ? dataArray[index - 1][CategoryTypes.RANK] : index + 1;
-  });
-}
 
 function selectedRowHandler(e: any) {
   selectedEpisode.value = e;
@@ -168,7 +147,7 @@ function getReviewDate(simplecastId: string) {
   return episode?.published_at.toLocaleString();
 }
 
-const sortedRankings = computed((): IRankingInfo[] => {
+const sortedRankings = computed((): IRatingInfo[] => {
   const isAlphabeticSort = sortedCategory.value === CategoryTypes.TITLE || sortedCategory.value === CategoryTypes.PLATFORM;
   const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
 
