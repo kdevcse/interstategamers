@@ -1,24 +1,24 @@
 
-import { computed, onBeforeMount, reactive } from "vue";
+import { computed, onBeforeMount, ref } from "vue";
 import { IHoveredRanking, IRatingInfo } from "@/interfaces/IRatingInfo";
 import { IEpisodeInfo } from "@/interfaces/IRatingInfo";
 import { getEpisodes, getRatings } from "@/globals/supabase";
 
 export function useIgContent() {
-  const episodes: IEpisodeInfo[] = reactive([]);
-  const rankings: IRatingInfo[] = reactive([]);
-  let hoveredEpisode: IEpisodeInfo;
+  const episodes = ref<IEpisodeInfo[]>([]);
+  const rankings = ref<IRatingInfo[]>([]);
+  const hoveredEpisode = ref({} as IEpisodeInfo);
 
   onBeforeMount(async() => {
-    await getEpisodes(episodes, true);
-    await getRatings(rankings);
+    await getEpisodes(episodes.value, true);
+    await getRatings(rankings.value);
 
-    const firstGameReview = episodes.find(e => e.type === "full");
+    const firstGameReview = episodes.value.find(e => e.type === "full");
     
     if (!firstGameReview)
       return;
 
-    hoveredEpisode = firstGameReview;
+    hoveredEpisode.value = firstGameReview;
     console.log(hoveredEpisode);
   });
 
@@ -28,27 +28,26 @@ export function useIgContent() {
     if (!hoveredEpisodeId)
       return;
 
-    hoveredEpisode = episodes.find(ep => ep.simplecast_id === hoveredEpisodeId) || hoveredEpisode;
-    console.log(hoveredEpisode);
+    hoveredEpisode.value = episodes.value.find(ep => ep.simplecast_id === hoveredEpisodeId) || hoveredEpisode.value;
   }
 
   function isFinale(index: number) {
-    return ((episodes[index - 1] && episodes[index]) && episodes[index - 1].season > episodes[index].season) || index === 0;
+    return ((episodes.value[index - 1] && episodes.value[index]) && episodes.value[index - 1].season > episodes.value[index].season) || index === 0;
   }
 
   const hoveredRanking = computed((): IHoveredRanking => {
-    const foundRating = rankings.find(r => r.simplecast_id === hoveredEpisode?.simplecast_id);
+    const foundRating = rankings.value.find(r => r.simplecast_id === hoveredEpisode.value?.simplecast_id);
     const rating: IHoveredRanking = foundRating || hoveredRanking.value || {};
-    rating.title = hoveredEpisode?.title;
+    rating.title = hoveredEpisode.value?.title;
     return rating;
   });
 
   const totalGames = computed(() => {
-    return episodes.filter((ep: IEpisodeInfo) => ep.type === "full").length;
+    return episodes.value.filter(ep => ep.type === "full").length;
   });
 
   const pageIsReady = computed(() => {
-    return rankings && episodes && rankings.length > 0 && episodes.length > 0;
+    return rankings.value && episodes.value && rankings.value.length > 0 && episodes.value.length > 0;
   });
 
   return {
