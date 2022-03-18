@@ -19,7 +19,6 @@ export function useIgContent() {
       return;
 
     hoveredEpisode.value = firstGameReview;
-    console.log(hoveredEpisode);
   });
 
   function showScores(e: Array<any>) {
@@ -36,10 +35,13 @@ export function useIgContent() {
   }
 
   const hoveredRanking = computed((): IHoveredRanking => {
-    const foundRating = rankings.value.find(r => r.simplecast_id === hoveredEpisode.value?.simplecast_id);
-    const rating: IHoveredRanking = foundRating || hoveredRanking.value || {};
-    rating.title = hoveredEpisode.value?.title;
-    return rating;
+    const foundRating = rankings.value.find(r => r.simplecast_id === hoveredEpisode.value?.simplecast_id) as IHoveredRanking;
+    
+    if (!foundRating)
+      return hoveredRanking.value;
+
+    foundRating.title = hoveredEpisode.value.title;
+    return foundRating;
   });
 
   const totalGames = computed(() => {

@@ -18,12 +18,12 @@
     </div>
     <home-ranking
       :v-if="pageIsReady"
-      :gameplay="hoveredRanking.gameplay"
-      :aesthetics="hoveredRanking.aesthetics"
-      :content="hoveredRanking.content"
-      :overall="hoveredRanking.ig_score"
-      :rank="hoveredRanking.rank"
-      :title="hoveredRanking.title" 
+      :gameplay="hoveredRanking?.gameplay"
+      :aesthetics="hoveredRanking?.aesthetics"
+      :content="hoveredRanking?.content"
+      :overall="hoveredRanking?.ig_score"
+      :rank="hoveredRanking?.rank"
+      :title="hoveredRanking?.title" 
       :total-games="totalGames"
     />
   </section>
