@@ -4,7 +4,7 @@ import { MOCKED_RATINGS, MOCKED_EPISODES, pushAllMockedEpisodes, pushAllMockedRa
 describe("IgContent unit tests", () => {
   describe("useIgContent composable", () => {
     //TODO: replace with component test
-    test.skip("showScores", () => {
+    test.todo.skip("showScores", () => {
       const rankIdFromHover = MOCKED_RATINGS[0].id;
       const { showScores, ratings, episodes, hoveredEpisode } = useIgContent();
 
