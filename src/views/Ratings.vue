@@ -99,72 +99,22 @@
 </template>
 
 <script setup lang="ts">
-import { CategoryTypes, IEpisodeInfo, IRatingWithEpisode } from "@/interfaces/IRatingInfo"; //Used in template
+import { CategoryTypes } from "@/interfaces/IRatingInfo"; //Used in template
 import RankingsOptions from "@/components/RankingsOptions.vue";
 import RankingsHeader from "@/components/RankingsHeader.vue";
 import RankingRow from "@/components/RankingRow.vue";
 import RankingsInfo from "@/components/RankingsInfo.vue";
-import { computed, onBeforeMount, reactive, ref } from "vue";
-import { getRatings, getEpisodes } from "@/globals/supabase";
+import { useRatings } from "@/composables/Ratings";
 
-let episodes: IEpisodeInfo[] = reactive([]);
-let ratings: IRatingWithEpisode[] = reactive([]);
-let sortedCategory = ref(CategoryTypes.RANK);
-let sortedIsAscending = ref(true);
-let selectedEpisode = ref(undefined);
-let searchTxt = ref("");
+const {
+  sortedCategory,
+  selectedEpisode,
+  selectedRowHandler,
+  sortHandler,
+  searchHandler,
+  sortedRatings
+} = useRatings();
 
-onBeforeMount(async() => {
-  await getEpisodes(episodes);
-  await getRatings(ratings);
-
-  mapEpisodesToRatings(ratings, episodes);
-});
-
-function mapEpisodesToRatings(ratings: IRatingWithEpisode[], episodes: IEpisodeInfo[]) {
-  return ratings.map(r => {
-    r.episodeData = episodes.find(e => e.simplecast_id === r.simplecast_id);
-    return r;
-  });
-}
-
-function selectedRowHandler(e: any) {
-  selectedEpisode.value = e;
-}
-
-function sortHandler(e: any) {
-  sortedCategory.value = e[0];
-  sortedIsAscending.value = e[1];
-}
-
-function sortByNumber(a: IRatingWithEpisode, b: IRatingWithEpisode) {
-  const category = sortedCategory.value;
-  const aCat = a[category] as number;
-  const bCat = b[category] as number;
-  return sortedIsAscending.value ? aCat - bCat : bCat - aCat;
-}
-
-function sortByAlphabet(a: IRatingWithEpisode, b: IRatingWithEpisode) {
-  const category = sortedCategory.value;
-  const aCat = a[category] as string;
-  const bCat = b[category] as string;
-  return sortedIsAscending.value ? aCat.localeCompare(bCat) : bCat.localeCompare(aCat);
-}
-
-function searchHandler(searchInput: string) {
-  searchTxt.value = searchInput;
-}
-
-const sortedRatings = computed((): IRatingWithEpisode[] => {
-  const isAlphabeticSort = sortedCategory.value === CategoryTypes.TITLE || sortedCategory.value === CategoryTypes.PLATFORM;
-  const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
-
-  let sortedRats = ratings.slice(0).sort(sortFunc);
-
-  return searchTxt.value !== "" ? sortedRats.filter((rating) => {
-    return rating.game.includes(searchTxt.value) || rating.platform.includes(searchTxt.value);
-  }) : sortedRats;
-});
 </script>
 
 <style scoped>
