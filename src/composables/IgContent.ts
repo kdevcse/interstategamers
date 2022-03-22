@@ -39,7 +39,7 @@ export function useIgContent() {
   }
 
   function isFinale(index: number) {
-    return ((episodes.value[index - 1] && episodes.value[index]) && episodes.value[index - 1].season > episodes.value[index].season) || index === 0;
+    return ((episodes.value[index - 1] && episodes.value[index]) && (episodes.value[index - 1].season > episodes.value[index].season)) || index === 0;
   }
 
   const totalGames = computed(() => {

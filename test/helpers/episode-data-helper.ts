@@ -100,9 +100,7 @@ const episode1 = {
   token: "1471vgfjkd",
   title: "1-1: MyGame",
   status: "published",
-  slug: "test_slug",
   season: 1,
-  scheduled_for:  new Date(),
   published_at: new Date("1/1/2022"),
   number: 1,
   is_hidden: false,
@@ -113,7 +111,6 @@ const episode1 = {
   guid: "38th98hjf9fxj-8432784yfh-fhjdkdjh3",
   description: "This is a test description for episode 1-1",
   days_since_release: 2,
-  finale: true,
   simplecast_id: "djka234fds-34fsdfnjf-12fjek54"
 } as IEpisodeInfo;
 
@@ -123,9 +120,7 @@ const episode2 = {
   token: "1231jdfjkd",
   title: "2-1: MyGame The Sequel",
   status: "published",
-  slug: "test_slug",
   season: 2,
-  scheduled_for: new Date(),
   published_at: new Date("1/2/2022"),
   number: 1,
   is_hidden: false,
@@ -136,7 +131,6 @@ const episode2 = {
   guid: "489fh98hjf9fhj-8734784yfh-fhjkdjh2",
   description: "This is a test description for episode 2-1",
   days_since_release: 1,
-  finale: true,
   simplecast_id: "erta234fds-54fsdfnjf-31fjek89"
 } as IEpisodeInfo;
 
@@ -146,9 +140,7 @@ const episode3 = {
   token: "2451jdfjkd",
   title: "2-2: MyGame The Threequel",
   status: "published",
-  slug: "test_slug",
   season: 2,
-  scheduled_for: new Date(),
   published_at: new Date("1/3/2022"),
   number: 2,
   is_hidden: false,
@@ -159,12 +151,12 @@ const episode3 = {
   guid: "093fh98hjf9fhj-8734kaowmnyfh-fhjkdjh2",
   description: "This is a test description for episode 2-2",
   days_since_release: 0,
-  finale: true,
   simplecast_id: "htof869fds-57ftyuikj-15tpok54"
 } as IEpisodeInfo;
 
-export const MOCKED_EPISODES = [episode1, episode2, episode3];
-export const MOCKED_RATINGS = [mockedRanking1, mockedRanking2, mockedRanking3];
+//Episode order matters here and date it important
+export const MOCKED_EPISODES = [episode3, episode2, episode1];
+export const MOCKED_RATINGS = [mockedRanking3, mockedRanking2, mockedRanking1];
 
 export function pushAllMockedEpisodes(originEpisodes: IEpisodeInfo[]) {
   MOCKED_EPISODES.forEach((episode) => {

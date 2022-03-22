@@ -1,6 +1,6 @@
 import { CategoryTypes, IEpisodeInfo, IRatingWithEpisode } from "@/interfaces/IRatingInfo"; //Used in template
-  import { computed, onBeforeMount, reactive, ref } from "vue";
-  import { getRatings, getEpisodes } from "@/globals/supabase";
+import { computed, onBeforeMount, reactive, ref } from "vue";
+import { getRatings, getEpisodes } from "@/globals/supabase";
 
 export function useRatings() {
   const episodes: IEpisodeInfo[] = reactive([]);
