@@ -142,6 +142,7 @@ function searchHandler(searchInput: string) {
   searchTxt.value = searchInput;
 }
 
+//TODO: Instead of this, can use a map to map episodes to ratings
 function getReviewDate(simplecastId: string) {
   const episode = episodes.find(ep => ep.simplecast_id === simplecastId);
   return episode?.published_at.toLocaleString();
@@ -154,8 +155,7 @@ const sortedRankings = computed((): IRatingInfo[] => {
   let sortedRanks = rankings.slice(0).sort((a, b) => sortFunc(a, b));
 
   return searchTxt.value !== "" ? sortedRanks.filter((rank) => {
-    const allInfo = Object.values(rank);
-    return allInfo.some(i => i.toString().includes(searchTxt.value));
+    return rank.game.includes(searchTxt.value) || rank.platform.includes(searchTxt.value);
   }) : sortedRanks;
 });
 </script>
