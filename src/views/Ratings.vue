@@ -128,14 +128,18 @@ function sortHandler(e: any) {
   sortedIsAscending.value = e[1];
 }
 
-function sortByNumber(a: any, b: any) {
+function sortByNumber(a: IRatingInfo, b: IRatingInfo) {
   const category = sortedCategory.value;
-  return sortedIsAscending.value ? a[category] - b[category] : b[category] - a[category];
+  const aCat = a[category] as number;
+  const bCat = b[category] as number;
+  return sortedIsAscending.value ? aCat - bCat : bCat - aCat;
 }
 
-function sortByAlphabet(a: any, b: any) {
+function sortByAlphabet(a: IRatingInfo, b: IRatingInfo) {
   const category = sortedCategory.value;
-  return sortedIsAscending.value ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
+  const aCat = a[category] as string;
+  const bCat = b[category] as string;
+  return sortedIsAscending.value ? aCat.localeCompare(bCat) : bCat.localeCompare(aCat);
 }
 
 function searchHandler(searchInput: string) {
@@ -152,7 +156,7 @@ const sortedRankings = computed((): IRatingInfo[] => {
   const isAlphabeticSort = sortedCategory.value === CategoryTypes.TITLE || sortedCategory.value === CategoryTypes.PLATFORM;
   const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
 
-  let sortedRanks = rankings.slice(0).sort((a, b) => sortFunc(a, b));
+  let sortedRanks = rankings.slice(0).sort(sortFunc);
 
   return searchTxt.value !== "" ? sortedRanks.filter((rank) => {
     return rank.game.includes(searchTxt.value) || rank.platform.includes(searchTxt.value);
