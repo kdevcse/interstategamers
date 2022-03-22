@@ -76,6 +76,14 @@ export interface IEpisodeInfo {
   days_since_release: number;
 }
 
+export interface IEpisodeWithRating extends IEpisodeInfo {
+  ratingData?: IRatingInfo
+}
+
+export interface IRatingWithEpisode extends IRatingInfo {
+  episodeData?: IEpisodeInfo
+}
+
 export enum CategoryTypes {
   RANK = "rank",
   TITLE = "game",

@@ -65,33 +65,33 @@
         />
       </div>
       <template
-        v-for="ranking in sortedRankings"
-        :key="ranking.id"
+        v-for="rating in sortedRatings"
+        :key="rating.id"
       >
         <ranking-row
-          :rank="ranking.rank"
-          :title="ranking.game"
-          :guest="ranking.guest"
-          :year="ranking.year"
-          :platform="ranking.platform"
-          :overall="ranking.ig_score"
-          :gameplay="ranking.gameplay"
-          :aesthetics="ranking.aesthetics"
-          :content="ranking.content"
-          :p-overall="ranking.p_rating"
-          :k-overall="ranking.k_rating"
+          :rank="rating.rank"
+          :title="rating.game"
+          :guest="rating.guest"
+          :year="rating.year"
+          :platform="rating.platform"
+          :overall="rating.ig_score"
+          :gameplay="rating.gameplay"
+          :aesthetics="rating.aesthetics"
+          :content="rating.content"
+          :p-overall="rating.p_rating"
+          :k-overall="rating.k_rating"
           :sort-by="sortedCategory"
           :selected="selectedEpisode"
           @row-selected="selectedRowHandler"
         />
         <rankings-info
-          :date="getReviewDate(ranking.simplecast_id)"
-          :img="ranking.game_image"
-          :title="ranking.game"
+          :date="rating.episodeData?.published_at?.toLocaleString()"
+          :img="rating.game_image"
+          :title="rating.game"
           :selected="selectedEpisode"
-          :rank-info="ranking"
-          :ign="ranking.ign"
-          :metacritic="ranking.metacritic"
+          :rank-info="rating"
+          :ign="rating.ign"
+          :metacritic="rating.metacritic"
         />
       </template>
     </div>
@@ -99,7 +99,7 @@
 </template>
 
 <script setup lang="ts">
-import { CategoryTypes, IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo"; //Used in template
+import { CategoryTypes, IEpisodeInfo, IRatingWithEpisode } from "@/interfaces/IRatingInfo"; //Used in template
 import RankingsOptions from "@/components/RankingsOptions.vue";
 import RankingsHeader from "@/components/RankingsHeader.vue";
 import RankingRow from "@/components/RankingRow.vue";
@@ -108,7 +108,7 @@ import { computed, onBeforeMount, reactive, ref } from "vue";
 import { getRatings, getEpisodes } from "@/globals/supabase";
 
 let episodes: IEpisodeInfo[] = reactive([]);
-let rankings: IRatingInfo[] = reactive([]);
+let ratings: IRatingWithEpisode[] = reactive([]);
 let sortedCategory = ref(CategoryTypes.RANK);
 let sortedIsAscending = ref(true);
 let selectedEpisode = ref(undefined);
@@ -116,8 +116,17 @@ let searchTxt = ref("");
 
 onBeforeMount(async() => {
   await getEpisodes(episodes);
-  await getRatings(rankings);
+  await getRatings(ratings);
+
+  mapEpisodesToRatings(ratings, episodes);
 });
+
+function mapEpisodesToRatings(ratings: IRatingWithEpisode[], episodes: IEpisodeInfo[]) {
+  return ratings.map(r => {
+    r.episodeData = episodes.find(e => e.simplecast_id === r.simplecast_id);
+    return r;
+  });
+}
 
 function selectedRowHandler(e: any) {
   selectedEpisode.value = e;
@@ -128,14 +137,14 @@ function sortHandler(e: any) {
   sortedIsAscending.value = e[1];
 }
 
-function sortByNumber(a: IRatingInfo, b: IRatingInfo) {
+function sortByNumber(a: IRatingWithEpisode, b: IRatingWithEpisode) {
   const category = sortedCategory.value;
   const aCat = a[category] as number;
   const bCat = b[category] as number;
   return sortedIsAscending.value ? aCat - bCat : bCat - aCat;
 }
 
-function sortByAlphabet(a: IRatingInfo, b: IRatingInfo) {
+function sortByAlphabet(a: IRatingWithEpisode, b: IRatingWithEpisode) {
   const category = sortedCategory.value;
   const aCat = a[category] as string;
   const bCat = b[category] as string;
@@ -146,21 +155,15 @@ function searchHandler(searchInput: string) {
   searchTxt.value = searchInput;
 }
 
-//TODO: Instead of this, can use a map to map episodes to ratings
-function getReviewDate(simplecastId: string) {
-  const episode = episodes.find(ep => ep.simplecast_id === simplecastId);
-  return episode?.published_at.toLocaleString();
-}
-
-const sortedRankings = computed((): IRatingInfo[] => {
+const sortedRatings = computed((): IRatingWithEpisode[] => {
   const isAlphabeticSort = sortedCategory.value === CategoryTypes.TITLE || sortedCategory.value === CategoryTypes.PLATFORM;
   const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
 
-  let sortedRanks = rankings.slice(0).sort(sortFunc);
+  let sortedRats = ratings.slice(0).sort(sortFunc);
 
-  return searchTxt.value !== "" ? sortedRanks.filter((rank) => {
-    return rank.game.includes(searchTxt.value) || rank.platform.includes(searchTxt.value);
-  }) : sortedRanks;
+  return searchTxt.value !== "" ? sortedRats.filter((rating) => {
+    return rating.game.includes(searchTxt.value) || rating.platform.includes(searchTxt.value);
+  }) : sortedRats;
 });
 </script>
 
