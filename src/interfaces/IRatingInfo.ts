@@ -39,22 +39,6 @@ export interface IRatingInfo {
   simplecast_id: string;
 }
 
-/*TODO: Look at removing this redundancy later*/
-export interface IHoveredRanking {
-  id?: string;
-  episode?: string;
-  gameplay?: number;
-  visuals?: number;
-  audio?: number;
-  aesthetics?: number;
-  content?: number;
-  ig_score?: number;
-  rank?: number;
-  game?: string;
-  simplecast_id?: string;
-  title?: string;
-}
-
 export interface IEpisodeInfo {
   simplecast_id: string;
   updated_at: Date;

@@ -1,19 +1,20 @@
 
 import { computed, onBeforeMount, ref } from "vue";
-import { IHoveredRanking, IRatingInfo } from "@/interfaces/IRatingInfo";
-import { IEpisodeInfo } from "@/interfaces/IRatingInfo";
+import { IRatingInfo, IEpisodeWithRating } from "@/interfaces/IRatingInfo";
 import { getEpisodes, getRatings } from "@/globals/supabase";
 
 export function useIgContent() {
-  const episodes = ref<IEpisodeInfo[]>([]);
-  const rankings = ref<IRatingInfo[]>([]);
-  const hoveredEpisode = ref({} as IEpisodeInfo);
+  const episodes = ref<IEpisodeWithRating[]>([]);
+  const ratings = ref<IRatingInfo[]>([]);
+  const hoveredEpisode = ref({} as IEpisodeWithRating);
 
   onBeforeMount(async() => {
     await getEpisodes(episodes.value, true);
-    await getRatings(rankings.value);
+    await getRatings(ratings.value);
 
-    const firstGameReview = episodes.value.find(e => e.type === "full");
+    mapRatingsToEpisodes(ratings.value, episodes.value);
+
+    const firstGameReview = episodes.value.find(e => e.ratingData);
     
     if (!firstGameReview)
       return;
@@ -21,41 +22,38 @@ export function useIgContent() {
     hoveredEpisode.value = firstGameReview;
   });
 
+  function mapRatingsToEpisodes(ratings: IRatingInfo[], episodes: IEpisodeWithRating[]) {
+    return episodes.map(ep => {
+      ep.ratingData = ratings.find(r => r.simplecast_id === ep.simplecast_id);
+      return ep;
+    });
+  }
+
   function showScores(e: Array<any>) {
     const hoveredEpisodeId = e[0];
 
     if (!hoveredEpisodeId)
       return;
 
-    hoveredEpisode.value = episodes.value.find(ep => ep.simplecast_id === hoveredEpisodeId) || hoveredEpisode.value;
+    hoveredEpisode.value = episodes.value.find(ep => (ep.simplecast_id === hoveredEpisodeId) && ep.ratingData) || hoveredEpisode.value;
   }
 
   function isFinale(index: number) {
     return ((episodes.value[index - 1] && episodes.value[index]) && episodes.value[index - 1].season > episodes.value[index].season) || index === 0;
   }
 
-  const hoveredRanking = computed((): IHoveredRanking => {
-    const foundRating = rankings.value.find(r => r.simplecast_id === hoveredEpisode.value?.simplecast_id) as IHoveredRanking;
-    
-    if (!foundRating)
-      return hoveredRanking.value;
-
-    foundRating.title = hoveredEpisode.value.title;
-    return foundRating;
-  });
-
   const totalGames = computed(() => {
     return episodes.value.filter(ep => ep.type === "full").length;
   });
 
   const pageIsReady = computed(() => {
-    return rankings.value && episodes.value && rankings.value.length > 0 && episodes.value.length > 0;
+    return ratings.value && episodes.value && ratings.value.length > 0 && episodes.value.length > 0;
   });
 
   return {
     episodes,
-    rankings,
-    hoveredRanking,
+    ratings,
+    hoveredEpisode,
     totalGames,
     pageIsReady,
     showScores,

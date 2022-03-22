@@ -18,12 +18,12 @@
     </div>
     <home-ranking
       :v-if="pageIsReady"
-      :gameplay="hoveredRanking?.gameplay"
-      :aesthetics="hoveredRanking?.aesthetics"
-      :content="hoveredRanking?.content"
-      :overall="hoveredRanking?.ig_score"
-      :rank="hoveredRanking?.rank"
-      :title="hoveredRanking?.title" 
+      :gameplay="hoveredEpisode.ratingData?.gameplay"
+      :aesthetics="hoveredEpisode.ratingData?.aesthetics"
+      :content="hoveredEpisode.ratingData?.content"
+      :overall="hoveredEpisode.ratingData?.ig_score"
+      :rank="hoveredEpisode.ratingData?.rank"
+      :title="hoveredEpisode.title" 
       :total-games="totalGames"
     />
   </section>
@@ -36,7 +36,7 @@ import { useIgContent } from "@/composables/IgContent";
 
 const {
   episodes,
-  hoveredRanking,
+  hoveredEpisode,
   totalGames, 
   pageIsReady,
   isFinale,
