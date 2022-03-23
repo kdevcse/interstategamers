@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo";
+import { IEpisodeInfo, IEpisodeWithRating, IRatingInfo } from "@/interfaces/IRatingInfo";
 
-const mockedRanking1 = {
+const mockedRating1 = {
   episode: "1-1",
   ig_score: 100,
   id: "dafd33-daff35-fdad89",
@@ -32,7 +32,7 @@ const mockedRanking1 = {
   simplecast_id: "djka234fds-34fsdfnjf-12fjek54"
 } as IRatingInfo;
 
-const mockedRanking2 = {
+const mockedRating2 = {
   episode: "2-1",
   ig_score: 99,
   id: "dafd33-daff35-fdad89",
@@ -63,7 +63,7 @@ const mockedRanking2 = {
   simplecast_id: "erta234fds-54fsdfnjf-31fjek89"
 } as IRatingInfo;
 
-const mockedRanking3 = {
+const mockedRating3 = {
   episode: "2-2",
   ig_score: 98,
   id: "xafddds-daff45-ghad89",
@@ -111,8 +111,9 @@ const episode1 = {
   guid: "38th98hjf9fxj-8432784yfh-fhjdkdjh3",
   description: "This is a test description for episode 1-1",
   days_since_release: 2,
-  simplecast_id: "djka234fds-34fsdfnjf-12fjek54"
-} as IEpisodeInfo;
+  simplecast_id: "djka234fds-34fsdfnjf-12fjek54",
+  ratingData: mockedRating1
+} as IEpisodeWithRating;
 
 const episode2 = {
   updated_at: new Date(),
@@ -131,8 +132,9 @@ const episode2 = {
   guid: "489fh98hjf9fhj-8734784yfh-fhjkdjh2",
   description: "This is a test description for episode 2-1",
   days_since_release: 1,
-  simplecast_id: "erta234fds-54fsdfnjf-31fjek89"
-} as IEpisodeInfo;
+  simplecast_id: "erta234fds-54fsdfnjf-31fjek89",
+  ratingData: mockedRating2
+} as IEpisodeWithRating;
 
 const episode3 = {
   updated_at: new Date(),
@@ -151,12 +153,13 @@ const episode3 = {
   guid: "093fh98hjf9fhj-8734kaowmnyfh-fhjkdjh2",
   description: "This is a test description for episode 2-2",
   days_since_release: 0,
-  simplecast_id: "htof869fds-57ftyuikj-15tpok54"
-} as IEpisodeInfo;
+  simplecast_id: "htof869fds-57ftyuikj-15tpok54",
+  ratingData: mockedRating3
+} as IEpisodeWithRating;
 
 //Episode order matters here and date it important
 export const MOCKED_EPISODES = [episode3, episode2, episode1];
-export const MOCKED_RATINGS = [mockedRanking3, mockedRanking2, mockedRanking1];
+export const MOCKED_RATINGS = [mockedRating3, mockedRating2, mockedRating1];
 
 export function pushAllMockedEpisodes(originEpisodes: IEpisodeInfo[]) {
   MOCKED_EPISODES.forEach((episode) => {
