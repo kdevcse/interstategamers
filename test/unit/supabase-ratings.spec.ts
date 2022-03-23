@@ -1,11 +1,11 @@
 import { MOCKED_RATINGS } from "../helpers/episode-data-helper";
-import { getRatings } from "@/globals/supabase";
+import { getDataFromSupabase, getRatings, SupabaseTables } from "@/globals/supabase";
 import { IRatingInfo } from "@/interfaces/IRatingInfo";
 
 vi.mock("@supabase/supabase-js", () => ({
-  createClient: vi.fn().mockReturnValueOnce({
-    from: vi.fn().mockReturnValueOnce({
-      select: vi.fn().mockResolvedValueOnce({
+  createClient: vi.fn().mockReturnValue({
+    from: vi.fn().mockReturnValue({
+      select: vi.fn().mockResolvedValue({
         data:  MOCKED_RATINGS
       })
     })
@@ -16,11 +16,8 @@ import { createClient } from "@supabase/supabase-js";
 
 describe("supabase ratings unit tests", () => {
 
-  afterEach(() => {
-    (createClient as any).mockClear();
-  });
-
   afterAll(() => {
+    (createClient as any).mockClear();
     vi.restoreAllMocks();
   });
   
@@ -29,5 +26,11 @@ describe("supabase ratings unit tests", () => {
     await getRatings(ratings);
     
     expect(ratings[0]).toMatchObject(MOCKED_RATINGS[0]);
+  });
+
+  test("getDataFromSupabase - ratings table", async() => {
+    const ratings = await getDataFromSupabase<IRatingInfo>(SupabaseTables.RATINGS);
+
+    expect(ratings).toBe(MOCKED_RATINGS);
   });
 });

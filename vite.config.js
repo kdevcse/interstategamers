@@ -15,7 +15,7 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    silent: true,
+    silent: false,
     include: [...configDefaults.include],
     coverage: {
       reporter: ["text", "lcov"]
