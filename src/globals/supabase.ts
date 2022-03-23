@@ -15,7 +15,7 @@ export async function getDataFromSupabase<Type>(table: SupabaseTables): Promise<
   const { data, error } = await SUPABASE.from(table).select("*");
 
   if (error || !data) {
-    console.error(`Error retrieving data: ${error.message}`);
+    console.error(`Error retrieving data: ${error?.message}`);
     return [];
   }
 
