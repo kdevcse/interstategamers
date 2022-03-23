@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { IEpisodeInfo, IRankingInfo } from "@/interfaces/IRankingInfo";
+import { IEpisodeInfo, IEpisodeWithRating, IRatingInfo } from "@/interfaces/IRatingInfo";
 
-const mockedRanking1 = {
+const mockedRating1 = {
   episode: "1-1",
   ig_score: 100,
   id: "dafd33-daff35-fdad89",
@@ -30,9 +30,9 @@ const mockedRanking1 = {
   metacritic: 0,
   year: 2018,
   simplecast_id: "djka234fds-34fsdfnjf-12fjek54"
-} as IRankingInfo;
+} as IRatingInfo;
 
-const mockedRanking2 = {
+const mockedRating2 = {
   episode: "2-1",
   ig_score: 99,
   id: "dafd33-daff35-fdad89",
@@ -61,9 +61,9 @@ const mockedRanking2 = {
   metacritic: 0,
   year: 2017,
   simplecast_id: "erta234fds-54fsdfnjf-31fjek89"
-} as IRankingInfo;
+} as IRatingInfo;
 
-const mockedRanking3 = {
+const mockedRating3 = {
   episode: "2-2",
   ig_score: 98,
   id: "xafddds-daff45-ghad89",
@@ -92,7 +92,7 @@ const mockedRanking3 = {
   metacritic: 0,
   year: 2017,
   simplecast_id: "htof869fds-57ftyuikj-15tpok54"
-} as IRankingInfo;
+} as IRatingInfo;
 
 const episode1 = {
   updated_at: new Date(),
@@ -100,9 +100,7 @@ const episode1 = {
   token: "1471vgfjkd",
   title: "1-1: MyGame",
   status: "published",
-  slug: "test_slug",
   season: 1,
-  scheduled_for:  new Date(),
   published_at: new Date("1/1/2022"),
   number: 1,
   is_hidden: false,
@@ -113,9 +111,9 @@ const episode1 = {
   guid: "38th98hjf9fxj-8432784yfh-fhjdkdjh3",
   description: "This is a test description for episode 1-1",
   days_since_release: 2,
-  finale: true,
-  simplecast_id: "djka234fds-34fsdfnjf-12fjek54"
-} as IEpisodeInfo;
+  simplecast_id: "djka234fds-34fsdfnjf-12fjek54",
+  ratingData: mockedRating1
+} as IEpisodeWithRating;
 
 const episode2 = {
   updated_at: new Date(),
@@ -123,9 +121,7 @@ const episode2 = {
   token: "1231jdfjkd",
   title: "2-1: MyGame The Sequel",
   status: "published",
-  slug: "test_slug",
   season: 2,
-  scheduled_for: new Date(),
   published_at: new Date("1/2/2022"),
   number: 1,
   is_hidden: false,
@@ -136,9 +132,9 @@ const episode2 = {
   guid: "489fh98hjf9fhj-8734784yfh-fhjkdjh2",
   description: "This is a test description for episode 2-1",
   days_since_release: 1,
-  finale: true,
-  simplecast_id: "erta234fds-54fsdfnjf-31fjek89"
-} as IEpisodeInfo;
+  simplecast_id: "erta234fds-54fsdfnjf-31fjek89",
+  ratingData: mockedRating2
+} as IEpisodeWithRating;
 
 const episode3 = {
   updated_at: new Date(),
@@ -146,9 +142,7 @@ const episode3 = {
   token: "2451jdfjkd",
   title: "2-2: MyGame The Threequel",
   status: "published",
-  slug: "test_slug",
   season: 2,
-  scheduled_for: new Date(),
   published_at: new Date("1/3/2022"),
   number: 2,
   is_hidden: false,
@@ -159,12 +153,13 @@ const episode3 = {
   guid: "093fh98hjf9fhj-8734kaowmnyfh-fhjkdjh2",
   description: "This is a test description for episode 2-2",
   days_since_release: 0,
-  finale: true,
-  simplecast_id: "htof869fds-57ftyuikj-15tpok54"
-} as IEpisodeInfo;
+  simplecast_id: "htof869fds-57ftyuikj-15tpok54",
+  ratingData: mockedRating3
+} as IEpisodeWithRating;
 
-export const MOCKED_EPISODES = [episode1, episode2, episode3];
-export const MOCKED_RATINGS = [mockedRanking1, mockedRanking2, mockedRanking3];
+//Episode order matters here and date it important
+export const MOCKED_EPISODES = [episode3, episode2, episode1];
+export const MOCKED_RATINGS = [mockedRating3, mockedRating2, mockedRating1];
 
 export function pushAllMockedEpisodes(originEpisodes: IEpisodeInfo[]) {
   MOCKED_EPISODES.forEach((episode) => {
@@ -172,7 +167,7 @@ export function pushAllMockedEpisodes(originEpisodes: IEpisodeInfo[]) {
   });
 }
 
-export function pushAllMockedRatings(originRatings: IRankingInfo[]) {
+export function pushAllMockedRatings(originRatings: IRatingInfo[]) {
   MOCKED_RATINGS.forEach((ranking) => {
     originRatings.push(ranking);
   });

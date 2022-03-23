@@ -59,7 +59,7 @@
 <script setup lang="ts">
 import { ref, onBeforeMount, computed} from "vue";
 import RankingsBreakdown from "@/components/RankingsBreakdown.vue";
-import { IRankingInfo } from "@/interfaces/IRankingInfo";
+import { IRatingInfo } from "@/interfaces/IRatingInfo";
 import metacriticLogo from "@/assets/images/meta_logo.png";
 import ignLogo from "@/assets/images/ign_logo.png";
 import mainLogo from "@/assets/images/main.png";
@@ -71,7 +71,7 @@ const props = defineProps<{
   img?: string,
   ign?: number,
   metacritic?: number,
-  rankInfo: IRankingInfo
+  rankInfo: IRatingInfo
 }>();
 let chartLoaded = ref(false);
 

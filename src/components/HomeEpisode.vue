@@ -9,7 +9,7 @@
     <div
       class="episode"
       :class="{ top: finale }"
-      @mouseover="sendScore(rankingId)"
+      @mouseover="emitId(simplecastId)"
     >
       <section class="player">
         <font-awesome-icon
@@ -27,7 +27,7 @@
         <h2 class="episode-title">
           {{ title }}
           <font-awesome-icon
-            v-if="rankingId"
+            v-if="isGameReview"
             title="Game Review"
             :icon="['fas', 'gamepad']"
           />
@@ -42,27 +42,26 @@
 
 <script setup lang='ts'>
 import { useAudio } from "@/composables/global-composables";
-import { useSendScore } from "@/composables/HomeEpisode";
+import { useHomeEpisode } from "@/composables/HomeEpisode";
 
 const props = defineProps<{
-  title?: string,
-  description?: string,
-  guest?: boolean,
-  audio?: string,
-  season?: number,
-  episodeNumber?: number,
-  episodeType?: string,
-  rankingId?: string,
-  finale?: boolean,
+  title: string,
+  description: string,
+  audio: string,
+  season: number,
+  episodeNumber: number,
+  episodeType: string,
+  simplecastId: string,
+  finale: boolean
 }>();
-const emit = defineEmits(["show-score"]);
+const emit = defineEmits(["id-hovered"]);
 
 const audioElement: HTMLAudioElement = new Audio(props.audio);
 audioElement.title = props.title || "";
 audioElement.preload = "none";
 
 const { playing, play } = useAudio(audioElement);
-const { sendScore } = useSendScore(emit);
+const { isGameReview, emitId } = useHomeEpisode(props.episodeType, emit);
 
 </script>
 

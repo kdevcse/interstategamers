@@ -1,40 +1,32 @@
-import { useSendScore } from "@/composables/HomeEpisode";
+import { useHomeEpisode } from "@/composables/HomeEpisode";
 
 describe("HomeEpisode unit tests", () => {
-  describe("useSendScore composable", () => {
-    test("With ranking id", () => {
-      const rankingId = "123sdsf";
+  describe("useHomeEpisode composable", () => {
+    test("emit rating id", () => {
+      const ratingId = "123sdsf";
       let eventName = "";
-      let eventValues: Array<string> = [];
+      let eventValues: string[] = [];
 
-      const emit = (name: string, vals: Array<string>) => {
+      const { emitId, isGameReview } = useHomeEpisode("some-type", (name: string, vals: Array<string>) => {
         eventName = name;
         eventValues = vals;
-      };
+      });
 
-      const { sendScore } = useSendScore(emit);
+      emitId(ratingId);
 
-      sendScore(rankingId);
-
-      expect(eventName).toBe("show-score");
-      expect(eventValues[0]).toBe(rankingId);
+      expect(eventName).toEqual("id-hovered");
+      expect(eventValues[0]).toBe(ratingId);
+      expect(isGameReview.value).toBe(false);
     });
 
-    test("Without ranking id", () => {
-      let eventName = "";
-      let eventValues: Array<string> = [];
+    test("is game review - true", () => {
+      const { isGameReview } = useHomeEpisode("full", null);
+      expect(isGameReview.value).toBe(true);
+    });
 
-      const emit = (name: string, vals: Array<string>) => {
-        eventName = name;
-        eventValues = vals;
-      };
-
-      const { sendScore } = useSendScore(emit);
-
-      sendScore(undefined);
-
-      expect(eventName).toBe("");
-      expect(eventValues[0]).toBe(undefined);
+    test("is game review - false", () => {
+      const { isGameReview } = useHomeEpisode("any-type", null);
+      expect(isGameReview.value).toBe(false);
     });
   });
 });

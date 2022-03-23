@@ -4,42 +4,41 @@ import { MOCKED_RATINGS, MOCKED_EPISODES, pushAllMockedEpisodes, pushAllMockedRa
 describe("IgContent unit tests", () => {
   describe("useIgContent composable", () => {
     test("showScores", () => {
-      const rankIdFromHover = MOCKED_RATINGS[0].id;
-      const { showScores, rankings, episodes, hoveredEpisode, hoveredRanking, hoveredRankingId } = useIgContent();
+      const rateIdFromHover = MOCKED_EPISODES[0].simplecast_id;
+      const { showScores, episodes, hoveredEpisode } = useIgContent();
 
-      pushAllMockedEpisodes(episodes);
-      pushAllMockedRatings(rankings);
-      showScores([rankIdFromHover]);
+      pushAllMockedEpisodes(episodes.value);
+      showScores([rateIdFromHover]);
 
-      expect(hoveredRankingId.value).toBe(rankIdFromHover);
-      expect(hoveredRanking.value).toMatchObject(MOCKED_RATINGS[0]);
-      expect(hoveredEpisode.value).toMatchObject(MOCKED_EPISODES[0]);
+      expect(hoveredEpisode.value.ratingData).toMatchObject(MOCKED_RATINGS[0]);
     });
 
-    test("getRankingId found id", () => {
-      const { getRankingId, rankings } = useIgContent();
+    test("showScores - null rating id from hover", () => {
+      const { showScores, episodes, hoveredEpisode } = useIgContent();
 
-      pushAllMockedRatings(rankings);
+      pushAllMockedEpisodes(episodes.value);
+      showScores([]);
 
-      const rankingId = getRankingId(MOCKED_RATINGS[0].simplecast_id);
-
-      expect(rankingId).toBe(MOCKED_RATINGS[0].id);
+      expect(hoveredEpisode.value).toMatchObject({});
     });
 
-    test("getRankingId id NOT found", () => {
-      const { getRankingId, rankings } = useIgContent();
+    test("showScores x2 - episode not found on 2nd hover", () => {
+      const rateIdFromHover = MOCKED_EPISODES[0].simplecast_id;
+      const { showScores, episodes, hoveredEpisode } = useIgContent();
 
-      pushAllMockedRatings(rankings);
+      pushAllMockedEpisodes(episodes.value);
 
-      const rankingId = getRankingId("");
-
-      expect(rankingId).toBe("");
+      showScores([rateIdFromHover]);
+      expect(hoveredEpisode.value.ratingData).toMatchObject(MOCKED_RATINGS[0]);
+      
+      showScores(["hdj3nfj3"]);
+      expect(hoveredEpisode.value.ratingData).toMatchObject(MOCKED_RATINGS[0]);
     });
 
     test("isFinale: true and index not 0", () => {
       const { isFinale, episodes } = useIgContent();
 
-      pushAllMockedEpisodes(episodes);
+      pushAllMockedEpisodes(episodes.value);
 
       const finale = isFinale(2);
 
@@ -49,7 +48,7 @@ describe("IgContent unit tests", () => {
     test("isFinale: false and index not 0", () => {
       const { isFinale, episodes } = useIgContent();
 
-      pushAllMockedEpisodes(episodes);
+      pushAllMockedEpisodes(episodes.value);
 
       const finale = isFinale(1);
 
@@ -59,7 +58,7 @@ describe("IgContent unit tests", () => {
     test("isFinale: index not 0", () => {
       const { isFinale, episodes } = useIgContent();
 
-      pushAllMockedEpisodes(episodes);
+      pushAllMockedEpisodes(episodes.value);
 
       const finale = isFinale(0);
 
@@ -67,10 +66,10 @@ describe("IgContent unit tests", () => {
     });
 
     test("pageIsReady: true", () => {
-      const { rankings, episodes, pageIsReady } = useIgContent();
+      const { ratings, episodes, pageIsReady } = useIgContent();
 
-      pushAllMockedEpisodes(episodes);
-      pushAllMockedRatings(rankings);
+      pushAllMockedEpisodes(episodes.value);
+      pushAllMockedRatings(ratings.value);
 
       expect(pageIsReady.value).toBe(true);
     });
@@ -84,7 +83,7 @@ describe("IgContent unit tests", () => {
     test("totalGames", () => {
       const { totalGames, episodes } = useIgContent();
 
-      pushAllMockedEpisodes(episodes);
+      pushAllMockedEpisodes(episodes.value);
 
       expect(totalGames.value).toBe(3);
     });

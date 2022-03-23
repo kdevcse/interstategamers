@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-export interface IRankingInfo {
+export interface IRatingInfo {
   id: string;
   episode: string;
   episode_number: number;
@@ -39,21 +39,6 @@ export interface IRankingInfo {
   simplecast_id: string;
 }
 
-/*TODO: Look at removing this redundancy later*/
-export interface IHoveredRanking {
-  id?: string;
-  episode?: string;
-  gameplay?: number;
-  visuals?: number;
-  audio?: number;
-  aesthetics?: number;
-  content?: number;
-  ig_score?: number;
-  rank?: number;
-  game?: string;
-  simplecast_id?: string;
-}
-
 export interface IEpisodeInfo {
   simplecast_id: string;
   updated_at: Date;
@@ -70,9 +55,17 @@ export interface IEpisodeInfo {
   id: string;
   href: string;
   guid: string;
-  enclosure_url?: string;
+  enclosure_url: string;
   description: string;
   days_since_release: number;
+}
+
+export interface IEpisodeWithRating extends IEpisodeInfo {
+  ratingData?: IRatingInfo
+}
+
+export interface IRatingWithEpisode extends IRatingInfo {
+  episodeData?: IEpisodeInfo
 }
 
 export enum CategoryTypes {

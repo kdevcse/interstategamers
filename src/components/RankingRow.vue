@@ -51,7 +51,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { CategoryTypes } from "@/interfaces/IRankingInfo";
+import { CategoryTypes } from "@/interfaces/IRatingInfo";
 
 const props = defineProps<{
   rank?: number,

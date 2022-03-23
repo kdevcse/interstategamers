@@ -65,33 +65,33 @@
         />
       </div>
       <template
-        v-for="ranking in sortedRankings"
-        :key="ranking.id"
+        v-for="rating in sortedRatings"
+        :key="rating.id"
       >
         <ranking-row
-          :rank="ranking.rank"
-          :title="ranking.game"
-          :guest="ranking.guest"
-          :year="ranking.year"
-          :platform="ranking.platform"
-          :overall="ranking.ig_score"
-          :gameplay="ranking.gameplay"
-          :aesthetics="ranking.aesthetics"
-          :content="ranking.content"
-          :p-overall="ranking.p_rating"
-          :k-overall="ranking.k_rating"
+          :rank="rating.rank"
+          :title="rating.game"
+          :guest="rating.guest"
+          :year="rating.year"
+          :platform="rating.platform"
+          :overall="rating.ig_score"
+          :gameplay="rating.gameplay"
+          :aesthetics="rating.aesthetics"
+          :content="rating.content"
+          :p-overall="rating.p_rating"
+          :k-overall="rating.k_rating"
           :sort-by="sortedCategory"
           :selected="selectedEpisode"
           @row-selected="selectedRowHandler"
         />
         <rankings-info
-          :date="getReviewDate(ranking.simplecast_id)"
-          :img="ranking.game_image"
-          :title="ranking.game"
+          :date="rating.episodeData?.published_at?.toLocaleString()"
+          :img="rating.game_image"
+          :title="rating.game"
           :selected="selectedEpisode"
-          :rank-info="ranking"
-          :ign="ranking.ign"
-          :metacritic="ranking.metacritic"
+          :rank-info="rating"
+          :ign="rating.ign"
+          :metacritic="rating.metacritic"
         />
       </template>
     </div>
@@ -99,86 +99,22 @@
 </template>
 
 <script setup lang="ts">
-import { CategoryTypes, IEpisodeInfo, IRankingInfo } from "@/interfaces/IRankingInfo"; //Used in template
+import { CategoryTypes } from "@/interfaces/IRatingInfo"; //Used in template
 import RankingsOptions from "@/components/RankingsOptions.vue";
 import RankingsHeader from "@/components/RankingsHeader.vue";
 import RankingRow from "@/components/RankingRow.vue";
 import RankingsInfo from "@/components/RankingsInfo.vue";
-import { computed, onBeforeMount, reactive, ref } from "vue";
-import { SUPABASE, SupabaseTables } from "@/globals/supabase";
+import { useRatings } from "@/composables/Ratings";
 
-let episodes: IEpisodeInfo[] = reactive([]);
-let rankings: IRankingInfo[] = reactive([]);
-let sortedCategory = ref(CategoryTypes.RANK);
-let sortedIsAscending = ref(true);
-let selectedEpisode = ref(undefined);
-let searchTxt = ref("");
+const {
+  sortedCategory,
+  selectedEpisode,
+  selectedRowHandler,
+  sortHandler,
+  searchHandler,
+  sortedRatings
+} = useRatings();
 
-onBeforeMount(() => {
-  getDataFromSupabase(SupabaseTables.SIMPLECAST_EPISODES, episodes);
-  getDataFromSupabase(SupabaseTables.RATINGS, rankings);
-});
-
-async function getDataFromSupabase(table: SupabaseTables, dataArray: any[]) {
-  const { data, error } = await SUPABASE.from(table).select("*");
-
-  if (error) {
-    console.error(`Error retrieving data: ${error.message}`);
-    return;
-  }
-
-  data?.forEach((d) => {
-    dataArray.push(d);
-  });
-
-  //Assign Rankings
-  //TODO: Perhaps in the future we can re-rank them on category sort?
-  dataArray.sort((a, b) => b[CategoryTypes.OVERALL] - a[CategoryTypes.OVERALL]).forEach((ranking, index) => {
-    const currentScore = ranking[CategoryTypes.OVERALL];
-    const lastScore = index > 0 ? dataArray[index - 1][CategoryTypes.OVERALL] : null;
-    ranking[CategoryTypes.RANK] = lastScore && (currentScore === lastScore) ? dataArray[index - 1][CategoryTypes.RANK] : index + 1;
-  });
-}
-
-function selectedRowHandler(e: any) {
-  selectedEpisode.value = e;
-}
-
-function sortHandler(e: any) {
-  sortedCategory.value = e[0];
-  sortedIsAscending.value = e[1];
-}
-
-function sortByNumber(a: any, b: any) {
-  const category = sortedCategory.value;
-  return sortedIsAscending.value ? a[category] - b[category] : b[category] - a[category];
-}
-
-function sortByAlphabet(a: any, b: any) {
-  const category = sortedCategory.value;
-  return sortedIsAscending.value ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category]);
-}
-
-function searchHandler(searchInput: string) {
-  searchTxt.value = searchInput;
-}
-
-function getReviewDate(simplecastId: string) {
-  const episode = episodes.find(ep => ep.simplecast_id === simplecastId);
-  return episode?.published_at.toLocaleString();
-}
-
-const sortedRankings = computed((): IRankingInfo[] => {
-  const isAlphabeticSort = sortedCategory.value === CategoryTypes.TITLE || sortedCategory.value === CategoryTypes.PLATFORM;
-  const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
-
-  let sortedRanks = rankings.slice(0).sort((a, b) => sortFunc(a, b));
-
-  return searchTxt.value !== "" ? sortedRanks.filter((rank) => {
-    const allInfo = Object.values(rank);
-    return allInfo.some(i => i.toString().includes(searchTxt.value));
-  }) : sortedRanks;
-});
 </script>
 
 <style scoped>

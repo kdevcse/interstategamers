@@ -2,28 +2,28 @@
   <section class="ig-content">
     <div id="episodes">
       <home-episode
-        v-for="(episode, index) in sortedEpisodes"
+        v-for="(episode, index) in episodes"
         :key="episode.id"
         :v-if="pageIsReady"
+        :simplecast-id="episode.simplecast_id"
         :title="episode.title"
         :description="episode.description"
         :audio="episode.enclosure_url"
         :season="episode.season"
         :episode-number="episode.number"
         :episode-type="episode.type"
-        :ranking-id="getRankingId(episode.simplecast_id)"
         :finale="isFinale(index)"
-        @show-score="showScores"
+        @id-hovered="showScores"
       />
     </div>
     <home-ranking
       :v-if="pageIsReady"
-      :gameplay="hoveredRanking.gameplay"
-      :aesthetics="hoveredRanking.aesthetics"
-      :content="hoveredRanking.content"
-      :overall="hoveredRanking.ig_score"
-      :rank="hoveredRanking.rank"
-      :title="hoveredEpisode?.title" 
+      :gameplay="hoveredEpisode.ratingData?.gameplay"
+      :aesthetics="hoveredEpisode.ratingData?.aesthetics"
+      :content="hoveredEpisode.ratingData?.content"
+      :overall="hoveredEpisode.ratingData?.ig_score"
+      :rank="hoveredEpisode.ratingData?.rank"
+      :title="hoveredEpisode.title" 
       :total-games="totalGames"
     />
   </section>
@@ -34,14 +34,12 @@ import HomeEpisode from "@/components/HomeEpisode.vue";
 import HomeRanking from "@/components/HomeRanking.vue";
 import { useIgContent } from "@/composables/IgContent";
 
-const { 
-  sortedEpisodes, 
-  hoveredRanking,
+const {
+  episodes,
   hoveredEpisode,
   totalGames, 
   pageIsReady,
-  isFinale, 
-  getRankingId, 
+  isFinale,
   showScores 
 } = useIgContent();
 
