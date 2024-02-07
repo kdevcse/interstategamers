@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "@/views/Home.vue";
-import Info from "@/views/Info.vue";
-import Extras from "@/views/Extras.vue";
-import Ratings from "@/views/Ratings.vue";
+import Home from "@/views/HomePage.vue";
+import Info from "@/views/InfoPage.vue";
+import Extras from "@/views/ExtrasPage.vue";
+import Ratings from "@/views/RatingsPage.vue";
 
 const routes: any[] = [
   {
