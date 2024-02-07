@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { configDefaults } from "vitest/config";
+import path from "path";
 
 // https://vitejs.dev/config/
-const path = require("path");
 export default defineConfig({
   plugins: [vue()],
   resolve: {
