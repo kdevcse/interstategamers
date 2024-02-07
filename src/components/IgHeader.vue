@@ -29,12 +29,6 @@
           <font-awesome-icon :icon="['fab', 'instagram']" />
         </a>
         <a
-          href="https://www.patreon.com/TheIGCast"
-          title="Patreon"
-        >
-          <font-awesome-icon :icon="['fab', 'patreon']" />
-        </a>
-        <a
           href="https://feeds.simplecast.com/naeWXDEF"
           title="RSS"
         >

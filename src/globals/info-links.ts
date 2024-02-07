@@ -31,10 +31,6 @@ const INFO_LINKS = {
   ],
   howToSupportUsList: [
     {
-      href: "https://www.patreon.com/TheIGCast",
-      title: "Patreon",
-    },
-    {
       href: "https://www.teepublic.com/stores/the-interstate-gamers?ref_id=7904",
       title: "Store",
     },
