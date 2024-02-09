@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 export interface IRatingInfo {
-  id: string;
   episode: string;
   episode_number: number;
   game: string;
@@ -36,36 +35,27 @@ export interface IRatingInfo {
   guest?: string;
   game_image?: string;
   published_at?: string;
-  simplecast_id: string;
+  spotify_guid?: string;
+  episodeData?: IEpisodeInfo
 }
 
 export interface IEpisodeInfo {
-  simplecast_id: string;
-  updated_at: Date;
-  type: string;
-  token: string;
-  title: string;
-  status: string;
-  season: number
-  published_at: Date;
-  number: number;
-  is_hidden: boolean;
-  image_url: string;
-  image_path: string;
-  id: string;
-  href: string;
-  guid: string;
-  enclosure_url: string;
+  "dc:creator": string;
   description: string;
-  days_since_release: number;
+  enclosure: string;
+  guid: string;
+  "itunes:duration": string;
+  "itunes:explicit": string;
+  "itunes:image": string;
+  "itunes:summary": string;
+  link: string;
+  pubDate: Date;
+  title: string;
+  type?: string;
 }
 
 export interface IEpisodeWithRating extends IEpisodeInfo {
   ratingData?: IRatingInfo
-}
-
-export interface IRatingWithEpisode extends IRatingInfo {
-  episodeData?: IEpisodeInfo
 }
 
 export enum CategoryTypes {

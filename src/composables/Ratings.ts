@@ -1,37 +1,40 @@
-import { CategoryTypes, IEpisodeInfo, IRatingWithEpisode } from "@/interfaces/IRatingInfo"; //Used in template
-import { computed, onBeforeMount, reactive, ref } from "vue";
+import { CategoryTypes, IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo"; //Used in template
+import { computed, onBeforeMount, ref } from "vue";
 import { getRatings, getEpisodes } from "@/globals/supabase";
 
 export function useRatings() {
-  const episodes: IEpisodeInfo[] = reactive([]);
-  const ratings: IRatingWithEpisode[] = reactive([]);
+  const ratingsWithEpData = ref<IRatingInfo[]>([]);
   const sortedCategory = ref(CategoryTypes.RANK);
   const sortedIsAscending = ref(true);
   const selectedEpisode = ref(undefined);
   const searchTxt = ref("");
 
   onBeforeMount(async() => {
-    await getEpisodes(episodes);
-    await getRatings(ratings);
+    const ratings = await getRatings();
+    const episodes = await getEpisodes();
 
-    mapEpisodesToRatings(ratings, episodes);
+    ratingsWithEpData.value = mapEpisodesToRatings(ratings, episodes);
+    console.log(ratingsWithEpData);
   });
 
-  function mapEpisodesToRatings(ratings: IRatingWithEpisode[], episodes: IEpisodeInfo[]) {
-    return ratings.map(r => {
-      r.episodeData = episodes.find(e => e.simplecast_id === r.simplecast_id);
+  function mapEpisodesToRatings(ratings: IRatingInfo[], episodes: IEpisodeInfo[]) {
+    const mapNRate = ratings.map(r => {
+      r.episodeData = episodes.find(e => e.guid === r.spotify_guid);
       return r;
     });
+    
+    //console.log(JSON.stringify(mapNRate));
+    return mapNRate;
   }
 
-  function sortByNumber(a: IRatingWithEpisode, b: IRatingWithEpisode) {
+  function sortByNumber(a: IRatingInfo, b: IRatingInfo) {
     const category = sortedCategory.value;
     const aCat = a[category] as number;
     const bCat = b[category] as number;
     return sortedIsAscending.value ? aCat - bCat : bCat - aCat;
   }
 
-  function sortByAlphabet(a: IRatingWithEpisode, b: IRatingWithEpisode) {
+  function sortByAlphabet(a: IRatingInfo, b: IRatingInfo) {
     const category = sortedCategory.value;
     const aCat = a[category] as string;
     const bCat = b[category] as string;
@@ -51,11 +54,11 @@ export function useRatings() {
     searchTxt.value = searchInput;
   }
 
-  const sortedRatings = computed((): IRatingWithEpisode[] => {
+  const sortedRatings = computed((): IRatingInfo[] => {
     const isAlphabeticSort = sortedCategory.value === CategoryTypes.TITLE || sortedCategory.value === CategoryTypes.PLATFORM;
     const sortFunc = isAlphabeticSort ? sortByAlphabet : sortByNumber;
 
-    const sortedRats = ratings.slice(0).sort(sortFunc);
+    const sortedRats = ratingsWithEpData.value.slice(0).sort(sortFunc);
 
     return searchTxt.value !== "" ? sortedRats.filter((rating) => {
       return rating.game.includes(searchTxt.value) || rating.platform.includes(searchTxt.value);
