@@ -14,7 +14,6 @@ export function useRatings() {
     const episodes = await getEpisodes();
 
     ratingsWithEpData.value = mapEpisodesToRatings(ratings, episodes);
-    console.log(ratingsWithEpData);
   });
 
   function mapEpisodesToRatings(ratings: IRatingInfo[], episodes: IEpisodeInfo[]) {
@@ -23,7 +22,6 @@ export function useRatings() {
       return r;
     });
     
-    //console.log(JSON.stringify(mapNRate));
     return mapNRate;
   }
 

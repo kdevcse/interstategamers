@@ -9,9 +9,7 @@ export async function getRatings() {
     const lastScore = index > 0 ? ratings[index - 1][CategoryTypes.OVERALL] : null;
     rating[CategoryTypes.RANK] = lastScore && (currentScore === lastScore) ? ratings[index - 1][CategoryTypes.RANK] : index + 1;
   });
-  //console.log(JSON.stringify(ratings));
-
-  console.log(ratings);
+  
   return ratings;
 }
 
@@ -24,7 +22,6 @@ export async function getEpisodes(sort = false) {
   const episodes: IEpisodeInfo[] = jobj.rss.channel.item;
 
   if (!sort) {
-    console.log(episodes);
     return episodes;
   }
   
