@@ -1,6 +1,6 @@
 import { CategoryTypes, IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo"; //Used in template
 import { computed, onBeforeMount, ref } from "vue";
-import { getRatings, getEpisodes } from "@/globals/supabase";
+import { getRatings, getEpisodes } from "@/globals/data-fetcher";
 
 export function useRatings() {
   const ratingsWithEpData = ref<IRatingInfo[]>([]);

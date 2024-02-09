@@ -1,7 +1,7 @@
 
 import { computed, onBeforeMount, ref } from "vue";
 import { EpisodeTypes, IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo";
-import { getEpisodes, getRatings } from "@/globals/supabase";
+import { getEpisodes, getRatings } from "@/globals/data-fetcher";
 
 export function useIgContent() {
   const episodesWithRatingData = ref<IEpisodeInfo[]>([]);

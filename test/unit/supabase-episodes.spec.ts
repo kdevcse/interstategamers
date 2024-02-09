@@ -1,5 +1,5 @@
 import { MOCKED_EPISODES } from "../helpers/episode-data-helper";
-import { getDataFromSupabase, getEpisodes, SupabaseTables } from "@/globals/supabase";
+import { getDataFromSupabase, getEpisodes, SupabaseTables } from "@/globals/data-fetcher";
 import { IEpisodeInfo } from "@/interfaces/IRatingInfo";
 
 vi.mock("@supabase/supabase-js", () => ({

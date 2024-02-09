@@ -1,5 +1,5 @@
 import { MOCKED_RATINGS } from "../helpers/episode-data-helper";
-import { getDataFromSupabase, getRatings, SupabaseTables } from "@/globals/supabase";
+import { getDataFromSupabase, getRatings, SupabaseTables } from "@/globals/data-fetcher";
 import { IRatingInfo } from "@/interfaces/IRatingInfo";
 
 vi.mock("@supabase/supabase-js", () => ({
