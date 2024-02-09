@@ -9,7 +9,7 @@
     <div
       class="episode"
       :class="{ top: finale }"
-      @mouseover="emitId(simplecastId)"
+      @mouseover="emitId(spotifyId)"
     >
       <section class="player">
         <font-awesome-icon
@@ -27,7 +27,7 @@
         <h2 class="episode-title">
           {{ title }}
           <font-awesome-icon
-            v-if="isGameReview"
+            v-if="episodeType === EpisodeTypes.REVIEW"
             title="Game Review"
             :icon="['fas', 'gamepad']"
           />
@@ -43,6 +43,7 @@
 <script setup lang='ts'>
 import { useAudio } from "@/composables/global-composables";
 import { useHomeEpisode } from "@/composables/HomeEpisode";
+import { EpisodeTypes } from "@/interfaces/IRatingInfo";
 
 const props = defineProps<{
   title: string,
@@ -50,8 +51,8 @@ const props = defineProps<{
   audio: string,
   season: number,
   episodeNumber: number,
-  episodeType: string,
-  simplecastId: string,
+  episodeType: EpisodeTypes,
+  spotifyId: string,
   finale: boolean
 }>();
 const emit = defineEmits(["id-hovered"]);
@@ -61,7 +62,7 @@ audioElement.title = props.title || "";
 audioElement.preload = "none";
 
 const { playing, play } = useAudio(audioElement);
-const { isGameReview, emitId } = useHomeEpisode(props.episodeType, emit);
+const { emitId } = useHomeEpisode(emit);
 
 </script>
 

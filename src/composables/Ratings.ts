@@ -18,7 +18,7 @@ export function useRatings() {
 
   function mapEpisodesToRatings(ratings: IRatingInfo[], episodes: IEpisodeInfo[]) {
     const mapNRate = ratings.map(r => {
-      r.episodeData = episodes.find(e => e.guid === r.spotify_guid);
+      r.episodeData = episodes.find(e => e.guid["#text"] === r.spotify_guid);
       return r;
     });
     

@@ -1,4 +1,4 @@
-import { CategoryTypes, IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo";
+import { CategoryTypes, EpisodeTypes, IRatingInfo } from "@/interfaces/IRatingInfo";
 import { XMLParser } from "fast-xml-parser";
 import ratingsJson from "@/data/ratings.json";
 
@@ -17,9 +17,18 @@ export async function getEpisodes(sort = false) {
   const result = await fetch("https://anchor.fm/s/f1e37190/podcast/rss");
   const txt = await result.text();
 
-  const parser = new XMLParser();
+  const parserOptions = {
+    ignoreAttributes: false,
+    allowBooleanAttributes: false
+  };
+  const parser = new XMLParser(parserOptions);
   const jobj = parser.parse(txt);
-  const episodes: IEpisodeInfo[] = jobj.rss.channel.item;
+  const episodes: any[] = jobj.rss.channel.item;
+  episodes.map(ep => {
+    const regex = new RegExp(/\d-\d+: */, "g");
+    ep["itunes:episodeType"] = regex.test(ep.title) ? EpisodeTypes.REVIEW : EpisodeTypes.BONUS;
+    return ep;
+  });
 
   if (!sort) {
     return episodes;

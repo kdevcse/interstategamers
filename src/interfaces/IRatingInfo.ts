@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 export interface IRatingInfo {
-  episode: string;
-  episode_number: number;
   game: string;
   platform: string;
   k_gameplay: number;
@@ -42,20 +40,36 @@ export interface IRatingInfo {
 export interface IEpisodeInfo {
   "dc:creator": string;
   description: string;
-  enclosure: string;
-  guid: string;
+  enclosure: EpisodeEnclosureType;
+  guid: EpisodeGuidType;
   "itunes:duration": string;
   "itunes:explicit": string;
   "itunes:image": string;
   "itunes:summary": string;
+  "itunes:season": number;
+  "itunes:number": number;
+  "itunes:episodeType": EpisodeTypes;
   link: string;
   pubDate: Date;
   title: string;
-  type?: string;
+  ratingData?: IRatingInfo;
 }
 
-export interface IEpisodeWithRating extends IEpisodeInfo {
-  ratingData?: IRatingInfo
+export interface EpisodeEnclosureType {
+  "@_url": string
+  "@_length": number
+  "@_type": string
+}
+
+export interface EpisodeGuidType {
+  "#text": string,
+  "@_isPermaLink": boolean
+}
+
+export enum EpisodeTypes {
+  REVIEW = "review",
+  BONUS = "bonus",
+  TRAILER = "trailer"
 }
 
 export enum CategoryTypes {
