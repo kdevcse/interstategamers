@@ -6,12 +6,15 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f1bea37b4abc4c33aab020818513e8b6)](https://www.codacy.com/gh/kdevcse/interstategamers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kdevcse/interstategamers&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/f1bea37b4abc4c33aab020818513e8b6)](https://www.codacy.com/gh/kdevcse/interstategamers/dashboard?utm_source=github.com&utm_medium=referral&utm_content=kdevcse/interstategamers&utm_campaign=Badge_Coverage)
 
-## Version 3.0.0 New Features
+## Version 3.0.0 Roadmap
 - [x] Fix dependency issues
 - [x] Implement versioning
 - [x] Switch to zero-cost static solution
 - [ ] Dark mode toggle
 - [ ] Add icon styling to navigation bar
+- [ ] Add more features to the ratings table
+- [ ] Add a audio player to the site to listen to the casts
+- [ ] Utilize video game API to generate images for the games
 
 
 ## Supporting Software
