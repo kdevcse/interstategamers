@@ -7,7 +7,7 @@ describe("HomeEpisode unit tests", () => {
       let eventName = "";
       let eventValues: string[] = [];
 
-      const { emitId, isGameReview } = useHomeEpisode("some-type", (name: string, vals: Array<string>) => {
+      const { emitId } = useHomeEpisode((name: string, vals: Array<string>) => {
         eventName = name;
         eventValues = vals;
       });
@@ -16,17 +16,6 @@ describe("HomeEpisode unit tests", () => {
 
       expect(eventName).toEqual("id-hovered");
       expect(eventValues[0]).toBe(ratingId);
-      expect(isGameReview.value).toBe(false);
-    });
-
-    test("is game review - true", () => {
-      const { isGameReview } = useHomeEpisode("full", null);
-      expect(isGameReview.value).toBe(true);
-    });
-
-    test("is game review - false", () => {
-      const { isGameReview } = useHomeEpisode("any-type", null);
-      expect(isGameReview.value).toBe(false);
     });
   });
 });

@@ -26,13 +26,12 @@ export interface IRatingInfo {
   aesthetics: number;
   content: number;
   ig_score: number;
-  rank?: number;
+  rank: number;
   ign: number;
   metacritic: number;
   year: number;
   guest?: string;
   game_image?: string;
-  published_at?: string;
   spotify_guid?: string;
   episodeData?: IEpisodeInfo
 }
@@ -42,8 +41,8 @@ export interface IEpisodeInfo {
   description: string;
   enclosure: EpisodeEnclosureType;
   guid: EpisodeGuidType;
-  "itunes:duration": string;
-  "itunes:explicit": string;
+  "itunes:duration": number;
+  "itunes:explicit": boolean;
   "itunes:image": string;
   "itunes:summary": string;
   "itunes:season": number;
@@ -57,13 +56,13 @@ export interface IEpisodeInfo {
 
 export interface EpisodeEnclosureType {
   "@_url": string
-  "@_length": number
+  "@_length": string
   "@_type": string
 }
 
 export interface EpisodeGuidType {
   "#text": string,
-  "@_isPermaLink": boolean
+  "@_isPermaLink": string
 }
 
 export enum EpisodeTypes {
