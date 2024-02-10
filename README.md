@@ -6,21 +6,16 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f1bea37b4abc4c33aab020818513e8b6)](https://www.codacy.com/gh/kdevcse/interstategamers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kdevcse/interstategamers&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/f1bea37b4abc4c33aab020818513e8b6)](https://www.codacy.com/gh/kdevcse/interstategamers/dashboard?utm_source=github.com&utm_medium=referral&utm_content=kdevcse/interstategamers&utm_campaign=Badge_Coverage)
 
-## New Features
-- [x] Dark mode
-- [x] Migrate from vue-cli to vite
-- [x] Migration from Vue 2 to Vue 3
-- [x] Utilize Composition API
-- [x] Cleaner code
-- [x] Migrate to Supabase
-- [x] Better unit testing
-- [ ] Easier way to submit scores
-- [ ] Completely self-hosted solution (Remove need for SimpleCast and AirTable)
-- [ ] Email subscribers?
+## Version 3.0.0 New Features
+- [x] Fix dependency issues
+- [x] Implement versioning
+- [x] Switch to zero-cost static solution
+- [ ] Dark mode toggle
+- [ ] Add icon styling to navigation bar
+
 
 ## Supporting Software
 - [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
 - [Codacy](https://app.codacy.com/) (Performs code analysis)
 - [Discord](https://discordapp.com/) (Post notifications on the development process)
-- [Supabase](https://supabase.com/)
 - [SimpleCast](https://simplecast.com)
