@@ -114,7 +114,7 @@ const episode1 = {
   "itunes:episode": 1,
   "itunes:episodeType": "full",
   link: "linktoep.com/ep_audo_1_1.mp3",
-  pubDate: new Date("1/1/2022"),
+  pubDate: ("Sat Jan 01 2022 00:00:00 GMT-0600 (Central Standard Time)"as unknown) as Date,
   title: "1-1: MyGame1",
   ratingData: mockedRating1,
 } as IEpisodeInfo;
@@ -139,7 +139,7 @@ const episode2 = {
   "itunes:episode": 1,
   "itunes:episodeType": "full",
   link: "linktoep.com/ep_audo_2_1.mp3",
-  pubDate: new Date("2/1/2022"),
+  pubDate: ("Tues Feb 01 2022 00:00:00 GMT-0600 (Central Standard Time)"as unknown) as Date,
   title: "2-1: MyGame2",
   ratingData: mockedRating2,
 } as IEpisodeInfo;
@@ -164,7 +164,7 @@ const episode3 = {
   "itunes:episode": 2,
   "itunes:episodeType": "full",
   link: "linktoep.com/ep_audo_2_2.mp3",
-  pubDate: new Date("2/2/2022"),
+  pubDate: ("Wed Feb 02 2022 00:00:00 GMT-0600 (Central Standard Time)"as unknown) as Date,
   title: "2-2: MyGame3",
   ratingData: mockedRating3,
 } as IEpisodeInfo;

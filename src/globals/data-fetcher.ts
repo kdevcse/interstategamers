@@ -1,5 +1,5 @@
 import { CategoryTypes, IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo";
-import { XMLParser } from "fast-xml-parser";
+import { X2jOptions, XMLParser } from "fast-xml-parser";
 import ratingsJson from "@/data/ratings.json";
 
 export function getRatings() {
@@ -23,7 +23,7 @@ export async function getEpisodes(sort = false) {
   const result = await fetch(rssUrl);
   const txt = await result.text();
 
-  const parserOptions = {
+  const parserOptions: X2jOptions = {
     ignoreAttributes: false,
     allowBooleanAttributes: false
   };
