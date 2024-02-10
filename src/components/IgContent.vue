@@ -10,7 +10,6 @@
         :description="episode.description"
         :audio="episode.enclosure['@_url']"
         :season="episode['itunes:season']"
-        :episode-number="episode['itunes:number']"
         :episode-type="episode['itunes:episodeType']"
         :finale="isFinale(index)"
         @id-hovered="showScores"

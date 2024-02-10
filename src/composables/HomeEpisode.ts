@@ -6,7 +6,6 @@ export interface IHomeEpisodeProps {
   guest?: boolean,
   audio?: string,
   season?: number,
-  episodeNumber?: number,
   episodeType?: string,
   rankingId?: string,
   finale?: boolean,

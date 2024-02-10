@@ -9,17 +9,22 @@ export function useIgContent() {
   const hoveredEpisode = ref({} as IEpisodeInfo);
 
   onBeforeMount(async() => {
-    const episodes = await getEpisodes(true);
-    const ratings = await getRatings();
-
-    episodesWithRatingData.value = mapRatingsToEpisodes(ratings, episodes);
-
-    const firstGameReview = episodes.find(e => e.ratingData);
-    
-    if (!firstGameReview)
-      return;
-
-    hoveredEpisode.value = firstGameReview;
+    try {
+      const episodes = await getEpisodes(true);
+      const ratings = getRatings();
+  
+      episodesWithRatingData.value = mapRatingsToEpisodes(ratings, episodes);
+  
+      const firstGameReview = episodes.find(e => e.ratingData);
+      
+      if (!firstGameReview)
+        return;
+  
+      hoveredEpisode.value = firstGameReview;
+    }
+    catch(err) {
+      console.error("Exception caught - Error fetching data:\n\n\t", err);
+    }
   });
 
   function mapRatingsToEpisodes(ratings: IRatingInfo[], episodes: IEpisodeInfo[]) {
@@ -43,7 +48,7 @@ export function useIgContent() {
   }
 
   const totalGames = computed(() => {
-    return episodesWithRatingData.value.filter(ep => ep["itunes:episodeType"] === EpisodeTypes.REVIEW).length;
+    return episodesWithRatingData.value.filter(ep => ep["itunes:episodeType"] === EpisodeTypes.FULL).length;
   });
 
   const pageIsReady = computed(() => {

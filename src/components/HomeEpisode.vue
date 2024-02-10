@@ -27,7 +27,7 @@
         <h2 class="episode-title">
           {{ title }}
           <font-awesome-icon
-            v-if="episodeType === EpisodeTypes.REVIEW"
+            v-if="episodeType === EpisodeTypes.FULL"
             title="Game Review"
             :icon="['fas', 'gamepad']"
           />
@@ -50,7 +50,6 @@ const props = defineProps<{
   description: string,
   audio: string,
   season: number,
-  episodeNumber: number,
   episodeType: EpisodeTypes,
   spotifyId: string,
   finale: boolean

@@ -47,7 +47,7 @@ export interface IEpisodeInfo {
   "itunes:image": string;
   "itunes:summary": string;
   "itunes:season": number;
-  "itunes:number": number;
+  "itunes:episode"?: number;
   "itunes:episodeType": EpisodeTypes;
   link: string;
   pubDate: Date;
@@ -67,7 +67,7 @@ export interface EpisodeGuidType {
 }
 
 export enum EpisodeTypes {
-  REVIEW = "review",
+  FULL = "full",
   BONUS = "bonus",
   TRAILER = "trailer"
 }

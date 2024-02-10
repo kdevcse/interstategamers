@@ -1,8 +1,8 @@
-import { CategoryTypes, EpisodeTypes, IRatingInfo } from "@/interfaces/IRatingInfo";
+import { CategoryTypes, IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo";
 import { XMLParser } from "fast-xml-parser";
 import ratingsJson from "@/data/ratings.json";
 
-export async function getRatings() {
+export function getRatings() {
   const ratings: IRatingInfo[] = ratingsJson as any;
   ratings.sort((a, b) => b[CategoryTypes.OVERALL] - a[CategoryTypes.OVERALL]).forEach((rating, index) => {
     const currentScore = rating[CategoryTypes.OVERALL];
@@ -14,7 +14,13 @@ export async function getRatings() {
 }
 
 export async function getEpisodes(sort = false) {
-  const result = await fetch("https://anchor.fm/s/f1e37190/podcast/rss");
+  const rssUrl = import.meta.env.VITE_RSS_URL;
+
+  if (!rssUrl) {
+    throw("RSS environment variable not found");
+  }
+
+  const result = await fetch(rssUrl);
   const txt = await result.text();
 
   const parserOptions = {
@@ -23,12 +29,7 @@ export async function getEpisodes(sort = false) {
   };
   const parser = new XMLParser(parserOptions);
   const jobj = parser.parse(txt);
-  const episodes: any[] = jobj.rss.channel.item;
-  episodes.map(ep => {
-    const regex = new RegExp(/\d-\d+: */, "g");
-    ep["itunes:episodeType"] = regex.test(ep.title) ? EpisodeTypes.REVIEW : EpisodeTypes.BONUS;
-    return ep;
-  });
+  const episodes: IEpisodeInfo[] = jobj.rss.channel.item;
 
   if (!sort) {
     return episodes;
