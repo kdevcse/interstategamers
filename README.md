@@ -12,7 +12,7 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 - [x] Switch to zero-cost static solution
 - [ ] Dark mode toggle
 - [ ] Add icon styling to navigation bar
-- [ ] Add more features to the ratings table
+- [ ] Add more features/styling to the ratings table
 - [ ] Add a audio player to the site to listen to the casts
 - [ ] Utilize video game API to generate images for the games
 
