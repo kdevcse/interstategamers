@@ -40,10 +40,6 @@
         heading="Business Inquiries:"
         :items="INFO_LINKS.businessInquiriesList"
       />
-      <info-contact-list
-        heading="Website Issues:"
-        :items="INFO_LINKS.websiteIssuesList"
-      />
     </article>
   </div>
 </template>

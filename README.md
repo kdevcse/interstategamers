@@ -3,8 +3,8 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 
 ## Build Status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f6b95e64-cfc4-4310-98ec-8c480461f0ff/deploy-status)](https://app.netlify.com/sites/interstategamers/deploys)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f1bea37b4abc4c33aab020818513e8b6)](https://www.codacy.com/gh/kdevcse/interstategamers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kdevcse/interstategamers&amp;utm_campaign=Badge_Grade)
-[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/f1bea37b4abc4c33aab020818513e8b6)](https://www.codacy.com/gh/kdevcse/interstategamers/dashboard?utm_source=github.com&utm_medium=referral&utm_content=kdevcse/interstategamers&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f1bea37b4abc4c33aab020818513e8b6)](https://app.codacy.com/gh/kdevcse/interstategamers/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/f1bea37b4abc4c33aab020818513e8b6)](https://app.codacy.com/gh/kdevcse/interstategamers/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 
 ## Version 3.0.0 Roadmap
 - [x] Fix dependency issues
@@ -21,4 +21,3 @@ This repo contains the underlying code for The Interstate Gamers Podcast website
 - [Netlify](https://www.netlify.com) (Website Host. Deploys on GitHub changes.)
 - [Codacy](https://app.codacy.com/) (Performs code analysis)
 - [Discord](https://discordapp.com/) (Post notifications on the development process)
-- [SimpleCast](https://simplecast.com)
