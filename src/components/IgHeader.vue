@@ -29,7 +29,7 @@
           <font-awesome-icon :icon="['fab', 'instagram']" />
         </a>
         <a
-          href="https://feeds.simplecast.com/naeWXDEF"
+          :href="getRssUrl()"
           title="RSS"
         >
           <font-awesome-icon :icon="['fas', 'rss']" />
@@ -75,6 +75,10 @@ audioElement.title = "";
 audioElement.preload = "none";
 
 const { playing, play } = useAudio(audioElement);
+
+function getRssUrl() {
+  return import.meta.env.VITE_RSS_URL;  
+}
 </script>
 
 <style scoped>

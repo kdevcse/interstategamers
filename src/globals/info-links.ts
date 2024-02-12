@@ -5,16 +5,8 @@ const INFO_LINKS = {
       title: "Apple Podcasts",
     },
     {
-      href: "https://play.google.com/music/listen?u=0#/ps/I52grgkf57z7gdp6zqwewo3smlq",
-      title: "Google Play",
-    },
-    {
       href: "https://open.spotify.com/show/3WiDNf7oaBADnLGycQzYuu",
       title: "Spotify",
-    },
-    {
-      href: "https://www.stitcher.com/podcast/the-interstate-gamers",
-      title: "Stitcher",
     },
     {
       href: "https://www.iheart.com/podcast/269-the-interstate-gamers-29827163/",
@@ -25,7 +17,11 @@ const INFO_LINKS = {
       title: "YouTube",
     },
     {
-      href: "https://feeds.simplecast.com/naeWXDEF",
+      href: "https://music.youtube.com/playlist?list=PLhKef_t4hd7NzCKk622LECe1k8APItABq&si=6rvIDpRXDLB0deV0",
+      title: "YouTube Music",
+    },
+    {
+      href: import.meta.env.VITE_RSS_URL,
       title: "RSS",
     },
   ],
@@ -55,12 +51,6 @@ const INFO_LINKS = {
     },
     {
       title: "Send a personal message to any of our social media accounts",
-    },
-  ],
-  websiteIssuesList: [
-    {
-      href: "https://bugbucket.io/issues/klewiscse/interstategamers",
-      title: "Report a bug",
     },
   ],
 };

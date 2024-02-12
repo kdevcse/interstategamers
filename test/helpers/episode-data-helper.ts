@@ -29,7 +29,6 @@ const mockedRating1 = {
   ign: 0,
   metacritic: 0,
   year: 2018,
-  simplecast_id: "djka234fds-34fsdfnjf-12fjek54"
 } as IRatingInfo;
 
 const mockedRating2 = {
@@ -60,7 +59,6 @@ const mockedRating2 = {
   ign: 0,
   metacritic: 0,
   year: 2017,
-  simplecast_id: "erta234fds-54fsdfnjf-31fjek89"
 } as IRatingInfo;
 
 const mockedRating3 = {
@@ -91,7 +89,6 @@ const mockedRating3 = {
   ign: 0,
   metacritic: 0,
   year: 2017,
-  simplecast_id: "htof869fds-57ftyuikj-15tpok54"
 } as IRatingInfo;
 
 const episode1 = {
