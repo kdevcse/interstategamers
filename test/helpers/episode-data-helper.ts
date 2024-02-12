@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { IEpisodeInfo, IEpisodeWithRating, IRatingInfo } from "@/interfaces/IRatingInfo";
+import { IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo";
 
 const mockedRating1 = {
   episode: "1-1",
@@ -95,71 +95,90 @@ const mockedRating3 = {
 } as IRatingInfo;
 
 const episode1 = {
-  updated_at: new Date(),
-  type: "full",
-  token: "1471vgfjkd",
-  title: "1-1: MyGame",
-  status: "published",
-  season: 1,
-  published_at: new Date("1/1/2022"),
-  number: 1,
-  is_hidden: false,
-  image_url: "linktoimage.com/my_image.png",
-  image_path: "",
-  id: "fjf9393jf9-93nfjxv10",
-  href: "linktoep.com/ep_audo.mp3",
-  guid: "38th98hjf9fxj-8432784yfh-fhjdkdjh3",
+  "dc:creator": "The Interstate Gamers",
   description: "This is a test description for episode 1-1",
-  days_since_release: 2,
-  simplecast_id: "djka234fds-34fsdfnjf-12fjek54",
-  ratingData: mockedRating1
-} as IEpisodeWithRating;
+  enclosure: {
+    "@_url": "",
+    "@_length": "4243234",
+    "@_type": ""
+  },
+  guid: {
+    "#text": "djka234fds-34fsdfnjf-12fjek51",
+    "@_isPermaLink": "false"
+  },
+  "itunes:duration": 1235124452345,
+  "itunes:explicit": true,
+  "itunes:image": "imagelink.com/1_1",
+  "itunes:summary": "This is a test summary for episode 1-1",
+  "itunes:season": 1,
+  "itunes:episode": 1,
+  "itunes:episodeType": "full",
+  link: "linktoep.com/ep_audo_1_1.mp3",
+  pubDate: ("Sat Jan 01 2022 00:00:00 GMT-0600 (Central Standard Time)"as unknown) as Date,
+  title: "1-1: MyGame1",
+  ratingData: mockedRating1,
+} as IEpisodeInfo;
 
 const episode2 = {
-  updated_at: new Date(),
-  type: "full",
-  token: "1231jdfjkd",
-  title: "2-1: MyGame The Sequel",
-  status: "published",
-  season: 2,
-  published_at: new Date("1/2/2022"),
-  number: 1,
-  is_hidden: false,
-  image_url: "linktoimage.com/my_image2.png",
-  image_path: "",
-  id: "qw10393jf9-83nfjnv89",
-  href: "linktoep.com/ep_audo2.mp3",
-  guid: "489fh98hjf9fhj-8734784yfh-fhjkdjh2",
+  "dc:creator": "The Interstate Gamers",
   description: "This is a test description for episode 2-1",
-  days_since_release: 1,
-  simplecast_id: "erta234fds-54fsdfnjf-31fjek89",
-  ratingData: mockedRating2
-} as IEpisodeWithRating;
+  enclosure: {
+    "@_url": "",
+    "@_length": "4243234",
+    "@_type": ""
+  },
+  guid: {
+    "#text": "djka234fds-34fsdfnjf-12fjek52",
+    "@_isPermaLink": "false"
+  },
+  "itunes:duration": 1235124452345,
+  "itunes:explicit": true,
+  "itunes:image": "imagelink.com/2_1",
+  "itunes:summary": "This is a test summary for episode 2-1",
+  "itunes:season": 2,
+  "itunes:episode": 1,
+  "itunes:episodeType": "full",
+  link: "linktoep.com/ep_audo_2_1.mp3",
+  pubDate: ("Tues Feb 01 2022 00:00:00 GMT-0600 (Central Standard Time)"as unknown) as Date,
+  title: "2-1: MyGame2",
+  ratingData: mockedRating2,
+} as IEpisodeInfo;
 
 const episode3 = {
-  updated_at: new Date(),
-  type: "full",
-  token: "2451jdfjkd",
-  title: "2-2: MyGame The Threequel",
-  status: "published",
-  season: 2,
-  published_at: new Date("1/3/2022"),
-  number: 2,
-  is_hidden: false,
-  image_url: "linktoimage.com/my_image3.png",
-  image_path: "",
-  id: "dfdkldk32-83nfjnv89",
-  href: "linktoep.com/ep_audo3.mp3",
-  guid: "093fh98hjf9fhj-8734kaowmnyfh-fhjkdjh2",
+  "dc:creator": "The Interstate Gamers",
   description: "This is a test description for episode 2-2",
-  days_since_release: 0,
-  simplecast_id: "htof869fds-57ftyuikj-15tpok54",
-  ratingData: mockedRating3
-} as IEpisodeWithRating;
+  enclosure: {
+    "@_url": "",
+    "@_length": "4243234",
+    "@_type": ""
+  },
+  guid: {
+    "#text": "djka234fds-34fsdfnjf-12fjek53",
+    "@_isPermaLink": "false"
+  },
+  "itunes:duration": 1235124452345,
+  "itunes:explicit": true,
+  "itunes:image": "imagelink.com/2_2",
+  "itunes:summary": "This is a test summary for episode 2-2",
+  "itunes:season": 2,
+  "itunes:episode": 2,
+  "itunes:episodeType": "full",
+  link: "linktoep.com/ep_audo_2_2.mp3",
+  pubDate: ("Wed Feb 02 2022 00:00:00 GMT-0600 (Central Standard Time)"as unknown) as Date,
+  title: "2-2: MyGame3",
+  ratingData: mockedRating3,
+} as IEpisodeInfo;
 
 //Episode order matters here and date it important
 export const MOCKED_EPISODES = [episode3, episode2, episode1];
 export const MOCKED_RATINGS = [mockedRating3, mockedRating2, mockedRating1];
+export const MOCKED_XML = {
+  rss: {
+    channel: {
+      item: MOCKED_EPISODES
+    }
+  }
+};
 
 export function pushAllMockedEpisodes(originEpisodes: IEpisodeInfo[]) {
   MOCKED_EPISODES.forEach((episode) => {

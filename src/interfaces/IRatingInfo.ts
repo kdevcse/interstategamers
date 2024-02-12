@@ -1,8 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 export interface IRatingInfo {
-  id: string;
-  episode: string;
-  episode_number: number;
   game: string;
   platform: string;
   k_gameplay: number;
@@ -29,43 +26,49 @@ export interface IRatingInfo {
   aesthetics: number;
   content: number;
   ig_score: number;
-  rank?: number;
+  rank: number;
   ign: number;
   metacritic: number;
   year: number;
   guest?: string;
   game_image?: string;
-  published_at?: string;
-  simplecast_id: string;
+  spotify_guid?: string;
+  episodeData?: IEpisodeInfo
 }
 
 export interface IEpisodeInfo {
-  simplecast_id: string;
-  updated_at: Date;
-  type: string;
-  token: string;
-  title: string;
-  status: string;
-  season: number
-  published_at: Date;
-  number: number;
-  is_hidden: boolean;
-  image_url: string;
-  image_path: string;
-  id: string;
-  href: string;
-  guid: string;
-  enclosure_url: string;
+  "dc:creator": string;
   description: string;
-  days_since_release: number;
+  enclosure: EpisodeEnclosureType;
+  guid: EpisodeGuidType;
+  "itunes:duration": number;
+  "itunes:explicit": boolean;
+  "itunes:image": string;
+  "itunes:summary": string;
+  "itunes:season": number;
+  "itunes:episode"?: number;
+  "itunes:episodeType": EpisodeTypes;
+  link: string;
+  pubDate: Date;
+  title: string;
+  ratingData?: IRatingInfo;
 }
 
-export interface IEpisodeWithRating extends IEpisodeInfo {
-  ratingData?: IRatingInfo
+export interface EpisodeEnclosureType {
+  "@_url": string
+  "@_length": string
+  "@_type": string
 }
 
-export interface IRatingWithEpisode extends IRatingInfo {
-  episodeData?: IEpisodeInfo
+export interface EpisodeGuidType {
+  "#text": string,
+  "@_isPermaLink": string
+}
+
+export enum EpisodeTypes {
+  FULL = "full",
+  BONUS = "bonus",
+  TRAILER = "trailer"
 }
 
 export enum CategoryTypes {

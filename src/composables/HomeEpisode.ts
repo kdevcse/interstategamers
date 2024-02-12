@@ -1,4 +1,4 @@
-import { computed } from "vue";
+import { EpisodeTypes } from "@/interfaces/IRatingInfo";
 
 export interface IHomeEpisodeProps {
   title?: string,
@@ -6,23 +6,18 @@ export interface IHomeEpisodeProps {
   guest?: boolean,
   audio?: string,
   season?: number,
-  episodeNumber?: number,
   episodeType?: string,
   rankingId?: string,
   finale?: boolean,
-  type?: string
+  type?: EpisodeTypes
 }
 
-export function useHomeEpisode(type: string, emit: any) {
+export function useHomeEpisode(emit: any) {
 
   function emitId(episodeId: string) {
     emit("id-hovered", [episodeId]);
   }
 
-  const isGameReview = computed(() => {
-    return type === "full";
-  });
-
-  return { isGameReview, emitId };
+  return { emitId };
 }
 

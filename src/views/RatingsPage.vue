@@ -85,7 +85,7 @@
           @row-selected="selectedRowHandler"
         />
         <rankings-info
-          :date="rating.episodeData?.published_at?.toLocaleString()"
+          :date="rating.episodeData?.pubDate?.toLocaleString()"
           :img="rating.game_image"
           :title="rating.game"
           :selected="selectedEpisode"

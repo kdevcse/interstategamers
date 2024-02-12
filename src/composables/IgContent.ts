@@ -1,30 +1,35 @@
 
 import { computed, onBeforeMount, ref } from "vue";
-import { IRatingInfo, IEpisodeWithRating } from "@/interfaces/IRatingInfo";
-import { getEpisodes, getRatings } from "@/globals/supabase";
+import { EpisodeTypes, IEpisodeInfo, IRatingInfo } from "@/interfaces/IRatingInfo";
+import { getEpisodes, getRatings } from "@/globals/data-fetcher";
 
 export function useIgContent() {
-  const episodes = ref<IEpisodeWithRating[]>([]);
+  const episodesWithRatingData = ref<IEpisodeInfo[]>([]);
   const ratings = ref<IRatingInfo[]>([]);
-  const hoveredEpisode = ref({} as IEpisodeWithRating);
+  const hoveredEpisode = ref({} as IEpisodeInfo);
 
   onBeforeMount(async() => {
-    await getEpisodes(episodes.value, true);
-    await getRatings(ratings.value);
-
-    mapRatingsToEpisodes(ratings.value, episodes.value);
-
-    const firstGameReview = episodes.value.find(e => e.ratingData);
-    
-    if (!firstGameReview)
-      return;
-
-    hoveredEpisode.value = firstGameReview;
+    try {
+      const episodes = await getEpisodes(true);
+      const ratings = getRatings();
+  
+      episodesWithRatingData.value = mapRatingsToEpisodes(ratings, episodes);
+  
+      const firstGameReview = episodes.find(e => e.ratingData);
+      
+      if (!firstGameReview)
+        return;
+  
+      hoveredEpisode.value = firstGameReview;
+    }
+    catch(err) {
+      console.error("Exception caught - Error fetching data:\n\n\t", err);
+    }
   });
 
-  function mapRatingsToEpisodes(ratings: IRatingInfo[], episodes: IEpisodeWithRating[]) {
+  function mapRatingsToEpisodes(ratings: IRatingInfo[], episodes: IEpisodeInfo[]) {
     return episodes.map(ep => {
-      ep.ratingData = ratings.find(r => r.simplecast_id === ep.simplecast_id);
+      ep.ratingData = ratings.find(r => r.spotify_guid === ep.guid["#text"]);
       return ep;
     });
   }
@@ -35,23 +40,23 @@ export function useIgContent() {
     if (!hoveredEpisodeId)
       return;
 
-    hoveredEpisode.value = episodes.value.find(ep => (ep.simplecast_id === hoveredEpisodeId) && ep.ratingData) || hoveredEpisode.value;
+    hoveredEpisode.value = episodesWithRatingData.value.find(ep => (ep.guid["#text"] === hoveredEpisodeId) && ep.ratingData) || hoveredEpisode.value;
   }
 
   function isFinale(index: number) {
-    return ((episodes.value[index - 1] && episodes.value[index]) && (episodes.value[index - 1].season > episodes.value[index].season)) || index === 0;
+    return ((episodesWithRatingData.value[index - 1] && episodesWithRatingData.value[index]) && (episodesWithRatingData.value[index - 1]["itunes:season"] > episodesWithRatingData.value[index]["itunes:season"])) || index === 0;
   }
 
   const totalGames = computed(() => {
-    return episodes.value.filter(ep => ep.type === "full").length;
+    return episodesWithRatingData.value.filter(ep => ep["itunes:episodeType"] === EpisodeTypes.FULL).length;
   });
 
   const pageIsReady = computed(() => {
-    return ratings.value && episodes.value && ratings.value.length > 0 && episodes.value.length > 0;
+    return episodesWithRatingData.value && episodesWithRatingData.value.length > 0;
   });
 
   return {
-    episodes,
+    episodesWithRatingData,
     ratings,
     hoveredEpisode,
     totalGames,

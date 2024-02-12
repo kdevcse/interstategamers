@@ -4,29 +4,29 @@ import { MOCKED_RATINGS, MOCKED_EPISODES, pushAllMockedEpisodes, pushAllMockedRa
 describe("IgContent unit tests", () => {
   describe("useIgContent composable", () => {
     test("showScores", () => {
-      const rateIdFromHover = MOCKED_EPISODES[0].simplecast_id;
-      const { showScores, episodes, hoveredEpisode } = useIgContent();
+      const rateIdFromHover = MOCKED_EPISODES[0].guid["#text"];
+      const { showScores, episodesWithRatingData, hoveredEpisode } = useIgContent();
 
-      pushAllMockedEpisodes(episodes.value);
+      pushAllMockedEpisodes(episodesWithRatingData.value);
       showScores([rateIdFromHover]);
 
       expect(hoveredEpisode.value.ratingData).toMatchObject(MOCKED_RATINGS[0]);
     });
 
     test("showScores - null rating id from hover", () => {
-      const { showScores, episodes, hoveredEpisode } = useIgContent();
+      const { showScores, episodesWithRatingData, hoveredEpisode } = useIgContent();
 
-      pushAllMockedEpisodes(episodes.value);
+      pushAllMockedEpisodes(episodesWithRatingData.value);
       showScores([]);
 
       expect(hoveredEpisode.value).toMatchObject({});
     });
 
     test("showScores x2 - episode not found on 2nd hover", () => {
-      const rateIdFromHover = MOCKED_EPISODES[0].simplecast_id;
-      const { showScores, episodes, hoveredEpisode } = useIgContent();
+      const rateIdFromHover = MOCKED_EPISODES[0].guid["#text"];
+      const { showScores, episodesWithRatingData, hoveredEpisode } = useIgContent();
 
-      pushAllMockedEpisodes(episodes.value);
+      pushAllMockedEpisodes(episodesWithRatingData.value);
 
       showScores([rateIdFromHover]);
       expect(hoveredEpisode.value.ratingData).toMatchObject(MOCKED_RATINGS[0]);
@@ -36,9 +36,9 @@ describe("IgContent unit tests", () => {
     });
 
     test("isFinale: true and index not 0", () => {
-      const { isFinale, episodes } = useIgContent();
+      const { isFinale, episodesWithRatingData } = useIgContent();
 
-      pushAllMockedEpisodes(episodes.value);
+      pushAllMockedEpisodes(episodesWithRatingData.value);
 
       const finale = isFinale(2);
 
@@ -46,9 +46,9 @@ describe("IgContent unit tests", () => {
     });
 
     test("isFinale: false and index not 0", () => {
-      const { isFinale, episodes } = useIgContent();
+      const { isFinale, episodesWithRatingData } = useIgContent();
 
-      pushAllMockedEpisodes(episodes.value);
+      pushAllMockedEpisodes(episodesWithRatingData.value);
 
       const finale = isFinale(1);
 
@@ -56,9 +56,9 @@ describe("IgContent unit tests", () => {
     });
 
     test("isFinale: index not 0", () => {
-      const { isFinale, episodes } = useIgContent();
+      const { isFinale, episodesWithRatingData } = useIgContent();
 
-      pushAllMockedEpisodes(episodes.value);
+      pushAllMockedEpisodes(episodesWithRatingData.value);
 
       const finale = isFinale(0);
 
@@ -66,9 +66,9 @@ describe("IgContent unit tests", () => {
     });
 
     test("pageIsReady: true", () => {
-      const { ratings, episodes, pageIsReady } = useIgContent();
+      const { ratings, episodesWithRatingData, pageIsReady } = useIgContent();
 
-      pushAllMockedEpisodes(episodes.value);
+      pushAllMockedEpisodes(episodesWithRatingData.value);
       pushAllMockedRatings(ratings.value);
 
       expect(pageIsReady.value).toBe(true);
@@ -81,9 +81,9 @@ describe("IgContent unit tests", () => {
     });
 
     test("totalGames", () => {
-      const { totalGames, episodes } = useIgContent();
+      const { totalGames, episodesWithRatingData } = useIgContent();
 
-      pushAllMockedEpisodes(episodes.value);
+      pushAllMockedEpisodes(episodesWithRatingData.value);
 
       expect(totalGames.value).toBe(3);
     });

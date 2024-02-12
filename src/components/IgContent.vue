@@ -2,16 +2,15 @@
   <section class="ig-content">
     <div id="episodes">
       <home-episode
-        v-for="(episode, index) in episodes"
-        :key="episode.id"
+        v-for="(episode, index) in episodesWithRatingData"
+        :key="episode.guid['#text']"
         :v-if="pageIsReady"
-        :simplecast-id="episode.simplecast_id"
+        :spotify-id="episode.guid['#text']"
         :title="episode.title"
         :description="episode.description"
-        :audio="episode.enclosure_url"
-        :season="episode.season"
-        :episode-number="episode.number"
-        :episode-type="episode.type"
+        :audio="episode.enclosure['@_url']"
+        :season="episode['itunes:season']"
+        :episode-type="episode['itunes:episodeType']"
         :finale="isFinale(index)"
         @id-hovered="showScores"
       />
@@ -35,7 +34,7 @@ import HomeRanking from "@/components/HomeRanking.vue";
 import { useIgContent } from "@/composables/IgContent";
 
 const {
-  episodes,
+  episodesWithRatingData,
   hoveredEpisode,
   totalGames, 
   pageIsReady,
